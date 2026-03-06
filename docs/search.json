@@ -1,0 +1,177 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EDLD 653: Functional Programming for Educational Data Science",
+    "section": "",
+    "text": "Welcome to the third course in the Educational Data Science specialization. This course builds upon the content covered in the first two courses, with a specific focus on becoming a better programmer and improving workflows in statistical computing with R. Students will continue to work with the {tidyverse} suite of packages, with a emphasis on {purrr} for functional programming. At its core, functional programming is a technique to iterate a function over a vector, or set of vectors, to complete repetitive tasks. We will compare and contrast {purrr} functions with base R approaches, including for loops and the apply family of functions. Functional programming helps reduce redundancies in code, making it more efficient and, often, more readable. The course will also cover writing custom functions, which can also help in completing repetitive tasks, but can also extend the functionality of R, and is a key component of functional programming. The course concludes with an introduction to shiny for building interactive applications which, although somewhat outside of the scope of functional programming, requires using and writing functions."
+  },
+  {
+    "objectID": "index.html#spring-2026",
+    "href": "index.html#spring-2026",
+    "title": "EDLD 653: Functional Programming for Educational Data Science",
+    "section": "",
+    "text": "Welcome to the third course in the Educational Data Science specialization. This course builds upon the content covered in the first two courses, with a specific focus on becoming a better programmer and improving workflows in statistical computing with R. Students will continue to work with the {tidyverse} suite of packages, with a emphasis on {purrr} for functional programming. At its core, functional programming is a technique to iterate a function over a vector, or set of vectors, to complete repetitive tasks. We will compare and contrast {purrr} functions with base R approaches, including for loops and the apply family of functions. Functional programming helps reduce redundancies in code, making it more efficient and, often, more readable. The course will also cover writing custom functions, which can also help in completing repetitive tasks, but can also extend the functionality of R, and is a key component of functional programming. The course concludes with an introduction to shiny for building interactive applications which, although somewhat outside of the scope of functional programming, requires using and writing functions."
+  },
+  {
+    "objectID": "labs/lab1.html",
+    "href": "labs/lab1.html",
+    "title": "Lab 1",
+    "section": "",
+    "text": "The purpose of this lab is to get you working with base R looping functions while also being careful about data types. Your are welcome to work with a partner or in a small group of 3-4 people."
+  },
+  {
+    "objectID": "labs/lab1.html#data-structures",
+    "href": "labs/lab1.html#data-structures",
+    "title": "Lab 1",
+    "section": "Data structures",
+    "text": "Data structures\n\nset.seed(123) # Set random number generation\n\nm &lt;- lm(mpg ~ hp + cyl + drat, mtcars)\n\nl &lt;- list(a = list(m = matrix(1:12, ncol = 3),\n                   v = 1:7),\n          b = data.frame(student = 1:15,\n                         score = rnorm(15, 100, 10)))\n\nRun the above code\n\nFrom the model results:\n\nExtract the qr tolerance (tol).\nExtract the term labels from the model.\n\nhint: Use str to inspect the list. This one is tricky and involves pulling an attribute from an attribute.\n\n\nFrom l\n\nUse at least two different methods to extract m.\nExtract the third column of m. Maintain the dimensions (matrix structure).\nExtract the score for student 7 in the data frame."
+  },
+  {
+    "objectID": "labs/lab1.html#loops",
+    "href": "labs/lab1.html#loops",
+    "title": "Lab 1",
+    "section": "Loops",
+    "text": "Loops\n\nRead in the insurance_coverage.csv file, which is in the data folder in the repo. Split the data file by \"age_bucket\" and \"sex_name\".\nUse a for loop to calculate the mean health care population (hc_pop) for each \"age_bucket\"/\"sex_name\" combination.\nReplicate this calculation with lapply, sapply, and vapply\nProduce separate plots showing the change in hc_pop from 2014 to 2015 for each \"age_bucket\"/\"sex_name\" combination (with a single loop). Set the hc_pop axis so the limits equal the overall minimum and maximum values for hc_pop.\nUse a for loop to save the plots to a folder on your computer"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "This course includes three labs (20 points each), a take-home Midterm test (70 points), and a take-home Final exam (70 points).\nAssignments\nPoints\nPercent\n\n\n\n\nLabs\n60\n30%\n\n\nMidterm\n70\n35%\n\n\nFinal\n70\n35%\n\n\nTotal\n200"
+  },
+  {
+    "objectID": "assignments.html#labs",
+    "href": "assignments.html#labs",
+    "title": "Assignments",
+    "section": "Labs",
+    "text": "Labs\nEach lab is worth 20 points and is scored on a “best honest effort” basis. Please do not turn in partial work. Instead, please ask for help. Each lab will include dedicated in-class time, but it is expected that most labs will require additional time outside of class. Contact the instructor for help rather than submitting incomplete work. If the assignment is not complete, and you have not contacted me for help, it is likely to result in a partial credit or zero score.\n\n\n\n\n\n\n\n\nDate Assigned\nDate Due\nAssigned\nKey\nPoints\nPercent\n\n\n\n\nApr-06\nApr-13\nLab 1\nKey Lab 1\n20\n10%\n\n\nApr-13\nApr-20\nLab 2\nKey Lab 2\n20\n10%\n\n\nMay-11\nMay-18\nLab 3\nKey Lab 3\n20\n10%"
+  },
+  {
+    "objectID": "assignments.html#midterm",
+    "href": "assignments.html#midterm",
+    "title": "Assignments",
+    "section": "Midterm",
+    "text": "Midterm\nThe take-home Midterm will be completed outside of class time, and responses will be scored on a correct/incorrect basis rather than a “best honest effort”. The Midterm will primarily cover working with and subsetting lists, as well as iterating with {purrr}. The Midterm is worth 70 points (35% of your grade).\n\n\n\n\n\n\n\n\nDate Assigned\nDate Due\nAssigned\nKey\nPoints\nPercent\n\n\n\n\nApr-27\nMay-04\nMidterm Test\nNA\n70\n35%"
+  },
+  {
+    "objectID": "assignments.html#final",
+    "href": "assignments.html#final",
+    "title": "Assignments",
+    "section": "Final",
+    "text": "Final\nThe Final exam is similar to the midterm, in that it will be completed outside of class time, and responses will be scored on a correct/incorrect basis rather than a “best honest effort”. The Final could cover anything covered in this course. The Final is worth 70 points (35% of your grade).\n\n\n\n\n\n\n\n\nDate Assigned\nDate Due\nAssigned\nKey\nPoints\nPercent\n\n\n\n\nJun-01\nJun-08\nFinal Exam\nNA\n70\n35%"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Term: Spring 2026\nTime: Wed, 1:00-3:50pm\nClassroom: 119 Lokey\nInstructor: Joe Nese, PhD\n\nemail: jnese@uoregon.edu (preferred contact method)\noffice hours: By appointment \n\n\n\nThis is the third course in a sequence of courses that will eventually lead to a data science in educational research specialization. All courses will be taught through R, a free and open-source statistical computing environment. This course builds upon the content covered in the first two courses, with a specific focus on becoming a better programmer and improving workflows. Students will continue to work with the {tidyverse} suite of packages in R, with a emphasis on {purrr} for functional programming. At its core, functional programming is a technique to iterate a function over a vector, or set of vectors, to complete repetitive tasks. We will compare and contrast {purrr} functions with base R approaches, including for loops and the apply family of functions. Functional programming helps reduce redundancies in code, making it more efficient, less error-prone and, often, more readable. The course will also cover writing custom functions, which can also help in completing repetitive tasks, but can also extend the functionality of R, and is a key component of functional programming. The course concludes with a brief introduction to shiny for building interactive applications which, although somewhat outside of the scope of functional programming, requires using (and often writing) functions.\n\nAcknowledgment. This course, and much of the materials prepared and content presented, was originally developed by Daniel Anderson. In collaboration with Daniel Anderson, Alison Hill, Chester Ismay, and Andrew Bray, helped design the content for this course and the specialization as a whole.\n\n\n\nBy the end of this course, students should be able to:\n\nUnderstand and be able to describe the differences in R’s data structures (including the four main vector types, data frames, and lists) and when each is most appropriate for a given task\nExplore purrr::map() and its variants, how they relate to base R functions, and why the {purrr} variants are often preferable\nWork with lists and list columns using purrr::nest() and purrr:unnest()\nConvert repetitive tasks into functions\nUnderstand elements of good functions, and things to avoid\nWrite effective and clear functions to continue with the mantra of “Don’t Repeat Yourself”\n\n\n\n\nEnrolling in this course requires successful completion of the first two courses in the EDS specialization (EDLD 651 and EDLD 652). Students who waived the first course are assumed to have the knowledge and skills as covered and taught in EDLD 651.\n\n\n\nThis is an in-person course: that means that, unlike asynchronous online/ASYNC WEB courses, we will meet during scheduled class meeting times. I will accommodate absences as described in the Absences policy below. If you need additional flexibility, UO encourages you to consider ASYNC WEB courses. If you need accommodation related to a medical or other disability, you can request those by working with the Accessible Education Center."
+  },
+  {
+    "objectID": "syllabus.html#course-overview",
+    "href": "syllabus.html#course-overview",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This is the third course in a sequence of courses that will eventually lead to a data science in educational research specialization. All courses will be taught through R, a free and open-source statistical computing environment. This course builds upon the content covered in the first two courses, with a specific focus on becoming a better programmer and improving workflows. Students will continue to work with the {tidyverse} suite of packages in R, with a emphasis on {purrr} for functional programming. At its core, functional programming is a technique to iterate a function over a vector, or set of vectors, to complete repetitive tasks. We will compare and contrast {purrr} functions with base R approaches, including for loops and the apply family of functions. Functional programming helps reduce redundancies in code, making it more efficient, less error-prone and, often, more readable. The course will also cover writing custom functions, which can also help in completing repetitive tasks, but can also extend the functionality of R, and is a key component of functional programming. The course concludes with a brief introduction to shiny for building interactive applications which, although somewhat outside of the scope of functional programming, requires using (and often writing) functions.\n\nAcknowledgment. This course, and much of the materials prepared and content presented, was originally developed by Daniel Anderson. In collaboration with Daniel Anderson, Alison Hill, Chester Ismay, and Andrew Bray, helped design the content for this course and the specialization as a whole."
+  },
+  {
+    "objectID": "syllabus.html#student-learning-outcomes",
+    "href": "syllabus.html#student-learning-outcomes",
+    "title": "Syllabus",
+    "section": "",
+    "text": "By the end of this course, students should be able to:\n\nUnderstand and be able to describe the differences in R’s data structures (including the four main vector types, data frames, and lists) and when each is most appropriate for a given task\nExplore purrr::map() and its variants, how they relate to base R functions, and why the {purrr} variants are often preferable\nWork with lists and list columns using purrr::nest() and purrr:unnest()\nConvert repetitive tasks into functions\nUnderstand elements of good functions, and things to avoid\nWrite effective and clear functions to continue with the mantra of “Don’t Repeat Yourself”"
+  },
+  {
+    "objectID": "syllabus.html#course-prerequisites",
+    "href": "syllabus.html#course-prerequisites",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Enrolling in this course requires successful completion of the first two courses in the EDS specialization (EDLD 651 and EDLD 652). Students who waived the first course are assumed to have the knowledge and skills as covered and taught in EDLD 651."
+  },
+  {
+    "objectID": "syllabus.html#course-modality",
+    "href": "syllabus.html#course-modality",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This is an in-person course: that means that, unlike asynchronous online/ASYNC WEB courses, we will meet during scheduled class meeting times. I will accommodate absences as described in the Absences policy below. If you need additional flexibility, UO encourages you to consider ASYNC WEB courses. If you need accommodation related to a medical or other disability, you can request those by working with the Accessible Education Center."
+  },
+  {
+    "objectID": "syllabus.html#labs-60-points-30",
+    "href": "syllabus.html#labs-60-points-30",
+    "title": "Syllabus",
+    "section": "Labs (60 points; 30%)",
+    "text": "Labs (60 points; 30%)\nEach lab is worth 20 points and is scored on a “best honest effort” basis. Please do not turn in partial work. Instead, please ask for help. Each lab will include dedicated in-class time, but it is expected that most labs will require additional time outside of class. Contact the instructor for help rather than submitting incomplete work. If the assignment is not complete, and you have not contacted me for help, it is likely to result in a partial credit or zero score."
+  },
+  {
+    "objectID": "syllabus.html#midterm-test-70-points-35",
+    "href": "syllabus.html#midterm-test-70-points-35",
+    "title": "Syllabus",
+    "section": "Midterm Test (70 points; 35%)",
+    "text": "Midterm Test (70 points; 35%)\nThe take-home Midterm will be completed outside of class time, and responses will be scored on a correct/incorrect basis rather than a “best honest effort”. The Midterm will primarily cover working with and subsetting lists, as well as iterating with {purrr}. The Midterm is worth 70 points (35% of your grade)."
+  },
+  {
+    "objectID": "syllabus.html#final-exam-70-points-35",
+    "href": "syllabus.html#final-exam-70-points-35",
+    "title": "Syllabus",
+    "section": "Final Exam (70 points; 35%)",
+    "text": "Final Exam (70 points; 35%)\nThe Final exam is similar to the midterm, in that it will be completed outside of class time, and responses will be scored on a correct/incorrect basis rather than a “best honest effort”. The Final could cover anything covered in this course. The Final is worth 70 points (35% of your grade)."
+  },
+  {
+    "objectID": "syllabus.html#grading-components",
+    "href": "syllabus.html#grading-components",
+    "title": "Syllabus",
+    "section": "Grading Components",
+    "text": "Grading Components\n\n\n\n\n\n\n\n\nGrading Components\n\n\nLower %\nLower point range\nGrade\nUpper point range\nUpper %\n\n\n\n\n97\n194 or more\nA+\n\n\n\n\n93\n186\nA\n192\n96\n\n\n90\n180\nA-\n184\n92\n\n\n87\n174\nB+\n178\n89\n\n\n83\n166\nB\n172\n86\n\n\n80\n160\nB-\n164\n82\n\n\n77\n154\nC+\n158\n79\n\n\n73\n146\nC\n152\n76\n\n\n70\n140\nC-\n144\n72\n\n\n\n\nF\n138 or less\n69"
+  },
+  {
+    "objectID": "syllabus.html#student-engagement-inventory",
+    "href": "syllabus.html#student-engagement-inventory",
+    "title": "Syllabus",
+    "section": "Student Engagement Inventory",
+    "text": "Student Engagement Inventory\nGraduate: 1 credit hour = 40 hours of student engagement (3 credit hours = 120 hours of student engagement).\n\n\n\n\n\n\n\n\nStudent Engagement Inventory\n\n\nEducational activity\nHours student engaged\nExplanatory comments (if any):\n\n\n\n\nCourse attendance\n28.3\n10 meetings at 170 minutes per meeting\n\n\nAssigned readings\n28.7\nWeekly readings are assigned, and expected to take about as long to complete as the in-seat time per week\n\n\nLabs\n15.0\n3 labs assignments, at approximately 5 hours each outside of class\n\n\nMidterm Test\n20.0\nTake-home Midterm test\n\n\nFinal Exam\n28.0\nTake-home Final exam\n\n\nTotal hours:\n120.0"
+  },
+  {
+    "objectID": "syllabus.html#communicating-with-me-how-and-why",
+    "href": "syllabus.html#communicating-with-me-how-and-why",
+    "title": "Syllabus",
+    "section": "Communicating with Me: How and Why",
+    "text": "Communicating with Me: How and Why\nHow will I communicate with you? Our class will communicate through our Canvas site. Announcements and emails are archived there, automatically forwarded to your UO email, and can even reach you by text. Check and adjust your settings under Account &gt; Notifications.\nWhen I need to get in touch with individual students, I do so through email.\nWhen giving feedback on assignments, I do so in Canvas, and turnaround time for feedback is generally one week.\nHow can you communicate with me? If your question (or comment) is about a technical challenge with Canvas or another technology, please contact the UO Service Portal. If it is about course content or activities, about something personal, time sensitive, or something else that doesn’t feel like it fits above, please reach out to me by email. I try to respond to questions within one business day.\nWhy should you communicate with me? I enjoy talking with students about our course material! Are you confused or excited about something? Wondering how what we’re learning relates to current events, career choices, or other classes you can take UO? Please be in touch! Please also be in touch to tell me how you are doing in the course. If you are having trouble with some aspect of it, I would like to strategize with you. I believe every student can succeed in this course, and I care about your success."
+  },
+  {
+    "objectID": "syllabus.html#classroom-community-expectations",
+    "href": "syllabus.html#classroom-community-expectations",
+    "title": "Syllabus",
+    "section": "Classroom Community Expectations",
+    "text": "Classroom Community Expectations\nParticipate and Contribute: All students are expected to participate by sharing ideas and contributing to the learning environment. This entails preparing, following instructions, and engaging respectfully and thoughtfully with others. While all students should participate, participation is not just talking, and a range of participation activities support learning. Participation might look like speaking aloud in the full class and in small groups as well as submitting questions prior to class or engaging with Discussion posts. We will establish more specific participation guidelines and criteria for contributions in our first weeks of the term.\nExpect and Respect Diversity: All classes at the University of Oregon welcome and respect diverse experiences, perspectives, and approaches. What is not welcome are behaviors or contributions that undermine, demean, or marginalize others based on race, ethnicity, gender, sex, age, sexual orientation, religion, ability, or socioeconomic status. We will value differences and communicate disagreements with respect. We may establish more specific guidelines and protocols to ensure inclusion and equity for all members of our learning community.\nHelp Everyone Learn: Part of how we learn together is by learning from one another. To do this effectively, we need to be patient with each other, identify ways we can assist others, and be open-minded to receiving help and feedback from others. Don’t hesitate to contact me to ask for assistance or offer suggestions that might help us learn better."
+  },
+  {
+    "objectID": "syllabus.html#course-attendance-and-engagement",
+    "href": "syllabus.html#course-attendance-and-engagement",
+    "title": "Syllabus",
+    "section": "Course Attendance and Engagement",
+    "text": "Course Attendance and Engagement\nThis is a face-to-face course. Attendance is important because we will develop our knowledge through in-class activities that require your active engagement. We’ll have discussions, small-group activities, and do other work during class that will be richer for your presence, and that you won’t be able to benefit from if you are not there. Excessive absences make it impossible to learn well and succeed in the course. While there is not an automatic grade deduction for missing classes, it is unlikely that students who miss 6 or more classes will be able pass this course. That said, if you are feeling ill, please stay home to heal and avoid infecting your classmates. Please take absences only when necessary, so when they are necessary, your prior attendance will have positioned you for success. If you must miss a class, please fill out the absence report form.\nMy course attendance and engagement policies were built with absences and deadline flexibility that students commonly need in mind. There are, however, times when a student may experience an extraordinary circumstance—an unanticipated and significant crisis—that impacts their attendance. Exceptions to the attendance policy and/or deadlines may be granted in the event of extraordinary circumstances. Please contact me as soon as you are able to request it—ideally before the class or deadline has passed, or, if your circumstance makes this difficult, then as soon as possible afterwards. This exception will not be offered on an open-ended basis, so if you need to ask for it, please give some consideration to how much time you will realistically need to complete the work. To activate this policy, send me an email with “Extraordinary circumstance request” in the subject line, and if you are requesting deadline flexibility, let me know by what updated deadline you will be able to submit your assignment. There is no need to explain or offer information about the nature of the extraordinary circumstance in your email—we will trust you only to activate this policy in crisis situation. Please note, too, that detailed feedback on your written work may be delayed or impossible to provide if you’re submitting to meet an extended deadline. At the end of term, granting extensions is hard for the teaching team because of UO’s tight turnaround on grading. Please be in touch in an emergency and we can discuss your options."
+  },
+  {
+    "objectID": "syllabus.html#generative-artificial-intelligence-use",
+    "href": "syllabus.html#generative-artificial-intelligence-use",
+    "title": "Syllabus",
+    "section": "Generative Artificial Intelligence Use",
+    "text": "Generative Artificial Intelligence Use\nStudents may use GenAI tools in this class to help with coursework and assignments. Helpful uses include assistance for code checking, generation, or explanation. However, if you include in your assignment submissions any content that GenAI generates, you must cite the GenAI tool that is your source, in the same way that you must cite any content you use from other sources, such as books, articles, videos, the internet, etc.\nStudents are encouraged to approach GenAI tools cautiously, particularly as beginners in R programming. While GenAI can provide valuable insights and guidance, excessive reliance on these tools can hinder the development of essential problem-solving and debugging skills necessary for becoming proficient in programming. Additionally, GenAI-generated code may not always be accurate, efficient, or aligned with best practices, which can potentially introduce errors or misconceptions into your work. As you build your foundational programming skills, prioritize actively writing, reading, and troubleshooting your own R code, using GenAI primarily as a supplementary resource rather than a primary source of solutions.\nNote. The second paragraph of this section was generated by ChatGPT 4.5. See the link for a copy of the prompt. https://chatgpt.com/share/67ea4c72-8e78-800d-9411-44e6b8d59be9"
+  },
+  {
+    "objectID": "syllabus.html#grievance-policy",
+    "href": "syllabus.html#grievance-policy",
+    "title": "Syllabus",
+    "section": "Grievance Policy",
+    "text": "Grievance Policy\nA student or group of students of the College of Education may appeal decisions or actions pertaining to admissions, programs, evaluation of performance and program retention and completion. Students who decide to file a grievance should follow University student grievance procedures and/or consult with the College Associate Dean for Academic Affairs: Edward M. Olivos at emolivos@uoregon.edu or 541-346-2983."
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdR(2e) Intro\n\n\n\n\n\n\n\n\n\n\n\n\nAdR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdR(2e) 5\n\n\n\n\nLab 1\n\n\n\n\n\n\nAdR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nR4DS(1e) 25\n\n\n\n\nLab 2\nLab 1\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\n\n\nLab 2\n\n\n\n\nAdR(2e) 9.4-9.6\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\n\n\nMidterm Test\n\n\n\n\nAdR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
+  }
+]

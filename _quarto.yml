@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "!nopublish/"
+
+website:
+  title: "EDLD 653"
+  description: "Functional Programming for Educational Data Science"
+  navbar:
+    background: "#009E73"
+    foreground: "white"
+    left:
+      - href: syllabus.qmd
+        text: Syllabus
+    right:
+      - href: assignments.qmd
+        text: Assignments
+      - href: schedule.qmd
+        text: Schedule
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    mainfont: "Atkinson Hyperlegible"
+
+execute:
+  freeze: auto
+
+

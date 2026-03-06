@@ -1,0 +1,87 @@
+---
+title: "Schedule"
+format: 
+  html:
+    toc: true
+execute:
+  echo: false
+  warning: false
+  freeze: false
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(here)
+library(readxl)
+library(glue)
+library(downloadthis)
+library(fontawesome)
+library(gt)
+library(xfun)
+library(gtExtras)
+library(fontawesome)
+
+source("./nopublish/sched_prep.R")
+
+fontawesome::fa_html_dependency()
+```
+
+### Week 1: `r topics$Topic[[1]]`
+
+```{r}
+tbl_fx(1)
+```
+
+### Week 2: `r topics$Topic[[2]]`
+
+```{r}
+tbl_fx(2)
+```
+
+### Week 3: `r topics$Topic[[3]]`
+
+```{r}
+tbl_fx(3)
+```
+
+### Week 4: `r topics$Topic[[4]]`
+
+```{r}
+tbl_fx(4)
+```
+
+### Week 5: `r topics$Topic[[5]]`
+
+```{r}
+tbl_fx(5)
+```
+
+### Week 6: `r topics$Topic[[6]]`
+
+```{r}
+tbl_fx(6)
+```
+
+### Week 7: `r topics$Topic[[7]]`
+
+```{r}
+tbl_fx(7)
+```
+
+### Week 8: `r topics$Topic[[8]]`
+
+```{r}
+tbl_fx(8)
+```
+
+### Week 9: `r topics$Topic[[9]]`
+
+### Week 10: `r topics$Topic[[10]]`
+
+```{r}
+tbl_fx(10)
+```
+
+### Week 11: `r topics$Topic[[11]]`

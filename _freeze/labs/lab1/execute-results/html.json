@@ -1,0 +1,15 @@
+{
+  "hash": "59625bf2cd8ad32991986b1682f93b33",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Lab 1\"\nsubtitle: \"Subsetting lists and base R `for()` loops\"\nassigned: '2025-04-06'\ndue: '2025-04-13'\nexecute: \n  echo: true\n---\n\n\n\nThe purpose of this lab is to get you working with base R looping functions while also being careful about data types. Your are welcome to work with a partner or in a small group of 3-4 people.\n\n## Data structures\n\n::: {.cell}\n\n```{.r .cell-code}\nset.seed(123) # Set random number generation\n\nm <- lm(mpg ~ hp + cyl + drat, mtcars)\n\nl <- list(a = list(m = matrix(1:12, ncol = 3),\n              \t   v = 1:7),\n          b = data.frame(student = 1:15,\n                         score = rnorm(15, 100, 10)))\n```\n:::\n\n\nRun the above code\n\n1. From the model results:\n\ta) Extract the qr tolerance (`tol`).\n\tb) Extract the term labels from the model.\n\t\t+ hint: Use `str` to inspect the list. This one is tricky and involves pulling an attribute from an attribute.\n\n2. From `l`\n\ta) Use at least two different methods to extract `m`.\n\tb) Extract the third column of `m`. Maintain the dimensions (matrix structure).\n\tc) Extract the score for student 7 in the data frame.\n\n\n\n\n## Loops\n\n3. Read in the `insurance_coverage.csv` file, which is in the data folder in the repo. Split the data file by `\"age_bucket\"` and `\"sex_name\"`.\n\n4. Use a `for` loop to calculate the mean health care population (`hc_pop`) for each `\"age_bucket\"/\"sex_name\"` combination.\n\n5. Replicate this calculation with `lapply`, `sapply`, and `vapply`\n\n6. Produce separate plots showing the change in `hc_pop` from 2014 to 2015 for each `\"age_bucket\"/\"sex_name\"` combination (with a single loop). Set the `hc_pop` axis so the limits equal the overall minimum and maximum values for `hc_pop`.\n\n7. Use a `for` loop to save the plots to a folder on your computer\n\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

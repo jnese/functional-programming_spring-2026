@@ -1,0 +1,144 @@
+---
+title: "Assignments"
+output:
+  html:
+    toc: true
+    embed-resources: true
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r setup, include=FALSE}
+#| message: false
+
+library(tidyverse)
+library(here)
+library(readxl)
+library(fontawesome)
+library(gt)
+library(xfun)
+library(htmltools)
+library(mime)
+
+table_style <- function(data) {
+  data |>
+    opt_table_lines(extent = "none") |>
+    opt_table_outline(style = "solid", width = px(3), color = "black") |> 
+    tab_options(
+      heading.border.bottom.color = "black",
+      heading.border.bottom.style = "solid",
+      table.border.top.color = "black",
+      table_body.hlines.color = "black",
+      table_body.border.top.color = "black",
+      table_body.border.top.style = "solid",
+      table_body.border.bottom.color = "black",
+      table_body.border.bottom.style = "solid",
+      column_labels.border.bottom.color = "black",
+      column_labels.border.bottom.style = "solid",
+      column_labels.border.top.color = "black",
+      column_labels.background.color = "#009E73",
+      table.width = pct(100),
+      container.width = pct(100)
+    )
+}
+
+dta <- read_xlsx(here::here("nopublish", "schedule.xlsx"), sheet = "assignments") |>
+  mutate(
+    across(starts_with("Date"), ~format(as.Date(.), "%b-%d")),
+    Assigned = ifelse(str_detect(Assigned, "Lab"), Assigned,
+                      paste0(Assigned, "(", assigned_link, ")")),
+    across(everything(), ~str_remove(., "\\(NA\\)"))
+  )
+```
+
+This course includes three labs (20 points each), a take-home Midterm test (70 points), and a take-home Final exam (70 points).
+
+```{r}
+tibble::tribble(
+     ~Assignments, ~Points, ~Percent,
+  "Labs",    60L, "30%",
+  "Midterm", 70L, "35%",
+  "Final",   70L, "35%",
+  "Total",   200L, ""
+  ) |> 
+  gt() |> 
+  table_style()
+```
+
+## Labs
+
+Each lab is worth 20 points and is scored on a "best honest effort" basis. Please do not turn in partial work. Instead, please ask for help. Each lab will include dedicated in-class time, but it is expected that most labs will require additional time outside of class. Contact the instructor for help rather than submitting incomplete work. If the assignment is not complete, and you have not contacted me for help, it is likely to result in a partial credit or zero score.
+
+```{r}
+dta |>
+  filter(type == "lab") |>
+  mutate(
+    Assigned = map2_chr(assigned_link, Assigned,
+                        ~ifelse(is.na(.x),
+                                .y,
+                                paste0(xfun::embed_file(path = here::here("labs", .x), text = .y)))),
+    Assigned = str_replace_all(Assigned, "\"", "'"),
+    Key = map2_chr(key_link, Key,
+                        ~ifelse(is.na(.x),
+                                .y,
+                                paste0(xfun::embed_file(path = here::here("labs", .x), text = .y)))),
+    Key = str_replace_all(Key, "\"", "'")) |>
+  select(`Date Assigned`, `Date Due`, Assigned, Key, Points, Percent) |>
+  gt() |>
+  table_style() |>
+  fmt_markdown(columns = c(3, 4))
+```
+
+
+## Midterm
+
+The take-home Midterm will be completed outside of class time, and responses will be scored on a correct/incorrect basis rather than a "best honest effort". The Midterm will primarily cover working with and subsetting lists, as well as iterating with `{purrr}`. The Midterm is worth 70 points (35% of your grade). 
+
+```{r}
+dta |>
+  filter(type == "midterm") |>
+  mutate(
+    Assigned = map2_chr(assigned_link, Assigned,
+                        ~ifelse(is.na(.x),
+                                .y,
+                                paste0(xfun::embed_file(path = here::here("labs", .x), text = .y)))),
+    Assigned = str_replace_all(Assigned, "\"", "'"),
+    Key = map2_chr(key_link, Key,
+                        ~ifelse(is.na(.x),
+                                .y,
+                                paste0(xfun::embed_file(path = here::here("labs", .x), text = .y)))),
+    Key = str_replace_all(Key, "\"", "'")) |>
+  select(`Date Assigned`, `Date Due`, Assigned, Key, Points, Percent) |>
+  gt() |>
+  table_style() |>
+  fmt_markdown(columns = c(3, 4))
+```
+
+
+## Final
+
+The Final exam is similar to the midterm, in that it will be completed outside of class time, and responses will be scored on a correct/incorrect basis rather than a "best honest effort". The Final could cover anything covered in this course. The Final is worth 70 points (35% of your grade).
+
+```{r}
+dta |>
+  filter(type == "final") |>
+  mutate(
+    Assigned = map2_chr(assigned_link, Assigned,
+                        ~ifelse(is.na(.x),
+                                .y,
+                                paste0(xfun::embed_file(path = here::here("labs", .x), text = .y)))),
+    Assigned = str_replace_all(Assigned, "\"", "'"),
+    Key = map2_chr(key_link, Key,
+                        ~ifelse(is.na(.x),
+                                .y,
+                                paste0(xfun::embed_file(path = here::here("labs", .x), text = .y)))),
+    Key = str_replace_all(Key, "\"", "'")) |>
+  select(`Date Assigned`, `Date Due`, Assigned, Key, Points, Percent) |>
+  gt() |>
+  table_style() |>
+  fmt_markdown(columns = c(3, 4))
+```
+
+
+
