@@ -34,9 +34,9 @@ fontawesome::fa_html_dependency()
 <font size="4">\
 **Term:** Spring 2026
 
-**Time:** Wed, 1:00-3:50pm
+**Time:** Mon, 1:00-3:50pm
 
-**Classroom:** 119 Lokey
+**Classroom:** 142 HEDCO
 
 **Instructor:** Joe Nese, PhD
 

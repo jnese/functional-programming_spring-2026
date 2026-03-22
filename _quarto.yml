@@ -19,6 +19,8 @@ website:
         text: Assignments
       - href: schedule.qmd
         text: Schedule
+      - icon: github
+        href: https://github.com/jnese/functional-programming_spring-2026
 
 format:
   html:
