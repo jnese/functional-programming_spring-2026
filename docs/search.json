@@ -1,68 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "EDLD 653: Functional Programming for Educational Data Science",
-    "section": "",
-    "text": "Welcome to the third course in the Educational Data Science specialization. This course builds upon the content covered in the first two courses, with a specific focus on becoming a better programmer and improving workflows in statistical computing with R. Students will continue to work with the {tidyverse} suite of packages, with a emphasis on {purrr} for functional programming. At its core, functional programming is a technique to iterate a function over a vector, or set of vectors, to complete repetitive tasks. We will compare and contrast {purrr} functions with base R approaches, including for loops and the apply family of functions. Functional programming helps reduce redundancies in code, making it more efficient and, often, more readable. The course will also cover writing custom functions, which can also help in completing repetitive tasks, but can also extend the functionality of R, and is a key component of functional programming. The course concludes with an introduction to shiny for building interactive applications which, although somewhat outside of the scope of functional programming, requires using and writing functions."
-  },
-  {
-    "objectID": "index.html#spring-2026",
-    "href": "index.html#spring-2026",
-    "title": "EDLD 653: Functional Programming for Educational Data Science",
-    "section": "",
-    "text": "Welcome to the third course in the Educational Data Science specialization. This course builds upon the content covered in the first two courses, with a specific focus on becoming a better programmer and improving workflows in statistical computing with R. Students will continue to work with the {tidyverse} suite of packages, with a emphasis on {purrr} for functional programming. At its core, functional programming is a technique to iterate a function over a vector, or set of vectors, to complete repetitive tasks. We will compare and contrast {purrr} functions with base R approaches, including for loops and the apply family of functions. Functional programming helps reduce redundancies in code, making it more efficient and, often, more readable. The course will also cover writing custom functions, which can also help in completing repetitive tasks, but can also extend the functionality of R, and is a key component of functional programming. The course concludes with an introduction to shiny for building interactive applications which, although somewhat outside of the scope of functional programming, requires using and writing functions."
-  },
-  {
-    "objectID": "labs/lab1.html",
-    "href": "labs/lab1.html",
-    "title": "Lab 1",
-    "section": "",
-    "text": "The purpose of this lab is to get you working with base R looping functions while also being careful about data types. Your are welcome to work with a partner or in a small group of 3-4 people."
-  },
-  {
-    "objectID": "labs/lab1.html#data-structures",
-    "href": "labs/lab1.html#data-structures",
-    "title": "Lab 1",
-    "section": "Data structures",
-    "text": "Data structures\n\nset.seed(123) # Set random number generation\n\nm &lt;- lm(mpg ~ hp + cyl + drat, mtcars)\n\nl &lt;- list(a = list(m = matrix(1:12, ncol = 3),\n                   v = 1:7),\n          b = data.frame(student = 1:15,\n                         score = rnorm(15, 100, 10)))\n\nRun the above code\n\nFrom the model results:\n\nExtract the qr tolerance (tol).\nExtract the term labels from the model.\n\nhint: Use str to inspect the list. This one is tricky and involves pulling an attribute from an attribute.\n\n\nFrom l\n\nUse at least two different methods to extract m.\nExtract the third column of m. Maintain the dimensions (matrix structure).\nExtract the score for student 7 in the data frame."
-  },
-  {
-    "objectID": "labs/lab1.html#loops",
-    "href": "labs/lab1.html#loops",
-    "title": "Lab 1",
-    "section": "Loops",
-    "text": "Loops\n\nRead in the insurance_coverage.csv file, which is in the data folder in the repo. Split the data file by \"age_bucket\" and \"sex_name\".\nUse a for loop to calculate the mean health care population (hc_pop) for each \"age_bucket\"/\"sex_name\" combination.\nReplicate this calculation with lapply, sapply, and vapply\nProduce separate plots showing the change in hc_pop from 2014 to 2015 for each \"age_bucket\"/\"sex_name\" combination (with a single loop). Set the hc_pop axis so the limits equal the overall minimum and maximum values for hc_pop.\nUse a for loop to save the plots to a folder on your computer"
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "This course includes three labs (20 points each), a take-home Midterm test (70 points), and a take-home Final exam (70 points).\nAssignments\nPoints\nPercent\n\n\n\n\nLabs\n60\n30%\n\n\nMidterm\n70\n35%\n\n\nFinal\n70\n35%\n\n\nTotal\n200"
-  },
-  {
-    "objectID": "assignments.html#labs",
-    "href": "assignments.html#labs",
-    "title": "Assignments",
-    "section": "Labs",
-    "text": "Labs\nEach lab is worth 20 points and is scored on a “best honest effort” basis. Please do not turn in partial work. Instead, please ask for help. Each lab will include dedicated in-class time, but it is expected that most labs will require additional time outside of class. Contact the instructor for help rather than submitting incomplete work. If the assignment is not complete, and you have not contacted me for help, it is likely to result in a partial credit or zero score.\n\n\n\n\n\n\n\n\nDate Assigned\nDate Due\nAssigned\nKey\nPoints\nPercent\n\n\n\n\nApr-06\nApr-13\nLab 1\nKey Lab 1\n20\n10%\n\n\nApr-13\nApr-20\nLab 2\nKey Lab 2\n20\n10%\n\n\nMay-11\nMay-18\nLab 3\nKey Lab 3\n20\n10%"
-  },
-  {
-    "objectID": "assignments.html#midterm",
-    "href": "assignments.html#midterm",
-    "title": "Assignments",
-    "section": "Midterm",
-    "text": "Midterm\nThe take-home Midterm will be completed outside of class time, and responses will be scored on a correct/incorrect basis rather than a “best honest effort”. The Midterm will primarily cover working with and subsetting lists, as well as iterating with {purrr}. The Midterm is worth 70 points (35% of your grade).\n\n\n\n\n\n\n\n\nDate Assigned\nDate Due\nAssigned\nKey\nPoints\nPercent\n\n\n\n\nApr-27\nMay-04\nMidterm Test\nNA\n70\n35%"
-  },
-  {
-    "objectID": "assignments.html#final",
-    "href": "assignments.html#final",
-    "title": "Assignments",
-    "section": "Final",
-    "text": "Final\nThe Final exam is similar to the midterm, in that it will be completed outside of class time, and responses will be scored on a correct/incorrect basis rather than a “best honest effort”. The Final could cover anything covered in this course. The Final is worth 70 points (35% of your grade).\n\n\n\n\n\n\n\n\nDate Assigned\nDate Due\nAssigned\nKey\nPoints\nPercent\n\n\n\n\nJun-01\nJun-08\nFinal Exam\nNA\n70\n35%"
-  },
-  {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
     "title": "Syllabus",
@@ -166,12 +103,5 @@
     "title": "Syllabus",
     "section": "Grievance Policy",
     "text": "Grievance Policy\nA student or group of students of the College of Education may appeal decisions or actions pertaining to admissions, programs, evaluation of performance and program retention and completion. Students who decide to file a grievance should follow University student grievance procedures and/or consult with the College Associate Dean for Academic Affairs: Edward M. Olivos at emolivos@uoregon.edu or 541-346-2983."
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Schedule",
-    "section": "",
-    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdR(2e) Intro\n\n\n\n\n\n\n\n\n\n\n\n\nAdR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdR(2e) 5\n\n\n\n\nLab 1\n\n\n\n\n\n\nAdR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nR4DS(1e) 25\n\n\n\n\nLab 2\nLab 1\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\n\n\nLab 2\n\n\n\n\nAdR(2e) 9.4-9.6\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\n\n\nMidterm Test\n\n\n\n\nAdR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
   }
 ]
