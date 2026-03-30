@@ -1,0 +1,1692 @@
+---
+title: "Functional Programming for Educational Data Science"
+subtitle: "EDLD 653"
+author: "Joe Nese"
+institute: "University of Oregon<br>Spring 2026"
+format:
+  revealjs: 
+    theme: default
+    highlight-style: github
+    incremental: false
+    fig-width: 9
+    fig-height: 3.5
+    scrollable: true
+    slide-number: true
+    embed-resources: true
+execute: 
+  eval: true
+  echo: true
+  warning: false
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+library(knitr)
+library(here)
+library(kableExtra)
+library(gt)
+library(readxl)
+
+table_style <- function(data) {
+  data |>
+    opt_table_lines(extent = "none") |>
+    opt_table_outline(style = "solid", width = px(3), color = "black") |> 
+    tab_options(
+      heading.border.bottom.color = "black",
+      heading.border.bottom.style = "solid",
+      table.border.top.color = "black",
+      table_body.hlines.color = "black",
+      table_body.border.top.color = "black",
+      table_body.border.top.style = "solid",
+      table_body.border.bottom.color = "black",
+      table_body.border.bottom.style = "solid",
+      column_labels.border.bottom.color = "black",
+      column_labels.border.bottom.style = "solid",
+      column_labels.border.top.color = "black",
+      column_labels.background.color = "#009E73",
+      table.width = pct(100),
+      container.width = pct(100)
+    )
+}
+```
+
+# Introduction & <br> Data Types
+
+**Week 1**
+
+## Agenda {.smaller}
+
+- Introductions
+- Syllabus
+- Intro to data types
+
+. . .
+
+**Learning Objectives**
+
+::: {.incremental}
+
+- Understand the requirements of the course
+- Understand the fundamental difference between lists and atomic vectors
+- Understand how atomic vectors are coerced, implicitly or explicitly
+- Understand various ways to subset vectors, and how subsetting differs for lists
+- Understand attributes and how to set/modify
+
+:::
+
+
+## About me {.scrollable .smaller}
+
+-   husband, dad
+-   BA: UC Santa Barbara
+-   PhD, School Psychology: University of Maryland
+-   UO since 2009 at Behavioral Research & Teaching ([BRT](http://brtprojects.org))
+-   Research Professor
+
+**Research**
+
+-   Applied statistical methods used by researchers
+-   Developing and improving systems that support data-based decision making using advanced technologies to influence teachers' instructional practices and increase student achievement
+    -   [CORE](https://jnese.github.io/core-blog/) and [CORE II](https://jnese.github.io/coreprosody)
+    -   Inclusive Skill-building Learning Approach ([ISLA](https://www.neselab.org/isla/))
+
+**Teaching**
+
+- EDLD 651 - Introduction to Data Science with `R`
+- EDLD 653 - this one!
+- EDLD 654 - Applied Machine Learning for Educational Data Scientists
+- EDLD 609 - Data Science Capstone
+
+
+## Introduce yourself!
+
+We mostly know each other, but it's always good to hear from each other
+
+- Name and program of study
+- How and how often are you using `R` these days?
+
+## This course
+
+... is new to me
+
+# Syllabus
+
+## Course Learning Outcomes {.smaller}
+
+* Understand and be able to describe the differences in `R`'s data structures (including the four main vector types, data frames, and lists) and when each is most appropriate for a given task
+* Explore `purrr::map()` and its variants, how they relate to base `R` functions, and why the `{purrr}` variants are often preferable
+* Work with lists and list columns using `purrr::nest()` and `purrr:unnest()`
+* Convert repetitive tasks into functions 
+* Understand elements of good functions, and things to avoid
+* Write effective and clear functions to continue with the mantra of "don't repeat yourself"
+
+## Course Website {.smaller}
+
+<iframe src="https://jnese.github.io/functional-programming_spring-2026/" width="100%" height="600px"></iframe>
+
+::: aside
+[**https://jnese.github.io/functional-programming_spring-2026/**](https://jnese.github.io/functional-programming_spring-2026/)
+:::
+
+## Required Textbooks (free)
+
+![https://adv-r.hadley.nz](https://adv-r.hadley.nz/cover.png)
+
+## Other books (also free)
+
+:::: {.columns}
+
+::: {.column width="33%"}
+![https://r4ds.hadley.nz/](https://r4ds.hadley.nz/cover.jpg)
+:::
+
+::: {.column width="34%"}
+![https://r4ds.had.co.nz/index.html](https://r4ds.had.co.nz/cover.png)
+:::
+
+::: {.column width="33%"}
+![https://mastering-shiny.org/](https://mastering-shiny.org/cover.png)
+:::
+
+::::
+
+## Course Sequence
+
++ Data types
++ Base `R` iterations
++ `{purrr}`
++ Batch processes and working with list columns
++ Parallel iterations (and a few extras)
++ Writing functions
++ Shiny
+
+## Assignments
+
+```{r}
+#| echo: false
+tibble::tribble(
+     ~Assignments, ~Points, ~Percent,
+  "Labs (x3)",    60L, "30%",
+  "Midterm", 70L, "35%",
+  "Final",   70L, "35%",
+  "Total",   200L, ""
+  ) |> 
+  gt() |> 
+  table_style()
+```
+
+## Grading Components
+
+```{r}
+#| echo: false
+#| fig-width: 5
+
+read_csv(here("rubrics", "grades_rubric.csv")) |> 
+  mutate(across(everything(), ~ifelse(is.na(.), "", .))) |> 
+  gt() |> 
+#  gt::tab_header(title = md("**Grading Components**")) |> 
+  table_style()
+  
+
+```
+
+## Labs {.smaller}
+
+Please try to be in-class on Lab days, it helps me help you
+
+```{r}
+#| echo: false
+read_xlsx(here::here("nopublish", "schedule.xlsx"), sheet = "assignments") |>
+  filter(type == "lab") |>
+  mutate(across(starts_with("Date"), ~format(as.Date(.), "%b-%d"))) |> 
+  select(Assigned, `Date Assigned`, `Date Due`, Points, Percent) |>
+  gt() |> 
+  table_style()
+```
+
+-   Scored on a "best honest effort" basis
+    - Contact me for help rather than submitting incomplete work
+    - If the assignment is not complete, and you have not contacted me for help, it is likely to result in partial credit or zero score
+- You **can** work in groups on these
+- Late: 10 points max
+- \>1 week late: 0 points
+
+## Midterm
+
+- Take-home Midterm test
+    - Write loops to solve problems
+- Scored on a correct/incorrect basis 
+- Worth 70 points (35% of your grade)
+
+## Final Exam 
+
+- Take-home Final exam
+    - Anything covered in this course is fair game
+- Scored on a correct/incorrect basis 
+- Worth 70 points (35% of your grade)
+
+
+## Feedback
+
+* I will give you feedback on the midterm and the final
+* Labs scored on a completion basis
+* We will go over everything in class
+
+## GenAI Use {.smaller}
+
+- Best use of GenAI might be for coding!
+- Use to help with coursework and assignments
+    + code checking 
+    + code generation
+    + code explanation
+- **If** you include any content generated GenAI, you **must** cite it
+- The same way that you must cite any content you use from other sources, such as books, articles, videos, the internet, etc.
+- See example in syllabus
+
+> The code was generated by ChatGPT 4.5. See the link for a copy of the prompt. https://chatgpt.com/share/somerandomestringoftext
+
+# Break?
+
+# Basic Data Types
+
+## Vectors
+
+4 basic types^[Note there are two others (complex and raw), but we almost never care about them]
+
+* Integer (numeric, whole number)
+* Double (numeric, decimal)
+* Logical
+* Character
+
+## Creating vectors
+
+Vectors are created with `c()`
+
+Below are examples of each of the four main types of vectors
+
+```{r vector-types}
+#| code-line-numbers: "1|3|5|7"
+
+integer <- c(5L, 7L, 3L, 94L) # L explicitly an integer, not double
+
+double <- c(3.27, 8.41, Inf, -Inf)
+
+logical <- c(TRUE, TRUE, TRUE, FALSE, TRUE, FALSE, FALSE)
+
+character <- c("red", "orange", "yellow", "green", "blue", "violet", "rainbow")
+```
+
+## Coercion {.smaller}
+
+* Vectors **must** be of the same type 
+* If you try to mix types, **implicit coercion** will occur
+* **Implicit coercion** defaults to the most flexible type
+  + which is... ?
+
+. . .
+
+```{r}
+c(7L, 3.25)
+```
+
+. . .
+
+```{r}
+c(3.24, TRUE, "April")
+```
+
+. . .
+
+```{r }
+c(TRUE, 5)
+```
+
+## Explicit coercion
+
+You can alternatively define the coercion to occur
+
+```{r}
+as.integer(c(7L, 3.25))
+```
+
+. . .
+
+```{r}
+as.logical(c(3.24, TRUE, "April"))
+```
+
+. . .
+
+```{r}
+as.character(c(TRUE, 5)) # still maybe a bit unexpected?
+```
+
+## Review
+
+Discuss in small breakout groups
+
+* What are the four basic types of atomic vectors?
+* What function creates a vector?
+* **True**/**False**: An `R` list is not a vector.
+* What is the fundamental difference between a matrix and a data frame?
+* What does *coercion* mean, and when does it come into play?
+
+`r countdown::countdown(minutes = 4, top = 0)`
+
+## Checking types
+
+Use `typeof` to verify the type of vector
+
+```{r typeof}
+typeof(c(7L, 3.25))
+typeof(as.integer(c(7L, 3.25)))
+```
+
+## Coercing to logical
+
+```{r }
+as.logical(c(0, 1, 1, 0))
+```
+
+. . .
+
+Any number that is not zero gets coerced to `TRUE`
+
+```{r }
+as.logical(c(0, 5L, 7.4, -1.6, 0))
+```
+
+. . .
+
+```{r }
+as.logical(c(3.24, TRUE, "April"))
+```
+
+Wait...why the `NA`s here?
+
+## Piping
+
+Although traditionally used within the `{tidyverse}`, it can still be useful
+
+The following are equivalent
+
+```{r pipe}
+#| message: false
+typeof(as.integer(c(7L, 3.25)))
+
+c(7L, 3.25) |>
+  as.integer() |>
+  typeof()
+```
+
+
+## Pop quiz
+
+Without actually running the code, predict which type each of the following will coerce to.
+
+```{r imp-coerce2-echo}
+#| eval: false
+c(1.25, TRUE, 4L)
+
+c(1L, FALSE)
+
+c(7L, 6.23, "eight")
+
+c(TRUE, 1L, 0L, "False")
+```
+
+`r countdown::countdown(minutes = 1)`
+
+## Answers
+
+```{r}
+#| output-location: fragment
+typeof(c(1.25, TRUE, 4L))
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+typeof(c(1L, FALSE))
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+typeof(c(7L, 6.23, "eight"))
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+typeof(c(TRUE, 1L, 0L, "False"))
+```
+
+## Lists
+
+* Lists are vectors, but not *atomic* vectors
+
+* Fundamental difference - each element **can** be a different type
+
+. . .
+
+```{r}
+list("a", 7L, 3.25, TRUE)
+```
+
+## Lists
+
+:::: {.columns}
+::: {.column width="50%"}
+
+* Each element of the list is another vector, possibly atomic, possibly not
+* The prior example included all *scalar* vectors
+    + vector that contains only a single value
+* Lists do not require all elements to be the same length
+
+:::
+
+::: {.column width="50%"}
+
+```{r }
+list(
+  c("a", "b", "c"),
+  rnorm(5),
+  c(7L, 2L),
+  c(TRUE, TRUE, FALSE, TRUE)
+)
+```
+
+:::
+
+::::
+
+## Summary
+
+* **Atomic vectors** must all be the same type
+    + **implicit coercion** occurs if not (and you haven't specified the **coercion explicitly**)
+* Lists are also vectors, but **not** atomic vectors
+    + Each element can be of a different type and length
+    + Incredibly flexible, but often a little more difficult to get the hang of
+
+## Challenge
+
+### Work with a partner
+
+
+One of you share your screen: 
+
+(1) Create four atomic vectors, one for each of the fundamental types
+    + integer, double, logical, character
+(2) Combine two or more of the vectors. Predict the implicit coercion of each
+(3) Apply explicit coercions, and predict the output for each
+
+(basically quiz each other)
+
+`r countdown::countdown(minutes = 5)`
+
+# Attributes
+
+## Attributes
+
+::: {.incremental}
+**Q**: What are attributes?
+: **A**: metadata
+
+**Q**: What's metadata?
+: **A**: Data about the data
+
+Attributes
+: named list of arbitrary metadata
+
+:::
+
+## Other data types {.smaller}
+
+Atomic vectors by themselves make up only a small fraction of the total number of data types in `R`
+
+. . .
+
+Other data types
+
+::: {.incremental}
+- Data frames 
+- Matrices & arrays 
+- Factors 
+- Dates 
+:::
+
+. . .
+
+Remember, atomic vectors are the atoms of `R`. Many other data structures are built from atomic vectors. 
+
+We use attributes to create other data types from atomic vectors.
+
+
+## Attributes
+
+:::: {.columns}
+::: {.column width="50%"}
+Common
+  
+  + Names
+  + Dimensions
+
+:::
+
+::: {.column width="50%"}
+Less common
+
+  + Arbitrary metadata
+
+:::
+
+::::
+
+## Examples
+
+[**Please follow along!**]{style="color:#009E73;"}
+
+```{r}
+library(palmerpenguins)
+penguins
+```
+
+## `attributes()`
+
+[**Please follow along!**]{style="color:#009E73;"}
+
+`attributes()`: see **all** attributes associated with an object 
+
+```{r}
+#| output-location: fragment
+attributes(penguins[1:20, ]) # limiting rows just for slides
+```
+
+
+## `attr()`
+
+Access a single attribute by naming it within `attr()` 
+
+```{r}
+#| output-location: fragment
+attr(penguins, "class")
+```
+
+
+```{r}
+#| output-location: fragment
+attr(penguins, "names")
+```
+
+. . .
+
+Note - this is not generally how you would pull these attributes. Rather, you would use `class()` and `names()` 
+
+## Be specific
+
+* Note in the prior slides, I'm asking for attributes on the entire data frame
+
+* But the individual vectors may have attributes as well
+
+. . .
+
+```{r attr-species}
+attributes(penguins$species)
+attributes(penguins$bill_length_mm)
+```
+
+
+## Set attributes {.smaller}
+
+Redefine attributes within `attr()`
+
+```{r attr-redefine}
+#| output-location: fragment
+attr(penguins$species, "levels") <- c("Big one", 
+                                      "Little one", 
+                                      "Funny one")
+
+head(penguins)
+```
+
+. . .
+
+Note - you would generally not define `levels` this way either, but it is a general method for modifying attributes
+
+## Dimensions
+
+Let's create a matrix (please do it with me)
+
+- Notice how the matrix fills
+
+```{r mat1}
+m <- matrix(1:6, ncol = 2)
+m
+```
+
+
+. . .
+
+Check out the attributes
+
+```{r mat1-attributes}
+attributes(m)
+```
+
+## Modify the attributes
+
+Let's change it to a 2 x 3 matrix, instead of 3 x 2 (you try first)
+
+. . .
+
+```{r mat1-modify-attr}
+attr(m, "dim") <- c(2, 3)
+m
+```
+
+. . .
+
+Is this the result you expected?
+
+## Alternative creation
+
+Create an atomic vector `v`, assign a dimension attribute
+
+```{r v-to-m}
+v <- 1:6
+v
+```
+
+. . .
+
+```{r}
+attr(v, "dim") <- c(3, 2)
+v
+```
+
+## Quick aside {.smaller}
+
+What if we wanted it to fill by row?
+
+:::: {.columns}
+::: {.column width="50%"}
+
+```{r by-row1}
+#| code-line-numbers: "|3"
+
+matrix(6:13, 
+       ncol = 2, 
+       byrow = TRUE)
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+vect <- 6:13
+dim(vect) <- c(2, 4)
+vect
+```
+
+```{r by-row2}
+t(vect)
+```
+
+:::
+
+::::
+
+## Names
+
+The following are equivalent 
+
+::: {.panel-tabset}
+
+### list names
+
+```{r dimnames1}
+dim_names <- list(
+    c("the first", "second", "III"),
+    c("index", "value")
+  )
+
+attr(v, "dimnames") <- dim_names
+v
+```
+
+### rownames/colnames
+
+```{r dimnames2}
+v2 <- 1:6
+attr(v2, "dim") <- c(3, 2)
+rownames(v2) <- c("the first", "second", "III")
+colnames(v2) <- c("index", "value")
+v2
+```
+
+:::
+
+## Remove names
+
+You can remove names from a vector in two ways
+
+1. `x <- unname(x)` 
+2. `names(x) <- NULL`
+
+## Arbitrary metadata
+
+```{r }
+attr(v, "matrix_mean") <- mean(v)
+v
+attr(v, "matrix_mean")
+```
+
+. . .
+
+Note that *anything* can be stored as an attribute (including matrices or data frames, etc.)
+
+## Why would we do this?
+
+A brief example
+
+* Imagine we're accessing a database that has many years of data
+* The tables in the database are the same, but the values (of course) differ
+* We might want to return the data, but store the year as an attribute
+
+This will be a complex example, but stick with me
+
+## Made up data {.smaller}
+
+I'm using a list to mimic a database
+
+```{r }
+db <- list(
+  data.frame(
+    color = c("red", "orange", "green"),
+    transparency = c(0.80, 0.65, 0.93)
+  ),
+  data.frame(
+    color = c("blue", "pink", "cyan"),
+    transparency = c(0.40, 0.35, 0.87)
+  )
+)
+db
+```
+
+
+## Write a function
+
+Let's write a function that grabs one of these tables. 
+
+If it's "1920" we'll grab the first one, otherwise we'll grab the second one
+
+```{r }
+pull_color_data <- function(year) {
+  to_pull <- if(year == "1920") {
+    out <- db[[1]]
+  } else {
+    out <- db[[2]]
+  }
+  out
+}
+```
+
+## Does it work?
+
+
+```{r }
+pull_color_data(1920)
+pull_color_data(2021)
+pull_color_data(2122)
+```
+
+. . .
+
+Yes!
+
+## Build a second function
+
+Let's say we want to make a second function that does something with the previous output.
+
+::: {.incremental}
+
+**BUT**
+
+- What we do with it is going to depend on the data frame we get back.
+- We need to know the year.
+- So: Modify our original function to store the year as an attribute!
+
+:::
+
+## Update function
+
+Notice we redefine the attributes so we're including all the prior attributes it already had
+
+```{r }
+#| code-line-numbers: "|7-10"
+pull_color_data <- function(year) {
+  to_pull <- if(year == "1920") {
+    out <- db[[1]]
+  } else {
+    out <- db[[2]]
+  }
+  attributes(out) <- c(
+    attributes(out),
+    db = year 
+  ) 
+  out
+}
+```
+
+## Try
+
+```{r }
+pull_color_data(1920)
+attr(pull_color_data(2021), "db")
+```
+
+## Build our second function
+
+Now, we can make our second function, and have it do something different depending on the data that is passed to it.
+
+. . .
+
+```{r label}
+print_colors <- function(color_data) {
+  title <- paste0("Colors for ", attr(color_data, "db")) 
+  colorspace::swatchplot(color_data$color)
+  mtext(title) # base plotting function
+}
+```
+
+
+##
+
+```{r }
+pull_color_data(1920) |> 
+  print_colors()
+```
+
+##
+
+```{r }
+pull_color_data(2021) |> 
+  print_colors()
+```
+
+## Another example {visibility="hidden"}
+
+Fit a multilevel model and pull the variance-covariance matrix
+
+```{r }
+m <- lme4::lmer(Reaction ~ 1 + Days + (1 + Days|Subject), 
+                data = lme4::sleepstudy)
+
+lme4::VarCorr(m)$Subject
+```
+
+## Matrices vs Data frames {.smaller}
+
+Usually we want to work with data frames because they represent our data better
+
+Sometimes a matrix is more efficient because you can operate on the **entire** matrix at once
+
+. . .
+
+```{r }
+#| output-location: fragment
+set.seed(3000)
+m <- matrix(rnorm(100, 200, 10), ncol = 10)
+m
+```
+
+##
+
+```{r}
+#| output-location: fragment
+sum(m)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+mean(m)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+rowSums(m)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+colSums(m)
+```
+
+. . .
+
+```{r}
+# standardize the matrix
+z <- (m - mean(m)) / sd(m)
+z
+```
+
+## Stripping attributes
+
+Many operations will strip attributes (which makes storing important things in them a bit precarious)
+
+```{r stripped1}
+v
+rowSums(v)
+```
+
+. . .
+
+```{r stripped2}
+attributes(rowSums(v))
+```
+
+. . .
+
+* Generally `names` are maintained
+
+* Sometimes, `dim` is maintained, sometimes not 
+
+* All else is stripped
+
+## More on `names()`
+
+The `names` attribute corresponds to the individual elements within a vector
+
+```{r names1}
+names(v)
+names(v) <- letters[1:6]
+v
+```
+
+## More on `names()`
+
+Perhaps more straightforward
+
+```{r names2}
+v3a <- c(a = 5, b = 7, c = 12)
+v3a
+names(v3a)
+attributes(v3a)
+```
+
+## `names()` alternatives
+
+```{r names3}
+v3b <- c(5, 7, 12)
+names(v3b) <- c("a", "b", "c")
+v3b
+```
+
+. . .
+
+```{r}
+v3c <- setNames(c(5, 7, 12), c("a", "b", "c"))
+v3c
+```
+
+. . .
+
+* Note that `names()` is **not** the same thing as `colnames()`, but, somewhat confusingly, both work to rename the variables (columns) of a data frame. We'll talk more about why this is
+
+
+## Why names might be helpful
+
+Subsetting
+
+```{r}
+v
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+
+```{r}
+v["b"]
+```
+:::
+
+::: {.column width="50%"}
+
+```{r }
+v["e"]
+```
+:::
+
+::::
+
+## Implementation of factors
+
+```{r factor}
+fct <- factor(c("a", "a", "b", "c"))
+typeof(fct)
+```
+
+. . .
+
+Weird! `Factors` are built  on `integer` vectors
+
+. . .
+
+```{r}
+attributes(fct)
+```
+
+. . .
+
+```{r}
+str(fct)
+```
+
+## More manually
+
+```{r }
+# First create integer vector
+int <- c(1L, 1L, 2L, 3L, 1L, 3L)
+
+# assign some levels
+attr(int, "levels") <- c("red", "green", "blue")
+
+# change the class to a factor
+class(int) <- "factor"
+
+int
+```
+
+## This can make things tricky
+
+```{r }
+age <- factor(sample(c("baby", 1:10), 100, replace = TRUE))
+str(age)
+age
+```
+
+. . .
+
+What if we wanted to convert this to numeric?
+
+##
+
+```{r }
+data.frame(age) |> 
+  count(age) |> 
+  mutate(age_numeric = as.numeric(age)) |> 
+  select(starts_with("age"), n)
+```
+
+. . .
+
+These are the integers associated with the factor levels, so `as.numeric()` will not give us the results we want
+
+## Fix
+
+First convert to character, then to numeric (you can ignore the warning in this case)
+
+```{r }
+#| warning: true
+data.frame(age) |> 
+  mutate(
+    age_chr = as.character(age),
+    age_num = ifelse(age_chr == "baby", 0, as.numeric(age_chr))
+  ) |> 
+  count(age, age_chr, age_num)
+```
+
+## Fix
+
+Or baby to `NA`
+
+```{r }
+#| warning: true
+data.frame(age) |> 
+  mutate(
+    age_chr = as.character(age),
+    age_num = as.numeric(age_chr)
+  ) |> 
+  count(age, age_chr, age_num)
+```
+
+## Implementation of dates {.smaller}
+
+```{r dates}
+date <- Sys.Date()
+typeof(date)
+```
+
+. . .
+
+Huh?
+
+Dates are built on top of `double` vectors <br> (weird, like factors are built on `integer` vectors)
+
+. . .
+
+```{r}
+attributes(date)
+```
+
+. . .
+
+```{r}
+attributes(date) <- NULL
+date
+```
+
+* This number represents the days passed since January 1, 1970, known as the [Unix epoch](https://en.wikipedia.org/wiki/Unix_time)
+
+. . .
+
+```{r}
+unclass(as.Date("1970-01-02"))
+```
+
+
+
+## A bit more on classes
+
+Why do these all print different things?
+
+:::: {.columns}
+
+::: {.column width="50%" .fragment}
+```{r }
+summary(mtcars[, 1:2])
+summary(gss_cat$marital)
+```
+:::
+
+::: {.column width="50%" .fragment}
+
+```{r }
+m <- lm(mpg ~ cyl, mtcars)
+summary(m)
+```
+:::
+
+::::
+
+
+## What are the classes?
+
+```{r }
+class(mtcars[, 1:2])
+```
+
+. . .
+
+```{r }
+class(gss_cat$marital)
+```
+
+. . .
+
+```{r }
+class(m)
+```
+
+## S3 methods
+
+When you call `summary()`, it looks for a method (function) for that specific class
+
+:::{.incremental}
+- `summary(mtcars[, 1:2])` becomes <br> `summary.data.frame(mtcars[, 1:2])`
+- `summary(gss_cat$marital)` becomes <br> `summary.factor(gss_cat$marital)`
+- `summary(m)` becomes <br> `summary.lm(m)`
+:::
+
+## Quick aside {.smaller}
+
+Too briefly, S3 allows functions to behave differently depending on the class of the objects they are given 
+
+. . .
+
+**Naming function**
+
+Because S3 is so common in `R`, I recommend against including dots `.` in function names
+
+. . .
+
+`summary.data.frame()` is less clear than it would be if it were `summary.data_frame()`
+
+. . .
+
+Classes and methods is not something I'm going to expect you to have a deep knowledge on, but I want you to be aware of it
+
+
+## Missing values {.smaller}
+
+Missing values beget missing values
+
+```{r}
+#| output-location: fragment
+NA > 5
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+NA * 7
+```
+
+. . .
+
+I like this one
+
+```{r}
+#| output-location: fragment
+!NA
+```
+
+. . .
+
+What about this one?
+
+```{r missing2}
+#| output-location: fragment
+
+NA == NA
+```
+
+. . .
+
+It is correct because there's no reason to presume that one missing value is or is not equal to another missing value
+
+## When missing values don't propagate
+
+```{r}
+NA | TRUE
+```
+
+. . .
+
+```{r}
+x <- c(NA, 3, NA, 5)
+any(x > 4)
+```
+
+. . .
+
+```{r}
+any(x > 6)
+```
+
+## How to test missingness?
+
+We've already seen the following doesn't work
+
+```{r missing3}
+x == NA
+```
+
+. . .
+
+Instead, use `is.na()`
+
+```{r missing4}
+is.na(x)
+```
+
+## Different `NA`s?
+
+Technically there are four missing values, one for each of the atomic types: 
+
+- `NA` (logical) 
+- `NA_integer_` (integer)
+- `NA_real_` (double) 
+- `NA_character_` (character)
+
+This distinction is usually unimportant because `NA` will be automatically coerced to the correct type when needed
+
+# Lists
+
+## Lists {.smaller}
+
+* Lists are vectors, but not *atomic* vectors
+* Fundamental difference - each element can be a different type
+
+```{r}
+list("a", 7L, 3.25, TRUE)
+```
+
+. . .
+
+Sneak peak at future content
+
+```{r }
+lapply(list("a", 7L, 3.25, TRUE), class)
+```
+
+## Lists
+
+* Technically, each element of the list is a vector, possibly atomic
+* The prior example included all *scalars*, which are vectors of length 1
+* Lists do not require all elements to be the same length
+
+##
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r }
+l <- list(
+  c("a", "b", "c"),
+  rnorm(5),
+  c(7L, 2L),
+  c(TRUE, TRUE, FALSE, TRUE)
+)
+l
+```
+
+:::
+
+::: {.column width="50%"}
+
+Check the list
+
+```{r list-attr}
+typeof(l)
+attributes(l)
+str(l)
+```
+
+:::
+
+::::
+
+## Data frames as lists
+
+A data frame is just a special case of a list, where all the elements are of the same length.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r list-df1}
+l_df <- list(
+  a = c("red", "blue"),
+  b = rnorm(2),
+  c = c(7L, 2L),
+  d = c(TRUE, FALSE)
+)
+l_df
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r list-df2}
+data.frame(l_df)
+```
+
+:::
+
+::::
+
+# Subsetting Lists
+
+## A nested list {.smaller}
+
+Lists are often complicated objects. Let's create a somewhat complicated one
+
+```{r }
+#| output-location: fragment
+x <- c(a = 3, b = 5, c = 7)
+l <- list(
+  x = x,
+  x2 = c(x, x),
+  x3 = list(
+    vect = x,
+    squared = x^2,
+    cubed = x^3)
+)
+l
+```
+
+## Subsetting lists {.smaller}
+
+Multiple methods
+
+* Most common: `$`, `[`, and `[[`
+
+```{r subset-lists-left}
+l[1]
+typeof(l[1])
+```
+. . .
+```{r}
+l[[1]]
+typeof(l[[1]])
+```
+. . .
+```{r}
+l[[1]]["c"]
+```
+
+## Which bracket to use?
+
+:::: {.columns}
+
+::: {.column width="25%"}
+x
+![](https://r4ds.had.co.nz/images/pepper.jpg)
+:::
+
+::: {.column width="25%"}
+x[1]
+![](https://r4ds.had.co.nz/images/pepper-1.jpg)
+:::
+
+::: {.column width="25%"}
+x[[1]]
+![](https://r4ds.had.co.nz/images/pepper-2.jpg)
+:::
+
+::: {.column width="25%"}
+
+x[[1]][[1]]
+![](https://r4ds.had.co.nz/images/pepper-3.jpg)
+:::
+
+::::
+
+::: aside
+[r4DS](https://r4ds.had.co.nz/vectors.html?q=list#lists-of-condiments)
+:::
+
+## Another analogy
+
+![](https://d33wubrfki0l68.cloudfront.net/1f648d451974f0ed313347b78ba653891cf59b21/8185b/diagrams/subsetting/train.png)
+
+. . . 
+
+![](https://d33wubrfki0l68.cloudfront.net/aea9600956ff6fbbc29d8bd49124cca46c5cb95c/28eaa/diagrams/subsetting/train-single.png)
+
+::: aside
+[Advanced-R](https://adv-r.hadley.nz/subsetting.html)
+:::
+
+## Named list
+
+Because the elements of the list are named, we can also use `$`, just like with a data frame (which is a list)
+
+```{r dollar-subset}
+l$x2
+l$x3
+```
+
+## Subsetting nested lists
+
+Multiple `$` if all are named
+
+```{r dollar-subset-nested}
+l$x3$squared
+```
+
+. . .
+
+Note this doesn't work on named elements of an atomic vector, just the named elements of a list
+
+```{r dollar-subset-error, error = TRUE}
+l$x3$squared$b
+```
+
+. . .
+
+but we could do something like...
+
+```{r dollar-subset-success}
+l$x3$squared["b"]
+```
+
+## Alternatives
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* You can use logical
+
+```{r alternative-subset-list1}
+l[c(TRUE, FALSE, TRUE)]
+```
+:::
+
+::: {.column width="50%"}
+
+* Indexing works too
+
+```{r alternative-subset-list2}
+l[c(1, 3)]
+```
+
+:::
+
+::::
+
+## Careful with your brackets
+
+```{r bracket-fail, error = TRUE}
+l[[c(TRUE, FALSE, FALSE)]]
+```
+
+* Why doesn't the above work?
+
+## Subsetting in multiple dimensions
+
+* Generally we deal with 2d data frames
+
+* If there are two dimensions, we separate the `[]` subsetting with a comma `[row, column]`
+
+```{r head-mtcars}
+head(mtcars)
+mtcars[3, 4]
+```
+
+## Empty indicators
+
+An empty indicator implies "all"
+
+. . .
+
+- Select the entire 4th column
+
+```{r mtcars-col4}
+mtcars[ ,4]
+```
+
+- Select the entire 4th row
+
+```{r mtcars-row4}
+mtcars[4, ]
+```
+
+## Data types returned
+
+By default, each of the prior will return a vector, which itself can be subset
+
+The following are equivalent
+
+```{r mtcars-row4-mpg1}
+mtcars[4, c("mpg", "hp")]
+```
+
+```{r mtcars-row4-mpg2}
+mtcars[4, ][c("mpg", "hp")]
+```
+
+## Return a data frame {.smaller}
+
+Often, you don't want the vector returned, but rather the modified data frame. 
+
+* Specify `drop = FALSE`
+
+```{r drop-false}
+mtcars[ ,4]
+mtcars[ ,4, drop = FALSE]
+```
+
+## tibbles {.smaller}
+
+Note dropping the data frame attribute is the default for a `data.frame` but **NOT** a `tibble`
+
+:::: {.columns}
+
+::: {.column width="50%" .fragment}
+
+Maintains data frame
+```{r tibble-nodrop-att}
+mtcars_tbl <- tibble::as_tibble(mtcars)
+mtcars_tbl[ ,4]
+```
+
+:::
+
+::: {.column width="50%"  .fragment}
+
+You can override this
+
+```{r}
+mtcars_tbl[ ,4, drop = TRUE]
+```
+
+:::
+
+::::
+
+## More than two dimensions
+
+Depending on your applications, you may not run `array`s much
+
+```{r array}
+array <- 1:12
+dim(array) <- c(2, 3, 2)
+array
+```
+
+## Subset array
+
+Select just the second matrix
+
+```{r array-select-mat}
+array[ , ,2]
+```
+
+. . .
+
+Select first column of each matrix
+
+```{r array-select-col}
+array[ ,1, ]
+```
+
+## Back to lists {.smaller}
+
+Why are lists so useful?
+
+* Much more flexible
+* Often returned by functions, for example, `lm`
+
+```{r lm1}
+#| output-location: fragment
+m <- lm(mpg ~ hp, mtcars)
+str(m)
+```
+
+## Summary
+
+* Atomic vectors must all be the same type
+    + implicit coercion occurs if not (and you haven't specified the coercion explicitly)
+* Lists are also vectors, but not atomic vectors
+    + Each element can be of a different type and length
+    + Incredibly flexible, but often a little more difficult to get the hang of, particularly with subsetting
+
+# Next time
+
+## Before next class
+
+- Readings
+    + [AdvR(2e) 5](https://adv-r.hadley.nz/control-flow.html)
+- Week 1 Readings (if you haven't aready)
+    + [AdvR(2e) Intro](https://adv-r.hadley.nz/fp.html)
+    + [AdvR(2e) 3](https://adv-r.hadley.nz/vectors-chap.html)
+
+

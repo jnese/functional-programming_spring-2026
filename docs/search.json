@@ -103,5 +103,705 @@
     "title": "Syllabus",
     "section": "Grievance Policy",
     "text": "Grievance Policy\nA student or group of students of the College of Education may appeal decisions or actions pertaining to admissions, programs, evaluation of performance and program retention and completion. Students who decide to file a grievance should follow University student grievance procedures and/or consult with the College Associate Dean for Academic Affairs: Edward M. Olivos at emolivos@uoregon.edu or 541-346-2983."
+  },
+  {
+    "objectID": "slides/w1.html#agenda",
+    "href": "slides/w1.html#agenda",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Agenda",
+    "text": "Agenda\n\nIntroductions\nSyllabus\nIntro to data types\n\n\nLearning Objectives\n\nUnderstand the requirements of the course\nUnderstand the fundamental difference between lists and atomic vectors\nUnderstand how atomic vectors are coerced, implicitly or explicitly\nUnderstand various ways to subset vectors, and how subsetting differs for lists\nUnderstand attributes and how to set/modify"
+  },
+  {
+    "objectID": "slides/w1.html#about-me",
+    "href": "slides/w1.html#about-me",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "About me",
+    "text": "About me\n\nhusband, dad\nBA: UC Santa Barbara\nPhD, School Psychology: University of Maryland\nUO since 2009 at Behavioral Research & Teaching (BRT)\nResearch Professor\n\nResearch\n\nApplied statistical methods used by researchers\nDeveloping and improving systems that support data-based decision making using advanced technologies to influence teachers’ instructional practices and increase student achievement\n\nCORE and CORE II\nInclusive Skill-building Learning Approach (ISLA)\n\n\nTeaching\n\nEDLD 651 - Introduction to Data Science with R\nEDLD 653 - this one!\nEDLD 654 - Applied Machine Learning for Educational Data Scientists\nEDLD 609 - Data Science Capstone"
+  },
+  {
+    "objectID": "slides/w1.html#introduce-yourself",
+    "href": "slides/w1.html#introduce-yourself",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Introduce yourself!",
+    "text": "Introduce yourself!\nWe mostly know each other, but it’s always good to hear from each other\n\nName and program of study\nHow and how often are you using R these days?"
+  },
+  {
+    "objectID": "slides/w1.html#this-course",
+    "href": "slides/w1.html#this-course",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "This course",
+    "text": "This course\n… is new to me"
+  },
+  {
+    "objectID": "slides/w1.html#course-learning-outcomes",
+    "href": "slides/w1.html#course-learning-outcomes",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Course Learning Outcomes",
+    "text": "Course Learning Outcomes\n\nUnderstand and be able to describe the differences in R’s data structures (including the four main vector types, data frames, and lists) and when each is most appropriate for a given task\nExplore purrr::map() and its variants, how they relate to base R functions, and why the {purrr} variants are often preferable\nWork with lists and list columns using purrr::nest() and purrr:unnest()\nConvert repetitive tasks into functions\nUnderstand elements of good functions, and things to avoid\nWrite effective and clear functions to continue with the mantra of “don’t repeat yourself”"
+  },
+  {
+    "objectID": "slides/w1.html#course-website",
+    "href": "slides/w1.html#course-website",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Course Website",
+    "text": "Course Website\n\n\n\n\nhttps://jnese.github.io/functional-programming_spring-2026/"
+  },
+  {
+    "objectID": "slides/w1.html#required-textbooks-free",
+    "href": "slides/w1.html#required-textbooks-free",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Required Textbooks (free)",
+    "text": "Required Textbooks (free)\n\nhttps://adv-r.hadley.nz"
+  },
+  {
+    "objectID": "slides/w1.html#other-books-also-free",
+    "href": "slides/w1.html#other-books-also-free",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Other books (also free)",
+    "text": "Other books (also free)\n\n\n\n\n\nhttps://r4ds.hadley.nz/\n\n\n\n\n\n\nhttps://r4ds.had.co.nz/index.html\n\n\n\n\n\n\nhttps://mastering-shiny.org/"
+  },
+  {
+    "objectID": "slides/w1.html#course-sequence",
+    "href": "slides/w1.html#course-sequence",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Course Sequence",
+    "text": "Course Sequence\n\nData types\nBase R iterations\n{purrr}\nBatch processes and working with list columns\nParallel iterations (and a few extras)\nWriting functions\nShiny"
+  },
+  {
+    "objectID": "slides/w1.html#assignments",
+    "href": "slides/w1.html#assignments",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Assignments",
+    "text": "Assignments\n\n\n\n\n\n\n\n\nAssignments\nPoints\nPercent\n\n\n\n\nLabs (x3)\n60\n30%\n\n\nMidterm\n70\n35%\n\n\nFinal\n70\n35%\n\n\nTotal\n200"
+  },
+  {
+    "objectID": "slides/w1.html#grading-components",
+    "href": "slides/w1.html#grading-components",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Grading Components",
+    "text": "Grading Components\n\n\n\n\n\n\n\n\nLower %\nLower point range\nGrade\nUpper point range\nUpper %\n\n\n\n\n97\n194 or more\nA+\n\n\n\n\n93\n186\nA\n192\n96\n\n\n90\n180\nA-\n184\n92\n\n\n87\n174\nB+\n178\n89\n\n\n83\n166\nB\n172\n86\n\n\n80\n160\nB-\n164\n82\n\n\n77\n154\nC+\n158\n79\n\n\n73\n146\nC\n152\n76\n\n\n70\n140\nC-\n144\n72\n\n\n\n\nF\n138 or less\n69"
+  },
+  {
+    "objectID": "slides/w1.html#labs",
+    "href": "slides/w1.html#labs",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Labs",
+    "text": "Labs\nPlease try to be in-class on Lab days, it helps me help you\n\n\n\n\n\n\n\n\nAssigned\nDate Assigned\nDate Due\nPoints\nPercent\n\n\n\n\nLab 1\nApr-06\nApr-13\n20\n10%\n\n\nLab 2\nApr-13\nApr-20\n20\n10%\n\n\nLab 3\nMay-11\nMay-18\n20\n10%\n\n\n\n\n\n\n\n\nScored on a “best honest effort” basis\n\nContact me for help rather than submitting incomplete work\nIf the assignment is not complete, and you have not contacted me for help, it is likely to result in partial credit or zero score\n\nYou can work in groups on these\nLate: 10 points max\n&gt;1 week late: 0 points"
+  },
+  {
+    "objectID": "slides/w1.html#midterm",
+    "href": "slides/w1.html#midterm",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Midterm",
+    "text": "Midterm\n\nTake-home Midterm test\n\nWrite loops to solve problems\n\nScored on a correct/incorrect basis\nWorth 70 points (35% of your grade)"
+  },
+  {
+    "objectID": "slides/w1.html#final-exam",
+    "href": "slides/w1.html#final-exam",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Final Exam",
+    "text": "Final Exam\n\nTake-home Final exam\n\nAnything covered in this course is fair game\n\nScored on a correct/incorrect basis\nWorth 70 points (35% of your grade)"
+  },
+  {
+    "objectID": "slides/w1.html#feedback",
+    "href": "slides/w1.html#feedback",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Feedback",
+    "text": "Feedback\n\nI will give you feedback on the midterm and the final\nLabs scored on a completion basis\nWe will go over everything in class"
+  },
+  {
+    "objectID": "slides/w1.html#genai-use",
+    "href": "slides/w1.html#genai-use",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "GenAI Use",
+    "text": "GenAI Use\n\nBest use of GenAI might be for coding!\nUse to help with coursework and assignments\n\ncode checking\ncode generation\ncode explanation\n\nIf you include any content generated GenAI, you must cite it\nThe same way that you must cite any content you use from other sources, such as books, articles, videos, the internet, etc.\nSee example in syllabus\n\n\nThe code was generated by ChatGPT 4.5. See the link for a copy of the prompt. https://chatgpt.com/share/somerandomestringoftext"
+  },
+  {
+    "objectID": "slides/w1.html#vectors",
+    "href": "slides/w1.html#vectors",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Vectors",
+    "text": "Vectors\n4 basic types1\n\nInteger (numeric, whole number)\nDouble (numeric, decimal)\nLogical\nCharacter\n\nNote there are two others (complex and raw), but we almost never care about them"
+  },
+  {
+    "objectID": "slides/w1.html#creating-vectors",
+    "href": "slides/w1.html#creating-vectors",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Creating vectors",
+    "text": "Creating vectors\nVectors are created with c()\nBelow are examples of each of the four main types of vectors\n\ninteger &lt;- c(5L, 7L, 3L, 94L) # L explicitly an integer, not double\n\ndouble &lt;- c(3.27, 8.41, Inf, -Inf)\n\nlogical &lt;- c(TRUE, TRUE, TRUE, FALSE, TRUE, FALSE, FALSE)\n\ncharacter &lt;- c(\"red\", \"orange\", \"yellow\", \"green\", \"blue\", \"violet\", \"rainbow\")"
+  },
+  {
+    "objectID": "slides/w1.html#coercion",
+    "href": "slides/w1.html#coercion",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Coercion",
+    "text": "Coercion\n\nVectors must be of the same type\nIf you try to mix types, implicit coercion will occur\nImplicit coercion defaults to the most flexible type\n\nwhich is… ?\n\n\n\n\nc(7L, 3.25)\n\n[1] 7.00 3.25\n\n\n\n\n\nc(3.24, TRUE, \"April\")\n\n[1] \"3.24\"  \"TRUE\"  \"April\"\n\n\n\n\n\nc(TRUE, 5)\n\n[1] 1 5"
+  },
+  {
+    "objectID": "slides/w1.html#explicit-coercion",
+    "href": "slides/w1.html#explicit-coercion",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Explicit coercion",
+    "text": "Explicit coercion\nYou can alternatively define the coercion to occur\n\nas.integer(c(7L, 3.25))\n\n[1] 7 3\n\n\n\n\nas.logical(c(3.24, TRUE, \"April\"))\n\n[1]   NA TRUE   NA\n\n\n\n\n\nas.character(c(TRUE, 5)) # still maybe a bit unexpected?\n\n[1] \"1\" \"5\""
+  },
+  {
+    "objectID": "slides/w1.html#review",
+    "href": "slides/w1.html#review",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Review",
+    "text": "Review\nDiscuss in small breakout groups\n\nWhat are the four basic types of atomic vectors?\nWhat function creates a vector?\nTrue/False: An R list is not a vector.\nWhat is the fundamental difference between a matrix and a data frame?\nWhat does coercion mean, and when does it come into play?"
+  },
+  {
+    "objectID": "slides/w1.html#checking-types",
+    "href": "slides/w1.html#checking-types",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Checking types",
+    "text": "Checking types\nUse typeof to verify the type of vector\n\ntypeof(c(7L, 3.25))\n\n[1] \"double\"\n\ntypeof(as.integer(c(7L, 3.25)))\n\n[1] \"integer\""
+  },
+  {
+    "objectID": "slides/w1.html#coercing-to-logical",
+    "href": "slides/w1.html#coercing-to-logical",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Coercing to logical",
+    "text": "Coercing to logical\n\nas.logical(c(0, 1, 1, 0))\n\n[1] FALSE  TRUE  TRUE FALSE\n\n\n\nAny number that is not zero gets coerced to TRUE\n\nas.logical(c(0, 5L, 7.4, -1.6, 0))\n\n[1] FALSE  TRUE  TRUE  TRUE FALSE\n\n\n\n\n\nas.logical(c(3.24, TRUE, \"April\"))\n\n[1]   NA TRUE   NA\n\n\nWait…why the NAs here?"
+  },
+  {
+    "objectID": "slides/w1.html#piping",
+    "href": "slides/w1.html#piping",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Piping",
+    "text": "Piping\nAlthough traditionally used within the {tidyverse}, it can still be useful\nThe following are equivalent\n\ntypeof(as.integer(c(7L, 3.25)))\n\n[1] \"integer\"\n\nc(7L, 3.25) |&gt;\n  as.integer() |&gt;\n  typeof()\n\n[1] \"integer\""
+  },
+  {
+    "objectID": "slides/w1.html#pop-quiz",
+    "href": "slides/w1.html#pop-quiz",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Pop quiz",
+    "text": "Pop quiz\nWithout actually running the code, predict which type each of the following will coerce to.\n\nc(1.25, TRUE, 4L)\n\nc(1L, FALSE)\n\nc(7L, 6.23, \"eight\")\n\nc(TRUE, 1L, 0L, \"False\")"
+  },
+  {
+    "objectID": "slides/w1.html#answers",
+    "href": "slides/w1.html#answers",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Answers",
+    "text": "Answers\n\ntypeof(c(1.25, TRUE, 4L))\n\n\n\n[1] \"double\"\n\n\n\n\ntypeof(c(1L, FALSE))\n\n\n\n[1] \"integer\"\n\n\n\n\n\ntypeof(c(7L, 6.23, \"eight\"))\n\n\n\n[1] \"character\"\n\n\n\n\n\ntypeof(c(TRUE, 1L, 0L, \"False\"))\n\n\n\n[1] \"character\""
+  },
+  {
+    "objectID": "slides/w1.html#lists",
+    "href": "slides/w1.html#lists",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Lists",
+    "text": "Lists\n\nLists are vectors, but not atomic vectors\nFundamental difference - each element can be a different type\n\n\n\nlist(\"a\", 7L, 3.25, TRUE)\n\n[[1]]\n[1] \"a\"\n\n[[2]]\n[1] 7\n\n[[3]]\n[1] 3.25\n\n[[4]]\n[1] TRUE"
+  },
+  {
+    "objectID": "slides/w1.html#lists-1",
+    "href": "slides/w1.html#lists-1",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Lists",
+    "text": "Lists\n\n\n\nEach element of the list is another vector, possibly atomic, possibly not\nThe prior example included all scalar vectors\n\nvector that contains only a single value\n\nLists do not require all elements to be the same length\n\n\n\nlist(\n  c(\"a\", \"b\", \"c\"),\n  rnorm(5),\n  c(7L, 2L),\n  c(TRUE, TRUE, FALSE, TRUE)\n)\n\n[[1]]\n[1] \"a\" \"b\" \"c\"\n\n[[2]]\n[1] -0.2443875 -1.0557776 -0.6541646 -0.3861325  1.5904668\n\n[[3]]\n[1] 7 2\n\n[[4]]\n[1]  TRUE  TRUE FALSE  TRUE"
+  },
+  {
+    "objectID": "slides/w1.html#summary",
+    "href": "slides/w1.html#summary",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Summary",
+    "text": "Summary\n\nAtomic vectors must all be the same type\n\nimplicit coercion occurs if not (and you haven’t specified the coercion explicitly)\n\nLists are also vectors, but not atomic vectors\n\nEach element can be of a different type and length\nIncredibly flexible, but often a little more difficult to get the hang of"
+  },
+  {
+    "objectID": "slides/w1.html#challenge",
+    "href": "slides/w1.html#challenge",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Challenge",
+    "text": "Challenge\nWork with a partner\nOne of you share your screen:\n\nCreate four atomic vectors, one for each of the fundamental types\n\ninteger, double, logical, character\n\nCombine two or more of the vectors. Predict the implicit coercion of each\nApply explicit coercions, and predict the output for each\n\n(basically quiz each other)"
+  },
+  {
+    "objectID": "slides/w1.html#attributes-1",
+    "href": "slides/w1.html#attributes-1",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Attributes",
+    "text": "Attributes\n\nQ: What are attributes?\n\nA: metadata\n\nQ: What’s metadata?\n\nA: Data about the data\n\nAttributes\n\nnamed list of arbitrary metadata"
+  },
+  {
+    "objectID": "slides/w1.html#other-data-types",
+    "href": "slides/w1.html#other-data-types",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Other data types",
+    "text": "Other data types\nAtomic vectors by themselves make up only a small fraction of the total number of data types in R\n\nOther data types\n\nData frames\nMatrices & arrays\nFactors\nDates\n\n\n\nRemember, atomic vectors are the atoms of R. Many other data structures are built from atomic vectors.\nWe use attributes to create other data types from atomic vectors."
+  },
+  {
+    "objectID": "slides/w1.html#attributes-2",
+    "href": "slides/w1.html#attributes-2",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Attributes",
+    "text": "Attributes\n\n\nCommon\n\nNames\nDimensions\n\n\nLess common\n\nArbitrary metadata"
+  },
+  {
+    "objectID": "slides/w1.html#examples",
+    "href": "slides/w1.html#examples",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Examples",
+    "text": "Examples\nPlease follow along!\n\nlibrary(palmerpenguins)\npenguins\n\n# A tibble: 344 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "slides/w1.html#attributes-3",
+    "href": "slides/w1.html#attributes-3",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "attributes()",
+    "text": "attributes()\nPlease follow along!\nattributes(): see all attributes associated with an object\n\nattributes(penguins[1:20, ]) # limiting rows just for slides\n\n\n\n$names\n[1] \"species\"           \"island\"            \"bill_length_mm\"   \n[4] \"bill_depth_mm\"     \"flipper_length_mm\" \"body_mass_g\"      \n[7] \"sex\"               \"year\"             \n\n$row.names\n [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20\n\n$class\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\""
+  },
+  {
+    "objectID": "slides/w1.html#attr",
+    "href": "slides/w1.html#attr",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "attr()",
+    "text": "attr()\nAccess a single attribute by naming it within attr()\n\nattr(penguins, \"class\")\n\n\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\"\n\n\n\nattr(penguins, \"names\")\n\n\n\n[1] \"species\"           \"island\"            \"bill_length_mm\"   \n[4] \"bill_depth_mm\"     \"flipper_length_mm\" \"body_mass_g\"      \n[7] \"sex\"               \"year\"             \n\n\n\nNote - this is not generally how you would pull these attributes. Rather, you would use class() and names()"
+  },
+  {
+    "objectID": "slides/w1.html#be-specific",
+    "href": "slides/w1.html#be-specific",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Be specific",
+    "text": "Be specific\n\nNote in the prior slides, I’m asking for attributes on the entire data frame\nBut the individual vectors may have attributes as well\n\n\n\nattributes(penguins$species)\n\n$levels\n[1] \"Adelie\"    \"Chinstrap\" \"Gentoo\"   \n\n$class\n[1] \"factor\"\n\nattributes(penguins$bill_length_mm)\n\nNULL"
+  },
+  {
+    "objectID": "slides/w1.html#set-attributes",
+    "href": "slides/w1.html#set-attributes",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Set attributes",
+    "text": "Set attributes\nRedefine attributes within attr()\n\nattr(penguins$species, \"levels\") &lt;- c(\"Big one\", \n                                      \"Little one\", \n                                      \"Funny one\")\n\nhead(penguins)\n\n\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Big one Torgersen           39.1          18.7               181        3750\n2 Big one Torgersen           39.5          17.4               186        3800\n3 Big one Torgersen           40.3          18                 195        3250\n4 Big one Torgersen           NA            NA                  NA          NA\n5 Big one Torgersen           36.7          19.3               193        3450\n6 Big one Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\nNote - you would generally not define levels this way either, but it is a general method for modifying attributes"
+  },
+  {
+    "objectID": "slides/w1.html#dimensions",
+    "href": "slides/w1.html#dimensions",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Dimensions",
+    "text": "Dimensions\nLet’s create a matrix (please do it with me)\n\nNotice how the matrix fills\n\n\nm &lt;- matrix(1:6, ncol = 2)\nm\n\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6\n\n\n\nCheck out the attributes\n\nattributes(m)\n\n$dim\n[1] 3 2"
+  },
+  {
+    "objectID": "slides/w1.html#modify-the-attributes",
+    "href": "slides/w1.html#modify-the-attributes",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Modify the attributes",
+    "text": "Modify the attributes\nLet’s change it to a 2 x 3 matrix, instead of 3 x 2 (you try first)\n\n\nattr(m, \"dim\") &lt;- c(2, 3)\nm\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n\n\n\nIs this the result you expected?"
+  },
+  {
+    "objectID": "slides/w1.html#alternative-creation",
+    "href": "slides/w1.html#alternative-creation",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Alternative creation",
+    "text": "Alternative creation\nCreate an atomic vector v, assign a dimension attribute\n\nv &lt;- 1:6\nv\n\n[1] 1 2 3 4 5 6\n\n\n\n\nattr(v, \"dim\") &lt;- c(3, 2)\nv\n\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6"
+  },
+  {
+    "objectID": "slides/w1.html#quick-aside",
+    "href": "slides/w1.html#quick-aside",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Quick aside",
+    "text": "Quick aside\nWhat if we wanted it to fill by row?\n\n\n\nmatrix(6:13, \n       ncol = 2, \n       byrow = TRUE)\n\n     [,1] [,2]\n[1,]    6    7\n[2,]    8    9\n[3,]   10   11\n[4,]   12   13\n\n\n\n\nvect &lt;- 6:13\ndim(vect) &lt;- c(2, 4)\nvect\n\n     [,1] [,2] [,3] [,4]\n[1,]    6    8   10   12\n[2,]    7    9   11   13\n\n\n\nt(vect)\n\n     [,1] [,2]\n[1,]    6    7\n[2,]    8    9\n[3,]   10   11\n[4,]   12   13"
+  },
+  {
+    "objectID": "slides/w1.html#names",
+    "href": "slides/w1.html#names",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Names",
+    "text": "Names\nThe following are equivalent\n\nlist namesrownames/colnames\n\n\n\ndim_names &lt;- list(\n    c(\"the first\", \"second\", \"III\"),\n    c(\"index\", \"value\")\n  )\n\nattr(v, \"dimnames\") &lt;- dim_names\nv\n\n          index value\nthe first     1     4\nsecond        2     5\nIII           3     6\n\n\n\n\n\nv2 &lt;- 1:6\nattr(v2, \"dim\") &lt;- c(3, 2)\nrownames(v2) &lt;- c(\"the first\", \"second\", \"III\")\ncolnames(v2) &lt;- c(\"index\", \"value\")\nv2\n\n          index value\nthe first     1     4\nsecond        2     5\nIII           3     6"
+  },
+  {
+    "objectID": "slides/w1.html#remove-names",
+    "href": "slides/w1.html#remove-names",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Remove names",
+    "text": "Remove names\nYou can remove names from a vector in two ways\n\nx &lt;- unname(x)\nnames(x) &lt;- NULL"
+  },
+  {
+    "objectID": "slides/w1.html#arbitrary-metadata",
+    "href": "slides/w1.html#arbitrary-metadata",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Arbitrary metadata",
+    "text": "Arbitrary metadata\n\nattr(v, \"matrix_mean\") &lt;- mean(v)\nv\n\n          index value\nthe first     1     4\nsecond        2     5\nIII           3     6\nattr(,\"matrix_mean\")\n[1] 3.5\n\nattr(v, \"matrix_mean\")\n\n[1] 3.5\n\n\n\nNote that anything can be stored as an attribute (including matrices or data frames, etc.)"
+  },
+  {
+    "objectID": "slides/w1.html#why-would-we-do-this",
+    "href": "slides/w1.html#why-would-we-do-this",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Why would we do this?",
+    "text": "Why would we do this?\nA brief example\n\nImagine we’re accessing a database that has many years of data\nThe tables in the database are the same, but the values (of course) differ\nWe might want to return the data, but store the year as an attribute\n\nThis will be a complex example, but stick with me"
+  },
+  {
+    "objectID": "slides/w1.html#made-up-data",
+    "href": "slides/w1.html#made-up-data",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Made up data",
+    "text": "Made up data\nI’m using a list to mimic a database\n\ndb &lt;- list(\n  data.frame(\n    color = c(\"red\", \"orange\", \"green\"),\n    transparency = c(0.80, 0.65, 0.93)\n  ),\n  data.frame(\n    color = c(\"blue\", \"pink\", \"cyan\"),\n    transparency = c(0.40, 0.35, 0.87)\n  )\n)\ndb\n\n[[1]]\n   color transparency\n1    red         0.80\n2 orange         0.65\n3  green         0.93\n\n[[2]]\n  color transparency\n1  blue         0.40\n2  pink         0.35\n3  cyan         0.87"
+  },
+  {
+    "objectID": "slides/w1.html#write-a-function",
+    "href": "slides/w1.html#write-a-function",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Write a function",
+    "text": "Write a function\nLet’s write a function that grabs one of these tables.\nIf it’s “1920” we’ll grab the first one, otherwise we’ll grab the second one\n\npull_color_data &lt;- function(year) {\n  to_pull &lt;- if(year == \"1920\") {\n    out &lt;- db[[1]]\n  } else {\n    out &lt;- db[[2]]\n  }\n  out\n}"
+  },
+  {
+    "objectID": "slides/w1.html#does-it-work",
+    "href": "slides/w1.html#does-it-work",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Does it work?",
+    "text": "Does it work?\n\npull_color_data(1920)\n\n   color transparency\n1    red         0.80\n2 orange         0.65\n3  green         0.93\n\npull_color_data(2021)\n\n  color transparency\n1  blue         0.40\n2  pink         0.35\n3  cyan         0.87\n\npull_color_data(2122)\n\n  color transparency\n1  blue         0.40\n2  pink         0.35\n3  cyan         0.87\n\n\n\nYes!"
+  },
+  {
+    "objectID": "slides/w1.html#build-a-second-function",
+    "href": "slides/w1.html#build-a-second-function",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Build a second function",
+    "text": "Build a second function\nLet’s say we want to make a second function that does something with the previous output.\nBUT\n\nWhat we do with it is going to depend on the data frame we get back.\nWe need to know the year.\nSo: Modify our original function to store the year as an attribute!"
+  },
+  {
+    "objectID": "slides/w1.html#update-function",
+    "href": "slides/w1.html#update-function",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Update function",
+    "text": "Update function\nNotice we redefine the attributes so we’re including all the prior attributes it already had\n\npull_color_data &lt;- function(year) {\n  to_pull &lt;- if(year == \"1920\") {\n    out &lt;- db[[1]]\n  } else {\n    out &lt;- db[[2]]\n  }\n  attributes(out) &lt;- c(\n    attributes(out),\n    db = year \n  ) \n  out\n}"
+  },
+  {
+    "objectID": "slides/w1.html#try",
+    "href": "slides/w1.html#try",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Try",
+    "text": "Try\n\npull_color_data(1920)\n\n   color transparency\n1    red         0.80\n2 orange         0.65\n3  green         0.93\n\nattr(pull_color_data(2021), \"db\")\n\n[1] 2021"
+  },
+  {
+    "objectID": "slides/w1.html#build-our-second-function",
+    "href": "slides/w1.html#build-our-second-function",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Build our second function",
+    "text": "Build our second function\nNow, we can make our second function, and have it do something different depending on the data that is passed to it.\n\n\nprint_colors &lt;- function(color_data) {\n  title &lt;- paste0(\"Colors for \", attr(color_data, \"db\")) \n  colorspace::swatchplot(color_data$color)\n  mtext(title) # base plotting function\n}"
+  },
+  {
+    "objectID": "slides/w1.html#section",
+    "href": "slides/w1.html#section",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "",
+    "text": "pull_color_data(1920) |&gt; \n  print_colors()"
+  },
+  {
+    "objectID": "slides/w1.html#section-1",
+    "href": "slides/w1.html#section-1",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "",
+    "text": "pull_color_data(2021) |&gt; \n  print_colors()"
+  },
+  {
+    "objectID": "slides/w1.html#matrices-vs-data-frames",
+    "href": "slides/w1.html#matrices-vs-data-frames",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Matrices vs Data frames",
+    "text": "Matrices vs Data frames\nUsually we want to work with data frames because they represent our data better\nSometimes a matrix is more efficient because you can operate on the entire matrix at once\n\n\nset.seed(3000)\nm &lt;- matrix(rnorm(100, 200, 10), ncol = 10)\nm\n\n\n\n          [,1]     [,2]     [,3]     [,4]     [,5]     [,6]     [,7]     [,8]\n [1,] 212.5829 191.7712 199.5134 196.5931 175.2498 207.3866 192.2747 194.4411\n [2,] 206.4475 183.8198 209.9150 204.4850 212.8858 198.3413 194.4287 189.1406\n [3,] 204.6335 203.0518 193.4606 209.6925 204.9773 200.5138 216.1828 188.4229\n [4,] 207.7031 214.9317 195.3695 191.5964 214.3530 201.9884 198.9011 197.8626\n [5,] 197.7367 200.2874 189.6927 210.3867 193.3954 201.6348 197.5796 217.5513\n [6,] 196.4845 194.3709 192.6729 199.6904 189.8270 198.7178 208.5352 205.8042\n [7,] 193.5068 204.5237 205.7235 196.5166 197.8754 226.2404 190.5798 223.5147\n [8,] 187.3741 206.0149 194.3706 199.2014 193.6386 219.8513 187.0317 206.1837\n [9,] 183.0287 211.0514 187.4148 177.5480 203.2865 216.6478 194.5805 197.8386\n[10,] 181.6598 180.4219 193.6863 207.9981 191.9110 189.8216 200.8376 202.6439\n          [,9]    [,10]\n [1,] 202.9875 190.1133\n [2,] 187.3453 202.7654\n [3,] 186.9933 190.7834\n [4,] 202.5351 198.9414\n [5,] 202.4735 197.9089\n [6,] 196.7506 199.0003\n [7,] 206.9977 189.9343\n [8,] 212.2908 196.7418\n [9,] 214.7606 203.4116\n[10,] 217.8882 189.9789"
+  },
+  {
+    "objectID": "slides/w1.html#section-2",
+    "href": "slides/w1.html#section-2",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "",
+    "text": "sum(m)\n\n\n\n[1] 19950.41\n\n\n\n\nmean(m)\n\n\n\n[1] 199.5041\n\n\n\n\n\nrowSums(m)\n\n\n\n [1] 1962.914 1989.575 1998.712 2024.182 2008.647 1981.854 2035.413 2002.699\n [9] 1989.569 1956.847\n\n\n\n\n\ncolSums(m)\n\n\n\n [1] 1971.157 1990.245 1961.819 1993.708 1977.400 2061.144 1980.932 2023.404\n [9] 2031.023 1959.579\n\n\n\n\n\n# standardize the matrix\nz &lt;- (m - mean(m)) / sd(m)\nz\n\n            [,1]        [,2]          [,3]        [,4]       [,5]        [,6]\n [1,]  1.3010524 -0.76925390  0.0009222064 -0.28957800 -2.4127674  0.78413741\n [2,]  0.6907154 -1.56023846  1.0356537382  0.49548666  1.3311824 -0.11567656\n [3,]  0.5102566  0.35291388 -0.6011942053  1.01352341  0.5444628  0.10044486\n [4,]  0.8156136  1.53470366 -0.4112982781 -0.78663987  1.4771374  0.24713157\n [5,] -0.1758229  0.07792372 -0.9760202871  1.08257404 -0.6076838  0.21195789\n [6,] -0.3003824 -0.51064257 -0.6795541673  0.01853211 -0.9626564 -0.07822095\n [7,] -0.5965995  0.49933839  0.6186937589 -0.29718858 -0.1620174  2.65967021\n [8,] -1.2066698  0.64767736 -0.5106731003 -0.03011399 -0.5834837  2.02409910\n [9,] -1.6389436  1.14870403 -1.2026234041 -2.18414217  0.3762675  1.70542220\n[10,] -1.7751178 -1.89825813 -0.5787428911  0.84496235 -0.7553444 -0.96319978\n             [,7]       [,8]       [,9]       [,10]\n [1,] -0.71916313 -0.5036565  0.3465246 -0.93418102\n [2,] -0.50489283 -1.0309383 -1.2095282  0.32443028\n [3,]  1.65915710 -1.1023352 -1.2445489 -0.86751730\n [4,] -0.05999098 -0.1632940  0.3015206 -0.05597287\n [5,] -0.19144388  1.7952960  0.2953917 -0.15868964\n [6,]  0.89839717  0.6267207 -0.2739126 -0.05011848\n [7,] -0.88776743  2.3885179  0.7454463 -0.95198804\n [8,] -1.24072882  0.6644735  1.2719904 -0.27478419\n [9,] -0.48979202 -0.1656812  1.5176798  0.38870521\n[10,]  0.13265409  0.3123405  1.8288102 -0.94754278"
+  },
+  {
+    "objectID": "slides/w1.html#stripping-attributes",
+    "href": "slides/w1.html#stripping-attributes",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Stripping attributes",
+    "text": "Stripping attributes\nMany operations will strip attributes (which makes storing important things in them a bit precarious)\n\nv\n\n          index value\nthe first     1     4\nsecond        2     5\nIII           3     6\nattr(,\"matrix_mean\")\n[1] 3.5\n\nrowSums(v)\n\nthe first    second       III \n        5         7         9 \n\n\n\n\nattributes(rowSums(v))\n\n$names\n[1] \"the first\" \"second\"    \"III\"      \n\n\n\n\n\nGenerally names are maintained\nSometimes, dim is maintained, sometimes not\nAll else is stripped"
+  },
+  {
+    "objectID": "slides/w1.html#more-on-names",
+    "href": "slides/w1.html#more-on-names",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "More on names()",
+    "text": "More on names()\nThe names attribute corresponds to the individual elements within a vector\n\nnames(v)\n\nNULL\n\nnames(v) &lt;- letters[1:6]\nv\n\n          index value\nthe first     1     4\nsecond        2     5\nIII           3     6\nattr(,\"matrix_mean\")\n[1] 3.5\nattr(,\"names\")\n[1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\""
+  },
+  {
+    "objectID": "slides/w1.html#more-on-names-1",
+    "href": "slides/w1.html#more-on-names-1",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "More on names()",
+    "text": "More on names()\nPerhaps more straightforward\n\nv3a &lt;- c(a = 5, b = 7, c = 12)\nv3a\n\n a  b  c \n 5  7 12 \n\nnames(v3a)\n\n[1] \"a\" \"b\" \"c\"\n\nattributes(v3a)\n\n$names\n[1] \"a\" \"b\" \"c\""
+  },
+  {
+    "objectID": "slides/w1.html#names-alternatives",
+    "href": "slides/w1.html#names-alternatives",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "names() alternatives",
+    "text": "names() alternatives\n\nv3b &lt;- c(5, 7, 12)\nnames(v3b) &lt;- c(\"a\", \"b\", \"c\")\nv3b\n\n a  b  c \n 5  7 12 \n\n\n\n\nv3c &lt;- setNames(c(5, 7, 12), c(\"a\", \"b\", \"c\"))\nv3c\n\n a  b  c \n 5  7 12 \n\n\n\n\n\nNote that names() is not the same thing as colnames(), but, somewhat confusingly, both work to rename the variables (columns) of a data frame. We’ll talk more about why this is"
+  },
+  {
+    "objectID": "slides/w1.html#why-names-might-be-helpful",
+    "href": "slides/w1.html#why-names-might-be-helpful",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Why names might be helpful",
+    "text": "Why names might be helpful\nSubsetting\n\nv\n\n          index value\nthe first     1     4\nsecond        2     5\nIII           3     6\nattr(,\"matrix_mean\")\n[1] 3.5\nattr(,\"names\")\n[1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\"\n\n\n\n\n\nv[\"b\"]\n\nb \n2 \n\n\n\n\nv[\"e\"]\n\ne \n5"
+  },
+  {
+    "objectID": "slides/w1.html#implementation-of-factors",
+    "href": "slides/w1.html#implementation-of-factors",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Implementation of factors",
+    "text": "Implementation of factors\n\nfct &lt;- factor(c(\"a\", \"a\", \"b\", \"c\"))\ntypeof(fct)\n\n[1] \"integer\"\n\n\n\nWeird! Factors are built on integer vectors\n\n\n\nattributes(fct)\n\n$levels\n[1] \"a\" \"b\" \"c\"\n\n$class\n[1] \"factor\"\n\n\n\n\n\nstr(fct)\n\n Factor w/ 3 levels \"a\",\"b\",\"c\": 1 1 2 3"
+  },
+  {
+    "objectID": "slides/w1.html#more-manually",
+    "href": "slides/w1.html#more-manually",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "More manually",
+    "text": "More manually\n\n# First create integer vector\nint &lt;- c(1L, 1L, 2L, 3L, 1L, 3L)\n\n# assign some levels\nattr(int, \"levels\") &lt;- c(\"red\", \"green\", \"blue\")\n\n# change the class to a factor\nclass(int) &lt;- \"factor\"\n\nint\n\n[1] red   red   green blue  red   blue \nLevels: red green blue"
+  },
+  {
+    "objectID": "slides/w1.html#this-can-make-things-tricky",
+    "href": "slides/w1.html#this-can-make-things-tricky",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "This can make things tricky",
+    "text": "This can make things tricky\n\nage &lt;- factor(sample(c(\"baby\", 1:10), 100, replace = TRUE))\nstr(age)\n\n Factor w/ 11 levels \"1\",\"10\",\"2\",\"3\",..: 7 1 5 8 8 9 4 6 5 9 ...\n\nage\n\n  [1] 6    1    4    7    7    8    3    5    4    8    10   3    4    10   10  \n [16] 4    2    10   6    5    baby 3    7    2    10   8    7    10   7    4   \n [31] 6    9    8    8    6    7    9    1    7    6    9    9    8    7    2   \n [46] baby baby 2    4    7    9    3    9    7    5    3    7    9    9    10  \n [61] 3    9    3    3    10   10   baby 4    3    5    baby 4    9    9    10  \n [76] 7    1    2    4    8    3    10   6    3    8    7    1    9    10   6   \n [91] 9    6    1    3    9    9    9    4    3    9   \nLevels: 1 10 2 3 4 5 6 7 8 9 baby\n\n\n\nWhat if we wanted to convert this to numeric?"
+  },
+  {
+    "objectID": "slides/w1.html#section-3",
+    "href": "slides/w1.html#section-3",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "",
+    "text": "data.frame(age) |&gt; \n  count(age) |&gt; \n  mutate(age_numeric = as.numeric(age)) |&gt; \n  select(starts_with(\"age\"), n)\n\n    age age_numeric  n\n1     1           1  5\n2    10           2 12\n3     2           3  5\n4     3           4 13\n5     4           5 10\n6     5           6  4\n7     6           7  8\n8     7           8 13\n9     8           9  8\n10    9          10 17\n11 baby          11  5\n\n\n\nThese are the integers associated with the factor levels, so as.numeric() will not give us the results we want"
+  },
+  {
+    "objectID": "slides/w1.html#fix",
+    "href": "slides/w1.html#fix",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Fix",
+    "text": "Fix\nFirst convert to character, then to numeric (you can ignore the warning in this case)\n\ndata.frame(age) |&gt; \n  mutate(\n    age_chr = as.character(age),\n    age_num = ifelse(age_chr == \"baby\", 0, as.numeric(age_chr))\n  ) |&gt; \n  count(age, age_chr, age_num)\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `age_num = ifelse(age_chr == \"baby\", 0, as.numeric(age_chr))`.\nCaused by warning in `ifelse()`:\n! NAs introduced by coercion\n\n\n    age age_chr age_num  n\n1     1       1       1  5\n2    10      10      10 12\n3     2       2       2  5\n4     3       3       3 13\n5     4       4       4 10\n6     5       5       5  4\n7     6       6       6  8\n8     7       7       7 13\n9     8       8       8  8\n10    9       9       9 17\n11 baby    baby       0  5"
+  },
+  {
+    "objectID": "slides/w1.html#fix-1",
+    "href": "slides/w1.html#fix-1",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Fix",
+    "text": "Fix\nOr baby to NA\n\ndata.frame(age) |&gt; \n  mutate(\n    age_chr = as.character(age),\n    age_num = as.numeric(age_chr)\n  ) |&gt; \n  count(age, age_chr, age_num)\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `age_num = as.numeric(age_chr)`.\nCaused by warning:\n! NAs introduced by coercion\n\n\n    age age_chr age_num  n\n1     1       1       1  5\n2    10      10      10 12\n3     2       2       2  5\n4     3       3       3 13\n5     4       4       4 10\n6     5       5       5  4\n7     6       6       6  8\n8     7       7       7 13\n9     8       8       8  8\n10    9       9       9 17\n11 baby    baby      NA  5"
+  },
+  {
+    "objectID": "slides/w1.html#implementation-of-dates",
+    "href": "slides/w1.html#implementation-of-dates",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Implementation of dates",
+    "text": "Implementation of dates\n\ndate &lt;- Sys.Date()\ntypeof(date)\n\n[1] \"double\"\n\n\n\nHuh?\nDates are built on top of double vectors  (weird, like factors are built on integer vectors)\n\n\n\nattributes(date)\n\n$class\n[1] \"Date\"\n\n\n\n\n\nattributes(date) &lt;- NULL\ndate\n\n[1] 20542\n\n\n\nThis number represents the days passed since January 1, 1970, known as the Unix epoch\n\n\n\n\nunclass(as.Date(\"1970-01-02\"))\n\n[1] 1"
+  },
+  {
+    "objectID": "slides/w1.html#a-bit-more-on-classes",
+    "href": "slides/w1.html#a-bit-more-on-classes",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "A bit more on classes",
+    "text": "A bit more on classes\nWhy do these all print different things?\n\n\n\nsummary(mtcars[, 1:2])\n\n      mpg             cyl       \n Min.   :10.40   Min.   :4.000  \n 1st Qu.:15.43   1st Qu.:4.000  \n Median :19.20   Median :6.000  \n Mean   :20.09   Mean   :6.188  \n 3rd Qu.:22.80   3rd Qu.:8.000  \n Max.   :33.90   Max.   :8.000  \n\nsummary(gss_cat$marital)\n\n    No answer Never married     Separated      Divorced       Widowed \n           17          5416           743          3383          1807 \n      Married \n        10117 \n\n\n\n\nm &lt;- lm(mpg ~ cyl, mtcars)\nsummary(m)\n\n\nCall:\nlm(formula = mpg ~ cyl, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.9814 -2.1185  0.2217  1.0717  7.5186 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  37.8846     2.0738   18.27  &lt; 2e-16 ***\ncyl          -2.8758     0.3224   -8.92 6.11e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.206 on 30 degrees of freedom\nMultiple R-squared:  0.7262,    Adjusted R-squared:  0.7171 \nF-statistic: 79.56 on 1 and 30 DF,  p-value: 6.113e-10"
+  },
+  {
+    "objectID": "slides/w1.html#what-are-the-classes",
+    "href": "slides/w1.html#what-are-the-classes",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "What are the classes?",
+    "text": "What are the classes?\n\nclass(mtcars[, 1:2])\n\n[1] \"data.frame\"\n\n\n\n\nclass(gss_cat$marital)\n\n[1] \"factor\"\n\n\n\n\n\nclass(m)\n\n[1] \"lm\""
+  },
+  {
+    "objectID": "slides/w1.html#s3-methods",
+    "href": "slides/w1.html#s3-methods",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "S3 methods",
+    "text": "S3 methods\nWhen you call summary(), it looks for a method (function) for that specific class\n\nsummary(mtcars[, 1:2]) becomes  summary.data.frame(mtcars[, 1:2])\nsummary(gss_cat$marital) becomes  summary.factor(gss_cat$marital)\nsummary(m) becomes  summary.lm(m)"
+  },
+  {
+    "objectID": "slides/w1.html#quick-aside-1",
+    "href": "slides/w1.html#quick-aside-1",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Quick aside",
+    "text": "Quick aside\nToo briefly, S3 allows functions to behave differently depending on the class of the objects they are given\n\nNaming function\nBecause S3 is so common in R, I recommend against including dots . in function names\n\n\nsummary.data.frame() is less clear than it would be if it were summary.data_frame()\n\n\nClasses and methods is not something I’m going to expect you to have a deep knowledge on, but I want you to be aware of it"
+  },
+  {
+    "objectID": "slides/w1.html#missing-values",
+    "href": "slides/w1.html#missing-values",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Missing values",
+    "text": "Missing values\nMissing values beget missing values\n\nNA &gt; 5\n\n\n\n[1] NA\n\n\n\n\nNA * 7\n\n\n\n[1] NA\n\n\n\n\nI like this one\n\n!NA\n\n\n\n[1] NA\n\n\n\n\nWhat about this one?\n\nNA == NA\n\n\n\n[1] NA\n\n\n\n\nIt is correct because there’s no reason to presume that one missing value is or is not equal to another missing value"
+  },
+  {
+    "objectID": "slides/w1.html#when-missing-values-dont-propagate",
+    "href": "slides/w1.html#when-missing-values-dont-propagate",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "When missing values don’t propagate",
+    "text": "When missing values don’t propagate\n\nNA | TRUE\n\n[1] TRUE\n\n\n\n\nx &lt;- c(NA, 3, NA, 5)\nany(x &gt; 4)\n\n[1] TRUE\n\n\n\n\n\nany(x &gt; 6)\n\n[1] NA"
+  },
+  {
+    "objectID": "slides/w1.html#how-to-test-missingness",
+    "href": "slides/w1.html#how-to-test-missingness",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "How to test missingness?",
+    "text": "How to test missingness?\nWe’ve already seen the following doesn’t work\n\nx == NA\n\n[1] NA NA NA NA\n\n\n\nInstead, use is.na()\n\nis.na(x)\n\n[1]  TRUE FALSE  TRUE FALSE"
+  },
+  {
+    "objectID": "slides/w1.html#different-nas",
+    "href": "slides/w1.html#different-nas",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Different NAs?",
+    "text": "Different NAs?\nTechnically there are four missing values, one for each of the atomic types:\n\nNA (logical)\nNA_integer_ (integer)\nNA_real_ (double)\nNA_character_ (character)\n\nThis distinction is usually unimportant because NA will be automatically coerced to the correct type when needed"
+  },
+  {
+    "objectID": "slides/w1.html#lists-3",
+    "href": "slides/w1.html#lists-3",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Lists",
+    "text": "Lists\n\nLists are vectors, but not atomic vectors\nFundamental difference - each element can be a different type\n\n\nlist(\"a\", 7L, 3.25, TRUE)\n\n[[1]]\n[1] \"a\"\n\n[[2]]\n[1] 7\n\n[[3]]\n[1] 3.25\n\n[[4]]\n[1] TRUE\n\n\n\nSneak peak at future content\n\nlapply(list(\"a\", 7L, 3.25, TRUE), class)\n\n[[1]]\n[1] \"character\"\n\n[[2]]\n[1] \"integer\"\n\n[[3]]\n[1] \"numeric\"\n\n[[4]]\n[1] \"logical\""
+  },
+  {
+    "objectID": "slides/w1.html#lists-4",
+    "href": "slides/w1.html#lists-4",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Lists",
+    "text": "Lists\n\nTechnically, each element of the list is a vector, possibly atomic\nThe prior example included all scalars, which are vectors of length 1\nLists do not require all elements to be the same length"
+  },
+  {
+    "objectID": "slides/w1.html#section-4",
+    "href": "slides/w1.html#section-4",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "",
+    "text": "l &lt;- list(\n  c(\"a\", \"b\", \"c\"),\n  rnorm(5),\n  c(7L, 2L),\n  c(TRUE, TRUE, FALSE, TRUE)\n)\nl\n\n[[1]]\n[1] \"a\" \"b\" \"c\"\n\n[[2]]\n[1]  0.06212625  0.31806749 -1.38307597  0.45422692 -1.40553617\n\n[[3]]\n[1] 7 2\n\n[[4]]\n[1]  TRUE  TRUE FALSE  TRUE\n\n\n\nCheck the list\n\ntypeof(l)\n\n[1] \"list\"\n\nattributes(l)\n\nNULL\n\nstr(l)\n\nList of 4\n $ : chr [1:3] \"a\" \"b\" \"c\"\n $ : num [1:5] 0.0621 0.3181 -1.3831 0.4542 -1.4055\n $ : int [1:2] 7 2\n $ : logi [1:4] TRUE TRUE FALSE TRUE"
+  },
+  {
+    "objectID": "slides/w1.html#data-frames-as-lists",
+    "href": "slides/w1.html#data-frames-as-lists",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Data frames as lists",
+    "text": "Data frames as lists\nA data frame is just a special case of a list, where all the elements are of the same length.\n\n\n\nl_df &lt;- list(\n  a = c(\"red\", \"blue\"),\n  b = rnorm(2),\n  c = c(7L, 2L),\n  d = c(TRUE, FALSE)\n)\nl_df\n\n$a\n[1] \"red\"  \"blue\"\n\n$b\n[1] 0.6371395 1.2361582\n\n$c\n[1] 7 2\n\n$d\n[1]  TRUE FALSE\n\n\n\n\ndata.frame(l_df)\n\n     a         b c     d\n1  red 0.6371395 7  TRUE\n2 blue 1.2361582 2 FALSE"
+  },
+  {
+    "objectID": "slides/w1.html#a-nested-list",
+    "href": "slides/w1.html#a-nested-list",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "A nested list",
+    "text": "A nested list\nLists are often complicated objects. Let’s create a somewhat complicated one\n\nx &lt;- c(a = 3, b = 5, c = 7)\nl &lt;- list(\n  x = x,\n  x2 = c(x, x),\n  x3 = list(\n    vect = x,\n    squared = x^2,\n    cubed = x^3)\n)\nl\n\n\n\n$x\na b c \n3 5 7 \n\n$x2\na b c a b c \n3 5 7 3 5 7 \n\n$x3\n$x3$vect\na b c \n3 5 7 \n\n$x3$squared\n a  b  c \n 9 25 49 \n\n$x3$cubed\n  a   b   c \n 27 125 343"
+  },
+  {
+    "objectID": "slides/w1.html#subsetting-lists-1",
+    "href": "slides/w1.html#subsetting-lists-1",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Subsetting lists",
+    "text": "Subsetting lists\nMultiple methods\n\nMost common: $, [, and [[\n\n\nl[1]\n\n$x\na b c \n3 5 7 \n\ntypeof(l[1])\n\n[1] \"list\"\n\n\n\n\nl[[1]]\n\na b c \n3 5 7 \n\ntypeof(l[[1]])\n\n[1] \"double\"\n\n\n\n\n\nl[[1]][\"c\"]\n\nc \n7"
+  },
+  {
+    "objectID": "slides/w1.html#which-bracket-to-use",
+    "href": "slides/w1.html#which-bracket-to-use",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Which bracket to use?",
+    "text": "Which bracket to use?\n\n\nx \n\nx[1] \n\nx[[1]] \n\nx[[1]][[1]] \n\n\n\nr4DS"
+  },
+  {
+    "objectID": "slides/w1.html#another-analogy",
+    "href": "slides/w1.html#another-analogy",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Another analogy",
+    "text": "Another analogy\n\n\n\n\n\n\nAdvanced-R"
+  },
+  {
+    "objectID": "slides/w1.html#named-list",
+    "href": "slides/w1.html#named-list",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Named list",
+    "text": "Named list\nBecause the elements of the list are named, we can also use $, just like with a data frame (which is a list)\n\nl$x2\n\na b c a b c \n3 5 7 3 5 7 \n\nl$x3\n\n$vect\na b c \n3 5 7 \n\n$squared\n a  b  c \n 9 25 49 \n\n$cubed\n  a   b   c \n 27 125 343"
+  },
+  {
+    "objectID": "slides/w1.html#subsetting-nested-lists",
+    "href": "slides/w1.html#subsetting-nested-lists",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Subsetting nested lists",
+    "text": "Subsetting nested lists\nMultiple $ if all are named\n\nl$x3$squared\n\n a  b  c \n 9 25 49 \n\n\n\nNote this doesn’t work on named elements of an atomic vector, just the named elements of a list\n\nl$x3$squared$b\n\nError in `l$x3$squared$b`:\n! $ operator is invalid for atomic vectors\n\n\n\n\nbut we could do something like…\n\nl$x3$squared[\"b\"]\n\n b \n25"
+  },
+  {
+    "objectID": "slides/w1.html#alternatives",
+    "href": "slides/w1.html#alternatives",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Alternatives",
+    "text": "Alternatives\n\n\n\nYou can use logical\n\n\nl[c(TRUE, FALSE, TRUE)]\n\n$x\na b c \n3 5 7 \n\n$x3\n$x3$vect\na b c \n3 5 7 \n\n$x3$squared\n a  b  c \n 9 25 49 \n\n$x3$cubed\n  a   b   c \n 27 125 343 \n\n\n\n\nIndexing works too\n\n\nl[c(1, 3)]\n\n$x\na b c \n3 5 7 \n\n$x3\n$x3$vect\na b c \n3 5 7 \n\n$x3$squared\n a  b  c \n 9 25 49 \n\n$x3$cubed\n  a   b   c \n 27 125 343"
+  },
+  {
+    "objectID": "slides/w1.html#careful-with-your-brackets",
+    "href": "slides/w1.html#careful-with-your-brackets",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Careful with your brackets",
+    "text": "Careful with your brackets\n\nl[[c(TRUE, FALSE, FALSE)]]\n\nError in `l[[c(TRUE, FALSE, FALSE)]]`:\n! recursive indexing failed at level 2\n\n\n\nWhy doesn’t the above work?"
+  },
+  {
+    "objectID": "slides/w1.html#subsetting-in-multiple-dimensions",
+    "href": "slides/w1.html#subsetting-in-multiple-dimensions",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Subsetting in multiple dimensions",
+    "text": "Subsetting in multiple dimensions\n\nGenerally we deal with 2d data frames\nIf there are two dimensions, we separate the [] subsetting with a comma [row, column]\n\n\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\nmtcars[3, 4]\n\n[1] 93"
+  },
+  {
+    "objectID": "slides/w1.html#empty-indicators",
+    "href": "slides/w1.html#empty-indicators",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Empty indicators",
+    "text": "Empty indicators\nAn empty indicator implies “all”\n\n\nSelect the entire 4th column\n\n\nmtcars[ ,4]\n\n [1] 110 110  93 110 175 105 245  62  95 123 123 180 180 180 205 215 230  66  52\n[20]  65  97 150 150 245 175  66  91 113 264 175 335 109\n\n\n\nSelect the entire 4th row\n\n\nmtcars[4, ]\n\n                mpg cyl disp  hp drat    wt  qsec vs am gear carb\nHornet 4 Drive 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1"
+  },
+  {
+    "objectID": "slides/w1.html#data-types-returned",
+    "href": "slides/w1.html#data-types-returned",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Data types returned",
+    "text": "Data types returned\nBy default, each of the prior will return a vector, which itself can be subset\nThe following are equivalent\n\nmtcars[4, c(\"mpg\", \"hp\")]\n\n                mpg  hp\nHornet 4 Drive 21.4 110\n\n\n\nmtcars[4, ][c(\"mpg\", \"hp\")]\n\n                mpg  hp\nHornet 4 Drive 21.4 110"
+  },
+  {
+    "objectID": "slides/w1.html#return-a-data-frame",
+    "href": "slides/w1.html#return-a-data-frame",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Return a data frame",
+    "text": "Return a data frame\nOften, you don’t want the vector returned, but rather the modified data frame.\n\nSpecify drop = FALSE\n\n\nmtcars[ ,4]\n\n [1] 110 110  93 110 175 105 245  62  95 123 123 180 180 180 205 215 230  66  52\n[20]  65  97 150 150 245 175  66  91 113 264 175 335 109\n\nmtcars[ ,4, drop = FALSE]\n\n                     hp\nMazda RX4           110\nMazda RX4 Wag       110\nDatsun 710           93\nHornet 4 Drive      110\nHornet Sportabout   175\nValiant             105\nDuster 360          245\nMerc 240D            62\nMerc 230             95\nMerc 280            123\nMerc 280C           123\nMerc 450SE          180\nMerc 450SL          180\nMerc 450SLC         180\nCadillac Fleetwood  205\nLincoln Continental 215\nChrysler Imperial   230\nFiat 128             66\nHonda Civic          52\nToyota Corolla       65\nToyota Corona        97\nDodge Challenger    150\nAMC Javelin         150\nCamaro Z28          245\nPontiac Firebird    175\nFiat X1-9            66\nPorsche 914-2        91\nLotus Europa        113\nFord Pantera L      264\nFerrari Dino        175\nMaserati Bora       335\nVolvo 142E          109"
+  },
+  {
+    "objectID": "slides/w1.html#tibbles",
+    "href": "slides/w1.html#tibbles",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "tibbles",
+    "text": "tibbles\nNote dropping the data frame attribute is the default for a data.frame but NOT a tibble\n\n\nMaintains data frame\n\nmtcars_tbl &lt;- tibble::as_tibble(mtcars)\nmtcars_tbl[ ,4]\n\n# A tibble: 32 × 1\n      hp\n   &lt;dbl&gt;\n 1   110\n 2   110\n 3    93\n 4   110\n 5   175\n 6   105\n 7   245\n 8    62\n 9    95\n10   123\n# ℹ 22 more rows\n\n\n\nYou can override this\n\nmtcars_tbl[ ,4, drop = TRUE]\n\n [1] 110 110  93 110 175 105 245  62  95 123 123 180 180 180 205 215 230  66  52\n[20]  65  97 150 150 245 175  66  91 113 264 175 335 109"
+  },
+  {
+    "objectID": "slides/w1.html#more-than-two-dimensions",
+    "href": "slides/w1.html#more-than-two-dimensions",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "More than two dimensions",
+    "text": "More than two dimensions\nDepending on your applications, you may not run arrays much\n\narray &lt;- 1:12\ndim(array) &lt;- c(2, 3, 2)\narray\n\n, , 1\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n, , 2\n\n     [,1] [,2] [,3]\n[1,]    7    9   11\n[2,]    8   10   12"
+  },
+  {
+    "objectID": "slides/w1.html#subset-array",
+    "href": "slides/w1.html#subset-array",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Subset array",
+    "text": "Subset array\nSelect just the second matrix\n\narray[ , ,2]\n\n     [,1] [,2] [,3]\n[1,]    7    9   11\n[2,]    8   10   12\n\n\n\nSelect first column of each matrix\n\narray[ ,1, ]\n\n     [,1] [,2]\n[1,]    1    7\n[2,]    2    8"
+  },
+  {
+    "objectID": "slides/w1.html#back-to-lists",
+    "href": "slides/w1.html#back-to-lists",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Back to lists",
+    "text": "Back to lists\nWhy are lists so useful?\n\nMuch more flexible\nOften returned by functions, for example, lm\n\n\nm &lt;- lm(mpg ~ hp, mtcars)\nstr(m)\n\n\n\nList of 12\n $ coefficients : Named num [1:2] 30.0989 -0.0682\n  ..- attr(*, \"names\")= chr [1:2] \"(Intercept)\" \"hp\"\n $ residuals    : Named num [1:32] -1.594 -1.594 -0.954 -1.194 0.541 ...\n  ..- attr(*, \"names\")= chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n $ effects      : Named num [1:32] -113.65 -26.046 -0.556 -0.852 0.67 ...\n  ..- attr(*, \"names\")= chr [1:32] \"(Intercept)\" \"hp\" \"\" \"\" ...\n $ rank         : int 2\n $ fitted.values: Named num [1:32] 22.6 22.6 23.8 22.6 18.2 ...\n  ..- attr(*, \"names\")= chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n $ assign       : int [1:2] 0 1\n $ qr           :List of 5\n  ..$ qr   : num [1:32, 1:2] -5.657 0.177 0.177 0.177 0.177 ...\n  .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. ..$ : chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n  .. .. ..$ : chr [1:2] \"(Intercept)\" \"hp\"\n  .. ..- attr(*, \"assign\")= int [1:2] 0 1\n  ..$ qraux: num [1:2] 1.18 1.08\n  ..$ pivot: int [1:2] 1 2\n  ..$ tol  : num 1e-07\n  ..$ rank : int 2\n  ..- attr(*, \"class\")= chr \"qr\"\n $ df.residual  : int 30\n $ xlevels      : Named list()\n $ call         : language lm(formula = mpg ~ hp, data = mtcars)\n $ terms        :Classes 'terms', 'formula'  language mpg ~ hp\n  .. ..- attr(*, \"variables\")= language list(mpg, hp)\n  .. ..- attr(*, \"factors\")= int [1:2, 1] 0 1\n  .. .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. .. ..$ : chr [1:2] \"mpg\" \"hp\"\n  .. .. .. ..$ : chr \"hp\"\n  .. ..- attr(*, \"term.labels\")= chr \"hp\"\n  .. ..- attr(*, \"order\")= int 1\n  .. ..- attr(*, \"intercept\")= int 1\n  .. ..- attr(*, \"response\")= int 1\n  .. ..- attr(*, \".Environment\")=&lt;environment: R_GlobalEnv&gt; \n  .. ..- attr(*, \"predvars\")= language list(mpg, hp)\n  .. ..- attr(*, \"dataClasses\")= Named chr [1:2] \"numeric\" \"numeric\"\n  .. .. ..- attr(*, \"names\")= chr [1:2] \"mpg\" \"hp\"\n $ model        :'data.frame':  32 obs. of  2 variables:\n  ..$ mpg: num [1:32] 21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...\n  ..$ hp : num [1:32] 110 110 93 110 175 105 245 62 95 123 ...\n  ..- attr(*, \"terms\")=Classes 'terms', 'formula'  language mpg ~ hp\n  .. .. ..- attr(*, \"variables\")= language list(mpg, hp)\n  .. .. ..- attr(*, \"factors\")= int [1:2, 1] 0 1\n  .. .. .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. .. .. ..$ : chr [1:2] \"mpg\" \"hp\"\n  .. .. .. .. ..$ : chr \"hp\"\n  .. .. ..- attr(*, \"term.labels\")= chr \"hp\"\n  .. .. ..- attr(*, \"order\")= int 1\n  .. .. ..- attr(*, \"intercept\")= int 1\n  .. .. ..- attr(*, \"response\")= int 1\n  .. .. ..- attr(*, \".Environment\")=&lt;environment: R_GlobalEnv&gt; \n  .. .. ..- attr(*, \"predvars\")= language list(mpg, hp)\n  .. .. ..- attr(*, \"dataClasses\")= Named chr [1:2] \"numeric\" \"numeric\"\n  .. .. .. ..- attr(*, \"names\")= chr [1:2] \"mpg\" \"hp\"\n - attr(*, \"class\")= chr \"lm\""
+  },
+  {
+    "objectID": "slides/w1.html#summary-1",
+    "href": "slides/w1.html#summary-1",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Summary",
+    "text": "Summary\n\nAtomic vectors must all be the same type\n\nimplicit coercion occurs if not (and you haven’t specified the coercion explicitly)\n\nLists are also vectors, but not atomic vectors\n\nEach element can be of a different type and length\nIncredibly flexible, but often a little more difficult to get the hang of, particularly with subsetting"
+  },
+  {
+    "objectID": "slides/w1.html#before-next-class",
+    "href": "slides/w1.html#before-next-class",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Before next class",
+    "text": "Before next class\n\nReadings\n\nAdvR(2e) 5\n\nWeek 1 Readings (if you haven’t aready)\n\nAdvR(2e) Intro\nAdvR(2e) 3"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\n\n\nLab 1\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nR4DS(1e) 25\n\n\n\n\nLab 2\nLab 1\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\n\n\nLab 2\n\n\n\n\nAdvR(2e) 9.4-9.6\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\n\n\nMidterm Test\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
   }
 ]
