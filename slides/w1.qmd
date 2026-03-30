@@ -328,11 +328,10 @@ Discuss in small breakout groups
 
 * What are the four basic types of atomic vectors?
 * What function creates a vector?
-* **True**/**False**: An `R` list is not a vector.
-* What is the fundamental difference between a matrix and a data frame?
 * What does *coercion* mean, and when does it come into play?
+* **True**/**False**: An `R` list is not a vector.
 
-`r countdown::countdown(minutes = 4, top = 0)`
+`r countdown::countdown(minutes = 3, top = 0)`
 
 ## Checking types
 
