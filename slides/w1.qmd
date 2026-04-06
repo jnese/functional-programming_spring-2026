@@ -322,26 +322,6 @@ as.logical(c(3.24, TRUE, "April"))
 as.character(c(TRUE, 5)) # still maybe a bit unexpected?
 ```
 
-## Review
-
-Discuss in small breakout groups
-
-* What are the four basic types of atomic vectors?
-* What function creates a vector?
-* What does *coercion* mean, and when does it come into play?
-* **True**/**False**: An `R` list is not a vector.
-
-`r countdown::countdown(minutes = 3, top = 0)`
-
-## Checking types
-
-Use `typeof` to verify the type of vector
-
-```{r typeof}
-typeof(c(7L, 3.25))
-typeof(as.integer(c(7L, 3.25)))
-```
-
 ## Coercing to logical
 
 ```{r }
@@ -363,6 +343,26 @@ as.logical(c(3.24, TRUE, "April"))
 ```
 
 Wait...why the `NA`s here?
+
+## Review
+
+Discuss in small breakout groups
+
+* What are the four basic types of atomic vectors?
+* What function creates a vector?
+* What does *coercion* mean, and when does it come into play?
+* **True**/**False**: An `R` list is not a vector.
+
+`r countdown::countdown(minutes = 3, top = 0)`
+
+## Checking types
+
+Use `typeof` to verify the type of vector
+
+```{r typeof}
+typeof(c(7L, 3.25))
+typeof(as.integer(c(7L, 3.25)))
+```
 
 ## Piping
 
@@ -1093,9 +1093,23 @@ data.frame(age) |>
 
 These are the integers associated with the factor levels, so `as.numeric()` will not give us the results we want
 
-## Fix
+## Fix: "baby" to `NA`
 
 First convert to character, then to numeric (you can ignore the warning in this case)
+
+baby to `NA`
+
+```{r }
+#| warning: true
+data.frame(age) |> 
+  mutate(
+    age_chr = as.character(age),
+    age_num = as.numeric(age_chr)
+  ) |> 
+  count(age, age_chr, age_num)
+```
+
+## Fix: "baby" to `0`
 
 ```{r }
 #| warning: true
@@ -1107,19 +1121,7 @@ data.frame(age) |>
   count(age, age_chr, age_num)
 ```
 
-## Fix
-
-Or baby to `NA`
-
-```{r }
-#| warning: true
-data.frame(age) |> 
-  mutate(
-    age_chr = as.character(age),
-    age_num = as.numeric(age_chr)
-  ) |> 
-  count(age, age_chr, age_num)
-```
+## Summary: `factor` to `numeric`
 
 ## Implementation of dates {.smaller}
 

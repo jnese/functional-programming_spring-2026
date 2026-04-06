@@ -1,0 +1,1450 @@
+---
+title: "Week 2: Intro to Base `R` Iterations"
+subtitle: "& Lab 1"
+author: "Joe Nese"
+institute: "University of Oregon<br>Spring 2026"
+format:
+  revealjs: 
+    theme: default
+    highlight-style: github
+    incremental: false
+    fig-width: 9
+    fig-height: 3.5
+    scrollable: true
+    slide-number: true
+execute: 
+  echo: true
+  warning: false
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(tictoc)
+
+theme_set(theme_minimal(20))
+
+update_geom_defaults('density', list(size = 1.2))
+```
+
+# Base `R` Iterations & <br> Lab 1
+
+**Week 2**
+
+## Agenda {.smaller}
+
+* For loops 
+* Apply family of loops
+    + `lapply()`
+    + `sapply()`
+    + `vapply()`
+    + `apply()` (briefly)
+* Lab 1 (🤞)
+
+**Learning objectives**
+
+* Understand the basics of what it means to loop through a vector
+* Begin to recognize use cases
+* Be able to apply basic `for` loops and write their equivalents with `lapply`
+
+## `for` loops
+
+![](https://github.com/uo-datasci-specialization/c3-fp-2022/blob/main/static/slides/img/for-loops.png?raw=true)
+
+## Basic overview `for` loops
+
+```{r letters}
+#| output-location: fragment
+a <- letters[1:26]
+a
+```
+
+. . .
+
+```{r first-for-loop}
+#| output-location: fragment
+for(i in 1:5){
+	print(a[i])
+}
+```
+
+. . .
+
+Note these are five different character scalars (atomic vectors of length one)
+
+It is NOT a single vector
+
+## Creating indexes
+
+You will commonly see code like this: 
+
+```{r eval = FALSE}
+for(i in 1:nrow(df)) {some_function}
+```
+
+. . .
+<br>
+<br>
+
+Instead, use `seq_along()` or `seq_len()`
+
+## `seq_*` {.smaller}
+
+:::{.incremental}
+* `seq_along()` 
+    + takes a vector argument
+    + creates an index from 1 to the length of the vector provided
+* `seq_len()` 
+    + takes a single positive integer argument
+    + creates an index from 1 to that integer
+
+:::
+
+. . .
+
+```{r }
+x <- c(3, 2.6, 8)
+```
+
+
+```{r }
+#| output-location: fragment
+seq_along(x)
+```
+
+
+```{r }
+#| output-location: fragment
+seq_len(length(x))
+```
+
+. . .
+
+Why are these preferable?
+
+
+## Avoids the `length` of `0` problem
+
+`:` works with both increasing and decreasing sequences, which is problematic
+
+```{r}
+means <- c()
+
+length(means)
+
+1:length(means)
+```
+
+## Avoids the `length` of `0` problem
+
+```{r}
+X <- 1:10
+N <- length(X)
+
+i <- 1
+```
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%" .fragment}
+`:` method
+```{r}
+X[(i+1):N]
+X[1:(i-1)]
+```
+
+:::
+
+::: {.column width="50%" .fragment}
+`seq_len()` method
+```{r}
+X[-seq_len(i)]
+X[seq_len(i-1)]
+```
+:::
+
+::::
+
+## Avoid the `length` of `0` problem {visibility="hidden"}
+
+```{r}
+X <- 1:10
+N <- length(X)
+
+i <- 10
+```
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+`:` method
+```{r}
+X[(i+1):N] # oops
+X[1:(i-1)]
+```
+
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+`seq_len()` method
+```{r}
+X[-seq_len(i)]
+X[seq_len(i-1)]
+```
+:::
+:::
+::::
+
+
+## Another example {.smaller}
+
+[**Try this**]{style="color:#009E73;"}
+
+```{r}
+#| output-location: fragment
+means <- c()
+out <- rep(NA, length(means))
+out
+```
+
+. . .
+
+```{r}
+#| error: true
+for (i in 1:length(means)) {
+  out[i] <- rnorm(10, means[i])
+}
+```
+
+. . .
+
+`seq_*` version
+
+```{r}
+#| error: true
+
+for (i in seq_along(means)) {
+  out[i] <- rnorm(10, means[i])
+}
+```
+
+. . .
+
+Basically, the loop is just not executed 
+
+## Another `for` loop example {.smaller}
+
+Simulate tossing a coin, record results
+
+* For a single toss
+
+```{r toss}
+sample(c("Heads", "Tails"), 1)
+```
+
+. . .
+
+1) For multiple tosses, first allocate a vector with `length` equal to the number of iterations (here, `10`)
+
+```{r allocate-vector}
+(result <- rep(NA, 10))
+```
+
+. . .
+
+2) Next, run the trial $n$ times, storing the result in your pre-allocated vector
+
+```{r for-flip1}
+for(i in seq_along(result)) {
+	result[i] <- sample(c("Heads", "Tails"), 1)
+}
+```
+
+. . .
+
+Wait, what?
+
+. . .
+
+```{r}
+result
+```
+
+## Growing vectors
+
+:::{.incremental}
+* **ALWAYS** pre-allocate a vector for storage before running a `for` loop
+* Contrary to some opinions you may see out there, `for` loops are not actually slower than `lapply`, etc., provided the `for` loop is written well
+* This primarily means **not** growing a vector
+
+:::
+
+## Growing vector example
+
+100,000 (`1e5`) coin flips by growing a vector
+
+```{r time-for-loop}
+#| cache: true
+library(tictoc)
+
+set.seed(3000)
+tic()
+not_allocated <- sample(c("Heads", "Tails"), 1)
+for(i in seq_len(1e5 - 1)) {
+	not_allocated <- c(
+	  not_allocated, 
+	  sample(c("Heads", "Tails"), 1)
+	 )
+  
+}
+toc()
+```
+
+## Pre-allocated vector example
+
+**Exactly** the same thing with pre-allocated vector
+
+```{r}
+set.seed(3000)
+tic()
+allocated <- rep(NA, 1e5)
+for(i in seq_len(1e5)) {
+	allocated[i] <- sample(c("Heads", "Tails"), 1)
+}
+toc()
+```
+
+## Result
+
+The result is the same, regardless of the approach (notice I forced the random number generator to start at the same place in both samples)
+
+```{r identical}
+#| output-location: fragment
+identical(not_allocated, allocated)
+```
+
+. . .
+
+But speed is obviously **NOT** identical
+
+## You try
+
+Base `R` comes with `letters` and `LETTERS`
+
+* Make an alphabet of upper/lower case
+    + For example, create "Aa" with <br> `paste0(LETTERS[1], letters[1])`
+* Write a `for` loop for all letters
+
+[**Don't look ahead!**]{style="color:#009E73;"}
+
+![](https://ecdn.teacherspayteachers.com/cdn-cgi/image/format=avif,quality=70,width=525,height=525,onerror=redirect/thumbitem/Letter-Grid-A-Z-lowercase-uppercase-and-both-11x17-tabloid--6194367-1758380996/750f-6194367-1.jpg){width=10%}
+
+`r countdown::countdown(3)`
+
+## Answer
+
+. . .
+
+```{r alphabet-for-loop}
+alphabet <- rep(NA, length(letters))
+
+for(i in seq_along(alphabet)) {
+	alphabet[i] <- paste0(LETTERS[i], letters[i])
+}
+```
+
+. . .
+
+Where is it?
+
+. . .
+
+```{r}
+alphabet
+```
+
+## Another example {.smaller}
+
+* Say we wanted to simulate 100 cases from a random normal (`rnorm()`) distribution, where we varied the standard deviation in increments of 0.2, ranging from 1 to 5
+    + Maybe this is a relatable example; if not, that's okay - focus on the process
+
+. . .
+
+1) First, specify a vector of standard deviations
+
+```{r sd-increments}
+#| output-location: fragment
+increments <- seq(1, 5, by = 0.2)
+increments
+```
+
+. . .
+
+2) Next, allocate a vector. There are many ways I could store this result (data frame, matrix, list). I'll do it in a list.
+
+```{r allocate-list}
+simulated <- vector("list", length(increments))
+```
+
+## Look at our vector
+
+```{r}
+str(simulated)
+```
+
+## Write a `for` loop
+
+```{r simulated-loop}
+for(i in seq_along(simulated)) {
+	simulated[[i]] <- rnorm(100, 0, increments[i]) 
+}
+```
+
+note use of `[[` above
+
+. . .
+
+Now look at our vector
+
+```{r }
+str(simulated)
+```
+
+## List/data frame{.smaller}
+
+Remember, if all the vectors of our list are the same length, it can be transformed into a data frame
+
+* First, let's provide meaningful names
+
+```{r names-simultated-loop}
+#| output-location: fragment
+names(simulated) <- paste0("sd_", increments)
+str(simulated)
+```
+
+## Convert to df
+
+```{r }
+#| output-location: fragment
+sim_d <- data.frame(simulated)
+head(sim_d)
+```
+
+## Base `R` Method
+
+1. Calculate all the densities
+
+```{r densities}
+#| output-location: fragment
+densities <- vector("list", length(sim_d))
+for(i in seq_along(densities)) {
+	densities[[i]] <- density(sim_d[ ,i])
+}
+str(densities)
+```
+
+## Base `R` Method
+
+2. Next, plot the first density
+
+```{r first-density}
+plot(densities[[1]])
+```
+
+## Base `R` Method
+
+3. Finally, loop through all the other densities
+
+```{r all-densities}
+#| output-location: fragment
+plot(densities[[1]], xlim = c(-20, 20))
+
+for(i in seq(2, length(densities))) {
+	lines(x = densities[[i]]$x, 
+	      y = densities[[i]]$y)	
+}
+```
+
+## Skipping iterations
+
+* On the prior slide, I set the index to skip over the first by using `seq(2, length(densities))`
+
+* Alternatively, the loop could have been written like this
+
+```{r loop-skip}
+plot(densities[[1]], xlim = c(-20, 20))
+
+for(i in seq_along(densities)) {
+	if(i == 1) next
+	lines(x = densities[[i]]$x, 
+	      y = densities[[i]]$y)	
+}
+```
+
+#
+
+> *Of course, someone has to write loops. It doesn't have to be you.*
+> 
+> -- Jenny Bryan
+
+## `tidyverse`
+
+One of the *best* things about the `tidyverse` is that it often does the looping for you
+
+```{r plot-echo}
+#| output-location: column-fragment
+#| code-line-numbers: "|1-10|12-14"
+pd <- sim_d |>
+	pivot_longer(
+	  everything(),
+	  names_to = "sd", 
+	  values_to = "sim",
+	  names_prefix = "sd_",
+	  names_ptypes = list(
+	    sd = factor()
+	  )
+	) 
+
+ggplot(pd, aes(sim)) +
+ geom_density(aes(color = sd)) +
+ guides(color = "none") 
+```
+
+## Breaking a loop {visibility="hidden"}
+
+Stop an iteration if a condition is met with `break`
+
+```{r loop-break}
+set.seed(3000)
+
+rand_unif <- vector("double", 10)
+
+for(i in seq_along(rand_unif)) {
+	rand_unif[i] <- runif(1, 0, 10)
+	if(any(rand_unif > 5)) {
+		break
+	}
+}
+
+rand_unif
+```
+
+## `break` {.smaller}
+
+Stop an iteration if a condition is met with `break`
+
+. . .
+
+`break` on "ugli fruit"
+
+```{r}
+fruit
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+#| code-line-numbers: "|8"
+set.seed(3000)
+
+rand_fruit <- vector("character", 100)
+
+for(i in seq_along(rand_fruit)) {
+	rand_fruit[i] <- sample(fruit, 1)
+	if(any(rand_fruit == "ugli fruit")) {
+		break
+	}
+}
+
+rand_fruit
+```
+
+
+## `next` {.smaller}
+
+Skip an iteration without terminating the loop with `next`
+
+. . .
+
+skip "ugli fruit"
+
+```{r}
+#| output-location: fragment
+#| code-line-numbers: "|8"
+set.seed(3000)
+
+rand_fruit <- vector("character", 100)
+
+for(i in seq_along(rand_fruit)) {
+	rand_fruit[i] <- sample(fruit, 1)
+	if(any(rand_fruit == "ugli fruit")) {
+		next
+	}
+}
+
+rand_fruit["ugli fruit"]
+
+```
+
+
+## Last thought on `for` loops
+
+You generally shouldn’t need to use `for` loops for data analysis tasks
+
+`apply()` (next) and `map()` (next week) provide more robust solutions to most problems
+
+# *apply
+
+## `lapply()`
+
+* One of numerous **functionals** in `R`
+    + A **functional** "takes a function as an input and returns a vector as output" ([AdvR, Ch. 9](https://adv-r.hadley.nz/functionals.html))
+* `lapply()` will **always** return a `l`ist
+* `lapply(x, FUN, ...)`
+
+## Simple examples {.smaller}
+
+Loop through a data frame
+
+* Remember - a data frame is a list. We can loop through it easily
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%" .fragment}
+```{r lapply-df}
+#| output-location: fragment
+library(palmerpenguins)
+lapply(penguins, is.numeric)
+```
+:::
+
+::: {.column width="50%" .fragment}
+
+```{r lapply-means}
+#| output-location: fragment
+lapply(mtcars, mean)
+```
+
+:::
+
+::::
+
+## Revisiting our simulation with $n = 10$ {.smaller}
+
+10 cases from random normal distribution
+
+Our `for` loop version
+
+```{r for-loop-sim}
+#| output-location: fragment
+increments <- seq(1, 5, by = 0.2)
+
+simulated <- vector("list", length(increments))
+
+for(i in seq_along(simulated)) {
+	simulated[[i]] <- rnorm(10, 0, increments[i]) 
+}
+
+simulated
+```
+
+## The `lapply` version
+
+```{r lapply-sim}
+#| output-location: fragment
+#| code-line-numbers: "|2"
+increments <- seq(1, 5, by = 0.2)
+sim_l <- lapply(increments, function(sd) rnorm(10, 0, sd))
+sim_l
+```
+
+## Back to this one
+
+```{r}
+#| output-location: fragment
+
+lapply(penguins, is.numeric)
+```
+
+## Add a condition {.smaller}
+
+```{r lapply-conditional}
+#| output-location: fragment
+#| code-line-numbers: "|1|2-4"
+lapply(penguins, function(x) {
+	if(is.numeric(x)) {
+		mean(x, na.rm = TRUE)
+	}
+})
+```
+
+## Add a second condition {.smaller}
+
+```{r }
+#| output-location: fragment
+#| code-line-numbers: "|1|2-4|5-7"
+lapply(penguins, function(x) {
+	if(is.numeric(x)) {
+      return(mean(x, na.rm = TRUE))
+	}
+	else if(is.character(x) | is.factor(x)) {
+      return(table(x))
+  }
+})
+```
+
+## Passing arguments {.smaller}
+
+:::: {.columns}
+::: {.column width="50%" .fragment}
+
+There's missing data, so this won't work
+
+```{r airqual}
+head(airquality)
+lapply(airquality, mean)
+```
+
+:::
+
+::: {.column width="50%" .fragment}
+
+But this will
+
+```{r }
+lapply(airquality, mean, na.rm = TRUE)
+```
+
+:::
+
+::::
+
+## Alternative notation {.smaller}
+
+The prior code could also be written like this
+
+```{r }
+#| output-location: fragment
+lapply(airquality, function(x) mean(x, na.rm = TRUE))
+```
+
+. . .
+
+My brain likes this better
+
+## Alternative notation {.smaller}
+
+This will **NOT** work
+
+```{r }
+#| error: true
+lapply(airquality, mean(x, na.rm = TRUE))
+```
+
+. . .
+
+This **WILL**
+
+```{r }
+lapply(airquality, mean, na.rm = TRUE)
+```
+
+## Simulation again {.smaller}
+
+```{r sim-pass-arg}
+#| output-location: fragment
+#| code-line-numbers: "|2"
+set.seed(3000)
+lapply(seq(1, 5, 0.2), rnorm, n = 10, mean = 0)
+```
+
+. . .
+
+Equivalent to
+
+```{r}
+set.seed(3000)
+lapply(seq(1, 5, by = 0.2), function(sd) rnorm(10, 0, sd))
+```
+
+
+# Operations by group
+
+## Mimic `dplyr::group_by()`
+
+with `split()`
+
+```{r}
+#| output-location: fragment
+#| code-line-numbers: "|1|2"
+by_cyl <- split(mtcars, mtcars$cyl)
+by_cyl
+```
+
+## Mimic `dplyr::group_by()`
+
+```{r}
+#| output-location: fragment
+str(by_cyl)
+```
+
+## Mimic `dplyr::group_by()` {.smaller}
+
+```{r mean_mpg_by_cyl}
+#| output-location: fragment
+lapply(by_cyl, function(x) mean(x$mpg))
+```
+
+. . .
+
+Or
+
+```{r}
+#| output-location: fragment
+lapply(by_cyl, function(x) mean(x[["mpg"]]))
+```
+
+. . .
+
+Or even (less ideal)
+
+```{r}
+#| output-location: fragment
+lapply(by_cyl, function(x) mean(x[[1]]))
+```
+
+. . .
+
+Because we are just subsettting the list
+
+## Your turn
+
+Try splitting the `penguins` dataset by `species` and calculating the average `bill_length_mm`
+
+`r countdown::countdown(4)`
+
+[**demo**]{style="color:#009E73;"}
+
+## Solution
+
+. . .
+
+```{r}
+peng_split <- split(penguins, penguins$species)
+
+lapply(peng_split, function(x) mean(x$bill_length_mm, na.rm = TRUE))
+
+```
+
+
+## Produce separate plots
+
+```{r plots_by_cyl-echo}
+#| message: false
+#| warning: false
+#| output-location: column-fragment
+lapply(by_cyl, function(x) {
+	ggplot(x, aes(disp, mpg)) +
+		geom_point() +
+		geom_smooth()
+})
+```
+
+
+## Your turn
+
+Produce separate plots of the relation between `bill_length_mm` and `body_mass_g`
+
+[**share code**]{style="color:#009E73;"}
+
+`r countdown::countdown(4)`
+
+## Solution {visibility="hidden"}
+
+```{r}
+#| eval: false
+lapply(peng_split, function(x) {
+	ggplot(x, aes(bill_length_mm, body_mass_g)) +
+		geom_point() +
+		geom_smooth()
+})
+```
+
+
+## Saving
+
+* You can extend this example further by saving the plot outputs to an object, then looping through that object to save the plots to disk
+
+* Using functionals, this would require parallel iterations, which we'll cover later (need to loop through plots and a file name)
+
+* Could extend it fairly easily with a `for` loop
+
+## Saving with `for` loop
+
+Save plots to an object (list)
+
+```{r save-plots}
+plots <- lapply(by_cyl, function(x) {
+	ggplot(x, aes(disp, mpg)) +
+		geom_point() +
+		geom_smooth()
+})
+```
+
+## Specify file names/directory
+
+```{r filenames}
+#| output-location: fragment
+#dir.create(here::here("plots")) 
+filenames <- here::here(
+  "plots",
+  paste0("cyl-", names(by_cyl), ".png")
+)
+filenames
+```
+
+## Saving
+
+```{r save-plots-for}
+#| eval: false
+
+for(i in seq_along(plots)) {
+	ggsave(filenames[i], # single bracket
+	       plots[[i]], # double bracket
+	       device = "png",
+	       width = 6.5, 
+	       height = 8)
+}
+```
+
+## You try!
+
+With `peng_split`
+
+`r countdown::countdown(4)`
+
+## Solution {visibility="hidden"}
+
+```{r}
+#| eval: false
+plots_peng <- lapply(peng_split, function(x) {
+	ggplot(x, aes(bill_length_mm, body_mass_g)) +
+		geom_point() +
+		geom_smooth()
+})
+
+filenames_peng <- here::here(
+  "plots",
+  paste0("species-", names(peng_split), ".png")
+)
+
+for(i in seq_along(plots_peng)) {
+	ggsave(filenames_peng[i], # single bracket
+	       plots_peng[[i]], # double bracket
+	       device = "png",
+	       width = 6.5, 
+	       height = 8)
+}
+
+```
+
+
+## More than one group
+
+Let's say we wanted to create a plot of bill length vs bill depth by for each combination of `species`/`island`
+
+Just split by both! 
+
+. . .
+
+Pass both variables as a `list()`
+
+```{r}
+splt2 <- split(
+  penguins, 
+  list(penguins$species, penguins$island)
+)
+```
+
+## Inspect it
+
+```{r }
+splt2
+```
+
+## Create plots
+
+```{r}
+plots2 <- lapply(splt2, function(x) {
+  ggplot(x, aes(bill_length_mm, bill_depth_mm)) +
+    geom_point()
+})
+```
+
+## First few
+
+:::: {.columns}
+
+::: {.column width="33%" .fragment}
+
+```{r}
+plots2[[1]]
+```
+
+:::
+
+::: {.column width="33%" .fragment}
+
+```{r}
+plots2[[2]]
+```
+
+:::
+
+::: {.column width="33%" .fragment}
+
+```{r}
+plots2[[3]]
+```
+
+:::
+
+::::
+
+## Uh oh
+
+::: {.incremental}
+- Let's get rid of our empty plots - how? Ideas?
+- Create a logical vector that checks the number of rows.
+- We'll do this in a moment.
+:::
+
+## Variants of `lapply` {.smaller}
+
+* `sapply`
+    + Will try to `s`implify the output, if possible. Otherwise it will return a list.
+  	+ Fine for interactive work, but I strongly recommend against it when writing a function (difficult to predict the output)
+
+. . .
+
+* `vapply`
+	+ Strict - you specify the output
+	+ Use if writing functions (or just always stick with `lapply`), or consider jumping to `{purrr}` (next week)
+
+## Examples
+ 
+Our simulation
+
+```{r sapply-sim}
+#| output-location: fragment
+sim_s <- sapply(seq(1, 5, by = 0.2), function(x) {
+  rnorm(10, 0, x)
+})
+class(sim_s)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+dim(sim_s)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+sim_s
+```
+
+## `lapply()` vs `sapply()` {.smaller}
+
+```{r}
+#| output-location: fragment
+lapply(penguins, is.double)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+sapply(penguins, is.double)
+```
+
+. . .
+
+Now that it's a vector we can easily use it for subsetting
+
+## Select where `is.double`
+
+```{r}
+head(penguins)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+penguins[ , sapply(penguins, is.double)] 
+```
+
+
+## Challenge
+
+Can you return the opposite? In other words - all those that are *NOT* double?
+
+[**Don't look ahead!**]{style="color:#009E73;"}
+
+`r countdown::countdown(2)`
+
+## Solution {.smaller}
+
+. . .
+
+```{r not-double}
+#| output-location: fragment
+penguins[ ,!sapply(penguins, is.double)]
+```
+
+. . .
+
+```{r}
+#| error: true
+penguins[ ,sapply(penguins, !is.double)]
+```
+
+## Why {.smaller}
+
+`sapply(penguins, is.double)`
+
+- applies `is.double()` to each column of penguins
+- returns a logical vector like: `TRUE`  `TRUE`  `FALSE`  `TRUE` ...
+
+`!sapply(penguins, is.double)`
+
+- negates that logical vector
+- selects columns that are not double
+
+So you're saying: "Select columns where `is.double` is `FALSE`"
+
+. . .
+
+for `sapply()` the second argument must be a function
+
+But `!is.double()` negates the function `is.double()`, which is not a function
+
+## Clean up our plots {.smaller}
+
+Can you recreate the plots while omitting the empty ones now?
+
+```{r}
+splt2
+```
+
+. . .
+
+```{r}
+#| eval: false
+plots2 <- lapply(splt2, function(x) {
+  ggplot(x, aes(bill_length_mm, bill_depth_mm)) +
+    geom_point()
+})
+```
+
+## Try!
+
+`r countdown::countdown(4)`
+
+Don't look ahead!
+
+## Remove zero-row dfs
+
+. . .
+
+```{r }
+# check if n rows > 0
+keep <- sapply(splt2, function(x) nrow(x) > 0)
+keep
+```
+
+. . .
+
+```{r }
+# Use this to subset the list
+splt3 <- splt2[keep]
+```
+
+## Recreate plots
+
+```{r }
+plots3 <- lapply(splt3, function(x) {
+  ggplot(x, aes(bill_length_mm, bill_depth_mm)) +
+    geom_point()
+})
+```
+
+## First few
+
+:::: {.columns}
+::: {.column width="33%" .fragment}
+
+```{r}
+plots3[[1]]
+```
+
+:::
+
+::: {.column width="33%" .fragment}
+
+```{r}
+#| warning: false
+plots3[[2]]
+```
+
+:::
+
+::: {.column width="33%" .fragment}
+
+```{r}
+plots3[[3]]
+```
+
+:::
+
+::::
+
+. . .
+
+No more missing!
+
+## `vapply()`
+
+As you can probably see, simplifying can be *really* helpful for interactive work
+
+<br> 
+
+**BUT**
+
+<br> 
+
+Not ideal for programmatic work - we need to be able to reliably predict the output
+
+`vapply()` solves this issue
+
+## Back to `sapply()` briefly
+
+```{r}
+#| output-location: fragment
+test <- list(a = c(1, 3, 5), b = c(2,4,6), c = c(9,8,7))
+
+sapply(test, max)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+test$d <- c("a", "b", "c")
+
+sapply(test, max)
+```
+
+. . .
+
+I don't like that
+
+## `vapply()`
+
+Add an extra argument to specify the type to be returned 
+
+```{r}
+#| output-location: fragment
+#| eval: false
+vapply(test, max, numeric(1))
+```
+
+. . .
+
+`numeric(1)` means we want one numeric value returned for each element
+
+. . .
+
+```{r}
+#| output-location: fragment
+#| error: true
+vapply(test, max, numeric(1))
+```
+
+This triggers an error because we cannot get a `numeric` value from a `character` value
+
+Nice error message, too!
+
+## `vapply()`
+
+```{r}
+#| output-location: fragment
+vapply(mtcars, mean, FUN.VALUE = double(1))
+```
+
+. . .
+
+The `(1)` defines the expected length of each result. Here, a single number per column
+
+. . .
+
+```{r}
+#| output-location: fragment
+vapply(penguins, is.double, FUN.VALUE = logical(1))
+```
+
+## Coercion with `vapply()`
+
+If it can coerce the vector without loss of information, it will
+
+```{r}
+#| output-location: fragment
+vapply(penguins, is.double, FUN.VALUE = double(1))
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+#| error: true
+vapply(penguins, is.double, FUN.VALUE = character(1))
+```
+
+## Count missing data
+
+```{r count-missing}
+vapply(airquality, function(col) {
+  sum(is.na(col))
+  },
+  FUN.VALUE = double(1)
+)
+```
+
+## `sapply()` alternative
+
+For interactive work, the code on the previous slide is maybe too much 
+
+Could be reduced to:
+
+```{r sapply-missing}
+sapply(airquality, function(col) sum(is.na(col)))
+```
+
+## Summary `for` loops
+
+`for` loops are incredibly flexible and there's nothing inherently wrong about them
+
+- They do require more text, and often repetitive text, which can lead to errors/bugs
+- The flexibility can actually be more of a curse than a blessing
+
+## Summary `*apply`
+
+The `*apply` family of functions help put the focus on a given function, and what values are being looped through the function
+
+- `lapply` will always return a list
+- `sapply` will try to simplify, which is problematic for programming, but fine for interactive work
+- `vapply` is strict, and will only return the type specified
+
+
+# apply
+
+briefly
+
+## `apply()`
+
+`apply(`[x]{style="color:#56B4E9;"}`,` [dimension]{style="color:#CC79A7;"} `, function, function_args)`
+
+* [x]{style="color:#56B4E9;"}
+    + the thing to loop over (usually a matrix or data frame)
+
+* [dimension]{style="color:#CC79A7;"}
+  + [1]{style="color:#CC79A7;"} = apply the function to each row
+  + [2]{style="color:#CC79A7;"} = apply the function to each column
+  + [n]{style="color:#CC79A7;"} = apply to $n$th dimension of an array (rare for the work I do)
+
+## Rows example
+
+```{r }
+people <- data.frame(
+  first = c("Frederick", "Anna", "Julia"),
+  last = c("Douglass", "Murray", "Griffiths")
+)
+people
+```
+
+. . .
+
+Suppose we wanted a new column that was the first and last name.
+
+## Rows example
+
+We might try this...
+
+```{r }
+#| output-location: fragment
+people |> 
+  mutate(full_name = paste(first, last, collapse = " "))
+```
+
+. . .
+
+... but it pastes together the full columns
+
+## Rows example
+
+Instead, do it by row
+
+```{r }
+apply(people, 1, paste, collapse = " ")
+```
+
+. . .
+
+Or within a `mutate()` call
+
+```{r}
+people |> 
+  mutate(full_name = apply(people, 1, paste, collapse = " "))
+```
+
+## Column example
+
+Back to the `airquality` example - standardize all columns 
+
+Notice it returns a matrix though, which is less than ideal
+
+```{r }
+apply(airquality, 2, function(x) {
+  as.numeric(scale(x))
+})
+```
+
+## Last bit
+
+- There are other loops, like `tapply()`, but I tend to not use them much (instead just use `lapply(split(x)`)
+
+- All of this stuff takes practice, both to understand how it works and to start to see use cases
+
+- Careful not to get into too deep of nested loops
+    + if you're nesting beyond two levels (and I never go beyond one anymore) there's probably better ways to approach it
+
+# Next time
+
+## Before next class
+
+- Readings
+    + [R4DS(1e) 25](https://r4ds.had.co.nz/many-models.html)
+    + [AdvR(2e) 9.1-9.3](https://adv-r.hadley.nz/functionals.html)
+- Lab 1
+
+# Lab 1

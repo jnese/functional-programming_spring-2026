@@ -77,12 +77,12 @@ dta |>
     Assigned = map2_chr(assigned_link, Assigned,
                         ~ifelse(is.na(.x),
                                 .y,
-                                paste0(xfun::embed_file(path = here::here("labs", .x), text = .y)))),
+                                paste0(xfun::embed_file(path = here::here("docs", "assignments", .x), text = .y)))),
     Assigned = str_replace_all(Assigned, "\"", "'"),
     Key = map2_chr(key_link, Key,
                         ~ifelse(is.na(.x),
                                 .y,
-                                paste0(xfun::embed_file(path = here::here("labs", .x), text = .y)))),
+                                paste0(xfun::embed_file(path = here::here("docs", "assignments", .x), text = .y)))),
     Key = str_replace_all(Key, "\"", "'")) |>
   select(`Date Assigned`, `Date Due`, Assigned, Key, Points, Percent) |>
   gt() |>

@@ -108,29 +108,29 @@
     "objectID": "slides/w1.html#agenda",
     "href": "slides/w1.html#agenda",
     "title": "Functional Programming for Educational Data Science",
-    "section": "Agenda",
-    "text": "Agenda\n\nIntroductions\nSyllabus\nIntro to data types\n\n\nLearning Objectives\n\nUnderstand the requirements of the course\nUnderstand the fundamental difference between lists and atomic vectors\nUnderstand how atomic vectors are coerced, implicitly or explicitly\nUnderstand various ways to subset vectors, and how subsetting differs for lists\nUnderstand attributes and how to set/modify"
+    "section": "",
+    "text": "Introductions\nSyllabus\nIntro to data types\n\n. . .\nLearning Objectives\n\n\nUnderstand the requirements of the course\nUnderstand the fundamental difference between lists and atomic vectors\nUnderstand how atomic vectors are coerced, implicitly or explicitly\nUnderstand various ways to subset vectors, and how subsetting differs for lists\nUnderstand attributes and how to set/modify"
   },
   {
     "objectID": "slides/w1.html#about-me",
     "href": "slides/w1.html#about-me",
     "title": "Functional Programming for Educational Data Science",
-    "section": "About me",
-    "text": "About me\n\nhusband, dad\nBA: UC Santa Barbara\nPhD, School Psychology: University of Maryland\nUO since 2009 at Behavioral Research & Teaching (BRT)\nResearch Professor\n\nResearch\n\nApplied statistical methods used by researchers\nDeveloping and improving systems that support data-based decision making using advanced technologies to influence teachers’ instructional practices and increase student achievement\n\nCORE and CORE II\nInclusive Skill-building Learning Approach (ISLA)\n\n\nTeaching\n\nEDLD 651 - Introduction to Data Science with R\nEDLD 653 - this one!\nEDLD 654 - Applied Machine Learning for Educational Data Scientists\nEDLD 609 - Data Science Capstone"
+    "section": "",
+    "text": "husband, dad\nBA: UC Santa Barbara\nPhD, School Psychology: University of Maryland\nUO since 2009 at Behavioral Research & Teaching (BRT)\nResearch Professor\n\nResearch\n\nApplied statistical methods used by researchers\nDeveloping and improving systems that support data-based decision making using advanced technologies to influence teachers’ instructional practices and increase student achievement\n\nCORE and CORE II\nInclusive Skill-building Learning Approach (ISLA)\n\n\nTeaching\n\nEDLD 651 - Introduction to Data Science with R\nEDLD 653 - this one!\nEDLD 654 - Applied Machine Learning for Educational Data Scientists\nEDLD 609 - Data Science Capstone"
   },
   {
     "objectID": "slides/w1.html#introduce-yourself",
     "href": "slides/w1.html#introduce-yourself",
     "title": "Functional Programming for Educational Data Science",
-    "section": "Introduce yourself!",
-    "text": "Introduce yourself!\nWe mostly know each other, but it’s always good to hear from each other\n\nName and program of study\nHow and how often are you using R these days?"
+    "section": "",
+    "text": "We mostly know each other, but it’s always good to hear from each other\n\nName and program of study\nHow and how often are you using R these days?"
   },
   {
     "objectID": "slides/w1.html#this-course",
     "href": "slides/w1.html#this-course",
     "title": "Functional Programming for Educational Data Science",
-    "section": "This course",
-    "text": "This course\n… is new to me"
+    "section": "",
+    "text": "… is new to me"
   },
   {
     "objectID": "slides/w1.html#course-learning-outcomes",
@@ -151,7 +151,7 @@
     "href": "slides/w1.html#required-textbooks-free",
     "title": "Functional Programming for Educational Data Science",
     "section": "Required Textbooks (free)",
-    "text": "Required Textbooks (free)\n\nhttps://adv-r.hadley.nz"
+    "text": "Required Textbooks (free)\n\n\n\nhttps://adv-r.hadley.nz"
   },
   {
     "objectID": "slides/w1.html#other-books-also-free",
@@ -221,7 +221,7 @@
     "href": "slides/w1.html#vectors",
     "title": "Functional Programming for Educational Data Science",
     "section": "Vectors",
-    "text": "Vectors\n4 basic types1\n\nInteger (numeric, whole number)\nDouble (numeric, decimal)\nLogical\nCharacter\n\nNote there are two others (complex and raw), but we almost never care about them"
+    "text": "Vectors\n4 basic types1\n\nInteger (numeric, whole number)\nDouble (numeric, decimal)\nLogical\nCharacter"
   },
   {
     "objectID": "slides/w1.html#creating-vectors",
@@ -235,14 +235,14 @@
     "href": "slides/w1.html#coercion",
     "title": "Functional Programming for Educational Data Science",
     "section": "Coercion",
-    "text": "Coercion\n\nVectors must be of the same type\nIf you try to mix types, implicit coercion will occur\nImplicit coercion defaults to the most flexible type\n\nwhich is… ?\n\n\n\n\nc(7L, 3.25)\n\n[1] 7.00 3.25\n\n\n\n\n\nc(3.24, TRUE, \"April\")\n\n[1] \"3.24\"  \"TRUE\"  \"April\"\n\n\n\n\n\nc(TRUE, 5)\n\n[1] 1 5"
+    "text": "Coercion\n\nVectors must be of the same type\nIf you try to mix types, implicit coercion will occur\nImplicit coercion defaults to the most flexible type\n\nwhich is… ?\n\n\n. . .\n\nc(7L, 3.25)\n\n[1] 7.00 3.25\n\n\n. . .\n\nc(3.24, TRUE, \"April\")\n\n[1] \"3.24\"  \"TRUE\"  \"April\"\n\n\n. . .\n\nc(TRUE, 5)\n\n[1] 1 5"
   },
   {
     "objectID": "slides/w1.html#explicit-coercion",
     "href": "slides/w1.html#explicit-coercion",
     "title": "Functional Programming for Educational Data Science",
     "section": "Explicit coercion",
-    "text": "Explicit coercion\nYou can alternatively define the coercion to occur\n\nas.integer(c(7L, 3.25))\n\n[1] 7 3\n\n\n\n\nas.logical(c(3.24, TRUE, \"April\"))\n\n[1]   NA TRUE   NA\n\n\n\n\n\nas.character(c(TRUE, 5)) # still maybe a bit unexpected?\n\n[1] \"1\" \"5\""
+    "text": "Explicit coercion\nYou can alternatively define the coercion to occur\n\nas.integer(c(7L, 3.25))\n\n[1] 7 3\n\n\n. . .\n\nas.logical(c(3.24, TRUE, \"April\"))\n\n[1]   NA TRUE   NA\n\n\n. . .\n\nas.character(c(TRUE, 5)) # still maybe a bit unexpected?\n\n[1] \"1\" \"5\""
   },
   {
     "objectID": "slides/w1.html#review",
@@ -263,7 +263,7 @@
     "href": "slides/w1.html#coercing-to-logical",
     "title": "Functional Programming for Educational Data Science",
     "section": "Coercing to logical",
-    "text": "Coercing to logical\n\nas.logical(c(0, 1, 1, 0))\n\n[1] FALSE  TRUE  TRUE FALSE\n\n\n\nAny number that is not zero gets coerced to TRUE\n\nas.logical(c(0, 5L, 7.4, -1.6, 0))\n\n[1] FALSE  TRUE  TRUE  TRUE FALSE\n\n\n\n\n\nas.logical(c(3.24, TRUE, \"April\"))\n\n[1]   NA TRUE   NA\n\n\nWait…why the NAs here?"
+    "text": "Coercing to logical\n\nas.logical(c(0, 1, 1, 0))\n\n[1] FALSE  TRUE  TRUE FALSE\n\n\n. . .\nAny number that is not zero gets coerced to TRUE\n\nas.logical(c(0, 5L, 7.4, -1.6, 0))\n\n[1] FALSE  TRUE  TRUE  TRUE FALSE\n\n\n. . .\n\nas.logical(c(3.24, TRUE, \"April\"))\n\n[1]   NA TRUE   NA\n\n\nWait…why the NAs here?"
   },
   {
     "objectID": "slides/w1.html#piping",
@@ -284,21 +284,21 @@
     "href": "slides/w1.html#answers",
     "title": "Functional Programming for Educational Data Science",
     "section": "Answers",
-    "text": "Answers\n\ntypeof(c(1.25, TRUE, 4L))\n\n\n\n[1] \"double\"\n\n\n\n\ntypeof(c(1L, FALSE))\n\n\n\n[1] \"integer\"\n\n\n\n\n\ntypeof(c(7L, 6.23, \"eight\"))\n\n\n\n[1] \"character\"\n\n\n\n\n\ntypeof(c(TRUE, 1L, 0L, \"False\"))\n\n\n\n[1] \"character\""
+    "text": "Answers\n\ntypeof(c(1.25, TRUE, 4L))\n\n[1] \"double\"\n\n\n. . .\n\ntypeof(c(1L, FALSE))\n\n[1] \"integer\"\n\n\n. . .\n\ntypeof(c(7L, 6.23, \"eight\"))\n\n[1] \"character\"\n\n\n. . .\n\ntypeof(c(TRUE, 1L, 0L, \"False\"))\n\n[1] \"character\""
   },
   {
     "objectID": "slides/w1.html#lists",
     "href": "slides/w1.html#lists",
     "title": "Functional Programming for Educational Data Science",
     "section": "Lists",
-    "text": "Lists\n\nLists are vectors, but not atomic vectors\nFundamental difference - each element can be a different type\n\n\n\nlist(\"a\", 7L, 3.25, TRUE)\n\n[[1]]\n[1] \"a\"\n\n[[2]]\n[1] 7\n\n[[3]]\n[1] 3.25\n\n[[4]]\n[1] TRUE"
+    "text": "Lists\n\nLists are vectors, but not atomic vectors\nFundamental difference - each element can be a different type\n\n. . .\n\nlist(\"a\", 7L, 3.25, TRUE)\n\n[[1]]\n[1] \"a\"\n\n[[2]]\n[1] 7\n\n[[3]]\n[1] 3.25\n\n[[4]]\n[1] TRUE"
   },
   {
     "objectID": "slides/w1.html#lists-1",
     "href": "slides/w1.html#lists-1",
     "title": "Functional Programming for Educational Data Science",
     "section": "Lists",
-    "text": "Lists\n\n\n\nEach element of the list is another vector, possibly atomic, possibly not\nThe prior example included all scalar vectors\n\nvector that contains only a single value\n\nLists do not require all elements to be the same length\n\n\n\nlist(\n  c(\"a\", \"b\", \"c\"),\n  rnorm(5),\n  c(7L, 2L),\n  c(TRUE, TRUE, FALSE, TRUE)\n)\n\n[[1]]\n[1] \"a\" \"b\" \"c\"\n\n[[2]]\n[1] -0.4076587  0.6888384 -1.2058765 -0.9674861  0.9412265\n\n[[3]]\n[1] 7 2\n\n[[4]]\n[1]  TRUE  TRUE FALSE  TRUE"
+    "text": "Lists\n\n\n\nEach element of the list is another vector, possibly atomic, possibly not\nThe prior example included all scalar vectors\n\nvector that contains only a single value\n\nLists do not require all elements to be the same length\n\n\n\nlist(\n  c(\"a\", \"b\", \"c\"),\n  rnorm(5),\n  c(7L, 2L),\n  c(TRUE, TRUE, FALSE, TRUE)\n)\n\n[[1]]\n[1] \"a\" \"b\" \"c\"\n\n[[2]]\n[1] -0.86378205 -0.01866145 -1.78322803  0.89500207  0.35757039\n\n[[3]]\n[1] 7 2\n\n[[4]]\n[1]  TRUE  TRUE FALSE  TRUE"
   },
   {
     "objectID": "slides/w1.html#summary",
@@ -312,21 +312,21 @@
     "href": "slides/w1.html#challenge",
     "title": "Functional Programming for Educational Data Science",
     "section": "Challenge",
-    "text": "Challenge\nWork with a partner\nOne of you share your screen:\n\nCreate four atomic vectors, one for each of the fundamental types\n\ninteger, double, logical, character\n\nCombine two or more of the vectors. Predict the implicit coercion of each\nApply explicit coercions, and predict the output for each\n\n(basically quiz each other)"
+    "text": "Challenge\n\nWork with a partner\nOne of you share your screen:\n\nCreate four atomic vectors, one for each of the fundamental types\n\ninteger, double, logical, character\n\nCombine two or more of the vectors. Predict the implicit coercion of each\nApply explicit coercions, and predict the output for each\n\n(basically quiz each other)"
   },
   {
     "objectID": "slides/w1.html#attributes-1",
     "href": "slides/w1.html#attributes-1",
     "title": "Functional Programming for Educational Data Science",
     "section": "Attributes",
-    "text": "Attributes\n\nQ: What are attributes?\n\nA: metadata\n\nQ: What’s metadata?\n\nA: Data about the data\n\nAttributes\n\nnamed list of arbitrary metadata"
+    "text": "Attributes\n\n\nQ: What are attributes?\n\nA: metadata\n\nQ: What’s metadata?\n\nA: Data about the data\n\nAttributes\n\nnamed list of arbitrary metadata"
   },
   {
     "objectID": "slides/w1.html#other-data-types",
     "href": "slides/w1.html#other-data-types",
     "title": "Functional Programming for Educational Data Science",
     "section": "Other data types",
-    "text": "Other data types\nAtomic vectors by themselves make up only a small fraction of the total number of data types in R\n\nOther data types\n\nData frames\nMatrices & arrays\nFactors\nDates\n\n\n\nRemember, atomic vectors are the atoms of R. Many other data structures are built from atomic vectors.\nWe use attributes to create other data types from atomic vectors."
+    "text": "Other data types\nAtomic vectors by themselves make up only a small fraction of the total number of data types in R\n. . .\nOther data types\n\n\nData frames\nMatrices & arrays\nFactors\nDates\n\n\n. . .\nRemember, atomic vectors are the atoms of R. Many other data structures are built from atomic vectors.\nWe use attributes to create other data types from atomic vectors."
   },
   {
     "objectID": "slides/w1.html#attributes-2",
@@ -347,49 +347,49 @@
     "href": "slides/w1.html#attributes-3",
     "title": "Functional Programming for Educational Data Science",
     "section": "attributes()",
-    "text": "attributes()\nPlease follow along!\nattributes(): see all attributes associated with an object\n\nattributes(penguins[1:20, ]) # limiting rows just for slides\n\n\n\n$names\n[1] \"species\"           \"island\"            \"bill_length_mm\"   \n[4] \"bill_depth_mm\"     \"flipper_length_mm\" \"body_mass_g\"      \n[7] \"sex\"               \"year\"             \n\n$row.names\n [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20\n\n$class\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\""
+    "text": "attributes()\nPlease follow along!\nattributes(): see all attributes associated with an object\n\nattributes(penguins[1:20, ]) # limiting rows just for slides\n\n$names\n[1] \"species\"           \"island\"            \"bill_length_mm\"   \n[4] \"bill_depth_mm\"     \"flipper_length_mm\" \"body_mass_g\"      \n[7] \"sex\"               \"year\"             \n\n$row.names\n [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20\n\n$class\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\""
   },
   {
     "objectID": "slides/w1.html#attr",
     "href": "slides/w1.html#attr",
     "title": "Functional Programming for Educational Data Science",
     "section": "attr()",
-    "text": "attr()\nAccess a single attribute by naming it within attr()\n\nattr(penguins, \"class\")\n\n\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\"\n\n\n\nattr(penguins, \"names\")\n\n\n\n[1] \"species\"           \"island\"            \"bill_length_mm\"   \n[4] \"bill_depth_mm\"     \"flipper_length_mm\" \"body_mass_g\"      \n[7] \"sex\"               \"year\"             \n\n\n\nNote - this is not generally how you would pull these attributes. Rather, you would use class() and names()"
+    "text": "attr()\nAccess a single attribute by naming it within attr()\n\nattr(penguins, \"class\")\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\"\n\n\n\nattr(penguins, \"names\")\n\n[1] \"species\"           \"island\"            \"bill_length_mm\"   \n[4] \"bill_depth_mm\"     \"flipper_length_mm\" \"body_mass_g\"      \n[7] \"sex\"               \"year\"             \n\n\n. . .\nNote - this is not generally how you would pull these attributes. Rather, you would use class() and names()"
   },
   {
     "objectID": "slides/w1.html#be-specific",
     "href": "slides/w1.html#be-specific",
     "title": "Functional Programming for Educational Data Science",
     "section": "Be specific",
-    "text": "Be specific\n\nNote in the prior slides, I’m asking for attributes on the entire data frame\nBut the individual vectors may have attributes as well\n\n\n\nattributes(penguins$species)\n\n$levels\n[1] \"Adelie\"    \"Chinstrap\" \"Gentoo\"   \n\n$class\n[1] \"factor\"\n\nattributes(penguins$bill_length_mm)\n\nNULL"
+    "text": "Be specific\n\nNote in the prior slides, I’m asking for attributes on the entire data frame\nBut the individual vectors may have attributes as well\n\n. . .\n\nattributes(penguins$species)\n\n$levels\n[1] \"Adelie\"    \"Chinstrap\" \"Gentoo\"   \n\n$class\n[1] \"factor\"\n\nattributes(penguins$bill_length_mm)\n\nNULL"
   },
   {
     "objectID": "slides/w1.html#set-attributes",
     "href": "slides/w1.html#set-attributes",
     "title": "Functional Programming for Educational Data Science",
     "section": "Set attributes",
-    "text": "Set attributes\nRedefine attributes within attr()\n\nattr(penguins$species, \"levels\") &lt;- c(\"Big one\", \n                                      \"Little one\", \n                                      \"Funny one\")\n\nhead(penguins)\n\n\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Big one Torgersen           39.1          18.7               181        3750\n2 Big one Torgersen           39.5          17.4               186        3800\n3 Big one Torgersen           40.3          18                 195        3250\n4 Big one Torgersen           NA            NA                  NA          NA\n5 Big one Torgersen           36.7          19.3               193        3450\n6 Big one Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\nNote - you would generally not define levels this way either, but it is a general method for modifying attributes"
+    "text": "Set attributes\nRedefine attributes within attr()\n\nattr(penguins$species, \"levels\") &lt;- c(\"Big one\", \n                                      \"Little one\", \n                                      \"Funny one\")\n\nhead(penguins)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Big one Torgersen           39.1          18.7               181        3750\n2 Big one Torgersen           39.5          17.4               186        3800\n3 Big one Torgersen           40.3          18                 195        3250\n4 Big one Torgersen           NA            NA                  NA          NA\n5 Big one Torgersen           36.7          19.3               193        3450\n6 Big one Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n. . .\nNote - you would generally not define levels this way either, but it is a general method for modifying attributes"
   },
   {
     "objectID": "slides/w1.html#dimensions",
     "href": "slides/w1.html#dimensions",
     "title": "Functional Programming for Educational Data Science",
     "section": "Dimensions",
-    "text": "Dimensions\nLet’s create a matrix (please do it with me)\n\nNotice how the matrix fills\n\n\nm &lt;- matrix(1:6, ncol = 2)\nm\n\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6\n\n\n\nCheck out the attributes\n\nattributes(m)\n\n$dim\n[1] 3 2"
+    "text": "Dimensions\nLet’s create a matrix (please do it with me)\n\nNotice how the matrix fills\n\n\nm &lt;- matrix(1:6, ncol = 2)\nm\n\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6\n\n\n. . .\nCheck out the attributes\n\nattributes(m)\n\n$dim\n[1] 3 2"
   },
   {
     "objectID": "slides/w1.html#modify-the-attributes",
     "href": "slides/w1.html#modify-the-attributes",
     "title": "Functional Programming for Educational Data Science",
     "section": "Modify the attributes",
-    "text": "Modify the attributes\nLet’s change it to a 2 x 3 matrix, instead of 3 x 2 (you try first)\n\n\nattr(m, \"dim\") &lt;- c(2, 3)\nm\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n\n\n\nIs this the result you expected?"
+    "text": "Modify the attributes\nLet’s change it to a 2 x 3 matrix, instead of 3 x 2 (you try first)\n. . .\n\nattr(m, \"dim\") &lt;- c(2, 3)\nm\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n\n. . .\nIs this the result you expected?"
   },
   {
     "objectID": "slides/w1.html#alternative-creation",
     "href": "slides/w1.html#alternative-creation",
     "title": "Functional Programming for Educational Data Science",
     "section": "Alternative creation",
-    "text": "Alternative creation\nCreate an atomic vector v, assign a dimension attribute\n\nv &lt;- 1:6\nv\n\n[1] 1 2 3 4 5 6\n\n\n\n\nattr(v, \"dim\") &lt;- c(3, 2)\nv\n\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6"
+    "text": "Alternative creation\nCreate an atomic vector v, assign a dimension attribute\n\nv &lt;- 1:6\nv\n\n[1] 1 2 3 4 5 6\n\n\n. . .\n\nattr(v, \"dim\") &lt;- c(3, 2)\nv\n\n     [,1] [,2]\n[1,]    1    4\n[2,]    2    5\n[3,]    3    6"
   },
   {
     "objectID": "slides/w1.html#quick-aside",
@@ -417,7 +417,7 @@
     "href": "slides/w1.html#arbitrary-metadata",
     "title": "Functional Programming for Educational Data Science",
     "section": "Arbitrary metadata",
-    "text": "Arbitrary metadata\n\nattr(v, \"matrix_mean\") &lt;- mean(v)\nv\n\n          index value\nthe first     1     4\nsecond        2     5\nIII           3     6\nattr(,\"matrix_mean\")\n[1] 3.5\n\nattr(v, \"matrix_mean\")\n\n[1] 3.5\n\n\n\nNote that anything can be stored as an attribute (including matrices or data frames, etc.)"
+    "text": "Arbitrary metadata\n\nattr(v, \"matrix_mean\") &lt;- mean(v)\nv\n\n          index value\nthe first     1     4\nsecond        2     5\nIII           3     6\nattr(,\"matrix_mean\")\n[1] 3.5\n\nattr(v, \"matrix_mean\")\n\n[1] 3.5\n\n\n. . .\nNote that anything can be stored as an attribute (including matrices or data frames, etc.)"
   },
   {
     "objectID": "slides/w1.html#why-would-we-do-this",
@@ -445,14 +445,14 @@
     "href": "slides/w1.html#does-it-work",
     "title": "Functional Programming for Educational Data Science",
     "section": "Does it work?",
-    "text": "Does it work?\n\npull_color_data(1920)\n\n   color transparency\n1    red         0.80\n2 orange         0.65\n3  green         0.93\n\npull_color_data(2021)\n\n  color transparency\n1  blue         0.40\n2  pink         0.35\n3  cyan         0.87\n\npull_color_data(2122)\n\n  color transparency\n1  blue         0.40\n2  pink         0.35\n3  cyan         0.87\n\n\n\nYes!"
+    "text": "Does it work?\n\npull_color_data(1920)\n\n   color transparency\n1    red         0.80\n2 orange         0.65\n3  green         0.93\n\npull_color_data(2021)\n\n  color transparency\n1  blue         0.40\n2  pink         0.35\n3  cyan         0.87\n\npull_color_data(2122)\n\n  color transparency\n1  blue         0.40\n2  pink         0.35\n3  cyan         0.87\n\n\n. . .\nYes!"
   },
   {
     "objectID": "slides/w1.html#build-a-second-function",
     "href": "slides/w1.html#build-a-second-function",
     "title": "Functional Programming for Educational Data Science",
     "section": "Build a second function",
-    "text": "Build a second function\nLet’s say we want to make a second function that does something with the previous output.\nBUT\n\nWhat we do with it is going to depend on the data frame we get back.\nWe need to know the year.\nSo: Modify our original function to store the year as an attribute!"
+    "text": "Build a second function\nLet’s say we want to make a second function that does something with the previous output.\n\nBUT\n\nWhat we do with it is going to depend on the data frame we get back.\nWe need to know the year.\nSo: Modify our original function to store the year as an attribute!"
   },
   {
     "objectID": "slides/w1.html#update-function",
@@ -473,7 +473,7 @@
     "href": "slides/w1.html#build-our-second-function",
     "title": "Functional Programming for Educational Data Science",
     "section": "Build our second function",
-    "text": "Build our second function\nNow, we can make our second function, and have it do something different depending on the data that is passed to it.\n\n\nprint_colors &lt;- function(color_data) {\n  title &lt;- paste0(\"Colors for \", attr(color_data, \"db\")) \n  colorspace::swatchplot(color_data$color)\n  mtext(title) # base plotting function\n}"
+    "text": "Build our second function\nNow, we can make our second function, and have it do something different depending on the data that is passed to it.\n. . .\n\nprint_colors &lt;- function(color_data) {\n  title &lt;- paste0(\"Colors for \", attr(color_data, \"db\")) \n  colorspace::swatchplot(color_data$color)\n  mtext(title) # base plotting function\n}"
   },
   {
     "objectID": "slides/w1.html#section",
@@ -494,21 +494,21 @@
     "href": "slides/w1.html#matrices-vs-data-frames",
     "title": "Functional Programming for Educational Data Science",
     "section": "Matrices vs Data frames",
-    "text": "Matrices vs Data frames\nUsually we want to work with data frames because they represent our data better\nSometimes a matrix is more efficient because you can operate on the entire matrix at once\n\n\nset.seed(3000)\nm &lt;- matrix(rnorm(100, 200, 10), ncol = 10)\nm\n\n\n\n          [,1]     [,2]     [,3]     [,4]     [,5]     [,6]     [,7]     [,8]\n [1,] 212.5829 191.7712 199.5134 196.5931 175.2498 207.3866 192.2747 194.4411\n [2,] 206.4475 183.8198 209.9150 204.4850 212.8858 198.3413 194.4287 189.1406\n [3,] 204.6335 203.0518 193.4606 209.6925 204.9773 200.5138 216.1828 188.4229\n [4,] 207.7031 214.9317 195.3695 191.5964 214.3530 201.9884 198.9011 197.8626\n [5,] 197.7367 200.2874 189.6927 210.3867 193.3954 201.6348 197.5796 217.5513\n [6,] 196.4845 194.3709 192.6729 199.6904 189.8270 198.7178 208.5352 205.8042\n [7,] 193.5068 204.5237 205.7235 196.5166 197.8754 226.2404 190.5798 223.5147\n [8,] 187.3741 206.0149 194.3706 199.2014 193.6386 219.8513 187.0317 206.1837\n [9,] 183.0287 211.0514 187.4148 177.5480 203.2865 216.6478 194.5805 197.8386\n[10,] 181.6598 180.4219 193.6863 207.9981 191.9110 189.8216 200.8376 202.6439\n          [,9]    [,10]\n [1,] 202.9875 190.1133\n [2,] 187.3453 202.7654\n [3,] 186.9933 190.7834\n [4,] 202.5351 198.9414\n [5,] 202.4735 197.9089\n [6,] 196.7506 199.0003\n [7,] 206.9977 189.9343\n [8,] 212.2908 196.7418\n [9,] 214.7606 203.4116\n[10,] 217.8882 189.9789"
+    "text": "Matrices vs Data frames\nUsually we want to work with data frames because they represent our data better\nSometimes a matrix is more efficient because you can operate on the entire matrix at once\n. . .\n\nset.seed(3000)\nm &lt;- matrix(rnorm(100, 200, 10), ncol = 10)\nm\n\n          [,1]     [,2]     [,3]     [,4]     [,5]     [,6]     [,7]     [,8]\n [1,] 212.5829 191.7712 199.5134 196.5931 175.2498 207.3866 192.2747 194.4411\n [2,] 206.4475 183.8198 209.9150 204.4850 212.8858 198.3413 194.4287 189.1406\n [3,] 204.6335 203.0518 193.4606 209.6925 204.9773 200.5138 216.1828 188.4229\n [4,] 207.7031 214.9317 195.3695 191.5964 214.3530 201.9884 198.9011 197.8626\n [5,] 197.7367 200.2874 189.6927 210.3867 193.3954 201.6348 197.5796 217.5513\n [6,] 196.4845 194.3709 192.6729 199.6904 189.8270 198.7178 208.5352 205.8042\n [7,] 193.5068 204.5237 205.7235 196.5166 197.8754 226.2404 190.5798 223.5147\n [8,] 187.3741 206.0149 194.3706 199.2014 193.6386 219.8513 187.0317 206.1837\n [9,] 183.0287 211.0514 187.4148 177.5480 203.2865 216.6478 194.5805 197.8386\n[10,] 181.6598 180.4219 193.6863 207.9981 191.9110 189.8216 200.8376 202.6439\n          [,9]    [,10]\n [1,] 202.9875 190.1133\n [2,] 187.3453 202.7654\n [3,] 186.9933 190.7834\n [4,] 202.5351 198.9414\n [5,] 202.4735 197.9089\n [6,] 196.7506 199.0003\n [7,] 206.9977 189.9343\n [8,] 212.2908 196.7418\n [9,] 214.7606 203.4116\n[10,] 217.8882 189.9789"
   },
   {
     "objectID": "slides/w1.html#section-2",
     "href": "slides/w1.html#section-2",
     "title": "Functional Programming for Educational Data Science",
     "section": "",
-    "text": "sum(m)\n\n\n\n[1] 19950.41\n\n\n\n\nmean(m)\n\n\n\n[1] 199.5041\n\n\n\n\n\nrowSums(m)\n\n\n\n [1] 1962.914 1989.575 1998.712 2024.182 2008.647 1981.854 2035.413 2002.699\n [9] 1989.569 1956.847\n\n\n\n\n\ncolSums(m)\n\n\n\n [1] 1971.157 1990.245 1961.819 1993.708 1977.400 2061.144 1980.932 2023.404\n [9] 2031.023 1959.579\n\n\n\n\n\n# standardize the matrix\nz &lt;- (m - mean(m)) / sd(m)\nz\n\n            [,1]        [,2]          [,3]        [,4]       [,5]        [,6]\n [1,]  1.3010524 -0.76925390  0.0009222064 -0.28957800 -2.4127674  0.78413741\n [2,]  0.6907154 -1.56023846  1.0356537382  0.49548666  1.3311824 -0.11567656\n [3,]  0.5102566  0.35291388 -0.6011942053  1.01352341  0.5444628  0.10044486\n [4,]  0.8156136  1.53470366 -0.4112982781 -0.78663987  1.4771374  0.24713157\n [5,] -0.1758229  0.07792372 -0.9760202871  1.08257404 -0.6076838  0.21195789\n [6,] -0.3003824 -0.51064257 -0.6795541673  0.01853211 -0.9626564 -0.07822095\n [7,] -0.5965995  0.49933839  0.6186937589 -0.29718858 -0.1620174  2.65967021\n [8,] -1.2066698  0.64767736 -0.5106731003 -0.03011399 -0.5834837  2.02409910\n [9,] -1.6389436  1.14870403 -1.2026234041 -2.18414217  0.3762675  1.70542220\n[10,] -1.7751178 -1.89825813 -0.5787428911  0.84496235 -0.7553444 -0.96319978\n             [,7]       [,8]       [,9]       [,10]\n [1,] -0.71916313 -0.5036565  0.3465246 -0.93418102\n [2,] -0.50489283 -1.0309383 -1.2095282  0.32443028\n [3,]  1.65915710 -1.1023352 -1.2445489 -0.86751730\n [4,] -0.05999098 -0.1632940  0.3015206 -0.05597287\n [5,] -0.19144388  1.7952960  0.2953917 -0.15868964\n [6,]  0.89839717  0.6267207 -0.2739126 -0.05011848\n [7,] -0.88776743  2.3885179  0.7454463 -0.95198804\n [8,] -1.24072882  0.6644735  1.2719904 -0.27478419\n [9,] -0.48979202 -0.1656812  1.5176798  0.38870521\n[10,]  0.13265409  0.3123405  1.8288102 -0.94754278"
+    "text": "sum(m)\n\n[1] 19950.41\n\n\n. . .\n\nmean(m)\n\n[1] 199.5041\n\n\n. . .\n\nrowSums(m)\n\n [1] 1962.914 1989.575 1998.712 2024.182 2008.647 1981.854 2035.413 2002.699\n [9] 1989.569 1956.847\n\n\n. . .\n\ncolSums(m)\n\n [1] 1971.157 1990.245 1961.819 1993.708 1977.400 2061.144 1980.932 2023.404\n [9] 2031.023 1959.579\n\n\n. . .\n\n# standardize the matrix\nz &lt;- (m - mean(m)) / sd(m)\nz\n\n            [,1]        [,2]          [,3]        [,4]       [,5]        [,6]\n [1,]  1.3010524 -0.76925390  0.0009222064 -0.28957800 -2.4127674  0.78413741\n [2,]  0.6907154 -1.56023846  1.0356537382  0.49548666  1.3311824 -0.11567656\n [3,]  0.5102566  0.35291388 -0.6011942053  1.01352341  0.5444628  0.10044486\n [4,]  0.8156136  1.53470366 -0.4112982781 -0.78663987  1.4771374  0.24713157\n [5,] -0.1758229  0.07792372 -0.9760202871  1.08257404 -0.6076838  0.21195789\n [6,] -0.3003824 -0.51064257 -0.6795541673  0.01853211 -0.9626564 -0.07822095\n [7,] -0.5965995  0.49933839  0.6186937589 -0.29718858 -0.1620174  2.65967021\n [8,] -1.2066698  0.64767736 -0.5106731003 -0.03011399 -0.5834837  2.02409910\n [9,] -1.6389436  1.14870403 -1.2026234041 -2.18414217  0.3762675  1.70542220\n[10,] -1.7751178 -1.89825813 -0.5787428911  0.84496235 -0.7553444 -0.96319978\n             [,7]       [,8]       [,9]       [,10]\n [1,] -0.71916313 -0.5036565  0.3465246 -0.93418102\n [2,] -0.50489283 -1.0309383 -1.2095282  0.32443028\n [3,]  1.65915710 -1.1023352 -1.2445489 -0.86751730\n [4,] -0.05999098 -0.1632940  0.3015206 -0.05597287\n [5,] -0.19144388  1.7952960  0.2953917 -0.15868964\n [6,]  0.89839717  0.6267207 -0.2739126 -0.05011848\n [7,] -0.88776743  2.3885179  0.7454463 -0.95198804\n [8,] -1.24072882  0.6644735  1.2719904 -0.27478419\n [9,] -0.48979202 -0.1656812  1.5176798  0.38870521\n[10,]  0.13265409  0.3123405  1.8288102 -0.94754278"
   },
   {
     "objectID": "slides/w1.html#stripping-attributes",
     "href": "slides/w1.html#stripping-attributes",
     "title": "Functional Programming for Educational Data Science",
     "section": "Stripping attributes",
-    "text": "Stripping attributes\nMany operations will strip attributes (which makes storing important things in them a bit precarious)\n\nv\n\n          index value\nthe first     1     4\nsecond        2     5\nIII           3     6\nattr(,\"matrix_mean\")\n[1] 3.5\n\nrowSums(v)\n\nthe first    second       III \n        5         7         9 \n\n\n\n\nattributes(rowSums(v))\n\n$names\n[1] \"the first\" \"second\"    \"III\"      \n\n\n\n\n\nGenerally names are maintained\nSometimes, dim is maintained, sometimes not\nAll else is stripped"
+    "text": "Stripping attributes\nMany operations will strip attributes (which makes storing important things in them a bit precarious)\n\nv\n\n          index value\nthe first     1     4\nsecond        2     5\nIII           3     6\nattr(,\"matrix_mean\")\n[1] 3.5\n\nrowSums(v)\n\nthe first    second       III \n        5         7         9 \n\n\n. . .\n\nattributes(rowSums(v))\n\n$names\n[1] \"the first\" \"second\"    \"III\"      \n\n\n. . .\n\nGenerally names are maintained\nSometimes, dim is maintained, sometimes not\nAll else is stripped"
   },
   {
     "objectID": "slides/w1.html#more-on-names",
@@ -529,7 +529,7 @@
     "href": "slides/w1.html#names-alternatives",
     "title": "Functional Programming for Educational Data Science",
     "section": "names() alternatives",
-    "text": "names() alternatives\n\nv3b &lt;- c(5, 7, 12)\nnames(v3b) &lt;- c(\"a\", \"b\", \"c\")\nv3b\n\n a  b  c \n 5  7 12 \n\n\n\n\nv3c &lt;- setNames(c(5, 7, 12), c(\"a\", \"b\", \"c\"))\nv3c\n\n a  b  c \n 5  7 12 \n\n\n\n\n\nNote that names() is not the same thing as colnames(), but, somewhat confusingly, both work to rename the variables (columns) of a data frame. We’ll talk more about why this is"
+    "text": "names() alternatives\n\nv3b &lt;- c(5, 7, 12)\nnames(v3b) &lt;- c(\"a\", \"b\", \"c\")\nv3b\n\n a  b  c \n 5  7 12 \n\n\n. . .\n\nv3c &lt;- setNames(c(5, 7, 12), c(\"a\", \"b\", \"c\"))\nv3c\n\n a  b  c \n 5  7 12 \n\n\n. . .\n\nNote that names() is not the same thing as colnames(), but, somewhat confusingly, both work to rename the variables (columns) of a data frame. We’ll talk more about why this is"
   },
   {
     "objectID": "slides/w1.html#why-names-might-be-helpful",
@@ -543,7 +543,7 @@
     "href": "slides/w1.html#implementation-of-factors",
     "title": "Functional Programming for Educational Data Science",
     "section": "Implementation of factors",
-    "text": "Implementation of factors\n\nfct &lt;- factor(c(\"a\", \"a\", \"b\", \"c\"))\ntypeof(fct)\n\n[1] \"integer\"\n\n\n\nWeird! Factors are built on integer vectors\n\n\n\nattributes(fct)\n\n$levels\n[1] \"a\" \"b\" \"c\"\n\n$class\n[1] \"factor\"\n\n\n\n\n\nstr(fct)\n\n Factor w/ 3 levels \"a\",\"b\",\"c\": 1 1 2 3"
+    "text": "Implementation of factors\n\nfct &lt;- factor(c(\"a\", \"a\", \"b\", \"c\"))\ntypeof(fct)\n\n[1] \"integer\"\n\n\n. . .\nWeird! Factors are built on integer vectors\n. . .\n\nattributes(fct)\n\n$levels\n[1] \"a\" \"b\" \"c\"\n\n$class\n[1] \"factor\"\n\n\n. . .\n\nstr(fct)\n\n Factor w/ 3 levels \"a\",\"b\",\"c\": 1 1 2 3"
   },
   {
     "objectID": "slides/w1.html#more-manually",
@@ -557,14 +557,14 @@
     "href": "slides/w1.html#this-can-make-things-tricky",
     "title": "Functional Programming for Educational Data Science",
     "section": "This can make things tricky",
-    "text": "This can make things tricky\n\nage &lt;- factor(sample(c(\"baby\", 1:10), 100, replace = TRUE))\nstr(age)\n\n Factor w/ 11 levels \"1\",\"10\",\"2\",\"3\",..: 7 1 5 8 8 9 4 6 5 9 ...\n\nage\n\n  [1] 6    1    4    7    7    8    3    5    4    8    10   3    4    10   10  \n [16] 4    2    10   6    5    baby 3    7    2    10   8    7    10   7    4   \n [31] 6    9    8    8    6    7    9    1    7    6    9    9    8    7    2   \n [46] baby baby 2    4    7    9    3    9    7    5    3    7    9    9    10  \n [61] 3    9    3    3    10   10   baby 4    3    5    baby 4    9    9    10  \n [76] 7    1    2    4    8    3    10   6    3    8    7    1    9    10   6   \n [91] 9    6    1    3    9    9    9    4    3    9   \nLevels: 1 10 2 3 4 5 6 7 8 9 baby\n\n\n\nWhat if we wanted to convert this to numeric?"
+    "text": "This can make things tricky\n\nage &lt;- factor(sample(c(\"baby\", 1:10), 100, replace = TRUE))\nstr(age)\n\n Factor w/ 11 levels \"1\",\"10\",\"2\",\"3\",..: 7 1 5 8 8 9 4 6 5 9 ...\n\nage\n\n  [1] 6    1    4    7    7    8    3    5    4    8    10   3    4    10   10  \n [16] 4    2    10   6    5    baby 3    7    2    10   8    7    10   7    4   \n [31] 6    9    8    8    6    7    9    1    7    6    9    9    8    7    2   \n [46] baby baby 2    4    7    9    3    9    7    5    3    7    9    9    10  \n [61] 3    9    3    3    10   10   baby 4    3    5    baby 4    9    9    10  \n [76] 7    1    2    4    8    3    10   6    3    8    7    1    9    10   6   \n [91] 9    6    1    3    9    9    9    4    3    9   \nLevels: 1 10 2 3 4 5 6 7 8 9 baby\n\n\n. . .\nWhat if we wanted to convert this to numeric?"
   },
   {
     "objectID": "slides/w1.html#section-3",
     "href": "slides/w1.html#section-3",
     "title": "Functional Programming for Educational Data Science",
     "section": "",
-    "text": "data.frame(age) |&gt; \n  count(age) |&gt; \n  mutate(age_numeric = as.numeric(age)) |&gt; \n  select(starts_with(\"age\"), n)\n\n    age age_numeric  n\n1     1           1  5\n2    10           2 12\n3     2           3  5\n4     3           4 13\n5     4           5 10\n6     5           6  4\n7     6           7  8\n8     7           8 13\n9     8           9  8\n10    9          10 17\n11 baby          11  5\n\n\n\nThese are the integers associated with the factor levels, so as.numeric() will not give us the results we want"
+    "text": "data.frame(age) |&gt; \n  count(age) |&gt; \n  mutate(age_numeric = as.numeric(age)) |&gt; \n  select(starts_with(\"age\"), n)\n\n    age age_numeric  n\n1     1           1  5\n2    10           2 12\n3     2           3  5\n4     3           4 13\n5     4           5 10\n6     5           6  4\n7     6           7  8\n8     7           8 13\n9     8           9  8\n10    9          10 17\n11 baby          11  5\n\n\n. . .\nThese are the integers associated with the factor levels, so as.numeric() will not give us the results we want"
   },
   {
     "objectID": "slides/w1.html#fix",
@@ -585,7 +585,7 @@
     "href": "slides/w1.html#implementation-of-dates",
     "title": "Functional Programming for Educational Data Science",
     "section": "Implementation of dates",
-    "text": "Implementation of dates\n\ndate &lt;- Sys.Date()\ntypeof(date)\n\n[1] \"double\"\n\n\n\nHuh?\nDates are built on top of double vectors  (weird, like factors are built on integer vectors)\n\n\n\nattributes(date)\n\n$class\n[1] \"Date\"\n\n\n\n\n\nattributes(date) &lt;- NULL\ndate\n\n[1] 20542\n\n\n\nThis number represents the days passed since January 1, 1970, known as the Unix epoch\n\n\n\n\nunclass(as.Date(\"1970-01-02\"))\n\n[1] 1"
+    "text": "Implementation of dates\n\ndate &lt;- Sys.Date()\ntypeof(date)\n\n[1] \"double\"\n\n\n. . .\nHuh?\nDates are built on top of double vectors  (weird, like factors are built on integer vectors)\n. . .\n\nattributes(date)\n\n$class\n[1] \"Date\"\n\n\n. . .\n\nattributes(date) &lt;- NULL\ndate\n\n[1] 20549\n\n\n\nThis number represents the days passed since January 1, 1970, known as the Unix epoch\n\n. . .\n\nunclass(as.Date(\"1970-01-02\"))\n\n[1] 1"
   },
   {
     "objectID": "slides/w1.html#a-bit-more-on-classes",
@@ -599,42 +599,42 @@
     "href": "slides/w1.html#what-are-the-classes",
     "title": "Functional Programming for Educational Data Science",
     "section": "What are the classes?",
-    "text": "What are the classes?\n\nclass(mtcars[, 1:2])\n\n[1] \"data.frame\"\n\n\n\n\nclass(gss_cat$marital)\n\n[1] \"factor\"\n\n\n\n\n\nclass(m)\n\n[1] \"lm\""
+    "text": "What are the classes?\n\nclass(mtcars[, 1:2])\n\n[1] \"data.frame\"\n\n\n. . .\n\nclass(gss_cat$marital)\n\n[1] \"factor\"\n\n\n. . .\n\nclass(m)\n\n[1] \"lm\""
   },
   {
     "objectID": "slides/w1.html#s3-methods",
     "href": "slides/w1.html#s3-methods",
     "title": "Functional Programming for Educational Data Science",
     "section": "S3 methods",
-    "text": "S3 methods\nWhen you call summary(), it looks for a method (function) for that specific class\n\nsummary(mtcars[, 1:2]) becomes  summary.data.frame(mtcars[, 1:2])\nsummary(gss_cat$marital) becomes  summary.factor(gss_cat$marital)\nsummary(m) becomes  summary.lm(m)"
+    "text": "S3 methods\nWhen you call summary(), it looks for a method (function) for that specific class\n\n\nsummary(mtcars[, 1:2]) becomes  summary.data.frame(mtcars[, 1:2])\nsummary(gss_cat$marital) becomes  summary.factor(gss_cat$marital)\nsummary(m) becomes  summary.lm(m)"
   },
   {
     "objectID": "slides/w1.html#quick-aside-1",
     "href": "slides/w1.html#quick-aside-1",
     "title": "Functional Programming for Educational Data Science",
     "section": "Quick aside",
-    "text": "Quick aside\nToo briefly, S3 allows functions to behave differently depending on the class of the objects they are given\n\nNaming function\nBecause S3 is so common in R, I recommend against including dots . in function names\n\n\nsummary.data.frame() is less clear than it would be if it were summary.data_frame()\n\n\nClasses and methods is not something I’m going to expect you to have a deep knowledge on, but I want you to be aware of it"
+    "text": "Quick aside\nToo briefly, S3 allows functions to behave differently depending on the class of the objects they are given\n. . .\nNaming function\nBecause S3 is so common in R, I recommend against including dots . in function names\n. . .\nsummary.data.frame() is less clear than it would be if it were summary.data_frame()\n. . .\nClasses and methods is not something I’m going to expect you to have a deep knowledge on, but I want you to be aware of it"
   },
   {
     "objectID": "slides/w1.html#missing-values",
     "href": "slides/w1.html#missing-values",
     "title": "Functional Programming for Educational Data Science",
     "section": "Missing values",
-    "text": "Missing values\nMissing values beget missing values\n\nNA &gt; 5\n\n\n\n[1] NA\n\n\n\n\nNA * 7\n\n\n\n[1] NA\n\n\n\n\nI like this one\n\n!NA\n\n\n\n[1] NA\n\n\n\n\nWhat about this one?\n\nNA == NA\n\n\n\n[1] NA\n\n\n\n\nIt is correct because there’s no reason to presume that one missing value is or is not equal to another missing value"
+    "text": "Missing values\nMissing values beget missing values\n\nNA &gt; 5\n\n[1] NA\n\n\n. . .\n\nNA * 7\n\n[1] NA\n\n\n. . .\nI like this one\n\n!NA\n\n[1] NA\n\n\n. . .\nWhat about this one?\n\nNA == NA\n\n[1] NA\n\n\n. . .\nIt is correct because there’s no reason to presume that one missing value is or is not equal to another missing value"
   },
   {
     "objectID": "slides/w1.html#when-missing-values-dont-propagate",
     "href": "slides/w1.html#when-missing-values-dont-propagate",
     "title": "Functional Programming for Educational Data Science",
     "section": "When missing values don’t propagate",
-    "text": "When missing values don’t propagate\n\nNA | TRUE\n\n[1] TRUE\n\n\n\n\nx &lt;- c(NA, 3, NA, 5)\nany(x &gt; 4)\n\n[1] TRUE\n\n\n\n\n\nany(x &gt; 6)\n\n[1] NA"
+    "text": "When missing values don’t propagate\n\nNA | TRUE\n\n[1] TRUE\n\n\n. . .\n\nx &lt;- c(NA, 3, NA, 5)\nany(x &gt; 4)\n\n[1] TRUE\n\n\n. . .\n\nany(x &gt; 6)\n\n[1] NA"
   },
   {
     "objectID": "slides/w1.html#how-to-test-missingness",
     "href": "slides/w1.html#how-to-test-missingness",
     "title": "Functional Programming for Educational Data Science",
     "section": "How to test missingness?",
-    "text": "How to test missingness?\nWe’ve already seen the following doesn’t work\n\nx == NA\n\n[1] NA NA NA NA\n\n\n\nInstead, use is.na()\n\nis.na(x)\n\n[1]  TRUE FALSE  TRUE FALSE"
+    "text": "How to test missingness?\nWe’ve already seen the following doesn’t work\n\nx == NA\n\n[1] NA NA NA NA\n\n\n. . .\nInstead, use is.na()\n\nis.na(x)\n\n[1]  TRUE FALSE  TRUE FALSE"
   },
   {
     "objectID": "slides/w1.html#different-nas",
@@ -648,7 +648,7 @@
     "href": "slides/w1.html#lists-3",
     "title": "Functional Programming for Educational Data Science",
     "section": "Lists",
-    "text": "Lists\n\nLists are vectors, but not atomic vectors\nFundamental difference - each element can be a different type\n\n\nlist(\"a\", 7L, 3.25, TRUE)\n\n[[1]]\n[1] \"a\"\n\n[[2]]\n[1] 7\n\n[[3]]\n[1] 3.25\n\n[[4]]\n[1] TRUE\n\n\n\nSneak peak at future content\n\nlapply(list(\"a\", 7L, 3.25, TRUE), class)\n\n[[1]]\n[1] \"character\"\n\n[[2]]\n[1] \"integer\"\n\n[[3]]\n[1] \"numeric\"\n\n[[4]]\n[1] \"logical\""
+    "text": "Lists\n\nLists are vectors, but not atomic vectors\nFundamental difference - each element can be a different type\n\n\nlist(\"a\", 7L, 3.25, TRUE)\n\n[[1]]\n[1] \"a\"\n\n[[2]]\n[1] 7\n\n[[3]]\n[1] 3.25\n\n[[4]]\n[1] TRUE\n\n\n. . .\nSneak peak at future content\n\nlapply(list(\"a\", 7L, 3.25, TRUE), class)\n\n[[1]]\n[1] \"character\"\n\n[[2]]\n[1] \"integer\"\n\n[[3]]\n[1] \"numeric\"\n\n[[4]]\n[1] \"logical\""
   },
   {
     "objectID": "slides/w1.html#lists-4",
@@ -676,28 +676,28 @@
     "href": "slides/w1.html#a-nested-list",
     "title": "Functional Programming for Educational Data Science",
     "section": "A nested list",
-    "text": "A nested list\nLists are often complicated objects. Let’s create a somewhat complicated one\n\nx &lt;- c(a = 3, b = 5, c = 7)\nl &lt;- list(\n  x = x,\n  x2 = c(x, x),\n  x3 = list(\n    vect = x,\n    squared = x^2,\n    cubed = x^3)\n)\nl\n\n\n\n$x\na b c \n3 5 7 \n\n$x2\na b c a b c \n3 5 7 3 5 7 \n\n$x3\n$x3$vect\na b c \n3 5 7 \n\n$x3$squared\n a  b  c \n 9 25 49 \n\n$x3$cubed\n  a   b   c \n 27 125 343"
+    "text": "A nested list\nLists are often complicated objects. Let’s create a somewhat complicated one\n\nx &lt;- c(a = 3, b = 5, c = 7)\nl &lt;- list(\n  x = x,\n  x2 = c(x, x),\n  x3 = list(\n    vect = x,\n    squared = x^2,\n    cubed = x^3)\n)\nl\n\n$x\na b c \n3 5 7 \n\n$x2\na b c a b c \n3 5 7 3 5 7 \n\n$x3\n$x3$vect\na b c \n3 5 7 \n\n$x3$squared\n a  b  c \n 9 25 49 \n\n$x3$cubed\n  a   b   c \n 27 125 343"
   },
   {
     "objectID": "slides/w1.html#subsetting-lists-1",
     "href": "slides/w1.html#subsetting-lists-1",
     "title": "Functional Programming for Educational Data Science",
     "section": "Subsetting lists",
-    "text": "Subsetting lists\nMultiple methods\n\nMost common: $, [, and [[\n\n\nl[1]\n\n$x\na b c \n3 5 7 \n\ntypeof(l[1])\n\n[1] \"list\"\n\n\n\n\nl[[1]]\n\na b c \n3 5 7 \n\ntypeof(l[[1]])\n\n[1] \"double\"\n\n\n\n\n\nl[[1]][\"c\"]\n\nc \n7"
+    "text": "Subsetting lists\nMultiple methods\n\nMost common: $, [, and [[\n\n\nl[1]\n\n$x\na b c \n3 5 7 \n\ntypeof(l[1])\n\n[1] \"list\"\n\n\n. . .\n\nl[[1]]\n\na b c \n3 5 7 \n\ntypeof(l[[1]])\n\n[1] \"double\"\n\n\n. . .\n\nl[[1]][\"c\"]\n\nc \n7"
   },
   {
     "objectID": "slides/w1.html#which-bracket-to-use",
     "href": "slides/w1.html#which-bracket-to-use",
     "title": "Functional Programming for Educational Data Science",
     "section": "Which bracket to use?",
-    "text": "Which bracket to use?\n\n\nx \n\nx[1] \n\nx[[1]] \n\nx[[1]][[1]] \n\n\n\nr4DS"
+    "text": "Which bracket to use?\n\n\nx \n\nx[1] \n\nx[[1]] \n\nx[[1]][[1]] \n\n\n\n\nr4DS"
   },
   {
     "objectID": "slides/w1.html#another-analogy",
     "href": "slides/w1.html#another-analogy",
     "title": "Functional Programming for Educational Data Science",
     "section": "Another analogy",
-    "text": "Another analogy\n\n\n\n\n\n\nAdvanced-R"
+    "text": "Another analogy\n\n. . .\n\n\n\nAdvanced-R"
   },
   {
     "objectID": "slides/w1.html#named-list",
@@ -711,7 +711,7 @@
     "href": "slides/w1.html#subsetting-nested-lists",
     "title": "Functional Programming for Educational Data Science",
     "section": "Subsetting nested lists",
-    "text": "Subsetting nested lists\nMultiple $ if all are named\n\nl$x3$squared\n\n a  b  c \n 9 25 49 \n\n\n\nNote this doesn’t work on named elements of an atomic vector, just the named elements of a list\n\nl$x3$squared$b\n\nError in `l$x3$squared$b`:\n! $ operator is invalid for atomic vectors\n\n\n\n\nbut we could do something like…\n\nl$x3$squared[\"b\"]\n\n b \n25"
+    "text": "Subsetting nested lists\nMultiple $ if all are named\n\nl$x3$squared\n\n a  b  c \n 9 25 49 \n\n\n. . .\nNote this doesn’t work on named elements of an atomic vector, just the named elements of a list\n\nl$x3$squared$b\n\nError in `l$x3$squared$b`:\n! $ operator is invalid for atomic vectors\n\n\n. . .\nbut we could do something like…\n\nl$x3$squared[\"b\"]\n\n b \n25"
   },
   {
     "objectID": "slides/w1.html#alternatives",
@@ -739,7 +739,7 @@
     "href": "slides/w1.html#empty-indicators",
     "title": "Functional Programming for Educational Data Science",
     "section": "Empty indicators",
-    "text": "Empty indicators\nAn empty indicator implies “all”\n\n\nSelect the entire 4th column\n\n\nmtcars[ ,4]\n\n [1] 110 110  93 110 175 105 245  62  95 123 123 180 180 180 205 215 230  66  52\n[20]  65  97 150 150 245 175  66  91 113 264 175 335 109\n\n\n\nSelect the entire 4th row\n\n\nmtcars[4, ]\n\n                mpg cyl disp  hp drat    wt  qsec vs am gear carb\nHornet 4 Drive 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1"
+    "text": "Empty indicators\nAn empty indicator implies “all”\n. . .\n\nSelect the entire 4th column\n\n\nmtcars[ ,4]\n\n [1] 110 110  93 110 175 105 245  62  95 123 123 180 180 180 205 215 230  66  52\n[20]  65  97 150 150 245 175  66  91 113 264 175 335 109\n\n\n\nSelect the entire 4th row\n\n\nmtcars[4, ]\n\n                mpg cyl disp  hp drat    wt  qsec vs am gear carb\nHornet 4 Drive 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1"
   },
   {
     "objectID": "slides/w1.html#data-types-returned",
@@ -774,14 +774,14 @@
     "href": "slides/w1.html#subset-array",
     "title": "Functional Programming for Educational Data Science",
     "section": "Subset array",
-    "text": "Subset array\nSelect just the second matrix\n\narray[ , ,2]\n\n     [,1] [,2] [,3]\n[1,]    7    9   11\n[2,]    8   10   12\n\n\n\nSelect first column of each matrix\n\narray[ ,1, ]\n\n     [,1] [,2]\n[1,]    1    7\n[2,]    2    8"
+    "text": "Subset array\nSelect just the second matrix\n\narray[ , ,2]\n\n     [,1] [,2] [,3]\n[1,]    7    9   11\n[2,]    8   10   12\n\n\n. . .\nSelect first column of each matrix\n\narray[ ,1, ]\n\n     [,1] [,2]\n[1,]    1    7\n[2,]    2    8"
   },
   {
     "objectID": "slides/w1.html#back-to-lists",
     "href": "slides/w1.html#back-to-lists",
     "title": "Functional Programming for Educational Data Science",
     "section": "Back to lists",
-    "text": "Back to lists\nWhy are lists so useful?\n\nMuch more flexible\nOften returned by functions, for example, lm\n\n\nm &lt;- lm(mpg ~ hp, mtcars)\nstr(m)\n\n\n\nList of 12\n $ coefficients : Named num [1:2] 30.0989 -0.0682\n  ..- attr(*, \"names\")= chr [1:2] \"(Intercept)\" \"hp\"\n $ residuals    : Named num [1:32] -1.594 -1.594 -0.954 -1.194 0.541 ...\n  ..- attr(*, \"names\")= chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n $ effects      : Named num [1:32] -113.65 -26.046 -0.556 -0.852 0.67 ...\n  ..- attr(*, \"names\")= chr [1:32] \"(Intercept)\" \"hp\" \"\" \"\" ...\n $ rank         : int 2\n $ fitted.values: Named num [1:32] 22.6 22.6 23.8 22.6 18.2 ...\n  ..- attr(*, \"names\")= chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n $ assign       : int [1:2] 0 1\n $ qr           :List of 5\n  ..$ qr   : num [1:32, 1:2] -5.657 0.177 0.177 0.177 0.177 ...\n  .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. ..$ : chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n  .. .. ..$ : chr [1:2] \"(Intercept)\" \"hp\"\n  .. ..- attr(*, \"assign\")= int [1:2] 0 1\n  ..$ qraux: num [1:2] 1.18 1.08\n  ..$ pivot: int [1:2] 1 2\n  ..$ tol  : num 1e-07\n  ..$ rank : int 2\n  ..- attr(*, \"class\")= chr \"qr\"\n $ df.residual  : int 30\n $ xlevels      : Named list()\n $ call         : language lm(formula = mpg ~ hp, data = mtcars)\n $ terms        :Classes 'terms', 'formula'  language mpg ~ hp\n  .. ..- attr(*, \"variables\")= language list(mpg, hp)\n  .. ..- attr(*, \"factors\")= int [1:2, 1] 0 1\n  .. .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. .. ..$ : chr [1:2] \"mpg\" \"hp\"\n  .. .. .. ..$ : chr \"hp\"\n  .. ..- attr(*, \"term.labels\")= chr \"hp\"\n  .. ..- attr(*, \"order\")= int 1\n  .. ..- attr(*, \"intercept\")= int 1\n  .. ..- attr(*, \"response\")= int 1\n  .. ..- attr(*, \".Environment\")=&lt;environment: R_GlobalEnv&gt; \n  .. ..- attr(*, \"predvars\")= language list(mpg, hp)\n  .. ..- attr(*, \"dataClasses\")= Named chr [1:2] \"numeric\" \"numeric\"\n  .. .. ..- attr(*, \"names\")= chr [1:2] \"mpg\" \"hp\"\n $ model        :'data.frame':  32 obs. of  2 variables:\n  ..$ mpg: num [1:32] 21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...\n  ..$ hp : num [1:32] 110 110 93 110 175 105 245 62 95 123 ...\n  ..- attr(*, \"terms\")=Classes 'terms', 'formula'  language mpg ~ hp\n  .. .. ..- attr(*, \"variables\")= language list(mpg, hp)\n  .. .. ..- attr(*, \"factors\")= int [1:2, 1] 0 1\n  .. .. .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. .. .. ..$ : chr [1:2] \"mpg\" \"hp\"\n  .. .. .. .. ..$ : chr \"hp\"\n  .. .. ..- attr(*, \"term.labels\")= chr \"hp\"\n  .. .. ..- attr(*, \"order\")= int 1\n  .. .. ..- attr(*, \"intercept\")= int 1\n  .. .. ..- attr(*, \"response\")= int 1\n  .. .. ..- attr(*, \".Environment\")=&lt;environment: R_GlobalEnv&gt; \n  .. .. ..- attr(*, \"predvars\")= language list(mpg, hp)\n  .. .. ..- attr(*, \"dataClasses\")= Named chr [1:2] \"numeric\" \"numeric\"\n  .. .. .. ..- attr(*, \"names\")= chr [1:2] \"mpg\" \"hp\"\n - attr(*, \"class\")= chr \"lm\""
+    "text": "Back to lists\nWhy are lists so useful?\n\nMuch more flexible\nOften returned by functions, for example, lm\n\n\nm &lt;- lm(mpg ~ hp, mtcars)\nstr(m)\n\nList of 12\n $ coefficients : Named num [1:2] 30.0989 -0.0682\n  ..- attr(*, \"names\")= chr [1:2] \"(Intercept)\" \"hp\"\n $ residuals    : Named num [1:32] -1.594 -1.594 -0.954 -1.194 0.541 ...\n  ..- attr(*, \"names\")= chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n $ effects      : Named num [1:32] -113.65 -26.046 -0.556 -0.852 0.67 ...\n  ..- attr(*, \"names\")= chr [1:32] \"(Intercept)\" \"hp\" \"\" \"\" ...\n $ rank         : int 2\n $ fitted.values: Named num [1:32] 22.6 22.6 23.8 22.6 18.2 ...\n  ..- attr(*, \"names\")= chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n $ assign       : int [1:2] 0 1\n $ qr           :List of 5\n  ..$ qr   : num [1:32, 1:2] -5.657 0.177 0.177 0.177 0.177 ...\n  .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. ..$ : chr [1:32] \"Mazda RX4\" \"Mazda RX4 Wag\" \"Datsun 710\" \"Hornet 4 Drive\" ...\n  .. .. ..$ : chr [1:2] \"(Intercept)\" \"hp\"\n  .. ..- attr(*, \"assign\")= int [1:2] 0 1\n  ..$ qraux: num [1:2] 1.18 1.08\n  ..$ pivot: int [1:2] 1 2\n  ..$ tol  : num 1e-07\n  ..$ rank : int 2\n  ..- attr(*, \"class\")= chr \"qr\"\n $ df.residual  : int 30\n $ xlevels      : Named list()\n $ call         : language lm(formula = mpg ~ hp, data = mtcars)\n $ terms        :Classes 'terms', 'formula'  language mpg ~ hp\n  .. ..- attr(*, \"variables\")= language list(mpg, hp)\n  .. ..- attr(*, \"factors\")= int [1:2, 1] 0 1\n  .. .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. .. ..$ : chr [1:2] \"mpg\" \"hp\"\n  .. .. .. ..$ : chr \"hp\"\n  .. ..- attr(*, \"term.labels\")= chr \"hp\"\n  .. ..- attr(*, \"order\")= int 1\n  .. ..- attr(*, \"intercept\")= int 1\n  .. ..- attr(*, \"response\")= int 1\n  .. ..- attr(*, \".Environment\")=&lt;environment: R_GlobalEnv&gt; \n  .. ..- attr(*, \"predvars\")= language list(mpg, hp)\n  .. ..- attr(*, \"dataClasses\")= Named chr [1:2] \"numeric\" \"numeric\"\n  .. .. ..- attr(*, \"names\")= chr [1:2] \"mpg\" \"hp\"\n $ model        :'data.frame':  32 obs. of  2 variables:\n  ..$ mpg: num [1:32] 21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...\n  ..$ hp : num [1:32] 110 110 93 110 175 105 245 62 95 123 ...\n  ..- attr(*, \"terms\")=Classes 'terms', 'formula'  language mpg ~ hp\n  .. .. ..- attr(*, \"variables\")= language list(mpg, hp)\n  .. .. ..- attr(*, \"factors\")= int [1:2, 1] 0 1\n  .. .. .. ..- attr(*, \"dimnames\")=List of 2\n  .. .. .. .. ..$ : chr [1:2] \"mpg\" \"hp\"\n  .. .. .. .. ..$ : chr \"hp\"\n  .. .. ..- attr(*, \"term.labels\")= chr \"hp\"\n  .. .. ..- attr(*, \"order\")= int 1\n  .. .. ..- attr(*, \"intercept\")= int 1\n  .. .. ..- attr(*, \"response\")= int 1\n  .. .. ..- attr(*, \".Environment\")=&lt;environment: R_GlobalEnv&gt; \n  .. .. ..- attr(*, \"predvars\")= language list(mpg, hp)\n  .. .. ..- attr(*, \"dataClasses\")= Named chr [1:2] \"numeric\" \"numeric\"\n  .. .. .. ..- attr(*, \"names\")= chr [1:2] \"mpg\" \"hp\"\n - attr(*, \"class\")= chr \"lm\""
   },
   {
     "objectID": "slides/w1.html#summary-1",
@@ -802,6 +802,713 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: $L6&HnNN\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\n\n\nLab 1\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nR4DS(1e) 25\n\n\n\n\nLab 2\nLab 1\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\n\n\nLab 2\n\n\n\n\nAdvR(2e) 9.4-9.6\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\n\n\nMidterm Test\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
+    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: $L6&HnNN\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\n\nLab 1\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nR4DS(1e) 25\n\n\n\n\nLab 2\nLab 1\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\n\n\nLab 2\n\n\n\n\nAdvR(2e) 9.4-9.6\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\n\n\nMidterm Test\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
+  },
+  {
+    "objectID": "slides/w2.html#agenda",
+    "href": "slides/w2.html#agenda",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Agenda",
+    "text": "Agenda\n\nFor loops\nApply family of loops\n\nlapply()\nsapply()\nvapply()\napply() (briefly)\n\nLab 1 (🤞)\n\nLearning objectives\n\nUnderstand the basics of what it means to loop through a vector\nBegin to recognize use cases\nBe able to apply basic for loops and write their equivalents with lapply"
+  },
+  {
+    "objectID": "slides/w2.html#for-loops",
+    "href": "slides/w2.html#for-loops",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "for loops",
+    "text": "for loops"
+  },
+  {
+    "objectID": "slides/w2.html#basic-overview-for-loops",
+    "href": "slides/w2.html#basic-overview-for-loops",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Basic overview for loops",
+    "text": "Basic overview for loops\n\na &lt;- letters[1:26]\na\n\n\n\n [1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\" \"g\" \"h\" \"i\" \"j\" \"k\" \"l\" \"m\" \"n\" \"o\" \"p\" \"q\" \"r\" \"s\"\n[20] \"t\" \"u\" \"v\" \"w\" \"x\" \"y\" \"z\"\n\n\n\n\nfor(i in 1:5){\n    print(a[i])\n}\n\n\n\n[1] \"a\"\n[1] \"b\"\n[1] \"c\"\n[1] \"d\"\n[1] \"e\"\n\n\n\n\nNote these are five different character scalars (atomic vectors of length one)\nIt is NOT a single vector"
+  },
+  {
+    "objectID": "slides/w2.html#creating-indexes",
+    "href": "slides/w2.html#creating-indexes",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Creating indexes",
+    "text": "Creating indexes\nYou will commonly see code like this:\n\nfor(i in 1:nrow(df)) {some_function}\n\n. . .  \nInstead, use seq_along() or seq_len()"
+  },
+  {
+    "objectID": "slides/w2.html#seq_",
+    "href": "slides/w2.html#seq_",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "seq_*",
+    "text": "seq_*\n\nseq_along()\n\ntakes a vector argument\ncreates an index from 1 to the length of the vector provided\n\nseq_len()\n\ntakes a single positive integer argument\ncreates an index from 1 to that integer\n\n\n\n\nx &lt;- c(3, 2.6, 8)\n\n\nseq_along(x)\n\n\n\n[1] 1 2 3\n\n\n\nseq_len(length(x))\n\n\n\n[1] 1 2 3\n\n\n\n\nWhy are these preferable?"
+  },
+  {
+    "objectID": "slides/w2.html#avoid-the-length-of-0-problem",
+    "href": "slides/w2.html#avoid-the-length-of-0-problem",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Avoid the length of 0 problem",
+    "text": "Avoid the length of 0 problem\n: works with both increasing and decreasing sequences\nwhich is problematic\n\nmeans &lt;- c()\n\nlength(means)\n\n[1] 0\n\n1:length(means)\n\n[1] 1 0"
+  },
+  {
+    "objectID": "slides/w2.html#avoid-the-length-of-0-problem-1",
+    "href": "slides/w2.html#avoid-the-length-of-0-problem-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Avoid the length of 0 problem",
+    "text": "Avoid the length of 0 problem\n\nX &lt;- 1:10\nN &lt;- length(X)\n\ni &lt;- 1\n\n\n\n\n: method\n\nX[(i+1):N]\n\n[1]  2  3  4  5  6  7  8  9 10\n\nX[1:(i-1)]\n\n[1] 1\n\n\n\nseq_len() method\n\nX[-seq_len(i)]\n\n[1]  2  3  4  5  6  7  8  9 10\n\nX[seq_len(i-1)]\n\ninteger(0)"
+  },
+  {
+    "objectID": "slides/w2.html#another-example",
+    "href": "slides/w2.html#another-example",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Another example",
+    "text": "Another example\nTry this\n\nmeans &lt;- c()\nout &lt;- rep(NA, length(means))\nout\n\n\n\nlogical(0)\n\n\n\n\nfor (i in 1:length(means)) {\n  out[i] &lt;- rnorm(10, means[i])\n}\n\nError in `rnorm()`:\n! invalid arguments\n\n\n\n\nseq_* version\n\nfor (i in seq_along(means)) {\n  out[i] &lt;- rnorm(10, means[i])\n}\n\n\n\nBasically, the loop is just not executed"
+  },
+  {
+    "objectID": "slides/w2.html#another-for-loop-example",
+    "href": "slides/w2.html#another-for-loop-example",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Another for loop example",
+    "text": "Another for loop example\nSimulate tossing a coin, record results\n\nFor a single toss\n\n\nsample(c(\"Heads\", \"Tails\"), 1)\n\n[1] \"Tails\"\n\n\n\n\nFor multiple tosses, first allocate a vector with length equal to the number of iterations (here, 10)\n\n\n(result &lt;- rep(NA, 10))\n\n [1] NA NA NA NA NA NA NA NA NA NA\n\n\n\n\n\nNext, run the trial \\(n\\) times, storing the result in your pre-allocated vector\n\n\nfor(i in seq_along(result)) {\n    result[i] &lt;- sample(c(\"Heads\", \"Tails\"), 1)\n}\n\n\n\nWait, what?\n\n\n\nresult\n\n [1] \"Tails\" \"Tails\" \"Heads\" \"Tails\" \"Tails\" \"Tails\" \"Heads\" \"Tails\" \"Heads\"\n[10] \"Tails\""
+  },
+  {
+    "objectID": "slides/w2.html#growing-vectors",
+    "href": "slides/w2.html#growing-vectors",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Growing vectors",
+    "text": "Growing vectors\n\nALWAYS pre-allocate a vector for storage before running a for loop\nContrary to some opinions you may see out there, for loops are not actually slower than lapply, etc., provided the for loop is written well\nThis primarily means not growing a vector"
+  },
+  {
+    "objectID": "slides/w2.html#growing-vector-example",
+    "href": "slides/w2.html#growing-vector-example",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Growing vector example",
+    "text": "Growing vector example\n100,000 (1e5) coin flips by growing a vector\n\nlibrary(tictoc)\n\nset.seed(3000)\ntic()\nnot_allocated &lt;- sample(c(\"Heads\", \"Tails\"), 1)\nfor(i in seq_len(1e5 - 1)) {\n    not_allocated &lt;- c(\n      not_allocated, \n      sample(c(\"Heads\", \"Tails\"), 1)\n     )\n  \n}\ntoc()\n\n61.15 sec elapsed"
+  },
+  {
+    "objectID": "slides/w2.html#pre-allocated-vector-example",
+    "href": "slides/w2.html#pre-allocated-vector-example",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Pre-allocated vector example",
+    "text": "Pre-allocated vector example\nExactly the same thing with pre-allocated vector\n\nset.seed(3000)\ntic()\nallocated &lt;- rep(NA, 1e5)\nfor(i in seq_len(1e5)) {\n    allocated[i] &lt;- sample(c(\"Heads\", \"Tails\"), 1)\n}\ntoc()\n\n0.28 sec elapsed"
+  },
+  {
+    "objectID": "slides/w2.html#result",
+    "href": "slides/w2.html#result",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Result",
+    "text": "Result\nThe result is the same, regardless of the approach (notice I forced the random number generator to start at the same place in both samples)\n\nidentical(not_allocated, allocated)\n\n\n\n[1] TRUE\n\n\n\nBut speed is obviously NOT identical"
+  },
+  {
+    "objectID": "slides/w2.html#you-try",
+    "href": "slides/w2.html#you-try",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "You try",
+    "text": "You try\nBase R comes with letters and LETTERS\n\nMake an alphabet of upper/lower case\n\nFor example, create “Aa” with  paste0(LETTERS[1], letters[1])\n\nWrite a for loop for all letters\n\nDon’t look ahead!"
+  },
+  {
+    "objectID": "slides/w2.html#answer",
+    "href": "slides/w2.html#answer",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Answer",
+    "text": "Answer\n\n\nalphabet &lt;- rep(NA, length(letters))\n\nfor(i in seq_along(alphabet)) {\n    alphabet[i] &lt;- paste0(LETTERS[i], letters[i])\n}\n\n\n\nWhere is it?\n\n\n\nalphabet\n\n [1] \"Aa\" \"Bb\" \"Cc\" \"Dd\" \"Ee\" \"Ff\" \"Gg\" \"Hh\" \"Ii\" \"Jj\" \"Kk\" \"Ll\" \"Mm\" \"Nn\" \"Oo\"\n[16] \"Pp\" \"Qq\" \"Rr\" \"Ss\" \"Tt\" \"Uu\" \"Vv\" \"Ww\" \"Xx\" \"Yy\" \"Zz\""
+  },
+  {
+    "objectID": "slides/w2.html#another-example-1",
+    "href": "slides/w2.html#another-example-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Another example",
+    "text": "Another example\n\nSay we wanted to simulate 100 cases from a random normal (rnorm()) distribution, where we varied the standard deviation in increments of 0.2, ranging from 1 to 5\n\nMaybe this is a relatable example; if not, that’s okay - focus on the process\n\n\n\n\nFirst, specify a vector of standard deviations\n\n\nincrements &lt;- seq(1, 5, by = 0.2)\nincrements\n\n\n\n [1] 1.0 1.2 1.4 1.6 1.8 2.0 2.2 2.4 2.6 2.8 3.0 3.2 3.4 3.6 3.8 4.0 4.2 4.4 4.6\n[20] 4.8 5.0\n\n\n\n\n\nNext, allocate a vector. There are many ways I could store this result (data frame, matrix, list). I’ll do it in a list.\n\n\nsimulated &lt;- vector(\"list\", length(increments))"
+  },
+  {
+    "objectID": "slides/w2.html#look-at-our-vector",
+    "href": "slides/w2.html#look-at-our-vector",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Look at our vector",
+    "text": "Look at our vector\n\nstr(simulated)\n\nList of 21\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL\n $ : NULL"
+  },
+  {
+    "objectID": "slides/w2.html#write-for-loop",
+    "href": "slides/w2.html#write-for-loop",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Write for loop",
+    "text": "Write for loop\n\nfor(i in seq_along(simulated)) {\n    simulated[[i]] &lt;- rnorm(100, 0, increments[i]) \n}\n\nnote use of [[ above\n\nNow look at our vector\n\nstr(simulated)\n\nList of 21\n $ : num [1:100] 0.113 -1.034 1.039 0.75 -0.762 ...\n $ : num [1:100] -0.478 0.899 -1.879 -0.562 1.329 ...\n $ : num [1:100] -1.6934 -1.3552 -2.413 -0.5348 0.0318 ...\n $ : num [1:100] 1.084 -0.822 -1.952 1.2 0.265 ...\n $ : num [1:100] 0.64 -0.04 -0.715 -0.309 0.494 ...\n $ : num [1:100] -3.98 -2.165 0.488 -2.217 -2.08 ...\n $ : num [1:100] -1.691 -0.576 -0.239 3.253 0.777 ...\n $ : num [1:100] 2.975 0.673 2.041 -2.141 1.652 ...\n $ : num [1:100] -1.447 -2.445 -4.24 0.148 -0.355 ...\n $ : num [1:100] 4.71 -3.84 -3.27 5.42 1.67 ...\n $ : num [1:100] 0.115 -2.412 -1 -2.307 -0.332 ...\n $ : num [1:100] 0.727 1.451 -0.163 1.078 -5.881 ...\n $ : num [1:100] 0.79 -4.756 -0.829 -2.805 -2.242 ...\n $ : num [1:100] 1.883 0.458 1.318 5.461 2.404 ...\n $ : num [1:100] 3.53 1.14 -10.58 7.69 -6.24 ...\n $ : num [1:100] -5.903 3.891 2.005 -0.756 -6.651 ...\n $ : num [1:100] -1.875 3.626 -0.837 -4.227 0.305 ...\n $ : num [1:100] 6.78 -6.19 -12.4 -1.79 -3.45 ...\n $ : num [1:100] 6.04 -1.47 -1.9 5.37 3.16 ...\n $ : num [1:100] 3.976 6.997 1.454 0.294 1.205 ...\n $ : num [1:100] 4.02 1.46 -1.78 8.73 -8.37 ..."
+  },
+  {
+    "objectID": "slides/w2.html#listdata-frame",
+    "href": "slides/w2.html#listdata-frame",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "List/data frame",
+    "text": "List/data frame\nRemember, if all the vectors of our list are the same length, it can be transformed into a data frame\n\nFirst, let’s provide meaningful names\n\n\nnames(simulated) &lt;- paste0(\"sd_\", increments)\nstr(simulated)\n\n\n\nList of 21\n $ sd_1  : num [1:100] 0.113 -1.034 1.039 0.75 -0.762 ...\n $ sd_1.2: num [1:100] -0.478 0.899 -1.879 -0.562 1.329 ...\n $ sd_1.4: num [1:100] -1.6934 -1.3552 -2.413 -0.5348 0.0318 ...\n $ sd_1.6: num [1:100] 1.084 -0.822 -1.952 1.2 0.265 ...\n $ sd_1.8: num [1:100] 0.64 -0.04 -0.715 -0.309 0.494 ...\n $ sd_2  : num [1:100] -3.98 -2.165 0.488 -2.217 -2.08 ...\n $ sd_2.2: num [1:100] -1.691 -0.576 -0.239 3.253 0.777 ...\n $ sd_2.4: num [1:100] 2.975 0.673 2.041 -2.141 1.652 ...\n $ sd_2.6: num [1:100] -1.447 -2.445 -4.24 0.148 -0.355 ...\n $ sd_2.8: num [1:100] 4.71 -3.84 -3.27 5.42 1.67 ...\n $ sd_3  : num [1:100] 0.115 -2.412 -1 -2.307 -0.332 ...\n $ sd_3.2: num [1:100] 0.727 1.451 -0.163 1.078 -5.881 ...\n $ sd_3.4: num [1:100] 0.79 -4.756 -0.829 -2.805 -2.242 ...\n $ sd_3.6: num [1:100] 1.883 0.458 1.318 5.461 2.404 ...\n $ sd_3.8: num [1:100] 3.53 1.14 -10.58 7.69 -6.24 ...\n $ sd_4  : num [1:100] -5.903 3.891 2.005 -0.756 -6.651 ...\n $ sd_4.2: num [1:100] -1.875 3.626 -0.837 -4.227 0.305 ...\n $ sd_4.4: num [1:100] 6.78 -6.19 -12.4 -1.79 -3.45 ...\n $ sd_4.6: num [1:100] 6.04 -1.47 -1.9 5.37 3.16 ...\n $ sd_4.8: num [1:100] 3.976 6.997 1.454 0.294 1.205 ...\n $ sd_5  : num [1:100] 4.02 1.46 -1.78 8.73 -8.37 ..."
+  },
+  {
+    "objectID": "slides/w2.html#convert-to-df",
+    "href": "slides/w2.html#convert-to-df",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Convert to df",
+    "text": "Convert to df\n\nsim_d &lt;- data.frame(simulated)\nhead(sim_d)\n\n\n\n        sd_1     sd_1.2      sd_1.4     sd_1.6      sd_1.8       sd_2\n1  0.1126720 -0.4780102 -1.69336367  1.0835239  0.63974813 -3.9799125\n2 -1.0338082  0.8988913 -1.35515384 -0.8223365 -0.04004912 -2.1648949\n3  1.0389273 -1.8787826 -2.41295461 -1.9515378 -0.71508282  0.4876032\n4  0.7495827 -0.5617623 -0.53478814  1.2003186 -0.30924976 -2.2166700\n5 -0.7615774  1.3292711  0.03180703  0.2648453  0.49367973 -2.0800577\n6 -0.5946631 -0.6382888 -1.27049744 -1.4362464 -0.04664557 -2.0178328\n      sd_2.2     sd_2.4     sd_2.6     sd_2.8       sd_3     sd_3.2     sd_3.4\n1 -1.6907542  2.9746229 -1.4465928  4.7115532  0.1150782  0.7274318  0.7898735\n2 -0.5756973  0.6732238 -2.4450853 -3.8355788 -2.4115488  1.4514710 -4.7561379\n3 -0.2391966  2.0410256 -4.2399557 -3.2689751 -1.0003639 -0.1629507 -0.8290433\n4  3.2530927 -2.1406894  0.1479403  5.4152456 -2.3066529  1.0777145 -2.8049169\n5  0.7772467  1.6516594 -0.3545570  1.6692248 -0.3319414 -5.8806571 -2.2415574\n6 -3.4338520  0.9435318  2.6994436 -0.5823008 -5.8046079  2.1054521 -0.5912333\n      sd_3.6     sd_3.8       sd_4     sd_4.2     sd_4.4    sd_4.6    sd_4.8\n1  1.8833575   3.534135 -5.9032251 -1.8753397   6.776103  6.044064 3.9760694\n2  0.4578044   1.142994  3.8908180  3.6259659  -6.185148 -1.468651 6.9974463\n3  1.3184129 -10.583007  2.0050042 -0.8370599 -12.399146 -1.903332 1.4542270\n4  5.4612558   7.688458 -0.7558747 -4.2270062  -1.789687  5.365211 0.2943318\n5  2.4039176  -6.237536 -6.6505067  0.3048719  -3.449543  3.164006 1.2048734\n6 -2.2619557  -4.076220 -0.0935083 -2.4253962  -3.334022 -3.646544 7.5757365\n        sd_5\n1  4.0211372\n2  1.4649359\n3 -1.7770657\n4  8.7269522\n5 -8.3688811\n6 -0.8422565"
+  },
+  {
+    "objectID": "slides/w2.html#base-r-method",
+    "href": "slides/w2.html#base-r-method",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Base R Method",
+    "text": "Base R Method\n\nCalculate all the densities\n\n\ndensities &lt;- vector(\"list\", length(sim_d))\nfor(i in seq_along(densities)) {\n    densities[[i]] &lt;- density(sim_d[ ,i])\n}\nstr(densities)\n\n\n\nList of 21\n $ :List of 8\n  ..$ x         : num [1:512] -3.03 -3.02 -3.01 -2.99 -2.98 ...\n  ..$ y         : num [1:512] 0.000297 0.000334 0.000374 0.000418 0.000468 ...\n  ..$ bw        : num 0.333\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -4.2 -4.18 -4.16 -4.15 -4.13 ...\n  ..$ y         : num [1:512] 0.000128 0.000149 0.000172 0.000198 0.00023 ...\n  ..$ bw        : num 0.356\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -5.25 -5.23 -5.21 -5.19 -5.17 ...\n  ..$ y         : num [1:512] 9.57e-05 1.07e-04 1.21e-04 1.36e-04 1.52e-04 ...\n  ..$ bw        : num 0.52\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -5.36 -5.34 -5.31 -5.29 -5.27 ...\n  ..$ y         : num [1:512] 8.42e-05 9.43e-05 1.06e-04 1.19e-04 1.33e-04 ...\n  ..$ bw        : num 0.53\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -6.6 -6.58 -6.55 -6.53 -6.5 ...\n  ..$ y         : num [1:512] 7.01e-05 7.85e-05 8.82e-05 9.88e-05 1.10e-04 ...\n  ..$ bw        : num 0.677\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -6.55 -6.53 -6.5 -6.48 -6.45 ...\n  ..$ y         : num [1:512] 0.000108 0.00012 0.000133 0.000148 0.000164 ...\n  ..$ bw        : num 0.72\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -8.27 -8.24 -8.21 -8.18 -8.15 ...\n  ..$ y         : num [1:512] 7.19e-05 8.15e-05 9.26e-05 1.05e-04 1.19e-04 ...\n  ..$ bw        : num 0.695\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -7.65 -7.62 -7.58 -7.55 -7.52 ...\n  ..$ y         : num [1:512] 6.68e-05 7.49e-05 8.37e-05 9.37e-05 1.05e-04 ...\n  ..$ bw        : num 0.836\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -9.31 -9.27 -9.24 -9.2 -9.16 ...\n  ..$ y         : num [1:512] 4.74e-05 5.31e-05 5.95e-05 6.65e-05 7.42e-05 ...\n  ..$ bw        : num 0.949\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -10.07 -10.03 -9.99 -9.95 -9.91 ...\n  ..$ y         : num [1:512] 4.45e-05 5.04e-05 5.69e-05 6.43e-05 7.25e-05 ...\n  ..$ bw        : num 1\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -10.7 -10.6 -10.6 -10.6 -10.5 ...\n  ..$ y         : num [1:512] 8.97e-05 1.00e-04 1.12e-04 1.25e-04 1.40e-04 ...\n  ..$ bw        : num 0.952\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -11.1 -11 -11 -10.9 -10.9 ...\n  ..$ y         : num [1:512] 9.04e-05 1.02e-04 1.15e-04 1.29e-04 1.45e-04 ...\n  ..$ bw        : num 1.12\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -9.81 -9.77 -9.73 -9.69 -9.64 ...\n  ..$ y         : num [1:512] 5.09e-05 5.76e-05 6.51e-05 7.36e-05 8.29e-05 ...\n  ..$ bw        : num 1.02\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -11.6 -11.5 -11.4 -11.4 -11.3 ...\n  ..$ y         : num [1:512] 6.75e-05 7.63e-05 8.59e-05 9.64e-05 1.08e-04 ...\n  ..$ bw        : num 1.28\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -14.2 -14.1 -14.1 -14 -14 ...\n  ..$ y         : num [1:512] 3.89e-05 4.46e-05 5.10e-05 5.82e-05 6.61e-05 ...\n  ..$ bw        : num 1.2\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -13.8 -13.7 -13.6 -13.6 -13.5 ...\n  ..$ y         : num [1:512] 3.70e-05 4.16e-05 4.66e-05 5.24e-05 5.88e-05 ...\n  ..$ bw        : num 1.43\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -13.1 -13 -12.9 -12.9 -12.8 ...\n  ..$ y         : num [1:512] 3.57e-05 4.06e-05 4.62e-05 5.25e-05 5.95e-05 ...\n  ..$ bw        : num 1.35\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -20.5 -20.5 -20.4 -20.3 -20.2 ...\n  ..$ y         : num [1:512] 2.40e-05 2.71e-05 3.05e-05 3.41e-05 3.84e-05 ...\n  ..$ bw        : num 1.87\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -14.8 -14.8 -14.7 -14.7 -14.6 ...\n  ..$ y         : num [1:512] 5.06e-05 5.70e-05 6.39e-05 7.14e-05 8.00e-05 ...\n  ..$ bw        : num 1.52\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -22.6 -22.6 -22.5 -22.4 -22.4 ...\n  ..$ y         : num [1:512] 2.80e-05 3.22e-05 3.70e-05 4.23e-05 4.82e-05 ...\n  ..$ bw        : num 1.59\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\"\n $ :List of 8\n  ..$ x         : num [1:512] -20.2 -20.1 -20.1 -20 -19.9 ...\n  ..$ y         : num [1:512] 2.37e-05 2.68e-05 3.03e-05 3.42e-05 3.86e-05 ...\n  ..$ bw        : num 1.88\n  ..$ n         : int 100\n  ..$ old.coords: logi FALSE\n  ..$ call      : language density.default(x = sim_d[, i])\n  ..$ data.name : chr \"sim_d[, i]\"\n  ..$ has.na    : logi FALSE\n  ..- attr(*, \"class\")= chr \"density\""
+  },
+  {
+    "objectID": "slides/w2.html#base-r-method-1",
+    "href": "slides/w2.html#base-r-method-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Base R Method",
+    "text": "Base R Method\n\nNext, plot the first density\n\n\nplot(densities[[1]])"
+  },
+  {
+    "objectID": "slides/w2.html#base-r-method-2",
+    "href": "slides/w2.html#base-r-method-2",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Base R Method",
+    "text": "Base R Method\n\nFinally, loop through all the other densities\n\n\nplot(densities[[1]], xlim = c(-20, 20))\n\nfor(i in seq(2, length(densities))) {\n    lines(x = densities[[i]]$x, \n          y = densities[[i]]$y) \n}"
+  },
+  {
+    "objectID": "slides/w2.html#skipping-iterations",
+    "href": "slides/w2.html#skipping-iterations",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Skipping iterations",
+    "text": "Skipping iterations\n\nOn the prior slide, I set the index to skip over the first by using seq(2, length(densities))\nAlternatively, the loop could have been written like this\n\n\nplot(densities[[1]], xlim = c(-20, 20))\n\nfor(i in seq_along(densities)) {\n    if(i == 1) next\n    lines(x = densities[[i]]$x, \n          y = densities[[i]]$y) \n}"
+  },
+  {
+    "objectID": "slides/w2.html#tidyverse",
+    "href": "slides/w2.html#tidyverse",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "tidyverse",
+    "text": "tidyverse\nOne of the best things about the tidyverse is that it often does the looping for you\n\n\npd &lt;- sim_d |&gt;\n    pivot_longer(\n      everything(),\n      names_to = \"sd\", \n      values_to = \"sim\",\n      names_prefix = \"sd_\",\n      names_ptypes = list(\n        sd = factor()\n      )\n    ) \n\nggplot(pd, aes(sim)) +\n geom_density(aes(color = sd)) +\n guides(color = \"none\")"
+  },
+  {
+    "objectID": "slides/w2.html#breaking-a-loop-visibility-hidden",
+    "href": "slides/w2.html#breaking-a-loop-visibility-hidden",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Breaking a loop {visibility = “hidden”}",
+    "text": "Breaking a loop {visibility = “hidden”}\nStop an iteration if a condition is met with break\n\nset.seed(3000)\n\nrand_unif &lt;- vector(\"double\", 10)\n\nfor(i in seq_along(rand_unif)) {\n    rand_unif[i] &lt;- runif(1, 0, 10)\n    if(any(rand_unif &gt; 5)) {\n        break\n    }\n}\n\nrand_unif\n\n [1] 8.95857 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000\n[10] 0.00000"
+  },
+  {
+    "objectID": "slides/w2.html#break",
+    "href": "slides/w2.html#break",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "break",
+    "text": "break\nStop an iteration if a condition is met with break\n\nbreak on “ugli fruit”\n\nfruit\n\n [1] \"apple\"             \"apricot\"           \"avocado\"          \n [4] \"banana\"            \"bell pepper\"       \"bilberry\"         \n [7] \"blackberry\"        \"blackcurrant\"      \"blood orange\"     \n[10] \"blueberry\"         \"boysenberry\"       \"breadfruit\"       \n[13] \"canary melon\"      \"cantaloupe\"        \"cherimoya\"        \n[16] \"cherry\"            \"chili pepper\"      \"clementine\"       \n[19] \"cloudberry\"        \"coconut\"           \"cranberry\"        \n[22] \"cucumber\"          \"currant\"           \"damson\"           \n[25] \"date\"              \"dragonfruit\"       \"durian\"           \n[28] \"eggplant\"          \"elderberry\"        \"feijoa\"           \n[31] \"fig\"               \"goji berry\"        \"gooseberry\"       \n[34] \"grape\"             \"grapefruit\"        \"guava\"            \n[37] \"honeydew\"          \"huckleberry\"       \"jackfruit\"        \n[40] \"jambul\"            \"jujube\"            \"kiwi fruit\"       \n[43] \"kumquat\"           \"lemon\"             \"lime\"             \n[46] \"loquat\"            \"lychee\"            \"mandarine\"        \n[49] \"mango\"             \"mulberry\"          \"nectarine\"        \n[52] \"nut\"               \"olive\"             \"orange\"           \n[55] \"pamelo\"            \"papaya\"            \"passionfruit\"     \n[58] \"peach\"             \"pear\"              \"persimmon\"        \n[61] \"physalis\"          \"pineapple\"         \"plum\"             \n[64] \"pomegranate\"       \"pomelo\"            \"purple mangosteen\"\n[67] \"quince\"            \"raisin\"            \"rambutan\"         \n[70] \"raspberry\"         \"redcurrant\"        \"rock melon\"       \n[73] \"salal berry\"       \"satsuma\"           \"star fruit\"       \n[76] \"strawberry\"        \"tamarillo\"         \"tangerine\"        \n[79] \"ugli fruit\"        \"watermelon\"       \n\n\n\n\n\nset.seed(3000)\n\nrand_fruit &lt;- vector(\"character\", 100)\n\nfor(i in seq_along(rand_fruit)) {\n    rand_fruit[i] &lt;- sample(fruit, 1)\n    if(any(rand_fruit == \"ugli fruit\")) {\n        break\n    }\n}\n\nrand_fruit\n\n\n\n  [1] \"cherimoya\"    \"lychee\"       \"passionfruit\" \"blueberry\"    \"cranberry\"   \n  [6] \"currant\"      \"boysenberry\"  \"chili pepper\" \"avocado\"      \"blood orange\"\n [11] \"ugli fruit\"   \"\"             \"\"             \"\"             \"\"            \n [16] \"\"             \"\"             \"\"             \"\"             \"\"            \n [21] \"\"             \"\"             \"\"             \"\"             \"\"            \n [26] \"\"             \"\"             \"\"             \"\"             \"\"            \n [31] \"\"             \"\"             \"\"             \"\"             \"\"            \n [36] \"\"             \"\"             \"\"             \"\"             \"\"            \n [41] \"\"             \"\"             \"\"             \"\"             \"\"            \n [46] \"\"             \"\"             \"\"             \"\"             \"\"            \n [51] \"\"             \"\"             \"\"             \"\"             \"\"            \n [56] \"\"             \"\"             \"\"             \"\"             \"\"            \n [61] \"\"             \"\"             \"\"             \"\"             \"\"            \n [66] \"\"             \"\"             \"\"             \"\"             \"\"            \n [71] \"\"             \"\"             \"\"             \"\"             \"\"            \n [76] \"\"             \"\"             \"\"             \"\"             \"\"            \n [81] \"\"             \"\"             \"\"             \"\"             \"\"            \n [86] \"\"             \"\"             \"\"             \"\"             \"\"            \n [91] \"\"             \"\"             \"\"             \"\"             \"\"            \n [96] \"\"             \"\"             \"\"             \"\"             \"\""
+  },
+  {
+    "objectID": "slides/w2.html#next",
+    "href": "slides/w2.html#next",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "next",
+    "text": "next\nSkip an iteration without terminating the loop with next\n\nskip “ugli fruit”\n\nset.seed(3000)\n\nrand_fruit &lt;- vector(\"character\", 100)\n\nfor(i in seq_along(rand_fruit)) {\n    rand_fruit[i] &lt;- sample(fruit, 1)\n    if(any(rand_fruit == \"ugli fruit\")) {\n        next\n    }\n}\n\nrand_fruit[\"ugli fruit\"]\n\n\n\n[1] NA"
+  },
+  {
+    "objectID": "slides/w2.html#last-thought-on-for-loops",
+    "href": "slides/w2.html#last-thought-on-for-loops",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Last thought on for loops",
+    "text": "Last thought on for loops\nYou generally shouldn’t need to use for loops for data analysis tasks\napply() (next) and map() (next week) provide more robust solutions to most problems"
+  },
+  {
+    "objectID": "slides/w2.html#lapply",
+    "href": "slides/w2.html#lapply",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "lapply()",
+    "text": "lapply()\n\nOne of numerous functionals in R\n\nA functional “takes a function as an input and returns a vector as output” (AdvR, Ch. 9)\n\nlapply() will always return a list\nlapply(x, FUN, ...)"
+  },
+  {
+    "objectID": "slides/w2.html#simple-examples",
+    "href": "slides/w2.html#simple-examples",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Simple examples",
+    "text": "Simple examples\nLoop through a data frame\n\nRemember - a data frame is a list. We can loop through it easily\n\n\n\n\n\nlibrary(palmerpenguins)\nlapply(penguins, is.numeric)\n\n\n\n$species\n[1] FALSE\n\n$island\n[1] FALSE\n\n$bill_length_mm\n[1] TRUE\n\n$bill_depth_mm\n[1] TRUE\n\n$flipper_length_mm\n[1] TRUE\n\n$body_mass_g\n[1] TRUE\n\n$sex\n[1] FALSE\n\n$year\n[1] TRUE\n\n\n\n\nlapply(mtcars, mean)\n\n\n\n$mpg\n[1] 20.09062\n\n$cyl\n[1] 6.1875\n\n$disp\n[1] 230.7219\n\n$hp\n[1] 146.6875\n\n$drat\n[1] 3.596563\n\n$wt\n[1] 3.21725\n\n$qsec\n[1] 17.84875\n\n$vs\n[1] 0.4375\n\n$am\n[1] 0.40625\n\n$gear\n[1] 3.6875\n\n$carb\n[1] 2.8125"
+  },
+  {
+    "objectID": "slides/w2.html#revisiting-our-simulation-with-n-10",
+    "href": "slides/w2.html#revisiting-our-simulation-with-n-10",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Revisiting our simulation with \\(n = 10\\)",
+    "text": "Revisiting our simulation with \\(n = 10\\)\n10 cases from random normal distribution\nOur for loop version\n\nincrements &lt;- seq(1, 5, by = 0.2)\n\nsimulated &lt;- vector(\"list\", length(increments))\n\nfor(i in seq_along(simulated)) {\n    simulated[[i]] &lt;- rnorm(10, 0, increments[i]) \n}\n\nsimulated\n\n\n\n[[1]]\n [1]  0.7019659  1.4080729  1.5855049 -0.1159594 -1.6184577 -0.8685868\n [7]  0.5725353  1.5020997  0.4776544  0.5704263\n\n[[2]]\n [1] -1.5032111 -0.4635517  0.5843735  2.5511473  0.8311559 -2.5939943\n [7] -1.3946632 -0.3744163 -0.9565903 -0.3334137\n\n[[3]]\n [1]  1.3987541  1.3138154  1.1952521 -0.7280929 -0.9774022 -2.3748910\n [7]  0.2211581  2.0439555  0.6597643  0.9247177\n\n[[4]]\n [1] -1.17938792 -0.85090394 -1.66911850  0.60580107 -0.09319063  0.96424908\n [7] -0.71573874 -0.84862914 -2.84366893  2.74051043\n\n[[5]]\n [1] -1.67473502  3.78627668  2.21760469  1.79871989  0.61076082  2.26739975\n [7]  0.40318730 -1.47898063 -0.93028381 -0.06112215\n\n[[6]]\n [1] -0.39360342  2.63045923  0.13683130 -0.30129628 -2.80950121 -0.45100320\n [7]  1.85287700  0.08379172 -3.35182610 -1.13943533\n\n[[7]]\n [1] -0.8792638 -0.2015623  0.8712158 -4.0155096  1.4829769 -1.2439822\n [7] -4.9190550  1.9448742  0.6006172 -3.1500311\n\n[[8]]\n [1] -1.19258914  1.70128147 -1.01709724  4.12107298  0.39844070 -0.03773795\n [7] -0.88892905  1.72924626 -2.20431086  3.55655316\n\n[[9]]\n [1] -0.8109234  2.2415188 -4.3428035 -1.3887998  0.9478032 -2.1510850\n [7]  2.2464380  2.1790652  0.2658378 -0.5050961\n\n[[10]]\n [1] -3.8380453  1.8707884 -4.7180945 -5.2706985  0.7637031 -2.5150921\n [7]  0.1398676  4.7475136  1.8262695  0.8878070\n\n[[11]]\n [1] -0.7124232  5.6971345  0.4168275  2.1707873  0.4078937  0.8236137\n [7]  0.4166894 -1.1700535  0.2813558 -1.7013374\n\n[[12]]\n [1]  3.6684601 -6.4950553  2.7195886 -4.0825655 -1.3228556  0.3686458\n [7] -1.7199430  4.0405103  1.8186114  2.6708650\n\n[[13]]\n [1]  3.4796287 -4.7070236  6.3598681 -0.2484373  3.3232871  1.8303518\n [7] -6.6345432 -2.6541128  4.3034350 -6.2735923\n\n[[14]]\n [1]  0.9638453 -2.2051130 -0.2938058 -0.1776934 -0.2382037 -2.5918608\n [7]  8.2087316  6.3124395 -1.6617223 -5.0983245\n\n[[15]]\n [1] -3.356816 -9.866520  1.270889 -5.050831  4.819798 -4.276553 -5.123649\n [8]  4.800624  2.900262  4.638832\n\n[[16]]\n [1]  1.2533397 -0.7967168 -3.4747042  0.7045451  2.6577155 -1.1389303\n [7] -0.9931517 -0.6158335  3.1899898 -2.0015935\n\n[[17]]\n [1] -2.5475101  1.9713666  1.7382913  0.1806804 -2.3263909  3.2468837\n [7] -2.3498898 -0.4262246 -9.2894332  2.9332861\n\n[[18]]\n [1]  7.2226066  4.2077777 -1.9218792  0.1525742 -2.4302173  7.5949019\n [7]  1.4443248 -3.0579550 -4.6065755 -2.4429780\n\n[[19]]\n [1]  3.006982  2.402910 -4.455305 -1.365753  1.007137  1.945525  5.731369\n [8]  2.643082  7.253715 -1.310914\n\n[[20]]\n [1] -4.84015782  1.13853303 -1.26893048  0.03200417 -1.08084880  1.57557106\n [7]  0.37274324  1.74783587  3.75306613 -0.24459380\n\n[[21]]\n [1]  7.1202227 -5.5543948  1.4972206  4.8239050 -1.9867446  0.7982388\n [7] -0.8702481 -4.7798742 -2.4762099  6.6618692"
+  },
+  {
+    "objectID": "slides/w2.html#the-lapply-version",
+    "href": "slides/w2.html#the-lapply-version",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "The lapply version",
+    "text": "The lapply version\n\nincrements &lt;- seq(1, 5, by = 0.2)\nsim_l &lt;- lapply(increments, function(sd) rnorm(10, 0, sd))\nsim_l\n\n\n\n[[1]]\n [1] -0.492977465 -1.326315004 -1.277971738 -1.786735667 -0.029929162\n [6]  0.821401221 -1.901137076 -0.313659636  0.007199708 -0.940656172\n\n[[2]]\n [1]  0.02293225  0.27576005  0.98030384  1.48113369 -1.87152339 -0.28627466\n [7]  1.51132454  1.56102968 -0.02240571 -2.80846340\n\n[[3]]\n [1]  1.4057812  1.1853134 -1.2570415  0.6509708 -0.6405013  0.6936492\n [7] -1.9660866  1.7420709 -1.4611224  0.1316577\n\n[[4]]\n [1]  0.7812576 -2.9256970 -1.5436066 -2.5333862  0.6171761  0.7044896\n [7] -0.4006856 -0.6106846 -0.1082784  0.7174894\n\n[[5]]\n [1]  1.5374167  0.2505228 -1.2636145 -0.9425670 -2.3026569  1.8802193\n [7]  1.4040287 -0.5680369 -1.7274334  0.6360815\n\n[[6]]\n [1] -2.0901501 -0.5947297  1.3656397  0.9351094 -3.3431900 -4.0962263\n [7] -2.0610299  0.7385466 -2.3327358  0.2866699\n\n[[7]]\n [1]  3.2682871 -0.3279264  1.4030807  0.1635299 -2.8962721 -2.9090211\n [7] -1.1082169  3.1683640  1.0964915 -4.1445029\n\n[[8]]\n [1]  1.0202599 -2.1033574  3.0265243  0.4845599 -1.0732037 -1.6051391\n [7] -4.5692419  1.3335215 -1.1335379  0.8800409\n\n[[9]]\n [1] -0.4299886  2.3957394 -1.1279263  3.1767972 -2.1287808  1.1345961\n [7]  1.6635893  1.0742162  3.9675515 -3.4037107\n\n[[10]]\n [1]  3.90943708 -0.47550222 -0.05090254 -3.79433049  2.16843003  0.49479999\n [7]  1.95194176  1.10057432  1.36113548 -1.63364698\n\n[[11]]\n [1]  3.5635989 -3.0480015 -1.9094632 -1.9366025  8.0425229 -2.2570386\n [7]  2.0810249  0.9133481  1.6115470 -2.6532489\n\n[[12]]\n [1]  2.0564643  1.6226583 -3.5424946 -1.2795244  3.0515716 -2.8734308\n [7] -6.7897219 -4.8821254  0.3650476  0.8821632\n\n[[13]]\n [1]  1.9075504 -4.5077636  3.9142408 -5.9789372 -0.6233262 -4.4681065\n [7]  6.1586895 -0.5944915 -5.7116492  6.2312506\n\n[[14]]\n [1] -9.0647986  7.0709317 -0.7426188 -4.1666946  4.2353914  6.2356319\n [7] -4.8357753 -2.9394862  0.8712302 -2.6338505\n\n[[15]]\n [1] -0.03001855 -1.02837565  3.37147544 -5.63001035 -0.17605241 -1.07074739\n [7]  0.89752455  2.51672975  7.04064931  5.80698376\n\n[[16]]\n [1]  4.0908012 -6.9555688 -0.3289718  1.4108902 -8.8010982  3.8916145\n [7] -0.9847857  2.7977282 -6.0947913 -6.1222646\n\n[[17]]\n [1] -3.9260707  1.9920454  9.1815418 -0.6280606 -6.0461562 -0.7289214\n [7] -6.7850840 -6.2090067  1.0525724 -1.4549614\n\n[[18]]\n [1] -0.55385742  0.16206180  4.73568372 -1.58979352 -2.31641650 -5.44034366\n [7] -0.51173292 -2.19302330  3.52421093 -0.07061819\n\n[[19]]\n [1]   1.947770 -10.807521  -1.124952  -7.733490  -3.695339 -10.566181\n [7]  -2.359878  -3.132563   0.843549   1.468815\n\n[[20]]\n [1] -8.0996104  2.0494324  4.7118897 -0.7059947  0.8819594  7.7818183\n [7]  5.7361528 -2.1250988  2.4668712 -4.9415075\n\n[[21]]\n [1]  1.9603391 -7.3245899  1.7117409 -2.2333932  3.9712935 -5.0422957\n [7]  0.9769575 -1.9214953  1.4732655  2.7652785"
+  },
+  {
+    "objectID": "slides/w2.html#back-to-this-one",
+    "href": "slides/w2.html#back-to-this-one",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Back to this one",
+    "text": "Back to this one\n\nlapply(penguins, is.numeric)\n\n\n\n$species\n[1] FALSE\n\n$island\n[1] FALSE\n\n$bill_length_mm\n[1] TRUE\n\n$bill_depth_mm\n[1] TRUE\n\n$flipper_length_mm\n[1] TRUE\n\n$body_mass_g\n[1] TRUE\n\n$sex\n[1] FALSE\n\n$year\n[1] TRUE"
+  },
+  {
+    "objectID": "slides/w2.html#add-a-condition",
+    "href": "slides/w2.html#add-a-condition",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Add a condition",
+    "text": "Add a condition\n\nlapply(penguins, function(x) {\n    if(is.numeric(x)) {\n        mean(x, na.rm = TRUE)\n    }\n})\n\n\n\n$species\nNULL\n\n$island\nNULL\n\n$bill_length_mm\n[1] 43.92193\n\n$bill_depth_mm\n[1] 17.15117\n\n$flipper_length_mm\n[1] 200.9152\n\n$body_mass_g\n[1] 4201.754\n\n$sex\nNULL\n\n$year\n[1] 2008.029"
+  },
+  {
+    "objectID": "slides/w2.html#add-a-second-condition",
+    "href": "slides/w2.html#add-a-second-condition",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Add a second condition",
+    "text": "Add a second condition\n\nlapply(penguins, function(x) {\n    if(is.numeric(x)) {\n      return(mean(x, na.rm = TRUE))\n    }\n    else if(is.character(x) | is.factor(x)) {\n      return(table(x))\n  }\n})\n\n\n\n$species\nx\n   Adelie Chinstrap    Gentoo \n      152        68       124 \n\n$island\nx\n   Biscoe     Dream Torgersen \n      168       124        52 \n\n$bill_length_mm\n[1] 43.92193\n\n$bill_depth_mm\n[1] 17.15117\n\n$flipper_length_mm\n[1] 200.9152\n\n$body_mass_g\n[1] 4201.754\n\n$sex\nx\nfemale   male \n   165    168 \n\n$year\n[1] 2008.029"
+  },
+  {
+    "objectID": "slides/w2.html#passing-arguments",
+    "href": "slides/w2.html#passing-arguments",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Passing arguments",
+    "text": "Passing arguments\n\n\nThere’s missing data, so this won’t work\n\nhead(airquality)\n\n  Ozone Solar.R Wind Temp Month Day\n1    41     190  7.4   67     5   1\n2    36     118  8.0   72     5   2\n3    12     149 12.6   74     5   3\n4    18     313 11.5   62     5   4\n5    NA      NA 14.3   56     5   5\n6    28      NA 14.9   66     5   6\n\nlapply(airquality, mean)\n\n$Ozone\n[1] NA\n\n$Solar.R\n[1] NA\n\n$Wind\n[1] 9.957516\n\n$Temp\n[1] 77.88235\n\n$Month\n[1] 6.993464\n\n$Day\n[1] 15.80392\n\n\n\nBut this will\n\nlapply(airquality, mean, na.rm = TRUE)\n\n$Ozone\n[1] 42.12931\n\n$Solar.R\n[1] 185.9315\n\n$Wind\n[1] 9.957516\n\n$Temp\n[1] 77.88235\n\n$Month\n[1] 6.993464\n\n$Day\n[1] 15.80392"
+  },
+  {
+    "objectID": "slides/w2.html#alternative-notation",
+    "href": "slides/w2.html#alternative-notation",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Alternative notation",
+    "text": "Alternative notation\nThe prior code could also be written like this\n\nlapply(airquality, function(x) mean(x, na.rm = TRUE))\n\n\n\n$Ozone\n[1] 42.12931\n\n$Solar.R\n[1] 185.9315\n\n$Wind\n[1] 9.957516\n\n$Temp\n[1] 77.88235\n\n$Month\n[1] 6.993464\n\n$Day\n[1] 15.80392\n\n\n\nMy brain likes this better"
+  },
+  {
+    "objectID": "slides/w2.html#simulation-again",
+    "href": "slides/w2.html#simulation-again",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Simulation again",
+    "text": "Simulation again\n\nset.seed(3000)\nlapply(seq(1, 5, 0.2), rnorm, n = 10, mean = 0)\n\n\n\n[[1]]\n [1]  1.2582925  0.6447519  0.4633460  0.7703058 -0.2263347 -0.3515479\n [7] -0.6493198 -1.2625922 -1.6971350 -1.8340239\n\n[[2]]\n [1] -0.98745656 -1.94162010  0.36621285  1.79180419  0.03449261 -0.67549407\n [7]  0.54284453  0.72178563  1.32617338 -2.34937275\n\n[[3]]\n [1] -0.06812657  1.38810114 -0.91551411 -0.64826439 -1.44302498 -1.02579387\n [7]  0.80129321 -0.78811938 -1.76193450 -0.88391729\n\n[[4]]\n [1] -0.5450989  0.7175976  1.5508069 -1.3445723  1.6618678 -0.0495352\n [7] -0.5573398 -0.1277775 -3.5923124  1.2796936\n\n[[5]]\n [1] -4.4550368  2.3194451  0.8959171  2.5835431 -1.1888322 -1.8311366\n [7] -0.3824221 -1.1450434  0.5915765 -1.4560164\n\n[[6]]\n [1]  1.4773287 -0.3317452  0.1027664  0.3976797  0.3269631 -0.2564408\n [7]  5.2480829  3.9702687  3.3295696 -2.0356887\n\n[[7]]\n [1] -1.6995589 -1.2256900  3.5602090 -0.2417684 -0.5324828  1.8777524\n [7] -2.0724353 -2.8530262 -1.1922938  0.1842753\n\n[[8]]\n [1] -1.3341336 -2.6062520 -2.7785042 -0.5129759  4.2123126  1.3930112\n [7]  5.6435182  1.4840936 -0.5187353  0.6345386\n\n[[9]]\n [1]  0.7767619 -3.2902109 -3.3817425  0.6591373  0.6431185 -0.8448418\n [7]  1.8194023  3.1956026  3.8377482  4.6509330\n\n[[10]]\n [1] -2.7682851  0.7743240 -2.5806469 -0.2963955 -0.5855121 -0.2799172\n [7] -2.8184065 -0.9122830  0.9552384 -2.8058944\n\n[[11]]\n [1] -1.2638710  1.9250688  3.0155007 -0.9679650 -1.6901458  0.9453726\n [7] -6.3824047  1.6183184 -2.5262227 -2.5155382\n\n[[12]]\n [1] -0.8360622  4.6567564 -1.9687763  2.1833804  0.1476822 -2.2601583\n [7] -0.7957750 -3.0078040  4.1782934 -0.6554053\n\n[[13]]\n [1] -4.42386931 -2.46107097  1.97132477  2.50801791  5.79837506  6.32623541\n [7] -4.06609414 -0.06348689  2.34150869  3.14411805\n\n[[14]]\n [1]  5.2020713  5.9590067  1.6950772 -6.7035571  1.5852297 -3.2095910\n [7]  4.9312293 -2.5348971 -7.0058786  0.7334374\n\n[[15]]\n [1] -3.3942288  1.4462102 -1.5728799 -0.2756218 -0.1576324  2.4748973\n [7]  1.5381645 -2.1900007  2.4551050  7.9625057\n\n[[16]]\n [1]  5.117237 -2.849735 13.196387 -3.702533 -2.779757 -2.019801 -2.463081\n [8] -2.521757 -1.058628  2.298301\n\n[[17]]\n [1]  5.32913199 -1.33174468  0.09956103 -3.43446361  4.92644150 -3.15962941\n [7] -1.92752643 -5.05937551  1.69674715  3.38437133\n\n[[18]]\n [1]  1.4065749 -1.1391737 -5.9956124 -0.2993126 -2.6370933  0.2733555\n [7]  1.3994970 -6.0855343  1.9985985 -6.1843592\n\n[[19]]\n [1]  2.930842  5.686328  5.595754 -7.956035 -4.132702 -4.313917 -5.387319\n [8]  1.501185 -8.421652  2.561221\n\n[[20]]\n [1]  1.1546085 -1.8250863 -0.6488753 -4.2618750 -0.1084859 -3.1701360\n [7] -1.5113640 -2.2808379  1.4172582  2.6221386\n\n[[21]]\n [1]   5.035385   4.713422  10.053528  -3.848520   4.548012 -11.439839\n [7]   3.202310   5.052674  -2.349106  11.366291\n\n\n\nEquivalent to\n\nset.seed(3000)\nlapply(seq(1, 5, by = 0.2), function(sd) rnorm(10, 0, sd))\n\n[[1]]\n [1]  1.2582925  0.6447519  0.4633460  0.7703058 -0.2263347 -0.3515479\n [7] -0.6493198 -1.2625922 -1.6971350 -1.8340239\n\n[[2]]\n [1] -0.98745656 -1.94162010  0.36621285  1.79180419  0.03449261 -0.67549407\n [7]  0.54284453  0.72178563  1.32617338 -2.34937275\n\n[[3]]\n [1] -0.06812657  1.38810114 -0.91551411 -0.64826439 -1.44302498 -1.02579387\n [7]  0.80129321 -0.78811938 -1.76193450 -0.88391729\n\n[[4]]\n [1] -0.5450989  0.7175976  1.5508069 -1.3445723  1.6618678 -0.0495352\n [7] -0.5573398 -0.1277775 -3.5923124  1.2796936\n\n[[5]]\n [1] -4.4550368  2.3194451  0.8959171  2.5835431 -1.1888322 -1.8311366\n [7] -0.3824221 -1.1450434  0.5915765 -1.4560164\n\n[[6]]\n [1]  1.4773287 -0.3317452  0.1027664  0.3976797  0.3269631 -0.2564408\n [7]  5.2480829  3.9702687  3.3295696 -2.0356887\n\n[[7]]\n [1] -1.6995589 -1.2256900  3.5602090 -0.2417684 -0.5324828  1.8777524\n [7] -2.0724353 -2.8530262 -1.1922938  0.1842753\n\n[[8]]\n [1] -1.3341336 -2.6062520 -2.7785042 -0.5129759  4.2123126  1.3930112\n [7]  5.6435182  1.4840936 -0.5187353  0.6345386\n\n[[9]]\n [1]  0.7767619 -3.2902109 -3.3817425  0.6591373  0.6431185 -0.8448418\n [7]  1.8194023  3.1956026  3.8377482  4.6509330\n\n[[10]]\n [1] -2.7682851  0.7743240 -2.5806469 -0.2963955 -0.5855121 -0.2799172\n [7] -2.8184065 -0.9122830  0.9552384 -2.8058944\n\n[[11]]\n [1] -1.2638710  1.9250688  3.0155007 -0.9679650 -1.6901458  0.9453726\n [7] -6.3824047  1.6183184 -2.5262227 -2.5155382\n\n[[12]]\n [1] -0.8360622  4.6567564 -1.9687763  2.1833804  0.1476822 -2.2601583\n [7] -0.7957750 -3.0078040  4.1782934 -0.6554053\n\n[[13]]\n [1] -4.42386931 -2.46107097  1.97132477  2.50801791  5.79837506  6.32623541\n [7] -4.06609414 -0.06348689  2.34150869  3.14411805\n\n[[14]]\n [1]  5.2020713  5.9590067  1.6950772 -6.7035571  1.5852297 -3.2095910\n [7]  4.9312293 -2.5348971 -7.0058786  0.7334374\n\n[[15]]\n [1] -3.3942288  1.4462102 -1.5728799 -0.2756218 -0.1576324  2.4748973\n [7]  1.5381645 -2.1900007  2.4551050  7.9625057\n\n[[16]]\n [1]  5.117237 -2.849735 13.196387 -3.702533 -2.779757 -2.019801 -2.463081\n [8] -2.521757 -1.058628  2.298301\n\n[[17]]\n [1]  5.32913199 -1.33174468  0.09956103 -3.43446361  4.92644150 -3.15962941\n [7] -1.92752643 -5.05937551  1.69674715  3.38437133\n\n[[18]]\n [1]  1.4065749 -1.1391737 -5.9956124 -0.2993126 -2.6370933  0.2733555\n [7]  1.3994970 -6.0855343  1.9985985 -6.1843592\n\n[[19]]\n [1]  2.930842  5.686328  5.595754 -7.956035 -4.132702 -4.313917 -5.387319\n [8]  1.501185 -8.421652  2.561221\n\n[[20]]\n [1]  1.1546085 -1.8250863 -0.6488753 -4.2618750 -0.1084859 -3.1701360\n [7] -1.5113640 -2.2808379  1.4172582  2.6221386\n\n[[21]]\n [1]   5.035385   4.713422  10.053528  -3.848520   4.548012 -11.439839\n [7]   3.202310   5.052674  -2.349106  11.366291"
+  },
+  {
+    "objectID": "slides/w2.html#mimic-dplyrgroup_by",
+    "href": "slides/w2.html#mimic-dplyrgroup_by",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Mimic dplyr::group_by()",
+    "text": "Mimic dplyr::group_by()\nwith split()\n\nby_cyl &lt;- split(mtcars, mtcars$cyl)\nby_cyl\n\n\n\n$`4`\n                mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nDatsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nMerc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nFiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\nHonda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\nToyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\nToyota Corona  21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\nFiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\nPorsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\nLotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\nVolvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n\n$`6`\n                mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nMazda RX4      21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag  21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\nHornet 4 Drive 21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\nValiant        18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\nMerc 280       19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\nMerc 280C      17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\nFerrari Dino   19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\n\n$`8`\n                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nHornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\nDuster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\nMerc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\nMerc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\nMerc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\nCadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\nLincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\nChrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\nDodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\nAMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\nCamaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\nPontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\nFord Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\nMaserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8"
+  },
+  {
+    "objectID": "slides/w2.html#mimic-dplyrgroup_by-1",
+    "href": "slides/w2.html#mimic-dplyrgroup_by-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Mimic dplyr::group_by()",
+    "text": "Mimic dplyr::group_by()\n\nstr(by_cyl)\n\n\n\nList of 3\n $ 4:'data.frame':  11 obs. of  11 variables:\n  ..$ mpg : num [1:11] 22.8 24.4 22.8 32.4 30.4 33.9 21.5 27.3 26 30.4 ...\n  ..$ cyl : num [1:11] 4 4 4 4 4 4 4 4 4 4 ...\n  ..$ disp: num [1:11] 108 146.7 140.8 78.7 75.7 ...\n  ..$ hp  : num [1:11] 93 62 95 66 52 65 97 66 91 113 ...\n  ..$ drat: num [1:11] 3.85 3.69 3.92 4.08 4.93 4.22 3.7 4.08 4.43 3.77 ...\n  ..$ wt  : num [1:11] 2.32 3.19 3.15 2.2 1.61 ...\n  ..$ qsec: num [1:11] 18.6 20 22.9 19.5 18.5 ...\n  ..$ vs  : num [1:11] 1 1 1 1 1 1 1 1 0 1 ...\n  ..$ am  : num [1:11] 1 0 0 1 1 1 0 1 1 1 ...\n  ..$ gear: num [1:11] 4 4 4 4 4 4 3 4 5 5 ...\n  ..$ carb: num [1:11] 1 2 2 1 2 1 1 1 2 2 ...\n $ 6:'data.frame':  7 obs. of  11 variables:\n  ..$ mpg : num [1:7] 21 21 21.4 18.1 19.2 17.8 19.7\n  ..$ cyl : num [1:7] 6 6 6 6 6 6 6\n  ..$ disp: num [1:7] 160 160 258 225 168 ...\n  ..$ hp  : num [1:7] 110 110 110 105 123 123 175\n  ..$ drat: num [1:7] 3.9 3.9 3.08 2.76 3.92 3.92 3.62\n  ..$ wt  : num [1:7] 2.62 2.88 3.21 3.46 3.44 ...\n  ..$ qsec: num [1:7] 16.5 17 19.4 20.2 18.3 ...\n  ..$ vs  : num [1:7] 0 0 1 1 1 1 0\n  ..$ am  : num [1:7] 1 1 0 0 0 0 1\n  ..$ gear: num [1:7] 4 4 3 3 4 4 5\n  ..$ carb: num [1:7] 4 4 1 1 4 4 6\n $ 8:'data.frame':  14 obs. of  11 variables:\n  ..$ mpg : num [1:14] 18.7 14.3 16.4 17.3 15.2 10.4 10.4 14.7 15.5 15.2 ...\n  ..$ cyl : num [1:14] 8 8 8 8 8 8 8 8 8 8 ...\n  ..$ disp: num [1:14] 360 360 276 276 276 ...\n  ..$ hp  : num [1:14] 175 245 180 180 180 205 215 230 150 150 ...\n  ..$ drat: num [1:14] 3.15 3.21 3.07 3.07 3.07 2.93 3 3.23 2.76 3.15 ...\n  ..$ wt  : num [1:14] 3.44 3.57 4.07 3.73 3.78 ...\n  ..$ qsec: num [1:14] 17 15.8 17.4 17.6 18 ...\n  ..$ vs  : num [1:14] 0 0 0 0 0 0 0 0 0 0 ...\n  ..$ am  : num [1:14] 0 0 0 0 0 0 0 0 0 0 ...\n  ..$ gear: num [1:14] 3 3 3 3 3 3 3 3 3 3 ...\n  ..$ carb: num [1:14] 2 4 3 3 3 4 4 4 2 2 ..."
+  },
+  {
+    "objectID": "slides/w2.html#mimic-dplyrgroup_by-2",
+    "href": "slides/w2.html#mimic-dplyrgroup_by-2",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Mimic dplyr::group_by()",
+    "text": "Mimic dplyr::group_by()\n\nlapply(by_cyl, function(x) mean(x$mpg))\n\n\n\n$`4`\n[1] 26.66364\n\n$`6`\n[1] 19.74286\n\n$`8`\n[1] 15.1\n\n\n\nOr\n\nlapply(by_cyl, function(x) mean(x[[\"mpg\"]]))\n\n\n\n$`4`\n[1] 26.66364\n\n$`6`\n[1] 19.74286\n\n$`8`\n[1] 15.1\n\n\n\n\nOr even (less ideal)\n\nlapply(by_cyl, function(x) mean(x[[1]]))\n\n\n\n$`4`\n[1] 26.66364\n\n$`6`\n[1] 19.74286\n\n$`8`\n[1] 15.1\n\n\n\n\nBecause we are just subsettting the list"
+  },
+  {
+    "objectID": "slides/w2.html#your-turn",
+    "href": "slides/w2.html#your-turn",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Your turn",
+    "text": "Your turn\nTry splitting the penguins dataset by species and calculating the average bill_length_mm\n\ndemo"
+  },
+  {
+    "objectID": "slides/w2.html#solution",
+    "href": "slides/w2.html#solution",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Solution",
+    "text": "Solution\n\n\npeng_split &lt;- split(penguins, penguins$species)\n\nlapply(peng_split, function(x) mean(x$bill_length_mm, na.rm = TRUE))\n\n$Adelie\n[1] 38.79139\n\n$Chinstrap\n[1] 48.83382\n\n$Gentoo\n[1] 47.50488"
+  },
+  {
+    "objectID": "slides/w2.html#produce-separate-plots",
+    "href": "slides/w2.html#produce-separate-plots",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Produce separate plots",
+    "text": "Produce separate plots\n\n\nlapply(by_cyl, function(x) {\n    ggplot(x, aes(disp, mpg)) +\n        geom_point() +\n        geom_smooth()\n})\n\n\n$`4`\n\n\n\n\n\n\n\n\n\n\n$`6`\n\n\n\n\n\n\n\n\n\n\n$`8`"
+  },
+  {
+    "objectID": "slides/w2.html#your-turn-1",
+    "href": "slides/w2.html#your-turn-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Your turn",
+    "text": "Your turn\nProduce separate plots of the relation between bill_length_mm and body_mass_g\nshare code"
+  },
+  {
+    "objectID": "slides/w2.html#saving",
+    "href": "slides/w2.html#saving",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Saving",
+    "text": "Saving\n\nYou can extend this example further by saving the plot outputs to an object, then looping through that object to save the plots to disk\nUsing functionals, this would require parallel iterations, which we’ll cover later (need to loop through plots and a file name)\nCould extend it fairly easily with a for loop"
+  },
+  {
+    "objectID": "slides/w2.html#saving-with-for-loop",
+    "href": "slides/w2.html#saving-with-for-loop",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Saving with for loop",
+    "text": "Saving with for loop\nSave plots to an object (list)\n\nplots &lt;- lapply(by_cyl, function(x) {\n    ggplot(x, aes(disp, mpg)) +\n        geom_point() +\n        geom_smooth()\n})"
+  },
+  {
+    "objectID": "slides/w2.html#specify-file-namesdirectory",
+    "href": "slides/w2.html#specify-file-namesdirectory",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Specify file names/directory",
+    "text": "Specify file names/directory\n\n#dir.create(here::here(\"plots\")) \nfilenames &lt;- here::here(\n  \"plots\",\n  paste0(\"cyl-\", names(by_cyl), \".png\")\n)\nfilenames\n\n\n\n[1] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/cyl-4.png\"\n[2] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/cyl-6.png\"\n[3] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/cyl-8.png\""
+  },
+  {
+    "objectID": "slides/w2.html#saving-1",
+    "href": "slides/w2.html#saving-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Saving",
+    "text": "Saving\n\nfor(i in seq_along(plots)) {\n    ggsave(filenames[i], # single bracket\n           plots[[i]], # double bracket\n           device = \"png\",\n           width = 6.5, \n           height = 8)\n}"
+  },
+  {
+    "objectID": "slides/w2.html#you-try-1",
+    "href": "slides/w2.html#you-try-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "You try!",
+    "text": "You try!\nWith peng_split"
+  },
+  {
+    "objectID": "slides/w2.html#more-than-one-group",
+    "href": "slides/w2.html#more-than-one-group",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "More than one group",
+    "text": "More than one group\nLet’s say we wanted to create a plot of bill length vs bill depth by for each combination of species/island\nJust split by both!\n\nPass both variables as a list()\n\nsplt2 &lt;- split(\n  penguins, \n  list(penguins$species, penguins$island)\n)"
+  },
+  {
+    "objectID": "slides/w2.html#inspect-it",
+    "href": "slides/w2.html#inspect-it",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Inspect it",
+    "text": "Inspect it\n\nsplt2\n\n$Adelie.Biscoe\n# A tibble: 44 × 8\n   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Biscoe           37.8          18.3               174        3400\n 2 Adelie  Biscoe           37.7          18.7               180        3600\n 3 Adelie  Biscoe           35.9          19.2               189        3800\n 4 Adelie  Biscoe           38.2          18.1               185        3950\n 5 Adelie  Biscoe           38.8          17.2               180        3800\n 6 Adelie  Biscoe           35.3          18.9               187        3800\n 7 Adelie  Biscoe           40.6          18.6               183        3550\n 8 Adelie  Biscoe           40.5          17.9               187        3200\n 9 Adelie  Biscoe           37.9          18.6               172        3150\n10 Adelie  Biscoe           40.5          18.9               180        3950\n# ℹ 34 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n$Chinstrap.Biscoe\n# A tibble: 0 × 8\n# ℹ 8 variables: species &lt;fct&gt;, island &lt;fct&gt;, bill_length_mm &lt;dbl&gt;,\n#   bill_depth_mm &lt;dbl&gt;, flipper_length_mm &lt;int&gt;, body_mass_g &lt;int&gt;, sex &lt;fct&gt;,\n#   year &lt;int&gt;\n\n$Gentoo.Biscoe\n# A tibble: 124 × 8\n   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Gentoo  Biscoe           46.1          13.2               211        4500\n 2 Gentoo  Biscoe           50            16.3               230        5700\n 3 Gentoo  Biscoe           48.7          14.1               210        4450\n 4 Gentoo  Biscoe           50            15.2               218        5700\n 5 Gentoo  Biscoe           47.6          14.5               215        5400\n 6 Gentoo  Biscoe           46.5          13.5               210        4550\n 7 Gentoo  Biscoe           45.4          14.6               211        4800\n 8 Gentoo  Biscoe           46.7          15.3               219        5200\n 9 Gentoo  Biscoe           43.3          13.4               209        4400\n10 Gentoo  Biscoe           46.8          15.4               215        5150\n# ℹ 114 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n$Adelie.Dream\n# A tibble: 56 × 8\n   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Dream            39.5          16.7               178        3250\n 2 Adelie  Dream            37.2          18.1               178        3900\n 3 Adelie  Dream            39.5          17.8               188        3300\n 4 Adelie  Dream            40.9          18.9               184        3900\n 5 Adelie  Dream            36.4          17                 195        3325\n 6 Adelie  Dream            39.2          21.1               196        4150\n 7 Adelie  Dream            38.8          20                 190        3950\n 8 Adelie  Dream            42.2          18.5               180        3550\n 9 Adelie  Dream            37.6          19.3               181        3300\n10 Adelie  Dream            39.8          19.1               184        4650\n# ℹ 46 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n$Chinstrap.Dream\n# A tibble: 68 × 8\n   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Chinstrap Dream            46.5          17.9               192        3500\n 2 Chinstrap Dream            50            19.5               196        3900\n 3 Chinstrap Dream            51.3          19.2               193        3650\n 4 Chinstrap Dream            45.4          18.7               188        3525\n 5 Chinstrap Dream            52.7          19.8               197        3725\n 6 Chinstrap Dream            45.2          17.8               198        3950\n 7 Chinstrap Dream            46.1          18.2               178        3250\n 8 Chinstrap Dream            51.3          18.2               197        3750\n 9 Chinstrap Dream            46            18.9               195        4150\n10 Chinstrap Dream            51.3          19.9               198        3700\n# ℹ 58 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n$Gentoo.Dream\n# A tibble: 0 × 8\n# ℹ 8 variables: species &lt;fct&gt;, island &lt;fct&gt;, bill_length_mm &lt;dbl&gt;,\n#   bill_depth_mm &lt;dbl&gt;, flipper_length_mm &lt;int&gt;, body_mass_g &lt;int&gt;, sex &lt;fct&gt;,\n#   year &lt;int&gt;\n\n$Adelie.Torgersen\n# A tibble: 52 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 42 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n$Chinstrap.Torgersen\n# A tibble: 0 × 8\n# ℹ 8 variables: species &lt;fct&gt;, island &lt;fct&gt;, bill_length_mm &lt;dbl&gt;,\n#   bill_depth_mm &lt;dbl&gt;, flipper_length_mm &lt;int&gt;, body_mass_g &lt;int&gt;, sex &lt;fct&gt;,\n#   year &lt;int&gt;\n\n$Gentoo.Torgersen\n# A tibble: 0 × 8\n# ℹ 8 variables: species &lt;fct&gt;, island &lt;fct&gt;, bill_length_mm &lt;dbl&gt;,\n#   bill_depth_mm &lt;dbl&gt;, flipper_length_mm &lt;int&gt;, body_mass_g &lt;int&gt;, sex &lt;fct&gt;,\n#   year &lt;int&gt;"
+  },
+  {
+    "objectID": "slides/w2.html#create-plots",
+    "href": "slides/w2.html#create-plots",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Create plots",
+    "text": "Create plots\n\nplots2 &lt;- lapply(splt2, function(x) {\n  ggplot(x, aes(bill_length_mm, bill_depth_mm)) +\n    geom_point()\n})"
+  },
+  {
+    "objectID": "slides/w2.html#first-few",
+    "href": "slides/w2.html#first-few",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "First few",
+    "text": "First few\n\n\n\nplots2[[1]]\n\n\n\n\n\n\n\n\n\n\nplots2[[2]]\n\n\n\n\n\n\n\n\n\n\nplots2[[3]]"
+  },
+  {
+    "objectID": "slides/w2.html#uh-oh",
+    "href": "slides/w2.html#uh-oh",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Uh oh",
+    "text": "Uh oh\n\nLet’s get rid of our empty plots - how? Ideas?\nCreate a logical vector that checks the number of rows.\nWe’ll do this in a moment."
+  },
+  {
+    "objectID": "slides/w2.html#variants-of-lapply",
+    "href": "slides/w2.html#variants-of-lapply",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Variants of lapply",
+    "text": "Variants of lapply\n\nsapply\n\nWill try to simplify the output, if possible. Otherwise it will return a list.\nFine for interactive work, but I strongly recommend against it when writing a function (difficult to predict the output)\n\n\n\n\nvapply\n\nStrict - you specify the output\nUse if writing functions (or just always stick with lapply), or consider jumping to {purrr} (next week)"
+  },
+  {
+    "objectID": "slides/w2.html#examples",
+    "href": "slides/w2.html#examples",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Examples",
+    "text": "Examples\nOur simulation\n\nsim_s &lt;- sapply(seq(1, 5, by = 0.2), function(x) {\n  rnorm(10, 0, x)\n})\nclass(sim_s)\n\n\n\n[1] \"matrix\" \"array\" \n\n\n\n\ndim(sim_s)\n\n\n\n[1] 10 21\n\n\n\n\n\nsim_s\n\n\n\n             [,1]        [,2]         [,3]       [,4]       [,5]       [,6]\n [1,] -0.11332563  1.85217011  0.720803614 -2.6710609  1.8030134  2.1237241\n [2,]  0.04142878 -1.28071897 -0.503376008 -1.6667066 -2.4995258 -0.2646875\n [3,] -0.33702742 -1.71113141  0.087009108  1.3481205  2.9440969  0.2721579\n [4,]  0.85010844  1.00782442  1.277938363  1.7105626  1.7270004  0.1186180\n [5,] -0.45373666  1.73439065  0.520917627  1.7220403 -5.0651933  2.3672543\n [6,]  0.20853499  0.04441211  1.073600027  1.1017044 -0.4726323  0.5857950\n [7,] -0.64099275 -0.12328367  0.674669769 -0.8728668 -1.4271377  1.5778448\n [8,] -2.13570826  0.16029821  1.708190462  0.6896973 -2.4563553  0.8160487\n [9,]  1.10874235  0.72268429  0.004568856 -0.7996954  0.9998792  3.9569009\n[10,]  0.14222969 -0.16106788  1.968235609  2.1975902 -3.3465053 -0.4533415\n              [,7]        [,8]       [,9]      [,10]      [,11]      [,12]\n [1,]  0.460741003 -0.73232302 -0.2269999 -0.6226373 -1.1788857 -4.7919009\n [2,] -2.961902540 -2.56832745  3.7294733 -0.1322824 -1.5237633  9.8199284\n [3,] -2.667631505  0.29910990 -1.9796066 -1.4583439 -0.3916673 -1.6120742\n [4,]  0.708120332  2.06284362  6.3292792  4.2561302 -2.5736849  5.7515164\n [5,]  0.008380235  0.89676643  4.2795678 -0.2402516  1.4473810 -5.4792318\n [6,] -2.147197384 -0.01060683  0.7033782 -0.6507773  0.3846112 -0.8025646\n [7,]  3.320555299  1.27516985 -2.6955761  0.1141356 -0.9018262 -5.8545817\n [8,]  0.244803917 -0.49029316  5.1000247  2.5738716 -1.2820003  1.1801431\n [9,]  0.013795442 -2.67046975 -1.6968043 -0.2849640  1.4827225 -1.1222589\n[10,]  2.026599627  0.75755127 -0.5555704  2.4494851  3.5802657 -1.4724541\n           [,13]      [,14]      [,15]      [,16]       [,17]      [,18]\n [1,]  2.9144670 -2.3151702  6.5337462 -5.3242587  7.28834628  7.9443037\n [2,]  2.0432678 -0.3784697  5.0711951  4.7720422  3.20403568 12.0460284\n [3,]  0.7636525 -2.7434507 -2.0876045 -6.1177562 -2.16785430 -2.9378873\n [4,]  3.1944542 -0.7560702 -1.2165826  8.3427296  1.45800620 -4.7841399\n [5,]  3.9924168  1.0916697 -0.1634945  0.8411104 -3.43552373 -1.0862804\n [6,] -0.1201102 -0.8034860  2.3172586  2.7493215 -0.07492241  0.8208643\n [7,] -4.0258510 -2.0103032 -0.3569677 -2.2712833 -1.01095551 -6.8220067\n [8,] -1.6099153 -1.2002276 -8.3231655 -3.0218215 -1.48627742  3.6994736\n [9,]  1.0889546 -2.0008814  0.3344358  2.6128370 -4.04198884  1.7720440\n[10,] -1.6730578  0.8886674 -3.0532863  5.5324215 -0.16986310  5.5290695\n          [,19]     [,20]       [,21]\n [1,]  6.419151  2.737594  -2.3604819\n [2,]  1.915862  7.515386  -3.3400363\n [3,]  1.030362  1.734476   1.0351320\n [4,] -0.334769 -1.672217  -6.6981983\n [5,]  1.676554 -9.288311   9.0785146\n [6,] -2.713755 -5.630835   4.5589119\n [7,] -1.628228  6.836733  12.1860203\n [8,] -2.937861 -2.215540 -10.2597585\n [9,]  5.827684  1.629374  -0.2455101\n[10,]  8.477510 -1.042756  -6.8710290"
+  },
+  {
+    "objectID": "slides/w2.html#section-1",
+    "href": "slides/w2.html#section-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "",
+    "text": "lapply(penguins, is.double)\n\n\n\n$species\n[1] FALSE\n\n$island\n[1] FALSE\n\n$bill_length_mm\n[1] TRUE\n\n$bill_depth_mm\n[1] TRUE\n\n$flipper_length_mm\n[1] FALSE\n\n$body_mass_g\n[1] FALSE\n\n$sex\n[1] FALSE\n\n$year\n[1] FALSE\n\n\n\n\nsapply(penguins, is.double)\n\n\n\n          species            island    bill_length_mm     bill_depth_mm \n            FALSE             FALSE              TRUE              TRUE \nflipper_length_mm       body_mass_g               sex              year \n            FALSE             FALSE             FALSE             FALSE \n\n\n\n\n \nNow that it’s a vector we can easily use it for subsetting"
+  },
+  {
+    "objectID": "slides/w2.html#section-2",
+    "href": "slides/w2.html#section-2",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "",
+    "text": "head(penguins)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\n\nhead( penguins[ , sapply(penguins, is.double)] )\n\n\n\n# A tibble: 6 × 2\n  bill_length_mm bill_depth_mm\n           &lt;dbl&gt;         &lt;dbl&gt;\n1           39.1          18.7\n2           39.5          17.4\n3           40.3          18  \n4           NA            NA  \n5           36.7          19.3\n6           39.3          20.6"
+  },
+  {
+    "objectID": "slides/w2.html#challenge",
+    "href": "slides/w2.html#challenge",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Challenge",
+    "text": "Challenge\nCan you return the opposite? In other words - all those that are NOT double?\nDon’t look ahead!"
+  },
+  {
+    "objectID": "slides/w2.html#solution-3",
+    "href": "slides/w2.html#solution-3",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Solution",
+    "text": "Solution\n\n\npenguins[ ,!sapply(penguins, is.double)]\n\n\n\n# A tibble: 344 × 6\n   species island    flipper_length_mm body_mass_g sex     year\n   &lt;fct&gt;   &lt;fct&gt;                 &lt;int&gt;       &lt;int&gt; &lt;fct&gt;  &lt;int&gt;\n 1 Adelie  Torgersen               181        3750 male    2007\n 2 Adelie  Torgersen               186        3800 female  2007\n 3 Adelie  Torgersen               195        3250 female  2007\n 4 Adelie  Torgersen                NA          NA &lt;NA&gt;    2007\n 5 Adelie  Torgersen               193        3450 female  2007\n 6 Adelie  Torgersen               190        3650 male    2007\n 7 Adelie  Torgersen               181        3625 female  2007\n 8 Adelie  Torgersen               195        4675 male    2007\n 9 Adelie  Torgersen               193        3475 &lt;NA&gt;    2007\n10 Adelie  Torgersen               190        4250 &lt;NA&gt;    2007\n# ℹ 334 more rows\n\n\n\n\n\npenguins[ ,sapply(penguins, !is.double)]\n\nError in `!is.double`:\n! invalid argument type"
+  },
+  {
+    "objectID": "slides/w2.html#why",
+    "href": "slides/w2.html#why",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Why",
+    "text": "Why\nsapply(penguins, is.double)\n\napplies is.double() to each column of penguins\nreturns a logical vector like: TRUE TRUE FALSE TRUE …\n\n!sapply(penguins, is.double)\n\nnegates that logical vector\nselects columns that are not double\n\nSo you’re saying: “Select columns where is.double is FALSE”\n\nfor sapply() the second argument must be a function\nBut !is.double() negates the function is.double(), which is not a function"
+  },
+  {
+    "objectID": "slides/w2.html#clean-up-our-plots",
+    "href": "slides/w2.html#clean-up-our-plots",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Clean up our plots",
+    "text": "Clean up our plots\nCan you recreate the plots while omitting the empty ones now?\n\nsplt2\n\n$Adelie.Biscoe\n# A tibble: 44 × 8\n   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Biscoe           37.8          18.3               174        3400\n 2 Adelie  Biscoe           37.7          18.7               180        3600\n 3 Adelie  Biscoe           35.9          19.2               189        3800\n 4 Adelie  Biscoe           38.2          18.1               185        3950\n 5 Adelie  Biscoe           38.8          17.2               180        3800\n 6 Adelie  Biscoe           35.3          18.9               187        3800\n 7 Adelie  Biscoe           40.6          18.6               183        3550\n 8 Adelie  Biscoe           40.5          17.9               187        3200\n 9 Adelie  Biscoe           37.9          18.6               172        3150\n10 Adelie  Biscoe           40.5          18.9               180        3950\n# ℹ 34 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n$Chinstrap.Biscoe\n# A tibble: 0 × 8\n# ℹ 8 variables: species &lt;fct&gt;, island &lt;fct&gt;, bill_length_mm &lt;dbl&gt;,\n#   bill_depth_mm &lt;dbl&gt;, flipper_length_mm &lt;int&gt;, body_mass_g &lt;int&gt;, sex &lt;fct&gt;,\n#   year &lt;int&gt;\n\n$Gentoo.Biscoe\n# A tibble: 124 × 8\n   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Gentoo  Biscoe           46.1          13.2               211        4500\n 2 Gentoo  Biscoe           50            16.3               230        5700\n 3 Gentoo  Biscoe           48.7          14.1               210        4450\n 4 Gentoo  Biscoe           50            15.2               218        5700\n 5 Gentoo  Biscoe           47.6          14.5               215        5400\n 6 Gentoo  Biscoe           46.5          13.5               210        4550\n 7 Gentoo  Biscoe           45.4          14.6               211        4800\n 8 Gentoo  Biscoe           46.7          15.3               219        5200\n 9 Gentoo  Biscoe           43.3          13.4               209        4400\n10 Gentoo  Biscoe           46.8          15.4               215        5150\n# ℹ 114 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n$Adelie.Dream\n# A tibble: 56 × 8\n   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Dream            39.5          16.7               178        3250\n 2 Adelie  Dream            37.2          18.1               178        3900\n 3 Adelie  Dream            39.5          17.8               188        3300\n 4 Adelie  Dream            40.9          18.9               184        3900\n 5 Adelie  Dream            36.4          17                 195        3325\n 6 Adelie  Dream            39.2          21.1               196        4150\n 7 Adelie  Dream            38.8          20                 190        3950\n 8 Adelie  Dream            42.2          18.5               180        3550\n 9 Adelie  Dream            37.6          19.3               181        3300\n10 Adelie  Dream            39.8          19.1               184        4650\n# ℹ 46 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n$Chinstrap.Dream\n# A tibble: 68 × 8\n   species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Chinstrap Dream            46.5          17.9               192        3500\n 2 Chinstrap Dream            50            19.5               196        3900\n 3 Chinstrap Dream            51.3          19.2               193        3650\n 4 Chinstrap Dream            45.4          18.7               188        3525\n 5 Chinstrap Dream            52.7          19.8               197        3725\n 6 Chinstrap Dream            45.2          17.8               198        3950\n 7 Chinstrap Dream            46.1          18.2               178        3250\n 8 Chinstrap Dream            51.3          18.2               197        3750\n 9 Chinstrap Dream            46            18.9               195        4150\n10 Chinstrap Dream            51.3          19.9               198        3700\n# ℹ 58 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n$Gentoo.Dream\n# A tibble: 0 × 8\n# ℹ 8 variables: species &lt;fct&gt;, island &lt;fct&gt;, bill_length_mm &lt;dbl&gt;,\n#   bill_depth_mm &lt;dbl&gt;, flipper_length_mm &lt;int&gt;, body_mass_g &lt;int&gt;, sex &lt;fct&gt;,\n#   year &lt;int&gt;\n\n$Adelie.Torgersen\n# A tibble: 52 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 42 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n$Chinstrap.Torgersen\n# A tibble: 0 × 8\n# ℹ 8 variables: species &lt;fct&gt;, island &lt;fct&gt;, bill_length_mm &lt;dbl&gt;,\n#   bill_depth_mm &lt;dbl&gt;, flipper_length_mm &lt;int&gt;, body_mass_g &lt;int&gt;, sex &lt;fct&gt;,\n#   year &lt;int&gt;\n\n$Gentoo.Torgersen\n# A tibble: 0 × 8\n# ℹ 8 variables: species &lt;fct&gt;, island &lt;fct&gt;, bill_length_mm &lt;dbl&gt;,\n#   bill_depth_mm &lt;dbl&gt;, flipper_length_mm &lt;int&gt;, body_mass_g &lt;int&gt;, sex &lt;fct&gt;,\n#   year &lt;int&gt;\n\n\n\n\nplots2 &lt;- lapply(splt2, function(x) {\n  ggplot(x, aes(bill_length_mm, bill_depth_mm)) +\n    geom_point()\n})"
+  },
+  {
+    "objectID": "slides/w2.html#try",
+    "href": "slides/w2.html#try",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Try!",
+    "text": "Try!\n\nDon’t look ahead!"
+  },
+  {
+    "objectID": "slides/w2.html#remove-zero-row-dfs",
+    "href": "slides/w2.html#remove-zero-row-dfs",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Remove zero-row dfs",
+    "text": "Remove zero-row dfs\n\n\n# check if n rows &gt; 0\nkeep &lt;- sapply(splt2, function(x) nrow(x) &gt; 0)\nkeep\n\n      Adelie.Biscoe    Chinstrap.Biscoe       Gentoo.Biscoe        Adelie.Dream \n               TRUE               FALSE                TRUE                TRUE \n    Chinstrap.Dream        Gentoo.Dream    Adelie.Torgersen Chinstrap.Torgersen \n               TRUE               FALSE                TRUE               FALSE \n   Gentoo.Torgersen \n              FALSE \n\n\n\n\n\n# Use this to subset the list\nsplt3 &lt;- splt2[keep]"
+  },
+  {
+    "objectID": "slides/w2.html#recreate-plots",
+    "href": "slides/w2.html#recreate-plots",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Recreate plots",
+    "text": "Recreate plots\n\nplots3 &lt;- lapply(splt3, function(x) {\n  ggplot(x, aes(bill_length_mm, bill_depth_mm)) +\n    geom_point()\n})"
+  },
+  {
+    "objectID": "slides/w2.html#first-few-1",
+    "href": "slides/w2.html#first-few-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "First few",
+    "text": "First few\n\n\n\nplots3[[1]]\n\n\n\n\n\n\n\n\n\n\nplots3[[2]]\n\n\n\n\n\n\n\n\n\n\nplots3[[3]]\n\n\n\n\n\n\n\n\n\n\nNo more missing!"
+  },
+  {
+    "objectID": "slides/w2.html#vapply",
+    "href": "slides/w2.html#vapply",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "vapply()",
+    "text": "vapply()\nAs you can probably see, simplifying can be really helpful for interactive work\n\nBUT\n\nNot ideal for programmatic work - we need to be able to reliably predict the output\nvapply() solves this issue"
+  },
+  {
+    "objectID": "slides/w2.html#vapply-1",
+    "href": "slides/w2.html#vapply-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "vapply()",
+    "text": "vapply()\nAdd an extra argument to specify the type to be returned\n\nvapply(test, max, numeric(1))\n\n\n\n\n\nnumeric(1) means we want one numeric value returned for each element\n\n\n\nvapply(test, max, numeric(1))\n\n\n\nError in `vapply()`:\n! values must be type 'double',\n but FUN(X[[4]]) result is type 'character'\n\n\nThis triggers an error because we cannot get a numeric value from a character value\nNice error message, too!"
+  },
+  {
+    "objectID": "slides/w2.html#vapply-2",
+    "href": "slides/w2.html#vapply-2",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "vapply()",
+    "text": "vapply()\n\nvapply(mtcars, mean, FUN.VALUE = double(1))\n\n\n\n       mpg        cyl       disp         hp       drat         wt       qsec \n 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 \n        vs         am       gear       carb \n  0.437500   0.406250   3.687500   2.812500 \n\n\n\nThe (1) defines the expected length of each result. Here, a single number per column\n\n\n\nvapply(penguins, is.double, FUN.VALUE = logical(1))\n\n\n\n          species            island    bill_length_mm     bill_depth_mm \n            FALSE             FALSE              TRUE              TRUE \nflipper_length_mm       body_mass_g               sex              year \n            FALSE             FALSE             FALSE             FALSE"
+  },
+  {
+    "objectID": "slides/w2.html#section-3",
+    "href": "slides/w2.html#section-3",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "",
+    "text": "vapply(mtcars, mean, FUN.VALUE = double(1))\n\n\n\n       mpg        cyl       disp         hp       drat         wt       qsec \n 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 \n        vs         am       gear       carb \n  0.437500   0.406250   3.687500   2.812500 \n\n\n\nThe (1) defines the expected length of each result. Here, a single number per column\n\n\n\nvapply(penguins, is.double, FUN.VALUE = logical(1))\n\n\n\n          species            island    bill_length_mm     bill_depth_mm \n            FALSE             FALSE              TRUE              TRUE \nflipper_length_mm       body_mass_g               sex              year \n            FALSE             FALSE             FALSE             FALSE"
+  },
+  {
+    "objectID": "slides/w2.html#coercion-with-vapply",
+    "href": "slides/w2.html#coercion-with-vapply",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Coercion with vapply()",
+    "text": "Coercion with vapply()\nIf it can coerce the vector without loss of information, it will\n\nvapply(penguins, is.double, FUN.VALUE = double(1))\n\n\n\n          species            island    bill_length_mm     bill_depth_mm \n                0                 0                 1                 1 \nflipper_length_mm       body_mass_g               sex              year \n                0                 0                 0                 0 \n\n\n\n\nvapply(penguins, is.double, FUN.VALUE = character(1))\n\n\n\nError in `vapply()`:\n! values must be type 'character',\n but FUN(X[[1]]) result is type 'logical'"
+  },
+  {
+    "objectID": "slides/w2.html#count-missing-data",
+    "href": "slides/w2.html#count-missing-data",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Count missing data",
+    "text": "Count missing data\n\nvapply(airquality, function(col) {\n  sum(is.na(col))\n  },\n  FUN.VALUE = double(1)\n)\n\n  Ozone Solar.R    Wind    Temp   Month     Day \n     37       7       0       0       0       0"
+  },
+  {
+    "objectID": "slides/w2.html#sapply-alternative",
+    "href": "slides/w2.html#sapply-alternative",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "sapply() alternative",
+    "text": "sapply() alternative\nFor interactive work, the code on the previous slide is maybe too much\nCould be reduced to:\n\nsapply(airquality, function(col) sum(is.na(col)))\n\n  Ozone Solar.R    Wind    Temp   Month     Day \n     37       7       0       0       0       0"
+  },
+  {
+    "objectID": "slides/w2.html#summary-for-loops",
+    "href": "slides/w2.html#summary-for-loops",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Summary for loops",
+    "text": "Summary for loops\nfor loops are incredibly flexible and there’s nothing inherently wrong about them\n\nThey do require more text, and often repetitive text, which can lead to errors/bugs\nThe flexibility can actually be more of a curse than a blessing"
+  },
+  {
+    "objectID": "slides/w2.html#summary-apply",
+    "href": "slides/w2.html#summary-apply",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Summary *apply",
+    "text": "Summary *apply\nThe *apply family of functions help put the focus on a given function, and what values are being looped through the function\n\nlapply will always return a list\nsapply will try to simplify, which is problematic for programming, but fine for interactive work\nvapply is strict, and will only return the type specified"
+  },
+  {
+    "objectID": "slides/w2.html#apply-2",
+    "href": "slides/w2.html#apply-2",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "apply()",
+    "text": "apply()\napply(x, dimension , function, function_args)\n\nx\n\nthe thing to loop over (usually a matrix or data frame)\n\ndimension\n\n1 = apply the function to each row\n2 = apply the function to each column\nn = apply to \\(n\\)th dimension of an array (rare for the work I do)"
+  },
+  {
+    "objectID": "slides/w2.html#rows-example",
+    "href": "slides/w2.html#rows-example",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Rows example",
+    "text": "Rows example\n\npeople &lt;- data.frame(\n  first = c(\"Frederick\", \"Anna\", \"Julia\"),\n  last = c(\"Douglass\", \"Murray\", \"Griffiths\")\n)\npeople\n\n      first      last\n1 Frederick  Douglass\n2      Anna    Murray\n3     Julia Griffiths\n\n\n\nSuppose we wanted a new column that was the first and last name."
+  },
+  {
+    "objectID": "slides/w2.html#rows-example-1",
+    "href": "slides/w2.html#rows-example-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Rows example",
+    "text": "Rows example\nWe might try this…\n\npeople |&gt; \n  mutate(full_name = paste(first, last, collapse = \" \"))\n\n\n\n      first      last                                      full_name\n1 Frederick  Douglass Frederick Douglass Anna Murray Julia Griffiths\n2      Anna    Murray Frederick Douglass Anna Murray Julia Griffiths\n3     Julia Griffiths Frederick Douglass Anna Murray Julia Griffiths\n\n\n\n… but it pastes together the full columns"
+  },
+  {
+    "objectID": "slides/w2.html#rows-example-2",
+    "href": "slides/w2.html#rows-example-2",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Rows example",
+    "text": "Rows example\nInstead, do it by row\n\napply(people, 1, paste, collapse = \" \")\n\n[1] \"Frederick Douglass\" \"Anna Murray\"        \"Julia Griffiths\"   \n\n\n\nOr within a mutate() call\n\npeople |&gt; \n  mutate(full_name = apply(people, 1, paste, collapse = \" \"))\n\n      first      last          full_name\n1 Frederick  Douglass Frederick Douglass\n2      Anna    Murray        Anna Murray\n3     Julia Griffiths    Julia Griffiths"
+  },
+  {
+    "objectID": "slides/w2.html#column-example",
+    "href": "slides/w2.html#column-example",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Column example",
+    "text": "Column example\nBack to the airquality example - standardize all columns\nNotice it returns a matrix though, which is less than ideal\n\napply(airquality, 2, function(x) {\n  as.numeric(scale(x))\n})\n\n             Ozone       Solar.R        Wind        Temp       Month\n  [1,] -0.03423409  0.0451761540 -0.72594816 -1.14971398 -1.40729432\n  [2,] -0.18580489 -0.7543048742 -0.55563883 -0.62146702 -1.40729432\n  [3,] -0.91334473 -0.4100838759  0.75006604 -0.41016823 -1.40729432\n  [4,] -0.73145977  1.4109562438  0.43783226 -1.67796094 -1.40729432\n  [5,]          NA            NA  1.23260914 -2.31185730 -1.40729432\n  [6,] -0.42831817            NA  1.40291847 -1.25536337 -1.40729432\n  [7,] -0.57988897  1.2555015994 -0.38532950 -1.36101276 -1.40729432\n  [8,] -0.70114561 -0.9652790344  1.09068470 -1.99490912 -1.40729432\n  [9,] -1.03460136 -1.8535912880  2.87893266 -1.78361034 -1.40729432\n [10,]          NA  0.0895917667 -0.38532950 -0.93841519 -1.40729432\n [11,] -1.06491552            NA -0.86787260 -0.41016823 -1.40729432\n [12,] -0.79208809  0.7780337632 -0.07309573 -0.93841519 -1.40729432\n [13,] -0.94365889  1.1555664709 -0.21502017 -1.25536337 -1.40729432\n [14,] -0.85271641  0.9779040202  0.26752293 -1.04406459 -1.40729432\n [15,] -0.73145977 -1.3428117422  0.92037537 -2.10055851 -1.40729432\n [16,] -0.85271641  1.6441382104  0.43783226 -1.46666216 -1.40729432\n [17,] -0.24643321  1.3443328248  0.57975671 -1.25536337 -1.40729432\n [18,] -1.09522968 -1.1984610010  2.39638956 -2.20620791 -1.40729432\n [19,] -0.36768985  1.5108913723  0.43783226 -1.04406459 -1.40729432\n [20,] -0.94365889 -1.5759937087 -0.07309573 -1.67796094 -1.40729432\n [21,] -1.24680048 -1.9757342228 -0.07309573 -1.99490912 -1.40729432\n [22,] -0.94365889  1.4886835660  1.88546157 -0.51581762 -1.40729432\n [23,] -1.15585800 -1.7869678689 -0.07309573 -1.78361034 -1.40729432\n [24,] -0.30706153 -1.0430063566  0.57975671 -1.78361034 -1.40729432\n [25,]          NA -1.3317078390  1.88546157 -2.20620791 -1.40729432\n [26,]          NA  0.8890727949  1.40291847 -2.10055851 -1.40729432\n [27,]          NA            NA -0.55563883 -2.20620791 -1.40729432\n [28,] -0.57988897 -1.9202147070  0.57975671 -1.14971398 -1.40729432\n [29,]  0.08702254  0.7336181505  1.40291847  0.32937752 -1.40729432\n [30,]  2.20901373  0.4116049586 -1.20849126  0.11807873 -1.40729432\n [31,] -0.15549073  1.0334235361 -0.72594816 -0.19886945 -1.40729432\n [32,]          NA  1.1111508582 -0.38532950  0.01242934 -0.70134012\n [33,]          NA  1.1222547614 -0.07309573 -0.41016823 -0.70134012\n [34,]          NA  0.6225791188  1.74353713 -1.14971398 -0.70134012\n [35,]          NA  0.0007605413 -0.21502017  0.64632570 -0.70134012\n [36,]          NA  0.3782932491 -0.38532950  0.75197509 -0.70134012\n [37,]          NA  0.8668649885  1.23260914  0.11807873 -0.70134012\n [38,] -0.39800401 -0.6543697457 -0.07309573  0.43502691 -0.70134012\n [39,]          NA  0.9668001170 -0.86787260  0.96327387 -0.70134012\n [40,]  0.87519070  1.1666703741  1.09068470  1.28022205 -0.70134012\n [41,] -0.09486241  1.5219952755  0.43783226  0.96327387 -0.70134012\n [42,]          NA  0.8113454727  0.26752293  1.59717023 -0.70134012\n [43,]          NA  0.7114103441 -0.21502017  1.49152084 -0.70134012\n [44,] -0.57988897 -0.4211877791 -0.55563883  0.43502691 -0.70134012\n [45,]          NA  1.6219304040  1.09068470  0.22372813 -0.70134012\n [46,]          NA  1.5108913723  0.43783226  0.11807873 -0.70134012\n [47,] -0.64051729  0.0562800572  1.40291847 -0.09322005 -0.70134012\n [48,] -0.15549073  1.0889430519  3.04924199 -0.62146702 -0.70134012\n [49,] -0.67083145 -1.6537210309 -0.21502017 -1.36101276 -0.70134012\n [50,] -0.91334473 -0.7320970679  0.43783226 -0.51581762 -0.70134012\n [51,] -0.88303057 -0.5433307140  0.09721360 -0.19886945 -0.70134012\n [52,]          NA -0.3989799728 -1.03818193 -0.09322005 -0.70134012\n [53,]          NA -1.4094351612 -2.34388679 -0.19886945 -0.70134012\n [54,]          NA -1.0541102598 -1.52072503 -0.19886945 -0.70134012\n [55,]          NA  0.7114103441 -1.03818193 -0.19886945 -0.70134012\n [56,]          NA -0.5655385203 -0.55563883 -0.30451884 -0.70134012\n [57,]          NA -0.6543697457 -0.55563883  0.01242934 -0.70134012\n [58,]          NA -1.5426819992  0.09721360 -0.51581762 -0.70134012\n [59,]          NA -0.9763829376  0.43783226  0.22372813 -0.70134012\n [60,]          NA -1.7203444499  1.40291847 -0.09322005 -0.70134012\n [61,]          NA -0.5322268108 -0.55563883  0.54067630 -0.70134012\n [62,]  2.81529692  0.9223845044 -1.66264947  0.64632570  0.00461408\n [63,]  0.20827918  0.6892025378 -0.21502017  0.75197509  0.00461408\n [64,] -0.30706153  0.5559556998 -0.21502017  0.32937752  0.00461408\n [65,]          NA -0.9430712281  0.26752293  0.64632570  0.00461408\n [66,]  0.66299158 -0.1213823935 -1.52072503  0.54067630  0.00461408\n [67,] -0.06454825  1.4220601470  0.26752293  0.54067630  0.00461408\n [68,]  1.05707566  1.0001118265 -1.37880059  1.06892327  0.00461408\n [69,]  1.66335885  0.9001766980 -1.03818193  1.49152084  0.00461408\n [70,]  1.66335885  0.9556962139 -1.20849126  1.49152084  0.00461408\n [71,]  1.29958893 -0.1213823935 -0.72594816  1.17457266  0.00461408\n [72,]          NA -0.5211229076 -0.38532950  0.43502691  0.00461408\n [73,] -0.97397305  0.8668649885  1.23260914 -0.51581762  0.00461408\n [74,] -0.45863233 -0.1213823935  1.40291847  0.32937752  0.00461408\n [75,]          NA  1.1666703741  1.40291847  1.38587145  0.00461408\n [76,] -1.06491552 -1.5315780960  1.23260914  0.22372813  0.00461408\n [77,]  0.17796502  0.8224493758 -0.86787260  0.32937752  0.00461408\n [78,] -0.21611905  0.9779040202  0.09721360  0.43502691  0.00461408\n [79,]  0.57204910  1.1000469551 -1.03818193  0.64632570  0.00461408\n [80,]  1.11770398  0.0118644445 -1.37880059  0.96327387  0.00461408\n [81,]  0.63267742  0.3782932491  0.43783226  0.75197509  0.00461408\n [82,] -0.79208809 -1.9868381260 -0.86787260 -0.41016823  0.00461408\n [83,]          NA  0.8002415695 -0.07309573  0.32937752  0.00461408\n [84,]          NA  1.2110859868  0.43783226  0.43502691  0.00461408\n [85,]  1.14801813  1.1999820836 -0.38532950  0.85762448  0.00461408\n [86,]  1.99681461  0.4116049586 -0.55563883  0.75197509  0.00461408\n [87,] -0.67083145 -1.1651492915 -0.38532950  0.43502691  0.00461408\n [88,]  0.29922166 -1.1540453883  0.57975671  0.85762448  0.00461408\n [89,]  1.20864645  0.3005659269 -0.72594816  1.06892327  0.00461408\n [90,]  0.23859334  0.9890079234 -0.72594816  0.85762448  0.00461408\n [91,]  0.66299158  0.7447220537 -0.72594816  0.54067630  0.00461408\n [92,]  0.51142078  0.7558259568 -0.21502017  0.32937752  0.00461408\n [93,] -0.09486241 -1.1429414851 -0.86787260  0.32937752  0.71056828\n [94,] -1.00428721 -1.7980717721  1.09068470  0.32937752  0.71056828\n [95,] -0.79208809 -1.2095649041 -0.72594816  0.43502691  0.71056828\n [96,]  1.08738982            NA -0.86787260  0.85762448  0.71056828\n [97,] -0.21611905            NA -0.72594816  0.75197509  0.71056828\n [98,]  0.72361990            NA -1.52072503  0.96327387  0.71056828\n [99,]  2.42121284  0.7669298600 -1.69103436  1.17457266  0.71056828\n[100,]  1.42084557  0.4782283776  0.09721360  1.28022205  0.71056828\n[101,]  2.05744293  0.2339425079 -0.55563883  1.28022205  0.71056828\n[102,]          NA  0.4005010554 -0.38532950  1.49152084  0.71056828\n[103,]          NA -0.5433307140  0.43783226  0.85762448  0.71056828\n[104,]  0.05670838  0.0673839603  0.43783226  0.85762448  0.71056828\n[105,] -0.42831817  0.9668001170  0.43783226  0.43502691  0.71056828\n[106,]  0.69330574 -0.3212526506 -0.07309573  0.22372813  0.71056828\n[107,]          NA -1.3539156453  0.43783226  0.11807873  0.71056828\n[108,] -0.61020313 -1.2761883232  0.09721360 -0.09322005  0.71056828\n[109,]  0.51142078 -1.4982663865 -1.03818193  0.11807873  0.71056828\n[110,] -0.57988897 -0.7876165837 -0.72594816 -0.19886945  0.71056828\n[111,] -0.33737569  0.6447869251  0.26752293  0.01242934  0.71056828\n[112,]  0.05670838  0.0451761540  0.09721360  0.01242934  0.71056828\n[113,] -0.64051729  0.8113454727  1.57322780 -0.09322005  0.71056828\n[114,] -1.00428721 -1.6648249341  1.23260914 -0.62146702  0.71056828\n[115,]          NA  0.7669298600  0.75006604 -0.30451884  0.71056828\n[116,]  0.08702254  0.2894620237 -0.07309573  0.11807873  0.71056828\n[117,]  3.81566419  0.5781635061 -1.86134369  0.32937752  0.71056828\n[118,]  0.93581902  0.3227737332 -0.55563883  0.85762448  0.71056828\n[119,]          NA -0.3656682633 -1.20849126  1.06892327  0.71056828\n[120,]  1.02676150  0.1895268952 -0.07309573  2.01976780  0.71056828\n[121,]  2.29995620  0.4338127649 -2.17357746  1.70281962  0.71056828\n[122,]  1.26927477  0.5670596029 -1.03818193  1.91411841  0.71056828\n[123,]  1.29958893  0.0229683477 -1.03818193  1.70281962  0.71056828\n[124,]  1.63304469 -0.2102136189 -0.86787260  1.38587145  1.41652248\n[125,]  1.08738982  0.1229034762 -1.37880059  1.49152084  1.41652248\n[126,]  0.93581902 -0.0325511682 -2.03165302  1.59717023  1.41652248\n[127,]  1.48147389  0.0340722508 -1.52072503  1.59717023  1.41652248\n[128,]  0.14765086 -1.0096946471 -0.72594816  0.96327387  1.41652248\n[129,] -0.30706153 -1.0430063566  1.57322780  0.64632570  1.41652248\n[130,] -0.67083145  0.7336181505  0.26752293  0.22372813  1.41652248\n[131,] -0.57988897  0.3782932491  0.09721360  0.01242934  1.41652248\n[132,] -0.64051729  0.4893322808  0.26752293 -0.30451884  1.41652248\n[133,] -0.54957481  0.8113454727 -0.07309573 -0.51581762  1.41652248\n[134,]  0.05670838  0.5559556998  1.40291847  0.32937752  1.41652248\n[135,] -0.64051729  0.8113454727  1.57322780 -0.19886945  1.41652248\n[136,] -0.42831817  0.5781635061 -1.03818193 -0.09322005  1.41652248\n[137,] -1.00428721 -1.7980717721  0.26752293 -0.72711641  1.41652248\n[138,] -0.88303057 -0.8209282932  0.43783226 -0.72711641  1.41652248\n[139,]  0.11733670  0.5670596029 -0.86787260  0.01242934  1.41652248\n[140,] -0.73145977  0.4227088617  1.09068470 -1.14971398  1.41652248\n[141,] -0.88303057 -1.7647600626  0.09721360 -0.19886945  1.41652248\n[142,] -0.54957481  0.5781635061  0.09721360 -1.04406459  1.41652248\n[143,] -0.79208809  0.1673190889 -0.55563883  0.43502691  1.41652248\n[144,] -0.88303057  0.5781635061  0.75006604 -1.46666216  1.41652248\n[145,] -0.57988897 -1.9091108038 -0.21502017 -0.72711641  1.41652248\n[146,] -0.18580489 -0.5211229076  0.09721360  0.32937752  1.41652248\n[147,] -1.06491552 -1.5204741929  0.09721360 -0.93841519  1.41652248\n[148,] -0.85271641 -1.8424873848  1.88546157 -1.57231155  1.41652248\n[149,] -0.36768985  0.0784878635 -0.86787260 -0.83276580  1.41652248\n[150,]          NA -0.4544994886  0.92037537 -0.09322005  1.41652248\n[151,] -0.85271641  0.0562800572  1.23260914 -0.30451884  1.41652248\n[152,] -0.73145977 -0.6099541330 -0.55563883 -0.19886945  1.41652248\n[153,] -0.67083145  0.4116049586  0.43783226 -1.04406459  1.41652248\n               Day\n  [1,] -1.67001947\n  [2,] -1.55721020\n  [3,] -1.44440094\n  [4,] -1.33159168\n  [5,] -1.21878242\n  [6,] -1.10597316\n  [7,] -0.99316389\n  [8,] -0.88035463\n  [9,] -0.76754537\n [10,] -0.65473611\n [11,] -0.54192685\n [12,] -0.42911758\n [13,] -0.31630832\n [14,] -0.20349906\n [15,] -0.09068980\n [16,]  0.02211946\n [17,]  0.13492873\n [18,]  0.24773799\n [19,]  0.36054725\n [20,]  0.47335651\n [21,]  0.58616577\n [22,]  0.69897503\n [23,]  0.81178430\n [24,]  0.92459356\n [25,]  1.03740282\n [26,]  1.15021208\n [27,]  1.26302134\n [28,]  1.37583061\n [29,]  1.48863987\n [30,]  1.60144913\n [31,]  1.71425839\n [32,] -1.67001947\n [33,] -1.55721020\n [34,] -1.44440094\n [35,] -1.33159168\n [36,] -1.21878242\n [37,] -1.10597316\n [38,] -0.99316389\n [39,] -0.88035463\n [40,] -0.76754537\n [41,] -0.65473611\n [42,] -0.54192685\n [43,] -0.42911758\n [44,] -0.31630832\n [45,] -0.20349906\n [46,] -0.09068980\n [47,]  0.02211946\n [48,]  0.13492873\n [49,]  0.24773799\n [50,]  0.36054725\n [51,]  0.47335651\n [52,]  0.58616577\n [53,]  0.69897503\n [54,]  0.81178430\n [55,]  0.92459356\n [56,]  1.03740282\n [57,]  1.15021208\n [58,]  1.26302134\n [59,]  1.37583061\n [60,]  1.48863987\n [61,]  1.60144913\n [62,] -1.67001947\n [63,] -1.55721020\n [64,] -1.44440094\n [65,] -1.33159168\n [66,] -1.21878242\n [67,] -1.10597316\n [68,] -0.99316389\n [69,] -0.88035463\n [70,] -0.76754537\n [71,] -0.65473611\n [72,] -0.54192685\n [73,] -0.42911758\n [74,] -0.31630832\n [75,] -0.20349906\n [76,] -0.09068980\n [77,]  0.02211946\n [78,]  0.13492873\n [79,]  0.24773799\n [80,]  0.36054725\n [81,]  0.47335651\n [82,]  0.58616577\n [83,]  0.69897503\n [84,]  0.81178430\n [85,]  0.92459356\n [86,]  1.03740282\n [87,]  1.15021208\n [88,]  1.26302134\n [89,]  1.37583061\n [90,]  1.48863987\n [91,]  1.60144913\n [92,]  1.71425839\n [93,] -1.67001947\n [94,] -1.55721020\n [95,] -1.44440094\n [96,] -1.33159168\n [97,] -1.21878242\n [98,] -1.10597316\n [99,] -0.99316389\n[100,] -0.88035463\n[101,] -0.76754537\n[102,] -0.65473611\n[103,] -0.54192685\n[104,] -0.42911758\n[105,] -0.31630832\n[106,] -0.20349906\n[107,] -0.09068980\n[108,]  0.02211946\n[109,]  0.13492873\n[110,]  0.24773799\n[111,]  0.36054725\n[112,]  0.47335651\n[113,]  0.58616577\n[114,]  0.69897503\n[115,]  0.81178430\n[116,]  0.92459356\n[117,]  1.03740282\n[118,]  1.15021208\n[119,]  1.26302134\n[120,]  1.37583061\n[121,]  1.48863987\n[122,]  1.60144913\n[123,]  1.71425839\n[124,] -1.67001947\n[125,] -1.55721020\n[126,] -1.44440094\n[127,] -1.33159168\n[128,] -1.21878242\n[129,] -1.10597316\n[130,] -0.99316389\n[131,] -0.88035463\n[132,] -0.76754537\n[133,] -0.65473611\n[134,] -0.54192685\n[135,] -0.42911758\n[136,] -0.31630832\n[137,] -0.20349906\n[138,] -0.09068980\n[139,]  0.02211946\n[140,]  0.13492873\n[141,]  0.24773799\n[142,]  0.36054725\n[143,]  0.47335651\n[144,]  0.58616577\n[145,]  0.69897503\n[146,]  0.81178430\n[147,]  0.92459356\n[148,]  1.03740282\n[149,]  1.15021208\n[150,]  1.26302134\n[151,]  1.37583061\n[152,]  1.48863987\n[153,]  1.60144913"
+  },
+  {
+    "objectID": "slides/w2.html#last-bit",
+    "href": "slides/w2.html#last-bit",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Last bit",
+    "text": "Last bit\n\nThere are other loops, like tapply(), but I tend to not use them much (instead just use lapply(split(x))\nAll of this stuff takes practice, both to understand how it works and to start to see use cases\nCareful not to get into too deep of nested loops\n\nif you’re nesting beyond two levels (and I never go beyond one anymore) there’s probably better ways to approach it"
+  },
+  {
+    "objectID": "slides/w2.html#before-next-class",
+    "href": "slides/w2.html#before-next-class",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Before next class",
+    "text": "Before next class\n\nReadings\n\nR4DS(1e) 25\nAdvR(2e) 9.1-9.3\n\nLab 1"
+  },
+  {
+    "objectID": "slides/w1.html",
+    "href": "slides/w1.html",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "",
+    "text": "Week 1\n\n\n\nIntroductions\nSyllabus\nIntro to data types\n\n. . .\nLearning Objectives\n\n\nUnderstand the requirements of the course\nUnderstand the fundamental difference between lists and atomic vectors\nUnderstand how atomic vectors are coerced, implicitly or explicitly\nUnderstand various ways to subset vectors, and how subsetting differs for lists\nUnderstand attributes and how to set/modify\n\n\n\n\n\n\nhusband, dad\nBA: UC Santa Barbara\nPhD, School Psychology: University of Maryland\nUO since 2009 at Behavioral Research & Teaching (BRT)\nResearch Professor\n\nResearch\n\nApplied statistical methods used by researchers\nDeveloping and improving systems that support data-based decision making using advanced technologies to influence teachers’ instructional practices and increase student achievement\n\nCORE and CORE II\nInclusive Skill-building Learning Approach (ISLA)\n\n\nTeaching\n\nEDLD 651 - Introduction to Data Science with R\nEDLD 653 - this one!\nEDLD 654 - Applied Machine Learning for Educational Data Scientists\nEDLD 609 - Data Science Capstone\n\n\n\n\nWe mostly know each other, but it’s always good to hear from each other\n\nName and program of study\nHow and how often are you using R these days?\n\n\n\n\n… is new to me"
+  },
+  {
+    "objectID": "slides/w1.html#another-example",
+    "href": "slides/w1.html#another-example",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Another example",
+    "text": "Another example\nFit a multilevel model and pull the variance-covariance matrix\n\nm &lt;- lme4::lmer(Reaction ~ 1 + Days + (1 + Days|Subject), \n                data = lme4::sleepstudy)\n\nlme4::VarCorr(m)$Subject\n\n            (Intercept)      Days\n(Intercept)  612.100158  9.604409\nDays           9.604409 35.071714\nattr(,\"stddev\")\n(Intercept)        Days \n  24.740658    5.922138 \nattr(,\"correlation\")\n            (Intercept)       Days\n(Intercept)  1.00000000 0.06555124\nDays         0.06555124 1.00000000"
+  },
+  {
+    "objectID": "slides/w1.html#fix-baby-to-na",
+    "href": "slides/w1.html#fix-baby-to-na",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Fix: “baby” to NA",
+    "text": "Fix: “baby” to NA\nFirst convert to character, then to numeric (you can ignore the warning in this case)\nbaby to NA\n\ndata.frame(age) |&gt; \n  mutate(\n    age_chr = as.character(age),\n    age_num = as.numeric(age_chr)\n  ) |&gt; \n  count(age, age_chr, age_num)\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `age_num = as.numeric(age_chr)`.\nCaused by warning:\n! NAs introduced by coercion\n\n\n    age age_chr age_num  n\n1     1       1       1  5\n2    10      10      10 12\n3     2       2       2  5\n4     3       3       3 13\n5     4       4       4 10\n6     5       5       5  4\n7     6       6       6  8\n8     7       7       7 13\n9     8       8       8  8\n10    9       9       9 17\n11 baby    baby      NA  5"
+  },
+  {
+    "objectID": "slides/w1.html#fix-baby-to-0",
+    "href": "slides/w1.html#fix-baby-to-0",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Fix: “baby” to 0",
+    "text": "Fix: “baby” to 0\n\ndata.frame(age) |&gt; \n  mutate(\n    age_chr = as.character(age),\n    age_num = ifelse(age_chr == \"baby\", 0, as.numeric(age_chr))\n  ) |&gt; \n  count(age, age_chr, age_num)\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `age_num = ifelse(age_chr == \"baby\", 0, as.numeric(age_chr))`.\nCaused by warning in `ifelse()`:\n! NAs introduced by coercion\n\n\n    age age_chr age_num  n\n1     1       1       1  5\n2    10      10      10 12\n3     2       2       2  5\n4     3       3       3 13\n5     4       4       4 10\n6     5       5       5  4\n7     6       6       6  8\n8     7       7       7 13\n9     8       8       8  8\n10    9       9       9 17\n11 baby    baby       0  5"
+  },
+  {
+    "objectID": "slides/w1.html#summary-factor-to-numeric",
+    "href": "slides/w1.html#summary-factor-to-numeric",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Summary: factor to numeric",
+    "text": "Summary: factor to numeric"
+  },
+  {
+    "objectID": "slides/w1.html#footnotes",
+    "href": "slides/w1.html#footnotes",
+    "title": "Functional Programming for Educational Data Science",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nNote there are two others (complex and raw), but we almost never care about them↩︎"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "This course includes three labs (20 points each), a take-home Midterm test (70 points), and a take-home Final exam (70 points).\nAssignments\nPoints\nPercent\n\n\n\n\nLabs\n60\n30%\n\n\nMidterm\n70\n35%\n\n\nFinal\n70\n35%\n\n\nTotal\n200"
+  },
+  {
+    "objectID": "assignments.html#labs",
+    "href": "assignments.html#labs",
+    "title": "Assignments",
+    "section": "Labs",
+    "text": "Labs\nEach lab is worth 20 points and is scored on a “best honest effort” basis. Please do not turn in partial work. Instead, please ask for help. Each lab will include dedicated in-class time, but it is expected that most labs will require additional time outside of class. Contact the instructor for help rather than submitting incomplete work. If the assignment is not complete, and you have not contacted me for help, it is likely to result in a partial credit or zero score.\n\n\n\n\n\n\n\n\nDate Assigned\nDate Due\nAssigned\nKey\nPoints\nPercent\n\n\n\n\nApr-06\nApr-13\nLab 1\nKey Lab 1\n20\n10%\n\n\nApr-13\nApr-20\nLab 2\nKey Lab 2\n20\n10%\n\n\nMay-11\nMay-18\nLab 3\nKey Lab 3\n20\n10%"
+  },
+  {
+    "objectID": "assignments.html#midterm",
+    "href": "assignments.html#midterm",
+    "title": "Assignments",
+    "section": "Midterm",
+    "text": "Midterm\nThe take-home Midterm will be completed outside of class time, and responses will be scored on a correct/incorrect basis rather than a “best honest effort”. The Midterm will primarily cover working with and subsetting lists, as well as iterating with {purrr}. The Midterm is worth 70 points (35% of your grade).\n\n\n\n\n\n\n\n\nDate Assigned\nDate Due\nAssigned\nKey\nPoints\nPercent\n\n\n\n\nApr-27\nMay-04\nMidterm Test\nNA\n70\n35%"
+  },
+  {
+    "objectID": "assignments.html#final",
+    "href": "assignments.html#final",
+    "title": "Assignments",
+    "section": "Final",
+    "text": "Final\nThe Final exam is similar to the midterm, in that it will be completed outside of class time, and responses will be scored on a correct/incorrect basis rather than a “best honest effort”. The Final could cover anything covered in this course. The Final is worth 70 points (35% of your grade).\n\n\n\n\n\n\n\n\nDate Assigned\nDate Due\nAssigned\nKey\nPoints\nPercent\n\n\n\n\nJun-01\nJun-08\nFinal Exam\nNA\n70\n35%"
+  },
+  {
+    "objectID": "slides/w2.html#avoids-the-length-of-0-problem",
+    "href": "slides/w2.html#avoids-the-length-of-0-problem",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Avoids the length of 0 problem",
+    "text": "Avoids the length of 0 problem\n: works with both increasing and decreasing sequences, which is problematic\n\nmeans &lt;- c()\n\nlength(means)\n\n[1] 0\n\n1:length(means)\n\n[1] 1 0"
+  },
+  {
+    "objectID": "slides/w2.html#avoids-the-length-of-0-problem-1",
+    "href": "slides/w2.html#avoids-the-length-of-0-problem-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Avoids the length of 0 problem",
+    "text": "Avoids the length of 0 problem\n\nX &lt;- 1:10\nN &lt;- length(X)\n\ni &lt;- 1\n\n\n\n\n: method\n\nX[(i+1):N]\n\n[1]  2  3  4  5  6  7  8  9 10\n\nX[1:(i-1)]\n\n[1] 1\n\n\n\nseq_len() method\n\nX[-seq_len(i)]\n\n[1]  2  3  4  5  6  7  8  9 10\n\nX[seq_len(i-1)]\n\ninteger(0)"
+  },
+  {
+    "objectID": "slides/w2.html#write-a-for-loop",
+    "href": "slides/w2.html#write-a-for-loop",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Write a for loop",
+    "text": "Write a for loop\n\nfor(i in seq_along(simulated)) {\n    simulated[[i]] &lt;- rnorm(100, 0, increments[i]) \n}\n\nnote use of [[ above\n\nNow look at our vector\n\nstr(simulated)\n\nList of 21\n $ : num [1:100] 0.113 -1.034 1.039 0.75 -0.762 ...\n $ : num [1:100] -0.478 0.899 -1.879 -0.562 1.329 ...\n $ : num [1:100] -1.6934 -1.3552 -2.413 -0.5348 0.0318 ...\n $ : num [1:100] 1.084 -0.822 -1.952 1.2 0.265 ...\n $ : num [1:100] 0.64 -0.04 -0.715 -0.309 0.494 ...\n $ : num [1:100] -3.98 -2.165 0.488 -2.217 -2.08 ...\n $ : num [1:100] -1.691 -0.576 -0.239 3.253 0.777 ...\n $ : num [1:100] 2.975 0.673 2.041 -2.141 1.652 ...\n $ : num [1:100] -1.447 -2.445 -4.24 0.148 -0.355 ...\n $ : num [1:100] 4.71 -3.84 -3.27 5.42 1.67 ...\n $ : num [1:100] 0.115 -2.412 -1 -2.307 -0.332 ...\n $ : num [1:100] 0.727 1.451 -0.163 1.078 -5.881 ...\n $ : num [1:100] 0.79 -4.756 -0.829 -2.805 -2.242 ...\n $ : num [1:100] 1.883 0.458 1.318 5.461 2.404 ...\n $ : num [1:100] 3.53 1.14 -10.58 7.69 -6.24 ...\n $ : num [1:100] -5.903 3.891 2.005 -0.756 -6.651 ...\n $ : num [1:100] -1.875 3.626 -0.837 -4.227 0.305 ...\n $ : num [1:100] 6.78 -6.19 -12.4 -1.79 -3.45 ...\n $ : num [1:100] 6.04 -1.47 -1.9 5.37 3.16 ...\n $ : num [1:100] 3.976 6.997 1.454 0.294 1.205 ...\n $ : num [1:100] 4.02 1.46 -1.78 8.73 -8.37 ..."
+  },
+  {
+    "objectID": "slides/w2.html#alternative-notation-1",
+    "href": "slides/w2.html#alternative-notation-1",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Alternative notation",
+    "text": "Alternative notation\nThis will NOT work\n\nlapply(airquality, mean(x, na.rm = TRUE))\n\nError in `match.fun()`:\n! 'mean(x, na.rm = TRUE)' is not a function, character or symbol\n\n\n\nThis WILL\n\nlapply(airquality, mean, na.rm = TRUE)\n\n$Ozone\n[1] 42.12931\n\n$Solar.R\n[1] 185.9315\n\n$Wind\n[1] 9.957516\n\n$Temp\n[1] 77.88235\n\n$Month\n[1] 6.993464\n\n$Day\n[1] 15.80392"
+  },
+  {
+    "objectID": "slides/w2.html#lapply-vs-sapply",
+    "href": "slides/w2.html#lapply-vs-sapply",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "lapply() vs sapply()",
+    "text": "lapply() vs sapply()\n\nlapply(penguins, is.double)\n\n\n\n$species\n[1] FALSE\n\n$island\n[1] FALSE\n\n$bill_length_mm\n[1] TRUE\n\n$bill_depth_mm\n[1] TRUE\n\n$flipper_length_mm\n[1] FALSE\n\n$body_mass_g\n[1] FALSE\n\n$sex\n[1] FALSE\n\n$year\n[1] FALSE\n\n\n\n\nsapply(penguins, is.double)\n\n\n\n          species            island    bill_length_mm     bill_depth_mm \n            FALSE             FALSE              TRUE              TRUE \nflipper_length_mm       body_mass_g               sex              year \n            FALSE             FALSE             FALSE             FALSE \n\n\n\n\nNow that it’s a vector we can easily use it for subsetting"
+  },
+  {
+    "objectID": "slides/w2.html#select-where-is.double",
+    "href": "slides/w2.html#select-where-is.double",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Select where is.double",
+    "text": "Select where is.double\n\nhead(penguins)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\n\npenguins[ , sapply(penguins, is.double)] \n\n\n\n# A tibble: 344 × 2\n   bill_length_mm bill_depth_mm\n            &lt;dbl&gt;         &lt;dbl&gt;\n 1           39.1          18.7\n 2           39.5          17.4\n 3           40.3          18  \n 4           NA            NA  \n 5           36.7          19.3\n 6           39.3          20.6\n 7           38.9          17.8\n 8           39.2          19.6\n 9           34.1          18.1\n10           42            20.2\n# ℹ 334 more rows"
+  },
+  {
+    "objectID": "slides/w2.html#back-to-sapply-briefly",
+    "href": "slides/w2.html#back-to-sapply-briefly",
+    "title": "Week 2: Intro to Base R Iterations",
+    "section": "Back to sapply() briefly",
+    "text": "Back to sapply() briefly\n\ntest &lt;- list(a = c(1, 3, 5), b = c(2,4,6), c = c(9,8,7))\n\nsapply(test, max)\n\n\n\na b c \n5 6 9 \n\n\n\n\ntest$d &lt;- c(\"a\", \"b\", \"c\")\n\nsapply(test, max)\n\n\n\n  a   b   c   d \n\"5\" \"6\" \"9\" \"c\" \n\n\n\n\nI don’t like that"
   }
 ]
