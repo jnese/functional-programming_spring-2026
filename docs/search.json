@@ -802,7 +802,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: $L6&HnNN\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\n\nLab 1\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nR4DS(1e) 25\n\n\n\n\nLab 2\nLab 1\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\n\n\nLab 2\n\n\n\n\nAdvR(2e) 9.4-9.6\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\n\n\nMidterm Test\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
+    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: $L6&HnNN\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\nLab 1\n\n\n\n\n\n1 Passcode: a3ltA@DH\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nR4DS(1e) 25\n\n\n\n\nLab 2\nLab 1\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\n\n\nLab 2\n\n\n\n\nAdvR(2e) 9.4-9.6\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\n\n\nMidterm Test\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
   },
   {
     "objectID": "slides/w2.html#agenda",
@@ -830,7 +830,7 @@
     "href": "slides/w2.html#creating-indexes",
     "title": "Week 2: Intro to Base R Iterations",
     "section": "Creating indexes",
-    "text": "Creating indexes\nYou will commonly see code like this:\n\nfor(i in 1:nrow(df)) {some_function}\n\n. . .  \nInstead, use seq_along() or seq_len()"
+    "text": "Creating indexes\nYou will commonly see code like this:\n\nfor(i in 1:nrow(df)) {some_function}\n\n\n \nInstead, use seq_along() or seq_len()"
   },
   {
     "objectID": "slides/w2.html#seq_",
@@ -865,7 +865,7 @@
     "href": "slides/w2.html#another-for-loop-example",
     "title": "Week 2: Intro to Base R Iterations",
     "section": "Another for loop example",
-    "text": "Another for loop example\nSimulate tossing a coin, record results\n\nFor a single toss\n\n\nsample(c(\"Heads\", \"Tails\"), 1)\n\n[1] \"Tails\"\n\n\n\n\nFor multiple tosses, first allocate a vector with length equal to the number of iterations (here, 10)\n\n\n(result &lt;- rep(NA, 10))\n\n [1] NA NA NA NA NA NA NA NA NA NA\n\n\n\n\n\nNext, run the trial \\(n\\) times, storing the result in your pre-allocated vector\n\n\nfor(i in seq_along(result)) {\n    result[i] &lt;- sample(c(\"Heads\", \"Tails\"), 1)\n}\n\n\n\nWait, what?\n\n\n\nresult\n\n [1] \"Tails\" \"Tails\" \"Heads\" \"Tails\" \"Tails\" \"Tails\" \"Heads\" \"Tails\" \"Heads\"\n[10] \"Tails\""
+    "text": "Another for loop example\nSimulate tossing a coin, record results\n\nFor a single toss\n\n\nsample(c(\"Heads\", \"Tails\"), 1)\n\n[1] \"Tails\"\n\n\n\n\nFor multiple tosses, first allocate a vector with length equal to the number of iterations (here, 10)\n\n\n(result &lt;- rep(NA, 10))\n\n [1] NA NA NA NA NA NA NA NA NA NA\n\n\n\n\n\nNext, run the trial \\(n\\) times, storing the result in your pre-allocated vector\n\n\nfor(i in seq_along(result)) {\n    result[i] &lt;- sample(c(\"Heads\", \"Tails\"), 1)\n}\n\n\n\nWait, what?\n\n\n\nresult\n\n [1] \"Heads\" \"Heads\" \"Heads\" \"Tails\" \"Tails\" \"Heads\" \"Tails\" \"Heads\" \"Heads\"\n[10] \"Heads\""
   },
   {
     "objectID": "slides/w2.html#growing-vectors",
@@ -886,7 +886,7 @@
     "href": "slides/w2.html#pre-allocated-vector-example",
     "title": "Week 2: Intro to Base R Iterations",
     "section": "Pre-allocated vector example",
-    "text": "Pre-allocated vector example\nExactly the same thing with pre-allocated vector\n\nset.seed(3000)\ntic()\nallocated &lt;- rep(NA, 1e5)\nfor(i in seq_len(1e5)) {\n    allocated[i] &lt;- sample(c(\"Heads\", \"Tails\"), 1)\n}\ntoc()\n\n0.28 sec elapsed"
+    "text": "Pre-allocated vector example\nExactly the same thing with pre-allocated vector\n\nset.seed(3000)\ntic()\nallocated &lt;- rep(NA, 1e5)\nfor(i in seq_len(1e5)) {\n    allocated[i] &lt;- sample(c(\"Heads\", \"Tails\"), 1)\n}\ntoc()\n\n1.22 sec elapsed"
   },
   {
     "objectID": "slides/w2.html#result",
@@ -998,7 +998,7 @@
     "href": "slides/w2.html#next",
     "title": "Week 2: Intro to Base R Iterations",
     "section": "next",
-    "text": "next\nSkip an iteration without terminating the loop with next\n\nskip “ugli fruit”\n\nset.seed(3000)\n\nrand_fruit &lt;- vector(\"character\", 100)\n\nfor(i in seq_along(rand_fruit)) {\n    rand_fruit[i] &lt;- sample(fruit, 1)\n    if(any(rand_fruit == \"ugli fruit\")) {\n        next\n    }\n}\n\nrand_fruit[\"ugli fruit\"]\n\n\n\n[1] NA"
+    "text": "next\nSkip an iteration without terminating the loop with next\n\nskip “ugli fruit”\n\nset.seed(3000)\n\nrand_fruit &lt;- vector(\"character\", 100)\n\nfor(i in seq_along(rand_fruit)) {\n  \n  f &lt;- sample(fruit, 1)\n  \n  if(f == \"ugli fruit\") {\n    next\n  }\n  \n  rand_fruit[i] &lt;- f\n}\n\nsum(str_detect(rand_fruit, \"ugli fruit\"))\n\n\n\n[1] 0"
   },
   {
     "objectID": "slides/w2.html#last-thought-on-for-loops",

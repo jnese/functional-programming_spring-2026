@@ -281,8 +281,10 @@ Joe Nese
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df)) {some_function}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>. . . <br> <br></p>
+<div class="fragment">
+<p><br> <br></p>
 <p>Instead, use <code>seq_along()</code> or <code>seq_len()</code></p>
+</div>
 </section>
 <section id="seq_" class="slide level2 smaller">
 <h2><code>seq_*</code></h2>
@@ -453,8 +455,8 @@ Joe Nese
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "Tails" "Tails" "Heads" "Tails" "Tails" "Tails" "Heads" "Tails" "Heads"
-[10] "Tails"</code></pre>
+<pre><code> [1] "Heads" "Heads" "Heads" "Tails" "Tails" "Heads" "Tails" "Heads" "Heads"
+[10] "Heads"</code></pre>
 </div>
 </div>
 </div>
@@ -501,7 +503,7 @@ Joe Nese
 <span id="cb47-6"><a></a>}</span>
 <span id="cb47-7"><a></a><span class="fu">toc</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.28 sec elapsed</code></pre>
+<pre><code>1.22 sec elapsed</code></pre>
 </div>
 </div>
 </section>
@@ -532,7 +534,7 @@ Joe Nese
 </ul>
 <p><span style="color:#009E73;"><strong>Don’t look ahead!</strong></span></p>
 
-<img data-src="https://ecdn.teacherspayteachers.com/cdn-cgi/image/format=avif,quality=70,width=525,height=525,onerror=redirect/thumbitem/Letter-Grid-A-Z-lowercase-uppercase-and-both-11x17-tabloid--6194367-1758380996/750f-6194367-1.jpg" style="width:10.0%" class="r-stretch"><p><countdown-timer class="countdown" id="timer_73500839" minutes="3" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
+<img data-src="https://ecdn.teacherspayteachers.com/cdn-cgi/image/format=avif,quality=70,width=525,height=525,onerror=redirect/thumbitem/Letter-Grid-A-Z-lowercase-uppercase-and-both-11x17-tabloid--6194367-1758380996/750f-6194367-1.jpg" style="width:10.0%" class="r-stretch"><p><countdown-timer class="countdown" id="timer_b24219df" minutes="3" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
 </section>
 <section id="answer" class="slide level2">
 <h2>Answer</h2>
@@ -1136,22 +1138,26 @@ Joe Nese
 <div class="fragment">
 <p>skip “ugli fruit”</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78" data-code-line-numbers="|8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a><span class="fu">set.seed</span>(<span class="dv">3000</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78" data-code-line-numbers="|9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a><span class="fu">set.seed</span>(<span class="dv">3000</span>)</span>
 <span id="cb78-2"><a></a></span>
 <span id="cb78-3"><a></a>rand_fruit <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"character"</span>, <span class="dv">100</span>)</span>
 <span id="cb78-4"><a></a></span>
 <span id="cb78-5"><a></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(rand_fruit)) {</span>
-<span id="cb78-6"><a></a>    rand_fruit[i] <span class="ot">&lt;-</span> <span class="fu">sample</span>(fruit, <span class="dv">1</span>)</span>
-<span id="cb78-7"><a></a>    <span class="cf">if</span>(<span class="fu">any</span>(rand_fruit <span class="sc">==</span> <span class="st">"ugli fruit"</span>)) {</span>
-<span id="cb78-8"><a></a>        <span class="cf">next</span></span>
-<span id="cb78-9"><a></a>    }</span>
-<span id="cb78-10"><a></a>}</span>
-<span id="cb78-11"><a></a></span>
-<span id="cb78-12"><a></a>rand_fruit[<span class="st">"ugli fruit"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb78-6"><a></a>  </span>
+<span id="cb78-7"><a></a>  f <span class="ot">&lt;-</span> <span class="fu">sample</span>(fruit, <span class="dv">1</span>)</span>
+<span id="cb78-8"><a></a>  </span>
+<span id="cb78-9"><a></a>  <span class="cf">if</span>(f <span class="sc">==</span> <span class="st">"ugli fruit"</span>) {</span>
+<span id="cb78-10"><a></a>    <span class="cf">next</span></span>
+<span id="cb78-11"><a></a>  }</span>
+<span id="cb78-12"><a></a>  </span>
+<span id="cb78-13"><a></a>  rand_fruit[i] <span class="ot">&lt;-</span> f</span>
+<span id="cb78-14"><a></a>}</span>
+<span id="cb78-15"><a></a></span>
+<span id="cb78-16"><a></a><span class="fu">sum</span>(<span class="fu">str_detect</span>(rand_fruit, <span class="st">"ugli fruit"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] NA</code></pre>
+<pre><code>[1] 0</code></pre>
 </div>
 </div>
 </div>
@@ -2054,7 +2060,7 @@ $`8`
 <section id="your-turn" class="slide level2">
 <h2>Your turn</h2>
 <p>Try splitting the <code>penguins</code> dataset by <code>species</code> and calculating the average <code>bill_length_mm</code></p>
-<p><countdown-timer class="countdown" id="timer_74c40be8" minutes="4" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
+<p><countdown-timer class="countdown" id="timer_63a73f4a" minutes="4" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
 <p><span style="color:#009E73;"><strong>demo</strong></span></p>
 </section>
 <section id="solution" class="slide level2">
@@ -2125,7 +2131,7 @@ $`8`</code></pre>
 <h2>Your turn</h2>
 <p>Produce separate plots of the relation between <code>bill_length_mm</code> and <code>body_mass_g</code></p>
 <p><span style="color:#009E73;"><strong>share code</strong></span></p>
-<p><countdown-timer class="countdown" id="timer_fd991bfd" minutes="4" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
+<p><countdown-timer class="countdown" id="timer_2382eed3" minutes="4" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
 </section>
 
 <section id="saving" class="slide level2">
@@ -2180,7 +2186,7 @@ $`8`</code></pre>
 <section id="you-try-1" class="slide level2">
 <h2>You try!</h2>
 <p>With <code>peng_split</code></p>
-<p><countdown-timer class="countdown" id="timer_b635c899" minutes="4" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
+<p><countdown-timer class="countdown" id="timer_60138df0" minutes="4" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
 </section>
 
 <section id="more-than-one-group" class="slide level2">
@@ -2559,7 +2565,7 @@ flipper_length_mm       body_mass_g               sex              year
 <h2>Challenge</h2>
 <p>Can you return the opposite? In other words - all those that are <em>NOT</em> double?</p>
 <p><span style="color:#009E73;"><strong>Don’t look ahead!</strong></span></p>
-<p><countdown-timer class="countdown" id="timer_ad20c62d" minutes="2" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
+<p><countdown-timer class="countdown" id="timer_fa8229b2" minutes="2" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
 </section>
 <section id="solution-3" class="slide level2 smaller">
 <h2>Solution</h2>
@@ -2741,7 +2747,7 @@ $Gentoo.Torgersen
 </section>
 <section id="try" class="slide level2">
 <h2>Try!</h2>
-<p><countdown-timer class="countdown" id="timer_57118fd2" minutes="4" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
+<p><countdown-timer class="countdown" id="timer_eb66a83c" minutes="4" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
 <p>Don’t look ahead!</p>
 </section>
 <section id="remove-zero-row-dfs" class="slide level2">

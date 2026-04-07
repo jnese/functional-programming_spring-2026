@@ -84,6 +84,7 @@ for(i in 1:nrow(df)) {some_function}
 ```
 
 . . .
+
 <br>
 <br>
 
@@ -575,19 +576,23 @@ skip "ugli fruit"
 
 ```{r}
 #| output-location: fragment
-#| code-line-numbers: "|8"
+#| code-line-numbers: "|9"
 set.seed(3000)
 
 rand_fruit <- vector("character", 100)
 
 for(i in seq_along(rand_fruit)) {
-	rand_fruit[i] <- sample(fruit, 1)
-	if(any(rand_fruit == "ugli fruit")) {
-		next
-	}
+  
+  f <- sample(fruit, 1)
+  
+  if(f == "ugli fruit") {
+    next
+  }
+  
+  rand_fruit[i] <- f
 }
 
-rand_fruit["ugli fruit"]
+sum(str_detect(rand_fruit, "ugli fruit"))
 
 ```
 
