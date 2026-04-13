@@ -1,0 +1,841 @@
+---
+title: "Week 3: Intro to `{purrr}`"
+subtitle: "& Lab 2"
+author: "Joe Nese"
+institute: "University of Oregon<br>Spring 2026"
+format:
+  revealjs: 
+    theme: default
+    highlight-style: github
+    incremental: false
+#    fig-width: 9
+#    fig-height: 3.5
+    scrollable: true
+    slide-number: true
+execute: 
+  echo: true
+  warning: false
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+theme_set(theme_minimal())
+```
+
+# `{purrr}` & Lab 2
+
+**Week 3**
+
+## Agenda {.smaller}
+
+* Review Lab 1
+* Thinking more about functional programming
+    + A small example
+* Introduce you to `{purrr}` and contrast it with the base functions we learned last week
+
+**Learning objectives**
+
+* Understand how `purrr::map()` relates to `lapply()` and `for` loops
+* Understand the four basic variants of `purrr::map()`, when they should be used, and when they will fail
+* Understand what functional programming is, and how `{purrr}` can help facilitate the process
+
+# Review Lab 1
+
+# Functional Programming
+
+## What is Functional Programming?
+
+> decomposing a big problem into smaller pieces, then solving each piece with a function or combination of functions <br> \-- [Adv-R](https://adv-r.hadley.nz/fp.html)
+
+## Example
+
+Calculate top mpg manufactures
+
+(let's just subset the data to 4 cylinders for this example)
+
+
+```{r four_cyl}
+#| message: false
+#| warning: false
+library(tidyverse)
+four_cyl <- filter(mpg, cyl == 4)
+```
+
+## Example
+
+Now we'll filter for cases where the city miles per gallon is in the top 10% (i.e., greater than or equal to the $90^{th}$ percentile)
+
+```{r ninety-ptile}
+#| output-location: fragment
+ninety <- four_cyl |>
+	filter(cty >= quantile(cty, probs = 0.9))
+ninety
+```
+
+## Example
+
+Now let's count the unique occurrences for each manufacturer, manufacturer/model, and class
+
+```{r counts}
+(count_mfr <- count(ninety, manufacturer))
+(count_model <- count(ninety, manufacturer, model))
+(count_class <- count(ninety, class))
+```
+
+## Example
+
+Produce a plot for each
+
+```{r plots1}
+plot_mfr <- count_mfr |> 
+	ggplot(aes(fct_reorder(manufacturer, -n), n)) +
+		geom_col(aes(fill = manufacturer)) +
+		scale_fill_brewer(palette = "Set3") +
+		labs(title = "Manufacturers",
+		     x = "",
+		     y = "") +
+		guides(fill = "none")
+plot_mfr
+```
+
+## 
+
+```{r}
+plot_car <- count_model |>
+	unite(car, manufacturer, model, sep = " ") |>
+	ggplot(aes(fct_reorder(car, -n), n)) +
+		geom_col(aes(fill = car)) +
+		scale_fill_brewer(palette = "Set3") +
+		labs(title = "Top 10% of city mpg",
+		     subtitle = "Car frequency",
+		     x = "",
+		     y = "") +
+		guides(fill = "none")
+plot_car
+```
+
+## 
+
+```{r}
+plot_class <- count_class |> 
+  ggplot(aes(fct_reorder(class, -n), n)) +
+		geom_col(aes(fill = class)) +
+		scale_fill_brewer(palette = "Set3") +
+		labs(title = "Car Class",
+		     x = "", 
+		     y = "") +
+		guides(fill = "none")
+plot_class
+```
+
+
+## Assemble the plots
+
+```{r patchwork}
+library(patchwork)
+plot_car / (plot_mfr + plot_class)
+```
+
+# Functional Programming Version
+
+At least in spirit
+
+## Let's Expand from 4 cyl
+
+We did a trial run with one piece (4 cyl), now let's do some functional programming and apply it to all `cyl` groups
+
+```{r}
+by_cyl <- split(mpg, mpg$cyl)
+```
+
+. . .
+
+And filter all
+
+```{r}
+#| output-location: fragment
+top_10 <- lapply(by_cyl, function(x) {
+	filter(x, cty >= quantile(cty, probs = 0.9))
+})
+str(top_10)
+```
+
+## Counts for all
+
+More complex anonymous function here
+
+```{r all-counts}
+#| output-location: slide
+counts <- lapply(top_10, function(x) {
+	
+  count_manufacturer <- count(x, manufacturer)
+	
+  count_class <- count(x, class)
+  
+	count_model <- count(x, manufacturer, model) |>
+		unite(car, manufacturer, model, sep = " ")
+	
+  
+	return(list(mfr = count_manufacturer, 
+	            car = count_model, 
+	            class = count_class))
+})
+counts
+```
+
+## Plots for all {.smaller}
+
+Let's write a couple functions
+
+(we'll mostly ignore how for now)
+
+```{r}
+counts_plot <- function(counts_df) {
+  
+  var <- names(counts_df)[1]
+	
+  p <- ggplot(counts_df, aes(fct_reorder(!!sym(var), -n), n)) +
+		geom_col(aes(fill = !!sym(var))) +
+		scale_fill_brewer(palette = "Set3") +
+		labs(title = stringr::str_to_title(var),
+		     x = "",
+		     y = "") +
+		guides(fill = "none") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+	if(var == "car") {
+		p <- p + labs(title = "Top 10% of city mpg",
+		              subtitle = var)
+	}
+ p
+}
+```
+
+
+## Test it "4"
+
+```{r}
+counts_plot(counts[["4"]]$mfr)
+```	
+
+## Test it "6"
+
+```{r indiv_plot3, fig.width = 13}
+counts_plot(counts[["6"]]$class)	
+```
+
+## Test it "8"
+
+```{r indiv_plot2, fig.width = 13}
+counts_plot(counts[["8"]]$car)
+```
+
+## Compile plots function
+
+```{r plot2}
+full_plot <- function(l) {
+	counts_plot(l[["car"]]) / (
+	  counts_plot(l[["mfr"]]) +
+	  counts_plot(l[["class"]])
+	)
+}
+```
+
+## Test it
+
+```{r full_plot-test, fig.width = 13}
+#| output-location: fragment
+full_plot(counts[[1]])
+```
+
+## Finish up
+
+```{r looped-full-plot}
+plots <- lapply(counts, full_plot)
+```
+
+## 4 cyl (1)
+
+```{r p1}
+#| output-location: fragment
+plots[[1]]
+```
+
+## 5 cyl (2)
+
+```{r p2}
+#| output-location: fragment
+plots[[2]]
+```
+
+## 6 cyl (3)
+
+```{r p3}
+#| output-location: fragment
+plots[[3]]
+```
+
+## 8 cyl (4)
+
+```{r p4}
+plots[[4]]
+```
+
+# `{purrr}`
+
+## Functionals
+
+**functional**
+: "a function that takes a function as input and returns a vector as output"
+
+. . .
+
+You remember from last week and `lapply()` et al.
+
+## `purrr::map()`
+
+```{r map}
+library(purrr) # loaded automatically with library(tidyverse)
+map(1:3, rnorm)
+```
+
+
+## Graphically
+
+![](https://d33wubrfki0l68.cloudfront.net/f0494d020aa517ae7b1011cea4c4a9f21702df8b/2577b/diagrams/functionals/map.png)
+
+## Comparison to `base::lapply()`
+
+:::: {.columns}
+::: {.column width="50%"}
+**`lapply()`**
+```{r lapply-map}
+lapply(1:3, rnorm)
+```
+:::
+
+::: {.column width="50%"}
+**`map()`**
+```{r map-lapply}
+map(1:3, rnorm)
+```
+:::
+
+::::
+
+::: aside
+side note: What exactly is going on here?
+:::
+
+## `map()` & `lapply()`
+
+> The base equivalent to `map()` is `lapply()`. The only difference is that `lapply()` does not support the helpers that you’ll learn about (next), so if you’re only using `map()` from `{purrr}`, you can skip the additional dependency and use `lapply()` directly.
+
+\- [Adv R](https://adv-r.hadley.nz/functionals.html)
+
+## Equivalents
+
+The following are equivalent
+
+```{r equivalents1}
+#| eval: false
+map(mtcars, function(x) length(unique(x)))
+
+lapply(mtcars, function(x) length(unique(x)))
+```
+
+## So why {.smaller}
+
+But `{purrr}` also allows  you to specify anonymous functions more succinctly using the formula interface
+
+. . .
+
+From this:
+
+```{r}
+#| eval: false
+map(mtcars, function(x) length(unique(x)))
+```
+
+To this:
+
+```{r formula1}
+map(mtcars, ~length(unique(.x)))
+```
+
+. . .
+
+If you forget the `~` (I do sometimes!)
+
+```{r}
+#| error: true
+map(mtcars, length(unique(.x)))
+```
+
+## Anonymous function?
+
+- An anonymous function is one that is defined without being given a name
+- Since it has no name assigned with `<-`, it’s anonymous
+- It’s usually created for short, one-time use—often inside another function like `lapply()`, `sapply()`, `purrr::map()`, etc.
+
+```{r}
+#| eval: false
+function(arguments) {
+  # code
+}
+```
+
+
+# `~` is used in place of `function(x)`
+
+## More examples {.smaller}
+
+:::: {.columns}
+::: {.column width="33%"}
+Vary the `n`
+```{r }
+map(1:3, ~rnorm(n = .x))
+```
+:::
+
+::: {.column width="34%"}
+Vary the `mean`
+```{r }
+map(1:3, ~rnorm(n = 1, mean = .x))
+```
+:::
+
+::: {.column width="33%"}
+Vary the `sd`
+```{r }
+map(1:3, ~rnorm(n = 1, sd = .x))
+```
+:::
+
+::::
+
+## Remember `lapply()` {.smaller}
+
+:::: {.columns}
+::: {.column width="33%"}
+
+This doesn't work
+
+```{r}
+#| error: true
+lapply(1:3, rnorm(x, n = 1))
+```
+
+:::
+
+::: {.column width="34%"}
+
+or this
+
+```{r}
+#| error: true
+lapply(1:3, ~rnorm(x, n = 1))
+```
+:::
+
+::: {.column width="33%"}
+
+It has to be this
+
+```{r}
+lapply(1:3, function(x) rnorm(x, n = 1))
+```
+
+:::
+
+::::
+
+## Extracting elements
+
+Let's make a complicated list
+
+```{r list}
+(l <- list(
+  list(-1, x = 1, y = 2, z = "a"),
+  list(-2, x = 4, y = c(5, 6), z = "b"),
+  list(-3, x = 8, y = c(9, 10, 11))
+))
+```
+
+## Extract second element from each
+
+:::: {.columns}
+::: {.column width="50%" .fragment}
+
+`map()` 😎
+
+```{r map-extract}
+map(l, 2)
+```
+
+:::
+
+::: {.column width="50%" .fragment}
+
+`lapply` 👎
+
+```{r lapply-extract-fail}
+#| error: true
+lapply(l, 2)
+```
+
+:::
+
+::::
+
+## Doesn't work with `lapply()`
+
+Instead, you have to apply an anonymous function
+
+```{r lapply-extract-success1}
+lapply(l, function(x) x[[2]])
+```
+
+. . .
+
+Alternatively the following is also the same (and my brain hates it)
+
+```{r lapply-extract-success2}
+#| eval: false
+lapply(l, `[[`, 2)
+```
+
+## Extract by name
+
+```{r by_name}
+map(l, "y")
+```
+
+## Multiple arguments
+
+Extract first element `1` from `y`
+
+```{r by_name_arg}
+map(l, list("y", 1))
+```
+
+# `{purrr}` variants
+
+## Return a vector
+
+And specify the type
+
+* `map_dbl()`
+* `map_int()`
+* `map_chr()`
+* `map_lgl()`
+
+## `l`
+
+```{r}
+str(l)
+```
+
+## `map_*`
+
+:::: {.columns}
+::: {.column width="33%" .fragment}
+
+```{r}
+map(l, "x")
+```
+
+:::
+
+::: {.column width="34%" .fragment}
+```{r show-l}
+map_dbl(l, "x")
+```
+:::
+
+::: {.column width="33%" .fragment}
+```{r}
+map_dbl(l, 1)
+```
+
+:::
+
+::::
+
+## Type Match {.smaller}
+
+You'll get an error for coercion
+
+```{r}
+#| error: true
+map_chr(l, "x")
+```
+
+. . .
+
+You have to explicitly coerce
+
+```{r}
+map_chr(l, ~as.character(.x$x))
+```
+
+. . .
+
+You'll get an error if element doesn't exist
+
+```{r no-element}
+#| error: true
+map_chr(l, "z")
+```
+
+. . .
+
+Unless you set a default value
+
+```{r no-element-default-val, error = TRUE}
+map_chr(l, "z", .default = NA_character_)
+```
+
+## Quick note: missing values {.smaller}
+
+* In the prior case, specifying `NA` would work, instead of `NA_character_`
+* Generally, I think it's better to specify the type
+* **General programming rule:** The more strict the better 
+* Because (base) `R` likes to be inconsistent, here are the `NA` types
+
+. . .
+
+| Type | NA value|
+|:-----|:-------:|
+| character | `NA_character_` |
+| integer   | `NA_integer_` |
+| double    | `NA_real_` |
+| logical   | `NA` (see [here](https://stackoverflow.com/questions/19564748/why-is-there-no-na-logical)) |
+
+. . .
+
+```{r log-na}
+typeof(NA)
+```
+
+## More quick examples
+
+Please copy the code below so you have it locally
+
+```{r }
+df_list <- list(
+  data.frame(var1 = 1:5),
+  data.frame(var1 = 1:3),
+  data.frame(var1 = 1)
+)
+```
+
+## Compute `mean(var1)`
+
+For each data frame. You try first!
+
+`r countdown::countdown(4)`
+
+## Answer
+
+```{r }
+map(df_list, ~mean(.x$var1))
+```
+
+. . .
+
+Return a vector
+
+```{r }
+map_dbl(df_list, ~mean(.x$var1))
+```
+
+## Some more examples
+
+[**Please follow along**]{style="color:#009E73;"}
+
+```{r economics}
+econ <- economics |>
+	mutate(year = lubridate::year(date))
+econ
+```
+
+## Let's fit a simple model to each year
+
+*Caveats*
+
+* We'll discuss a more elegant way to do this later
+* This is not (statistically) the best way to approach this problem
+* It's a good illustration, and in my experience there are lots of times where
+this approach works well, even if this particular example is a bit artificial
+
+## split by `year`
+
+```{r by_year}
+by_year <- split(econ, econ$year)
+str(by_year)
+```
+
+## Model
+
+What is the relation between personal consumption expenditures (`pce`) and the unemployment percentage over time?
+
+. . .
+
+**Problem:** We don't have the percentage. Let's compute!
+
+## You try first!
+
+`r countdown::countdown(4)`
+
+. . .
+
+```{r perc}
+by_year <- map(by_year, 
+               ~mutate(.x, percent = unemploy / pop))
+str(by_year)
+```
+
+. . .
+
+Could also do
+
+```{r}
+by_year <- map(by_year,
+               ~.x |> 
+                mutate(percent = unemploy / pop))
+```
+
+
+## Fit the models
+
+Fit a model of the form `lm(percent ~ pce)` to each year
+
+**You try first!**
+
+`r countdown::countdown(3)`
+
+## Fit the models
+
+. . .
+
+```{r many-models}
+mods <- map(by_year, 
+            ~lm(percent ~ pce, data = .x)
+            )
+str(mods)
+```
+
+## Extract coefficients
+
+### You try first
+
+**Hint**: use `coef()`. For example, try `coef(mods[[1]])`
+
+`r countdown::countdown(2)`
+
+## Solution
+
+. . .
+
+```{r coefs}
+coefs <- map(mods, coef)
+coefs[c(1:2, length(coefs))]
+```
+
+## Extract slopes
+
+AKA - the coefficient that is not the intercept
+
+**You try first**
+
+`r countdown::countdown(2)`
+
+## Extract slopes
+
+. . .
+
+```{r slopes}
+slopes <- map_dbl(coefs, 2)
+slopes
+```
+
+## Plot
+
+```{r plot-slopes}
+#| message: false
+relation <- tibble(year = names(slopes),
+                   slope = slopes)
+
+ggplot(relation, aes(slope)) +
+	geom_histogram(fill = "dodgerblue", color = "white")
+```
+
+# List Column
+
+## Piping & List Column
+
+We could also have done the previous in a pipeline with a list column
+
+```{r}
+#| code-line-numbers: "1-3|4-5|6-7|8|9"
+#| output-location: fragment
+mods_econ <- econ |> 
+  group_by(year) |> 
+  nest() |> # : split(econ, econ$year)
+  mutate(data = map(data,
+                    ~mutate(.x, percent = unemploy / pop)), # compute 'percent'
+         mods = map(data, 
+                   ~lm(percent ~ pce, data = .x)), # fit the model
+         coefs = map(mods, coef), # extract coefficients
+         slopes = map_dbl(coefs, 2) # extract slopes
+         )
+mods_econ  
+```
+
+## What do our friends think about this...
+
+## What do our friends think about this...
+
+![](https://c.tenor.com/GnURUkDiJOQAAAAC/lakers-fans.gif){width=900px}
+
+## Let's plot it
+
+```{r}
+#| output-location: fragment
+mods_econ |> 
+  ggplot(aes(slopes)) +
+	geom_histogram(fill = "dodgerblue", color = "white")
+```
+
+# More Practice 
+
+If we have time before the lab
+
+## Practice
+
+* Compute the standard deviation of every `mtcars` column
+* Copy and run the following code to obtain 50 bootstrap samples
+* Fit the following model to each bootstrap sample:
+    + `mpg ~ disp`
+* Extract $R^2$ and plot the distribution
+
+```{r bootstrap}
+bootstrap <- function(df) {
+  df[sample(nrow(df), replace = TRUE), , drop = FALSE]
+}
+```
+
+# Next time
+
+## Before next class
+
+- Readings
+    + [{fs}](https://tidyverse.org/blog/2018/01/fs-1.0.0/)
+    + [AdvR(2e) 9.4-9.6](https://adv-r.hadley.nz/functionals.html#map-variants)
+- Lab 2
+
+# Lab 2
+
