@@ -777,6 +777,10 @@ ggplot(relation, aes(slope)) +
 
 # List Column
 
+## ADD MORE
+
+...BACKGROUND ON LIST COLUMNS
+
 ## Piping & List Column
 
 We could also have done the previous in a pipeline with a list column
@@ -812,11 +816,11 @@ mods_econ |>
 	geom_histogram(fill = "dodgerblue", color = "white")
 ```
 
-# More Practice 
+# More Practice {visibility="hidden"}
 
 If we have time before the lab
 
-## Practice
+## Practice {visibility="hidden"}
 
 * Compute the standard deviation of every `mtcars` column
 * Copy and run the following code to obtain 50 bootstrap samples
