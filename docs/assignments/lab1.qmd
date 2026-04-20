@@ -1,0 +1,211 @@
+---
+title: "Lab 1"
+subtitle: "Subsetting lists and base `R` `for()` loops"
+execute: 
+  echo: true
+  eval: false
+embed-resources: true
+---
+
+The purpose of this lab is to get you working with base `R` looping functions while also being careful about data types. 
+
+You are welcome to work with a partner or in a small group of 3-4 people. 
+
+If you include any content generated GenAI, you **must** cite it. See example in syllabus.
+
+Please set `embed-resources: true` in the YAML header of quarto document so that your `html` output file can be displayed properly in a browser.
+
+
+## Data structures
+
+```{r}
+
+mod <- lm(mpg ~ hp + cyl + drat, mtcars)
+
+```
+
+Run the above code
+
+1. From the model results:
+	a) Extract the qr tolerance (`tol`).
+	b) Extract the "term labels" from the model.
+		+ *Hint*: Use `str` to inspect the list. This one is tricky and involves pulling an attribute from an attribute.
+
+```{r}
+#| echo: false
+#| eval: false
+## 1.a
+mod$qr$tol # qr tolerance
+
+## 1.b
+term_attributes <- attr(mod$model, "terms")
+attr(term_attributes, "term.labels")
+# - or - #
+attr(mod$terms, "term.labels")
+```
+
+```{r}
+
+set.seed(3000) # Set random number generation
+
+l <- list(a = list(m = matrix(1:12, ncol = 3),
+              	   v = 1:7),
+          b = data.frame(student = 1:15,
+                         score = rnorm(15, 100, 10)))
+```
+
+Run the above code
+
+2. From `l`
+	a) Use at least two different methods to extract `m`.
+	b) Extract the third column of `m`. Maintain the dimensions (matrix structure).
+	c) Extract the score for student 7 in the data frame.
+
+```{r}
+#| echo: false
+#| eval: false
+
+## 2.a
+### Method 1
+l$a$m
+
+### Method 2
+l[[1]][[1]]
+
+l[["a"]][[1]]
+l[["a"]][["m"]]
+
+## 2.b
+l$a$m[ ,3, drop = FALSE]
+
+# as opposed to:
+#l$a$m[ ,3]
+
+## 2.c
+### Method 1
+l$b[7, ]
+
+### Method 2
+l[["b"]][ l[["b"]]$student == 7, ]
+l[["b"]][7, ]
+
+stu_ids <- l[["b"]]$student # these two lines are
+l[["b"]][stu_ids == 7, ]    # equivalent to: l$b[7, ]
+```
+
+## Loops
+
+3. Read in the `insurance_coverage.csv` file, which is in the data folder in the course repo. Split the data file by `"age_bucket"` and `"sex_name"`.
+
+```{r}
+#| echo: false
+#| eval: false
+
+file <- fs::dir_ls(here::here("data"), regexp = "insur")
+
+insurance <- readr::read_csv(file)
+
+by_age_sex <- split(
+  insurance,
+  list(insurance$age_bucket, insurance$sex_name)
+)
+```
+
+
+4. Use a `for` loop to calculate the mean health care population (`hc_pop`) for each `"age_bucket"/"sex_name"` combination.
+
+```{r}
+#| echo: false
+#| eval: false
+
+mean_hc_pop1 <- rep(NA, length(by_age_sex))
+
+# vector("list", length(by_age_sex)) # create an empty list instead of an atomic vector
+
+for(i in seq_along(by_age_sex)) {
+	mean_hc_pop1[i] <- mean(
+	  by_age_sex[[i]]$hc_pop, 
+	  na.rm = TRUE
+  )
+}
+```
+
+5. Replicate this calculation with `lapply`, `sapply`, and `vapply`
+
+```{r}
+#| echo: false
+#| eval: false
+
+## lapply
+mean_hc_pop2 <- lapply(by_age_sex, function(df) mean(df$hc_pop, na.rm = TRUE))
+
+## sapply
+mean_hc_pop3 <- sapply(by_age_sex, function(df) mean(df$hc_pop, na.rm = TRUE))
+
+## vapply
+mean_hc_pop4 <- vapply(by_age_sex, function(df) mean(df$hc_pop, na.rm = TRUE),
+                       FUN.VALUE = double(1))
+```
+
+6. Produce separate plots showing the change in `hc_pop` from 2014 to 2015 for each `"age_bucket"/"sex_name"` combination (with a single loop). Set the `hc_pop` axis so the limits equal the overall minimum and maximum values for `hc_pop`.
+
+```{r}
+#| echo: false
+#| eval: false
+
+theme_set(theme_minimal())
+
+y_axis_range <- range(insurance$hc_pop)
+
+plots <- lapply(by_age_sex, function(df) {
+	ggplot(df, aes(year, hc_pop)) +
+    geom_line(color = "gray60") +
+    geom_point() +
+    scale_x_continuous(breaks = c(2014, 2015)) +
+    scale_y_continuous(limits = y_axis_range)
+})
+
+# extend this so it has a title on each
+(titles <- names(by_age_sex))
+(titles <- gsub("insurance_", "", titles))
+(titles <- gsub("\\.", " ", titles))
+(titles <- gsub("(\\d)to", "\\1 to ", titles))
+(titles <- gsub("plus", " plus", titles))
+(titles <- gsub("_", " ", titles))
+(titles <- gsub("  ", " ", titles))
+
+plots2 <- vector("list", length(by_age_sex))
+
+for(i in seq_along(by_age_sex)) {
+	plots2[[i]] <- 
+  ggplot(by_age_sex[[i]], aes(year, hc_pop)) +
+    geom_line(color = "gray60") +
+    geom_point() +
+    scale_x_continuous(breaks = c(2014, 2015)) +
+    scale_y_continuous(limits = y_axis_range) +
+    labs(title = titles[i])
+}
+```
+
+7. Use a `for` loop to save the plots to a folder on your computer.
+
+```{r}
+#| echo: false
+#| eval: false
+
+dir.create(here::here("plots"))
+
+filenames <- here::here(
+  "plots",
+  paste0(gsub("\\.", "-", names(by_age_sex)), ".png")
+)
+
+for(i in seq_along(plots)) {
+	ggsave(filenames[i],
+	       plots[[i]],
+	       device = "png",
+	       width = 6.5,
+	       height = 8)
+}
+```
+

@@ -775,15 +775,62 @@ ggplot(relation, aes(slope)) +
 	geom_histogram(fill = "dodgerblue", color = "white")
 ```
 
-# List Column
+# Piping
 
-## ADD MORE
+## Piping 
 
-...BACKGROUND ON LIST COLUMNS
+We could also have done the previous in a pipeline
 
-## Piping & List Column
+```{r}
+#| code-line-numbers: "2"
+#| output-location: fragment
+by_year %>%
+  map(~mutate(.x, percent = unemploy / pop))
+```
 
-We could also have done the previous in a pipeline with a list column
+## Piping 
+
+We could also have done the previous in a pipeline
+
+```{r}
+#| code-line-numbers: "3"
+#| output-location: fragment
+by_year %>%
+  map(~mutate(.x, percent = unemploy / pop)) |> 
+  map(~lm(percent ~ pce, data = .x))
+```
+
+## Piping 
+
+We could also have done the previous in a pipeline
+
+```{r}
+#| code-line-numbers: "4"
+#| output-location: fragment
+by_year %>%
+  map(~mutate(.x, percent = unemploy / pop)) |> 
+  map(~lm(percent ~ pce, data = .x)) |> 
+  map(coef)
+```
+
+## Piping 
+
+We could also have done the previous in a pipeline
+
+```{r}
+#| code-line-numbers: "5"
+#| output-location: fragment
+by_year %>%
+  map(~mutate(.x, percent = unemploy / pop)) |> 
+  map(~lm(percent ~ pce, data = .x)) |> 
+  map(coef) |> 
+  map_dbl(2)
+```
+
+
+## List column {visibility="hidden"}
+
+We could also have done the previous in a pipeline and a list column
 
 ```{r}
 #| code-line-numbers: "1-3|4-5|6-7|8|9"
@@ -801,13 +848,13 @@ mods_econ <- econ |>
 mods_econ  
 ```
 
-## What do our friends think about this...
+## What do our friends think about this...{visibility="hidden"}
 
-## What do our friends think about this...
+## What do our friends think about this...{visibility="hidden"}
 
 ![](https://c.tenor.com/GnURUkDiJOQAAAAC/lakers-fans.gif){width=900px}
 
-## Let's plot it
+## Let's plot it {visibility="hidden"}
 
 ```{r}
 #| output-location: fragment
