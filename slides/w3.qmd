@@ -889,6 +889,7 @@ bootstrap <- function(df) {
     + [{fs}](https://tidyverse.org/blog/2018/01/fs-1.0.0/)
     + [AdvR(2e) 9.4-9.6](https://adv-r.hadley.nz/functionals.html#map-variants)
 - Lab 2
+- Clone course repo
 
 # Lab 2
 

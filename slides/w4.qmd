@@ -24,6 +24,12 @@ library(MetBrewer)
 theme_set(theme_minimal(15))
 ```
 
+# NEED TO GET DATA/SIM FROM COURSE REPO TO FOLLOW ALONG
+
+# remove `purrr::compose()`
+
+# explain `dplyr::nest_by()` better
+
 # Batch Load Data & List Columns
 
 **Week 4**
@@ -1384,9 +1390,9 @@ tidied <- mods |>
 	  names_to = "model", 
 	  values_to = "output"
   ) |> 
-	mutate(tidied = map(output, broom::tidy)) |>
-	select(content, model, tidied) |>
-	unnest(tidied)
+	mutate(tidy_broom = map(output, broom::tidy)) |>
+	select(content, model, tidy_broom) |>
+	unnest(tidy_broom)
 tidied
 ```
 
