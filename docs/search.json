@@ -802,7 +802,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: $L6&HnNN\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\nLab 1\n\n\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: a3ltA@DH\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nAdvR(2e) 9.4-9.6\n\n\nLab 2\nLab 1\n\n\n\n\n\n\n\n\n\n\nClone course repo\n\n\n\n\n\n1 Passcode: Y5HLB*V5\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\nLab 2\n\n\n\n\nR4DS(1e) 25\n\n\n\n\n\n\nClone course repo\n\n\n\n1 Passcode: Sa!AJf61\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\n\n\nMidterm Test\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
+    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: $L6&HnNN\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\nLab 1\n\n\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: a3ltA@DH\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nAdvR(2e) 9.4-9.6\n\n\nLab 2\nLab 1\n\n\n\n\n\n\n\n\n\n\nClone course repo\n\n\n\n\n\n1 Passcode: Y5HLB*V5\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\nLab 2\n\n\n\n\nR4DS(1e) 25\n\n\n\n\n\n\nClone course repo\n\n\n\n1 Passcode: Sa!AJf61\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\n\n\nMidterm Test(midterm.html)\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
   },
   {
     "objectID": "slides/w2.html#agenda",
@@ -2910,5 +2910,782 @@
     "title": "Week 3: Intro to {purrr}",
     "section": "List column",
     "text": "List column\nWe could also have done the previous in a pipeline and a list column\n\nmods_econ &lt;- econ |&gt; \n  group_by(year) |&gt; \n  nest() |&gt; # : split(econ, econ$year)\n  mutate(data = map(data,\n                    ~mutate(.x, percent = unemploy / pop)), # compute 'percent'\n         mods = map(data, \n                   ~lm(percent ~ pce, data = .x)), # fit the model\n         coefs = map(mods, coef), # extract coefficients\n         slopes = map_dbl(coefs, 2) # extract slopes\n         )\nmods_econ  \n\n# A tibble: 49 × 5\n# Groups:   year [49]\n    year data              mods   coefs          slopes\n   &lt;dbl&gt; &lt;list&gt;            &lt;list&gt; &lt;list&gt;          &lt;dbl&gt;\n 1  1967 &lt;tibble [6 × 7]&gt;  &lt;lm&gt;   &lt;dbl [2]&gt;  0.0000131 \n 2  1968 &lt;tibble [12 × 7]&gt; &lt;lm&gt;   &lt;dbl [2]&gt; -0.0000250 \n 3  1969 &lt;tibble [12 × 7]&gt; &lt;lm&gt;   &lt;dbl [2]&gt;  0.0000320 \n 4  1970 &lt;tibble [12 × 7]&gt; &lt;lm&gt;   &lt;dbl [2]&gt;  0.000214  \n 5  1971 &lt;tibble [12 × 7]&gt; &lt;lm&gt;   &lt;dbl [2]&gt;  0.0000118 \n 6  1972 &lt;tibble [12 × 7]&gt; &lt;lm&gt;   &lt;dbl [2]&gt; -0.0000271 \n 7  1973 &lt;tibble [12 × 7]&gt; &lt;lm&gt;   &lt;dbl [2]&gt; -0.00000605\n 8  1974 &lt;tibble [12 × 7]&gt; &lt;lm&gt;   &lt;dbl [2]&gt;  0.0000805 \n 9  1975 &lt;tibble [12 × 7]&gt; &lt;lm&gt;   &lt;dbl [2]&gt; -0.00000164\n10  1976 &lt;tibble [12 × 7]&gt; &lt;lm&gt;   &lt;dbl [2]&gt;  0.00000941\n# ℹ 39 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#agenda",
+    "href": "slides/w5.html#agenda",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Agenda",
+    "text": "Agenda\n\nDiscuss map2_()* and pmap_()* (parallel iterations)\nwalk() and friends\nmodify()\nsafely()\nreduce()\n\nLearning objectives\n\nUnderstand the differences between map, map2, and pmap\nKnow when to apply walk() instead of map(), and why it may be useful\nUnderstand the similarities and differences between map() and modify()\nDiagnose errors with safely() and understand other situations where it may be helpful\nCollapsing/reducing lists with purrr::reduce() or base::Reduce()"
+  },
+  {
+    "objectID": "slides/w5.html#map2",
+    "href": "slides/w5.html#map2",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "map2()",
+    "text": "map2()"
+  },
+  {
+    "objectID": "slides/w5.html#a-few-examples",
+    "href": "slides/w5.html#a-few-examples",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "A few examples",
+    "text": "A few examples\n\nBasic simulations - iterating over two vectors\nPlots by month, changing the title"
+  },
+  {
+    "objectID": "slides/w5.html#simulation",
+    "href": "slides/w5.html#simulation",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Simulation",
+    "text": "Simulation\n\nSimulate data from a normal distribution\n\nVary \\(n\\) from 5 to 150 by increments of 5\nFor each \\(n\\), vary \\(\\mu\\) (mean) from -2 to 2 by increments of 0.25\nFor each \\(n\\) and \\(\\mu\\), vary each \\(\\sigma\\) (SD) from 1 to 3 by increments of 0.1"
+  },
+  {
+    "objectID": "slides/w5.html#expand.grid",
+    "href": "slides/w5.html#expand.grid",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "expand.grid()",
+    "text": "expand.grid()\nBonus: It turns it into a data frame!\n\nints &lt;- 1:3\nlets &lt;- c(\"a\", \"b\", \"c\")\nexpand.grid(ints, lets)\n\n  Var1 Var2\n1    1    a\n2    2    a\n3    3    a\n4    1    b\n5    2    b\n6    3    b\n7    1    c\n8    2    c\n9    3    c"
+  },
+  {
+    "objectID": "slides/w5.html#set-conditions",
+    "href": "slides/w5.html#set-conditions",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Set conditions",
+    "text": "Set conditions\nPlease follow along\n\nconditions &lt;- expand.grid(\n  n = seq(5, 150, 5),\n  mu = seq(-2, 2, 0.25)\n)\nnrow(conditions)\n\n[1] 510\n\n\n\n\n\nhead(conditions)\n\n   n mu\n1  5 -2\n2 10 -2\n3 15 -2\n4 20 -2\n5 25 -2\n6 30 -2\n\n\n\n\ntail(conditions)\n\n      n mu\n505 125  2\n506 130  2\n507 135  2\n508 140  2\n509 145  2\n510 150  2"
+  },
+  {
+    "objectID": "slides/w5.html#simulate",
+    "href": "slides/w5.html#simulate",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Simulate!",
+    "text": "Simulate!\n\nsim1 &lt;- map2(conditions$n, conditions$mu,\n             ~rnorm(n = .x, mean = .y, sd = 10)\n             )\nstr(sim1)\n\n\n\nList of 510\n $ : num [1:5] -0.938 -14.58 -10.072 1.407 -7.361\n $ : num [1:10] -13.94 -23.03 -12.76 3.79 -3.98 ...\n $ : num [1:15] -4.24 -2.3631 -16.9135 -0.0223 1.3474 ...\n $ : num [1:20] -15.98 -7.97 -25.3 5.27 -11.19 ...\n $ : num [1:25] 3.28 2.729 -14.37 0.167 -17.387 ...\n $ : num [1:30] -0.555 -16.22 -9.691 -3.867 -16.648 ...\n $ : num [1:35] -12.93 -15.37 -2.53 -7.31 -10.24 ...\n $ : num [1:40] -2.859 0.805 10.208 -11.945 3.389 ...\n $ : num [1:45] 2.416 -0.882 -15.606 2.147 5.214 ...\n $ : num [1:50] 5.64 -11.58 -13.51 -13.51 -7.75 ...\n $ : num [1:55] 4.33 -10.04 13.64 -21.64 5.99 ...\n $ : num [1:60] -9.835 -13.598 -4.335 0.692 -4.726 ...\n $ : num [1:65] 6.45 -3.77 -13.57 -10.44 -2.02 ...\n $ : num [1:70] 5.745 12.68 -2.017 -0.924 -7.403 ...\n $ : num [1:75] -5.84 -2.6 -9.58 -17.35 23.88 ...\n $ : num [1:80] -8.94 10.23 -9.46 -5.65 -9.66 ...\n $ : num [1:85] -5.8 -4.89 5.91 5.87 -8.55 ...\n $ : num [1:90] 11.961 -0.272 8.35 8.921 -3.953 ...\n $ : num [1:95] 2.52 -1.07 -9.94 2.91 -2.09 ...\n $ : num [1:100] 0.673 -11.655 -1.682 -8.713 0.162 ...\n $ : num [1:105] 12.35 -2.83 -13.53 -17.61 5.52 ...\n $ : num [1:110] 1.499 7.135 -12.866 8.473 0.505 ...\n $ : num [1:115] -6.88 -13 -8.29 4.11 -7.94 ...\n $ : num [1:120] -33.53 -6.66 -2.39 2.28 16.08 ...\n $ : num [1:125] 10.55 7.42 7 6.23 -2.69 ...\n $ : num [1:130] -5.64 -5.5 16.02 -12.3 -17.52 ...\n $ : num [1:135] 1.85 -16.7 -1.6 -11.44 4.78 ...\n $ : num [1:140] -9.65 -15.38 9.75 2.22 -5.86 ...\n $ : num [1:145] -6.24 -2.77 8.32 5.2 21.43 ...\n $ : num [1:150] 14.63 -15.4 4.97 -7.25 -16.42 ...\n $ : num [1:5] 0.783 -2.557 -1.375 1.134 1.102\n $ : num [1:10] -11.44 12.9 2.04 -8.22 4.7 ...\n $ : num [1:15] 6.03 -6.18 -9.65 -14.61 5.94 ...\n $ : num [1:20] -9.55 -8.36 -16.11 -31.22 -8.79 ...\n $ : num [1:25] -5.95 4.22 15.5 -5.29 -20.6 ...\n $ : num [1:30] -1.45 7.82 -17.8 -3.28 15.31 ...\n $ : num [1:35] 6.74 -7.85 -17.75 -3.37 -15.75 ...\n $ : num [1:40] -4.278 -6.48 10.944 -9.931 -0.389 ...\n $ : num [1:45] -2.95 -14.46 -3.78 1.21 -10.01 ...\n $ : num [1:50] 5.23 7.18 1.8 -6.87 -6.1 ...\n $ : num [1:55] 7.22 3.22 2.55 9.51 -14.23 ...\n $ : num [1:60] 8.836 -0.163 -0.27 -7.321 -17.374 ...\n $ : num [1:65] -4.65 8.57 2.77 -7.48 11.34 ...\n $ : num [1:70] -6.25 -1.48 -7.11 7.73 -18.69 ...\n $ : num [1:75] -11.08 10.26 -1.84 4.73 14.53 ...\n $ : num [1:80] 5.2 -6.02 2 -7.32 -7.33 ...\n $ : num [1:85] 8.1424 -0.0407 -3.7447 -2.635 14.7985 ...\n $ : num [1:90] 15.1 -10.3 14.2 -10.5 -14 ...\n $ : num [1:95] 3.58 -10.77 0.62 -6.21 5.63 ...\n $ : num [1:100] -4.85 -8.55 -11.76 -3.03 2.1 ...\n $ : num [1:105] -2.15 13.48 -4.67 8.55 4.41 ...\n $ : num [1:110] -6.23 2.07 5.34 -11.7 -3.78 ...\n $ : num [1:115] 4.88 4.52 -6.38 -10.05 -12.16 ...\n $ : num [1:120] 17.13 -12.19 -4.26 -7.01 9.45 ...\n $ : num [1:125] 6.49 2.62 5.32 10.84 -9.06 ...\n $ : num [1:130] 5.445 0.0925 -12.5755 0.4125 11.7692 ...\n $ : num [1:135] 6.81 8.39 -9.34 12.22 -12.56 ...\n $ : num [1:140] 11.12 1.14 3.46 -1.47 13.08 ...\n $ : num [1:145] 3.078 5.136 0.945 4.761 -4.633 ...\n $ : num [1:150] -17.76 4.27 10.97 -3.35 -5.49 ...\n $ : num [1:5] 10.54 -14.49 5.63 -1.97 16.18\n $ : num [1:10] -11.105 -0.149 -3.641 20.725 -6.155 ...\n $ : num [1:15] -6.76 -0.58 2.22 -2.68 -2.82 ...\n $ : num [1:20] 13.45 9.52 9.15 -6.91 -11.33 ...\n $ : num [1:25] -3.56 -1.11 -3.02 -12.73 -14.77 ...\n $ : num [1:30] 0.629 6.132 -47.205 -6.566 -6.831 ...\n $ : num [1:35] 1.01 -1.04 16.15 4.61 -4.75 ...\n $ : num [1:40] 4.59 2.59 -10.36 -8.45 -2.5 ...\n $ : num [1:45] -15.84 17.22 -4.73 -17.87 7.68 ...\n $ : num [1:50] 4.83 2.38 -4.1 10.89 -5.53 ...\n $ : num [1:55] -2.63 8.96 4.2 -7.73 -8.78 ...\n $ : num [1:60] -18.51 2.55 2.4 3.28 -13.32 ...\n $ : num [1:65] 1.38 8.44 9.42 -9.57 -3.09 ...\n $ : num [1:70] -7.98 4.18 -2.89 -2.73 3.54 ...\n $ : num [1:75] 10.61 -17.96 -17.1 4.35 -1.07 ...\n $ : num [1:80] 16.1143 4.9293 -7.8768 -15.1717 -0.0778 ...\n $ : num [1:85] -10.76 -2.571 -6.707 0.33 -0.654 ...\n $ : num [1:90] -6.54 15.18 -21.32 8.12 -5.3 ...\n $ : num [1:95] -7.355 14.815 -10.49 -0.311 0.577 ...\n $ : num [1:100] -14.185 -18.759 10.404 -2.95 -0.767 ...\n $ : num [1:105] 1.005 1.602 -0.553 18.012 1.214 ...\n $ : num [1:110] -20.36 -7.71 -17.77 -16.61 7.47 ...\n $ : num [1:115] -9.03 1.88 11.84 13.41 -5.57 ...\n $ : num [1:120] -4.46 -20.63 2.35 25.25 7.19 ...\n $ : num [1:125] 0.714 13.698 2.211 4.123 0.668 ...\n $ : num [1:130] -5.18 -17.13 -7.23 -17.17 -10.66 ...\n $ : num [1:135] -14.52 -2.81 -8.72 -11.02 10.51 ...\n $ : num [1:140] 8.24 -10.28 19.77 -15.73 -14.15 ...\n $ : num [1:145] -12.6 21.95 -2.92 -6.54 -23.56 ...\n $ : num [1:150] -1.947 0.539 -9.88 -0.433 4.978 ...\n $ : num [1:5] 7.95 -11.08 29.58 2.07 3.22\n $ : num [1:10] -2.13 -6.59 8.25 1.56 -4.51 ...\n $ : num [1:15] 2.92 -5.98 -1.02 9.85 4.31 ...\n $ : num [1:20] -4.87 9.34 11.79 -2.73 4.05 ...\n $ : num [1:25] -16.85 -8.38 8.97 -5.27 -1.33 ...\n $ : num [1:30] -16.5 7.45 -9.71 4.36 -1.36 ...\n $ : num [1:35] 1.48 -3.15 -13.36 13.44 -10.79 ...\n $ : num [1:40] -14.21 -22.76 5.33 -6.55 12.75 ...\n $ : num [1:45] -5.55 -0.667 -8.826 -9.677 -7.192 ...\n  [list output truncated]"
+  },
+  {
+    "objectID": "slides/w5.html#unnest",
+    "href": "slides/w5.html#unnest",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Unnest",
+    "text": "Unnest\n\nconditions |&gt;\n  as_tibble() |&gt; \n  mutate(sim = map2(n, mu, ~rnorm(.x, .y, sd = 10))) |&gt;\n  unnest(sim)\n\n\n\n# A tibble: 39,525 × 3\n       n    mu   sim\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1     5    -2 -8.30\n 2     5    -2 -8.73\n 3     5    -2 17.9 \n 4     5    -2 -9.92\n 5     5    -2  2.16\n 6    10    -2 -4.57\n 7    10    -2  1.22\n 8    10    -2  6.95\n 9    10    -2 -3.84\n10    10    -2  1.11\n# ℹ 39,515 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#challenge",
+    "href": "slides/w5.html#challenge",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Challenge",
+    "text": "Challenge\nCan you replicate what we just did, but using a rowwise() approach?\n\n\n\nconditions |&gt; \n  rowwise() |&gt; \n  mutate(sim = list(rnorm(n, mu, sd = 10))) |&gt; \n  unnest(sim)\n\n\n\n# A tibble: 39,525 × 3\n       n    mu     sim\n   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;\n 1     5    -2   0.797\n 2     5    -2 -11.7  \n 3     5    -2 -10.9  \n 4     5    -2   9.99 \n 5     5    -2  -7.51 \n 6    10    -2  -7.87 \n 7    10    -2  -2.85 \n 8    10    -2 -10.4  \n 9    10    -2   7.53 \n10    10    -2 -18.6  \n# ℹ 39,515 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#pmap",
+    "href": "slides/w5.html#pmap",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "pmap",
+    "text": "pmap\nWhich we’ll get to soon"
+  },
+  {
+    "objectID": "slides/w5.html#varying-the-title-of-a-plot",
+    "href": "slides/w5.html#varying-the-title-of-a-plot",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Varying the title of a plot",
+    "text": "Varying the title of a plot\nPlease follow along\nThe data\n\nlibrary(fivethirtyeight)\npulitzer\n\n# A tibble: 50 × 7\n   newspaper             circ2004 circ2013 pctchg_circ num_finals1990_2003\n   &lt;chr&gt;                    &lt;dbl&gt;    &lt;dbl&gt;       &lt;int&gt;               &lt;int&gt;\n 1 USA Today              2192098  1674306         -24                   1\n 2 Wall Street Journal    2101017  2378827          13                  30\n 3 New York Times         1119027  1865318          67                  55\n 4 Los Angeles Times       983727   653868         -34                  44\n 5 Washington Post         760034   474767         -38                  52\n 6 New York Daily News     712671   516165         -28                   4\n 7 New York Post           642844   500521         -22                   0\n 8 Chicago Tribune         603315   414930         -31                  23\n 9 San Jose Mercury News   558874   583998           4                   4\n10 Newsday                 553117   377744         -32                  12\n# ℹ 40 more rows\n# ℹ 2 more variables: num_finals2004_2014 &lt;int&gt;, num_finals1990_2014 &lt;int&gt;"
+  },
+  {
+    "objectID": "slides/w5.html#prep-data",
+    "href": "slides/w5.html#prep-data",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Prep data",
+    "text": "Prep data\n\npulitzer &lt;- fivethirtyeight::pulitzer |&gt;\n  select(newspaper, starts_with(\"num\")) |&gt;\n  pivot_longer(\n    -newspaper,\n    names_to = \"year_range\",\n    values_to = \"n\",\n    names_prefix = \"num_finals\"\n  ) |&gt; \n  mutate(year_range = str_replace_all(year_range, \"_\", \"-\")) |&gt;\n  filter(year_range != \"1990-2014\")\n\nhead(pulitzer)\n\n\n\n# A tibble: 6 × 3\n  newspaper           year_range     n\n  &lt;chr&gt;               &lt;chr&gt;      &lt;int&gt;\n1 USA Today           1990-2003      1\n2 USA Today           2004-2014      1\n3 Wall Street Journal 1990-2003     30\n4 Wall Street Journal 2004-2014     20\n5 New York Times      1990-2003     55\n6 New York Times      2004-2014     62"
+  },
+  {
+    "objectID": "slides/w5.html#one-plot",
+    "href": "slides/w5.html#one-plot",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "One plot",
+    "text": "One plot\n\n\nwsj &lt;- pulitzer |&gt;\n    filter(newspaper == \"Wall Street Journal\")\n\nggplot(wsj, aes(n, year_range)) +\n  geom_col(aes(fill = n)) +\n  scale_x_continuous(\n    limits = c(0, max(pulitzer$n)),\n    expand = c(0, 0)\n  ) +\n  guides(fill = \"none\") +\n  labs(\n    title = \"Pulitzer Prize winners: Wall Street Journal\",\n    x = \"Total number of winners\",\n    y = \"\"\n  )"
+  },
+  {
+    "objectID": "slides/w5.html#nest-data",
+    "href": "slides/w5.html#nest-data",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Nest data",
+    "text": "Nest data\n\n\nby_newspaper &lt;- pulitzer |&gt;\n    group_by(newspaper) |&gt;\n    nest()\n\nby_newspaper\n\n\n# A tibble: 50 × 2\n# Groups:   newspaper [50]\n   newspaper             data            \n   &lt;chr&gt;                 &lt;list&gt;          \n 1 USA Today             &lt;tibble [2 × 2]&gt;\n 2 Wall Street Journal   &lt;tibble [2 × 2]&gt;\n 3 New York Times        &lt;tibble [2 × 2]&gt;\n 4 Los Angeles Times     &lt;tibble [2 × 2]&gt;\n 5 Washington Post       &lt;tibble [2 × 2]&gt;\n 6 New York Daily News   &lt;tibble [2 × 2]&gt;\n 7 New York Post         &lt;tibble [2 × 2]&gt;\n 8 Chicago Tribune       &lt;tibble [2 × 2]&gt;\n 9 San Jose Mercury News &lt;tibble [2 × 2]&gt;\n10 Newsday               &lt;tibble [2 × 2]&gt;\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#produce-all-plots",
+    "href": "slides/w5.html#produce-all-plots",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Produce all plots",
+    "text": "Produce all plots\nYou try first!\nDon’t worry about the correct title yet"
+  },
+  {
+    "objectID": "slides/w5.html#solution",
+    "href": "slides/w5.html#solution",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Solution",
+    "text": "Solution\n\nJust the plots\n\n\nby_newspaper |&gt;\n    mutate(\n      plot = map(data, \n                 ~.x |&gt; \n                   ggplot(aes(n, year_range)) +\n                   geom_col(aes(fill = n)) +\n                 scale_x_continuous(\n                   limits = c(0, max(pulitzer$n)),\n                   expand = c(0, 0)\n                 ) +\n                 guides(fill = \"none\") +\n                 labs(\n                   title = \"Pulitzer Prize winners\",\n                   x = \"Total number of winners\",\n                   y = \"\"\n                 )\n    )\n  )\n\n\n# A tibble: 50 × 3\n# Groups:   newspaper [50]\n   newspaper             data             plot      \n   &lt;chr&gt;                 &lt;list&gt;           &lt;list&gt;    \n 1 USA Today             &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 2 Wall Street Journal   &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 3 New York Times        &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 4 Los Angeles Times     &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 5 Washington Post       &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 6 New York Daily News   &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 7 New York Post         &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 8 Chicago Tribune       &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 9 San Jose Mercury News &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n10 Newsday               &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#add-title",
+    "href": "slides/w5.html#add-title",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Add title",
+    "text": "Add title\n\n\nlibrary(glue)\n\np &lt;- by_newspaper |&gt;\n    mutate(\n      plot = map2(data, newspaper, \n                  ~.x |&gt; \n                    ggplot(aes(n, year_range)) +\n                    geom_col(aes(fill = n)) +\n                  scale_x_continuous(\n                    limits = c(0, max(pulitzer$n)),\n                    expand = c(0, 0)\n                  ) +\n                  guides(fill = \"none\") +\n                  labs(\n                    title = glue(\"Pulitzer Prize winners: {.y}\"), # or paste(\"Pulitzer Prize winners: \", .y)\n                    x = \"Total number of winners\",\n                    y = \"\"\n                  )\n        )\n    )"
+  },
+  {
+    "objectID": "slides/w5.html#section",
+    "href": "slides/w5.html#section",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "",
+    "text": "p\n\n# A tibble: 50 × 3\n# Groups:   newspaper [50]\n   newspaper             data             plot      \n   &lt;chr&gt;                 &lt;list&gt;           &lt;list&gt;    \n 1 USA Today             &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 2 Wall Street Journal   &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 3 New York Times        &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 4 Los Angeles Times     &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 5 Washington Post       &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 6 New York Daily News   &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 7 New York Post         &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 8 Chicago Tribune       &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n 9 San Jose Mercury News &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n10 Newsday               &lt;tibble [2 × 2]&gt; &lt;ggplt2::&gt;\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#look-at-a-couple-plots",
+    "href": "slides/w5.html#look-at-a-couple-plots",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Look at a couple plots",
+    "text": "Look at a couple plots\n\n\n\np$plot[[1]]\n\n\n\n\n\n\n\n\n\np$plot[[3]]\n\n\n\n\n\n\n\n\n\n\np$plot[[2]]\n\n\n\n\n\n\n\n\n\np$plot[[4]]"
+  },
+  {
+    "objectID": "slides/w5.html#challenge-1",
+    "href": "slides/w5.html#challenge-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Challenge",
+    "text": "Challenge\n(You can probably guess where this is going)\n\nCan you reproduce the prior plots using a rowwise() approach?"
+  },
+  {
+    "objectID": "slides/w5.html#solution-1",
+    "href": "slides/w5.html#solution-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Solution",
+    "text": "Solution\n\n\n\npulitzer |&gt;\n    nest_by(newspaper) |&gt; \n    mutate(\n      plot = list(\n        ggplot(data, aes(n, year_range)) + \n        geom_col(aes(fill = n)) +\n        scale_x_continuous(\n          limits = c(0, max(pulitzer$n)), \n          expand = c(0, 0)\n        ) +\n        guides(fill = \"none\") +\n        labs(\n          title = glue(\"Pulitzer Prize winners: {newspaper}\"),\n          x = \"Total number of winners\",\n          y = \"\"\n        )\n    )\n  )\n\n\n# A tibble: 50 × 3\n# Rowwise:  newspaper\n   newspaper                                  data plot      \n   &lt;chr&gt;                        &lt;list&lt;tibble[,2]&gt;&gt; &lt;list&gt;    \n 1 Arizona Republic                        [2 × 2] &lt;ggplt2::&gt;\n 2 Atlanta Journal Constitution            [2 × 2] &lt;ggplt2::&gt;\n 3 Baltimore Sun                           [2 × 2] &lt;ggplt2::&gt;\n 4 Boston Globe                            [2 × 2] &lt;ggplt2::&gt;\n 5 Boston Herald                           [2 × 2] &lt;ggplt2::&gt;\n 6 Charlotte Observer                      [2 × 2] &lt;ggplt2::&gt;\n 7 Chicago Sun-Times                       [2 × 2] &lt;ggplt2::&gt;\n 8 Chicago Tribune                         [2 × 2] &lt;ggplt2::&gt;\n 9 Cleveland Plain Dealer                  [2 × 2] &lt;ggplt2::&gt;\n10 Columbus Dispatch                       [2 × 2] &lt;ggplt2::&gt;\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#simulation-1",
+    "href": "slides/w5.html#simulation-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Simulation",
+    "text": "Simulation\n\nfull_conditions &lt;- expand.grid(\n  n = seq(5, 150, 5),\n  mu = seq(-2, 2, 0.25),\n  sd = seq(1, 3, .1)\n)\nnrow(full_conditions)\n\n[1] 10710\n\n\n\n\n\nhead(full_conditions)\n\n   n mu sd\n1  5 -2  1\n2 10 -2  1\n3 15 -2  1\n4 20 -2  1\n5 25 -2  1\n6 30 -2  1\n\n\n\n\ntail(full_conditions)\n\n        n mu sd\n10705 125  2  3\n10706 130  2  3\n10707 135  2  3\n10708 140  2  3\n10709 145  2  3\n10710 150  2  3"
+  },
+  {
+    "objectID": "slides/w5.html#simulation-2",
+    "href": "slides/w5.html#simulation-2",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Simulation",
+    "text": "Simulation\n\nfull_conditions &lt;- expand.grid(\n  n = seq(5, 150, 5),\n  mu = seq(-2, 2, 0.25),\n  sd = seq(1, 3, .1)\n)\n\n\n\n\nhead(full_conditions)\n\n   n mu sd\n1  5 -2  1\n2 10 -2  1\n3 15 -2  1\n4 20 -2  1\n5 25 -2  1\n6 30 -2  1\n\n\n\n\ntail(full_conditions)\n\n        n mu sd\n10705 125  2  3\n10706 130  2  3\n10707 135  2  3\n10708 140  2  3\n10709 145  2  3\n10710 150  2  3"
+  },
+  {
+    "objectID": "slides/w5.html#full-simulation",
+    "href": "slides/w5.html#full-simulation",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Full Simulation",
+    "text": "Full Simulation\n\nfsim &lt;- pmap(\n  list(\n    number = full_conditions$n,\n    average = full_conditions$mu,\n    stdev = full_conditions$sd\n  ), \n  function(number, average, stdev) {\n    rnorm(n = number, mean = average, sd = stdev)\n  }\n)\nstr(fsim)\n\n\n\nList of 10710\n $ : num [1:5] -1.3 -2.55 -1.8 -1.66 -2.28\n $ : num [1:10] -2.97 -2.1 -1.77 -2.78 -3.54 ...\n $ : num [1:15] -1.111 -3.007 -1.195 -0.544 -3.301 ...\n $ : num [1:20] -2.633 -0.679 -2.657 -2.142 -1.902 ...\n $ : num [1:25] -0.857 -2.305 -1.419 -2.377 -2.368 ...\n $ : num [1:30] -2.29 -4.67 -2.26 -3.1 -3.17 ...\n $ : num [1:35] -2.22 0.53 -2.95 -1.08 -3.08 ...\n $ : num [1:40] -1.5932 -3.4395 0.0227 -0.4426 -1.8984 ...\n $ : num [1:45] -3.52 -3.21 -1.07 -1.97 -2.16 ...\n $ : num [1:50] -2.52 -2.04 -3.48 -2.14 -2.39 ...\n $ : num [1:55] -1.39 -1.64 -3.33 -2.23 -1.04 ...\n $ : num [1:60] -2.209 -0.928 -4.265 0.476 -0.955 ...\n $ : num [1:65] -0.771 -2.294 -1.68 -1.302 -2.542 ...\n $ : num [1:70] -1.07 -2.45 -2.06 -3.04 -0.27 ...\n $ : num [1:75] -2.002 -0.628 -2.043 -1.758 -2.131 ...\n $ : num [1:80] -0.00467 -0.73109 -3.70547 -1.84822 -1.89512 ...\n $ : num [1:85] -0.2 -3.497 -1.501 -1.621 -0.614 ...\n $ : num [1:90] -2.36 -2.6 -2.87 -2.17 -2.36 ...\n $ : num [1:95] -1.11 -1.58 -2.59 -1.68 -3.5 ...\n $ : num [1:100] -3.71 -1.39 -2.25 -1.89 -2.83 ...\n $ : num [1:105] -3.778 -1.109 -0.167 -1.684 -1.814 ...\n $ : num [1:110] -0.67 -2.14 -4.7 -1.38 -1.38 ...\n $ : num [1:115] -3.61 -2.25 -1.98 -2.67 -3.65 ...\n $ : num [1:120] -3.068 -0.582 -1.661 -3.253 -1.625 ...\n $ : num [1:125] -1.845 -1.201 -0.692 -2.21 -2.575 ...\n $ : num [1:130] -1.08 -2.58 -1.19 -1.43 -2.62 ...\n $ : num [1:135] -1.418 -0.914 -2.371 -3.205 -3.55 ...\n $ : num [1:140] -1.571 -1.237 -2.185 -2.482 -0.988 ...\n $ : num [1:145] -2.15 -1.99 -2.36 -1.8 -2.75 ...\n $ : num [1:150] -3.98 -2.49 -2.736 -0.986 -3.693 ...\n $ : num [1:5] -2.3742 -0.0325 -1.8034 -1.3559 -1.5706\n $ : num [1:10] -2.075 -2.4086 -0.0429 -0.7633 -3.2774 ...\n $ : num [1:15] -0.513 -1.436 -1.797 -0.321 -1.083 ...\n $ : num [1:20] -1.62 -2.9 -2.2 -2.46 -2.82 ...\n $ : num [1:25] -2.42 -1.38 -1.02 -2.67 -1.64 ...\n $ : num [1:30] -0.853 -2.666 -1.195 -0.899 -2.4 ...\n $ : num [1:35] -0.315 -3.142 -2.943 -2.118 -1.965 ...\n $ : num [1:40] -0.581 -1.111 -3.358 -2.071 -2.417 ...\n $ : num [1:45] -0.484 -4.157 -2.017 -1.156 -3.037 ...\n $ : num [1:50] -2.779 -0.746 -3.575 -0.9 0.491 ...\n $ : num [1:55] -1.572 -2.505 -1.475 -2.631 -0.764 ...\n $ : num [1:60] -0.759 -1.886 -1.795 -2.825 -1.087 ...\n $ : num [1:65] -1.019 -2.938 -1.496 -0.755 -3.968 ...\n $ : num [1:70] -2.82 -1.75 -2.52 -1.88 -2.58 ...\n $ : num [1:75] -0.445 -0.856 -3.261 -3.388 -2.23 ...\n $ : num [1:80] 0.0624 -3.0145 -0.3086 -2.5945 -1.5151 ...\n $ : num [1:85] -1.09 -1.2 -1.25 -1.1 -1.58 ...\n $ : num [1:90] -1.719 -3.2 -0.893 -3.123 -0.963 ...\n $ : num [1:95] -1.334 -3.211 -3.087 -0.159 -3.27 ...\n $ : num [1:100] -1.804 -1.476 -0.237 -3.451 -2.282 ...\n $ : num [1:105] -2.3472 -2.5816 -1.9161 -2.8686 -0.0989 ...\n $ : num [1:110] -2.26 -2.38 -0.554 -1.478 -1.838 ...\n $ : num [1:115] -0.631 -2.029 -2.761 -1.471 -0.722 ...\n $ : num [1:120] 0.365 0.227 -2.899 -2.557 -1.255 ...\n $ : num [1:125] -2.53 -1.57 -2.88 -1.88 -1.64 ...\n $ : num [1:130] -1.08 -2.78 -2.35 -2.34 -3.34 ...\n $ : num [1:135] -1.2 -2.11 -1.98 -2.46 -1.58 ...\n $ : num [1:140] -3.41 -1.34 -1.28 -1.37 -2.6 ...\n $ : num [1:145] -2.446 -1.95 -2.673 -0.209 -2.09 ...\n $ : num [1:150] -1.221 -4.118 -2.736 -0.728 -0.969 ...\n $ : num [1:5] -2.378 -2.684 -2.204 -2.153 -0.753\n $ : num [1:10] 0.596 -2.308 -1.554 -0.638 -1.072 ...\n $ : num [1:15] -2.202 -2.071 -1.679 -0.552 -1.282 ...\n $ : num [1:20] -0.982 -2.311 -1.126 -0.559 -1.752 ...\n $ : num [1:25] -0.715 -0.512 -3.209 -2.445 -2.291 ...\n $ : num [1:30] -0.317 -3.909 -0.678 -1.397 -1.635 ...\n $ : num [1:35] -0.72 -0.215 -1.979 -1.982 -1.672 ...\n $ : num [1:40] -0.497 -1.242 -1.958 -0.779 -2.205 ...\n $ : num [1:45] -1.301 -2.701 -0.119 -0.225 -2.665 ...\n $ : num [1:50] -1.329 -1.898 -2.365 -0.953 -1.306 ...\n $ : num [1:55] -0.332 -3.076 -0.935 -2.198 -1.208 ...\n $ : num [1:60] 0.5 -2.51 -0.42 -2.53 -1.99 ...\n $ : num [1:65] -2.34 -1.59 -2.23 -2.64 -3 ...\n $ : num [1:70] -0.392 -0.661 -2.505 -1.316 -1.106 ...\n $ : num [1:75] -1.59 -2.27 -2.5 -3.46 1.17 ...\n $ : num [1:80] -1.714 -2.667 -1.31 -0.401 -2.803 ...\n $ : num [1:85] -1.555 -1.558 -0.124 -1.644 -1.326 ...\n $ : num [1:90] -2.547 -2.97 0.365 -0.907 -1.447 ...\n $ : num [1:95] -0.507 -1.178 -1.165 -1.482 -1.471 ...\n $ : num [1:100] -0.279 -1.262 -2.721 -1.371 -2.562 ...\n $ : num [1:105] -4.209 -1.797 -2.029 -0.692 -2.127 ...\n $ : num [1:110] -1.825 -0.919 -2.015 -2.24 -1.31 ...\n $ : num [1:115] -0.733 -1.035 -3.006 -0.781 -2.594 ...\n $ : num [1:120] -1.93 -2.73 -1.54 -1.17 -1.28 ...\n $ : num [1:125] -2.407 -2.969 -0.963 -0.792 -2.572 ...\n $ : num [1:130] -1.46 0.35 -2.28 -1.28 -2.63 ...\n $ : num [1:135] -1.69 -3.111 -1.299 -0.591 -0.704 ...\n $ : num [1:140] -1.268 -1.32 -0.677 -1.474 -0.905 ...\n $ : num [1:145] -1.398 0.649 -1.52 -3.044 0.421 ...\n $ : num [1:150] -1.08 -2.51 -2.24 -2.29 -2.18 ...\n $ : num [1:5] -1.556 -0.238 -1.181 -1.896 -0.369\n $ : num [1:10] -1.842 0.482 -0.347 -1.679 -1.435 ...\n $ : num [1:15] -1.03 -1.36 -2.37 -2.09 -1.92 ...\n $ : num [1:20] -0.5231 -3.47968 -0.47635 0.00728 -0.76523 ...\n $ : num [1:25] -1.03 -1.99 -1.48 -1.74 -3.09 ...\n $ : num [1:30] -2.94 -1.26 -1.33 -1.93 -1.01 ...\n $ : num [1:35] -0.159 -0.377 -2.568 -0.487 -1.876 ...\n $ : num [1:40] -1.33 -0.51 -1.46 -2.31 -2.16 ...\n $ : num [1:45] 0.525 -0.916 -1.447 -1.385 -2.001 ...\n  [list output truncated]"
+  },
+  {
+    "objectID": "slides/w5.html#alternative-specification",
+    "href": "slides/w5.html#alternative-specification",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Alternative specification",
+    "text": "Alternative specification\n\nfsim &lt;- pmap(\n  list(\n    full_conditions$n,\n    full_conditions$mu,\n    full_conditions$sd\n  ),\n  ~rnorm(n = ..1, mean = ..2, sd = ..3)\n)\nstr(fsim)\n\n\n\nList of 10710\n $ : num [1:5] -3.73 -4.01 -1.63 -1.85 -4.04\n $ : num [1:10] -1.98 -2.4 -2.64 -2.68 -1.02 ...\n $ : num [1:15] -2.725 -3.85 -0.249 -2.288 -2.905 ...\n $ : num [1:20] -3.03 -1.83 -2.49 -2.53 -1.52 ...\n $ : num [1:25] -0.4313 -0.0933 -1.621 -1.8304 -0.8029 ...\n $ : num [1:30] -3.63 -2.898 -0.534 -1.348 -1.598 ...\n $ : num [1:35] -2.11 -1.3 -1.48 -2.63 -2.68 ...\n $ : num [1:40] 0.249 -1.989 -0.961 -1.831 -1.042 ...\n $ : num [1:45] -1.3 -3.17 -1.92 -4.04 -4.02 ...\n $ : num [1:50] -2.05 -4.11 -2.73 -2.97 -1.2 ...\n $ : num [1:55] -1.55 -0.26 -2.73 -3.93 -1.92 ...\n $ : num [1:60] -2.789 -2.884 -0.268 -3.981 -1.695 ...\n $ : num [1:65] -1.71 -2.43 -3.1 -1.45 -1.65 ...\n $ : num [1:70] -1.112 -2.631 -0.757 -1.591 -1.486 ...\n $ : num [1:75] -2.49 -1.95 -1.83 -1.21 -2.79 ...\n $ : num [1:80] -4.303 -0.665 -1.989 -2.699 -2.748 ...\n $ : num [1:85] -1.264 -0.971 -4.524 -1.21 -2.734 ...\n $ : num [1:90] -3.05 -2.67 -2.58 -3.62 -2.83 ...\n $ : num [1:95] -0.978 -1.534 -3.202 -1.348 -1.035 ...\n $ : num [1:100] -2.77 -2.651 -2.049 -3.365 -0.978 ...\n $ : num [1:105] -1.904 -0.815 -2.952 -1.673 -1.809 ...\n $ : num [1:110] -2.04 -2.08 -2.54 -1.3 -1.18 ...\n $ : num [1:115] -2.04 -2.43 -1.57 -3.56 -1.61 ...\n $ : num [1:120] 0.785 -2.957 -1.896 -1.369 -1.074 ...\n $ : num [1:125] -3.59 -1.55 -3.42 -1.57 -1.23 ...\n $ : num [1:130] -3.49 -1.83 -2.66 -2.37 -2.95 ...\n $ : num [1:135] -2.83 -2.48 -1.46 -2.14 -3.52 ...\n $ : num [1:140] -2.85 -2.64 -3.19 -2.44 -2.22 ...\n $ : num [1:145] -2.298 -0.996 -3.786 -1.733 -1.62 ...\n $ : num [1:150] -1.15 -3.11 -3.33 -2.46 -3.3 ...\n $ : num [1:5] -1.27 -2.354 -3.314 -1.375 -0.867\n $ : num [1:10] -1.01 -1.36 -2.95 -2.02 -1 ...\n $ : num [1:15] -2.194 -2.433 -3.262 -1.612 -0.239 ...\n $ : num [1:20] -1.098 -0.924 -0.87 -0.935 -1.689 ...\n $ : num [1:25] -2.708 -2.411 -1.246 -0.967 -0.657 ...\n $ : num [1:30] -1.847 -0.847 -2.62 -1.788 -1.734 ...\n $ : num [1:35] -1.226 1.232 -3.345 -2.029 -0.727 ...\n $ : num [1:40] -1.669 -0.991 -1.009 -3.256 -1.635 ...\n $ : num [1:45] -2.45 -1.05 -1.76 -3.6 -2.57 ...\n $ : num [1:50] -1.86 -1.39 -1.15 -1.79 -2.76 ...\n $ : num [1:55] -1.146 -1.452 -0.735 -1.467 -1.033 ...\n $ : num [1:60] -2.03 -3 -1.52 -1.86 -2.15 ...\n $ : num [1:65] -1.36 -3.88 -3.55 -2.98 -1.94 ...\n $ : num [1:70] -1.9236 -1.0883 -3.8534 -0.0733 -0.0439 ...\n $ : num [1:75] -0.269 -2.579 -3.024 0.149 -0.556 ...\n $ : num [1:80] -0.897 -0.667 -0.767 -1.149 -1.367 ...\n $ : num [1:85] -1.29 -1.93 -1.52 -2.12 -2.41 ...\n $ : num [1:90] -2.743 -2.572 -0.933 0.632 -2.003 ...\n $ : num [1:95] -0.855 -1.734 -3.077 -1.468 -3.036 ...\n $ : num [1:100] -0.796 -2.237 -2.674 -1.407 -0.073 ...\n $ : num [1:105] -0.384 -2.04 -1.953 -1.313 -1.949 ...\n $ : num [1:110] -2.81 -2.48 -1.75 -1.38 -3.01 ...\n $ : num [1:115] -1.21 -1.79 -1.87 -1.53 -2.84 ...\n $ : num [1:120] -3.548 -0.893 -1.673 -3.118 -1.798 ...\n $ : num [1:125] -0.858 -3.372 -2.085 -1.898 -1.849 ...\n $ : num [1:130] -3.12 -1.61 -2.28 -1.4 -2.6 ...\n $ : num [1:135] -1.66 -3.29 -2.78 -3.27 -2.72 ...\n $ : num [1:140] -1.006 -2.256 -1.379 -0.675 -2.447 ...\n $ : num [1:145] -4.09 -1.12 -2.81 -2.62 -1.59 ...\n $ : num [1:150] -2.42 -2.68 -1.48 -1.03 -2.67 ...\n $ : num [1:5] -1.03 0.367 -1.665 -0.394 -3.625\n $ : num [1:10] -0.7603 -1.6131 0.0971 -0.7997 -2.0459 ...\n $ : num [1:15] -3.208 -0.767 0.151 -1.335 -0.613 ...\n $ : num [1:20] -3.209 -3.415 -1.409 -1.579 -0.457 ...\n $ : num [1:25] -2.077 -1.22 -2.237 -0.609 0.179 ...\n $ : num [1:30] -2.255 -0.825 -1.03 -2.495 -2.83 ...\n $ : num [1:35] -0.529 -1.143 -2.435 -2.065 -1.226 ...\n $ : num [1:40] -0.329 -1.071 0.582 -1.129 -1.822 ...\n $ : num [1:45] -2.1 -1.017 -1.412 -2.522 -0.812 ...\n $ : num [1:50] -0.5 -0.905 -1.489 -1.85 -1.42 ...\n $ : num [1:55] -0.6085 -0.0581 -0.1107 0.3658 -0.7878 ...\n $ : num [1:60] -1.97 -2.26 -1.73 -2.49 -1.8 ...\n $ : num [1:65] -1.578 -1.796 -0.904 0.116 -0.798 ...\n $ : num [1:70] -1.614 -1.858 0.333 0.125 -1.306 ...\n $ : num [1:75] -2.51 -1.24 -2.9 -1.23 -2.99 ...\n $ : num [1:80] -1.675 0.239 -0.551 -0.793 -1.379 ...\n $ : num [1:85] -2.493 -1.22 -1.947 -0.811 -1.889 ...\n $ : num [1:90] -2.871 -2.099 0.327 -3.525 -1.481 ...\n $ : num [1:95] -2.13 -1.93 -2.04 -1.75 -1.27 ...\n $ : num [1:100] -2.127 -1.425 -0.859 -2.027 0.754 ...\n $ : num [1:105] -1.926 -0.761 -2.176 -1.483 -0.81 ...\n $ : num [1:110] -0.933 -1.108 -0.548 -2.863 -0.803 ...\n $ : num [1:115] -1.26 -1.46 -1.81 -1.58 -3.53 ...\n $ : num [1:120] -0.0208 -1.3812 -1.6838 -2.5484 -0.7869 ...\n $ : num [1:125] -1.71 -2.38 -1.66 -2.08 -2.61 ...\n $ : num [1:130] -1.54 -1.45 -1.51 -0.36 -3.24 ...\n $ : num [1:135] -0.668 -1.371 0.728 -0.906 -2.24 ...\n $ : num [1:140] -1.692 -2.246 -1.5 -1.438 -0.748 ...\n $ : num [1:145] -2.186 -2.864 -1.517 -1.437 -0.612 ...\n $ : num [1:150] -2.306 -2.916 -0.662 -1.358 -0.229 ...\n $ : num [1:5] -2.863 -1.669 -2.361 0.896 -1.578\n $ : num [1:10] -0.289 -2.31 -1.098 0.677 -1.236 ...\n $ : num [1:15] -1.834 -1.045 -2.307 -0.171 -3.351 ...\n $ : num [1:20] 0.511 1.071 -0.345 -1.714 -1.605 ...\n $ : num [1:25] -1.0405 -1.8694 -0.0843 -0.0772 -1.3218 ...\n $ : num [1:30] -0.318 0.739 -1.936 -0.686 -2.002 ...\n $ : num [1:35] -1.874 -1.824 -2.412 -1.301 0.364 ...\n $ : num [1:40] -1.744 -0.336 -2.201 -2.591 -2.67 ...\n $ : num [1:45] -0.42 -1.484 -1.363 -0.966 -0.787 ...\n  [list output truncated]"
+  },
+  {
+    "objectID": "slides/w5.html#simpler-still",
+    "href": "slides/w5.html#simpler-still",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Simpler still",
+    "text": "Simpler still\nMaybe a little too clever\nA data frame is a list so…\n\nfsim &lt;- pmap(\n  full_conditions,\n  ~rnorm(n = ..1, mean = ..2, sd = ..3)\n)\nstr(fsim)\n\n\n\nList of 10710\n $ : num [1:5] -0.505 -1.205 -0.472 -1.865 -1.644\n $ : num [1:10] -1.68 -1.09 -2.17 -3.12 -3.02 ...\n $ : num [1:15] -3.554 -1.181 -1.431 -2.857 -0.757 ...\n $ : num [1:20] -2.1 -1.07 -1.31 -2.36 1.11 ...\n $ : num [1:25] -0.872 -2.226 -2.913 -1.903 -3.19 ...\n $ : num [1:30] -1.97 -1.78 -3.03 -2.62 -2.54 ...\n $ : num [1:35] -2.72 -1.34 -2.7 -2.19 -1.9 ...\n $ : num [1:40] -2 -2.41 -2.27 -2.21 -3.28 ...\n $ : num [1:45] -3.76 -2.54 -1.75 -1.33 -3.63 ...\n $ : num [1:50] -2.49 -0.82 -0.27 -1.14 -1.69 ...\n $ : num [1:55] -2.78 -1.88 -3.67 1.33 -1.11 ...\n $ : num [1:60] -3.5775 -0.0856 -2.5177 -0.6085 -1.5698 ...\n $ : num [1:65] -2.04 -1.49 -1.54 -3.01 -1.92 ...\n $ : num [1:70] -1.97 -3.48 -1.17 -1.49 -2.42 ...\n $ : num [1:75] -1.98 -3.24 -3.16 -1.17 -2.2 ...\n $ : num [1:80] -2.42 -3.46 -2.62 -1.56 -2.34 ...\n $ : num [1:85] -1.66 -1.52 -1.72 -2.17 -1.84 ...\n $ : num [1:90] -4.08 -2.61 -4.02 -4.75 -2.42 ...\n $ : num [1:95] -3.747 -0.528 -0.364 -1.796 -3.54 ...\n $ : num [1:100] -2.09 -0.7 -1.15 -2.06 -2.57 ...\n $ : num [1:105] -1.79 -2.54 -1.39 -2.05 -2.89 ...\n $ : num [1:110] -1.3 -2.01 -1.76 -1.07 -3.03 ...\n $ : num [1:115] -0.812 -2.268 -3.987 -2.212 -3.062 ...\n $ : num [1:120] -1.17 -2.24 -2.16 -2 -1.65 ...\n $ : num [1:125] -1.61 -3.42 -1.28 -2.7 -2.8 ...\n $ : num [1:130] -2.667 -3.127 -2.94 -2.894 0.485 ...\n $ : num [1:135] -0.958 -0.573 -1.469 -3.005 -0.503 ...\n $ : num [1:140] -3.19 -3.33 -3.93 -1.82 -3.13 ...\n $ : num [1:145] -1.85 -2.488 -2.123 -0.545 -2.638 ...\n $ : num [1:150] -1.77 -1.3 -2.62 -3.06 -2.99 ...\n $ : num [1:5] -1.91 -1.77 -1.9 -4.38 -3.55\n $ : num [1:10] -1.755 -0.691 -1.774 -1.367 -0.364 ...\n $ : num [1:15] -1.514 -2.161 -1.253 -1.941 -0.996 ...\n $ : num [1:20] -1.597 -0.991 -2.454 -2.402 -2.149 ...\n $ : num [1:25] -1.4889 -3.7748 -1.727 -0.0646 -2.2562 ...\n $ : num [1:30] -2.539 -2.332 -2.384 -0.396 -1.695 ...\n $ : num [1:35] -0.498 -1.035 -1.756 -2.566 -1.193 ...\n $ : num [1:40] -1.313 -3.68 -3.663 -0.867 -4.021 ...\n $ : num [1:45] -1.949 -0.399 -2.55 -1.668 -1.404 ...\n $ : num [1:50] -2.556 -1.279 0.675 -0.316 -3.803 ...\n $ : num [1:55] -2.9768 -1.6293 -0.9222 -1.9417 -0.0106 ...\n $ : num [1:60] -3.5389 -0.0858 -1.3678 -0.653 -1.8978 ...\n $ : num [1:65] -2.123 -1.988 -1.459 -0.95 -0.982 ...\n $ : num [1:70] -1.26 -2.69 -1.49 -1.88 -1.93 ...\n $ : num [1:75] -1.798 -0.0652 0.0376 0.4585 -0.7764 ...\n $ : num [1:80] -1.816 -0.455 0.023 0.559 -1.449 ...\n $ : num [1:85] -1.48 -1.43 -1.08 -1.58 -2.18 ...\n $ : num [1:90] -1.31 -1.51 -1.11 -1.77 -1.48 ...\n $ : num [1:95] -1.27 -1.28 -2.44 -1.4 -3.85 ...\n $ : num [1:100] 0.365 -1.469 0.524 -0.907 -1.635 ...\n $ : num [1:105] -1.073 -1.607 0.013 -1.989 -1.622 ...\n $ : num [1:110] -1.36 -1.46 -2.42 -2.78 -1.75 ...\n $ : num [1:115] -1.607 -2.059 -2.719 -0.247 -0.737 ...\n $ : num [1:120] -0.557 -1.922 -2.124 -2.64 -2.24 ...\n $ : num [1:125] -2.111 -0.758 -3.347 -1.846 -0.518 ...\n $ : num [1:130] -1.376 -0.681 -1.803 -1.374 -2.441 ...\n $ : num [1:135] -1.38 -1.985 0.112 -0.232 -1.398 ...\n $ : num [1:140] -0.181 -1.784 -1.558 -1.835 -1.921 ...\n $ : num [1:145] -1.136 -1.286 -0.659 -0.979 -1.851 ...\n $ : num [1:150] -2 -2.25 -1.84 -1.3 -1.87 ...\n $ : num [1:5] -0.767 -0.807 -1.538 -1.166 -1.412\n $ : num [1:10] -2.827 -0.385 -1.357 -1.746 -1.073 ...\n $ : num [1:15] -0.277 -0.463 -2.624 -1.31 -2.328 ...\n $ : num [1:20] 1.508 -0.926 -2.936 -1.947 -0.126 ...\n $ : num [1:25] -2.251 -0.543 -0.865 -2.083 1.111 ...\n $ : num [1:30] -0.012 -1.274 -1.238 -1.221 -1.674 ...\n $ : num [1:35] -2.515 -0.869 -0.857 -1.875 -2.102 ...\n $ : num [1:40] -0.334 -1.197 -2.572 -0.833 -0.961 ...\n $ : num [1:45] -0.531 -2.586 -1.862 -2.05 -1.971 ...\n $ : num [1:50] -2.36 -1.12 -1.16 -2.44 -2.02 ...\n $ : num [1:55] -2.0731 -0.0543 -1.0457 -1.2166 -0.4947 ...\n $ : num [1:60] 0.314 -0.646 -1.683 -0.981 -2.639 ...\n $ : num [1:65] -1.023 -1.513 -1.65 -0.469 -0.461 ...\n $ : num [1:70] -1.216 -2.964 -0.972 -0.108 -0.729 ...\n $ : num [1:75] 0.554 -2.555 -0.747 -1.464 -1.626 ...\n $ : num [1:80] -0.828 -1.775 -0.095 -2.124 -0.472 ...\n $ : num [1:85] -1.49 -1.03 -2.77 -1.19 -2.37 ...\n $ : num [1:90] -0.422 -1.665 -3.209 -1.248 -1.07 ...\n $ : num [1:95] -0.662 -0.874 -1.771 -1.307 -2.715 ...\n $ : num [1:100] -3.9956 -2.8416 0.0342 -1.556 -0.6255 ...\n $ : num [1:105] -0.921 0.41 -2.445 -0.196 -1.164 ...\n $ : num [1:110] -1.247 -1.444 -1.511 -0.566 -1.955 ...\n $ : num [1:115] -2.4 0.47 -0.9 -0.87 -2.18 ...\n $ : num [1:120] -1.659 -1.501 -2.133 0.714 -2.317 ...\n $ : num [1:125] -0.617 -1.524 -2.576 -2.555 -0.426 ...\n $ : num [1:130] -1.2838 -2.9751 -2.7238 -2.8333 -0.0508 ...\n $ : num [1:135] -3.841 -3.004 -0.619 -1.063 -1.735 ...\n $ : num [1:140] -2.48 -0.123 -2.139 -2.199 0.259 ...\n $ : num [1:145] -0.427 -1.694 -2.104 -2.842 -1.83 ...\n $ : num [1:150] -2.027 -2.497 -2.335 -1.721 -0.796 ...\n $ : num [1:5] -1.53 -1.68 -1.47 -2.26 -1.07\n $ : num [1:10] -0.0491 0.0649 -1.4943 -0.8812 -1.2485 ...\n $ : num [1:15] -0.779 -3.808 -0.746 -2.149 -0.664 ...\n $ : num [1:20] -0.953 0.374 0.432 -0.739 -2.449 ...\n $ : num [1:25] -1.91 -0.41 -1.77 -1.96 -2.83 ...\n $ : num [1:30] -0.949 -1.404 -1.161 -1.02 0.153 ...\n $ : num [1:35] -0.29 -1.212 -0.725 -0.279 -0.709 ...\n $ : num [1:40] -3.5417 0.0991 -1.7157 -1.744 -1.2091 ...\n $ : num [1:45] -0.713 -1.605 -1.635 -0.244 -1.552 ...\n  [list output truncated]"
+  },
+  {
+    "objectID": "slides/w5.html#list-column-version",
+    "href": "slides/w5.html#list-column-version",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "List column version",
+    "text": "List column version\nThis I like best\n\nfull_conditions |&gt;\n    as_tibble() |&gt;\n    mutate(sim = pmap(list(n, mu, sd), ~rnorm(..1, ..2, ..3)))\n\n\n\n# A tibble: 10,710 × 4\n       n    mu    sd sim       \n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;list&gt;    \n 1     5    -2     1 &lt;dbl [5]&gt; \n 2    10    -2     1 &lt;dbl [10]&gt;\n 3    15    -2     1 &lt;dbl [15]&gt;\n 4    20    -2     1 &lt;dbl [20]&gt;\n 5    25    -2     1 &lt;dbl [25]&gt;\n 6    30    -2     1 &lt;dbl [30]&gt;\n 7    35    -2     1 &lt;dbl [35]&gt;\n 8    40    -2     1 &lt;dbl [40]&gt;\n 9    45    -2     1 &lt;dbl [45]&gt;\n10    50    -2     1 &lt;dbl [50]&gt;\n# ℹ 10,700 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#unnest-1",
+    "href": "slides/w5.html#unnest-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Unnest",
+    "text": "Unnest\n\nfull_conditions |&gt;\n    as_tibble() |&gt;\n    mutate(sim = pmap(list(n, mu, sd), ~rnorm(..1, ..2, ..3))) |&gt;\n    unnest(sim)\n\n\n\n# A tibble: 830,025 × 4\n       n    mu    sd    sim\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n 1     5    -2     1 -0.507\n 2     5    -2     1 -2.13 \n 3     5    -2     1 -0.459\n 4     5    -2     1 -3.50 \n 5     5    -2     1 -3.30 \n 6    10    -2     1 -2.24 \n 7    10    -2     1 -3.47 \n 8    10    -2     1 -2.87 \n 9    10    -2     1 -1.28 \n10    10    -2     1 -1.71 \n# ℹ 830,015 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#replicate-with-nest_by",
+    "href": "slides/w5.html#replicate-with-nest_by",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Replicate with nest_by()",
+    "text": "Replicate with nest_by()\nYou try first\n\n\n\nfull_conditions |&gt; \n  rowwise() |&gt; \n  mutate(sim = list(rnorm(n, mu, sd))) |&gt; \n  unnest(sim)\n\n# A tibble: 830,025 × 4\n       n    mu    sd   sim\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1     5    -2     1 -2.06\n 2     5    -2     1 -3.52\n 3     5    -2     1 -1.91\n 4     5    -2     1 -1.07\n 5     5    -2     1 -1.83\n 6    10    -2     1 -2.18\n 7    10    -2     1 -1.88\n 8    10    -2     1 -1.62\n 9    10    -2     1 -2.21\n10    10    -2     1 -3.41\n# ℹ 830,015 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#plot",
+    "href": "slides/w5.html#plot",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Plot",
+    "text": "Plot\nAdd a caption stating the total number of Pulitzer prize winners across years\n\npulitzer\n\n# A tibble: 100 × 3\n   newspaper           year_range     n\n   &lt;chr&gt;               &lt;chr&gt;      &lt;int&gt;\n 1 USA Today           1990-2003      1\n 2 USA Today           2004-2014      1\n 3 Wall Street Journal 1990-2003     30\n 4 Wall Street Journal 2004-2014     20\n 5 New York Times      1990-2003     55\n 6 New York Times      2004-2014     62\n 7 Los Angeles Times   1990-2003     44\n 8 Los Angeles Times   2004-2014     41\n 9 Washington Post     1990-2003     52\n10 Washington Post     2004-2014     48\n# ℹ 90 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#add-column-for-total",
+    "href": "slides/w5.html#add-column-for-total",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Add column for total",
+    "text": "Add column for total\n\npulitzer &lt;- pulitzer |&gt;\n    group_by(newspaper) |&gt;\n    mutate(tot = sum(n))\npulitzer\n\n# A tibble: 100 × 4\n# Groups:   newspaper [50]\n   newspaper           year_range     n   tot\n   &lt;chr&gt;               &lt;chr&gt;      &lt;int&gt; &lt;int&gt;\n 1 USA Today           1990-2003      1     2\n 2 USA Today           2004-2014      1     2\n 3 Wall Street Journal 1990-2003     30    50\n 4 Wall Street Journal 2004-2014     20    50\n 5 New York Times      1990-2003     55   117\n 6 New York Times      2004-2014     62   117\n 7 Los Angeles Times   1990-2003     44    85\n 8 Los Angeles Times   2004-2014     41    85\n 9 Washington Post     1990-2003     52   100\n10 Washington Post     2004-2014     48   100\n# ℹ 90 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#straightfoward-approach",
+    "href": "slides/w5.html#straightfoward-approach",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Straightfoward approach",
+    "text": "Straightfoward approach\nCreate a column to represent exactly the label you want\n\n#install.packages(\"english\")\nlibrary(english)\npulitzer &lt;- pulitzer |&gt;\n    mutate(\n      label = glue(\n        \"{str_to_title(as.english(tot))} Total Pulitzer Awards\"\n    )\n)\n\n\n\nselect(pulitzer, newspaper, label)\n\n# A tibble: 100 × 2\n# Groups:   newspaper [50]\n   newspaper           label                                      \n   &lt;chr&gt;               &lt;glue&gt;                                     \n 1 USA Today           Two Total Pulitzer Awards                  \n 2 USA Today           Two Total Pulitzer Awards                  \n 3 Wall Street Journal Fifty Total Pulitzer Awards                \n 4 Wall Street Journal Fifty Total Pulitzer Awards                \n 5 New York Times      One Hundred Seventeen Total Pulitzer Awards\n 6 New York Times      One Hundred Seventeen Total Pulitzer Awards\n 7 Los Angeles Times   Eighty-Five Total Pulitzer Awards          \n 8 Los Angeles Times   Eighty-Five Total Pulitzer Awards          \n 9 Washington Post     One Hundred Total Pulitzer Awards          \n10 Washington Post     One Hundred Total Pulitzer Awards          \n# ℹ 90 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#produce-one-plot",
+    "href": "slides/w5.html#produce-one-plot",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Produce one plot",
+    "text": "Produce one plot\n\nwsj2 &lt;- pulitzer |&gt;\n    filter(newspaper == \"Wall Street Journal\") \n\nwsj2 |&gt; \n  ggplot(aes(n, year_range)) +\n    geom_col(aes(fill = n)) +\n    scale_x_continuous(\n      limits = c(0, max(pulitzer$n)),\n      expand = c(0, 0)\n    ) +\n    guides(fill = \"none\") +\n    labs(\n      title = glue(\"Pulitzer Prize winners: Wall Street Journal\"),\n      x = \"Total number of winners\",\n      y = \"\",\n      caption = unique(wsj2$label)\n    )"
+  },
+  {
+    "objectID": "slides/w5.html#produce-one-plot-output",
+    "href": "slides/w5.html#produce-one-plot-output",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Produce one plot",
+    "text": "Produce one plot"
+  },
+  {
+    "objectID": "slides/w5.html#produce-all-plots-1",
+    "href": "slides/w5.html#produce-all-plots-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Produce all plots",
+    "text": "Produce all plots\nFirst nest\n\nby_newspaper_label &lt;- pulitzer |&gt;\n    group_by(newspaper, label) |&gt;\n    nest() \n\nby_newspaper_label\n\n\n\n# A tibble: 50 × 3\n# Groups:   newspaper, label [50]\n   newspaper             label                                       data    \n   &lt;chr&gt;                 &lt;glue&gt;                                      &lt;list&gt;  \n 1 USA Today             Two Total Pulitzer Awards                   &lt;tibble&gt;\n 2 Wall Street Journal   Fifty Total Pulitzer Awards                 &lt;tibble&gt;\n 3 New York Times        One Hundred Seventeen Total Pulitzer Awards &lt;tibble&gt;\n 4 Los Angeles Times     Eighty-Five Total Pulitzer Awards           &lt;tibble&gt;\n 5 Washington Post       One Hundred Total Pulitzer Awards           &lt;tibble&gt;\n 6 New York Daily News   Six Total Pulitzer Awards                   &lt;tibble&gt;\n 7 New York Post         Zero Total Pulitzer Awards                  &lt;tibble&gt;\n 8 Chicago Tribune       Thirty-Eight Total Pulitzer Awards          &lt;tibble&gt;\n 9 San Jose Mercury News Six Total Pulitzer Awards                   &lt;tibble&gt;\n10 Newsday               Eighteen Total Pulitzer Awards              &lt;tibble&gt;\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#produce-plots",
+    "href": "slides/w5.html#produce-plots",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Produce plots",
+    "text": "Produce plots\n\nfinal_plots &lt;- by_newspaper_label |&gt;\n  mutate(plots = pmap(list(newspaper, label, data), \n    ~ggplot(..3, aes(n, year_range)) +\n      geom_col(aes(fill = n)) +\n      scale_x_continuous(\n        limits = c(0, max(pulitzer$n)),\n        expand = c(0, 0)\n      ) +\n      guides(fill = \"none\") +\n      labs(\n        title = glue(\"Pulitzer Prize winners: {..1}\"),\n        x = \"Total number of winners\",\n        y = \"\",\n        caption = ..2 \n      )\n  )\n)"
+  },
+  {
+    "objectID": "slides/w5.html#look-at-a-couple-plots-1",
+    "href": "slides/w5.html#look-at-a-couple-plots-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Look at a couple plots",
+    "text": "Look at a couple plots\n\n\n\nfinal_plots$plots[[1]]\n\n\n\n\n\n\n\nfinal_plots$plots[[3]]\n\n\n\n\n\n\n\n\n\n\nfinal_plots$plots[[2]]\n\n\n\n\n\n\n\nfinal_plots$plots[[4]]"
+  },
+  {
+    "objectID": "slides/w5.html#replicate-with-nest_by-1",
+    "href": "slides/w5.html#replicate-with-nest_by-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Replicate with nest_by()",
+    "text": "Replicate with nest_by()\nYou try first"
+  },
+  {
+    "objectID": "slides/w5.html#solution-2",
+    "href": "slides/w5.html#solution-2",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Solution",
+    "text": "Solution\n\n\nfinal_plots2 &lt;- pulitzer |&gt;\n  ungroup() |&gt; \n  nest_by(newspaper, label) |&gt; \n    mutate(\n      plots = list(\n        ggplot(data, aes(n, year_range)) + \n          geom_col(aes(fill = n)) +\n          scale_x_continuous(\n            limits = c(0, max(pulitzer$n)), \n            expand = c(0, 0)\n        ) +\n          guides(fill = \"none\") +\n          labs(\n            title = glue(\"Pulitzer Prize winners: {newspaper}\"),\n            x = \"Total number of winners\",\n            y = \"\",\n            caption = label\n        )\n      )\n)"
+  },
+  {
+    "objectID": "slides/w5.html#section-2",
+    "href": "slides/w5.html#section-2",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "",
+    "text": "final_plots2\n\n# A tibble: 50 × 4\n# Rowwise:  newspaper, label\n   newspaper                    label                            data plots     \n   &lt;chr&gt;                        &lt;glue&gt;                        &lt;list&lt;&gt; &lt;list&gt;    \n 1 Arizona Republic             Seven Total Pulitzer Awards   [2 × 3] &lt;ggplt2::&gt;\n 2 Atlanta Journal Constitution Six Total Pulitzer Awards     [2 × 3] &lt;ggplt2::&gt;\n 3 Baltimore Sun                Thirteen Total Pulitzer Awar… [2 × 3] &lt;ggplt2::&gt;\n 4 Boston Globe                 Forty-One Total Pulitzer Awa… [2 × 3] &lt;ggplt2::&gt;\n 5 Boston Herald                Zero Total Pulitzer Awards    [2 × 3] &lt;ggplt2::&gt;\n 6 Charlotte Observer           Four Total Pulitzer Awards    [2 × 3] &lt;ggplt2::&gt;\n 7 Chicago Sun-Times            Two Total Pulitzer Awards     [2 × 3] &lt;ggplt2::&gt;\n 8 Chicago Tribune              Thirty-Eight Total Pulitzer … [2 × 3] &lt;ggplt2::&gt;\n 9 Cleveland Plain Dealer       Eleven Total Pulitzer Awards  [2 × 3] &lt;ggplt2::&gt;\n10 Columbus Dispatch            One Total Pulitzer Awards     [2 × 3] &lt;ggplt2::&gt;\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#save-all-plots",
+    "href": "slides/w5.html#save-all-plots",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Save all plots",
+    "text": "Save all plots\n\nWe’ll have to iterate across at least two things\n\nfile path/names\nthe plots themselves\n\nWe can do this with the map() family, but we’ll use a different function\nWhat are the steps we would need to take to do this?\nCould we use a nest_by() solution?"
+  },
+  {
+    "objectID": "slides/w5.html#try-with-nest_by",
+    "href": "slides/w5.html#try-with-nest_by",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Try with nest_by()",
+    "text": "Try with nest_by()\nYou try first:\n\nCreate a vector of file paths\n“loop” through the file paths and the plots to save them"
+  },
+  {
+    "objectID": "slides/w5.html#example",
+    "href": "slides/w5.html#example",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Example",
+    "text": "Example\nCreate a directory\n\nfs::dir_create(here::here(\"plots\", \"pulitzers\"))\n\n\nCreate file paths\n\nfiles &lt;- str_replace_all(\n  tolower(final_plots$newspaper),\n  \" \",\n  \"-\"\n)\npaths &lt;- here::here(\"plots\", \"pulitzers\", glue(\"{files}.png\"))\npaths\n\n\n\n [1] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/usa-today.png\"                   \n [2] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/wall-street-journal.png\"         \n [3] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/new-york-times.png\"              \n [4] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/los-angeles-times.png\"           \n [5] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/washington-post.png\"             \n [6] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/new-york-daily-news.png\"         \n [7] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/new-york-post.png\"               \n [8] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/chicago-tribune.png\"             \n [9] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/san-jose-mercury-news.png\"       \n[10] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/newsday.png\"                     \n[11] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/houston-chronicle.png\"           \n[12] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/dallas-morning-news.png\"         \n[13] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/san-francisco-chronicle.png\"     \n[14] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/arizona-republic.png\"            \n[15] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/chicago-sun-times.png\"           \n[16] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/boston-globe.png\"                \n[17] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/atlanta-journal-constitution.png\"\n[18] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/newark-star-ledger.png\"          \n[19] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/detroit-free-press.png\"          \n[20] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/minneapolis-star-tribune.png\"    \n[21] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/philadelphia-inquirer.png\"       \n[22] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/cleveland-plain-dealer.png\"      \n[23] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/san-diego-union-tribune.png\"     \n[24] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/tampa-bay-times.png\"             \n[25] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/denver-post.png\"                 \n[26] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/rocky-mountain-news.png\"         \n[27] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/oregonian.png\"                   \n[28] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/miami-herald.png\"                \n[29] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/orange-county-register.png\"      \n[30] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/sacramento-bee.png\"              \n[31] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/st.-louis-post-dispatch.png\"     \n[32] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/baltimore-sun.png\"               \n[33] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/kansas-city-star.png\"            \n[34] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/detroit-news.png\"                \n[35] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/orlando-sentinel.png\"            \n[36] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/south-florida-sun-sentinel.png\"  \n[37] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/new-orleans-times-picayune.png\"  \n[38] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/columbus-dispatch.png\"           \n[39] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/indianapolis-star.png\"           \n[40] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/san-antonio-express-news.png\"    \n[41] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/pittsburgh-post-gazette.png\"     \n[42] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/milwaukee-journal-sentinel.png\"  \n[43] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/tampa-tribune.png\"               \n[44] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/fort-woth-star-telegram.png\"     \n[45] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/boston-herald.png\"               \n[46] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/seattle-times.png\"               \n[47] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/charlotte-observer.png\"          \n[48] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/daily-oklahoman.png\"             \n[49] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/louisville-courier-journal.png\"  \n[50] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/investor's-buisiness-daily.png\""
+  },
+  {
+    "objectID": "slides/w5.html#add-paths-to-data-frame",
+    "href": "slides/w5.html#add-paths-to-data-frame",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Add paths to data frame",
+    "text": "Add paths to data frame\n\nfinal_plots |&gt; \n  ungroup() |&gt; \n  mutate(path = paths) |&gt; \n  select(plots, path)\n\n# A tibble: 50 × 2\n   plots      path                                                              \n   &lt;list&gt;     &lt;chr&gt;                                                             \n 1 &lt;ggplt2::&gt; C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/func…\n 2 &lt;ggplt2::&gt; C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/func…\n 3 &lt;ggplt2::&gt; C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/func…\n 4 &lt;ggplt2::&gt; C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/func…\n 5 &lt;ggplt2::&gt; C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/func…\n 6 &lt;ggplt2::&gt; C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/func…\n 7 &lt;ggplt2::&gt; C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/func…\n 8 &lt;ggplt2::&gt; C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/func…\n 9 &lt;ggplt2::&gt; C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/func…\n10 &lt;ggplt2::&gt; C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/func…\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#save",
+    "href": "slides/w5.html#save",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Save",
+    "text": "Save\n\nfinal_plots |&gt; \n  ungroup() |&gt; \n  mutate(path = paths) |&gt; \n  rowwise() |&gt; \n  summarize(\n    ggsave(path, plots, \n      width = 9.5, \n      height = 6.5,\n      dpi = 500\n    )\n  )"
+  },
+  {
+    "objectID": "slides/w5.html#wrap-up",
+    "href": "slides/w5.html#wrap-up",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Wrap up",
+    "text": "Wrap up\n\nLots more to {purrr} but we’ve covered a lot\nFunctional programming can really help your efficiency, and even if it slows you down initially, I’d recommend always striving toward it, because it will ultimately be a huge help"
+  },
+  {
+    "objectID": "slides/w5.html#other-loooping-fnctions",
+    "href": "slides/w5.html#other-loooping-fnctions",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Other loooping fnctions",
+    "text": "Other loooping fnctions\n\nwalk() and friends\nmodify()\nsafely()\nreduce()"
+  },
+  {
+    "objectID": "slides/w5.html#what-we-want-to-know",
+    "href": "slides/w5.html#what-we-want-to-know",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "What we want to know",
+    "text": "What we want to know\n\nKnow when to apply walk() instead of map(), and why it may be useful\nUnderstand the parallels and differences between map() and modify()\nDiagnose errors with safely() and understand other situations where it may be helpful\nCollapsing/reducing lists with purrr::reduce() or base::Reduce()"
+  },
+  {
+    "objectID": "slides/w5.html#setup",
+    "href": "slides/w5.html#setup",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Setup",
+    "text": "Setup\nLet’s go back to our plotting example:\nSaving\n\nWe saw last time that we could use nest_by()\n\nRequired a bit of awkwardness with adding the paths to the data frame\n\nInstead, we’ll do it again but with the walk() family"
+  },
+  {
+    "objectID": "slides/w5.html#why-walk",
+    "href": "slides/w5.html#why-walk",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Why walk()?",
+    "text": "Why walk()?\n\nwalk() is an alternative to map that you use when you want to call a function for its side effects, NOT than for its return value\nYou typically do this because you want to render output to the screen or save files to disk\nThe important thing is the action, not the return value\n\n\n\nr4ds"
+  },
+  {
+    "objectID": "slides/w5.html#more-practical",
+    "href": "slides/w5.html#more-practical",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "More practical",
+    "text": "More practical\n\nIf you use walk(), nothing will get printed to the screen\nThis is particularly helpful for quarto files\nMost often use it for\n\nsaving\nprinting"
+  },
+  {
+    "objectID": "slides/w5.html#example-1",
+    "href": "slides/w5.html#example-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Example",
+    "text": "Example\nPlease do the following\n\nCreate a new Quarto document\nPaste the code you have for creating the Pulitzer plots in a code chunk there\n\nsee next slide"
+  },
+  {
+    "objectID": "slides/w5.html#create-a-directory",
+    "href": "slides/w5.html#create-a-directory",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Create a directory",
+    "text": "Create a directory\nWe already did this, but in case we hadn’t…\n\nfs::dir_create(here::here(\"plots\", \"pulitzers\"))"
+  },
+  {
+    "objectID": "slides/w5.html#create-file-paths",
+    "href": "slides/w5.html#create-file-paths",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Create file paths",
+    "text": "Create file paths\n\nnewspapers &lt;- str_replace_all(\n  tolower(final_plots$newspaper),\n  \" \",\n  \"-\"\n)\npaths &lt;- here::here(\n  \"plots\",\n  \"pulitzers\",\n  glue(\"{newspapers}.png\")\n)"
+  },
+  {
+    "objectID": "slides/w5.html#challenge-2",
+    "href": "slides/w5.html#challenge-2",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Challenge",
+    "text": "Challenge\n\nUse a map() family function to loop through paths and final_plots$plots to save all plots\nRender your file. What do you notice?"
+  },
+  {
+    "objectID": "slides/w5.html#walk",
+    "href": "slides/w5.html#walk",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "walk()",
+    "text": "walk()\n\nJust like map(), we have parallel variants of walk(), including, walk2(), and pwalk()\nThese work just like map() but don’t print to the screen"
+  },
+  {
+    "objectID": "slides/w5.html#save-plots",
+    "href": "slides/w5.html#save-plots",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Save plots",
+    "text": "Save plots\n\n\nmap()\n\nmap2(paths[1:3], final_plots$plots[1:3], ggsave)\n\n[[1]]\n[1] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/usa-today.png\"\n\n[[2]]\n[1] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/wall-street-journal.png\"\n\n[[3]]\n[1] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/new-york-times.png\"\n\n\n\nwalk()\n\nwalk2(paths[1:3], final_plots$plots[1:3], ggsave)"
+  },
+  {
+    "objectID": "slides/w5.html#modify",
+    "href": "slides/w5.html#modify",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "modify()",
+    "text": "modify()\n\nmap() family always return a fixed object type\n\nlist for map()\ninteger vector for map_int()\netc.\n\nmodify() family always returns the same type as the input object"
+  },
+  {
+    "objectID": "slides/w5.html#map-vs-modify",
+    "href": "slides/w5.html#map-vs-modify",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "map() vs modify()",
+    "text": "map() vs modify()\nmap()\n\nmap(mtcars, ~as.numeric(scale(.x)))\n\n$mpg\n [1]  0.15088482  0.15088482  0.44954345  0.21725341 -0.23073453 -0.33028740\n [7] -0.96078893  0.71501778  0.44954345 -0.14777380 -0.38006384 -0.61235388\n[13] -0.46302456 -0.81145962 -1.60788262 -1.60788262 -0.89442035  2.04238943\n[19]  1.71054652  2.29127162  0.23384555 -0.76168319 -0.81145962 -1.12671039\n[25] -0.14777380  1.19619000  0.98049211  1.71054652 -0.71190675 -0.06481307\n[31] -0.84464392  0.21725341\n\n$cyl\n [1] -0.1049878 -0.1049878 -1.2248578 -0.1049878  1.0148821 -0.1049878\n [7]  1.0148821 -1.2248578 -1.2248578 -0.1049878 -0.1049878  1.0148821\n[13]  1.0148821  1.0148821  1.0148821  1.0148821  1.0148821 -1.2248578\n[19] -1.2248578 -1.2248578 -1.2248578  1.0148821  1.0148821  1.0148821\n[25]  1.0148821 -1.2248578 -1.2248578 -1.2248578  1.0148821 -0.1049878\n[31]  1.0148821 -1.2248578\n\n$disp\n [1] -0.57061982 -0.57061982 -0.99018209  0.22009369  1.04308123 -0.04616698\n [7]  1.04308123 -0.67793094 -0.72553512 -0.50929918 -0.50929918  0.36371309\n[13]  0.36371309  0.36371309  1.94675381  1.84993175  1.68856165 -1.22658929\n[19] -1.25079481 -1.28790993 -0.89255318  0.70420401  0.59124494  0.96239618\n[25]  1.36582144 -1.22416874 -0.89093948 -1.09426581  0.97046468 -0.69164740\n[31]  0.56703942 -0.88529152\n\n$hp\n [1] -0.53509284 -0.53509284 -0.78304046 -0.53509284  0.41294217 -0.60801861\n [7]  1.43390296 -1.23518023 -0.75387015 -0.34548584 -0.34548584  0.48586794\n[13]  0.48586794  0.48586794  0.85049680  0.99634834  1.21512565 -1.17683962\n[19] -1.38103178 -1.19142477 -0.72469984  0.04831332  0.04831332  1.43390296\n[25]  0.41294217 -1.17683962 -0.81221077 -0.49133738  1.71102089  0.41294217\n[31]  2.74656682 -0.54967799\n\n$drat\n [1]  0.56751369  0.56751369  0.47399959 -0.96611753 -0.83519779 -1.56460776\n [7] -0.72298087  0.17475447  0.60491932  0.60491932  0.60491932 -0.98482035\n[13] -0.98482035 -0.98482035 -1.24665983 -1.11574009 -0.68557523  0.90416444\n[19]  2.49390411  1.16600392  0.19345729 -1.56460776 -0.83519779  0.24956575\n[25] -0.96611753  0.90416444  1.55876313  0.32437703  1.16600392  0.04383473\n[31] -0.10578782  0.96027290\n\n$wt\n [1] -0.610399567 -0.349785269 -0.917004624 -0.002299538  0.227654255\n [6]  0.248094592  0.360516446 -0.027849959 -0.068730634  0.227654255\n[11]  0.227654255  0.871524874  0.524039143  0.575139986  2.077504765\n[16]  2.255335698  2.174596366 -1.039646647 -1.637526508 -1.412682800\n[21] -0.768812180  0.309415603  0.222544170  0.636460997  0.641571082\n[26] -1.310481114 -1.100967659 -1.741772228 -0.048290296 -0.457097039\n[31]  0.360516446 -0.446876870\n\n$qsec\n [1] -0.77716515 -0.46378082  0.42600682  0.89048716 -0.46378082  1.32698675\n [7] -1.12412636  1.20387148  2.82675459  0.25252621  0.58829513 -0.25112717\n[13] -0.13920420  0.08464175  0.07344945 -0.01608893 -0.23993487  0.90727560\n[19]  0.37564148  1.14790999  1.20946763 -0.54772305 -0.30708866 -1.36476075\n[25] -0.44699237  0.58829513 -0.64285758 -0.53093460 -1.87401028 -1.31439542\n[31] -1.81804880  0.42041067\n\n$vs\n [1] -0.8680278 -0.8680278  1.1160357  1.1160357 -0.8680278  1.1160357\n [7] -0.8680278  1.1160357  1.1160357  1.1160357  1.1160357 -0.8680278\n[13] -0.8680278 -0.8680278 -0.8680278 -0.8680278 -0.8680278  1.1160357\n[19]  1.1160357  1.1160357  1.1160357 -0.8680278 -0.8680278 -0.8680278\n[25] -0.8680278  1.1160357 -0.8680278  1.1160357 -0.8680278 -0.8680278\n[31] -0.8680278  1.1160357\n\n$am\n [1]  1.1899014  1.1899014  1.1899014 -0.8141431 -0.8141431 -0.8141431\n [7] -0.8141431 -0.8141431 -0.8141431 -0.8141431 -0.8141431 -0.8141431\n[13] -0.8141431 -0.8141431 -0.8141431 -0.8141431 -0.8141431  1.1899014\n[19]  1.1899014  1.1899014 -0.8141431 -0.8141431 -0.8141431 -0.8141431\n[25] -0.8141431  1.1899014  1.1899014  1.1899014  1.1899014  1.1899014\n[31]  1.1899014  1.1899014\n\n$gear\n [1]  0.4235542  0.4235542  0.4235542 -0.9318192 -0.9318192 -0.9318192\n [7] -0.9318192  0.4235542  0.4235542  0.4235542  0.4235542 -0.9318192\n[13] -0.9318192 -0.9318192 -0.9318192 -0.9318192 -0.9318192  0.4235542\n[19]  0.4235542  0.4235542 -0.9318192 -0.9318192 -0.9318192 -0.9318192\n[25] -0.9318192  0.4235542  1.7789276  1.7789276  1.7789276  1.7789276\n[31]  1.7789276  0.4235542\n\n$carb\n [1]  0.7352031  0.7352031 -1.1221521 -1.1221521 -0.5030337 -1.1221521\n [7]  0.7352031 -0.5030337 -0.5030337  0.7352031  0.7352031  0.1160847\n[13]  0.1160847  0.1160847  0.7352031  0.7352031  0.7352031 -1.1221521\n[19] -0.5030337 -1.1221521 -1.1221521 -0.5030337 -0.5030337  0.7352031\n[25] -0.5030337 -1.1221521 -0.5030337 -0.5030337  0.7352031  1.9734398\n[31]  3.2116766 -0.5030337"
+  },
+  {
+    "objectID": "slides/w5.html#map-vs-modify-1",
+    "href": "slides/w5.html#map-vs-modify-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "map() vs modify()",
+    "text": "map() vs modify()\nmodify()\n\nmodify(mtcars, ~as.numeric(scale(.x)))\n\n           mpg        cyl        disp          hp        drat           wt\n1   0.15088482 -0.1049878 -0.57061982 -0.53509284  0.56751369 -0.610399567\n2   0.15088482 -0.1049878 -0.57061982 -0.53509284  0.56751369 -0.349785269\n3   0.44954345 -1.2248578 -0.99018209 -0.78304046  0.47399959 -0.917004624\n4   0.21725341 -0.1049878  0.22009369 -0.53509284 -0.96611753 -0.002299538\n5  -0.23073453  1.0148821  1.04308123  0.41294217 -0.83519779  0.227654255\n6  -0.33028740 -0.1049878 -0.04616698 -0.60801861 -1.56460776  0.248094592\n7  -0.96078893  1.0148821  1.04308123  1.43390296 -0.72298087  0.360516446\n8   0.71501778 -1.2248578 -0.67793094 -1.23518023  0.17475447 -0.027849959\n9   0.44954345 -1.2248578 -0.72553512 -0.75387015  0.60491932 -0.068730634\n10 -0.14777380 -0.1049878 -0.50929918 -0.34548584  0.60491932  0.227654255\n11 -0.38006384 -0.1049878 -0.50929918 -0.34548584  0.60491932  0.227654255\n12 -0.61235388  1.0148821  0.36371309  0.48586794 -0.98482035  0.871524874\n13 -0.46302456  1.0148821  0.36371309  0.48586794 -0.98482035  0.524039143\n14 -0.81145962  1.0148821  0.36371309  0.48586794 -0.98482035  0.575139986\n15 -1.60788262  1.0148821  1.94675381  0.85049680 -1.24665983  2.077504765\n16 -1.60788262  1.0148821  1.84993175  0.99634834 -1.11574009  2.255335698\n17 -0.89442035  1.0148821  1.68856165  1.21512565 -0.68557523  2.174596366\n18  2.04238943 -1.2248578 -1.22658929 -1.17683962  0.90416444 -1.039646647\n19  1.71054652 -1.2248578 -1.25079481 -1.38103178  2.49390411 -1.637526508\n20  2.29127162 -1.2248578 -1.28790993 -1.19142477  1.16600392 -1.412682800\n21  0.23384555 -1.2248578 -0.89255318 -0.72469984  0.19345729 -0.768812180\n22 -0.76168319  1.0148821  0.70420401  0.04831332 -1.56460776  0.309415603\n23 -0.81145962  1.0148821  0.59124494  0.04831332 -0.83519779  0.222544170\n24 -1.12671039  1.0148821  0.96239618  1.43390296  0.24956575  0.636460997\n25 -0.14777380  1.0148821  1.36582144  0.41294217 -0.96611753  0.641571082\n26  1.19619000 -1.2248578 -1.22416874 -1.17683962  0.90416444 -1.310481114\n27  0.98049211 -1.2248578 -0.89093948 -0.81221077  1.55876313 -1.100967659\n28  1.71054652 -1.2248578 -1.09426581 -0.49133738  0.32437703 -1.741772228\n29 -0.71190675  1.0148821  0.97046468  1.71102089  1.16600392 -0.048290296\n30 -0.06481307 -0.1049878 -0.69164740  0.41294217  0.04383473 -0.457097039\n31 -0.84464392  1.0148821  0.56703942  2.74656682 -0.10578782  0.360516446\n32  0.21725341 -1.2248578 -0.88529152 -0.54967799  0.96027290 -0.446876870\n          qsec         vs         am       gear       carb\n1  -0.77716515 -0.8680278  1.1899014  0.4235542  0.7352031\n2  -0.46378082 -0.8680278  1.1899014  0.4235542  0.7352031\n3   0.42600682  1.1160357  1.1899014  0.4235542 -1.1221521\n4   0.89048716  1.1160357 -0.8141431 -0.9318192 -1.1221521\n5  -0.46378082 -0.8680278 -0.8141431 -0.9318192 -0.5030337\n6   1.32698675  1.1160357 -0.8141431 -0.9318192 -1.1221521\n7  -1.12412636 -0.8680278 -0.8141431 -0.9318192  0.7352031\n8   1.20387148  1.1160357 -0.8141431  0.4235542 -0.5030337\n9   2.82675459  1.1160357 -0.8141431  0.4235542 -0.5030337\n10  0.25252621  1.1160357 -0.8141431  0.4235542  0.7352031\n11  0.58829513  1.1160357 -0.8141431  0.4235542  0.7352031\n12 -0.25112717 -0.8680278 -0.8141431 -0.9318192  0.1160847\n13 -0.13920420 -0.8680278 -0.8141431 -0.9318192  0.1160847\n14  0.08464175 -0.8680278 -0.8141431 -0.9318192  0.1160847\n15  0.07344945 -0.8680278 -0.8141431 -0.9318192  0.7352031\n16 -0.01608893 -0.8680278 -0.8141431 -0.9318192  0.7352031\n17 -0.23993487 -0.8680278 -0.8141431 -0.9318192  0.7352031\n18  0.90727560  1.1160357  1.1899014  0.4235542 -1.1221521\n19  0.37564148  1.1160357  1.1899014  0.4235542 -0.5030337\n20  1.14790999  1.1160357  1.1899014  0.4235542 -1.1221521\n21  1.20946763  1.1160357 -0.8141431 -0.9318192 -1.1221521\n22 -0.54772305 -0.8680278 -0.8141431 -0.9318192 -0.5030337\n23 -0.30708866 -0.8680278 -0.8141431 -0.9318192 -0.5030337\n24 -1.36476075 -0.8680278 -0.8141431 -0.9318192  0.7352031\n25 -0.44699237 -0.8680278 -0.8141431 -0.9318192 -0.5030337\n26  0.58829513  1.1160357  1.1899014  0.4235542 -1.1221521\n27 -0.64285758 -0.8680278  1.1899014  1.7789276 -0.5030337\n28 -0.53093460  1.1160357  1.1899014  1.7789276 -0.5030337\n29 -1.87401028 -0.8680278  1.1899014  1.7789276  0.7352031\n30 -1.31439542 -0.8680278  1.1899014  1.7789276  1.9734398\n31 -1.81804880 -0.8680278  1.1899014  1.7789276  3.2116766\n32  0.42041067  1.1160357  1.1899014  0.4235542 -0.5030337"
+  },
+  {
+    "objectID": "slides/w5.html#map-vs-modify-2",
+    "href": "slides/w5.html#map-vs-modify-2",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "map() vs modify()",
+    "text": "map() vs modify()\n\n\n\nmap(mtcars, ~as.numeric(scale(.x))) |&gt; \n  str()\n\nList of 11\n $ mpg : num [1:32] 0.151 0.151 0.45 0.217 -0.231 ...\n $ cyl : num [1:32] -0.105 -0.105 -1.225 -0.105 1.015 ...\n $ disp: num [1:32] -0.571 -0.571 -0.99 0.22 1.043 ...\n $ hp  : num [1:32] -0.535 -0.535 -0.783 -0.535 0.413 ...\n $ drat: num [1:32] 0.568 0.568 0.474 -0.966 -0.835 ...\n $ wt  : num [1:32] -0.6104 -0.3498 -0.917 -0.0023 0.2277 ...\n $ qsec: num [1:32] -0.777 -0.464 0.426 0.89 -0.464 ...\n $ vs  : num [1:32] -0.868 -0.868 1.116 1.116 -0.868 ...\n $ am  : num [1:32] 1.19 1.19 1.19 -0.814 -0.814 ...\n $ gear: num [1:32] 0.424 0.424 0.424 -0.932 -0.932 ...\n $ carb: num [1:32] 0.735 0.735 -1.122 -1.122 -0.503 ...\n\n\n\n\nmodify(mtcars, ~as.numeric(scale(.x))) |&gt; \n  str()\n\n'data.frame':   32 obs. of  11 variables:\n $ mpg : num  0.151 0.151 0.45 0.217 -0.231 ...\n $ cyl : num  -0.105 -0.105 -1.225 -0.105 1.015 ...\n $ disp: num  -0.571 -0.571 -0.99 0.22 1.043 ...\n $ hp  : num  -0.535 -0.535 -0.783 -0.535 0.413 ...\n $ drat: num  0.568 0.568 0.474 -0.966 -0.835 ...\n $ wt  : num  -0.6104 -0.3498 -0.917 -0.0023 0.2277 ...\n $ qsec: num  -0.777 -0.464 0.426 0.89 -0.464 ...\n $ vs  : num  -0.868 -0.868 1.116 1.116 -0.868 ...\n $ am  : num  1.19 1.19 1.19 -0.814 -0.814 ...\n $ gear: num  0.424 0.424 0.424 -0.932 -0.932 ...\n $ carb: num  0.735 0.735 -1.122 -1.122 -0.503 ..."
+  },
+  {
+    "objectID": "slides/w5.html#safely",
+    "href": "slides/w5.html#safely",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "safely()",
+    "text": "safely()\nErrors during iterations\n\nSometimes a loop will work for most cases, but return an error on a few\nOften, you want to return the output you can\nAlternatively, you might want to diagnose where the error is occurring\n\n\npurrr::safely()"
+  },
+  {
+    "objectID": "slides/w5.html#example-2",
+    "href": "slides/w5.html#example-2",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Example",
+    "text": "Example\nPlease run this code\n\nby_cyl &lt;- mpg |&gt; \n  group_by(cyl) |&gt; \n  nest() \nby_cyl\n\n# A tibble: 4 × 2\n# Groups:   cyl [4]\n    cyl data              \n  &lt;int&gt; &lt;list&gt;            \n1     4 &lt;tibble [81 × 10]&gt;\n2     6 &lt;tibble [79 × 10]&gt;\n3     8 &lt;tibble [70 × 10]&gt;\n4     5 &lt;tibble [4 × 10]&gt;"
+  },
+  {
+    "objectID": "slides/w5.html#now-try-to-fit-a-model",
+    "href": "slides/w5.html#now-try-to-fit-a-model",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Now try to fit a model",
+    "text": "Now try to fit a model\nPlease follow along\nNotice the error message is super helpful!\n\nby_cyl |&gt; \n  mutate(mod = map(data, ~lm(hwy ~ displ + drv, data = .x)))\n\nError in `mutate()`:\nℹ In argument: `mod = map(data, ~lm(hwy ~ displ + drv, data = .x))`.\nℹ In group 2: `cyl = 5`.\nCaused by error in `map()`:\nℹ In index: 1.\nCaused by error in `contrasts&lt;-`:\n! contrasts can be applied only to factors with 2 or more levels"
+  },
+  {
+    "objectID": "slides/w5.html#safe-return",
+    "href": "slides/w5.html#safe-return",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Safe return",
+    "text": "Safe return\nFirst, define safe function - note that this will work for ANY function\n\nsafe_lm &lt;- safely(lm)\n\n\nNext, loop the safe function, instead of the standard function\n\nsafe_models &lt;- by_cyl |&gt; \n  mutate(safe_mod = map(data, ~safe_lm(hwy ~ displ + drv, data = .x)))\nsafe_models\n\n\n\n# A tibble: 4 × 3\n# Groups:   cyl [4]\n    cyl data               safe_mod        \n  &lt;int&gt; &lt;list&gt;             &lt;list&gt;          \n1     4 &lt;tibble [81 × 10]&gt; &lt;named list [2]&gt;\n2     6 &lt;tibble [79 × 10]&gt; &lt;named list [2]&gt;\n3     8 &lt;tibble [70 × 10]&gt; &lt;named list [2]&gt;\n4     5 &lt;tibble [4 × 10]&gt;  &lt;named list [2]&gt;"
+  },
+  {
+    "objectID": "slides/w5.html#inspecting",
+    "href": "slides/w5.html#inspecting",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Inspecting",
+    "text": "Inspecting\nI often use safely() to help me de-bug\nWhy is it failing there (but note the error message here helps with this too)\n\nCreate a new variable to filter for results with errors\n\nsafe_models |&gt; \n  mutate(error = map_lgl(safe_mod, ~!is.null(.x$error)))\n\n\n\n# A tibble: 4 × 4\n# Groups:   cyl [4]\n    cyl data               safe_mod         error\n  &lt;int&gt; &lt;list&gt;             &lt;list&gt;           &lt;lgl&gt;\n1     4 &lt;tibble [81 × 10]&gt; &lt;named list [2]&gt; FALSE\n2     6 &lt;tibble [79 × 10]&gt; &lt;named list [2]&gt; FALSE\n3     8 &lt;tibble [70 × 10]&gt; &lt;named list [2]&gt; FALSE\n4     5 &lt;tibble [4 × 10]&gt;  &lt;named list [2]&gt; TRUE"
+  },
+  {
+    "objectID": "slides/w5.html#inspecting-the-data",
+    "href": "slides/w5.html#inspecting-the-data",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Inspecting the data",
+    "text": "Inspecting the data\n\nsafe_models |&gt; \n  mutate(error = map_lgl(safe_mod, ~!is.null(.x$error))) |&gt; \n  filter(error) |&gt; \n  select(cyl, data) |&gt; \n  unnest(data)\n\n# A tibble: 4 × 11\n# Groups:   cyl [1]\n    cyl manufacturer model      displ  year trans  drv     cty   hwy fl    class\n  &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;\n1     5 volkswagen   jetta        2.5  2008 auto(… f        21    29 r     comp…\n2     5 volkswagen   jetta        2.5  2008 manua… f        21    29 r     comp…\n3     5 volkswagen   new beetle   2.5  2008 manua… f        20    28 r     subc…\n4     5 volkswagen   new beetle   2.5  2008 auto(… f        20    29 r     subc…\n\n\n\nlm(hwy ~ displ + drv)\nThe displ and drv variables are constant, so no relation can be estimated (no variance)"
+  },
+  {
+    "objectID": "slides/w5.html#pull-results-that-worked",
+    "href": "slides/w5.html#pull-results-that-worked",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Pull results that worked",
+    "text": "Pull results that worked\n\nsafe_models |&gt; \n  mutate(results = map(safe_mod, \"result\"))\n\n# A tibble: 4 × 4\n# Groups:   cyl [4]\n    cyl data               safe_mod         results\n  &lt;int&gt; &lt;list&gt;             &lt;list&gt;           &lt;list&gt; \n1     4 &lt;tibble [81 × 10]&gt; &lt;named list [2]&gt; &lt;lm&gt;   \n2     6 &lt;tibble [79 × 10]&gt; &lt;named list [2]&gt; &lt;lm&gt;   \n3     8 &lt;tibble [70 × 10]&gt; &lt;named list [2]&gt; &lt;lm&gt;   \n4     5 &lt;tibble [4 × 10]&gt;  &lt;named list [2]&gt; &lt;NULL&gt;"
+  },
+  {
+    "objectID": "slides/w5.html#pull-results-that-worked-1",
+    "href": "slides/w5.html#pull-results-that-worked-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Pull results that worked",
+    "text": "Pull results that worked\nNow we can broom::tidy() or similar\n\nsafe_models |&gt; \n  mutate(results = map(safe_mod, \"result\"),\n         tidied = map(results, broom::tidy)) |&gt; \n  select(cyl, tidied) |&gt; \n  unnest(tidied)\n\n\n\n# A tibble: 11 × 6\n# Groups:   cyl [3]\n     cyl term        estimate std.error statistic  p.value\n   &lt;int&gt; &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1     4 (Intercept)   37.4       3.54     10.6   1.05e-16\n 2     4 displ         -5.29      1.44     -3.68  4.24e- 4\n 3     4 drvf           3.88      0.997     3.89  2.07e- 4\n 4     6 (Intercept)   28.0       2.35     11.9   5.72e-19\n 5     6 displ         -2.33      0.637    -3.66  4.65e- 4\n 6     6 drvf           4.57      0.601     7.60  6.79e-11\n 7     6 drvr           6.38      1.23      5.19  1.71e- 6\n 8     8 (Intercept)   14.8       2.89      5.13  2.71e- 6\n 9     8 displ          0.306     0.572     0.535 5.94e- 1\n10     8 drvf           8.56      2.68      3.19  2.16e- 3\n11     8 drvr           3.71      0.732     5.07  3.47e- 6"
+  },
+  {
+    "objectID": "slides/w5.html#when-else-might-we-use-this",
+    "href": "slides/w5.html#when-else-might-we-use-this",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "When else might we use this?",
+    "text": "When else might we use this?\nHow about web scraping - pages change and URLs don’t always work"
+  },
+  {
+    "objectID": "slides/w5.html#example-3",
+    "href": "slides/w5.html#example-3",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Example",
+    "text": "Example\n\nlibrary(rvest)\nlinks &lt;- list(\n  \"https://en.wikipedia.org/wiki/FC_Barcelona\",\n  \"https://nosuchpage\",\n  \"https://en.wikipedia.org/wiki/Rome\"\n)\n\npages &lt;- map(links, ~{\n  Sys.sleep(0.1)\n  read_html(.x)\n})\n\nError in `map()`:\nℹ In index: 2.\nCaused by error in `open.connection()`:\n! cannot open the connection"
+  },
+  {
+    "objectID": "slides/w5.html#the-problem",
+    "href": "slides/w5.html#the-problem",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "The problem",
+    "text": "The problem\nI can’t connect to https://nosuchpage because it doesn’t exist\n\nBUT\n\n\nThat also means I can’t get any of my links because one page errored\nImagine it was 1 in 1,000 instead of 1 in 3!"
+  },
+  {
+    "objectID": "slides/w5.html#safely-to-the-rescue",
+    "href": "slides/w5.html#safely-to-the-rescue",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "safely() to the rescue",
+    "text": "safely() to the rescue\nSafe version\n\nsafe_read_html &lt;- safely(read_html)\npages &lt;- map(links, ~{\n  Sys.sleep(0.1)\n  safe_read_html(.x)\n})\nstr(pages)\n\n\n\nList of 3\n $ :List of 2\n  ..$ result:List of 2\n  .. ..$ node:&lt;externalptr&gt; \n  .. ..$ doc :&lt;externalptr&gt; \n  .. ..- attr(*, \"class\")= chr [1:2] \"xml_document\" \"xml_node\"\n  ..$ error : NULL\n $ :List of 2\n  ..$ result: NULL\n  ..$ error :List of 2\n  .. ..$ message: chr \"cannot open the connection\"\n  .. ..$ call   : language open.connection(x, \"rb\")\n  .. ..- attr(*, \"class\")= chr [1:3] \"simpleError\" \"error\" \"condition\"\n $ :List of 2\n  ..$ result:List of 2\n  .. ..$ node:&lt;externalptr&gt; \n  .. ..$ doc :&lt;externalptr&gt; \n  .. ..- attr(*, \"class\")= chr [1:2] \"xml_document\" \"xml_node\"\n  ..$ error : NULL"
+  },
+  {
+    "objectID": "slides/w5.html#non-results",
+    "href": "slides/w5.html#non-results",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Non-results",
+    "text": "Non-results\nIn a real example, we’d probably want to double-check the pages where we got no results\n\nerrors &lt;- map_lgl(pages, ~!is.null(.x$error))\nlinks[errors]\n\n[[1]]\n[1] \"https://nosuchpage\""
+  },
+  {
+    "objectID": "slides/w5.html#reduce",
+    "href": "slides/w5.html#reduce",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "reduce()",
+    "text": "reduce()\nReducing a list\n\nThe map() family of functions will always return a vector the same length as the input\nreduce() will collapse or reduce the list to a single element"
+  },
+  {
+    "objectID": "slides/w5.html#example-4",
+    "href": "slides/w5.html#example-4",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Example",
+    "text": "Example\n\nl &lt;- list(\n  c(1, 3),\n  c(1, 5, 7, 9),\n  3,\n  c(4, 8, 12, 2)\n)\n\n\n\n\nmap()\n\nmap(l, sum)\n\n[[1]]\n[1] 4\n\n[[2]]\n[1] 22\n\n[[3]]\n[1] 3\n\n[[4]]\n[1] 26\n\n\n\nreduce()\n\nreduce(l, sum)\n\n[1] 55"
+  },
+  {
+    "objectID": "slides/w5.html#whats-going-on",
+    "href": "slides/w5.html#whats-going-on",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "What’s going on?",
+    "text": "What’s going on?\nThe code reduce(l, sum) is the same as\n\nsum(l[[4]], sum(l[[3]], sum(l[[1]], l[[2]])))\n\n[1] 55\n\n\nOr slightly differently\n\nfirst_sum &lt;- sum(l[[1]], l[[2]])\nsecond_sum &lt;- sum(first_sum, l[[3]])\nfinal_sum &lt;- sum(second_sum, l[[4]])\nfinal_sum\n\n[1] 55"
+  },
+  {
+    "objectID": "slides/w5.html#why-might-you-use-this",
+    "href": "slides/w5.html#why-might-you-use-this",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Why might you use this?",
+    "text": "Why might you use this?\nWhat if you had a list of data frames like this\n\n(l_df &lt;- list(\n  tibble(id = 1:3, score = rnorm(3)),\n  tibble(id = 1:5, treatment = rbinom(5, 1, .5)),\n  tibble(id = c(1, 3, 5, 7), other_thing = rnorm(4))\n))\n\n\n\n[[1]]\n# A tibble: 3 × 2\n     id  score\n  &lt;int&gt;  &lt;dbl&gt;\n1     1  0.668\n2     2 -0.386\n3     3  1.62 \n\n[[2]]\n# A tibble: 5 × 2\n     id treatment\n  &lt;int&gt;     &lt;int&gt;\n1     1         0\n2     2         0\n3     3         0\n4     4         1\n5     5         0\n\n[[3]]\n# A tibble: 4 × 2\n     id other_thing\n  &lt;dbl&gt;       &lt;dbl&gt;\n1     1      -0.218\n2     3       0.295\n3     5       1.59 \n4     7       0.368"
+  },
+  {
+    "objectID": "slides/w5.html#why-might-you-use-this-1",
+    "href": "slides/w5.html#why-might-you-use-this-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Why might you use this?",
+    "text": "Why might you use this?\nWe can join these all together with a single loop\n\nreduce(l_df, full_join)\n\n\n\n# A tibble: 6 × 4\n     id  score treatment other_thing\n  &lt;dbl&gt;  &lt;dbl&gt;     &lt;int&gt;       &lt;dbl&gt;\n1     1  0.668         0      -0.218\n2     2 -0.386         0      NA    \n3     3  1.62          0       0.295\n4     4 NA             1      NA    \n5     5 NA             0       1.59 \n6     7 NA            NA       0.368"
+  },
+  {
+    "objectID": "slides/w5.html#caution",
+    "href": "slides/w5.html#caution",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Caution",
+    "text": "Caution\nYou have to be careful on directionality\n\n\nleft_join()\n\nreduce(l_df, left_join)\n\n# A tibble: 3 × 4\n     id  score treatment other_thing\n  &lt;dbl&gt;  &lt;dbl&gt;     &lt;int&gt;       &lt;dbl&gt;\n1     1  0.668         0      -0.218\n2     2 -0.386         0      NA    \n3     3  1.62          0       0.295\n\n\n\nright_join()\n\nreduce(l_df, right_join)\n\n# A tibble: 4 × 4\n     id  score treatment other_thing\n  &lt;dbl&gt;  &lt;dbl&gt;     &lt;int&gt;       &lt;dbl&gt;\n1     1  0.668         0      -0.218\n2     3  1.62          0       0.295\n3     5 NA             0       1.59 \n4     7 NA            NA       0.368"
+  },
+  {
+    "objectID": "slides/w5.html#another-example",
+    "href": "slides/w5.html#another-example",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Another example",
+    "text": "Another example\nIf you have the same columns, you probably just want to bind_rows()\n\n(l_df2 &lt;- list(\n  tibble(id = 1:3, scid = 1, score = rnorm(3)),\n  tibble(id = 1:5, scid = 2, score = rnorm(5)),\n  tibble(id = c(1, 3, 5, 7), scid = 3, score = rnorm(4))\n))\n\n[[1]]\n# A tibble: 3 × 3\n     id  scid    score\n  &lt;int&gt; &lt;dbl&gt;    &lt;dbl&gt;\n1     1     1  0.00148\n2     2     1 -0.231  \n3     3     1  1.15   \n\n[[2]]\n# A tibble: 5 × 3\n     id  scid  score\n  &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt;\n1     1     2 -0.982\n2     2     2 -0.194\n3     3     2 -1.15 \n4     4     2  1.79 \n5     5     2 -1.45 \n\n[[3]]\n# A tibble: 4 × 3\n     id  scid   score\n  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;\n1     1     3  0.0523\n2     3     3  1.01  \n3     5     3  0.0133\n4     7     3 -1.98  \n\n\n\n\nreduce(l_df2, bind_rows)\n\n# A tibble: 12 × 3\n      id  scid    score\n   &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;\n 1     1     1  0.00148\n 2     2     1 -0.231  \n 3     3     1  1.15   \n 4     1     2 -0.982  \n 5     2     2 -0.194  \n 6     3     2 -1.15   \n 7     4     2  1.79   \n 8     5     2 -1.45   \n 9     1     3  0.0523 \n10     3     3  1.01   \n11     5     3  0.0133 \n12     7     3 -1.98"
+  },
+  {
+    "objectID": "slides/w5.html#non-loop-version",
+    "href": "slides/w5.html#non-loop-version",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Non-loop version",
+    "text": "Non-loop version\nLuckily, the prior slide has become obsolete, because bind_rows() will do the list reduction for us\n\nbind_rows(l_df2)\n\n# A tibble: 12 × 3\n      id  scid    score\n   &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;\n 1     1     1  0.00148\n 2     2     1 -0.231  \n 3     3     1  1.15   \n 4     1     2 -0.982  \n 5     2     2 -0.194  \n 6     3     2 -1.15   \n 7     4     2  1.79   \n 8     5     2 -1.45   \n 9     1     3  0.0523 \n10     3     3  1.01   \n11     5     3  0.0133 \n12     7     3 -1.98"
+  },
+  {
+    "objectID": "slides/w5.html#another-example-1",
+    "href": "slides/w5.html#another-example-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Another example",
+    "text": "Another example\nThis is a poor example, but there are use cases like this\n\nlibrary(palmerpenguins)\nmap(penguins, as.character) |&gt; \n  reduce(paste)\n\n  [1] \"Adelie Torgersen 39.1 18.7 181 3750 male 2007\"  \n  [2] \"Adelie Torgersen 39.5 17.4 186 3800 female 2007\"\n  [3] \"Adelie Torgersen 40.3 18 195 3250 female 2007\"  \n  [4] \"Adelie Torgersen NA NA NA NA NA 2007\"           \n  [5] \"Adelie Torgersen 36.7 19.3 193 3450 female 2007\"\n  [6] \"Adelie Torgersen 39.3 20.6 190 3650 male 2007\"  \n  [7] \"Adelie Torgersen 38.9 17.8 181 3625 female 2007\"\n  [8] \"Adelie Torgersen 39.2 19.6 195 4675 male 2007\"  \n  [9] \"Adelie Torgersen 34.1 18.1 193 3475 NA 2007\"    \n [10] \"Adelie Torgersen 42 20.2 190 4250 NA 2007\"      \n [11] \"Adelie Torgersen 37.8 17.1 186 3300 NA 2007\"    \n [12] \"Adelie Torgersen 37.8 17.3 180 3700 NA 2007\"    \n [13] \"Adelie Torgersen 41.1 17.6 182 3200 female 2007\"\n [14] \"Adelie Torgersen 38.6 21.2 191 3800 male 2007\"  \n [15] \"Adelie Torgersen 34.6 21.1 198 4400 male 2007\"  \n [16] \"Adelie Torgersen 36.6 17.8 185 3700 female 2007\"\n [17] \"Adelie Torgersen 38.7 19 195 3450 female 2007\"  \n [18] \"Adelie Torgersen 42.5 20.7 197 4500 male 2007\"  \n [19] \"Adelie Torgersen 34.4 18.4 184 3325 female 2007\"\n [20] \"Adelie Torgersen 46 21.5 194 4200 male 2007\"    \n [21] \"Adelie Biscoe 37.8 18.3 174 3400 female 2007\"   \n [22] \"Adelie Biscoe 37.7 18.7 180 3600 male 2007\"     \n [23] \"Adelie Biscoe 35.9 19.2 189 3800 female 2007\"   \n [24] \"Adelie Biscoe 38.2 18.1 185 3950 male 2007\"     \n [25] \"Adelie Biscoe 38.8 17.2 180 3800 male 2007\"     \n [26] \"Adelie Biscoe 35.3 18.9 187 3800 female 2007\"   \n [27] \"Adelie Biscoe 40.6 18.6 183 3550 male 2007\"     \n [28] \"Adelie Biscoe 40.5 17.9 187 3200 female 2007\"   \n [29] \"Adelie Biscoe 37.9 18.6 172 3150 female 2007\"   \n [30] \"Adelie Biscoe 40.5 18.9 180 3950 male 2007\"     \n [31] \"Adelie Dream 39.5 16.7 178 3250 female 2007\"    \n [32] \"Adelie Dream 37.2 18.1 178 3900 male 2007\"      \n [33] \"Adelie Dream 39.5 17.8 188 3300 female 2007\"    \n [34] \"Adelie Dream 40.9 18.9 184 3900 male 2007\"      \n [35] \"Adelie Dream 36.4 17 195 3325 female 2007\"      \n [36] \"Adelie Dream 39.2 21.1 196 4150 male 2007\"      \n [37] \"Adelie Dream 38.8 20 190 3950 male 2007\"        \n [38] \"Adelie Dream 42.2 18.5 180 3550 female 2007\"    \n [39] \"Adelie Dream 37.6 19.3 181 3300 female 2007\"    \n [40] \"Adelie Dream 39.8 19.1 184 4650 male 2007\"      \n [41] \"Adelie Dream 36.5 18 182 3150 female 2007\"      \n [42] \"Adelie Dream 40.8 18.4 195 3900 male 2007\"      \n [43] \"Adelie Dream 36 18.5 186 3100 female 2007\"      \n [44] \"Adelie Dream 44.1 19.7 196 4400 male 2007\"      \n [45] \"Adelie Dream 37 16.9 185 3000 female 2007\"      \n [46] \"Adelie Dream 39.6 18.8 190 4600 male 2007\"      \n [47] \"Adelie Dream 41.1 19 182 3425 male 2007\"        \n [48] \"Adelie Dream 37.5 18.9 179 2975 NA 2007\"        \n [49] \"Adelie Dream 36 17.9 190 3450 female 2007\"      \n [50] \"Adelie Dream 42.3 21.2 191 4150 male 2007\"      \n [51] \"Adelie Biscoe 39.6 17.7 186 3500 female 2008\"   \n [52] \"Adelie Biscoe 40.1 18.9 188 4300 male 2008\"     \n [53] \"Adelie Biscoe 35 17.9 190 3450 female 2008\"     \n [54] \"Adelie Biscoe 42 19.5 200 4050 male 2008\"       \n [55] \"Adelie Biscoe 34.5 18.1 187 2900 female 2008\"   \n [56] \"Adelie Biscoe 41.4 18.6 191 3700 male 2008\"     \n [57] \"Adelie Biscoe 39 17.5 186 3550 female 2008\"     \n [58] \"Adelie Biscoe 40.6 18.8 193 3800 male 2008\"     \n [59] \"Adelie Biscoe 36.5 16.6 181 2850 female 2008\"   \n [60] \"Adelie Biscoe 37.6 19.1 194 3750 male 2008\"     \n [61] \"Adelie Biscoe 35.7 16.9 185 3150 female 2008\"   \n [62] \"Adelie Biscoe 41.3 21.1 195 4400 male 2008\"     \n [63] \"Adelie Biscoe 37.6 17 185 3600 female 2008\"     \n [64] \"Adelie Biscoe 41.1 18.2 192 4050 male 2008\"     \n [65] \"Adelie Biscoe 36.4 17.1 184 2850 female 2008\"   \n [66] \"Adelie Biscoe 41.6 18 192 3950 male 2008\"       \n [67] \"Adelie Biscoe 35.5 16.2 195 3350 female 2008\"   \n [68] \"Adelie Biscoe 41.1 19.1 188 4100 male 2008\"     \n [69] \"Adelie Torgersen 35.9 16.6 190 3050 female 2008\"\n [70] \"Adelie Torgersen 41.8 19.4 198 4450 male 2008\"  \n [71] \"Adelie Torgersen 33.5 19 190 3600 female 2008\"  \n [72] \"Adelie Torgersen 39.7 18.4 190 3900 male 2008\"  \n [73] \"Adelie Torgersen 39.6 17.2 196 3550 female 2008\"\n [74] \"Adelie Torgersen 45.8 18.9 197 4150 male 2008\"  \n [75] \"Adelie Torgersen 35.5 17.5 190 3700 female 2008\"\n [76] \"Adelie Torgersen 42.8 18.5 195 4250 male 2008\"  \n [77] \"Adelie Torgersen 40.9 16.8 191 3700 female 2008\"\n [78] \"Adelie Torgersen 37.2 19.4 184 3900 male 2008\"  \n [79] \"Adelie Torgersen 36.2 16.1 187 3550 female 2008\"\n [80] \"Adelie Torgersen 42.1 19.1 195 4000 male 2008\"  \n [81] \"Adelie Torgersen 34.6 17.2 189 3200 female 2008\"\n [82] \"Adelie Torgersen 42.9 17.6 196 4700 male 2008\"  \n [83] \"Adelie Torgersen 36.7 18.8 187 3800 female 2008\"\n [84] \"Adelie Torgersen 35.1 19.4 193 4200 male 2008\"  \n [85] \"Adelie Dream 37.3 17.8 191 3350 female 2008\"    \n [86] \"Adelie Dream 41.3 20.3 194 3550 male 2008\"      \n [87] \"Adelie Dream 36.3 19.5 190 3800 male 2008\"      \n [88] \"Adelie Dream 36.9 18.6 189 3500 female 2008\"    \n [89] \"Adelie Dream 38.3 19.2 189 3950 male 2008\"      \n [90] \"Adelie Dream 38.9 18.8 190 3600 female 2008\"    \n [91] \"Adelie Dream 35.7 18 202 3550 female 2008\"      \n [92] \"Adelie Dream 41.1 18.1 205 4300 male 2008\"      \n [93] \"Adelie Dream 34 17.1 185 3400 female 2008\"      \n [94] \"Adelie Dream 39.6 18.1 186 4450 male 2008\"      \n [95] \"Adelie Dream 36.2 17.3 187 3300 female 2008\"    \n [96] \"Adelie Dream 40.8 18.9 208 4300 male 2008\"      \n [97] \"Adelie Dream 38.1 18.6 190 3700 female 2008\"    \n [98] \"Adelie Dream 40.3 18.5 196 4350 male 2008\"      \n [99] \"Adelie Dream 33.1 16.1 178 2900 female 2008\"    \n[100] \"Adelie Dream 43.2 18.5 192 4100 male 2008\"      \n[101] \"Adelie Biscoe 35 17.9 192 3725 female 2009\"     \n[102] \"Adelie Biscoe 41 20 203 4725 male 2009\"         \n[103] \"Adelie Biscoe 37.7 16 183 3075 female 2009\"     \n[104] \"Adelie Biscoe 37.8 20 190 4250 male 2009\"       \n[105] \"Adelie Biscoe 37.9 18.6 193 2925 female 2009\"   \n[106] \"Adelie Biscoe 39.7 18.9 184 3550 male 2009\"     \n[107] \"Adelie Biscoe 38.6 17.2 199 3750 female 2009\"   \n[108] \"Adelie Biscoe 38.2 20 190 3900 male 2009\"       \n[109] \"Adelie Biscoe 38.1 17 181 3175 female 2009\"     \n[110] \"Adelie Biscoe 43.2 19 197 4775 male 2009\"       \n[111] \"Adelie Biscoe 38.1 16.5 198 3825 female 2009\"   \n[112] \"Adelie Biscoe 45.6 20.3 191 4600 male 2009\"     \n[113] \"Adelie Biscoe 39.7 17.7 193 3200 female 2009\"   \n[114] \"Adelie Biscoe 42.2 19.5 197 4275 male 2009\"     \n[115] \"Adelie Biscoe 39.6 20.7 191 3900 female 2009\"   \n[116] \"Adelie Biscoe 42.7 18.3 196 4075 male 2009\"     \n[117] \"Adelie Torgersen 38.6 17 188 2900 female 2009\"  \n[118] \"Adelie Torgersen 37.3 20.5 199 3775 male 2009\"  \n[119] \"Adelie Torgersen 35.7 17 189 3350 female 2009\"  \n[120] \"Adelie Torgersen 41.1 18.6 189 3325 male 2009\"  \n[121] \"Adelie Torgersen 36.2 17.2 187 3150 female 2009\"\n[122] \"Adelie Torgersen 37.7 19.8 198 3500 male 2009\"  \n[123] \"Adelie Torgersen 40.2 17 176 3450 female 2009\"  \n[124] \"Adelie Torgersen 41.4 18.5 202 3875 male 2009\"  \n[125] \"Adelie Torgersen 35.2 15.9 186 3050 female 2009\"\n[126] \"Adelie Torgersen 40.6 19 199 4000 male 2009\"    \n[127] \"Adelie Torgersen 38.8 17.6 191 3275 female 2009\"\n[128] \"Adelie Torgersen 41.5 18.3 195 4300 male 2009\"  \n[129] \"Adelie Torgersen 39 17.1 191 3050 female 2009\"  \n[130] \"Adelie Torgersen 44.1 18 210 4000 male 2009\"    \n[131] \"Adelie Torgersen 38.5 17.9 190 3325 female 2009\"\n[132] \"Adelie Torgersen 43.1 19.2 197 3500 male 2009\"  \n[133] \"Adelie Dream 36.8 18.5 193 3500 female 2009\"    \n[134] \"Adelie Dream 37.5 18.5 199 4475 male 2009\"      \n[135] \"Adelie Dream 38.1 17.6 187 3425 female 2009\"    \n[136] \"Adelie Dream 41.1 17.5 190 3900 male 2009\"      \n[137] \"Adelie Dream 35.6 17.5 191 3175 female 2009\"    \n[138] \"Adelie Dream 40.2 20.1 200 3975 male 2009\"      \n[139] \"Adelie Dream 37 16.5 185 3400 female 2009\"      \n[140] \"Adelie Dream 39.7 17.9 193 4250 male 2009\"      \n[141] \"Adelie Dream 40.2 17.1 193 3400 female 2009\"    \n[142] \"Adelie Dream 40.6 17.2 187 3475 male 2009\"      \n[143] \"Adelie Dream 32.1 15.5 188 3050 female 2009\"    \n[144] \"Adelie Dream 40.7 17 190 3725 male 2009\"        \n[145] \"Adelie Dream 37.3 16.8 192 3000 female 2009\"    \n[146] \"Adelie Dream 39 18.7 185 3650 male 2009\"        \n[147] \"Adelie Dream 39.2 18.6 190 4250 male 2009\"      \n[148] \"Adelie Dream 36.6 18.4 184 3475 female 2009\"    \n[149] \"Adelie Dream 36 17.8 195 3450 female 2009\"      \n[150] \"Adelie Dream 37.8 18.1 193 3750 male 2009\"      \n[151] \"Adelie Dream 36 17.1 187 3700 female 2009\"      \n[152] \"Adelie Dream 41.5 18.5 201 4000 male 2009\"      \n[153] \"Gentoo Biscoe 46.1 13.2 211 4500 female 2007\"   \n[154] \"Gentoo Biscoe 50 16.3 230 5700 male 2007\"       \n[155] \"Gentoo Biscoe 48.7 14.1 210 4450 female 2007\"   \n[156] \"Gentoo Biscoe 50 15.2 218 5700 male 2007\"       \n[157] \"Gentoo Biscoe 47.6 14.5 215 5400 male 2007\"     \n[158] \"Gentoo Biscoe 46.5 13.5 210 4550 female 2007\"   \n[159] \"Gentoo Biscoe 45.4 14.6 211 4800 female 2007\"   \n[160] \"Gentoo Biscoe 46.7 15.3 219 5200 male 2007\"     \n[161] \"Gentoo Biscoe 43.3 13.4 209 4400 female 2007\"   \n[162] \"Gentoo Biscoe 46.8 15.4 215 5150 male 2007\"     \n[163] \"Gentoo Biscoe 40.9 13.7 214 4650 female 2007\"   \n[164] \"Gentoo Biscoe 49 16.1 216 5550 male 2007\"       \n[165] \"Gentoo Biscoe 45.5 13.7 214 4650 female 2007\"   \n[166] \"Gentoo Biscoe 48.4 14.6 213 5850 male 2007\"     \n[167] \"Gentoo Biscoe 45.8 14.6 210 4200 female 2007\"   \n[168] \"Gentoo Biscoe 49.3 15.7 217 5850 male 2007\"     \n[169] \"Gentoo Biscoe 42 13.5 210 4150 female 2007\"     \n[170] \"Gentoo Biscoe 49.2 15.2 221 6300 male 2007\"     \n[171] \"Gentoo Biscoe 46.2 14.5 209 4800 female 2007\"   \n[172] \"Gentoo Biscoe 48.7 15.1 222 5350 male 2007\"     \n[173] \"Gentoo Biscoe 50.2 14.3 218 5700 male 2007\"     \n[174] \"Gentoo Biscoe 45.1 14.5 215 5000 female 2007\"   \n[175] \"Gentoo Biscoe 46.5 14.5 213 4400 female 2007\"   \n[176] \"Gentoo Biscoe 46.3 15.8 215 5050 male 2007\"     \n[177] \"Gentoo Biscoe 42.9 13.1 215 5000 female 2007\"   \n[178] \"Gentoo Biscoe 46.1 15.1 215 5100 male 2007\"     \n[179] \"Gentoo Biscoe 44.5 14.3 216 4100 NA 2007\"       \n[180] \"Gentoo Biscoe 47.8 15 215 5650 male 2007\"       \n[181] \"Gentoo Biscoe 48.2 14.3 210 4600 female 2007\"   \n[182] \"Gentoo Biscoe 50 15.3 220 5550 male 2007\"       \n[183] \"Gentoo Biscoe 47.3 15.3 222 5250 male 2007\"     \n[184] \"Gentoo Biscoe 42.8 14.2 209 4700 female 2007\"   \n[185] \"Gentoo Biscoe 45.1 14.5 207 5050 female 2007\"   \n[186] \"Gentoo Biscoe 59.6 17 230 6050 male 2007\"       \n[187] \"Gentoo Biscoe 49.1 14.8 220 5150 female 2008\"   \n[188] \"Gentoo Biscoe 48.4 16.3 220 5400 male 2008\"     \n[189] \"Gentoo Biscoe 42.6 13.7 213 4950 female 2008\"   \n[190] \"Gentoo Biscoe 44.4 17.3 219 5250 male 2008\"     \n[191] \"Gentoo Biscoe 44 13.6 208 4350 female 2008\"     \n[192] \"Gentoo Biscoe 48.7 15.7 208 5350 male 2008\"     \n[193] \"Gentoo Biscoe 42.7 13.7 208 3950 female 2008\"   \n[194] \"Gentoo Biscoe 49.6 16 225 5700 male 2008\"       \n[195] \"Gentoo Biscoe 45.3 13.7 210 4300 female 2008\"   \n[196] \"Gentoo Biscoe 49.6 15 216 4750 male 2008\"       \n[197] \"Gentoo Biscoe 50.5 15.9 222 5550 male 2008\"     \n[198] \"Gentoo Biscoe 43.6 13.9 217 4900 female 2008\"   \n[199] \"Gentoo Biscoe 45.5 13.9 210 4200 female 2008\"   \n[200] \"Gentoo Biscoe 50.5 15.9 225 5400 male 2008\"     \n[201] \"Gentoo Biscoe 44.9 13.3 213 5100 female 2008\"   \n[202] \"Gentoo Biscoe 45.2 15.8 215 5300 male 2008\"     \n[203] \"Gentoo Biscoe 46.6 14.2 210 4850 female 2008\"   \n[204] \"Gentoo Biscoe 48.5 14.1 220 5300 male 2008\"     \n[205] \"Gentoo Biscoe 45.1 14.4 210 4400 female 2008\"   \n[206] \"Gentoo Biscoe 50.1 15 225 5000 male 2008\"       \n[207] \"Gentoo Biscoe 46.5 14.4 217 4900 female 2008\"   \n[208] \"Gentoo Biscoe 45 15.4 220 5050 male 2008\"       \n[209] \"Gentoo Biscoe 43.8 13.9 208 4300 female 2008\"   \n[210] \"Gentoo Biscoe 45.5 15 220 5000 male 2008\"       \n[211] \"Gentoo Biscoe 43.2 14.5 208 4450 female 2008\"   \n[212] \"Gentoo Biscoe 50.4 15.3 224 5550 male 2008\"     \n[213] \"Gentoo Biscoe 45.3 13.8 208 4200 female 2008\"   \n[214] \"Gentoo Biscoe 46.2 14.9 221 5300 male 2008\"     \n[215] \"Gentoo Biscoe 45.7 13.9 214 4400 female 2008\"   \n[216] \"Gentoo Biscoe 54.3 15.7 231 5650 male 2008\"     \n[217] \"Gentoo Biscoe 45.8 14.2 219 4700 female 2008\"   \n[218] \"Gentoo Biscoe 49.8 16.8 230 5700 male 2008\"     \n[219] \"Gentoo Biscoe 46.2 14.4 214 4650 NA 2008\"       \n[220] \"Gentoo Biscoe 49.5 16.2 229 5800 male 2008\"     \n[221] \"Gentoo Biscoe 43.5 14.2 220 4700 female 2008\"   \n[222] \"Gentoo Biscoe 50.7 15 223 5550 male 2008\"       \n[223] \"Gentoo Biscoe 47.7 15 216 4750 female 2008\"     \n[224] \"Gentoo Biscoe 46.4 15.6 221 5000 male 2008\"     \n[225] \"Gentoo Biscoe 48.2 15.6 221 5100 male 2008\"     \n[226] \"Gentoo Biscoe 46.5 14.8 217 5200 female 2008\"   \n[227] \"Gentoo Biscoe 46.4 15 216 4700 female 2008\"     \n[228] \"Gentoo Biscoe 48.6 16 230 5800 male 2008\"       \n[229] \"Gentoo Biscoe 47.5 14.2 209 4600 female 2008\"   \n[230] \"Gentoo Biscoe 51.1 16.3 220 6000 male 2008\"     \n[231] \"Gentoo Biscoe 45.2 13.8 215 4750 female 2008\"   \n[232] \"Gentoo Biscoe 45.2 16.4 223 5950 male 2008\"     \n[233] \"Gentoo Biscoe 49.1 14.5 212 4625 female 2009\"   \n[234] \"Gentoo Biscoe 52.5 15.6 221 5450 male 2009\"     \n[235] \"Gentoo Biscoe 47.4 14.6 212 4725 female 2009\"   \n[236] \"Gentoo Biscoe 50 15.9 224 5350 male 2009\"       \n[237] \"Gentoo Biscoe 44.9 13.8 212 4750 female 2009\"   \n[238] \"Gentoo Biscoe 50.8 17.3 228 5600 male 2009\"     \n[239] \"Gentoo Biscoe 43.4 14.4 218 4600 female 2009\"   \n[240] \"Gentoo Biscoe 51.3 14.2 218 5300 male 2009\"     \n[241] \"Gentoo Biscoe 47.5 14 212 4875 female 2009\"     \n[242] \"Gentoo Biscoe 52.1 17 230 5550 male 2009\"       \n[243] \"Gentoo Biscoe 47.5 15 218 4950 female 2009\"     \n[244] \"Gentoo Biscoe 52.2 17.1 228 5400 male 2009\"     \n[245] \"Gentoo Biscoe 45.5 14.5 212 4750 female 2009\"   \n[246] \"Gentoo Biscoe 49.5 16.1 224 5650 male 2009\"     \n[247] \"Gentoo Biscoe 44.5 14.7 214 4850 female 2009\"   \n[248] \"Gentoo Biscoe 50.8 15.7 226 5200 male 2009\"     \n[249] \"Gentoo Biscoe 49.4 15.8 216 4925 male 2009\"     \n[250] \"Gentoo Biscoe 46.9 14.6 222 4875 female 2009\"   \n[251] \"Gentoo Biscoe 48.4 14.4 203 4625 female 2009\"   \n[252] \"Gentoo Biscoe 51.1 16.5 225 5250 male 2009\"     \n[253] \"Gentoo Biscoe 48.5 15 219 4850 female 2009\"     \n[254] \"Gentoo Biscoe 55.9 17 228 5600 male 2009\"       \n[255] \"Gentoo Biscoe 47.2 15.5 215 4975 female 2009\"   \n[256] \"Gentoo Biscoe 49.1 15 228 5500 male 2009\"       \n[257] \"Gentoo Biscoe 47.3 13.8 216 4725 NA 2009\"       \n[258] \"Gentoo Biscoe 46.8 16.1 215 5500 male 2009\"     \n[259] \"Gentoo Biscoe 41.7 14.7 210 4700 female 2009\"   \n[260] \"Gentoo Biscoe 53.4 15.8 219 5500 male 2009\"     \n[261] \"Gentoo Biscoe 43.3 14 208 4575 female 2009\"     \n[262] \"Gentoo Biscoe 48.1 15.1 209 5500 male 2009\"     \n[263] \"Gentoo Biscoe 50.5 15.2 216 5000 female 2009\"   \n[264] \"Gentoo Biscoe 49.8 15.9 229 5950 male 2009\"     \n[265] \"Gentoo Biscoe 43.5 15.2 213 4650 female 2009\"   \n[266] \"Gentoo Biscoe 51.5 16.3 230 5500 male 2009\"     \n[267] \"Gentoo Biscoe 46.2 14.1 217 4375 female 2009\"   \n[268] \"Gentoo Biscoe 55.1 16 230 5850 male 2009\"       \n[269] \"Gentoo Biscoe 44.5 15.7 217 4875 NA 2009\"       \n[270] \"Gentoo Biscoe 48.8 16.2 222 6000 male 2009\"     \n[271] \"Gentoo Biscoe 47.2 13.7 214 4925 female 2009\"   \n[272] \"Gentoo Biscoe NA NA NA NA NA 2009\"              \n[273] \"Gentoo Biscoe 46.8 14.3 215 4850 female 2009\"   \n[274] \"Gentoo Biscoe 50.4 15.7 222 5750 male 2009\"     \n[275] \"Gentoo Biscoe 45.2 14.8 212 5200 female 2009\"   \n[276] \"Gentoo Biscoe 49.9 16.1 213 5400 male 2009\"     \n[277] \"Chinstrap Dream 46.5 17.9 192 3500 female 2007\" \n[278] \"Chinstrap Dream 50 19.5 196 3900 male 2007\"     \n[279] \"Chinstrap Dream 51.3 19.2 193 3650 male 2007\"   \n[280] \"Chinstrap Dream 45.4 18.7 188 3525 female 2007\" \n[281] \"Chinstrap Dream 52.7 19.8 197 3725 male 2007\"   \n[282] \"Chinstrap Dream 45.2 17.8 198 3950 female 2007\" \n[283] \"Chinstrap Dream 46.1 18.2 178 3250 female 2007\" \n[284] \"Chinstrap Dream 51.3 18.2 197 3750 male 2007\"   \n[285] \"Chinstrap Dream 46 18.9 195 4150 female 2007\"   \n[286] \"Chinstrap Dream 51.3 19.9 198 3700 male 2007\"   \n[287] \"Chinstrap Dream 46.6 17.8 193 3800 female 2007\" \n[288] \"Chinstrap Dream 51.7 20.3 194 3775 male 2007\"   \n[289] \"Chinstrap Dream 47 17.3 185 3700 female 2007\"   \n[290] \"Chinstrap Dream 52 18.1 201 4050 male 2007\"     \n[291] \"Chinstrap Dream 45.9 17.1 190 3575 female 2007\" \n[292] \"Chinstrap Dream 50.5 19.6 201 4050 male 2007\"   \n[293] \"Chinstrap Dream 50.3 20 197 3300 male 2007\"     \n[294] \"Chinstrap Dream 58 17.8 181 3700 female 2007\"   \n[295] \"Chinstrap Dream 46.4 18.6 190 3450 female 2007\" \n[296] \"Chinstrap Dream 49.2 18.2 195 4400 male 2007\"   \n[297] \"Chinstrap Dream 42.4 17.3 181 3600 female 2007\" \n[298] \"Chinstrap Dream 48.5 17.5 191 3400 male 2007\"   \n[299] \"Chinstrap Dream 43.2 16.6 187 2900 female 2007\" \n[300] \"Chinstrap Dream 50.6 19.4 193 3800 male 2007\"   \n[301] \"Chinstrap Dream 46.7 17.9 195 3300 female 2007\" \n[302] \"Chinstrap Dream 52 19 197 4150 male 2007\"       \n[303] \"Chinstrap Dream 50.5 18.4 200 3400 female 2008\" \n[304] \"Chinstrap Dream 49.5 19 200 3800 male 2008\"     \n[305] \"Chinstrap Dream 46.4 17.8 191 3700 female 2008\" \n[306] \"Chinstrap Dream 52.8 20 205 4550 male 2008\"     \n[307] \"Chinstrap Dream 40.9 16.6 187 3200 female 2008\" \n[308] \"Chinstrap Dream 54.2 20.8 201 4300 male 2008\"   \n[309] \"Chinstrap Dream 42.5 16.7 187 3350 female 2008\" \n[310] \"Chinstrap Dream 51 18.8 203 4100 male 2008\"     \n[311] \"Chinstrap Dream 49.7 18.6 195 3600 male 2008\"   \n[312] \"Chinstrap Dream 47.5 16.8 199 3900 female 2008\" \n[313] \"Chinstrap Dream 47.6 18.3 195 3850 female 2008\" \n[314] \"Chinstrap Dream 52 20.7 210 4800 male 2008\"     \n[315] \"Chinstrap Dream 46.9 16.6 192 2700 female 2008\" \n[316] \"Chinstrap Dream 53.5 19.9 205 4500 male 2008\"   \n[317] \"Chinstrap Dream 49 19.5 210 3950 male 2008\"     \n[318] \"Chinstrap Dream 46.2 17.5 187 3650 female 2008\" \n[319] \"Chinstrap Dream 50.9 19.1 196 3550 male 2008\"   \n[320] \"Chinstrap Dream 45.5 17 196 3500 female 2008\"   \n[321] \"Chinstrap Dream 50.9 17.9 196 3675 female 2009\" \n[322] \"Chinstrap Dream 50.8 18.5 201 4450 male 2009\"   \n[323] \"Chinstrap Dream 50.1 17.9 190 3400 female 2009\" \n[324] \"Chinstrap Dream 49 19.6 212 4300 male 2009\"     \n[325] \"Chinstrap Dream 51.5 18.7 187 3250 male 2009\"   \n[326] \"Chinstrap Dream 49.8 17.3 198 3675 female 2009\" \n[327] \"Chinstrap Dream 48.1 16.4 199 3325 female 2009\" \n[328] \"Chinstrap Dream 51.4 19 201 3950 male 2009\"     \n[329] \"Chinstrap Dream 45.7 17.3 193 3600 female 2009\" \n[330] \"Chinstrap Dream 50.7 19.7 203 4050 male 2009\"   \n[331] \"Chinstrap Dream 42.5 17.3 187 3350 female 2009\" \n[332] \"Chinstrap Dream 52.2 18.8 197 3450 male 2009\"   \n[333] \"Chinstrap Dream 45.2 16.6 191 3250 female 2009\" \n[334] \"Chinstrap Dream 49.3 19.9 203 4050 male 2009\"   \n[335] \"Chinstrap Dream 50.2 18.8 202 3800 male 2009\"   \n[336] \"Chinstrap Dream 45.6 19.4 194 3525 female 2009\" \n[337] \"Chinstrap Dream 51.9 19.5 206 3950 male 2009\"   \n[338] \"Chinstrap Dream 46.8 16.5 189 3650 female 2009\" \n[339] \"Chinstrap Dream 45.7 17 195 3650 female 2009\"   \n[340] \"Chinstrap Dream 55.8 19.8 207 4000 male 2009\"   \n[341] \"Chinstrap Dream 43.5 18.1 202 3400 female 2009\" \n[342] \"Chinstrap Dream 49.6 18.2 193 3775 male 2009\"   \n[343] \"Chinstrap Dream 50.8 19 210 4100 male 2009\"     \n[344] \"Chinstrap Dream 50.2 18.7 198 3775 female 2009\""
+  },
+  {
+    "objectID": "slides/w5.html#why-use-reduce",
+    "href": "slides/w5.html#why-use-reduce",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Why use reduce()",
+    "text": "Why use reduce()\n\nThis is one that is regularly used, but I have a hard time coming up with good examples for it\nThe {tidyverse} makes it less needed, generally\nStill a good “tool” to have"
+  },
+  {
+    "objectID": "slides/w5.html#wrap-up-1",
+    "href": "slides/w5.html#wrap-up-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Wrap up",
+    "text": "Wrap up\n\nLots more to {purrr} but we’ve covered a lot\nFunctional programming can really help your efficiency, and even if it slows you down initially, I’d recommend always striving toward it, because it will ultimately be a huge help"
+  },
+  {
+    "objectID": "slides/w5.html#lab",
+    "href": "slides/w5.html#lab",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Lab",
+    "text": "Lab\nIf there is any time left"
+  },
+  {
+    "objectID": "slides/w5.html#quick-review-nest_by",
+    "href": "slides/w5.html#quick-review-nest_by",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Quick Review: nest_by()",
+    "text": "Quick Review: nest_by()\ndplyr::nest_by()\n\ncreates a list column for each group, AND\nconverts it to a rowwise data frame\n\nThink of it as:\n\ngroup_by() |&gt; \n  summarise()\n\n…and storing the remaining columns as a nested tibble ready for rowwise() applications\nWe’ll come back to this"
+  },
+  {
+    "objectID": "slides/w5.html#iterating-over-two-vectors",
+    "href": "slides/w5.html#iterating-over-two-vectors",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "1) Iterating over two vectors",
+    "text": "1) Iterating over two vectors\n\nSimulate data from a normal distribution\n\nVary \\(n\\) from 5 to 150 by increments of 5\nFor each \\(n\\), vary \\(\\mu\\) (mean) from -2 to 2 by increments of 0.25\n\n\n\nHow do we get all combinations?\n\n\nexpand.grid()"
+  },
+  {
+    "objectID": "slides/w5.html#add-it-as-a-list-column",
+    "href": "slides/w5.html#add-it-as-a-list-column",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Add it as a list column!",
+    "text": "Add it as a list column!\nMore powerful (this is my preferred method)\n\nsim2 &lt;- conditions |&gt;\n  as_tibble() |&gt; # Not required, but definitely helpful\n  mutate(sim = map2(n, mu, ~rnorm(n = .x, mean = .y, sd = 10))) \nsim2\n\n\n\n# A tibble: 510 × 3\n       n    mu sim       \n   &lt;dbl&gt; &lt;dbl&gt; &lt;list&gt;    \n 1     5    -2 &lt;dbl [5]&gt; \n 2    10    -2 &lt;dbl [10]&gt;\n 3    15    -2 &lt;dbl [15]&gt;\n 4    20    -2 &lt;dbl [20]&gt;\n 5    25    -2 &lt;dbl [25]&gt;\n 6    30    -2 &lt;dbl [30]&gt;\n 7    35    -2 &lt;dbl [35]&gt;\n 8    40    -2 &lt;dbl [40]&gt;\n 9    45    -2 &lt;dbl [45]&gt;\n10    50    -2 &lt;dbl [50]&gt;\n# ℹ 500 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#remember",
+    "href": "slides/w5.html#remember",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Remember",
+    "text": "Remember\n\nmutate() expects each a vector of the same length as the data frame — one value per row\nrnorm(n, mu, sd = 10) returns a vector of length n, not a single value\nWithout list(), {dplyr} would try to unpack those n values directly into the column, causing a length mismatch error\nWrapping in list() boxes the vector into of length = 1\n\na list with one element\nso mutate() sees exactly one element per row: a length-1 list containing the vector\n\n\n\nWith list():\nrow 1 → list(c(0.3, -1.2, 0.8)) ✓ length 1\nrow 2 → list(c(0.1, 2.4, ...)) ✓ length 1\n\n\nWithout list():\nrow 1 → c(0.3, -1.2, 0.8) ✗ length 3 — doesn’t fit in one row"
+  },
+  {
+    "objectID": "slides/w5.html#plots-by-month-changing-the-title",
+    "href": "slides/w5.html#plots-by-month-changing-the-title",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "2) Plots by month, changing the title",
+    "text": "2) Plots by month, changing the title\nPlease follow along\nThe data\n\nlibrary(fivethirtyeight)\npulitzer\n\n# A tibble: 50 × 7\n   newspaper             circ2004 circ2013 pctchg_circ num_finals1990_2003\n   &lt;chr&gt;                    &lt;dbl&gt;    &lt;dbl&gt;       &lt;int&gt;               &lt;int&gt;\n 1 USA Today              2192098  1674306         -24                   1\n 2 Wall Street Journal    2101017  2378827          13                  30\n 3 New York Times         1119027  1865318          67                  55\n 4 Los Angeles Times       983727   653868         -34                  44\n 5 Washington Post         760034   474767         -38                  52\n 6 New York Daily News     712671   516165         -28                   4\n 7 New York Post           642844   500521         -22                   0\n 8 Chicago Tribune         603315   414930         -31                  23\n 9 San Jose Mercury News   558874   583998           4                   4\n10 Newsday                 553117   377744         -32                  12\n# ℹ 40 more rows\n# ℹ 2 more variables: num_finals2004_2014 &lt;int&gt;, num_finals1990_2014 &lt;int&gt;"
+  },
+  {
+    "objectID": "slides/w5.html#why-the-..-prefix",
+    "href": "slides/w5.html#why-the-..-prefix",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Why the .. prefix?",
+    "text": "Why the .. prefix?\n\n. or .x is used as the placeholder in map()\n.x and .y are the convention for map2()\nSo for multi-argument pmap(), the .. prefix is {purrr}’s convention for anonymous positional arguments\n\navoid confusion with other functions\nsignals “this is the \\(p^{th}\\) argument in the parallel list”"
+  },
+  {
+    "objectID": "slides/w5.html#first-add-column-for-total",
+    "href": "slides/w5.html#first-add-column-for-total",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "First add column for total",
+    "text": "First add column for total\n\npulitzer &lt;- pulitzer |&gt;\n    group_by(newspaper) |&gt;\n    mutate(tot = sum(n))\npulitzer\n\n# A tibble: 100 × 4\n# Groups:   newspaper [50]\n   newspaper           year_range     n   tot\n   &lt;chr&gt;               &lt;chr&gt;      &lt;int&gt; &lt;int&gt;\n 1 USA Today           1990-2003      1     2\n 2 USA Today           2004-2014      1     2\n 3 Wall Street Journal 1990-2003     30    50\n 4 Wall Street Journal 2004-2014     20    50\n 5 New York Times      1990-2003     55   117\n 6 New York Times      2004-2014     62   117\n 7 Los Angeles Times   1990-2003     44    85\n 8 Los Angeles Times   2004-2014     41    85\n 9 Washington Post     1990-2003     52   100\n10 Washington Post     2004-2014     48   100\n# ℹ 90 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#final_plots-code",
+    "href": "slides/w5.html#final_plots-code",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "final_plots code",
+    "text": "final_plots code\n\nlibrary(fivethirtyeight)\nlibrary(english)\nlibrary(tidyverse)\nlibrary(glue)\n\npulitzer &lt;- fivethirtyeight::pulitzer |&gt;\n  select(newspaper, starts_with(\"num\")) |&gt;\n  pivot_longer(\n    -newspaper,\n    names_to = \"year_range\",\n    values_to = \"n\",\n    names_prefix = \"num_finals\"\n  ) |&gt; \n  mutate(year_range = str_replace_all(year_range, \"_\", \"-\")) |&gt;\n  filter(year_range != \"1990-2014\") |&gt;\n  group_by(newspaper) |&gt;\n  mutate(tot = sum(n)) |&gt;\n  mutate(\n    label = glue(\n      \"{str_to_title(as.english(tot))} Total Pulitzer Awards\"\n    )\n  )\n\nby_newspaper_label &lt;- pulitzer |&gt;\n  group_by(newspaper, label) |&gt;\n  nest()\n\nfinal_plots &lt;- by_newspaper_label |&gt;\n  mutate(plots = pmap(list(newspaper, label, data), \n                      ~ggplot(..3, aes(n, year_range)) +\n                        geom_col(aes(fill = n)) +\n                        scale_fill_distiller(\n                          type = \"seq\",\n                          limits = c(0, max(pulitzer$n)),\n                          palette = \"BuPu\",\n                          direction = 1\n                        ) +\n                        scale_x_continuous(\n                          limits = c(0, max(pulitzer$n)),\n                          expand = c(0, 0)\n                        ) +\n                        guides(fill = \"none\") +\n                        labs(\n                          title = glue(\"Pulitzer Prize winners: {..1}\"),\n                          x = \"Total number of winners\",\n                          y = \"\",\n                          caption = ..2 \n                        )\n                      )\n  )"
+  },
+  {
+    "objectID": "slides/w5.html#map-vs-modify-3",
+    "href": "slides/w5.html#map-vs-modify-3",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "map() vs modify()",
+    "text": "map() vs modify()\n\nmap2(LETTERS[1:3], letters[1:3], paste0)\n\n[[1]]\n[1] \"Aa\"\n\n[[2]]\n[1] \"Bb\"\n\n[[3]]\n[1] \"Cc\"\n\nmodify2(LETTERS[1:3], letters[1:3], paste0)\n\n[1] \"Aa\" \"Bb\" \"Cc\""
+  },
+  {
+    "objectID": "slides/w5.html#whats-returned",
+    "href": "slides/w5.html#whats-returned",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "What’s returned?",
+    "text": "What’s returned?\n\nsafe_models$safe_mod[[1]]\n\n\n\n$result\n\nCall:\n.f(formula = ..1, data = ..2)\n\nCoefficients:\n(Intercept)        displ         drvf  \n     37.370       -5.289        3.882  \n\n\n$error\nNULL\n\n\n\n\nsafe_models$safe_mod[[4]]\n\n\n\n$result\nNULL\n\n$error\n&lt;simpleError in `contrasts&lt;-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]): contrasts can be applied only to factors with 2 or more levels&gt;"
+  },
+  {
+    "objectID": "slides/w5.html#before-next-class",
+    "href": "slides/w5.html#before-next-class",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Before next class",
+    "text": "Before next class\n\nReadings\n\nCreating Functions (SC)\nAdvR(2e) 6.1-6.4\n\nMidterm Test"
+  },
+  {
+    "objectID": "slides/w5.html#saving-plots",
+    "href": "slides/w5.html#saving-plots",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Saving plots",
+    "text": "Saving plots\n\n\nmap()\n\nmap2(final_plots3$path[1:4], final_plots3$plots[1:4], ggsave)\n\n[[1]]\n[1] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/usa-today.png\"\n\n[[2]]\n[1] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/wall-street-journal.png\"\n\n[[3]]\n[1] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/new-york-times.png\"\n\n[[4]]\n[1] \"C:/Users/jnese/Desktop/BRT/Teaching/3_Functional-Programming/functional-programming_spring-2026/plots/pulitzers/los-angeles-times.png\"\n\n\n\nwalk()\n\nwalk2(final_plots3$path[1:4], final_plots3$plots[1:4], ggsave)"
+  },
+  {
+    "objectID": "slides/w5.html#wrap-up-pmap",
+    "href": "slides/w5.html#wrap-up-pmap",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Wrap-up pmap()",
+    "text": "Wrap-up pmap()\n\nParallel iterations greatly increase the things you can do - iterating through at least two things simultaneously is pretty common\nThe nest_by() approach can regularly get you the same result as group_by() |&gt; nest() |&gt; mutate() |&gt; map()\n\nCaveat - must be in a data frame, which means working with list columns\n\nProbably still worth learning both\n\nLooping with {purrr} is super flexible and often safer than base versions (type safe)\nDoesn’t have to be used within a data frame"
+  },
+  {
+    "objectID": "slides/w5.html#map2-1",
+    "href": "slides/w5.html#map2-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "map2()",
+    "text": "map2()"
+  },
+  {
+    "objectID": "slides/w5.html#two-examples",
+    "href": "slides/w5.html#two-examples",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Two examples",
+    "text": "Two examples\n\nBasic simulations - iterating over two vectors\nPlots by month, changing the title"
+  },
+  {
+    "objectID": "slides/w5.html#add-column-for-total-pulitzers",
+    "href": "slides/w5.html#add-column-for-total-pulitzers",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Add column for total Pulitzers",
+    "text": "Add column for total Pulitzers\n\npulitzer &lt;- pulitzer |&gt;\n    group_by(newspaper) |&gt;\n    mutate(tot = sum(n))\npulitzer\n\n# A tibble: 100 × 4\n# Groups:   newspaper [50]\n   newspaper           year_range     n   tot\n   &lt;chr&gt;               &lt;chr&gt;      &lt;int&gt; &lt;int&gt;\n 1 USA Today           1990-2003      1     2\n 2 USA Today           2004-2014      1     2\n 3 Wall Street Journal 1990-2003     30    50\n 4 Wall Street Journal 2004-2014     20    50\n 5 New York Times      1990-2003     55   117\n 6 New York Times      2004-2014     62   117\n 7 Los Angeles Times   1990-2003     44    85\n 8 Los Angeles Times   2004-2014     41    85\n 9 Washington Post     1990-2003     52   100\n10 Washington Post     2004-2014     48   100\n# ℹ 90 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#walk-family",
+    "href": "slides/w5.html#walk-family",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "walk() family",
+    "text": "walk() family\n\nJust like map(), we have parallel variants of walk(), including, walk2(), and pwalk()\nThese work just like map() but don’t print to the screen"
+  },
+  {
+    "objectID": "slides/w5.html#another-option",
+    "href": "slides/w5.html#another-option",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Another option",
+    "text": "Another option\nHere, you probably just want to bind_rows()\n\nl_df2 &lt;- list(\n  tibble(id = 1:3, scid = 1, score = rnorm(3)),\n  tibble(id = 1:5, scid = 2, score = rnorm(5)),\n  tibble(id = c(1, 3, 5, 7), scid = 3, score = rnorm(4))\n)\nreduce(l_df2, bind_rows)\n\n# A tibble: 12 × 3\n      id  scid   score\n   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;\n 1     1     1  0.837 \n 2     2     1 -0.192 \n 3     3     1 -0.374 \n 4     1     2 -1.88  \n 5     2     2  0.208 \n 6     3     2 -0.381 \n 7     4     2  0.577 \n 8     5     2 -0.797 \n 9     1     3 -2.05  \n10     3     3  2.27  \n11     5     3  0.236 \n12     7     3  0.0538"
+  },
+  {
+    "objectID": "slides/w5.html#section-1",
+    "href": "slides/w5.html#section-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "",
+    "text": "But we can have as many elements p as we want"
+  },
+  {
+    "objectID": "slides/w5.html#plot-caption",
+    "href": "slides/w5.html#plot-caption",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Plot Caption",
+    "text": "Plot Caption\nAdd a caption stating the total number of Pulitzer prize winners across years\n\npulitzer\n\n# A tibble: 100 × 3\n   newspaper           year_range     n\n   &lt;chr&gt;               &lt;chr&gt;      &lt;int&gt;\n 1 USA Today           1990-2003      1\n 2 USA Today           2004-2014      1\n 3 Wall Street Journal 1990-2003     30\n 4 Wall Street Journal 2004-2014     20\n 5 New York Times      1990-2003     55\n 6 New York Times      2004-2014     62\n 7 Los Angeles Times   1990-2003     44\n 8 Los Angeles Times   2004-2014     41\n 9 Washington Post     1990-2003     52\n10 Washington Post     2004-2014     48\n# ℹ 90 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#produce-plots-1",
+    "href": "slides/w5.html#produce-plots-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Produce plots",
+    "text": "Produce plots\nRe-ordering\n\nfinal_plots &lt;- by_newspaper_label |&gt;\n  mutate(plots = pmap(list(data, newspaper, label), \n    ~ggplot(..1, aes(n, year_range)) +\n      geom_col(aes(fill = n)) +\n      scale_x_continuous(\n        limits = c(0, max(pulitzer$n)),\n        expand = c(0, 0)\n      ) +\n      guides(fill = \"none\") +\n      labs(\n        title = glue(\"Pulitzer Prize winners: {..2}\"),\n        x = \"Total number of winners\",\n        y = \"\",\n        caption = ..3 \n      )\n  )\n)"
+  },
+  {
+    "objectID": "slides/w5.html#lets-make-a-list-column",
+    "href": "slides/w5.html#lets-make-a-list-column",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Let’s make a list column",
+    "text": "Let’s make a list column\n\nfinal_plots\n\n# A tibble: 50 × 4\n# Groups:   newspaper, label [50]\n   newspaper             label                               data     plots     \n   &lt;chr&gt;                 &lt;glue&gt;                              &lt;list&gt;   &lt;list&gt;    \n 1 USA Today             Two Total Pulitzer Awards           &lt;tibble&gt; &lt;ggplt2::&gt;\n 2 Wall Street Journal   Fifty Total Pulitzer Awards         &lt;tibble&gt; &lt;ggplt2::&gt;\n 3 New York Times        One Hundred Seventeen Total Pulitz… &lt;tibble&gt; &lt;ggplt2::&gt;\n 4 Los Angeles Times     Eighty-Five Total Pulitzer Awards   &lt;tibble&gt; &lt;ggplt2::&gt;\n 5 Washington Post       One Hundred Total Pulitzer Awards   &lt;tibble&gt; &lt;ggplt2::&gt;\n 6 New York Daily News   Six Total Pulitzer Awards           &lt;tibble&gt; &lt;ggplt2::&gt;\n 7 New York Post         Zero Total Pulitzer Awards          &lt;tibble&gt; &lt;ggplt2::&gt;\n 8 Chicago Tribune       Thirty-Eight Total Pulitzer Awards  &lt;tibble&gt; &lt;ggplt2::&gt;\n 9 San Jose Mercury News Six Total Pulitzer Awards           &lt;tibble&gt; &lt;ggplt2::&gt;\n10 Newsday               Eighteen Total Pulitzer Awards      &lt;tibble&gt; &lt;ggplt2::&gt;\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/w5.html#lets-make-a-list-column-1",
+    "href": "slides/w5.html#lets-make-a-list-column-1",
+    "title": "Week 5: Parallel Iterations & Looping Variants",
+    "section": "Let’s make a list column",
+    "text": "Let’s make a list column\n\nfinal_plots3 &lt;- final_plots |&gt; \n  ungroup() |&gt; \n  mutate(\n    files = str_replace_all(tolower(newspaper), \" \", \"-\"),\n    path = paste0(here::here(\"plots\", \"pulitzers\", paste0(files, \".png\")))\n  )"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EDLD 653: Functional Programming for Educational Data Science",
+    "section": "",
+    "text": "Welcome to the third course in the Educational Data Science specialization. This course builds upon the content covered in the first two courses, with a specific focus on becoming a better programmer and improving workflows in statistical computing with R. Students will continue to work with the {tidyverse} suite of packages, with a emphasis on {purrr} for functional programming. At its core, functional programming is a technique to iterate a function over a vector, or set of vectors, to complete repetitive tasks. We will compare and contrast {purrr} functions with base R approaches, including for loops and the apply family of functions. Functional programming helps reduce redundancies in code, making it more efficient and, often, more readable. The course will also cover writing custom functions, which can also help in completing repetitive tasks, but can also extend the functionality of R, and is a key component of functional programming. The course concludes with an introduction to shiny for building interactive applications which, although somewhat outside of the scope of functional programming, requires using and writing functions."
+  },
+  {
+    "objectID": "index.html#spring-2026",
+    "href": "index.html#spring-2026",
+    "title": "EDLD 653: Functional Programming for Educational Data Science",
+    "section": "",
+    "text": "Welcome to the third course in the Educational Data Science specialization. This course builds upon the content covered in the first two courses, with a specific focus on becoming a better programmer and improving workflows in statistical computing with R. Students will continue to work with the {tidyverse} suite of packages, with a emphasis on {purrr} for functional programming. At its core, functional programming is a technique to iterate a function over a vector, or set of vectors, to complete repetitive tasks. We will compare and contrast {purrr} functions with base R approaches, including for loops and the apply family of functions. Functional programming helps reduce redundancies in code, making it more efficient and, often, more readable. The course will also cover writing custom functions, which can also help in completing repetitive tasks, but can also extend the functionality of R, and is a key component of functional programming. The course concludes with an introduction to shiny for building interactive applications which, although somewhat outside of the scope of functional programming, requires using and writing functions."
   }
 ]

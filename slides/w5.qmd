@@ -1,0 +1,1379 @@
+---
+title: "Week 5: Parallel Iterations & Looping Variants"
+author: "Joe Nese"
+institute: "University of Oregon<br>Spring 2026"
+format:
+  revealjs: 
+    theme: default
+    highlight-style: github
+    incremental: false
+    fig-width: 9
+    fig-height: 3.5
+    scrollable: true
+    slide-number: true
+execute: 
+  echo: true
+  warning: false
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+theme_set(theme_minimal(16))
+update_geom_defaults("point", list(size = 3))
+```
+
+# Parallel Iterations & Looping Variants
+
+**Week 5**
+
+## Agenda {.smaller}
+
+* Discuss `map2_()*` and `pmap_()*` (parallel iterations)
+* `walk()` and friends
+* `modify()`
+* `safely()`
+* `reduce()`
+
+**Learning objectives**
+
+* Understand the differences between `map`, `map2`, and `pmap`
+* Know when to apply `walk()` instead of `map()`, and why it may be useful
+* Understand the similarities and differences between `map()` and `modify()`
+* Diagnose errors with `safely()` and understand other situations where it may be helpful
+* Collapsing/reducing lists with `purrr::reduce()` or `base::Reduce()`
+
+## Quick Review: `nest_by()` {.smaller}
+
+`dplyr::nest_by()`
+
+- creates a list column for each group, **AND** 
+- converts it to a `rowwise` data frame
+
+Think of it as: 
+
+```{r}
+#| eval: false
+group_by() |> 
+  summarise()
+```
+
+...and storing the remaining columns as a nested tibble ready for `rowwise()` applications
+
+We'll come back to this
+
+# `map2()`
+ 
+## `map2()`
+
+![](https://d33wubrfki0l68.cloudfront.net/7a545699ff7069a98329fcfbe6e42b734507eb16/211a5/diagrams/functionals/map2-arg.png)
+
+## Two examples
+
+1) Basic simulations - iterating over two vectors
+
+2) Plots by month, changing the title
+
+## 1) Iterating over two vectors
+
+* Simulate data from a normal distribution
+    + Vary $n$ from 5 to 150 by increments of 5
+  	+ For each $n$, vary $\mu$ (mean) from -2 to 2 by increments of 0.25
+
+. . .
+
+How do we get all combinations?
+
+. . .
+
+`expand.grid()`
+
+## `expand.grid()`
+
+Bonus: It turns it into a data frame!
+
+```{r expand.grid}
+ints <- 1:3
+lets <- c("a", "b", "c")
+expand.grid(ints, lets)
+```
+
+## Set conditions
+
+[**Please follow along**]{style="color:#009E73;"}
+
+```{r sim-conditions}
+conditions <- expand.grid(
+  n = seq(5, 150, 5),
+  mu = seq(-2, 2, 0.25)
+)
+nrow(conditions)
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r }
+head(conditions)
+```
+:::
+
+::: {.column width="50%"}
+
+```{r }
+tail(conditions)
+```
+:::
+
+::::
+
+## Simulate!
+
+```{r sim1}
+#| output-location: fragment
+sim1 <- map2(conditions$n, conditions$mu,
+             ~rnorm(n = .x, mean = .y, sd = 10)
+             )
+str(sim1)
+```
+
+## Add it as a list column!
+
+More powerful (this is my preferred method)
+
+```{r list-column-sim1}
+#| output-location: fragment
+sim2 <- conditions |>
+  as_tibble() |> # Not required, but definitely helpful
+  mutate(sim = map2(n, mu, ~rnorm(n = .x, mean = .y, sd = 10))) 
+sim2
+```
+
+## Unnest
+
+```{r list-column-sim2}
+#| code-line-numbers: "|4"
+#| output-location: fragment
+conditions |>
+  as_tibble() |> 
+  mutate(sim = map2(n, mu, ~rnorm(.x, .y, sd = 10))) |>
+  unnest(sim)
+```
+
+## Challenge
+
+Can you replicate what we just did, but using a `rowwise()` approach?
+
+`r countdown::countdown(3)`
+
+. . .
+
+```{r }
+#| code-line-numbers: "|1|2|3|3"
+#| output-location: fragment
+conditions |> 
+  rowwise() |> 
+  mutate(sim = list(rnorm(n, mu, sd = 10))) |> 
+  unnest(sim)
+```
+
+## Remember {.smaller}
+
+- `mutate()` expects each a vector of the same length as the data frame — one value per row
+- `rnorm(n, mu, sd = 10)` returns a vector of length `n`, not a single value
+- Without `list()`, `{dplyr}` would try to unpack those `n` values directly into the column, causing a length mismatch error
+- Wrapping in `list()` boxes the vector into of length = 1
+    + a list with one element
+    + so `mutate()` sees exactly one element per row: a length-1 list containing the vector
+
+. . .
+
+With `list()`:
+
+`row 1 → list(c(0.3, -1.2, 0.8)) `  [✓ length 1]{style="color:#009E73;"}
+
+`row 2 → list(c(0.1, 2.4, ...))`    [✓ length 1]{style="color:#009E73;"}
+
+. . .
+
+Without `list()`:
+
+`row 1 → c(0.3, -1.2, 0.8)`         [✗ length 3 — doesn't fit in one row]{style="color:#dd5129;"}
+
+## 2) Plots by month, changing the title
+
+[**Please follow along**]{style="color:#009E73;"}
+
+The data
+
+```{r pulitzer-data}
+library(fivethirtyeight)
+pulitzer
+```
+
+## Prep data
+
+```{r pulitzer-prep}
+#| output-location: fragment
+pulitzer <- fivethirtyeight::pulitzer |>
+  select(newspaper, starts_with("num")) |>
+  pivot_longer(
+    -newspaper,
+    names_to = "year_range",
+    values_to = "n",
+    names_prefix = "num_finals"
+  ) |> 
+  mutate(year_range = str_replace_all(year_range, "_", "-")) |>
+  filter(year_range != "1990-2014")
+
+head(pulitzer)
+```
+
+## One plot {.smaller}
+
+```{r one-plot-pulitzer}
+#| output-location: column-fragment
+wsj <- pulitzer |>
+	filter(newspaper == "Wall Street Journal")
+
+ggplot(wsj, aes(n, year_range)) +
+  geom_col(aes(fill = n)) +
+  scale_x_continuous(
+    limits = c(0, max(pulitzer$n)),
+    expand = c(0, 0)
+  ) +
+  guides(fill = "none") +
+  labs(
+    title = "Pulitzer Prize winners: Wall Street Journal",
+    x = "Total number of winners",
+    y = ""
+  ) 
+```
+
+## Nest data
+
+```{r pulitzer-nested}
+#| output-location: column
+by_newspaper <- pulitzer |>
+	group_by(newspaper) |>
+	nest()
+
+by_newspaper
+```
+
+## Produce all plots
+
+You try first!
+
+Don't worry about the correct title yet
+
+`r countdown::countdown(3)`
+
+## Solution {.smaller}
+
+. . .
+
+Just the plots
+
+```{r pulitzer-plots1}
+#| output-location: column
+#| code-line-numbers: "|3|4|5-16"
+by_newspaper |>
+	mutate(
+	  plot = map(data, 
+	             ~.x |> 
+	               ggplot(aes(n, year_range)) +
+	               geom_col(aes(fill = n)) +
+                 scale_x_continuous(
+                   limits = c(0, max(pulitzer$n)),
+                   expand = c(0, 0)
+                 ) +
+                 guides(fill = "none") +
+                 labs(
+                   title = "Pulitzer Prize winners",
+                   x = "Total number of winners",
+                   y = ""
+                 )
+    )
+  )
+```
+
+## Add title {.smaller}
+
+. . .
+
+```{r pulitzer-plots2}
+#| code-line-numbers: "|5|6|15"
+library(glue)
+
+p <- by_newspaper |>
+	mutate(
+	  plot = map2(data, newspaper, 
+	              ~.x |> 
+	                ggplot(aes(n, year_range)) +
+	                geom_col(aes(fill = n)) +
+                  scale_x_continuous(
+                    limits = c(0, max(pulitzer$n)),
+                    expand = c(0, 0)
+                  ) +
+                  guides(fill = "none") +
+                  labs(
+                    title = glue("Pulitzer Prize winners: {.y}"), # or paste("Pulitzer Prize winners: ", .y)
+                    x = "Total number of winners",
+                    y = ""
+                  )
+	    )
+    )
+```
+
+##
+
+```{r show-df}
+p
+```
+
+## Look at a couple plots {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+
+```{r p1, fig.height = 5.5}
+#| output-location: fragment
+p$plot[[1]]
+p$plot[[3]]
+```
+:::
+
+::: {.column width="50%"}
+
+```{r p2, fig.height = 5.5}
+#| output-location: fragment
+p$plot[[2]]
+p$plot[[4]]
+```
+:::
+
+::::
+
+## Challenge
+
+(You can probably guess where this is going)
+
+. . .
+
+Can you reproduce the prior plots using a `rowwise()` approach?
+
+`r countdown::countdown(3)`
+
+## Solution {.smaller}
+
+. . .
+
+```{r }
+#| code-line-numbers: "|2|4|5-16|13"
+#| output-location: column
+pulitzer |>
+	nest_by(newspaper) |> 
+	mutate(
+	  plot = list(
+	    ggplot(data, aes(n, year_range)) + 
+        geom_col(aes(fill = n)) +
+        scale_x_continuous(
+          limits = c(0, max(pulitzer$n)), 
+          expand = c(0, 0)
+        ) +
+        guides(fill = "none") +
+        labs(
+          title = glue("Pulitzer Prize winners: {newspaper}"),
+          x = "Total number of winners",
+          y = ""
+        )
+    )
+  )
+```
+
+# `pmap()`
+
+Iterating over $n$ vectors
+
+## 
+
+![](https://adv-r.hadley.nz/diagrams/functionals/pmap-3.png)
+
+. . .
+
+But we can have as many elements `p` as we want
+
+## Simulation
+
+* Simulate data from a normal distribution
+  	+ Vary $n$ from 5 to 150 by increments of 5
+  	+ For each $n$, vary $\mu$ (mean) from -2 to 2 by increments of 0.25
+  	+ For each $n$ and $\mu$, vary each $\sigma$ (*SD*) from 1 to 3 by increments of 0.1
+
+## Simulation
+
+```{r full-conditions}
+full_conditions <- expand.grid(
+  n = seq(5, 150, 5),
+  mu = seq(-2, 2, 0.25),
+  sd = seq(1, 3, .1)
+)
+nrow(full_conditions)
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+
+```{r }
+head(full_conditions)
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r }
+tail(full_conditions)
+```
+:::
+
+::::
+
+## Full Simulation
+
+```{r full-sim1}
+#| output-location: fragment
+fsim <- pmap(
+  list(
+    number = full_conditions$n,
+    average = full_conditions$mu,
+    stdev = full_conditions$sd
+  ), 
+  function(number, average, stdev) {
+    rnorm(n = number, mean = average, sd = stdev)
+  }
+)
+str(fsim)
+```
+
+## Alternative specification
+
+```{r full-sim2}
+#| output-location: fragment
+fsim <- pmap(
+  list(
+    full_conditions$n,
+    full_conditions$mu,
+    full_conditions$sd
+  ),
+  ~rnorm(n = ..1, mean = ..2, sd = ..3)
+)
+str(fsim)
+```
+
+## Why the `..` prefix?
+
+- `.` or `.x` is used as the placeholder in `map()` 
+- `.x` and `.y` are the convention for `map2()`
+- So for multi-argument `pmap()`, the `..` prefix is `{purrr}`'s convention for anonymous positional arguments
+    + avoid confusion with other functions
+    + signals "this is the $p^{th}$ argument in the parallel list"
+
+## Simpler still
+
+Maybe a little too clever
+
+A data frame is a list so...
+
+```{r full-sim3}
+#| output-location: fragment
+fsim <- pmap(
+  full_conditions,
+  ~rnorm(n = ..1, mean = ..2, sd = ..3)
+)
+str(fsim)
+```
+
+## List column version
+
+This I like best
+
+```{r fsim-df1}
+#| output-location: fragment
+full_conditions |>
+	as_tibble() |>
+	mutate(sim = pmap(list(n, mu, sd), ~rnorm(..1, ..2, ..3)))
+```
+
+## Unnest
+
+```{r fsim-df2}
+#| output-location: fragment
+full_conditions |>
+	as_tibble() |>
+	mutate(sim = pmap(list(n, mu, sd), ~rnorm(..1, ..2, ..3))) |>
+	unnest(sim)
+```
+
+## Replicate with `nest_by()`
+
+You try first
+
+`r countdown::countdown(3)`
+
+. . .
+
+```{r }
+full_conditions |> 
+  rowwise() |> 
+  mutate(sim = list(rnorm(n, mu, sd))) |> 
+  unnest(sim)
+```
+
+
+## Plot Caption
+
+Add a caption stating the total number of Pulitzer prize winners across years
+
+```{r}
+pulitzer
+```
+
+## Add column for total Pulitzers
+
+```{r add-col}
+pulitzer <- pulitzer |>
+	group_by(newspaper) |>
+	mutate(tot = sum(n))
+pulitzer
+```
+
+## Straightfoward approach
+
+Create a column to represent exactly the label you want
+
+```{r add-lab-col}
+#| code-line-numbers: "|5|6"
+#install.packages("english")
+library(english)
+pulitzer <- pulitzer |>
+	mutate(
+	  label = glue(
+	    "{str_to_title(as.english(tot))} Total Pulitzer Awards"
+    )
+)
+```
+
+. . .
+
+```{r }
+select(pulitzer, newspaper, label)
+```
+
+## Produce one plot
+
+```{r plot-cap1}
+#| output-location: slide
+#| code-line-numbers: "!12,15"
+
+wsj2 <- pulitzer |>
+	filter(newspaper == "Wall Street Journal") 
+
+wsj2 |> 
+  ggplot(aes(n, year_range)) +
+    geom_col(aes(fill = n)) +
+    scale_x_continuous(
+      limits = c(0, max(pulitzer$n)),
+      expand = c(0, 0)
+    ) +
+    guides(fill = "none") +
+    labs(
+      title = glue("Pulitzer Prize winners: Wall Street Journal"),
+      x = "Total number of winners",
+      y = "",
+      caption = unique(wsj2$label)
+    )
+```
+
+## Produce all plots
+
+First `nest`
+
+```{r nested}
+#| output-location: fragment
+by_newspaper_label <- pulitzer |>
+	group_by(newspaper, label) |>
+	nest() 
+
+by_newspaper_label
+```
+
+## Produce plots
+
+```{r plot-cap2}
+#| code-line-numbers: "|3|11|14"
+final_plots <- by_newspaper_label |>
+  mutate(plots = pmap(list(newspaper, label, data), 
+    ~ggplot(..3, aes(n, year_range)) +
+      geom_col(aes(fill = n)) +
+      scale_x_continuous(
+        limits = c(0, max(pulitzer$n)),
+        expand = c(0, 0)
+      ) +
+      guides(fill = "none") +
+      labs(
+        title = glue("Pulitzer Prize winners: {..1}"),
+        x = "Total number of winners",
+        y = "",
+        caption = ..2 
+      )
+  )
+)
+```
+
+## Produce plots
+
+Re-ordering
+
+```{r}
+#| code-line-numbers: "|2|3|11|14"
+final_plots <- by_newspaper_label |>
+  mutate(plots = pmap(list(data, newspaper, label), 
+    ~ggplot(..1, aes(n, year_range)) +
+      geom_col(aes(fill = n)) +
+      scale_x_continuous(
+        limits = c(0, max(pulitzer$n)),
+        expand = c(0, 0)
+      ) +
+      guides(fill = "none") +
+      labs(
+        title = glue("Pulitzer Prize winners: {..2}"),
+        x = "Total number of winners",
+        y = "",
+        caption = ..3 
+      )
+  )
+)
+```
+
+## Look at a couple plots {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r p3, fig.height = 5.5}
+final_plots$plots[[1]]
+final_plots$plots[[3]]
+```
+:::
+
+::: {.column width="50%"}
+```{r p4, fig.height = 5.5}
+final_plots$plots[[2]]
+final_plots$plots[[4]]
+```
+:::
+::::
+
+## Replicate with `nest_by()`
+
+You try first
+
+`r countdown::countdown(3)`
+
+## Solution
+
+. . .
+
+```{r }
+#| code-line-numbers: "|2|3|5|14"
+final_plots2 <- pulitzer |>
+  ungroup() |> 
+  nest_by(newspaper, label) |> 
+	mutate(
+	  plots = list(
+	    ggplot(data, aes(n, year_range)) + 
+	      geom_col(aes(fill = n)) +
+	      scale_x_continuous(
+	        limits = c(0, max(pulitzer$n)), 
+	        expand = c(0, 0)
+        ) +
+	      guides(fill = "none") +
+	      labs(
+	        title = glue("Pulitzer Prize winners: {newspaper}"),
+	        x = "Total number of winners",
+	        y = "",
+	        caption = label
+        )
+	  )
+)
+```
+
+##
+
+```{r }
+final_plots2
+```
+
+## Save all plots
+
+- We'll have to iterate across at least two things
+    1. file path/names 
+    2. the plots themselves
+- We can do this with the `map()` family, but we'll use a different function
+- What are the **steps** we would need to take to do this?
+- Could we use a `nest_by()` solution?
+
+## Try with `nest_by()`
+
+You try first:
+
+* Create a vector of file paths
+* "loop" through the file paths and the plots to save them
+
+`r countdown::countdown(4)`
+
+## Example {.smaller}
+
+Create a directory
+
+```{r }
+fs::dir_create(here::here("plots", "pulitzers"))
+```
+
+. . .
+
+Create file paths
+
+```{r }
+#| output-location: fragment
+files <- str_replace_all(
+  tolower(final_plots$newspaper),
+  " ",
+  "-"
+)
+paths <- here::here("plots", "pulitzers", glue("{files}.png"))
+paths
+```
+
+## Add paths to data frame
+
+```{r }
+#| code-line-numbers: "|2"
+final_plots |> 
+  ungroup() |> 
+  mutate(path = paths) |> 
+  select(plots, path)
+```
+
+## Save
+
+```{r }
+#| eval: false
+#| code-line-numbers: "|2|4|5-10"
+final_plots |> 
+  ungroup() |> 
+  mutate(path = paths) |> 
+  rowwise() |> 
+  summarize(
+    ggsave(path, plots, 
+      width = 9.5, 
+      height = 6.5,
+      dpi = 500
+    )
+  )
+```
+
+## Wrap-up `pmap()`{.smaller}
+
+* Parallel iterations greatly increase the things you can do - iterating through at least two things simultaneously is pretty common
+* The `nest_by()` approach can regularly get you the same result as `group_by() |> nest() |> mutate() |> map()`
+    + Caveat - must be in a data frame, which means working with list columns
+* Probably still worth learning both
+    + Looping with `{purrr}` is super flexible and often safer than base versions (type safe) 
+    + Doesn't have to be used within a data frame
+
+# Looping variants
+
+## Other loooping fnctions
+
+* `walk()` and friends
+
+* `modify()`
+
+* `safely()`
+
+* `reduce()`
+
+## What we want to know
+
+* Know when to apply `walk()` instead of `map()`, and why it may be useful
+* Understand the parallels and differences between `map()` and `modify()`
+* Diagnose errors with `safely()` and understand other situations where it may be helpful
+* Collapsing/reducing lists with `purrr::reduce()` or `base::Reduce()`
+
+## Setup
+
+Let's go back to our plotting example:
+
+**Saving**
+
+* We saw last time that we could use `nest_by()`
+    + Required a bit of awkwardness with adding the paths to the data frame
+
+* Instead, we'll do it again but with the `walk()` family
+
+
+## Why `walk()`? {.smaller}
+
+- `walk()` is an alternative to `map` that you use when you want to call a function for its side effects, **NOT** than for its return value
+- You typically do this because you want to render output to the screen or save files to disk
+- The important thing is the action, not the return value
+
+::: aside
+[r4ds](https://r4ds.had.co.nz/iteration.html#walk)
+:::
+
+## More practical
+
+- If you use `walk()`, nothing will get printed to the screen
+- This is particularly helpful for quarto files
+- Most often use it for
+    1. saving
+    2. printing
+
+## Example {visibility="hidden"}
+
+[**Please do the following**]{style="color:#009E73;"}
+
+* Create a new Quarto document
+* Paste the code you have for creating the Pulitzer plots in a code chunk there
+    + see next slide
+
+## `final_plots` code {visibility="hidden"}
+
+```{r}
+#| eval: false
+library(fivethirtyeight)
+library(english)
+library(tidyverse)
+library(glue)
+
+pulitzer <- fivethirtyeight::pulitzer |>
+  select(newspaper, starts_with("num")) |>
+  pivot_longer(
+    -newspaper,
+    names_to = "year_range",
+    values_to = "n",
+    names_prefix = "num_finals"
+  ) |> 
+  mutate(year_range = str_replace_all(year_range, "_", "-")) |>
+  filter(year_range != "1990-2014") |>
+  group_by(newspaper) |>
+  mutate(tot = sum(n)) |>
+  mutate(
+    label = glue(
+      "{str_to_title(as.english(tot))} Total Pulitzer Awards"
+    )
+  )
+
+by_newspaper_label <- pulitzer |>
+  group_by(newspaper, label) |>
+  nest()
+
+final_plots <- by_newspaper_label |>
+  mutate(plots = pmap(list(newspaper, label, data), 
+                      ~ggplot(..3, aes(n, year_range)) +
+                        geom_col(aes(fill = n)) +
+                        scale_x_continuous(
+                          limits = c(0, max(pulitzer$n)),
+                          expand = c(0, 0)
+                        ) +
+                        guides(fill = "none") +
+                        labs(
+                          title = glue("Pulitzer Prize winners: {..1}"),
+                          x = "Total number of winners",
+                          y = "",
+                          caption = ..2 
+                        )
+                      )
+  )
+```
+
+## Create a directory {visibility="hidden"}
+
+We already did this, but in case we hadn't...
+
+```{r }
+fs::dir_create(here::here("plots", "pulitzers"))
+```
+
+## Create file paths {visibility="hidden"}
+
+```{r }
+newspapers <- str_replace_all(
+  tolower(final_plots$newspaper),
+  " ",
+  "-"
+)
+paths <- here::here(
+  "plots",
+  "pulitzers",
+  glue("{newspapers}.png")
+)
+```
+
+## Challenge {visibility="hidden"}
+
+* Use a `map()` family function to loop through `paths` and `final_plots$plots` to save all plots
+* Render your file. What do you notice?
+
+`r countdown::countdown(3)`
+
+## `walk()` family
+
+- Just like `map()`, we have parallel variants of `walk()`, including, `walk2()`, and `pwalk()`
+- These work just like `map()` but don't print to the screen
+
+## Let's make a list column
+
+```{r}
+final_plots
+```
+
+## Let's make a list column
+
+```{r}
+#| output-location: fragment
+final_plots3 <- final_plots |> 
+  ungroup() |> 
+  mutate(
+    files = str_replace_all(tolower(newspaper), " ", "-"),
+    path = paste0(here::here("plots", "pulitzers", paste0(files, ".png")))
+  )
+```
+
+## Saving plots {.smaller}
+
+:::: {.columns}
+::: {.column width="50%" .fragment}
+`map()`
+
+```{r }
+map2(final_plots3$path[1:4], final_plots3$plots[1:4], ggsave)
+```
+
+:::
+
+::: {.column width="50%" .fragment}
+`walk()`
+
+```{r }
+walk2(final_plots3$path[1:4], final_plots3$plots[1:4], ggsave)
+```
+:::
+
+::::
+
+## `modify()`
+
+- `map()` family always return a fixed object type
+    + list for `map()`
+    + integer vector for `map_int()`
+    + etc.
+- `modify()` family always returns the same type as the input object
+
+## `map()` vs `modify()`
+
+`map()`
+
+```{r map-mtcars}
+map(mtcars, ~as.numeric(scale(.x)))
+```
+
+## `map()` vs `modify()`
+
+`modify()`
+
+```{r modify-mtcars}
+modify(mtcars, ~as.numeric(scale(.x)))
+```
+
+## `map()` vs `modify()` {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+
+```{r}
+map(mtcars, ~as.numeric(scale(.x))) |> 
+  str()
+```
+
+:::
+
+::: {.column width="50%"}
+```{r}
+modify(mtcars, ~as.numeric(scale(.x))) |> 
+  str()
+```
+:::
+
+::::
+## `map()` vs `modify()`
+
+```{r map-paste}
+map2(LETTERS[1:3], letters[1:3], paste0)
+modify2(LETTERS[1:3], letters[1:3], paste0)
+```
+
+## `safely()`
+
+Errors during iterations
+
+- Sometimes a loop will work for most cases, but return an error on a few
+- Often, you want to return the output you can
+- Alternatively, you might want to diagnose *where* the error is occurring
+
+. . .
+
+`purrr::safely()`
+
+## Example
+
+[**Please run this code**]{style="color:#009E73;"}
+
+```{r by_cyl}
+by_cyl <- mpg |> 
+  group_by(cyl) |> 
+  nest() 
+by_cyl
+```
+
+`r countdown::countdown(1)`
+
+## Now try to fit a model
+
+[**Please follow along**]{style="color:#009E73;"}
+
+Notice the error message is *super* helpful!
+
+```{r lm-fail}
+#| error: true
+by_cyl |> 
+  mutate(mod = map(data, ~lm(hwy ~ displ + drv, data = .x)))
+```
+
+## Safe return
+
+First, define safe function - note that this will work for **ANY** function
+
+```{r safe-lm}
+safe_lm <- safely(lm)
+```
+
+. . .
+
+Next, loop the safe function, instead of the standard function
+
+```{r loop-safe-lm}
+#| code-line-numbers: "|2"
+#| output-location: fragment
+safe_models <- by_cyl |> 
+  mutate(safe_mod = map(data, ~safe_lm(hwy ~ displ + drv, data = .x)))
+safe_models
+```
+
+## What's returned? {.smaller}
+
+```{r safe-return}
+#| output-location: fragment
+safe_models$safe_mod[[1]]
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+safe_models$safe_mod[[4]]
+```
+
+## Inspecting
+
+I often use `safely()` to help me de-bug
+
+Why is it failing *there* (but note the error message here helps with this too)
+
+. . .
+
+Create a new variable to filter for results with errors
+
+```{r }
+#| output-location: fragment
+safe_models |> 
+  mutate(error = map_lgl(safe_mod, ~!is.null(.x$error)))
+```
+
+## Inspecting the data
+
+```{r }
+safe_models |> 
+  mutate(error = map_lgl(safe_mod, ~!is.null(.x$error))) |> 
+  filter(error) |> 
+  select(cyl, data) |> 
+  unnest(data)
+```
+
+. . .
+
+`lm(hwy ~ displ + drv)`
+
+The `displ` and `drv` variables are constant, so no relation can be estimated (no variance)
+
+## Pull results that worked
+
+```{r results}
+safe_models |> 
+  mutate(results = map(safe_mod, "result"))
+```
+
+## Pull results that worked
+
+Now we can `broom::tidy()` or similar
+
+```{r }
+#| code-line-numbers: "|3|4|5"
+#| output-location: fragment
+safe_models |> 
+  mutate(results = map(safe_mod, "result"),
+         tidied = map(results, broom::tidy)) |> 
+  select(cyl, tidied) |> 
+  unnest(tidied)
+```
+
+## When else might we use this?
+
+How about web scraping - pages change and URLs don't always work
+
+## Example
+
+```{r}
+#| error: true
+library(rvest)
+links <- list(
+  "https://en.wikipedia.org/wiki/FC_Barcelona",
+  "https://nosuchpage",
+  "https://en.wikipedia.org/wiki/Rome"
+)
+
+pages <- map(links, ~{
+  Sys.sleep(0.1)
+  read_html(.x)
+})
+
+```
+
+## The problem
+
+I can't connect to <https://nosuchpage> because it doesn't exist
+
+. . .
+
+**BUT** 
+
+. . .
+
+That also means I can't get *any* of my links because **one** page errored 
+
+Imagine it was 1 in 1,000 instead of 1 in 3!
+
+
+## `safely()` to the rescue
+
+Safe version
+
+```{r }
+#| code-line-numbers: "|1|4"
+#| output-location: fragment
+safe_read_html <- safely(read_html)
+pages <- map(links, ~{
+  Sys.sleep(0.1)
+  safe_read_html(.x)
+})
+str(pages)
+```
+
+## Non-results
+
+In a real example, we'd probably want to double-check the pages where we got no results
+
+```{r }
+errors <- map_lgl(pages, ~!is.null(.x$error))
+links[errors]
+```
+
+
+## `reduce()`
+
+Reducing a list
+
+- The `map()` family of functions will always return a vector the same length as the input
+- `reduce()` will collapse or reduce the list to a single element
+
+## Example
+
+```{r }
+l <- list(
+  c(1, 3),
+  c(1, 5, 7, 9),
+  3,
+  c(4, 8, 12, 2)
+)
+```
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%" .fragment}
+
+`map()`
+
+```{r }
+map(l, sum)
+```
+
+:::
+
+::: {.column width="50%" .fragment}
+
+`reduce()`
+
+```{r }
+reduce(l, sum)
+```
+
+:::
+
+::::
+
+## What's going on?
+
+The code `reduce(l, sum)` is the same as
+
+```{r }
+sum(l[[4]], sum(l[[3]], sum(l[[1]], l[[2]])))
+```
+
+Or slightly differently
+
+```{r }
+first_sum <- sum(l[[1]], l[[2]])
+second_sum <- sum(first_sum, l[[3]])
+final_sum <- sum(second_sum, l[[4]])
+final_sum
+```
+
+## Why might you use this? {.smaller}
+
+What if you had a list of data frames like this
+
+```{r }
+#| output-location: fragment
+(l_df <- list(
+  tibble(id = 1:3, score = rnorm(3)),
+  tibble(id = 1:5, treatment = rbinom(5, 1, .5)),
+  tibble(id = c(1, 3, 5, 7), other_thing = rnorm(4))
+))
+```
+
+## Why might you use this?
+
+We can join these all together with a single loop
+
+```{r }
+#| output-location: fragment
+reduce(l_df, full_join)
+```
+
+## Caution
+
+You have to be careful on directionality
+
+:::: {.columns}
+::: {.column width="50%"}
+`left_join()`
+
+```{r }
+reduce(l_df, left_join)
+```
+
+:::
+
+::: {.column width="50%"}
+`right_join()`
+
+```{r }
+reduce(l_df, right_join)
+```
+:::
+
+::::
+
+## Another example {.smaller}
+
+If you have the same columns, you probably just want to `bind_rows()`
+
+```{r }
+(l_df2 <- list(
+  tibble(id = 1:3, scid = 1, score = rnorm(3)),
+  tibble(id = 1:5, scid = 2, score = rnorm(5)),
+  tibble(id = c(1, 3, 5, 7), scid = 3, score = rnorm(4))
+))
+```
+
+. . .
+
+```{r }
+reduce(l_df2, bind_rows)
+```
+
+## Non-loop version
+
+Luckily, the prior slide has become obsolete, because `bind_rows()` will do the list reduction for us
+
+```{r }
+bind_rows(l_df2)
+```
+
+## Another example
+
+This is a poor example, but there are use cases like this
+
+```{r }
+library(palmerpenguins)
+map(penguins, as.character) |> 
+  reduce(paste)
+```
+
+## Why use `reduce()`
+
+- This is one that is regularly used, but I have a hard time coming up with good examples for it
+- The `{tidyverse}` makes it less needed, generally
+- Still a good "tool" to have
+
+## Wrap up
+
+* Lots more to `{purrr}` but we've covered a lot
+* Functional programming can *really* help your efficiency, and even if it slows you down initially, I'd recommend always striving toward it, because it will ultimately be a huge help
+
+# Next time
+
+## Before next class
+
+- Readings
+    + [Creating Functions (SC)](https://swcarpentry.github.io/r-novice-inflammation/02-func-R.html)
+    + [AdvR(2e) 6.1-6.4](https://adv-r.hadley.nz/functions.html)
+- Midterm Test
+
+# Midterm Test
+
+
