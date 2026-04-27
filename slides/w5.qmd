@@ -516,7 +516,7 @@ full_conditions |>
 	unnest(sim)
 ```
 
-## Replicate with `nest_by()`
+## Replicate with `rowwise`()`
 
 You try first
 
@@ -795,7 +795,7 @@ final_plots |>
 
 # Looping variants
 
-## Other loooping fnctions
+## Other loooping functions
 
 * `walk()` and friends
 
