@@ -3,9 +3,9 @@ title: "Syllabus"
 subtitle: 'EDLD 653: Functional Programming for Educational Data Science<br>(CRN: 31621; 3 credit hours)'
 toc: true
 toc-depth: 3
-format:
+format: 
   html: default
-  pdf: default
+#  pdf: default
 execute: 
   echo: false
   warning: false

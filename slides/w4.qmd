@@ -24,11 +24,11 @@ library(MetBrewer)
 theme_set(theme_minimal(15))
 ```
 
-# NEED TO GET DATA/SIM FROM COURSE REPO TO FOLLOW ALONG
+## NOTES {visibility="hidden"}
 
-# remove `purrr::compose()`
-
-# explain `dplyr::nest_by()` better
+- NEED TO GET DATA/SIM FROM COURSE REPO TO FOLLOW ALONG
+- remove `purrr::compose()`
+- explain `dplyr::nest_by()` better
 
 # Batch Load Data & List Columns
 

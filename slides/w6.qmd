@@ -1,0 +1,1870 @@
+---
+title: "Week 6: Writing Functions"
+author: "Joe Nese"
+institute: "University of Oregon<br>Spring 2026"
+format:
+  revealjs: 
+    theme: default
+    highlight-style: github
+    incremental: false
+    fig-width: 9
+    fig-height: 3.5
+    scrollable: true
+    slide-number: true
+execute: 
+  echo: true
+  warning: false
+embed-resources: true
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+
+theme_set(theme_minimal(20))
+update_geom_defaults("point", list(size = 3))
+```
+
+# Writing Functions
+
+**Week 6**
+
+## Agenda {.smaller}
+
+* Review Midterm
+* Everything is a function
+* Components of a function
+* Function workflows
+
+**Learning objectives**
+
+* Understand and be able to fluently refer to the three fundamental components of a function
+* Understand the workflows that often lead to writing functions, and how you iterate from interactive work to writing a function
+* Be able to write a few basic functions 
+
+# Review Midterm
+
+# Functions
+
+## Functions
+
+Anything that carries out an operation in `R` is a function
+
+. . .
+
+For example
+
+```{r plus-infix1}
+3 + 5
+```
+
+. . .
+
+The `+` is a function (what's referred to as an *infix* function)
+
+- where a function name (or symbol) appears between its arguments, rather than before `function(arg1, arg2)`
+
+. . .
+
+Any ideas on how we could re-write the above to make it look more "function"-y?
+
+
+## Try this 
+
+```{r plus-fun}
+`+`(3, 5) 
+ 
+``` 
+
+. . .
+
+What's going on here?
+
+## What's going on here? {.smaller}
+
+The `+` operator is a function that takes two arguments (both numeric), which it sums
+
+We're explicitly calling the `+` function with two arguments: `+(arg1, arg2)`
+
+. . .
+
+This is true for all `R` operators
+
+```{r}
+`*`(4, 6)
+```
+
+
+```{r}
+`^`(9, 2)
+```
+
+
+```{r}
+`>`(5, 3)
+```
+
+
+```{r}
+x <- c("a", "b", "c")
+`[`(x, 2)
+```
+
+
+## Even this
+
+What's going on here?
+
+```{r}
+#| output-location: fragment
+`<-`(a, 10)
+```
+
+. . .
+
+Everything is a function!
+
+## Challenge
+
+How would we write that below similarly?
+
+```{r plus-infix2}
+3 + 5 + 7
+```
+
+. . .
+
+```{r, plus-fun2}
+`+`(7, `+`(3, 5))
+```
+
+. . .
+
+or
+
+```{r, plus-fun3}
+`+`(3, 5) %>% 
+	`+`(7)
+```
+
+. . .
+
+but not the native pipe!
+
+```{r, plus-fun4}
+#| error: true
+`+`(3, 5) |>  
+	`+`(7)
+```
+
+## Want to know why?
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2UzaWZ5Y2MzbGhqY2VzanhlN3BxMmp3dmcwNTR2M2g3eW1ybnhzZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/G5X63GrrLjjVK/giphy.gif)
+
+## I knew you would
+
+`%>%` 
+
+- takes the LHS and constructs a new function call, inserting the LHS as the first argument
+- so `3 %>% + (5)` becomes `+(3, 5)`
+
+. . .
+
+`|>`
+
+- requires the RHS to be a syntactically valid function call
+- meaning it must look like `f(...)` with a proper identifier as the function name
+- `3 |> + (5)` sees a backtick-quoted name, proper function
+
+## Mean trick
+
+Want to introduce a devious bug? Redefine `+`
+
+`runif()` generates random deviates from the uniform distribution ($min$ = 0, $max$ = 1)
+
+```{r bug}
+`+` <- function(x, y) {
+	if(runif(1) < 0.01) {
+		sum(x, y) * -1
+	} else {
+		sum(x, y)
+	}
+}
+```
+
+## Mean trick
+
+```{r}
+#| output-location: fragment
+tibble(
+  x = 1:500,
+  y = 1:500
+) |> 
+  mutate(sum = map2_dbl(x, y, `+`)) |> 
+  filter(sum < 0)
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+table(map2_dbl(1:500, 1:500, `+`) > 0)
+```
+
+## Undo
+
+```{r }
+rm(`+`, envir = globalenv())
+table(map2_dbl(1:500, 1:500, `+`) > 0)
+```
+
+## Tricky... 
+
+Functions are also (usually) objects!
+
+```{r, lm-a}
+a <- lm
+a(hp ~ drat + wt, data = mtcars)
+```
+
+## What does this all mean?
+
+* Anything that carries out **ANY** operation in `R` is a function
+
+* Functions are generally, but not always, stored in an object 
+    + otherwise known as binding the function to a name
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGRwejF2czhrcGkzNmNyOXRxYW12aXlya2R4am1hZXJ3emYwMjFrcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ji6zzUZwNIuLS/giphy.gif)
+
+
+## Revisit anonymous functions
+
+::: {.incremental}
+- The function for computing the mean is bound to the name `mean`
+- When running things through loops, you may often want to apply a function *without* binding it to a name
+- An anonymous function
+:::
+
+## Example
+
+```{r anonymous-fun}
+vapply(mtcars, function(x) length(unique(x)), FUN.VALUE = double(1))
+```
+
+. . .
+
+`length(unique())` is not a known function
+
+## Another possibility {.smaller}
+
+* If you have a bunch of functions, you might consider storing them all in a list
+* You can then access the functions in the same way you would subset any list
+
+. . .
+
+```{r fun-list}
+funs <- list(
+  quarter = function(x) x / 4,
+  half = function(x) x / 2,
+  double = function(x) x * 2,
+  quadruple = function(x) x * 4
+)
+```
+
+. . .
+
+Strange, but works
+
+```{r fun-list-eval}
+funs$quarter(100)
+funs[["half"]](100)
+funs[[4]](100)
+```
+
+## What are the implications?
+
+If we can store functions in a vector (list), then we can loop through the vector just like any other!
+
+```{r smry-list}
+smry <- list(
+  n = length, 
+  n_miss = function(x) sum(is.na(x)),
+  n_valid = function(x) sum(!is.na(x)),
+  mean = mean, 
+  sd = sd
+)
+```
+
+. . .
+
+```{r smry-loop1}
+#| output-location: fragment
+map_dbl(smry, ~.x(mtcars$mpg))
+```
+
+## Careful though
+
+This doesn't work
+
+```{r smry-loop1-fail}
+#| error: true
+map_dbl(smry, mtcars$mpg)
+```
+
+## Why not?
+
+Remember what `{purrr}` does
+
+![](https://d33wubrfki0l68.cloudfront.net/f0494d020aa517ae7b1011cea4c4a9f21702df8b/2577b/diagrams/functionals/map.png)
+
+## With `map_df()`
+
+```{r map_df_smry}
+#| output-location: fragment
+map_df(smry, ~.x(mtcars$mpg))
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+map_df(smry, ~.x(mtcars$cyl))
+```
+
+## Challenge {.smaller}
+
+What if we wanted this for all columns?
+
+We need to make a nested loop (loop each function through each column)
+
+This is hard!
+
+. . .
+
+```{r smry-all-cols}
+#| output-location: fragment
+map_df(mtcars, function(col) map_df(smry, ~.x(col)),
+       .id = "column")
+```
+
+. . .
+
+`col` is an explicitly named function argument of the outer `map_df()` so there is no ambiguity with the `~` from the inner `map_df()`
+
+## Easier / more readable
+
+Avoid nested loops!
+
+Instead, turn (at least) one of the loops into a function
+
+```{r summarize_col}
+summarize_col <- function(column) {
+  map_df(smry, ~.x(column))
+}
+```
+
+. . .
+
+Now we can just loop this function through each column
+
+```{r all-cols}
+#| output-location: fragment
+map_df(mtcars, summarize_col, .id = "column")
+```
+
+## Wrap the whole thing in a function
+
+```{r df-function}
+summarize_df <- function(df) {
+  map_df(df, summarize_col, .id = "column")
+}
+```
+
+. . .
+
+```{r summarize-airquality}
+summarize_df(airquality)
+```
+
+
+## Deep breaths
+
+So far, this has just been a high-level overview
+
+I wanted to show *why* you might want to write functions first
+
+Let's dig into the particulars
+
+# Function components
+
+## Three components
+
+* `formals()`
+* `body()`
+* `environment()` (we won't focus much on this for now)
+
+
+![](https://github.com/uo-datasci-specialization/c3-fp-2022/blob/main/static/slides/img/bodyFormals.png?raw=true)
+
+## Function structure
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|1,3|2"
+fx_name <- function(formals){
+  body
+}
+```
+
+## Formals = arguements {.smaller}
+
+Formals are the **arguments** supplied to the function
+
+* What's one way to identify the formals for a function - say, `lm`?
+
+. . .
+
+`?`: Help documentation!
+
+. . .
+
+Alternative - use a function!
+
+```{r formals-fun}
+formals(lm)
+```
+
+## How do you see the body?
+
+* In RStudio: Super (`command` on Mac, `cntrl` on windows) + click!
+
+[demo]{style="color:#009E73;"}
+
+. . .
+
+Or use `body()`
+
+```{r lm-print}
+body(lm)
+```
+
+##################################################
+
+## Environment
+
+As I mentioned, we won't focus on this too much, but if you get deep into programming it's pretty important
+
+```{r env1}
+double <- function(x) x*2
+environment(double)
+environment(lm)
+```
+
+## Lexical Scoping {.smaller}
+
+- How `R` decides where to look for a variable based on where the function was written (defined), not where it is called
+- Each function has a "home" environment it searches first, then works outward
+- When a function runs and it sees a variable, `R` checks:
+    (1) Inside the function, is the variable there?
+    (2) If not, it looks in the environment where the function was created
+    (3) Then it keeps moving up — one level at a time — until it finds the variable or reaches the global environment
+
+## The Lookup Chain
+
+If a variable isn't found inside a function, `R` looks in the environment where the function *was defined*
+
+```{r scope1}
+#| output-location: fragment
+x <- "global"
+
+f <- function() {
+  x  
+}
+
+f()
+```
+
+. . .
+
+Here: `x` not defined in the function, so `R` looks outward to global env
+
+## Local Definitions Win
+
+A local variable *shadows* any outer variable with the same name
+
+```{r scope2}
+x <- "global"
+
+f <- function() {
+  x <- "local"   # shadows the global x
+  x
+}
+```
+
+. . .
+
+What will output here?
+
+```{r}
+#| output-location: fragment
+f()   
+```
+
+
+```{r}
+#| output-location: fragment
+x     
+```
+
+. . .
+
+The function `f()` gets its own x
+
+The global `x` is never touched
+
+## Defined Where, Not Called Where {.smaller}
+
+**where defined** matters, not **where called**
+
+```{r scope3}
+#| output-location: fragment
+x <- "global"
+
+f <- function() x        
+
+g <- function() {
+  x <- "inside g"
+  f()                    
+}
+```
+
+. . .
+
+Predict...
+
+```{r}
+#| output-location: fragment
+f()
+```
+
+. . .
+
+Straightforward
+
+. . .
+
+What happens here
+
+```{r}
+g()
+```
+
+. . .
+
+`f()` is **called** in `g()`, but was **defined** in global
+
+`f()` was defined in the global environment
+
+- so it always sees the global x
+- even when called from inside `g()`
+
+## Scoping Summary
+
+::: {incremental}
+- If an object is found locally
+    + `R` uses it
+- If an objects is **not** found locally 
+    + `R` looks in defining environment
+- If an object is called somewhere new
+    + `R` still uses defining environment   
+
+:::
+
+. . .
+
+Generally, you won't have to worry too much about this
+
+If you end up with unexpected results, this could be part of why
+
+
+## Scoping
+
+* Part of what's interesting about these scoping rules is that your functions can, and very often do, depend upon things in your global workspace, or your specific environment
+* If this is the case, the function will be a "one-off", and unlikely to be useful in any other script
+* Note that our `summarize_df()` function depended on the global `smry` list object
+
+. . .
+
+Let's look at a few real examples
+
+## Example 1
+
+Format tables for the "Schedule" page in course website
+
+```{r extract_grades}
+#| eval: false
+tbl_fx <- function(n){
+  sched |> # an object in my environment
+    slice(n) |> # 11 rows, weeks in quarter
+    select(data) |>
+    unnest(cols = c(data)) |>
+    gt::gt() |>
+    fmt_markdown(columns = c(Reading, Slides, Lecture, Assigned, Due)) |>
+    sub_missing(
+      columns = everything(),
+      missing_text = ""
+    ) |>
+    cols_label(
+      Date = md("<i class='far fa-calendar'></i>")
+    ) |>
+    tab_footnote(
+      footnote = paste0("Passcode: ", sched$lecture_passcode[[n]]),
+      locations = cells_column_labels(
+        columns = Lecture)
+    ) |>
+    table_style() # another function in my global env!
+}
+```
+
+## Example 1
+
+`gt()` formatting
+
+```{r}
+#| eval: false
+table_style <- function(data) {
+  data %>%
+    opt_table_lines(extent = "none") %>%
+    opt_table_outline(style = "solid", width = px(3), color = "black") %>%
+    tab_options(
+      heading.border.bottom.color = "black",
+      heading.border.bottom.style = "solid",
+      table.border.top.color = "black",
+      table_body.hlines.color = "black",
+      table_body.border.top.color = "black",
+      table_body.border.top.style = "solid",
+      table_body.border.bottom.color = "black",
+      table_body.border.bottom.style = "solid",
+      column_labels.border.bottom.color = "black",
+      column_labels.border.bottom.style = "solid",
+      column_labels.border.top.color = "black",
+      column_labels.background.color = "#009E73",
+      table.width = pct(100),
+      container.width = pct(100)
+    )
+}
+```
+
+## Example 2
+
+Reading in data
+
+```{r read-data-fun, eval = FALSE}
+read_sub_files <- function(filepath) {
+  read_csv(filepath) |> 
+    mutate(
+      content_area = str_extract(
+        filepath, "[Ee][Ll][Aa]|[Rr]dg|[Ww]ri|[Mm]ath|[Ss]ci"
+      ),
+      grade = gsub(".+g(\\d\\d*).+", "\\1", filepath),
+      grade = as.numeric(grade)
+    ) |> 
+    select(content_area, grade, everything()) |> 
+    clean_names()
+}
+
+ifiles <- map_df(filepaths, read_sub_files)
+```
+
+## Simple example
+
+[**Please follow along**]{style="color:#009E73;"}
+
+Pull out specific coefficients
+
+```{r mods}
+#| output-location: fragment
+mods <- mtcars |>
+	group_by(cyl) |>
+	nest() |>
+	mutate(
+	  model = map(
+	    data, ~lm(mpg ~ disp + hp + drat, data = .x)
+    )
+  )
+mods
+```
+
+## Pull a specific `coef`
+
+Find the solution for one model
+
+```{r coefs}
+# pull just the first model
+m <- mods$model[[1]]
+
+# extract all coefs
+coef(m)
+```
+
+. . .
+
+Extract specific coefs
+
+```{r}
+coef(m)["disp"]
+coef(m)["(Intercept)"]
+```
+
+## Challenge
+
+Can you write a function that returns a *specific* coefficient from a model?
+
+Try using the code on the previous slide as you guide
+
+`r countdown::countdown(4)`
+
+## Generalize it {.smaller}
+
+. . .
+
+```{r pull-coef-fun}
+pull_coef <- function(model, coef_name) {
+  coef(model)[coef_name]
+}
+```
+
+. . .
+
+Check it
+
+```{r}
+#| output-location: fragment
+pull_coef(mods$model[[1]])
+```
+
+. . .
+
+Expand it
+
+```{r pull-coef1}
+#| output-location: fragment
+mods |>
+	mutate(intercept = map_dbl(model, pull_coef, "(Intercept)"),
+	       disp      = map_dbl(model, pull_coef, "disp"),
+	       hp        = map_dbl(model, pull_coef, "hp"),
+	       drat      = map_dbl(model, pull_coef, "drat"))
+```
+
+## Make it more flexible
+
+Since the intercept is a little difficult to pull out, we could have it return that by default
+
+```{r pull-coef2}
+#| output-location: fragment
+pull_coef <- function(model, coef_name = "(Intercept)") {
+	coef(model)[coef_name]
+}
+
+mods |>
+	mutate(intercept = map_dbl(model, pull_coef))
+```
+
+## Return all coefficients {.smaller}
+
+First, figure it out for a single case
+
+```{r }
+coef(m)
+names(coef(m))
+```
+
+. . .
+
+Put them in a data frame
+
+```{r }
+#| output-location: fragment
+tibble(
+  term = names(coef(m)),
+  coefficient = coef(m)
+)
+```
+
+## Challenge
+
+Can you generalize this to a function?
+
+That is, pull all coefficients and write to a tibble?
+
+`r countdown::countdown(4)`
+
+. . .
+
+```{r pull-coef3}
+pull_coef <- function(model) {
+	coefs <- coef(model)
+	tibble(
+	  term = names(coefs),
+	  coefficient = coefs
+	  )
+}
+```
+
+## Test it out
+
+```{r }
+#| output-location: fragment
+mods |>
+	mutate(coefs = map(model, pull_coef))
+```
+
+## unnest
+
+```{r unnest}
+#| output-location: fragment
+mods |>
+	mutate(coefs = map(model, pull_coef)) |>
+	unnest(coefs)
+```
+
+## Slightly nicer
+
+```{r unnest-better}
+#| code-line-numbers: "|3"
+#| output-location: fragment
+mods |>
+	mutate(coefs = map(model, pull_coef)) |>
+	select(cyl, coefs) |>
+	unnest(coefs)
+```
+
+## Create nice table
+
+```{r unnest-success-table}
+#| error: true
+#| output-location: fragment
+mods |>
+	mutate(coefs = map(model, pull_coef)) |>
+	select(cyl, coefs) |>
+	unnest(coefs) |>
+	pivot_wider(
+	  names_from = "term",
+	  values_from = "coefficient"
+  ) |> 
+  arrange(cyl)
+```
+
+# When to write a function?
+
+## Example
+
+```{r df}
+set.seed(3000)
+df <- tibble::tibble(
+  a = rnorm(10, 100, 150),
+  b = rnorm(10, 100, 150),
+  c = rnorm(10, 100, 150),
+  d = rnorm(10, 100, 150)
+)
+
+df
+```
+
+## Rescale each column to 0-1
+
+We do this by
+
+- subtracting the `min` value from each observation
+- then dividing that by the difference between the `min`/`max` values
+
+. . .
+
+For example
+
+```{r }
+#| code-line-numbers: "|2|3|4"
+#| output-location: fragment
+tibble(
+  v1 = c(3, 4, 5),
+  numerator = v1 - 3,
+  denominator = 5 - 3,
+  scaled = numerator / denominator
+)
+```
+
+## One column
+
+```{r scale1}
+#| output-location: fragment
+df |>
+	mutate(
+	  a = (a - min(a, na.rm = TRUE)) / 
+	    (max(a, na.rm = TRUE) - min(a, na.rm = TRUE))
+  )
+```
+
+## Do it for all columns
+
+```{r scale2}
+#| output-location: fragment
+df |>
+	mutate(
+	  a = (a - min(a, na.rm = TRUE)) /
+	    (max(a, na.rm = TRUE) - min(a, na.rm = TRUE)),
+	  b = (b - min(b, na.rm = TRUE)) /
+	    (max(b, na.rm = TRUE) - min(b, na.rm = TRUE)),
+	  c = (c - min(c, na.rm = TRUE)) /
+	    (max(c, na.rm = TRUE) - min(c, na.rm = TRUE)),
+	  d = (d - min(d, na.rm = TRUE)) /
+	    (max(d, na.rm = TRUE) - min(d, na.rm = TRUE))
+  )
+```
+
+##
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmlpeHlvZTEwZXVuZWtkZzE0d2RzZWlyOHpxeGU2Z3F0djZrcmlqZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gsiBBda5eVSIilfGlo/giphy.gif)
+
+## An alternative
+
+What's an alternative we could use *without* writing a function?
+
+. . .
+
+```{r scale3}
+#| output-location: fragment
+map_df(df, ~(.x - min(.x, na.rm = TRUE)) / 
+              (max(.x, na.rm = TRUE) - min(.x, na.rm = TRUE)))
+```
+
+## Another alternative
+
+`across()`
+
+```{r}
+df |>
+	mutate(
+	  across(c(a:d), ~(. - min(., na.rm = TRUE)) / 
+	    (max(., na.rm = TRUE) - min(., na.rm = TRUE))
+	  )
+  )
+```
+
+
+## Another alternative
+
+Write a function
+
+* What are the arguments going to be?
+* What will the body be?
+
+. . .
+
+**Arguments**
+
+* One formal argument - A numeric vector to rescale
+
+. . .
+
+**Body**
+
+* You try first
+
+`r countdown::countdown(3)`
+
+## Body
+
+. . .
+
+```{r body-fun}
+#| eval: false
+(x - min(x, na.rm = TRUE)) / 
+  (max(x, na.rm = TRUE) - min(x, na.rm = TRUE))
+```
+
+. . .
+
+**Create the function**
+
+```{r rescale1}
+rescale01 <- function(x) {
+  (x - min(x, na.rm = TRUE)) / 
+    (max(x, na.rm = TRUE) - min(x, na.rm = TRUE))
+}
+```
+
+## Test it!
+
+```{r test-rescale1}
+#| output-location: fragment
+rescale01(c(0, 5, 10))
+```
+
+. . .
+
+```{r}
+#| output-location: fragment
+rescale01(c(seq(0, 100, 10)))
+```
+
+## Make it cleaner
+
+* There's nothing "wrong" with the prior function, but it is a bit hard to read
+* How could we make it easier to read?
+
+. . .
+
+- Remove missing data once (rather than every time)
+- Try noto't calculate things multiple times!
+
+## A little cleaned up
+
+```{r rescale2}
+rescale01b <- function(x) {
+	z <- na.omit(x)
+	min_z <- min(z)
+	max_z <- max(z)
+
+	(z - min_z) / (max_z - min_z)
+}
+```
+
+. . .
+
+**Test it!**
+
+```{r}
+#| output-location: fragment
+rescale01b(c(0, 5, 10))
+```
+
+. . .
+
+```{r test-rescale2}
+#| output-location: fragment
+rescale01b(c(seq(0, 100, 10)))
+```
+
+## Make sure they give the same output
+
+```{r }
+#| output-location: fragment
+identical(rescale01(c(0, 1e5, .01)), rescale01b(c(0, 1e5, 0.01)))
+```
+
+. . .
+
+```{r }
+#| output-location: fragment
+rand <- rnorm(1e3)
+identical(rescale01(rand), rescale01b(rand))
+```
+
+## Getting more complex
+
+What if you want a function to behave differently depending on the input?
+
+. . .
+
+Add conditions!
+
+## Condition
+
+```{r condition-template1}
+#| eval: false
+function() {
+	if (condition) {
+  
+  # code executed when condition is TRUE
+	
+	} else {
+	  
+  # code executed when condition is FALSE
+	
+	}
+}
+```
+
+
+## Many conditions
+
+```{r condition-template2}
+#| eval: false
+
+function() {
+	if (this) {
+  
+  # do this
+	
+	} else if (that) {
+  
+  # do that
+	
+	} else {
+
+	# something else
+	
+	}
+}
+```
+
+## Easy example
+
+Given a vector, return the mean if it's numeric, and `NULL` otherwise
+
+```{r mean2}
+#| code-line-numbers: "|2|3|4|5"
+mean2 <- function(x) {
+	if(is.numeric(x)) {
+		out <- mean(x)
+	}
+	else {
+		return(NULL)
+	}
+  out
+}
+```
+
+## Test it
+
+```{r mean2-test}
+mean2(rnorm(12))
+```
+
+. . .
+
+```{r}
+mean2(c("a", "b", "c"))
+```
+
+## Mean for all numeric columns {.smaller}
+
+* The prior function can now be used within a new function to calculate the mean of all columns of a data frame that are numeric
+* First, let's do it "by hand", 
+* Then we'll wrap it in a function
+
+We'll use `ggplot2::mpg`
+
+```{r }
+mpg
+```
+
+## Calculate all means
+
+```{r }
+means_mpg <- map(mpg, mean2)
+means_mpg
+```
+
+## Drop `NULL`'s
+
+First identify which are null
+
+```{r }
+#| output-location: fragment
+is_null <- map_lgl(means_mpg, is.null)
+is_null
+```
+
+## Subset
+
+Use the `is_null` vector to subset
+
+```{r }
+means_mpg[!is_null]
+```
+
+## Transform to a data frame
+
+```{r }
+as.data.frame(means_mpg[!is_null])
+```
+
+## Challenge
+
+Can you wrap all of the previous into a function?
+
+`r countdown::countdown(5)`
+
+## Solution
+
+. . .
+
+```{r df-mean}
+means_df <- function(df) {
+	means <- map(df, mean2) # calculate means
+	nulls <- map_lgl(means, is.null) # find null values
+	means_l <- means[!nulls] # subset list to remove nulls
+	
+	as.data.frame(means_l) # return a df
+}
+```
+
+. . .
+
+```{r }
+head(mpg)
+means_df(mpg)
+```
+
+## We have a problem though!
+
+We didn't account for `NA`s
+
+. . .
+
+```{r ozone-means}
+head(airquality)
+```
+
+. . .
+
+```{r }
+means_df(airquality)
+```
+
+. . .
+
+How can we fix it?
+
+## Easiest way `...`
+
+**Pass the dots!**
+
+Redefine `mean2`
+
+```{r means2-redefined}
+#| code-line-numbers: "|1,3"
+mean2 <- function(x, ...) {
+	if(is.numeric(x)) {
+		mean(x, ...)
+	}
+	else {
+		return()
+	}
+}
+```
+
+## Redefine means_df
+
+```{r df-mean-redefined}
+#| code-line-numbers: "|1-2"
+means_df <- function(df, ...) {
+	means <- map(df, mean2, ...) # calculate means
+	nulls <- map_lgl(means, is.null) # find null values
+	means_l <- means[!nulls] # subset list to remove nulls
+	
+	as.data.frame(means_l) # return a df
+}
+```
+
+. . .
+
+```{r}
+means_df(airquality)
+```
+
+. . .
+
+```{r}
+means_df(airquality, na.rm = TRUE)
+```
+
+# Functions: Part 2
+
+## Agenda {.smaller}
+
+* Purity (quickly)
+* Function conditionals
+    + `if (condition) {}`
+	  + embedding warnings, messages, and errors
+* Return values
+
+**Learning objectives**
+
+* Understand the concept of purity, and why it is often desirable
+	    + And be able to define a side effect
+* Be able to change the behavior of a function based on the input
+* Be able to embed warnings/messages/errors
+
+## Purity
+
+A function is pure if:
+
+1. Its output depends **only** on its inputs
+2. It produces no **side-effect**
+
+## Side-effects {.smaller}
+
+Side-effects
+: any observable changes occurring outside the function's local environment
+
+. . .
+
+- It makes no changes to the "state of the world"
+    + this is not a technical term, just a way to think about it
+
+## Side effect examples
+
+:::{.incremental}
+- modifying global variables 
+    + `<<-`
+- console output
+    + Printing messages to the console using `print()`, `cat()`, `message()`, `warning()`
+- creating plots 
+    + `plot()`, `hist()`, `ggplot()`
+- saving files 
+    + `write.csv()`, `saveRDS()`, `sink()`
+- changing the environment
+    + `setwd()`, `options()`
+- package management
+    + loading or attaching packages within a function using `library()` or `require()`
+- setting the seed
+    + `set.seed()`
+
+:::
+
+## Conditionals {.smaller}
+
+Example from an old lab:
+
+*Write a function that takes two vectors of the same length and returns the total number of instances where the value is `NA` for both vectors. For example, given the following two vectors*
+
+```{r vects1}
+#| eval: false
+c(1, NA, NA, 3, 3, 9, NA)
+c(NA, 3, NA, 4, NA, NA, NA)
+```
+
+*the function should return a value of `2`, because the vectors are both `NA` at the third and seventh locations. Provide at least one additional test that the function works as expected.*
+
+## How do you *start* to solve this problem?
+
+~~With a function! 🤓~~
+
+Solve it on a test case, then generalize 😎
+
+. . .
+
+Use the vectors to solve!
+
+```{r vects2}
+a <- c(1, NA, NA, 3, 3, 9, NA)
+b <- c(NA, 3, NA, 4, NA, NA, NA)
+```
+
+You try first. See if you can use these vectors to find how many elements are `NA` in both (should be 2)
+
+`r countdown::countdown(4, top = 0)`
+
+## One approach
+
+```{r}
+is.na(a) 
+is.na(b)
+```
+
+. . .
+
+```{r}
+is.na(a) & is.na(b)
+```
+
+. . .
+
+```{r}
+sum(is.na(a) & is.na(b))
+```
+
+## Generalize to function
+
+`r countdown::countdown(3)`
+
+. . .
+
+```{r both_na-fun}
+both_na <- function(x, y) {
+	sum(is.na(x) & is.na(y))
+}
+```
+
+## Test it
+
+```{r test-both_na}
+both_na(a, b)
+both_na(c(a, a), c(b, b))
+```
+
+. . .
+
+What happens if not same length?
+
+```{r}
+#| output-location: fragment
+both_na(a, c(b, b))
+```
+
+. . .
+
+🤔
+
+## What's going on here? {.smaller}
+
+**Recycling**
+
+* `R` will **recycle** vectors if they are divisible
+
+```{r recycle1}
+#| output-location: fragment
+data.frame(nums = 1:4,
+           letts = c("a", "b"))
+```
+
+. . .
+
+* This will not work if they are not divisible
+
+```{r recycle-fail}
+#| error: true
+data.frame(nums = 1:3,
+           lets = c("a", "b"))
+```
+
+## Unexpected results
+
+In the `both_na()` function, recycling can lead to unexpected results, as we saw
+
+What should we do?
+
+. . .
+
+Check that they are the same length, return an error if not
+
+## Check lengths
+
+Stop the evaluation of a function and return an error message with `stop` but only if a condition has been met
+
+. . .
+
+Basic structure
+
+```{r error1a}
+#| code-line-numbers: "|1|2,4|3|5"
+both_na <- function(x, y) {
+	if(condition) {
+		stop("message")
+	}
+	sum(is.na(x) & is.na(y))
+}
+```
+
+## Challenge
+
+`r countdown::countdown(2)`
+
+- Modify the code below to check that the vectors are of the same length
+- Return a *meaningful* error message if not
+- Test it out to make sure it works!
+
+```{r error1b}
+#| eval: false
+both_na <- function(x, y) {
+	if(condition) {
+		stop("message")
+	}
+	sum(is.na(x) & is.na(y))
+}
+```
+
+## Attempt 1
+
+Did yours look something like this?
+
+. . .
+
+```{r error-message1}
+#| error: true
+both_na <- function(x, y) {
+	if(length(x) != length(y)) {
+		stop("Vectors are of different lengths")
+	}
+	sum(is.na(x) & is.na(y))
+}
+```
+
+
+```{r}
+#| output-location: fragment
+both_na(a, b)
+```
+
+
+```{r}
+#| output-location: fragment
+#| error: true
+both_na(a, c(b, b))
+```
+
+## More meaningful error message?
+
+What would make it more meaningful?
+
+. . .
+
+State the lengths of each?
+
+. . .
+
+```{r error-message2}
+#| code-line-numbers: "|3-4|5"
+both_na <- function(x, y) {
+	if(length(x) != length(y)) {
+		v_lngths <- paste0("x = ", length(x), 
+		                   ", y = ", length(y))
+		stop("Vectors are of different lengths: ", v_lngths)
+	}
+	sum(is.na(x) & is.na(y))
+}
+```
+
+. . .
+
+```{r}
+#| error: true
+both_na(a, c(b, b))
+```
+
+## Clean up
+
+Often we don't need/want to echo the function
+
+Set `call. = FALSE`
+
+```{r }
+#| code-line-numbers: "|8"
+both_na <- function(x, y) {
+	if(length(x) != length(y)) {
+		v_lngths <- paste0("x = ", length(x), 
+		                   ", y = ", length(y))
+		stop(
+		  "Vectors are of different lengths:", 
+		  v_lngths,
+		  call. = FALSE
+	  )
+	}
+	sum(is.na(x) & is.na(y))
+}
+```
+
+. . .
+
+```{r}
+#| error: true
+both_na(a, c(b, b))
+```
+
+## Clean up
+
+We also can state the lengths on new lines with `\n`
+
+```{r }
+#| code-line-numbers: "|4|7"
+both_na <- function(x, y) {
+	if(length(x) != length(y)) {
+		v_lngths <- paste0("x = ", length(x), 
+		                   "\n",
+		                   "y = ", length(y))
+		stop(
+		  "Vectors are of different lengths:\n", 
+		  v_lngths,
+		  call. = FALSE
+	  )
+	}
+	sum(is.na(x) & is.na(y))
+}
+```
+
+. . .
+
+```{r}
+#| error: true
+both_na(a, c(b, b))
+```
+
+## Quick error messages {.smaller}
+
+* For quick checks, with usually less than optimal messages, use `stopifnot`
+* Often useful if the function is just for you
+
+. . .
+
+```{r z-score-stopifnot}
+#| code-line-numbers: "|2"
+#| output-location: fragment
+
+z_score <- function(x) {
+  stopifnot(is.numeric(x))
+  x <- x[!is.na(x)]
+  (x - mean(x)) / sd(x)
+}
+```
+
+. . .
+
+```{r}
+#| error: true
+z_score(c("a", "b", "c"))
+```
+
+. . .
+
+```{r}
+z_score(c(100, 115, 112))
+```
+
+## warnings
+
+If you want to embed a warning, just swap out `stop()` for `warning()`
+
+. . .
+
+Let's build out a warning if the vectors are different lengths, but they **ARE** recyclable
+
+## Modulo operator
+
+`%%` returns the remainder in a division problem
+
+For example:
+
+- `8 %% 2` and `8 %% 4` both return zero (because there is no remainder)
+- `7 %% 2` returns 1 
+- `7 %% 4` returns 3
+
+## One approach
+
+Note the double condition
+
+```{r error-warn}
+#| code-line-numbers: "|2,8|2-4|6|8-9|11-13"
+both_na <- function(x, y) {
+	if(length(x) != length(y)) {
+		lx <- length(x)
+		ly <- length(y)
+		
+		v_lngths <- paste0("x = ", lx, ", y = ", ly)
+
+		if(lx %% ly == 0 | ly %% lx == 0) {
+			warning("Vectors were recycled (", v_lngths, ")")
+		}
+		else {
+			stop("Vectors are of different lengths and are not recyclable: ",
+			     v_lngths)	
+		}
+	}
+	sum(is.na(x) & is.na(y))
+}
+```
+
+## Test it {.smaller}
+
+:::: {.columns}
+::: {.column width="50%" .fragment}
+
+Vectors different lengths but recyclable
+
+```{r test-error-warn}
+#| warning: true
+#| error: true
+both_na(a, c(b, b))
+```
+
+:::
+
+::: {.column width="50%" .fragment}
+
+Vectors different lengths **NOT** recyclable
+
+```{r}
+#| warning: true
+#| error: true
+both_na(a, c(b, b)[-1])
+```
+
+:::
+
+::::
+
+## Refactoring
+
+* Improving the internal structure of your code to make it more readable, maintainable, and efficient, without changing its external behavior
+    + changing the internals, but the output stays the same
+* Next week, we'll refactor th `both_na` function to make it more readable 
+
+## We doing good?
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWMyNW4ya2x6d3Q2cGZkZ3A3ZWJ2Z2g1OWh4Z3B5N3J6cXMxeWFiaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eL2Y2MDEDSIg2zYujc/giphy.gif)
+
+## How important is this?
+
+* For most of the work you do? *Not very*
+
+* Develop a package? *Very!*
+
+* Develop functions that others use, even if not through a package? *Sort of*
+
+## Return values
+
+Thinking more about return values
+
+* By default the function will return the last thing that is evaluated
+* Override this behavior with `return()`
+* This allows the return of your function to be conditional
+* Generally the last thing evaluated should be the "default", or most common return value
+
+## Pop quiz
+
+What will the following return?
+
+Try it yourself
+
+```{r return-nothing}
+#| output-location: fragment
+add_two <- function(x) {
+	result <- x + 2
+}
+add_two(5)
+```
+
+. . .
+
+**Answer**: Nothing! Why?
+
+```{r add_two-result}
+add_two(10)
+```
+
+## Specify the return value
+
+The below are all equivalent, and all result in the same function behavior
+
+```{r}
+add_two.1 <- function(x) {
+	x + 2
+}
+```
+
+```{r add_two}
+add_two.2 <- function(x) {
+	result <- x + 2
+	result
+}
+```
+
+```{r add_two.3}
+add_two.3 <- function(x) {
+	result <- x + 2
+	return(result)
+}
+```
+
+## When to use `return()`?
+
+Generally reserve `return()` for when you're returning a value prior to the full evaluation of the function
+
+Otherwise, use `add_two.1()` or `add_two.2()` methods from prior slide
+
+## Function names
+
+Which of these is most intuitive?
+
+```{r fun-names}
+f <- function(x) {
+	x <- sort(x)
+	data.frame(value = x, 
+	           p = ecdf(x)(x))
+}
+
+ptile <- function(x) {
+	x <- sort(x)
+	data.frame(value = x, 
+	           ptile = ecdf(x)(x))
+}
+
+percentile_df <- function(x) {
+	x <- sort(x)
+	data.frame(value = x, 
+	           percentile = ecdf(x)(x))
+}
+```
+
+## Function names
+
+Personally, I like name my functions with the prefix `fx_`
+
+This helps me find the function later in my code, especially if I wrote mulitple functions in the script
+
+```{r}
+fx_percentile <- function(x) {
+	x <- sort(x)
+	data.frame(value = x, 
+	           percentile = ecdf(x)(x))
+}
+```
+
+
+## Output {.smaller}
+
+* The descriptive nature of the output can also help
+* Maybe a little too tricky but...
+
+```{r percentile_df}
+percentile_df <- function(x) {
+	arg <- as.list(match.call()) # returns a list of the arguments
+	x <- sort(x)
+	d <- data.frame(value = x, 
+	                percentile = ecdf(x)(x))
+	
+	names(d)[1] <- paste0(as.character(arg$x), collapse = "_") # names first column after the argument
+	d
+}
+```
+
+. . .
+
+```{r precentile_df-example}
+random_vector <- rnorm(100)
+head(percentile_df(random_vector))
+```
+
+. . .
+
+```{r}
+head(percentile_df(rnorm(50)))
+```
+
+## How do we do this?
+
+* I often debug functions and/or figure out how to do something within the function by changing the return value & re-running the function multiple times
+
+[**demo with `percentile_df()`**]{style="color:#009E73;"}
+
+## Thinking about dependencies
+
+* What's the purpose of the function?
+  	+ Just your use? Never needed again? 
+  	    - Don't worry about it at all
+  	+ Mass scale? 
+  	    - Worry a fair bit, but make informed decisions
+* What's the likelihood of needing to reproduce the results in the future?
+  	+ If high, worry more
+* Consider using name spacing (`::`)
+
+
+# Next time
+
+## Before next class
+
+- Readings
+    + [AdvR(2e) 6.5-6.8](https://adv-r.hadley.nz/functions.html#lazy-evaluation)
+
