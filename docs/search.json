@@ -802,7 +802,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: $L6&HnNN\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\nLab 1\n\n\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: a3ltA@DH\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nAdvR(2e) 9.4-9.6\n\n\nLab 2\nLab 1\n\n\n\n\n\n\n\n\n\n\nClone course repo\n\n\n\n\n\n1 Passcode: Y5HLB*V5\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\nLab 2\n\n\n\n\nR4DS(1e) 25\n\n\n\n\n\n\nClone course repo\n\n\n\n1 Passcode: Sa!AJf61\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: MMd2Fz.K\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\n\n\nMidterm Test(midterm.html)\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
+    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: $L6&HnNN\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\nLab 1\n\n\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: a3ltA@DH\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nAdvR(2e) 9.4-9.6\n\n\nLab 2\nLab 1\n\n\n\n\n\n\n\n\n\n\nClone course repo\n\n\n\n\n\n1 Passcode: Y5HLB*V5\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\nLab 2\n\n\n\n\nR4DS(1e) 25\n\n\n\n\n\n\nClone course repo\n\n\n\n1 Passcode: Sa!AJf61\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: MMd2Fz.K\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\n\nMidterm Test(midterm.html)\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
   },
   {
     "objectID": "slides/w2.html#agenda",
@@ -3735,7 +3735,7 @@
     "href": "slides/w6.html#whats-going-on-here",
     "title": "Week 6: Writing Functions",
     "section": "What’s going on here?",
-    "text": "What’s going on here?\nThe + operator is a function that takes two arguments (both numeric), which it sums\nWe’re explicitly calling the + function with two arguments: +(arg1, arg2)\n\nThis is true for all R operators\n\n`*`(4, 6)\n\n[1] 24\n\n\n\n`^`(9, 2)\n\n[1] 81\n\n\n\n`&gt;`(5, 3)\n\n[1] TRUE\n\n\n\nx &lt;- c(\"a\", \"b\", \"c\")\n`[`(x, 2)\n\n[1] \"b\""
+    "text": "What’s going on here?\nThe + operator is a function that takes two arguments (both numeric), which it sums\nWe’re explicitly calling the + function with two arguments: +(arg1, arg2)\n\nThis is true for all R operators\n\n`*`(4, 6)\n\n[1] 24\n\n\n\n\n\n`^`(9, 2)\n\n[1] 81\n\n\n\n\n\n`&gt;`(5, 3)\n\n[1] TRUE\n\n\n\n\n\nx &lt;- c(\"a\", \"b\", \"c\")\n`[`(x, 2)\n\n\n\n[1] \"b\""
   },
   {
     "objectID": "slides/w6.html#even-this",
@@ -3749,7 +3749,7 @@
     "href": "slides/w6.html#challenge",
     "title": "Week 6: Writing Functions",
     "section": "Challenge",
-    "text": "Challenge\nHow would we write that below similarly?\n\n3 + 5 + 7\n\n[1] 15\n\n\n\n\n`+`(7, `+`(3, 5))\n\n[1] 15\n\n\n\n\nor\n\n`+`(3, 5) %&gt;% \n    `+`(7)\n\n[1] 15\n\n\n\n\nbut not the native pipe!\n\n`+`(3, 5) |&gt;  \n    `+`(7)\n\nError in +7: function '+' not supported in RHS call of a pipe (&lt;input&gt;:2:9)"
+    "text": "Challenge\nHow would we write this in the same manner?\n\n3 + 5 + 7\n\n[1] 15\n\n\n\n\n`+`(7, `+`(3, 5))\n\n[1] 15\n\n\n\n\nor\n\n`+`(3, 5) %&gt;% \n    `+`(7)\n\n[1] 15\n\n\n\n\nbut not the native pipe!\n\n`+`(3, 5) |&gt;  \n    `+`(7)\n\nError in +7: function '+' not supported in RHS call of a pipe (&lt;input&gt;:2:9)"
   },
   {
     "objectID": "slides/w6.html#want-to-know-why",
@@ -3763,7 +3763,7 @@
     "href": "slides/w6.html#i-knew-you-would",
     "title": "Week 6: Writing Functions",
     "section": "I knew you would",
-    "text": "I knew you would\n%&gt;%\n\ntakes the LHS and constructs a new function call, inserting the LHS as the first argument\nso 3 %&gt;% + (5) becomes +(3, 5)\n\n\n|&gt;\n\nrequires the RHS to be a syntactically valid function call\nmeaning it must look like f(...) with a proper identifier as the function name\n3 |&gt; + (5) sees a backtick-quoted name, proper function"
+    "text": "I knew you would\n%&gt;%\n\ntakes the LHS and constructs a new function call, inserting the LHS as the first argument\nso 3 %&gt;% + (5) becomes +(3, 5)\n\n\n|&gt;\n\nrequires the RHS to be a syntactically valid function call\nmeaning it must look like f(...) with a proper identifier as the function name\n3 |&gt; + (5) sees a backtick-quoted name, not a proper function"
   },
   {
     "objectID": "slides/w6.html#mean-trick",
@@ -3777,14 +3777,14 @@
     "href": "slides/w6.html#mean-trick-1",
     "title": "Week 6: Writing Functions",
     "section": "Mean trick",
-    "text": "Mean trick\n\ntibble(\n  x = 1:500,\n  y = 1:500\n) |&gt; \n  mutate(sum = map2_dbl(x, y, `+`)) |&gt; \n  filter(sum &lt; 0)\n\n\n\n# A tibble: 3 × 3\n      x     y   sum\n  &lt;int&gt; &lt;int&gt; &lt;dbl&gt;\n1   114   114  -228\n2   457   457  -914\n3   494   494  -988\n\n\n\n\ntable(map2_dbl(1:500, 1:500, `+`) &gt; 0)\n\n\n\n\nFALSE  TRUE \n    6   494"
+    "text": "Mean trick\n\ntibble(\n  x = 1:500,\n  y = 1:500\n) |&gt; \n  mutate(sum = map2_dbl(x, y, `+`)) |&gt; \n  filter(sum &lt; 0)\n\n\n\n# A tibble: 2 × 3\n      x     y   sum\n  &lt;int&gt; &lt;int&gt; &lt;dbl&gt;\n1   383   383  -766\n2   466   466  -932\n\n\n\n\ntable(map2_dbl(1:500, 1:500, `+`) &lt; 0)\n\n\n\n\nFALSE  TRUE \n  493     7"
   },
   {
     "objectID": "slides/w6.html#undo",
     "href": "slides/w6.html#undo",
     "title": "Week 6: Writing Functions",
     "section": "Undo",
-    "text": "Undo\n\nrm(`+`, envir = globalenv())\ntable(map2_dbl(1:500, 1:500, `+`) &gt; 0)\n\n\nTRUE \n 500"
+    "text": "Undo\n\nrm(`+`, envir = globalenv())\ntable(map2_dbl(1:500, 1:500, `+`) &lt; 0)\n\n\nFALSE \n  500"
   },
   {
     "objectID": "slides/w6.html#tricky",
@@ -3903,7 +3903,7 @@
     "href": "slides/w6.html#how-do-you-see-the-body",
     "title": "Week 6: Writing Functions",
     "section": "How do you see the body?",
-    "text": "How do you see the body?\n\nIn RStudio: Super (command on Mac, cntrl on windows) + click!\n\ndemo\n\nOr use body()\n\nbody(lm)\n\n{\n    ret.x &lt;- x\n    ret.y &lt;- y\n    cl &lt;- match.call()\n    mf &lt;- match.call(expand.dots = FALSE)\n    m &lt;- match(c(\"formula\", \"data\", \"subset\", \"weights\", \"na.action\", \n        \"offset\"), names(mf), 0L)\n    mf &lt;- mf[c(1L, m)]\n    mf$drop.unused.levels &lt;- TRUE\n    mf[[1L]] &lt;- quote(stats::model.frame)\n    mf &lt;- eval(mf, parent.frame())\n    if (method == \"model.frame\") \n        return(mf)\n    else if (method != \"qr\") \n        warning(gettextf(\"method = '%s' is not supported. Using 'qr'\", \n            method), domain = NA)\n    mt &lt;- attr(mf, \"terms\")\n    y &lt;- model.response(mf, \"numeric\")\n    w &lt;- as.vector(model.weights(mf))\n    if (!is.null(w) && !is.numeric(w)) \n        stop(\"'weights' must be a numeric vector\")\n    offset &lt;- model.offset(mf)\n    mlm &lt;- is.matrix(y)\n    ny &lt;- if (mlm) \n        nrow(y)\n    else length(y)\n    if (!is.null(offset)) {\n        if (!mlm) \n            offset &lt;- as.vector(offset)\n        if (NROW(offset) != ny) \n            stop(gettextf(\"number of offsets is %d, should equal %d (number of observations)\", \n                NROW(offset), ny), domain = NA)\n    }\n    if (is.empty.model(mt)) {\n        x &lt;- NULL\n        z &lt;- list(coefficients = if (mlm) matrix(NA_real_, 0, \n            ncol(y)) else numeric(), residuals = y, fitted.values = 0 * \n            y, weights = w, rank = 0L, df.residual = if (!is.null(w)) sum(w != \n            0) else ny)\n        if (!is.null(offset)) {\n            z$fitted.values &lt;- offset\n            z$residuals &lt;- y - offset\n        }\n    }\n    else {\n        x &lt;- model.matrix(mt, mf, contrasts)\n        z &lt;- if (is.null(w)) \n            lm.fit(x, y, offset = offset, singular.ok = singular.ok, \n                ...)\n        else lm.wfit(x, y, w, offset = offset, singular.ok = singular.ok, \n            ...)\n    }\n    class(z) &lt;- c(if (mlm) \"mlm\", \"lm\")\n    z$na.action &lt;- attr(mf, \"na.action\")\n    z$offset &lt;- offset\n    z$contrasts &lt;- attr(x, \"contrasts\")\n    z$xlevels &lt;- .getXlevels(mt, mf)\n    z$call &lt;- cl\n    z$terms &lt;- mt\n    if (model) \n        z$model &lt;- mf\n    if (ret.x) \n        z$x &lt;- x\n    if (ret.y) \n        z$y &lt;- y\n    if (!qr) \n        z$qr &lt;- NULL\n    z\n}"
+    "text": "How do you see the body?\n\nIn RStudio: Super (command on Mac, cntrl on windows) + click!\n\ndemo\n\nOr use body()\n\nbody(lm)\n\n\n\n{\n    ret.x &lt;- x\n    ret.y &lt;- y\n    cl &lt;- match.call()\n    mf &lt;- match.call(expand.dots = FALSE)\n    m &lt;- match(c(\"formula\", \"data\", \"subset\", \"weights\", \"na.action\", \n        \"offset\"), names(mf), 0L)\n    mf &lt;- mf[c(1L, m)]\n    mf$drop.unused.levels &lt;- TRUE\n    mf[[1L]] &lt;- quote(stats::model.frame)\n    mf &lt;- eval(mf, parent.frame())\n    if (method == \"model.frame\") \n        return(mf)\n    else if (method != \"qr\") \n        warning(gettextf(\"method = '%s' is not supported. Using 'qr'\", \n            method), domain = NA)\n    mt &lt;- attr(mf, \"terms\")\n    y &lt;- model.response(mf, \"numeric\")\n    w &lt;- as.vector(model.weights(mf))\n    if (!is.null(w) && !is.numeric(w)) \n        stop(\"'weights' must be a numeric vector\")\n    offset &lt;- model.offset(mf)\n    mlm &lt;- is.matrix(y)\n    ny &lt;- if (mlm) \n        nrow(y)\n    else length(y)\n    if (!is.null(offset)) {\n        if (!mlm) \n            offset &lt;- as.vector(offset)\n        if (NROW(offset) != ny) \n            stop(gettextf(\"number of offsets is %d, should equal %d (number of observations)\", \n                NROW(offset), ny), domain = NA)\n    }\n    if (is.empty.model(mt)) {\n        x &lt;- NULL\n        z &lt;- list(coefficients = if (mlm) matrix(NA_real_, 0, \n            ncol(y)) else numeric(), residuals = y, fitted.values = 0 * \n            y, weights = w, rank = 0L, df.residual = if (!is.null(w)) sum(w != \n            0) else ny)\n        if (!is.null(offset)) {\n            z$fitted.values &lt;- offset\n            z$residuals &lt;- y - offset\n        }\n    }\n    else {\n        x &lt;- model.matrix(mt, mf, contrasts)\n        z &lt;- if (is.null(w)) \n            lm.fit(x, y, offset = offset, singular.ok = singular.ok, \n                ...)\n        else lm.wfit(x, y, w, offset = offset, singular.ok = singular.ok, \n            ...)\n    }\n    class(z) &lt;- c(if (mlm) \"mlm\", \"lm\")\n    z$na.action &lt;- attr(mf, \"na.action\")\n    z$offset &lt;- offset\n    z$contrasts &lt;- attr(x, \"contrasts\")\n    z$xlevels &lt;- .getXlevels(mt, mf)\n    z$call &lt;- cl\n    z$terms &lt;- mt\n    if (model) \n        z$model &lt;- mf\n    if (ret.x) \n        z$x &lt;- x\n    if (ret.y) \n        z$y &lt;- y\n    if (!qr) \n        z$qr &lt;- NULL\n    z\n}"
   },
   {
     "objectID": "slides/w6.html#what-is-lexical-scoping",
@@ -3952,7 +3952,7 @@
     "href": "slides/w6.html#environment",
     "title": "Week 6: Writing Functions",
     "section": "Environment",
-    "text": "Environment\nAs I mentioned, we won’t focus on this too much, but if you get deep into programming it’s pretty important\n\ndouble &lt;- function(x) x*2\nenvironment(double)\n\n&lt;environment: R_GlobalEnv&gt;\n\nenvironment(lm)\n\n&lt;environment: namespace:stats&gt;"
+    "text": "Environment\nAs I mentioned, we won’t focus on this too much, but if you get deep into programming it’s pretty important\n\n\n\nenvironment(lm)\n\n&lt;environment: namespace:stats&gt;\n\n\n\n\ndouble &lt;- function(x) x*2\nenvironment(double)\n\n&lt;environment: R_GlobalEnv&gt;"
   },
   {
     "objectID": "slides/w6.html#why-this-matters",
@@ -3987,14 +3987,14 @@
     "href": "slides/w6.html#lexical-scoping",
     "title": "Week 6: Writing Functions",
     "section": "Lexical Scoping",
-    "text": "Lexical Scoping\n\nHow R decides where to look for a variable based on where the function was written (defined), not where it is called\nEach function has a “home” environment it searches first, then works outward\nWhen a function runs and it sees a variable, R checks:\n\nInside the function, is the variable there?\nIf not, it looks in the environment where the function was created\nThen it keeps moving up — one level at a time — until it finds the variable or reaches the global environment"
+    "text": "Lexical Scoping\n\nHow R decides where to look for a variable based on where the function was written (defined), not where it is called\nEach function has a “home” environment it searches first, then works outward\nWhen a function runs and it sees a variable, R checks:\n\nInside the function, is the variable there?\nIf not, it looks in the environment where the function was created\nThen it moves up until it finds the variable or reaches the global environment"
   },
   {
     "objectID": "slides/w6.html#scoping",
     "href": "slides/w6.html#scoping",
     "title": "Week 6: Writing Functions",
     "section": "Scoping",
-    "text": "Scoping\n\nPart of what’s interesting about these scoping rules is that your functions can, and very often do, depend upon things in your global workspace, or your specific environment\nIf this is the case, the function will be a “one-off”, and unlikely to be useful in any other script\nNote that our summarize_df() function depended on the global smry list object\n\n\nLet’s look at a few real examples"
+    "text": "Scoping\n\nPart of what’s interesting about these scoping rules is that your functions can, and very often do, depend upon things in your global workspace, or your specific environment\nIf this is the case, the function will be a “one-off”, and unlikely to be useful in any other script\nLike our summarize_df() function depended on the global smry list object\n\n\nLet’s look at a few real examples"
   },
   {
     "objectID": "slides/w6.html#example-1",
@@ -4008,7 +4008,7 @@
     "href": "slides/w6.html#example-2",
     "title": "Week 6: Writing Functions",
     "section": "Example 2",
-    "text": "Example 2\nReading in data\n\nread_sub_files &lt;- function(filepath) {\n  read_csv(filepath) |&gt; \n    mutate(\n      content_area = str_extract(\n        filepath, \"[Ee][Ll][Aa]|[Rr]dg|[Ww]ri|[Mm]ath|[Ss]ci\"\n      ),\n      grade = gsub(\".+g(\\\\d\\\\d*).+\", \"\\\\1\", filepath),\n      grade = as.numeric(grade)\n    ) |&gt; \n    select(content_area, grade, everything()) |&gt; \n    clean_names()\n}\n\nifiles &lt;- map_df(filepaths, read_sub_files)"
+    "text": "Example 2\nReading in data\n\nread_sub_files &lt;- function(filepath) {\n  read_csv(filepath) |&gt; \n    mutate(\n      content_area = str_extract(\n        filepath, \"[Ee][Ll][Aa]|[Rr]dg|[Ww]ri|[Mm]ath|[Ss]ci\" # unique name of these \"filepaths\"\n      ),\n      grade = gsub(\".+g(\\\\d\\\\d*).+\", \"\\\\1\", filepath),\n      grade = as.numeric(grade)\n    ) |&gt; \n    select(content_area, grade, everything()) |&gt; \n    clean_names()\n}\n\nifiles &lt;- map_df(filepaths, read_sub_files)"
   },
   {
     "objectID": "slides/w6.html#simple-example",
@@ -4050,7 +4050,7 @@
     "href": "slides/w6.html#return-all-coefficients",
     "title": "Week 6: Writing Functions",
     "section": "Return all coefficients",
-    "text": "Return all coefficients\nFirst, figure it out for a single case\n\ncoef(m)\n\n(Intercept)        disp          hp        drat \n6.284507434 0.026354099 0.006229086 2.193576546 \n\nnames(coef(m))\n\n[1] \"(Intercept)\" \"disp\"        \"hp\"          \"drat\"       \n\n\n\nPut them in a data frame\n\ntibble(\n  term = names(coef(m)),\n  coefficient = coef(m)\n)\n\n\n\n# A tibble: 4 × 2\n  term        coefficient\n  &lt;chr&gt;             &lt;dbl&gt;\n1 (Intercept)     6.28   \n2 disp            0.0264 \n3 hp              0.00623\n4 drat            2.19"
+    "text": "Return all coefficients\nFirst, figure it out for a single case\n\n\ncoef(m)\n\n(Intercept)        disp          hp        drat \n6.284507434 0.026354099 0.006229086 2.193576546 \n\n\nThis is a named vector\n\n\n\nnames(coef(m))\n\n[1] \"(Intercept)\" \"disp\"        \"hp\"          \"drat\"       \n\n\n\n\nPut them in a data frame\n\ntibble(\n  term = names(coef(m)),\n  coefficient = coef(m)\n)\n\n\n\n# A tibble: 4 × 2\n  term        coefficient\n  &lt;chr&gt;             &lt;dbl&gt;\n1 (Intercept)     6.28   \n2 disp            0.0264 \n3 hp              0.00623\n4 drat            2.19"
   },
   {
     "objectID": "slides/w6.html#challenge-3",
@@ -4070,8 +4070,8 @@
     "objectID": "slides/w6.html#unnest",
     "href": "slides/w6.html#unnest",
     "title": "Week 6: Writing Functions",
-    "section": "unnest",
-    "text": "unnest\n\nmods |&gt;\n    mutate(coefs = map(model, pull_coef)) |&gt;\n    unnest(coefs)\n\n\n\n# A tibble: 12 × 5\n# Groups:   cyl [3]\n     cyl data               model  term        coefficient\n   &lt;dbl&gt; &lt;list&gt;             &lt;list&gt; &lt;chr&gt;             &lt;dbl&gt;\n 1     6 &lt;tibble [7 × 10]&gt;  &lt;lm&gt;   (Intercept)     6.28   \n 2     6 &lt;tibble [7 × 10]&gt;  &lt;lm&gt;   disp            0.0264 \n 3     6 &lt;tibble [7 × 10]&gt;  &lt;lm&gt;   hp              0.00623\n 4     6 &lt;tibble [7 × 10]&gt;  &lt;lm&gt;   drat            2.19   \n 5     4 &lt;tibble [11 × 10]&gt; &lt;lm&gt;   (Intercept)    46.1    \n 6     4 &lt;tibble [11 × 10]&gt; &lt;lm&gt;   disp           -0.123  \n 7     4 &lt;tibble [11 × 10]&gt; &lt;lm&gt;   hp             -0.0494 \n 8     4 &lt;tibble [11 × 10]&gt; &lt;lm&gt;   drat           -0.604  \n 9     8 &lt;tibble [14 × 10]&gt; &lt;lm&gt;   (Intercept)    19.0    \n10     8 &lt;tibble [14 × 10]&gt; &lt;lm&gt;   disp           -0.0167 \n11     8 &lt;tibble [14 × 10]&gt; &lt;lm&gt;   hp             -0.0214 \n12     8 &lt;tibble [14 × 10]&gt; &lt;lm&gt;   drat            2.01"
+    "section": "Unnest",
+    "text": "Unnest\n\nmods |&gt;\n    mutate(coefs = map(model, pull_coef)) |&gt;\n    unnest(coefs)\n\n\n\n# A tibble: 12 × 5\n# Groups:   cyl [3]\n     cyl data               model  term        coefficient\n   &lt;dbl&gt; &lt;list&gt;             &lt;list&gt; &lt;chr&gt;             &lt;dbl&gt;\n 1     6 &lt;tibble [7 × 10]&gt;  &lt;lm&gt;   (Intercept)     6.28   \n 2     6 &lt;tibble [7 × 10]&gt;  &lt;lm&gt;   disp            0.0264 \n 3     6 &lt;tibble [7 × 10]&gt;  &lt;lm&gt;   hp              0.00623\n 4     6 &lt;tibble [7 × 10]&gt;  &lt;lm&gt;   drat            2.19   \n 5     4 &lt;tibble [11 × 10]&gt; &lt;lm&gt;   (Intercept)    46.1    \n 6     4 &lt;tibble [11 × 10]&gt; &lt;lm&gt;   disp           -0.123  \n 7     4 &lt;tibble [11 × 10]&gt; &lt;lm&gt;   hp             -0.0494 \n 8     4 &lt;tibble [11 × 10]&gt; &lt;lm&gt;   drat           -0.604  \n 9     8 &lt;tibble [14 × 10]&gt; &lt;lm&gt;   (Intercept)    19.0    \n10     8 &lt;tibble [14 × 10]&gt; &lt;lm&gt;   disp           -0.0167 \n11     8 &lt;tibble [14 × 10]&gt; &lt;lm&gt;   hp             -0.0214 \n12     8 &lt;tibble [14 × 10]&gt; &lt;lm&gt;   drat            2.01"
   },
   {
     "objectID": "slides/w6.html#slightly-nicer",
@@ -4099,7 +4099,7 @@
     "href": "slides/w6.html#rescale-each-column-to-0-1",
     "title": "Week 6: Writing Functions",
     "section": "Rescale each column to 0-1",
-    "text": "Rescale each column to 0-1\nWe do this by\n\nsubtracting the min value from each observation\nthen dividing that by the difference between the min/max values\n\n\nFor example\n\ntibble(\n  v1 = c(3, 4, 5),\n  numerator = v1 - 3,\n  denominator = 5 - 3,\n  scaled = numerator / denominator\n)\n\n\n\n# A tibble: 3 × 4\n     v1 numerator denominator scaled\n  &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt;\n1     3         0           2    0  \n2     4         1           2    0.5\n3     5         2           2    1"
+    "text": "Rescale each column to 0-1\nWe do this by\n\nsubtracting the min value from each observation\nthen dividing that by the difference between max and min values\n\n\nFor example\n\ntibble(\n  v1 = c(3, 4, 5),\n  numerator = v1 - 3,\n  denominator = 5 - 3,\n  scaled = numerator / denominator\n)\n\n\n\n# A tibble: 3 × 4\n     v1 numerator denominator scaled\n  &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt;\n1     3         0           2    0  \n2     4         1           2    0.5\n3     5         2           2    1"
   },
   {
     "objectID": "slides/w6.html#one-column",
@@ -4162,7 +4162,7 @@
     "href": "slides/w6.html#make-it-cleaner",
     "title": "Week 6: Writing Functions",
     "section": "Make it cleaner",
-    "text": "Make it cleaner\n\nThere’s nothing “wrong” with the prior function, but it is a bit hard to read\nHow could we make it easier to read?\n\n\n\nRemove missing data once (rather than every time)\nTry noto’t calculate things multiple times!"
+    "text": "Make it cleaner\n\nThere’s nothing “wrong” with the prior function, but it is a bit hard to read\nHow could we make it easier to read?\n\n\n\nRemove missing data once (rather than every time)\n\nTry not to calculate things multiple times!"
   },
   {
     "objectID": "slides/w6.html#a-little-cleaned-up",
@@ -4204,7 +4204,7 @@
     "href": "slides/w6.html#easy-example",
     "title": "Week 6: Writing Functions",
     "section": "Easy example",
-    "text": "Easy example\nGiven a vector, return the mean if it’s numeric, and NULL otherwise\n\nmean2 &lt;- function(x) {\n    if(is.numeric(x)) {\n        out &lt;- mean(x)\n    }\n    else {\n        return(NULL)\n    }\n  out\n}"
+    "text": "Easy example\nGiven a vector, return the mean if it’s numeric, and NULL otherwise\n\n\nmean2 &lt;- function(x) {\n    if(is.numeric(x)) {\n        out &lt;- mean(x)\n    }\n    else {\n        return(NULL)\n    }\n  out\n}"
   },
   {
     "objectID": "slides/w6.html#test-it-1",
@@ -4218,14 +4218,14 @@
     "href": "slides/w6.html#mean-for-all-numeric-columns",
     "title": "Week 6: Writing Functions",
     "section": "Mean for all numeric columns",
-    "text": "Mean for all numeric columns\n\nThe prior function can now be used within a new function to calculate the mean of all columns of a data frame that are numeric\nFirst, let’s do it “by hand”,\nThen we’ll wrap it in a function\n\nWe’ll use ggplot2::mpg\n\nmpg\n\n# A tibble: 234 × 11\n   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class\n   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;\n 1 audi         a4           1.8  1999     4 auto… f        18    29 p     comp…\n 2 audi         a4           1.8  1999     4 manu… f        21    29 p     comp…\n 3 audi         a4           2    2008     4 manu… f        20    31 p     comp…\n 4 audi         a4           2    2008     4 auto… f        21    30 p     comp…\n 5 audi         a4           2.8  1999     6 auto… f        16    26 p     comp…\n 6 audi         a4           2.8  1999     6 manu… f        18    26 p     comp…\n 7 audi         a4           3.1  2008     6 auto… f        18    27 p     comp…\n 8 audi         a4 quattro   1.8  1999     4 manu… 4        18    26 p     comp…\n 9 audi         a4 quattro   1.8  1999     4 auto… 4        16    25 p     comp…\n10 audi         a4 quattro   2    2008     4 manu… 4        20    28 p     comp…\n# ℹ 224 more rows"
+    "text": "Mean for all numeric columns\n\nThe mean2 function can be used within a new function to\n\ncalculate the mean of all numeric columns in a data frame\ndrop all non-numeric columns\n\nFirst, let’s do it “by hand”\nThen we’ll wrap it in a function\n\n\nWe’ll use ggplot2::mpg\n\nmpg\n\n# A tibble: 234 × 11\n   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class\n   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;\n 1 audi         a4           1.8  1999     4 auto… f        18    29 p     comp…\n 2 audi         a4           1.8  1999     4 manu… f        21    29 p     comp…\n 3 audi         a4           2    2008     4 manu… f        20    31 p     comp…\n 4 audi         a4           2    2008     4 auto… f        21    30 p     comp…\n 5 audi         a4           2.8  1999     6 auto… f        16    26 p     comp…\n 6 audi         a4           2.8  1999     6 manu… f        18    26 p     comp…\n 7 audi         a4           3.1  2008     6 auto… f        18    27 p     comp…\n 8 audi         a4 quattro   1.8  1999     4 manu… 4        18    26 p     comp…\n 9 audi         a4 quattro   1.8  1999     4 auto… 4        16    25 p     comp…\n10 audi         a4 quattro   2    2008     4 manu… 4        20    28 p     comp…\n# ℹ 224 more rows"
   },
   {
     "objectID": "slides/w6.html#calculate-all-means",
     "href": "slides/w6.html#calculate-all-means",
     "title": "Week 6: Writing Functions",
     "section": "Calculate all means",
-    "text": "Calculate all means\n\nmeans_mpg &lt;- map(mpg, mean2)\nmeans_mpg\n\n$manufacturer\nNULL\n\n$model\nNULL\n\n$displ\n[1] 3.471795\n\n$year\n[1] 2003.5\n\n$cyl\n[1] 5.888889\n\n$trans\nNULL\n\n$drv\nNULL\n\n$cty\n[1] 16.85897\n\n$hwy\n[1] 23.44017\n\n$fl\nNULL\n\n$class\nNULL"
+    "text": "Calculate all means\nWe already have this function\n\nmeans_mpg &lt;- map(mpg, mean2)\nmeans_mpg\n\n\n\n$manufacturer\nNULL\n\n$model\nNULL\n\n$displ\n[1] 3.471795\n\n$year\n[1] 2003.5\n\n$cyl\n[1] 5.888889\n\n$trans\nNULL\n\n$drv\nNULL\n\n$cty\n[1] 16.85897\n\n$hwy\n[1] 23.44017\n\n$fl\nNULL\n\n$class\nNULL"
   },
   {
     "objectID": "slides/w6.html#drop-nulls",
@@ -4281,14 +4281,14 @@
     "href": "slides/w6.html#redefine-means_df",
     "title": "Week 6: Writing Functions",
     "section": "Redefine means_df",
-    "text": "Redefine means_df\n\nmeans_df &lt;- function(df, ...) {\n    means &lt;- map(df, mean2, ...) # calculate means\n    nulls &lt;- map_lgl(means, is.null) # find null values\n    means_l &lt;- means[!nulls] # subset list to remove nulls\n    \n    as.data.frame(means_l) # return a df\n}\n\n\n\nmeans_df(airquality)\n\n  Ozone Solar.R     Wind     Temp    Month      Day\n1    NA      NA 9.957516 77.88235 6.993464 15.80392\n\n\n\n\n\nmeans_df(airquality, na.rm = TRUE)\n\n     Ozone  Solar.R     Wind     Temp    Month      Day\n1 42.12931 185.9315 9.957516 77.88235 6.993464 15.80392"
+    "text": "Redefine means_df\n\nmeans_df &lt;- function(df, ...) {\n    means &lt;- map(df, mean2, ...) # calculate means\n    nulls &lt;- map_lgl(means, is.null) # find null values\n    means_l &lt;- means[!nulls] # subset list to remove nulls\n    \n    as.data.frame(means_l) # return a df\n}\n\n\n\nmeans_df(airquality)\n\n  Ozone Solar.R     Wind     Temp    Month      Day\n1    NA      NA 9.957516 77.88235 6.993464 15.80392\n\n\n\n\n\nmeans_df(airquality, na.rm = TRUE)\n\n\n\n     Ozone  Solar.R     Wind     Temp    Month      Day\n1 42.12931 185.9315 9.957516 77.88235 6.993464 15.80392"
   },
   {
     "objectID": "slides/w6.html#agenda-1",
     "href": "slides/w6.html#agenda-1",
     "title": "Week 6: Writing Functions",
     "section": "Agenda",
-    "text": "Agenda\n\nPurity (quickly)\nFunction conditionals\n\nif (condition) {}\n\nembedding warnings, messages, and errors\n\n\nReturn values\n\nLearning objectives\n\nUnderstand the concept of purity, and why it is often desirable + And be able to define a side effect\nBe able to change the behavior of a function based on the input\nBe able to embed warnings/messages/errors"
+    "text": "Agenda\n\nPurity (quickly)\nwarnings, messages, and errors\n\nmore function conditionals\n\nReturn values\nFunction names\n\nLearning objectives\n\nUnderstand the concept of purity, and why it is often desirable\n\nAnd be able to define a side effect\n\nBe able to change the behavior of a function based on the input\nBe able to embed warnings/messages/errors"
   },
   {
     "objectID": "slides/w6.html#purity",
@@ -4323,7 +4323,7 @@
     "href": "slides/w6.html#one-approach",
     "title": "Week 6: Writing Functions",
     "section": "One approach",
-    "text": "One approach\n\nis.na(a) \n\n[1] FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE\n\nis.na(b)\n\n[1]  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE\n\n\n\n\nis.na(a) & is.na(b)\n\n[1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE\n\n\n\n\n\nsum(is.na(a) & is.na(b))\n\n[1] 2"
+    "text": "One approach\n\n\nis.na(a) \n\n[1] FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE\n\nis.na(b)\n\n[1]  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE\n\n\n\n\n\nis.na(a) & is.na(b)\n\n[1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE\n\n\n\n\n\nsum(is.na(a) & is.na(b))\n\n[1] 2\n\n\n\n\nAnyone do anything differently?"
   },
   {
     "objectID": "slides/w6.html#generalize-to-function",
@@ -4372,7 +4372,7 @@
     "href": "slides/w6.html#attempt-1",
     "title": "Week 6: Writing Functions",
     "section": "Attempt 1",
-    "text": "Attempt 1\nDid yours look something like this?\n\n\nboth_na &lt;- function(x, y) {\n    if(length(x) != length(y)) {\n        stop(\"Vectors are of different lengths\")\n    }\n    sum(is.na(x) & is.na(y))\n}\n\n\nboth_na(a, b)\n\n\n\n[1] 2\n\n\n\nboth_na(a, c(b, b))\n\n\n\nError in `both_na()`:\n! Vectors are of different lengths"
+    "text": "Attempt 1\nDid yours look something like this?\n\n\nboth_na &lt;- function(x, y) {\n    if(length(x) != length(y)) {\n        stop(\"Vectors are of different lengths\")\n    }\n    sum(is.na(x) & is.na(y))\n}\n\n\n\n\nboth_na(a, b)\n\n\n\n[1] 2\n\n\n\nboth_na(a, c(b, b))\n\n\n\nError in `both_na()`:\n! Vectors are of different lengths"
   },
   {
     "objectID": "slides/w6.html#more-meaningful-error-message",
@@ -4386,7 +4386,7 @@
     "href": "slides/w6.html#clean-up",
     "title": "Week 6: Writing Functions",
     "section": "Clean up",
-    "text": "Clean up\nOften we don’t need/want to echo the function\nSet call. = FALSE\n\nboth_na &lt;- function(x, y) {\n    if(length(x) != length(y)) {\n        v_lngths &lt;- paste0(\"x = \", length(x), \n                           \", y = \", length(y))\n        stop(\n          \"Vectors are of different lengths:\", \n          v_lngths,\n          call. = FALSE\n      )\n    }\n    sum(is.na(x) & is.na(y))\n}\n\n\n\nboth_na(a, c(b, b))\n\nError:\n! Vectors are of different lengths:x = 7, y = 14"
+    "text": "Clean up\nWe also can state the lengths on new lines with \\n\n\nboth_na &lt;- function(x, y) {\n    if(length(x) != length(y)) {\n        v_lngths &lt;- paste0(\"x = \", length(x), \n                           \"\\n\",\n                           \"y = \", length(y))\n        stop(\n          \"Vectors are of different lengths:\\n\", \n          v_lngths,\n          call. = FALSE\n      )\n    }\n    sum(is.na(x) & is.na(y))\n}\n\n\n\nboth_na(a, c(b, b))\n\nError:\n! Vectors are of different lengths:\nx = 7\ny = 14"
   },
   {
     "objectID": "slides/w6.html#quick-error-messages",
@@ -4399,8 +4399,8 @@
     "objectID": "slides/w6.html#warnings",
     "href": "slides/w6.html#warnings",
     "title": "Week 6: Writing Functions",
-    "section": "warnings",
-    "text": "warnings\nIf you want to embed a warning, just swap out stop() for warning()\n\nLet’s build out a warning if the vectors are different lengths, but they ARE recyclable"
+    "section": "Warnings",
+    "text": "Warnings\nIf you want to embed a warning, just swap out stop() for warning()\n\nLet’s build out a warning if the vectors are different lengths, but they ARE recyclable"
   },
   {
     "objectID": "slides/w6.html#modulo-operator",
@@ -4421,7 +4421,7 @@
     "href": "slides/w6.html#test-it-3",
     "title": "Week 6: Writing Functions",
     "section": "Test it",
-    "text": "Test it\n\n\nVectors different lengths but recyclable\n\nboth_na(a, c(b, b))\n\nWarning in both_na(a, c(b, b)): Vectors were recycled (x = 7, y = 14)\n\n\n[1] 4\n\n\n\nVectors different lengths NOT recyclable\n\nboth_na(a, c(b, b)[-1])\n\nError in `both_na()`:\n! Vectors are of different lengths and are not recyclable: x = 7, y = 13"
+    "text": "Test it\n\n\nVectors different lengths but recyclable\n\nboth_na(a, c(b, b))\n\n\n\nWarning in both_na(a, c(b, b)): Vectors were recycled (x = 7, y = 14)\n\n\n[1] 4\n\n\n\nVectors different lengths NOT recyclable\n\nboth_na(a, c(b, b)[-1])\n\n\n\nError in `both_na()`:\n! Vectors are of different lengths and are not recyclable: x = 7, y = 13"
   },
   {
     "objectID": "slides/w6.html#refactoring",
@@ -4456,14 +4456,14 @@
     "href": "slides/w6.html#pop-quiz",
     "title": "Week 6: Writing Functions",
     "section": "Pop quiz",
-    "text": "Pop quiz\nWhat will the following return?\nTry it yourself\n\nadd_two &lt;- function(x) {\n    result &lt;- x + 2\n}\nadd_two(5)\n\n\n\n\n\nAnswer: Nothing! Why?\n\nadd_two(10)"
+    "text": "Pop quiz\nWhat will the following return?\nTry it yourself\n\nadd_two &lt;- function(x) {\n    result &lt;- x + 2\n}\nadd_two(5)\n\n\n\n\n\nAnswer: Nothing! Why?"
   },
   {
     "objectID": "slides/w6.html#specify-the-return-value",
     "href": "slides/w6.html#specify-the-return-value",
     "title": "Week 6: Writing Functions",
     "section": "Specify the return value",
-    "text": "Specify the return value\nThe below are all equivalent, and all result in the same function behavior\n\nadd_two.1 &lt;- function(x) {\n    x + 2\n}\n\n\nadd_two.2 &lt;- function(x) {\n    result &lt;- x + 2\n    result\n}\n\n\nadd_two.3 &lt;- function(x) {\n    result &lt;- x + 2\n    return(result)\n}"
+    "text": "Specify the return value\nThe below are all equivalent, and all result in the same function behavior\n\nadd_two.1 &lt;- function(x) {\n    x + 2\n}\n\n\nadd_two.2 &lt;- function(x) {\n    total &lt;- x + 2\n    total\n}\n\n\nadd_two.3 &lt;- function(x) {\n    total &lt;- x + 2\n    return(total)\n}"
   },
   {
     "objectID": "slides/w6.html#when-to-use-return",
@@ -4519,14 +4519,14 @@
     "href": "slides/w6.html#the-lookup-chain",
     "title": "Week 6: Writing Functions",
     "section": "The Lookup Chain",
-    "text": "The Lookup Chain\nIf a variable isn’t found inside a function, R looks in the environment where the function was defined\n\nx &lt;- \"global\"\n\nf &lt;- function() {\n  x  \n}\n\nf()\n\n\n\n[1] \"global\"\n\n\n\nHere: x not defined in the function, so R looks outward to global env"
+    "text": "The Lookup Chain\nIf a variable isn’t found inside a function, R looks in the environment where the function was defined\n\nx &lt;- \"global\"\n\nf &lt;- function() {\n  x  \n}\n\nf()\n\n\n\n[1] \"global\"\n\n\n\nHere: x not defined in the function, so R looks outward to the global environment"
   },
   {
     "objectID": "slides/w6.html#local-definitions-win",
     "href": "slides/w6.html#local-definitions-win",
     "title": "Week 6: Writing Functions",
     "section": "Local Definitions Win",
-    "text": "Local Definitions Win\nA local variable shadows any outer variable with the same name\n\nx &lt;- \"global\"\n\nf &lt;- function() {\n  x &lt;- \"local\"   # shadows the global x\n  x\n}\n\n\nWhat will output here?\n\nf()   \n\n\n\n[1] \"local\"\n\n\n\nx     \n\n\n\n[1] \"global\"\n\n\n\n\nThe function f() gets its own x\nThe global x is never touched"
+    "text": "Local Definitions Win\nA local variable can shadow any outer variable with the same name\n\nx &lt;- \"global\"\n\nf &lt;- function() {\n  x &lt;- \"local\"   # shadows the global x\n  x\n}\n\n\nWhat will output here?\n\nf()   \n\n\n\n[1] \"local\"\n\n\n\n\n\nx     \n\n\n\n[1] \"global\"\n\n\n\n\nThe function f() gets its own x\nThe global x is never touched"
   },
   {
     "objectID": "slides/w6.html#defined-where-not-called-where",
@@ -4540,7 +4540,7 @@
     "href": "slides/w6.html#example-1-1",
     "title": "Week 6: Writing Functions",
     "section": "Example 1",
-    "text": "Example 1\ngt() formatting\n\ntable_style &lt;- function(data) {\n  data %&gt;%\n    opt_table_lines(extent = \"none\") %&gt;%\n    opt_table_outline(style = \"solid\", width = px(3), color = \"black\") %&gt;%\n    tab_options(\n      heading.border.bottom.color = \"black\",\n      heading.border.bottom.style = \"solid\",\n      table.border.top.color = \"black\",\n      table_body.hlines.color = \"black\",\n      table_body.border.top.color = \"black\",\n      table_body.border.top.style = \"solid\",\n      table_body.border.bottom.color = \"black\",\n      table_body.border.bottom.style = \"solid\",\n      column_labels.border.bottom.color = \"black\",\n      column_labels.border.bottom.style = \"solid\",\n      column_labels.border.top.color = \"black\",\n      column_labels.background.color = \"#009E73\",\n      table.width = pct(100),\n      container.width = pct(100)\n    )\n}"
+    "text": "Example 1\nAnd that function is specific gt() formatting\n\ntable_style &lt;- function(data) {\n  data %&gt;%\n    opt_table_lines(extent = \"none\") %&gt;%\n    opt_table_outline(style = \"solid\", width = px(3), color = \"black\") %&gt;%\n    tab_options(\n      heading.border.bottom.color = \"black\",\n      heading.border.bottom.style = \"solid\",\n      table.border.top.color = \"black\",\n      table_body.hlines.color = \"black\",\n      table_body.border.top.color = \"black\",\n      table_body.border.top.style = \"solid\",\n      table_body.border.bottom.color = \"black\",\n      table_body.border.bottom.style = \"solid\",\n      column_labels.border.bottom.color = \"black\",\n      column_labels.border.bottom.style = \"solid\",\n      column_labels.border.top.color = \"black\",\n      column_labels.background.color = \"#009E73\", # maybe this color is familiar\n      table.width = pct(100),\n      container.width = pct(100)\n    )\n}"
   },
   {
     "objectID": "slides/w6.html#body",
@@ -4568,6 +4568,97 @@
     "href": "slides/w6.html#function-names-1",
     "title": "Week 6: Writing Functions",
     "section": "Function names",
+    "text": "Function names\nWhich of these is most intuitive?\n\nf &lt;- function(x) {\n    x &lt;- sort(x)\n    data.frame(value = x, \n               p = ecdf(x)(x))\n}\n\nptile &lt;- function(x) {\n    x &lt;- sort(x)\n    data.frame(value = x, \n               ptile = ecdf(x)(x))\n}\n\npercentile_df &lt;- function(x) {\n    x &lt;- sort(x)\n    data.frame(value = x, \n               percentile = ecdf(x)(x))\n}"
+  },
+  {
+    "objectID": "slides/w6.html#even-true-for--",
+    "href": "slides/w6.html#even-true-for--",
+    "title": "Week 6: Writing Functions",
+    "section": "Even true for <-",
+    "text": "Even true for &lt;-\nWhat’s going on here?\n\n`&lt;-`(a, 10)\na\n\n\n\n[1] 10\n\n\n\nEverything is a function!"
+  },
+  {
+    "objectID": "slides/w6.html#functions-as-objects",
+    "href": "slides/w6.html#functions-as-objects",
+    "title": "Week 6: Writing Functions",
+    "section": "Functions as objects",
+    "text": "Functions as objects\nFunctions are also (usually) objects!\n\na &lt;- lm\na(hp ~ drat + wt, data = mtcars)\n\n\nCall:\na(formula = hp ~ drat + wt, data = mtcars)\n\nCoefficients:\n(Intercept)         drat           wt  \n    -27.782        5.354       48.244"
+  },
+  {
+    "objectID": "slides/w6.html#deep-breath",
+    "href": "slides/w6.html#deep-breath",
+    "title": "Week 6: Writing Functions",
+    "section": "Deep breath",
+    "text": "Deep breath\nSo far, this has just been a high-level overview\nI wanted to show why you might want to write functions first\nLet’s dig into the particulars"
+  },
+  {
+    "objectID": "slides/w6.html#formals-arguments",
+    "href": "slides/w6.html#formals-arguments",
+    "title": "Week 6: Writing Functions",
+    "section": "Formals = arguments",
+    "text": "Formals = arguments\nFormals are the arguments supplied to the function\n\nWhat’s one way to identify the formals for a function - say, lm()?\n\n\n\n?\n\nHelp documentation!\n\n\n\n\nAlternative - use a function!\n\nformals(lm)\n\n\n\n$formula\n\n\n$data\n\n\n$subset\n\n\n$weights\n\n\n$na.action\n\n\n$method\n[1] \"qr\"\n\n$model\n[1] TRUE\n\n$x\n[1] FALSE\n\n$y\n[1] FALSE\n\n$qr\n[1] TRUE\n\n$singular.ok\n[1] TRUE\n\n$contrasts\nNULL\n\n$offset\n\n\n$..."
+  },
+  {
+    "objectID": "slides/w6.html#defined-called",
+    "href": "slides/w6.html#defined-called",
+    "title": "Week 6: Writing Functions",
+    "section": "Defined > Called",
+    "text": "Defined &gt; Called\nwhere defined matters, not where called\n\nx &lt;- \"global\"\n\nf &lt;- function() x        \n\ng &lt;- function() {\n  x &lt;- \"inside g\"\n  f()                    \n}\n\n\n\n\n\nPredict…\n\nf()\n\n\n\n[1] \"global\"\n\n\n\n\nStraightforward\n\n\nWhat happens here\n\ng()\n\n\n\n[1] \"global\"\n\n\n\n\nf() is called in g(), but was defined in global\nf() was defined in the global environment\n\nso it always sees the global x\neven when called from inside g()"
+  },
+  {
+    "objectID": "slides/w6.html#drop-non-numeric-columns",
+    "href": "slides/w6.html#drop-non-numeric-columns",
+    "title": "Week 6: Writing Functions",
+    "section": "Drop non-numeric columns",
+    "text": "Drop non-numeric columns\nFirst identify which are NULL\n\nis_null &lt;- map_lgl(means_mpg, is.null)\nis_null\n\n\n\nmanufacturer        model        displ         year          cyl        trans \n        TRUE         TRUE        FALSE        FALSE        FALSE         TRUE \n         drv          cty          hwy           fl        class \n        TRUE        FALSE        FALSE         TRUE         TRUE"
+  },
+  {
+    "objectID": "slides/w6.html#purity-1",
+    "href": "slides/w6.html#purity-1",
+    "title": "Week 6: Writing Functions",
+    "section": "Purity",
+    "text": "Purity\nA function is pure if:\n\nIts output depends only on its inputs\nIt produces no side-effect"
+  },
+  {
+    "objectID": "slides/w6.html#stopmessage",
+    "href": "slides/w6.html#stopmessage",
+    "title": "Week 6: Writing Functions",
+    "section": "stop(\"message\")",
+    "text": "stop(\"message\")\nCheck the lengths and stop the evaluation of a function and return an error message if lenghts are unequal\n\nBasic structure\n\nboth_na &lt;- function(x, y) {\n    if(condition) {\n        stop(\"message\")\n    }\n    sum(is.na(x) & is.na(y))\n}"
+  },
+  {
+    "objectID": "slides/w6.html#call.-false",
+    "href": "slides/w6.html#call.-false",
+    "title": "Week 6: Writing Functions",
+    "section": "call. = FALSE",
+    "text": "call. = FALSE\nMaybe we don’t need/want to echo the function: Error in function_name():\nSet call. = FALSE\n\nboth_na &lt;- function(x, y) {\n    if(length(x) != length(y)) {\n        v_lngths &lt;- paste0(\"x = \", length(x), \n                           \", y = \", length(y))\n        stop(\n          \"Vectors are of different lengths:\", \n          v_lngths,\n          call. = FALSE\n      )\n    }\n    sum(is.na(x) & is.na(y))\n}\n\n\n\nboth_na(a, c(b, b))\n\nError:\n! Vectors are of different lengths:x = 7, y = 14"
+  },
+  {
+    "objectID": "slides/w6.html#stopifnot",
+    "href": "slides/w6.html#stopifnot",
+    "title": "Week 6: Writing Functions",
+    "section": "stopifnot()",
+    "text": "stopifnot()\nQuick error messages\n\nFor quick checks, with usually less than optimal messages, use stopifnot\nOften useful if the function is just for you\n\n\n\nz_score &lt;- function(x) {\n  stopifnot(is.numeric(x))\n  x &lt;- x[!is.na(x)]\n  (x - mean(x)) / sd(x)\n}\n\n\n\n\n\n\n\nz_score(c(100, 115, 112))\n\n[1] -1.1338934  0.7559289  0.3779645\n\n\n\n\n\nz_score(c(\"a\", \"b\", \"c\"))\n\nError in `z_score()`:\n! is.numeric(x) is not TRUE"
+  },
+  {
+    "objectID": "slides/w6.html#function-names-2",
+    "href": "slides/w6.html#function-names-2",
+    "title": "Week 6: Writing Functions",
+    "section": "Function names",
     "text": "Function names\nPersonally, I like name my functions with the prefix fx_\nThis helps me find the function later in my code, especially if I wrote mulitple functions in the script\n\nfx_percentile &lt;- function(x) {\n    x &lt;- sort(x)\n    data.frame(value = x, \n               percentile = ecdf(x)(x))\n}"
+  },
+  {
+    "objectID": "slides/w6.html#e73",
+    "href": "slides/w6.html#e73",
+    "title": "Week 6: Writing Functions",
+    "section": "“#009E73”",
+    "text": "“#009E73”"
+  },
+  {
+    "objectID": "slides/w6.html#pass-the-dots",
+    "href": "slides/w6.html#pass-the-dots",
+    "title": "Week 6: Writing Functions",
+    "section": "Pass the dots",
+    "text": "Pass the dots\n(...) allows a function to accept an arbitrary number of arguments (named or unnamed) and pass them along to another internal function\nFor example\nmy_plot &lt;- function(x, ...) { ggplot(x, ...) } allows you to pass any ggplot() parameters like size=4"
   }
 ]

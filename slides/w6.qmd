@@ -30,6 +30,10 @@ update_geom_defaults("point", list(size = 3))
 
 **Week 6**
 
+##
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZsc3ozNW03dHRmYnFvN3U3azJ2ZzUyZGUxeGF5ZGxlN2lpOG5ydiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPag5cpeU0u0Su4/giphy.gif)
+
 ## Agenda {.smaller}
 
 * Review Midterm
@@ -95,30 +99,35 @@ This is true for all `R` operators
 `*`(4, 6)
 ```
 
+. . .
 
 ```{r}
 `^`(9, 2)
 ```
 
+. . .
 
 ```{r}
 `>`(5, 3)
 ```
 
+. . .
 
 ```{r}
+#| output-location: fragment
 x <- c("a", "b", "c")
 `[`(x, 2)
 ```
 
 
-## Even this
+## Even true for `<-`
 
 What's going on here?
 
 ```{r}
 #| output-location: fragment
 `<-`(a, 10)
+a
 ```
 
 . . .
@@ -127,7 +136,7 @@ Everything is a function!
 
 ## Challenge
 
-How would we write that below similarly?
+How would we write this in the same manner?
 
 ```{r plus-infix2}
 3 + 5 + 7
@@ -162,7 +171,7 @@ but not the native pipe!
 
 ![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2UzaWZ5Y2MzbGhqY2VzanhlN3BxMmp3dmcwNTR2M2g3eW1ybnhzZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/G5X63GrrLjjVK/giphy.gif)
 
-## I knew you would
+## I knew you would {.smaller}
 
 `%>%` 
 
@@ -175,13 +184,13 @@ but not the native pipe!
 
 - requires the RHS to be a syntactically valid function call
 - meaning it must look like `f(...)` with a proper identifier as the function name
-- `3 |> + (5)` sees a backtick-quoted name, proper function
+- `3 |> + (5)` sees a backtick-quoted name, not a proper function
 
 ## Mean trick
 
 Want to introduce a devious bug? Redefine `+`
 
-`runif()` generates random deviates from the uniform distribution ($min$ = 0, $max$ = 1)
+`runif()` generates random deviates from the `unif`orm distribution ($min$ = 0, $max$ = 1)
 
 ```{r bug}
 `+` <- function(x, y) {
@@ -209,17 +218,17 @@ tibble(
 
 ```{r}
 #| output-location: fragment
-table(map2_dbl(1:500, 1:500, `+`) > 0)
+table(map2_dbl(1:500, 1:500, `+`) < 0)
 ```
 
 ## Undo
 
 ```{r }
 rm(`+`, envir = globalenv())
-table(map2_dbl(1:500, 1:500, `+`) > 0)
+table(map2_dbl(1:500, 1:500, `+`) < 0)
 ```
 
-## Tricky... 
+## Functions as objects 
 
 Functions are also (usually) objects!
 
@@ -388,7 +397,7 @@ summarize_df(airquality)
 ```
 
 
-## Deep breaths
+## Deep breath
 
 So far, this has just been a high-level overview
 
@@ -417,21 +426,23 @@ fx_name <- function(formals){
 }
 ```
 
-## Formals = arguements {.smaller}
+## Formals = arguments {.smaller}
 
 Formals are the **arguments** supplied to the function
 
-* What's one way to identify the formals for a function - say, `lm`?
+* What's one way to identify the formals for a function - say, `lm()`?
 
 . . .
 
-`?`: Help documentation!
+`?`
+: Help documentation!
 
 . . .
 
 Alternative - use a function!
 
 ```{r formals-fun}
+#| output-location: fragment
 formals(lm)
 ```
 
@@ -446,6 +457,7 @@ formals(lm)
 Or use `body()`
 
 ```{r lm-print}
+#| output-location: fragment
 body(lm)
 ```
 
@@ -455,11 +467,25 @@ body(lm)
 
 As I mentioned, we won't focus on this too much, but if you get deep into programming it's pretty important
 
-```{r env1}
-double <- function(x) x*2
-environment(double)
+:::: {.columns}
+::: {.column width="50%"}
+
+```{r}
 environment(lm)
 ```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+double <- function(x) x*2
+environment(double)
+```
+
+:::
+
+::::
 
 ## Lexical Scoping {.smaller}
 
@@ -468,7 +494,7 @@ environment(lm)
 - When a function runs and it sees a variable, `R` checks:
     (1) Inside the function, is the variable there?
     (2) If not, it looks in the environment where the function was created
-    (3) Then it keeps moving up — one level at a time — until it finds the variable or reaches the global environment
+    (3) Then it moves up until it finds the variable or reaches the global environment
 
 ## The Lookup Chain
 
@@ -487,11 +513,11 @@ f()
 
 . . .
 
-Here: `x` not defined in the function, so `R` looks outward to global env
+Here: `x` not defined in the function, so `R` looks outward to the global environment
 
 ## Local Definitions Win
 
-A local variable *shadows* any outer variable with the same name
+A local variable can *shadow* any outer variable with the same name
 
 ```{r scope2}
 x <- "global"
@@ -511,6 +537,7 @@ What will output here?
 f()   
 ```
 
+. . .
 
 ```{r}
 #| output-location: fragment
@@ -523,7 +550,7 @@ The function `f()` gets its own x
 
 The global `x` is never touched
 
-## Defined Where, Not Called Where {.smaller}
+## Defined > Called {.smaller}
 
 **where defined** matters, not **where called**
 
@@ -557,6 +584,7 @@ Straightforward
 What happens here
 
 ```{r}
+#| output-location: fragment
 g()
 ```
 
@@ -569,7 +597,7 @@ g()
 - so it always sees the global x
 - even when called from inside `g()`
 
-## Scoping Summary
+## Scoping Summary {.smaller}
 
 ::: {incremental}
 - If an object is found locally
@@ -592,18 +620,19 @@ If you end up with unexpected results, this could be part of why
 
 * Part of what's interesting about these scoping rules is that your functions can, and very often do, depend upon things in your global workspace, or your specific environment
 * If this is the case, the function will be a "one-off", and unlikely to be useful in any other script
-* Note that our `summarize_df()` function depended on the global `smry` list object
+* Like our `summarize_df()` function depended on the global `smry` list object
 
 . . .
 
 Let's look at a few real examples
 
-## Example 1
+## Example 1 {.smaller}
 
 Format tables for the "Schedule" page in course website
 
 ```{r extract_grades}
 #| eval: false
+#| code-line-numbers: "|2|3|20"
 tbl_fx <- function(n){
   sched |> # an object in my environment
     slice(n) |> # 11 rows, weeks in quarter
@@ -627,9 +656,9 @@ tbl_fx <- function(n){
 }
 ```
 
-## Example 1
+## Example 1 {.smaller}
 
-`gt()` formatting
+And that function is specific `gt()` formatting
 
 ```{r}
 #| eval: false
@@ -649,14 +678,22 @@ table_style <- function(data) {
       column_labels.border.bottom.color = "black",
       column_labels.border.bottom.style = "solid",
       column_labels.border.top.color = "black",
-      column_labels.background.color = "#009E73",
+      column_labels.background.color = "#009E73", # maybe this color is familiar
       table.width = pct(100),
       container.width = pct(100)
     )
 }
 ```
 
-## Example 2
+## "#009E73"
+
+```{r}
+#| echo: false
+scales::show_col("#009E73")
+```
+
+
+## Example 2 {.smaller}
 
 Reading in data
 
@@ -665,7 +702,7 @@ read_sub_files <- function(filepath) {
   read_csv(filepath) |> 
     mutate(
       content_area = str_extract(
-        filepath, "[Ee][Ll][Aa]|[Rr]dg|[Ww]ri|[Mm]ath|[Ss]ci"
+        filepath, "[Ee][Ll][Aa]|[Rr]dg|[Ww]ri|[Mm]ath|[Ss]ci" # unique name of these "filepaths"
       ),
       grade = gsub(".+g(\\d\\d*).+", "\\1", filepath),
       grade = as.numeric(grade)
@@ -775,8 +812,17 @@ mods |>
 
 First, figure it out for a single case
 
+. . .
+
 ```{r }
 coef(m)
+```
+
+This is a named vector
+
+. . .
+
+```{r }
 names(coef(m))
 ```
 
@@ -820,7 +866,7 @@ mods |>
 	mutate(coefs = map(model, pull_coef))
 ```
 
-## unnest
+## Unnest
 
 ```{r unnest}
 #| output-location: fragment
@@ -844,6 +890,7 @@ mods |>
 
 ```{r unnest-success-table}
 #| error: true
+#| code-line-numbers: "|5-8"
 #| output-location: fragment
 mods |>
 	mutate(coefs = map(model, pull_coef)) |>
@@ -872,19 +919,19 @@ df <- tibble::tibble(
 df
 ```
 
-## Rescale each column to 0-1
+## Rescale each column to 0-1 {.smaller}
 
 We do this by
 
 - subtracting the `min` value from each observation
-- then dividing that by the difference between the `min`/`max` values
+- then dividing that by the difference between `max` and `min` values
 
 . . .
 
 For example
 
 ```{r }
-#| code-line-numbers: "|2|3|4"
+#| code-line-numbers: "|2|3|4|5"
 #| output-location: fragment
 tibble(
   v1 = c(3, 4, 5),
@@ -1016,11 +1063,12 @@ rescale01(c(seq(0, 100, 10)))
 . . .
 
 - Remove missing data once (rather than every time)
-- Try noto't calculate things multiple times!
+    + Try not to calculate things multiple times!
 
 ## A little cleaned up
 
 ```{r rescale2}
+#| code-line-numbers: "|2"
 rescale01b <- function(x) {
 	z <- na.omit(x)
 	min_z <- min(z)
@@ -1060,6 +1108,8 @@ identical(rescale01(c(0, 1e5, .01)), rescale01b(c(0, 1e5, 0.01)))
 rand <- rnorm(1e3)
 identical(rescale01(rand), rescale01b(rand))
 ```
+
+# Conditions
 
 ## Getting more complex
 
@@ -1113,8 +1163,10 @@ function() {
 
 Given a vector, return the mean if it's numeric, and `NULL` otherwise
 
+. . .
+
 ```{r mean2}
-#| code-line-numbers: "|2|3|4|5"
+#| code-line-numbers: "|2-4|5-7|2|3|5|6|8"
 mean2 <- function(x) {
 	if(is.numeric(x)) {
 		out <- mean(x)
@@ -1140,9 +1192,13 @@ mean2(c("a", "b", "c"))
 
 ## Mean for all numeric columns {.smaller}
 
-* The prior function can now be used within a new function to calculate the mean of all columns of a data frame that are numeric
-* First, let's do it "by hand", 
+* The `mean2` function can be used within a new function to
+    + calculate the mean of all numeric columns in a data frame
+    + drop all non-numeric columns
+* First, let's do it "by hand" 
 * Then we'll wrap it in a function
+
+. . .
 
 We'll use `ggplot2::mpg`
 
@@ -1152,14 +1208,17 @@ mpg
 
 ## Calculate all means
 
+We already have this function
+
 ```{r }
+#| output-location: fragment
 means_mpg <- map(mpg, mean2)
 means_mpg
 ```
 
-## Drop `NULL`'s
+## Drop non-numeric columns
 
-First identify which are null
+First identify which are `NULL`
 
 ```{r }
 #| output-location: fragment
@@ -1246,7 +1305,16 @@ mean2 <- function(x, ...) {
 }
 ```
 
-## Redefine means_df
+## Pass the dots
+
+`(...)` allows a function to accept an arbitrary number of arguments (named or unnamed) and pass them along to another internal function
+
+For example
+
+`my_plot <- function(x, ...) { ggplot(x, ...) }` allows you to pass any `ggplot()` parameters like size=4
+
+
+## Redefine `means_df`
 
 ```{r df-mean-redefined}
 #| code-line-numbers: "|1-2"
@@ -1268,6 +1336,7 @@ means_df(airquality)
 . . .
 
 ```{r}
+#| output-location: fragment
 means_df(airquality, na.rm = TRUE)
 ```
 
@@ -1276,17 +1345,19 @@ means_df(airquality, na.rm = TRUE)
 ## Agenda {.smaller}
 
 * Purity (quickly)
-* Function conditionals
-    + `if (condition) {}`
-	  + embedding warnings, messages, and errors
+* warnings, messages, and errors
+    + more function conditionals
 * Return values
+* Function names
 
 **Learning objectives**
 
 * Understand the concept of purity, and why it is often desirable
-	    + And be able to define a side effect
+    + And be able to define a side effect
 * Be able to change the behavior of a function based on the input
 * Be able to embed warnings/messages/errors
+
+# Purity
 
 ## Purity
 
@@ -1305,7 +1376,7 @@ Side-effects
 - It makes no changes to the "state of the world"
     + this is not a technical term, just a way to think about it
 
-## Side effect examples
+## Side effect examples {.smaller}
 
 :::{.incremental}
 - modifying global variables 
@@ -1324,6 +1395,10 @@ Side-effects
     + `set.seed()`
 
 :::
+
+# Warnings, messages, and errors
+
+more function conditionals
 
 ## Conditionals {.smaller}
 
@@ -1360,6 +1435,8 @@ You try first. See if you can use these vectors to find how many elements are `N
 
 ## One approach
 
+. . .
+
 ```{r}
 is.na(a) 
 is.na(b)
@@ -1376,6 +1453,10 @@ is.na(a) & is.na(b)
 ```{r}
 sum(is.na(a) & is.na(b))
 ```
+
+. . .
+
+Anyone do anything differently?
 
 ## Generalize to function
 
@@ -1441,9 +1522,9 @@ What should we do?
 
 Check that they are the same length, return an error if not
 
-## Check lengths
+## `stop("message")`
 
-Stop the evaluation of a function and return an error message with `stop` but only if a condition has been met
+Check the lengths and `stop` the evaluation of a function and return an error message `if` lenghts are unequal
 
 . . .
 
@@ -1493,6 +1574,7 @@ both_na <- function(x, y) {
 }
 ```
 
+. . .
 
 ```{r}
 #| output-location: fragment
@@ -1535,9 +1617,9 @@ both_na <- function(x, y) {
 both_na(a, c(b, b))
 ```
 
-## Clean up
+## `call. = FALSE`
 
-Often we don't need/want to echo the function
+Maybe we don't need/want to echo the function: `Error in function_name():`
 
 Set `call. = FALSE`
 
@@ -1592,7 +1674,9 @@ both_na <- function(x, y) {
 both_na(a, c(b, b))
 ```
 
-## Quick error messages {.smaller}
+## `stopifnot()` {.smaller}
+
+Quick error messages
 
 * For quick checks, with usually less than optimal messages, use `stopifnot`
 * Often useful if the function is just for you
@@ -1613,17 +1697,18 @@ z_score <- function(x) {
 . . .
 
 ```{r}
-#| error: true
-z_score(c("a", "b", "c"))
+z_score(c(100, 115, 112))
 ```
 
 . . .
 
 ```{r}
-z_score(c(100, 115, 112))
+#| error: true
+z_score(c("a", "b", "c"))
 ```
 
-## warnings
+
+## Warnings
 
 If you want to embed a warning, just swap out `stop()` for `warning()`
 
@@ -1646,7 +1731,7 @@ For example:
 Note the double condition
 
 ```{r error-warn}
-#| code-line-numbers: "|2,8|2-4|6|8-9|11-13"
+#| code-line-numbers: "|2,15,16|8-14|8-10|11-14"
 both_na <- function(x, y) {
 	if(length(x) != length(y)) {
 		lx <- length(x)
@@ -1676,6 +1761,7 @@ Vectors different lengths but recyclable
 ```{r test-error-warn}
 #| warning: true
 #| error: true
+#| output-location: fragment
 both_na(a, c(b, b))
 ```
 
@@ -1688,6 +1774,7 @@ Vectors different lengths **NOT** recyclable
 ```{r}
 #| warning: true
 #| error: true
+#| output-location: fragment
 both_na(a, c(b, b)[-1])
 ```
 
@@ -1712,6 +1799,8 @@ both_na(a, c(b, b)[-1])
 * Develop a package? *Very!*
 
 * Develop functions that others use, even if not through a package? *Sort of*
+
+# Return value
 
 ## Return values
 
@@ -1740,10 +1829,6 @@ add_two(5)
 
 **Answer**: Nothing! Why?
 
-```{r add_two-result}
-add_two(10)
-```
-
 ## Specify the return value
 
 The below are all equivalent, and all result in the same function behavior
@@ -1756,15 +1841,15 @@ add_two.1 <- function(x) {
 
 ```{r add_two}
 add_two.2 <- function(x) {
-	result <- x + 2
-	result
+	total <- x + 2
+	total
 }
 ```
 
 ```{r add_two.3}
 add_two.3 <- function(x) {
-	result <- x + 2
-	return(result)
+	total <- x + 2
+	return(total)
 }
 ```
 
@@ -1773,6 +1858,8 @@ add_two.3 <- function(x) {
 Generally reserve `return()` for when you're returning a value prior to the full evaluation of the function
 
 Otherwise, use `add_two.1()` or `add_two.2()` methods from prior slide
+
+# Function names
 
 ## Function names
 
@@ -1849,7 +1936,7 @@ head(percentile_df(rnorm(50)))
 
 [**demo with `percentile_df()`**]{style="color:#009E73;"}
 
-## Thinking about dependencies
+## Thinking about dependencies {.smaller}
 
 * What's the purpose of the function?
   	+ Just your use? Never needed again? 
