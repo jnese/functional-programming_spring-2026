@@ -3777,7 +3777,7 @@
     "href": "slides/w6.html#mean-trick-1",
     "title": "Week 6: Writing Functions",
     "section": "Mean trick",
-    "text": "Mean trick\n\ntibble(\n  x = 1:500,\n  y = 1:500\n) |&gt; \n  mutate(sum = map2_dbl(x, y, `+`)) |&gt; \n  filter(sum &lt; 0)\n\n\n\n# A tibble: 2 × 3\n      x     y   sum\n  &lt;int&gt; &lt;int&gt; &lt;dbl&gt;\n1   383   383  -766\n2   466   466  -932\n\n\n\n\ntable(map2_dbl(1:500, 1:500, `+`) &lt; 0)\n\n\n\n\nFALSE  TRUE \n  493     7"
+    "text": "Mean trick\n\ntibble(\n  x = 1:500,\n  y = 1:500\n) |&gt; \n  mutate(sum = map2_dbl(x, y, `+`)) |&gt; \n  filter(sum &lt; 0)\n\n\n\n# A tibble: 3 × 3\n      x     y   sum\n  &lt;int&gt; &lt;int&gt; &lt;dbl&gt;\n1   294   294  -588\n2   372   372  -744\n3   432   432  -864\n\n\n\n\ntable(map2_dbl(1:500, 1:500, `+`) &lt; 0)\n\n\n\n\nFALSE  TRUE \n  498     2"
   },
   {
     "objectID": "slides/w6.html#undo",
@@ -4660,5 +4660,12 @@
     "title": "Week 6: Writing Functions",
     "section": "Pass the dots",
     "text": "Pass the dots\n(...) allows a function to accept an arbitrary number of arguments (named or unnamed) and pass them along to another internal function\nFor example\nmy_plot &lt;- function(x, ...) { ggplot(x, ...) } allows you to pass any ggplot() parameters like size=4"
+  },
+  {
+    "objectID": "slides/w6.html#section-1",
+    "href": "slides/w6.html#section-1",
+    "title": "Week 6: Writing Functions",
+    "section": "",
+    "text": "##"
   }
 ]

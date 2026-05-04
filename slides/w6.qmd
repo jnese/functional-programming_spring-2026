@@ -34,6 +34,11 @@ update_geom_defaults("point", list(size = 3))
 
 ![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZsc3ozNW03dHRmYnFvN3U3azJ2ZzUyZGUxeGF5ZGxlN2lpOG5ydiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPag5cpeU0u0Su4/giphy.gif)
 
+##
+
+![](./images/artemis_1.webp)
+
+
 ## Agenda {.smaller}
 
 * Review Midterm
