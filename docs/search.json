@@ -802,7 +802,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: $L6&HnNN\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\nLab 1\n\n\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: a3ltA@DH\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nAdvR(2e) 9.4-9.6\n\n\nLab 2\nLab 1\n\n\n\n\n\n\n\n\n\n\nClone course repo\n\n\n\n\n\n1 Passcode: Y5HLB*V5\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\nLab 2\n\n\n\n\nR4DS(1e) 25\n\n\n\n\n\n\nClone course repo\n\n\n\n1 Passcode: Sa!AJf61\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: MMd2Fz.K\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\n\nMidterm Test(midterm.html)\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
+    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: $L6&HnNN\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\nLab 1\n\n\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: a3ltA@DH\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nAdvR(2e) 9.4-9.6\n\n\nLab 2\nLab 1\n\n\n\n\n\n\n\n\n\n\nClone course repo\n\n\n\n\n\n1 Passcode: Y5HLB*V5\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\nLab 2\n\n\n\n\nR4DS(1e) 25\n\n\n\n\n\n\nClone course repo\n\n\n\n1 Passcode: Sa!AJf61\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: MMd2Fz.K\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\nMidterm Test(midterm.html)\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: h*Q%6.H0\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\n\n\nLab 3\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
   },
   {
     "objectID": "slides/w2.html#agenda",
@@ -1453,7 +1453,7 @@
     "href": "assignments.html#midterm",
     "title": "Assignments",
     "section": "Midterm",
-    "text": "Midterm\nThe take-home Midterm will be completed outside of class time, and responses will be scored on a correct/incorrect basis rather than a “best honest effort”. The Midterm will primarily cover working with and subsetting lists, as well as iterating with {purrr}. The Midterm is worth 70 points (35% of your grade).\n\n\n\n\n\n\n\n\nDate Assigned\nDate Due\nAssigned\nKey\nPoints\nPercent\n\n\n\n\nApr-27\nMay-04\nMidterm Test\nNA\n70\n35%"
+    "text": "Midterm\nThe take-home Midterm will be completed outside of class time, and responses will be scored on a correct/incorrect basis rather than a “best honest effort”. The Midterm will primarily cover working with and subsetting lists, as well as iterating with {purrr}. The Midterm is worth 70 points (35% of your grade).\n\n\n\n\n\n\n\n\nDate Assigned\nDate Due\nAssigned\nKey\nPoints\nPercent\n\n\n\n\nApr-27\nMay-04\nMidterm Test\nMidterm Key\n70\n35%"
   },
   {
     "objectID": "assignments.html#final",
@@ -3777,7 +3777,7 @@
     "href": "slides/w6.html#mean-trick-1",
     "title": "Week 6: Writing Functions",
     "section": "Mean trick",
-    "text": "Mean trick\n\ntibble(\n  x = 1:500,\n  y = 1:500\n) |&gt; \n  mutate(sum = map2_dbl(x, y, `+`)) |&gt; \n  filter(sum &lt; 0)\n\n\n\n# A tibble: 3 × 3\n      x     y   sum\n  &lt;int&gt; &lt;int&gt; &lt;dbl&gt;\n1   294   294  -588\n2   372   372  -744\n3   432   432  -864\n\n\n\n\ntable(map2_dbl(1:500, 1:500, `+`) &lt; 0)\n\n\n\n\nFALSE  TRUE \n  498     2"
+    "text": "Mean trick\n\ntibble(\n  x = 1:500,\n  y = 1:500\n) |&gt; \n  mutate(sum = map2_dbl(x, y, `+`)) |&gt; \n  filter(sum &lt; 0)\n\n\n\n# A tibble: 2 × 3\n      x     y   sum\n  &lt;int&gt; &lt;int&gt; &lt;dbl&gt;\n1   233   233  -466\n2   470   470  -940\n\n\n\n\ntable(map2_dbl(1:500, 1:500, `+`) &lt; 0)\n\n\n\n\nFALSE  TRUE \n  497     3"
   },
   {
     "objectID": "slides/w6.html#undo",
@@ -4029,7 +4029,7 @@
     "href": "slides/w6.html#challenge-2",
     "title": "Week 6: Writing Functions",
     "section": "Challenge",
-    "text": "Challenge\nCan you write a function that returns a specific coefficient from a model?\nTry using the code on the previous slide as you guide"
+    "text": "Challenge\nCan you write a function that returns any desired coefficient from an lm model?\nTry using the code on the previous slide as you guide"
   },
   {
     "objectID": "slides/w6.html#generalize-it",
@@ -4667,5 +4667,12 @@
     "title": "Week 6: Writing Functions",
     "section": "",
     "text": "##"
+  },
+  {
+    "objectID": "slides/w6.html",
+    "href": "slides/w6.html",
+    "title": "Week 6: Writing Functions",
+    "section": "",
+    "text": "Week 6\n\n\n\n\n\n\n\n\n\n\n\nReview Midterm\nEverything is a function\nComponents of a function\nFunction workflows\n\nLearning objectives\n\nUnderstand and be able to fluently refer to the three fundamental components of a function\nUnderstand the workflows that often lead to writing functions, and how you iterate from interactive work to writing a function\nBe able to write a few basic functions"
   }
 ]

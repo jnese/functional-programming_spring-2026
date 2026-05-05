@@ -761,7 +761,7 @@ coef(m)["(Intercept)"]
 
 ## Challenge
 
-Can you write a function that returns a *specific* coefficient from a model?
+Can you write a function that returns any desired coefficient from an `lm` model?
 
 Try using the code on the previous slide as you guide
 
