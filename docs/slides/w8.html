@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Joe Nese">
+
+<title>Week 8: Shiny – EDLD 653</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1bb9bb9990d8fca9e5c097b6d2d40dc5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="../site_libs/countdown-0.6.0/countdown.css" rel="stylesheet">
+
+<script src="../site_libs/countdown-0.6.0/countdown.js"></script>
+
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">EDLD 653</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../assignments.html"> 
+<span class="menu-text">Assignments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jnese/functional-programming_spring-2026"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#shiny" id="toc-shiny" class="nav-link active" data-scroll-target="#shiny">Shiny</a>
+  <ul class="collapse">
+  <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda">Agenda</a></li>
+  </ul></li>
+  <li><a href="#review-lab-3" id="toc-review-lab-3" class="nav-link" data-scroll-target="#review-lab-3">Review Lab 3</a></li>
+  <li><a href="#getting-started-with-shiny" id="toc-getting-started-with-shiny" class="nav-link" data-scroll-target="#getting-started-with-shiny">Getting Started with Shiny</a>
+  <ul class="collapse">
+  <li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics">The basics!</a></li>
+  <li><a href="#first-thing---run-app" id="toc-first-thing---run-app" class="nav-link" data-scroll-target="#first-thing---run-app">First thing - Run App!</a></li>
+  </ul></li>
+  <li><a href="#ui-server" id="toc-ui-server" class="nav-link" data-scroll-target="#ui-server">UI &amp; Server</a>
+  <ul class="collapse">
+  <li><a href="#shiny-app-anatomy" id="toc-shiny-app-anatomy" class="nav-link" data-scroll-target="#shiny-app-anatomy">Shiny app anatomy</a></li>
+  <li><a href="#ui" id="toc-ui" class="nav-link" data-scroll-target="#ui">UI</a></li>
+  <li><a href="#server" id="toc-server" class="nav-link" data-scroll-target="#server">Server</a></li>
+  <li><a href="#lets-try-something" id="toc-lets-try-something" class="nav-link" data-scroll-target="#lets-try-something">Let’s try something</a></li>
+  <li><a href="#text-output" id="toc-text-output" class="nav-link" data-scroll-target="#text-output">Text output</a></li>
+  <li><a href="#input-output-pairings" id="toc-input-output-pairings" class="nav-link" data-scroll-target="#input-output-pairings">Input / Output Pairings</a></li>
+  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge">Challenge</a></li>
+  <li><a href="#widgets" id="toc-widgets" class="nav-link" data-scroll-target="#widgets">Widgets</a></li>
+  <li><a href="#change-the-input" id="toc-change-the-input" class="nav-link" data-scroll-target="#change-the-input">Change the input</a></li>
+  <li><a href="#try-it-out" id="toc-try-it-out" class="nav-link" data-scroll-target="#try-it-out">Try it out!</a></li>
+  <li><a href="#new-app-mpg" id="toc-new-app-mpg" class="nav-link" data-scroll-target="#new-app-mpg">New app (<code>mpg</code>)</a></li>
+  <li><a href="#new-app-mpg-1" id="toc-new-app-mpg-1" class="nav-link" data-scroll-target="#new-app-mpg-1">New app (<code>mpg</code>)</a></li>
+  <li><a href="#more-complicated-control" id="toc-more-complicated-control" class="nav-link" data-scroll-target="#more-complicated-control">More <del>complicated</del> control</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
+  <li><a href="#tables-1" id="toc-tables-1" class="nav-link" data-scroll-target="#tables-1">Tables</a></li>
+  <li><a href="#mpg-app" id="toc-mpg-app" class="nav-link" data-scroll-target="#mpg-app"><code>mpg</code> app</a></li>
+  </ul></li>
+  <li><a href="#layouts" id="toc-layouts" class="nav-link" data-scroll-target="#layouts">Layouts</a>
+  <ul class="collapse">
+  <li><a href="#layout-options" id="toc-layout-options" class="nav-link" data-scroll-target="#layout-options">Layout Options</a></li>
+  <li><a href="#change-the-layout" id="toc-change-the-layout" class="nav-link" data-scroll-target="#change-the-layout">Change the layout</a></li>
+  <li><a href="#alternative" id="toc-alternative" class="nav-link" data-scroll-target="#alternative">Alternative</a></li>
+  <li><a href="#mpg-app-1" id="toc-mpg-app-1" class="nav-link" data-scroll-target="#mpg-app-1"><code>mpg</code> app</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  </ul></li>
+  <li><a href="#reactivity" id="toc-reactivity" class="nav-link" data-scroll-target="#reactivity">Reactivity</a>
+  <ul class="collapse">
+  <li><a href="#simple-example" id="toc-simple-example" class="nav-link" data-scroll-target="#simple-example">Simple example</a></li>
+  <li><a href="#programming-style" id="toc-programming-style" class="nav-link" data-scroll-target="#programming-style">Programming style</a></li>
+  <li><a href="#what-is-reactivity" id="toc-what-is-reactivity" class="nav-link" data-scroll-target="#what-is-reactivity">What is reactivity?</a></li>
+  <li><a href="#reactivity-1" id="toc-reactivity-1" class="nav-link" data-scroll-target="#reactivity-1">Reactivity</a></li>
+  <li><a href="#inputs" id="toc-inputs" class="nav-link" data-scroll-target="#inputs">Inputs</a></li>
+  <li><a href="#selective-read-permissions" id="toc-selective-read-permissions" class="nav-link" data-scroll-target="#selective-read-permissions">Selective read permissions</a></li>
+  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">Output</a></li>
+  <li><a href="#reactive" id="toc-reactive" class="nav-link" data-scroll-target="#reactive"><code>reactive()</code></a></li>
+  <li><a href="#reactive-graph" id="toc-reactive-graph" class="nav-link" data-scroll-target="#reactive-graph">Reactive graph</a></li>
+  <li><a href="#reactlog" id="toc-reactlog" class="nav-link" data-scroll-target="#reactlog">reactlog</a></li>
+  <li><a href="#basic-example" id="toc-basic-example" class="nav-link" data-scroll-target="#basic-example">Basic example</a></li>
+  </ul></li>
+  <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment">Deployment</a>
+  <ul class="collapse">
+  <li><a href="#deployment-1" id="toc-deployment-1" class="nav-link" data-scroll-target="#deployment-1">Deployment</a></li>
+  <li><a href="#deployment-2" id="toc-deployment-2" class="nav-link" data-scroll-target="#deployment-2">Deployment</a></li>
+  <li><a href="#sign-up" id="toc-sign-up" class="nav-link" data-scroll-target="#sign-up">Sign up</a></li>
+  <li><a href="#deploy-to-connect-cloud" id="toc-deploy-to-connect-cloud" class="nav-link" data-scroll-target="#deploy-to-connect-cloud">Deploy to Connect Cloud</a></li>
+  <li><a href="#deploy-to-connect-cloud-1" id="toc-deploy-to-connect-cloud-1" class="nav-link" data-scroll-target="#deploy-to-connect-cloud-1">Deploy to Connect Cloud</a></li>
+  <li><a href="#deploy-to-connect-cloud-2" id="toc-deploy-to-connect-cloud-2" class="nav-link" data-scroll-target="#deploy-to-connect-cloud-2">Deploy to Connect Cloud</a></li>
+  <li><a href="#deploy-to-connect-cloud-3" id="toc-deploy-to-connect-cloud-3" class="nav-link" data-scroll-target="#deploy-to-connect-cloud-3">Deploy to Connect Cloud</a></li>
+  <li><a href="#deploy-to-connect-cloud-4" id="toc-deploy-to-connect-cloud-4" class="nav-link" data-scroll-target="#deploy-to-connect-cloud-4">Deploy to Connect Cloud</a></li>
+  </ul></li>
+  <li><a href="#shiny-dashboards" id="toc-shiny-dashboards" class="nav-link" data-scroll-target="#shiny-dashboards">Shiny dashboards</a>
+  <ul class="collapse">
+  <li><a href="#shiny-vs.-shinydashboard" id="toc-shiny-vs.-shinydashboard" class="nav-link" data-scroll-target="#shiny-vs.-shinydashboard">shiny vs.&nbsp;shinydashboard</a></li>
+  <li><a href="#first-dashboard---ui" id="toc-first-dashboard---ui" class="nav-link" data-scroll-target="#first-dashboard---ui">First dashboard - <code>ui</code></a></li>
+  <li><a href="#first-dashboard---server" id="toc-first-dashboard---server" class="nav-link" data-scroll-target="#first-dashboard---server">First dashboard - <code>server</code></a></li>
+  <li><a href="#run-it" id="toc-run-it" class="nav-link" data-scroll-target="#run-it">Run it</a></li>
+  <li><a href="#sidebar" id="toc-sidebar" class="nav-link" data-scroll-target="#sidebar">Sidebar</a></li>
+  <li><a href="#referencing-menu-items" id="toc-referencing-menu-items" class="nav-link" data-scroll-target="#referencing-menu-items">Referencing menu items</a></li>
+  <li><a href="#put-slider-in-sidebar" id="toc-put-slider-in-sidebar" class="nav-link" data-scroll-target="#put-slider-in-sidebar">Put slider in sidebar</a></li>
+  <li><a href="#more-complicated" id="toc-more-complicated" class="nav-link" data-scroll-target="#more-complicated">More complicated</a></li>
+  <li><a href="#extension" id="toc-extension" class="nav-link" data-scroll-target="#extension">Extension</a></li>
+  <li><a href="#conclusions-1" id="toc-conclusions-1" class="nav-link" data-scroll-target="#conclusions-1">Conclusions</a></li>
+  </ul></li>
+  <li><a href="#next-time" id="toc-next-time" class="nav-link" data-scroll-target="#next-time">Next time</a>
+  <ul class="collapse">
+  <li><a href="#before-next-class" id="toc-before-next-class" class="nav-link" data-scroll-target="#before-next-class">Before next class</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="w8.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 8: Shiny</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Joe Nese </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Oregon<br>Spring 2026
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="shiny" class="level1">
+<h1>Shiny</h1>
+<p><strong>Week 8</strong></p>
+<section id="agenda" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="agenda">Agenda</h2>
+<ul>
+<li>Review Lab 3</li>
+<li>What is Shiny?
+<ul>
+<li>first shiny app</li>
+<li>UI &amp; Server components</li>
+<li>Inputs, Outputs &amp; Reactivity</li>
+<li>Layouts: <code>sidebar</code>, <code>tabs</code>, <code>navbar</code></li>
+<li>Shiny Dashboards (shinydashboard &amp; bslib)????</li>
+</ul></li>
+</ul>
+<p><strong>Learning objectives</strong></p>
+<ul>
+<li>Be able to create basic interactive plots with Shiny</li>
+<li>Understand basic layouts</li>
+<li>Understand UI / Server separation</li>
+<li>Be able to create basic <code>shiny</code> dashboards????</li>
+</ul>
+</section>
+</section>
+<section id="review-lab-3" class="level1">
+<h1>Review Lab 3</h1>
+</section>
+<section id="getting-started-with-shiny" class="level1">
+<h1>Getting Started with Shiny</h1>
+<p>Creating your first Shiny app</p>
+<section id="the-basics" class="level2">
+<h2 class="anchored" data-anchor-id="the-basics">The basics!</h2>
+<p>Do the following:</p>
+<ul>
+<li>Create a new <code>R</code> project</li>
+<li>Select “<em>Shiny Web App</em>”</li>
+<li>Select the directory
+<ul>
+<li>use “<em>Single File (app.R)</em>”</li>
+<li>rather than “<em>Multiple File (ui.R/server.R split)</em>”</li>
+</ul></li>
+<li>Click “<em>Create</em>”</li>
+</ul>
+<p><span style="color:#009E73;">demo</span></p>
+</section>
+<section id="first-thing---run-app" class="level2">
+<h2 class="anchored" data-anchor-id="first-thing---run-app">First thing - Run App!</h2>
+<ul>
+<li>I like to open in the browser</li>
+<li>What’s going on here? Talk with your neighbor and see if you can deduce the basic functionality</li>
+</ul>
+<p><countdown-timer class="countdown" id="timer_c0be45d3" minutes="2" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
+</section>
+</section>
+<section id="ui-server" class="level1">
+<h1>UI &amp; Server</h1>
+<p>The two halves of every Shiny app</p>
+<section id="shiny-app-anatomy" class="level2">
+<h2 class="anchored" data-anchor-id="shiny-app-anatomy">Shiny app anatomy</h2>
+<ol type="1">
+<li>UI (user interface)
+<ul>
+<li>what the user sees and interacts with</li>
+</ul></li>
+<li>Server
+<ul>
+<li>the <code>R</code> code that runs things</li>
+</ul></li>
+</ol>
+<p>. . .</p>
+<p>The two communicate through named <strong>inputs</strong> and <strong>outputs</strong></p>
+<p><code>shinyApp(ui, server)</code> wires them together and launches the app</p>
+</section>
+<section id="ui" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="ui">UI</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>The <code>ui</code> defines the look and feel of the app</li>
+<li>Defines <code>inputs</code> - widgets the user controls
+<ul>
+<li>for the <code>server</code>, where functions are actually evaluated</li>
+</ul></li>
+<li>Declares <strong>where</strong> <code>outputs</code> will be rendered</li>
+<li>Built from nested <code>R</code> functions that generate HTML</li>
+<li>Every input needs a unique <code>inputId</code></li>
+<li>Here we have defined a <code>sliderInput</code>, which we’re calling <code>bins</code>
+<ul>
+<li>It will take on values from <code>1</code> to <code>50</code>, and will default start at <code>30</code></li>
+</ul></li>
+<li>Access the specific value the user selects within the <code>server</code> through <code>input$bins</code></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Define UI for application that draws a histogram</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="co"># Application title</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="fu">titlePanel</span>(<span class="st">"Old Faithful Geyser Data"</span>),</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>    <span class="co"># Sidebar with a slider input for number of bins </span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>    <span class="fu">sidebarLayout</span>(</span>
+<span id="cb1-9"><a href="#cb1-9"></a>        <span class="fu">sidebarPanel</span>(</span>
+<span id="cb1-10"><a href="#cb1-10"></a>            <span class="fu">sliderInput</span>(</span>
+<span id="cb1-11"><a href="#cb1-11"></a>                        <span class="at">inputId =</span> <span class="st">"bins"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12"></a>                        <span class="at">label =</span> <span class="st">"Number of bins:"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13"></a>                        <span class="at">min =</span> <span class="dv">1</span>,</span>
+<span id="cb1-14"><a href="#cb1-14"></a>                        <span class="at">max =</span> <span class="dv">50</span>,</span>
+<span id="cb1-15"><a href="#cb1-15"></a>                        <span class="at">value =</span> <span class="dv">30</span>)</span>
+<span id="cb1-16"><a href="#cb1-16"></a>        ),</span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a>        <span class="co"># Show a plot of the generated distribution</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>        <span class="fu">mainPanel</span>(</span>
+<span id="cb1-20"><a href="#cb1-20"></a>           <span class="fu">plotOutput</span>(<span class="st">"distPlot"</span>)</span>
+<span id="cb1-21"><a href="#cb1-21"></a>        )</span>
+<span id="cb1-22"><a href="#cb1-22"></a>    )</span>
+<span id="cb1-23"><a href="#cb1-23"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="server" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="server">Server</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>A function with three arguments
+<ul>
+<li><code>input</code> — read-only list of values from the UI</li>
+<li><code>output</code> — list you assign rendered objects to</li>
+<li><code>session</code> — metadata about the user session (advanced) which we won’t cover</li>
+</ul></li>
+<li>The <code>server</code> function takes the input from the UI and puts it in normal <code>R</code> code</li>
+<li>In this case, we’re creating one output object, called <code>distPlot</code> + The result is then called through the <code>ui</code> (line 30 shiny template)</li>
+<li>Use <code>render*()</code> functions to create outputs:
+<ul>
+<li><code>renderPlot()</code> → plotOutput()</li>
+<li><code>renderText()</code> → textOutput()</li>
+<li><code>renderTable()</code> → tableOutput()</li>
+<li><code>renderDataTable()</code> → dataTableOutput()</li>
+</ul></li>
+<li>The name in render must match the name in the UI</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Define server logic required to draw a histogram</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a>    output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb2-5"><a href="#cb2-5"></a>        <span class="co"># generate bins based on input$bins from ui.R</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>        x    <span class="ot">&lt;-</span> faithful[, <span class="dv">2</span>]</span>
+<span id="cb2-7"><a href="#cb2-7"></a>        bins <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x), <span class="fu">max</span>(x), <span class="at">length.out =</span> input<span class="sc">$</span>bins <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a>        <span class="co"># draw the histogram with the specified number of bins</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>        <span class="fu">hist</span>(x, <span class="at">breaks =</span> bins, <span class="at">col =</span> <span class="st">'darkgray'</span>, <span class="at">border =</span> <span class="st">'white'</span>,</span>
+<span id="cb2-11"><a href="#cb2-11"></a>             <span class="at">xlab =</span> <span class="st">'Waiting time to next eruption (in mins)'</span>,</span>
+<span id="cb2-12"><a href="#cb2-12"></a>             <span class="at">main =</span> <span class="st">'Histogram of waiting times'</span>)</span>
+<span id="cb2-13"><a href="#cb2-13"></a>    })</span>
+<span id="cb2-14"><a href="#cb2-14"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lets-try-something" class="level2">
+<h2 class="anchored" data-anchor-id="lets-try-something">Let’s try something</h2>
+<p>Remove lines 39-46, and replace it with <code>print(input$bins)</code></p>
+<p><span style="color:#009E73;">demo</span></p>
+<p>. . .</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Define server logic required to draw a histogram</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>    output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb3-5"><a href="#cb3-5"></a>      <span class="fu">print</span>(input<span class="sc">$</span>bins)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>    })</span>
+<span id="cb3-7"><a href="#cb3-7"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Feels like it should work, but it doesn’t</p>
+<p>Any ideas why?</p>
+</section>
+<section id="text-output" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="text-output">Text output</h2>
+<p>Not everything is a plot — Shiny handles text, tables, images, and more</p>
+<p>With <code>print(input$bins)</code> we are no longer rendering a plot, we are rendering text</p>
+<p>The <code>render*__()</code> / <code>*__Output()</code> pair must always match</p>
+<p>Trying to <code>print()</code> in the server won’t work outside a reactive context</p>
+<p>. . .</p>
+<p><strong>Fix it</strong></p>
+<p>Change</p>
+<ul>
+<li><code>renderPlot</code> to <code>renderText</code></li>
+<li><code>plotOutput</code> to <code>textOutput</code></li>
+</ul>
+<p>Does it work now?</p>
+</section>
+<section id="input-output-pairings" class="level2">
+<h2 class="anchored" data-anchor-id="input-output-pairings">Input / Output Pairings</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="scydqyvhvf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:100%;height:auto;">
+<style>#scydqyvhvf table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#scydqyvhvf thead, #scydqyvhvf tbody, #scydqyvhvf tfoot, #scydqyvhvf tr, #scydqyvhvf td, #scydqyvhvf th {
+  border-style: none;
+}
+
+#scydqyvhvf p {
+  margin: 0;
+  padding: 0;
+}
+
+#scydqyvhvf .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: #000000;
+  border-right-style: solid;
+  border-right-width: 3px;
+  border-right-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: #000000;
+  border-left-style: solid;
+  border-left-width: 3px;
+  border-left-color: #000000;
+}
+
+#scydqyvhvf .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#scydqyvhvf .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#scydqyvhvf .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#scydqyvhvf .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#scydqyvhvf .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+}
+
+#scydqyvhvf .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#scydqyvhvf .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #009E73;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#scydqyvhvf .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #009E73;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#scydqyvhvf .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#scydqyvhvf .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#scydqyvhvf .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#scydqyvhvf .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#scydqyvhvf .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#scydqyvhvf .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#scydqyvhvf .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#scydqyvhvf .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#scydqyvhvf .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: none;
+  border-top-width: 1px;
+  border-top-color: #000000;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#scydqyvhvf .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#scydqyvhvf .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#scydqyvhvf .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#scydqyvhvf .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#scydqyvhvf .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#scydqyvhvf .gt_first_summary_row {
+  border-top-style: none;
+  border-top-color: #D3D3D3;
+}
+
+#scydqyvhvf .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#scydqyvhvf .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#scydqyvhvf .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#scydqyvhvf .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: none;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#scydqyvhvf .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: none;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#scydqyvhvf .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#scydqyvhvf .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+}
+
+#scydqyvhvf .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#scydqyvhvf .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#scydqyvhvf .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#scydqyvhvf .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#scydqyvhvf .gt_left {
+  text-align: left;
+}
+
+#scydqyvhvf .gt_center {
+  text-align: center;
+}
+
+#scydqyvhvf .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#scydqyvhvf .gt_font_normal {
+  font-weight: normal;
+}
+
+#scydqyvhvf .gt_font_bold {
+  font-weight: bold;
+}
+
+#scydqyvhvf .gt_font_italic {
+  font-style: italic;
+}
+
+#scydqyvhvf .gt_super {
+  font-size: 65%;
+}
+
+#scydqyvhvf .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#scydqyvhvf .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#scydqyvhvf .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#scydqyvhvf .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#scydqyvhvf .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#scydqyvhvf .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#scydqyvhvf .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#scydqyvhvf .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#scydqyvhvf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="UI-Output-Function" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">UI Output Function</th>
+<th id="server" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Server <code>render*()</code> Function</th>
+<th id="Use-Case" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Use Case</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="UI Output Function"><code>plotOutput("id")</code></td>
+<td class="gt_row gt_left" headers="server"><code>renderPlot({ … })</code></td>
+<td class="gt_row gt_left" headers="Use Case"><code>{ggplot}</code> / base plots</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="UI Output Function"><code>tableOutput("id")</code></td>
+<td class="gt_row gt_left gt_striped" headers="server"><code>renderTable({ … })</code></td>
+<td class="gt_row gt_left gt_striped" headers="Use Case">Simple HTML tables</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="UI Output Function"><code>dataTableOutput("id")</code></td>
+<td class="gt_row gt_left" headers="server"><code>renderDataTable({ … })</code></td>
+<td class="gt_row gt_left" headers="Use Case">Interactive Tables (<code>{DT}</code>)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="UI Output Function"><code>reactableOutput("id")</code></td>
+<td class="gt_row gt_left gt_striped" headers="server"><code>renderReactable({ … })</code></td>
+<td class="gt_row gt_left gt_striped" headers="Use Case">Interactive Tables (<code>{reactable}</code>)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="UI Output Function"><code>textOutput("id")</code></td>
+<td class="gt_row gt_left" headers="server"><code>renderText({ … })</code></td>
+<td class="gt_row gt_left" headers="Use Case">Plain text / strings</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="UI Output Function"><code>verbatimTextOutput("id")</code></td>
+<td class="gt_row gt_left gt_striped" headers="server"><code>renderPrint({ … })</code></td>
+<td class="gt_row gt_left gt_striped" headers="Use Case">Console-style output</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="UI Output Function"><code>uiOutput("id")</code></td>
+<td class="gt_row gt_left" headers="server"><code>renderUi({ … })</code></td>
+<td class="gt_row gt_left" headers="Use Case">Dynamic UI elements</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left gt_striped" headers="UI Output Function"><code>imageOutput("id")</code></td>
+<td class="gt_row gt_left gt_striped" headers="server"><code>renderImage({ … })</code></td>
+<td class="gt_row gt_left gt_striped" headers="Use Case">Images</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="challenge" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="challenge">Challenge</h2>
+<ul>
+<li>Try producing essentially the same thing as the default, but use <code>ggplot</code> instead of base plotting</li>
+<li>Reminder, the data are called <code>faithful</code>, and you’ll be showing the distribution of <code>waiting</code></li>
+<li>Be sure to evaluate <strong>ALL</strong> of the code within the <code>server</code></li>
+</ul>
+<p><countdown-timer class="countdown" id="timer_fe2592b3" minutes="10" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
+<p>. . .</p>
+<p><span style="color:#009E73;">demo</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Define server logic required to draw a histogram</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>    output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb4-5"><a href="#cb4-5"></a>        <span class="co"># generate bins based on input$bins from ui.R</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>        x    <span class="ot">&lt;-</span> faithful[, <span class="dv">2</span>]</span>
+<span id="cb4-7"><a href="#cb4-7"></a>        bins <span class="ot">&lt;-</span> input<span class="sc">$</span>bins</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a>        <span class="co"># draw the histogram with the specified number of bins</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>        ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(faithful, <span class="fu">aes</span>(waiting)) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>          <span class="fu">geom_histogram</span>(<span class="at">bins =</span> bins, <span class="at">fill =</span> <span class="st">"darkgray"</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>          <span class="fu">labs</span>(</span>
+<span id="cb4-13"><a href="#cb4-13"></a>            <span class="at">x =</span> <span class="st">'Waiting time to next eruption (in mins)'</span>,</span>
+<span id="cb4-14"><a href="#cb4-14"></a>            <span class="at">title =</span> <span class="st">'Histogram of waiting times'</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>          ) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>          <span class="fu">theme_minimal</span>()</span>
+<span id="cb4-17"><a href="#cb4-17"></a>    })</span>
+<span id="cb4-18"><a href="#cb4-18"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="widgets" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="widgets">Widgets</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>All share a common setup:</p>
+<p><code>(inputId, label, ...)</code></p>
+<ul>
+<li><code>sliderInput</code> — continuous range</li>
+<li><code>radioButtons</code> — discrete choices, all visible at once</li>
+<li><code>selectInput</code> — dropdown for many choices</li>
+<li><code>checkboxGroupInput</code> — multiple selections</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p>Just swap the widget — <code>input$bins</code> still works in the server without any other changes!</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Slider (continuous)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">"bins"</span>, <span class="st">"Bins:"</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">50</span>, <span class="at">value=</span><span class="dv">30</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Radio buttons (discrete)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">radioButtons</span>(<span class="st">"bins"</span>, <span class="st">"Bins:"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">choices =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">50</span>, <span class="dv">100</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">selected =</span> <span class="dv">20</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Dropdown</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">selectInput</span>(<span class="st">"var"</span>, <span class="st">"Variable:"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"year"</span>, <span class="st">"trans"</span>, <span class="st">"class"</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">selected =</span> <span class="st">"class"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="change-the-input" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="change-the-input">Change the input</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Let’s say instead of a slider, we want 5 options:
+<ul class="incremental">
+<li>1, 5, 20, 50, or 100</li>
+</ul></li>
+<li>We can change the input from a slider (representing continuous intervals) to radio buttons, representing discrete choices</li>
+<li>Just change <code>sliderInput</code> to <code>radioButtons</code>, and put in the appropriate <code>choices</code>
+<ul class="incremental">
+<li>You can also add a <code>selected</code> argument for the default (starting) value</li>
+</ul></li>
+<li>Be sure to read the <code>?radioButtons</code> help documentation!</li>
+</ul>
+</div>
+<p>. . .</p>
+<p>Try it out!</p>
+<p>(check the previous slide for a head start if you want)</p>
+<p><countdown-timer class="countdown" id="timer_3d50a2c5" minutes="5" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;"></countdown-timer></p>
+</section>
+<section id="try-it-out" class="level2">
+<h2 class="anchored" data-anchor-id="try-it-out">Try it out!</h2>
+<p><span style="color:#009E73;">demo</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Sidebar with a slider input for number of bins</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>    <span class="fu">sidebarLayout</span>(</span>
+<span id="cb6-3"><a href="#cb6-3"></a>        <span class="fu">sidebarPanel</span>(</span>
+<span id="cb6-4"><a href="#cb6-4"></a>          <span class="fu">radioButtons</span>(<span class="st">"bins"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5"></a>                        <span class="st">"Number of bins:"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6"></a>                        <span class="at">choices =</span> <span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">50</span>, <span class="dv">100</span>),</span>
+<span id="cb6-7"><a href="#cb6-7"></a>                        <span class="at">selected =</span> <span class="dv">20</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>                        )</span>
+<span id="cb6-9"><a href="#cb6-9"></a>        )</span>
+<span id="cb6-10"><a href="#cb6-10"></a>...</span>
+<span id="cb6-11"><a href="#cb6-11"></a></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="co"># generate bins based on input$bins from ui.R</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>        x    <span class="ot">&lt;-</span> faithful[, <span class="dv">2</span>]</span>
+<span id="cb6-14"><a href="#cb6-14"></a>        bins <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(input<span class="sc">$</span>bins)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="new-app-mpg" class="level2">
+<h2 class="anchored" data-anchor-id="new-app-mpg">New app (<code>mpg</code>)</h2>
+<p>Use the <code>mpg</code> dataset from <code>{ggplot2}</code></p>
+<ul>
+<li>Show distribution of highway mpg (<code>hwy</code>) that could be faceted by <code>year</code>, <code>trans</code>, or <code>class</code></li>
+<li>Keep slider to control bins</li>
+<li>Use <code>radioButtons</code> for the variables, and <code>sliderInput</code> for the bins
+<ul>
+<li>You’ll need to create a second entry to your <code>ui</code></li>
+</ul></li>
+</ul>
+<p>. . .</p>
+<p><span style="color:#009E73;">demo</span></p>
+</section>
+<section id="new-app-mpg-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="new-app-mpg-1">New app (<code>mpg</code>)</h2>
+<p>. . .</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define UI for application that draws a histogram</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Application title</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">titlePanel</span>(<span class="st">"Highway MPG"</span>),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sidebar with a slider input for number of bins</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarLayout</span>(</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sidebarPanel</span>(</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sliderInput</span>(<span class="st">"bins"</span>,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of bins:"</span>,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                        <span class="at">min =</span> <span class="dv">1</span>,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                        <span class="at">max =</span> <span class="dv">50</span>,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                        <span class="at">value =</span> <span class="dv">30</span>),</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>            <span class="fu">radioButtons</span>(<span class="st">"facet_var"</span>,</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"Facet by:"</span>,</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                         <span class="at">choices  =</span> <span class="fu">c</span>(<span class="st">"Year"</span> <span class="ot">=</span> <span class="st">"year"</span>,</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Transmission"</span> <span class="ot">=</span> <span class="st">"trans"</span>,</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Vehicle Class"</span> <span class="ot">=</span> <span class="st">"class"</span>),</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>                         <span class="at">selected =</span> <span class="st">"year"</span>)</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Show a plot of the generated distribution</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mainPanel</span>(</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>           <span class="fu">plotOutput</span>(<span class="st">"distPlot"</span>)</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Define server logic required to draw a histogram</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>        ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(hwy)) <span class="sc">+</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>          <span class="fu">geom_histogram</span>(<span class="at">bins =</span> input<span class="sc">$</span>bins, <span class="at">fill =</span> <span class="st">"darkgray"</span>) <span class="sc">+</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>          <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(<span class="sc">!!</span><span class="fu">sym</span>(input<span class="sc">$</span>facet_var))) <span class="sc">+</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>          <span class="fu">labs</span>(</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>            <span class="at">x =</span> <span class="st">'Miles per Gallon (MPG)'</span>,</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">'Distribution of Highway MPG'</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>          ) <span class="sc">+</span></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>          <span class="fu">theme_minimal</span>()</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the application</span></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="more-complicated-control" class="level2">
+<h2 class="anchored" data-anchor-id="more-complicated-control">More <del>complicated</del> control</h2>
+<ul>
+<li>Change the width of the sidebar with <br> <code>sidebarPanel(width = 2)</code></li>
+<li>Change the height of the main panel plot with <br> <code>plotOutput("distPlot", height = "800px")</code></li>
+</ul>
+<p><span style="color:#009E73;">demo</span></p>
+<p>. . .</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Define UI for application that draws a histogram</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="co"># Application title</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="fu">titlePanel</span>(<span class="st">"Highway MPG"</span>),</span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a>    <span class="co"># Sidebar with a slider input for number of bins</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="fu">sidebarLayout</span>(</span>
+<span id="cb8-9"><a href="#cb8-9"></a>        <span class="fu">sidebarPanel</span>(<span class="at">width =</span> <span class="dv">2</span>,</span>
+<span id="cb8-10"><a href="#cb8-10"></a>            <span class="fu">sliderInput</span>(<span class="st">"bins"</span>,</span>
+<span id="cb8-11"><a href="#cb8-11"></a>                        <span class="st">"Number of bins:"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12"></a>                        <span class="at">min =</span> <span class="dv">1</span>,</span>
+<span id="cb8-13"><a href="#cb8-13"></a>                        <span class="at">max =</span> <span class="dv">50</span>,</span>
+<span id="cb8-14"><a href="#cb8-14"></a>                        <span class="at">value =</span> <span class="dv">30</span>),</span>
+<span id="cb8-15"><a href="#cb8-15"></a></span>
+<span id="cb8-16"><a href="#cb8-16"></a>            <span class="fu">radioButtons</span>(<span class="st">"facet_var"</span>,</span>
+<span id="cb8-17"><a href="#cb8-17"></a>                         <span class="st">"Facet by:"</span>,</span>
+<span id="cb8-18"><a href="#cb8-18"></a>                         <span class="at">choices  =</span> <span class="fu">c</span>(<span class="st">"Year"</span> <span class="ot">=</span> <span class="st">"year"</span>,</span>
+<span id="cb8-19"><a href="#cb8-19"></a>                                      <span class="st">"Transmission"</span> <span class="ot">=</span> <span class="st">"trans"</span>,</span>
+<span id="cb8-20"><a href="#cb8-20"></a>                                      <span class="st">"Vehicle Class"</span> <span class="ot">=</span> <span class="st">"class"</span>),</span>
+<span id="cb8-21"><a href="#cb8-21"></a>                         <span class="at">selected =</span> <span class="st">"year"</span>)</span>
+<span id="cb8-22"><a href="#cb8-22"></a></span>
+<span id="cb8-23"><a href="#cb8-23"></a>        ),</span>
+<span id="cb8-24"><a href="#cb8-24"></a></span>
+<span id="cb8-25"><a href="#cb8-25"></a>        <span class="co"># Show a plot of the generated distribution</span></span>
+<span id="cb8-26"><a href="#cb8-26"></a>        <span class="fu">mainPanel</span>(</span>
+<span id="cb8-27"><a href="#cb8-27"></a>           <span class="fu">plotOutput</span>(<span class="st">"distPlot"</span>, <span class="at">height =</span> <span class="st">"800px"</span>)</span>
+<span id="cb8-28"><a href="#cb8-28"></a>        )</span>
+<span id="cb8-29"><a href="#cb8-29"></a>    )</span>
+<span id="cb8-30"><a href="#cb8-30"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="tables" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="tables">Tables</h2>
+<p>My recommendation is to use either:</p>
+<ul>
+<li><code>DT::datatable()</code>
+<ul>
+<li>sortable, searchable, paginated</li>
+</ul></li>
+<li><code>reactable::reactable()</code>
+<ul>
+<li>modern, highly customizable</li>
+</ul></li>
+</ul>
+<p>. . .</p>
+<p>Let’s build a table to go below our distribution(s) that shows <code>mean</code>, <code>sd</code>, <code>min</code>, and <code>max</code> of the corresponding distribution(s)</p>
+<p>You’ll need to create a new output object in the <code>server</code>, and tell the <code>ui</code> where it should be rendered</p>
+</section>
+<section id="tables-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="tables-1">Tables</h2>
+<ul>
+<li>Use <code>renderDataTable</code> in the server and <code>dataTableOutput</code> in the UI <strong>OR</strong></li>
+<li>Use <code>renderReactable</code> in the server and <code>reactableOutput</code> in the UI</li>
+<li>If you want to use <code>{dplyr}</code>, as I would, then you have to deal with NSE
+<ul>
+<li>In this case it’s not that big of a deal</li>
+<li>Rather than curly-curly <code>{{}}</code></li>
+<li>Use <code>!!sym(input$var)</code> to pass dynamic column names to <code>{dplyr}</code>
+<ul>
+<li><code>sym()</code> transforms a string to a symbol (or name)</li>
+<li><code>!!</code> evaluates that symbol (bang-bang)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><span style="color:#009E73;">demo</span></p>
+</section>
+<section id="mpg-app" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="mpg-app"><code>mpg</code> app</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">ui</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">server</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Application title</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">titlePanel</span>(<span class="st">"Highway MPG"</span>),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sidebar with a slider input for number of bins</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarLayout</span>(</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sidebarPanel</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sliderInput</span>(<span class="st">"bins"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of bins:"</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                        <span class="at">min =</span> <span class="dv">1</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                        <span class="at">max =</span> <span class="dv">50</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                        <span class="at">value =</span> <span class="dv">30</span>),</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>            <span class="fu">radioButtons</span>(<span class="st">"facet_var"</span>,</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"Facet by:"</span>,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>                         <span class="at">choices  =</span> <span class="fu">c</span>(<span class="st">"Year"</span> <span class="ot">=</span> <span class="st">"year"</span>,</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Transmission"</span> <span class="ot">=</span> <span class="st">"trans"</span>,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Vehicle Class"</span> <span class="ot">=</span> <span class="st">"class"</span>),</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>                         <span class="at">selected =</span> <span class="st">"year"</span>),</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">width =</span> <span class="dv">2</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Show a plot of the generated distribution</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mainPanel</span>(</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>           <span class="fu">plotOutput</span>(<span class="st">"distPlot"</span>),</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>           <span class="fu">reactableOutput</span>(<span class="st">"statsTable"</span>)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define server logic required to draw a histogram</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(hwy)) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>          <span class="fu">geom_histogram</span>(<span class="at">bins =</span> input<span class="sc">$</span>bins, <span class="at">fill =</span> <span class="st">"darkgray"</span>) <span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>          <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(<span class="sc">!!</span><span class="fu">sym</span>(input<span class="sc">$</span>facet_var))) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>          <span class="fu">labs</span>(</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">x =</span> <span class="st">'Miles per Gallon (MPG)'</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">'Distribution of Highway MPG'</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>          ) <span class="sc">+</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>          <span class="fu">theme_minimal</span>()</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>statsTable <span class="ot">&lt;-</span> <span class="fu">renderReactable</span>({</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>      mpg <span class="sc">|&gt;</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(input<span class="sc">$</span>facet_var)) <span class="sc">|&gt;</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">summarise</span>(</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean =</span> <span class="fu">round</span>(<span class="fu">mean</span>(hwy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> <span class="fu">round</span>(<span class="fu">sd</span>(hwy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">min =</span> <span class="fu">min</span>(hwy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">max =</span> <span class="fu">max</span>(hwy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">reactable</span>()</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="layouts" class="level1">
+<h1>Layouts</h1>
+<p>Organizing the app’s interface</p>
+<section id="layout-options" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="layout-options">Layout Options</h2>
+<div class="{.incrementa;}">
+<ul>
+<li><code>sidebarLayout()</code> — controls on left, output on right
+<ul>
+<li>most common for simple apps; wrap in <code>fluidPage()</code></li>
+</ul></li>
+<li><code>tabsetPanel()</code> — tabs within a panel
+<ul>
+<li>great for separating a plot tab from a table tab</li>
+</ul></li>
+<li><code>navbarPage()</code> — full navigation bar across the top
+<ul>
+<li>Each <code>tabPanel()</code> is a separate page with its own sidebar</li>
+<li>Don’t share inputId names across pages in <code>navbarPage()</code></li>
+</ul></li>
+<li><code>fluidRow()</code> + <code>column()</code> — Bootstrap grid (12-column system)
+<ul>
+<li>fine-grained control</li>
+<li><code>column(width = 4, ...)</code> = 1/4 of the row <!-- ???? bslib::page_sidebar() — modern Bootstrap 5 alternative (recommended for new apps) --></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="change-the-layout" class="level2">
+<h2 class="anchored" data-anchor-id="change-the-layout">Change the layout</h2>
+<ul>
+<li>Let’s say instead of having the table below, we wanted it within a tabset</li>
+<li>Just create a <code>tabsetPanel()</code> within the <code>mainPanel()</code></li>
+<li>Then put the output for each tab within <code>tabPanel()</code></li>
+</ul>
+<p><span style="color:#009E73;">demo</span></p>
+<p>. . .</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mainPanel</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>          <span class="fu">tabsetPanel</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">tabPanel</span>(<span class="st">"Distribution"</span>, <span class="fu">plotOutput</span>(<span class="st">"distPlot"</span>)),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>            <span class="fu">tabPanel</span>(<span class="st">"Summary Stats"</span>, <span class="fu">reactableOutput</span>(<span class="st">"statsTable"</span>))</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="alternative" class="level2">
+<h2 class="anchored" data-anchor-id="alternative">Alternative</h2>
+<ul>
+<li>You might want to have a navbar at the top of the page, which you can create with <code>navbarPage()</code></li>
+<li>Create each page with <code>tabPanel()</code></li>
+<li>Each <code>tabPanel</code> needs to include everything, including the <code>sidebarPanel()</code> (if present), could include <code>tabsetPanel()</code>, <code>mainPanel()</code>, etc</li>
+<li>Move your title so it’s <code>navbarPage("App title",</code> or the rest of the pages won’t look right</li>
+<li>Make sure not to share <code>inputId</code>’s across pages - it won’t work</li>
+</ul>
+</section>
+<section id="mpg-app-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="mpg-app-1"><code>mpg</code> app</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reactable)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">navbarPage</span>(<span class="st">"Highway MPG"</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ── Page 1: Distribution ──────────────────────────────────────────────────</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>(<span class="st">"Distribution"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sidebarLayout</span>(</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sidebarPanel</span>(</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>                <span class="fu">sliderInput</span>(<span class="st">"bins"</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"Number of bins:"</span>,</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                            <span class="at">min   =</span> <span class="dv">1</span>,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>                            <span class="at">max   =</span> <span class="dv">50</span>,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>                            <span class="at">value =</span> <span class="dv">30</span>),</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>                <span class="fu">radioButtons</span>(<span class="st">"facet_var"</span>,</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Facet by:"</span>,</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices  =</span> <span class="fu">c</span>(<span class="st">"Year"</span>          <span class="ot">=</span> <span class="st">"year"</span>,</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Transmission"</span>  <span class="ot">=</span> <span class="st">"trans"</span>,</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Vehicle Class"</span> <span class="ot">=</span> <span class="st">"class"</span>),</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">"year"</span>),</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="dv">2</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>            <span class="fu">mainPanel</span>(</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>                <span class="fu">plotOutput</span>(<span class="st">"distPlot"</span>)</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ── Page 2: Summary Stats ─────────────────────────────────────────────────</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>(<span class="st">"Summary Stats"</span>,</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sidebarLayout</span>(</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sidebarPanel</span>(</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>                <span class="fu">radioButtons</span>(<span class="st">"facet_var_stats"</span>,</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Group by:"</span>,</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices  =</span> <span class="fu">c</span>(<span class="st">"Year"</span>          <span class="ot">=</span> <span class="st">"year"</span>,</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Transmission"</span>  <span class="ot">=</span> <span class="st">"trans"</span>,</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"Vehicle Class"</span> <span class="ot">=</span> <span class="st">"class"</span>),</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="st">"year"</span>),</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="dv">2</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>            <span class="fu">mainPanel</span>(</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>                <span class="fu">reactableOutput</span>(<span class="st">"statsTable"</span>)</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(hwy)) <span class="sc">+</span></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>            <span class="fu">geom_histogram</span>(<span class="at">bins =</span> input<span class="sc">$</span>bins, <span class="at">fill =</span> <span class="st">"darkgray"</span>) <span class="sc">+</span></span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>            <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(<span class="sc">!!</span><span class="fu">sym</span>(input<span class="sc">$</span>facet_var))) <span class="sc">+</span></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>            <span class="fu">labs</span>(</span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>                <span class="at">x     =</span> <span class="st">"Miles per Gallon (MPG)"</span>,</span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>                <span class="at">title =</span> <span class="st">"Distribution of Highway MPG"</span></span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">+</span></span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>            <span class="fu">theme_minimal</span>()</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>statsTable <span class="ot">&lt;-</span> <span class="fu">renderReactable</span>({</span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>        mpg <span class="sc">|&gt;</span></span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>            <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(input<span class="sc">$</span>facet_var_stats)) <span class="sc">|&gt;</span></span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a>            <span class="fu">summarise</span>(</span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a>                <span class="at">mean =</span> <span class="fu">round</span>(<span class="fu">mean</span>(hwy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a>                <span class="at">sd   =</span> <span class="fu">round</span>(<span class="fu">sd</span>(hwy,   <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a>                <span class="at">min  =</span> <span class="fu">min</span>(hwy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a>                <span class="at">max  =</span> <span class="fu">max</span>(hwy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">|&gt;</span></span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a>            <span class="fu">reactable</span>()</span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<ul>
+<li>Shiny is super customizable - just scratching the surface today</li>
+<li><a href="https://mastering-shiny.org">Mastering Shiny</a> should be your guide for going deeper</li>
+<li>Great for building interactive plots, but you can use it for all sorts of other things too (including text and tables)</li>
+<li>Apps get complicated quickly
+<ul>
+<li>Consider pulling pieces out as a refactoring method or using <a href="https://mastering-shiny.org/scaling-modules.html">shiny modules</a></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="reactivity" class="level1 page-columns page-full">
+<h1>Reactivity</h1>
+<p>How Shiny knows what to update</p>
+<section id="simple-example" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="simple-example">Simple example</h2>
+<p>Try this app. Type the letters in one at a time. Notice how it updates.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">textInput</span>(<span class="st">"name"</span>, <span class="st">"What's your name?"</span>),</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">textOutput</span>(<span class="st">"greeting"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>greeting <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste0</span>(<span class="st">"Hello "</span>, input<span class="sc">$</span>name, <span class="st">"!"</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a href="https://mastering-shiny.org/basic-reactivity.html#reactive-programming">Mastering Shiny</a></p>
+</div></div></section>
+<section id="programming-style" class="level2">
+<h2 class="anchored" data-anchor-id="programming-style">Programming style</h2>
+<ul>
+<li>Notice you don’t have to “run” the code each time the input updates</li>
+<li>Your app provides instructions to <code>R</code> and Shiny decides when it actually runs the code</li>
+</ul>
+<p>. . .</p>
+<p>This is known as <strong>declarative programming</strong></p>
+<p>Normal <code>R</code> code is <strong>imperative programming</strong> - you decide when it’s run</p>
+<p><strong>Declarative programming</strong> means you provide instructions, but don’t actually run it</p>
+</section>
+<section id="what-is-reactivity" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="what-is-reactivity">What is reactivity?</h2>
+<div class="{incremental}">
+<ul>
+<li>Normal <code>R</code> is imperative
+<ul>
+<li>you control when code runs</li>
+</ul></li>
+<li>Shiny uses declarative programming
+<ul>
+<li>you describe relationships, not sequences</li>
+<li>you describe a dependency graph and Shiny decides when to re-run</li>
+<li>when <code>input$bins</code> changes → anything that depends on it is automatically re-executed</li>
+</ul></li>
+<li>Think of it like a spreadsheet: change a cell, formulas update automatically</li>
+</ul>
+</div>
+<p>. . .</p>
+<p><strong>Key reactive functions</strong></p>
+<ul>
+<li><code>render*()</code> — creates a reactive output</li>
+<li><code>reactive()</code> — creates a reusable reactive value/expression</li>
+<li><code>observe()</code> — runs side effects (e.g., writing to a file)</li>
+<li><code>observeEvent()</code> — runs when a specific input changes</li>
+</ul>
+</section>
+<section id="reactivity-1" class="level2">
+<h2 class="anchored" data-anchor-id="reactivity-1">Reactivity</h2>
+<ul>
+<li>Shiny builds a graph of dependencies at runtime</li>
+<li>input → reactive expression → output</li>
+<li>When an input changes, only the affected outputs re-execute</li>
+<li>You can visualize this with the <a href="(https://rstudio.github.io/reactlog/)"><code>{reactlog}</code></a> package</li>
+</ul>
+</section>
+<section id="inputs" class="level2">
+<h2 class="anchored" data-anchor-id="inputs">Inputs</h2>
+<p><code>input</code> is a basically a list object that contains objects from the ui</p>
+<p>. . .</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">numericInput</span>(<span class="st">"count"</span>, <span class="at">label =</span> <span class="st">"Number of values"</span>, <span class="at">value =</span> <span class="dv">100</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>After writing this code, <code>input$count</code> will be a available in the server, and the value it takes will depend on the browser input (starting at 100)</p>
+<p>These are read-only, and cannot be modified</p>
+</section>
+<section id="selective-read-permissions" class="level2">
+<h2 class="anchored" data-anchor-id="selective-read-permissions">Selective read permissions</h2>
+<p>It must be in a reactive context, or it won’t work</p>
+<p>That’s why this results in an error - trying to <code>print()</code> in the server won’t work outside a reactive context</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"The value of input$count is "</span>, input<span class="sc">$</span>count)) </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; Error in .getReactiveEnvironment()$currentContext() : </span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt;  Operation not allowed without an active reactive context. </span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; (You tried to do something that can only be done from inside a reactive expression or observer.)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="output" class="level2">
+<h2 class="anchored" data-anchor-id="output">Output</h2>
+<ul>
+<li>The <code>output</code> object is similar to <code>input</code>, in terms of being a list-like object</li>
+<li>Create new components of the list for new output, and refer to them in the <code>ui</code></li>
+<li>These also need to be in reactive contexts (e.g., <code>render*()</code>)</li>
+</ul>
+</section>
+<section id="reactive" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="reactive"><code>reactive()</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>If two outputs need the same data, don’t repeat yourself</li>
+<li>Wrap shared computation in <code>reactive()</code> — it’s cached and only re-runs when inputs change</li>
+<li>Call it like a function (with parentheses)
+<ul>
+<li><code>filtered_data()</code></li>
+</ul></li>
+<li>But never call reactive expressions outside a reactive context</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="co"># Shared reactive expression — runs once, used by both outputs</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  filtered_data <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
+<span id="cb16-5"><a href="#cb16-5"></a>    mpg <span class="sc">|&gt;</span> <span class="fu">filter</span>(class <span class="sc">==</span> input<span class="sc">$</span>class)</span>
+<span id="cb16-6"><a href="#cb16-6"></a>  })</span>
+<span id="cb16-7"><a href="#cb16-7"></a></span>
+<span id="cb16-8"><a href="#cb16-8"></a>  output<span class="sc">$</span>plot  <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb16-9"><a href="#cb16-9"></a>    <span class="fu">ggplot</span>(<span class="fu">filtered_data</span>(), <span class="fu">aes</span>(displ, hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb16-10"><a href="#cb16-10"></a>  })</span>
+<span id="cb16-11"><a href="#cb16-11"></a></span>
+<span id="cb16-12"><a href="#cb16-12"></a>  output<span class="sc">$</span>table <span class="ot">&lt;-</span> <span class="fu">renderTable</span>({</span>
+<span id="cb16-13"><a href="#cb16-13"></a>    <span class="fu">filtered</span>()</span>
+<span id="cb16-14"><a href="#cb16-14"></a>  })</span>
+<span id="cb16-15"><a href="#cb16-15"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reactive-graph" class="level2 page-columns page-full" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="reactive-graph">Reactive graph</h2>
+<ul>
+<li>Normally, you understand <code>R</code> code by running it top to bottom</li>
+<li>This doesn’t work with shiny</li>
+<li>Instead, we think through reactive graphs</li>
+</ul>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/056990a803a41501e2dbe05df351f8b8f7b493ab/f773a/diagrams/basic-reactivity/graph-1b.png" class="img-fluid"></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a href="https://mastering-shiny.org/basic-reactivity.html#the-reactive-graph">Mastering Shiny</a></p>
+</div></div></section>
+<section id="reactlog" class="level2" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="reactlog"><a href="https://rstudio.github.io/reactlog/">reactlog</a></h2>
+<p><img src="http://rstudio.github.io/reactlog/readme-images/pythagoras.gif" class="img-fluid"></p>
+</section>
+<section id="basic-example" class="level2" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="basic-example">Basic example</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reactlog)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Enable logging BEFORE running the app</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">reactlog_enable</span>()</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">textInput</span>(<span class="st">"name"</span>, <span class="st">"What's your name?"</span>),</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">textOutput</span>(<span class="st">"greeting"</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>greeting <span class="ot">&lt;-</span> <span class="fu">renderText</span>({</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste0</span>(<span class="st">"Hello "</span>, input<span class="sc">$</span>name, <span class="st">"!"</span>)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="co"># After closing the app, view the reactive log:</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a><span class="fu">reactlogShow</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="deployment" class="level1 page-columns page-full">
+<h1>Deployment</h1>
+<p>Deploy your Shiny App</p>
+<section id="deployment-1" class="level2">
+<h2 class="anchored" data-anchor-id="deployment-1">Deployment</h2>
+<p>Once built, you will need to deploy your Shiny app on the web</p>
+<p>Two (potentially free) options:</p>
+<div class="{incremental}">
+<ol type="1">
+<li><a href="https://www.shinyapps.io/">shinyapps.io</a> 👍 been using it for years 👎 ending in 2026, migrating to</li>
+<li>posit <a href="https://connect.posit.cloud/">Connect Cloud</a> 👍 next-gen publishing platform 👍 more capabilities and better security</li>
+</ol>
+</div>
+</section>
+<section id="deployment-2" class="level2">
+<h2 class="anchored" data-anchor-id="deployment-2">Deployment</h2>
+<p>Once built, you will need to deploy your Shiny app on the web</p>
+<p><del>Two</del> One (potentially free) option<del>s</del>:</p>
+<p><del>1) <a href="https://www.shinyapps.io/">shinyapps.io</a></del> <del>👍 been using it for years</del> <del>👎 ending in 2026, migrating to</del> 2) Posit <a href="https://connect.posit.cloud/">Connect Cloud</a> 👍 next-gen publishing platform 👍 more capabilities and better security</p>
+<p>Posit <a href="https://connect.posit.cloud/">Connect Cloud</a> it is!</p>
+</section>
+<section id="sign-up" class="level2">
+<h2 class="anchored" data-anchor-id="sign-up">Sign up</h2>
+<p>Go to <a href="https://connect.posit.cloud/" class="uri">https://connect.posit.cloud/</a></p>
+<p>Sign up for a free account</p>
+<ul>
+<li>Note that it will ask you to choose your account name</li>
+<li>This name will appear in your published URLs
+<ul>
+<li>Shiny app or Quarto</li>
+</ul></li>
+<li>So <strong>make sure</strong> it is professional!</li>
+</ul>
+</section>
+<section id="deploy-to-connect-cloud" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="deploy-to-connect-cloud">Deploy to Connect Cloud</h2>
+<ol type="1">
+<li>Make sure your RStudio Project is connected to Github</li>
+<li>Build your Shiny app</li>
+<li>Preview the app</li>
+<li>Add dependency file</li>
+<li>Push to Github</li>
+<li>Deploy to Posit Connect Cloud</li>
+<li>Republish the app (as needed)</li>
+</ol>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a href="https://docs.posit.co/connect-cloud/how-to/r/shiny-r.html">Tutorial</a></p>
+</div></div></section>
+<section id="deploy-to-connect-cloud-1" class="level2">
+<h2 class="anchored" data-anchor-id="deploy-to-connect-cloud-1">Deploy to Connect Cloud</h2>
+<div class="{incremental}">
+<ol type="1">
+<li>Make sure your RStudio Project is connected to Github</li>
+<li>Build your Shiny app</li>
+<li>Preview the app
+<ul>
+<li>In RStudio when looking at <code>app.R</code>, click the <code>Run</code> button</li>
+<li>This previews your application locally</li>
+</ul></li>
+<li>Add dependency file
+<ul>
+<li>Create a dependency file so Connect Cloud can rebuild your content during deployment</li>
+<li>Load the <code>{rsconnect}</code> package and run <code>writeManifest()</code></li>
+</ul></li>
+</ol>
+</div>
+<p>. . .</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>rsconnect<span class="sc">::</span><span class="fu">writeManifest</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="deploy-to-connect-cloud-2" class="level2">
+<h2 class="anchored" data-anchor-id="deploy-to-connect-cloud-2">Deploy to Connect Cloud</h2>
+<p>After you <code>writeManifest()</code></p>
+<ol start="5" type="1">
+<li>Push to Github</li>
+</ol>
+</section>
+<section id="deploy-to-connect-cloud-3" class="level2">
+<h2 class="anchored" data-anchor-id="deploy-to-connect-cloud-3">Deploy to Connect Cloud</h2>
+<div class="{incremental}">
+<ol start="6" type="1">
+<li>Deploy to Posit Connect Cloud
+<ol type="1">
+<li>Sign in to Connect Cloud</li>
+<li>Click the “<em>Publish</em>” icon button on the top of your Home page</li>
+<li>Select Shiny</li>
+<li>Select the public repository that you created</li>
+<li>Confirm the branch</li>
+<li>Select <code>app.R</code> as the primary file</li>
+<li>Click “<em>Publish</em>”
+<ul>
+<li>will display status updates during the deployment process</li>
+<li>also build logs will stream on the lower part of the screen</li>
+</ul></li>
+<li>🎉 Share the link!</li>
+</ol></li>
+</ol>
+</div>
+</section>
+<section id="deploy-to-connect-cloud-4" class="level2">
+<h2 class="anchored" data-anchor-id="deploy-to-connect-cloud-4">Deploy to Connect Cloud</h2>
+<ol start="7" type="1">
+<li>Republish the app (as needed)</li>
+</ol>
+<p>If you update your app code or the data</p>
+<ol type="1">
+<li>Commit and push the changes to your GitHub repository</li>
+<li>Republish the app on Connect Cloud
+<ol type="i">
+<li>Go to your Content List</li>
+<li>Clicking the “<em>republish</em>” icon</li>
+</ol></li>
+</ol>
+</section>
+</section>
+<section id="shiny-dashboards" class="level1">
+<h1>Shiny dashboards</h1>
+<p><code>{shinydashboard}</code></p>
+<section id="shiny-vs.-shinydashboard" class="level2">
+<h2 class="anchored" data-anchor-id="shiny-vs.-shinydashboard">shiny vs.&nbsp;shinydashboard</h2>
+<p>Main differences:</p>
+<ul>
+<li>You now have <code>dashboardSidebar</code> and <code>dashboardBody</code></li>
+<li>You also now have <code>fluidRow</code> and <code>box</code> arguments to arrange things in the main body</li>
+</ul>
+</section>
+<section id="first-dashboard---ui" class="level2">
+<h2 class="anchored" data-anchor-id="first-dashboard---ui">First dashboard - <code>ui</code></h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinydashboard)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">dashboardPage</span>(</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardHeader</span>(<span class="at">title =</span> <span class="st">"Basic dashboard"</span>),</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardSidebar</span>(),</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dashboardBody</span>(</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Boxes need to be put in a row (or column)</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fluidRow</span>(</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">box</span>(<span class="fu">plotOutput</span>(<span class="st">"plot1"</span>, <span class="at">height =</span> <span class="dv">250</span>)),</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">box</span>(</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Controls"</span>,</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sliderInput</span>(<span class="st">"slider"</span>, <span class="st">"Number of observations:"</span>, <span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">50</span>)</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="first-dashboard---server" class="level2">
+<h2 class="anchored" data-anchor-id="first-dashboard---server">First dashboard - <code>server</code></h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(<span class="dv">3000</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  histdata <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">500</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>plot1 <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    data <span class="ot">&lt;-</span> histdata[<span class="fu">seq_len</span>(input<span class="sc">$</span>slider)]</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(data)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="run-it" class="level2">
+<h2 class="anchored" data-anchor-id="run-it">Run it</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><span style="color:#009E73;">demo</span></p>
+</section>
+<section id="sidebar" class="level2">
+<h2 class="anchored" data-anchor-id="sidebar">Sidebar</h2>
+<p>Probably the defining characteristic of the dashboard</p>
+<ul>
+<li>Define a <code>sidebarMenu</code> with <code>menuItem</code>s</li>
+</ul>
+<p>. . .</p>
+<p><strong>Example</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sidebarMenu</span>(</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">menuItem</span>(<span class="st">"Histogram"</span>, <span class="at">tabName =</span> <span class="st">"histo"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"chart-bar"</span>)),</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">menuItem</span>(<span class="st">"Bin Counts"</span>, <span class="at">tabName =</span> <span class="st">"bins"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"table"</span>))</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You can also do things like put the slider in the <code>sidebarMenu</code></p>
+<p><span style="color:#009E73;">demo</span></p>
+</section>
+<section id="referencing-menu-items" class="level2">
+<h2 class="anchored" data-anchor-id="referencing-menu-items">Referencing menu items</h2>
+<ul>
+<li>If you define <code>menuItem</code>s, you’ll have to give them a <code>tabName</code> (see previous slide)</li>
+<li>In the <code>dashboardBody</code>, create a <code>tabItems</code> with specific <code>tabItem</code> pieces
+<ul>
+<li>This should be how you control/refer to the <code>menuItem</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="put-slider-in-sidebar" class="level2">
+<h2 class="anchored" data-anchor-id="put-slider-in-sidebar">Put slider in sidebar</h2>
+<p>In this case, it’s less than ideal to have the slider separated</p>
+<p>Instead, we can put it right in the sidebar</p>
+<p>Bonus - it can then control things across tabs</p>
+<p><span style="color:#009E73;">demo</span></p>
+</section>
+<section id="more-complicated" class="level2">
+<h2 class="anchored" data-anchor-id="more-complicated">More complicated</h2>
+<p>Use the <code>forcats::gss_cat</code> dataset</p>
+<ul>
+<li><p>Plots on one page</p>
+<ul>
+<li>boxplots, with <code>tvhours</code> on y-axis</li>
+<li>counts of <em>x</em> variable</li>
+<li>proportion of <em>x</em> variable</li>
+</ul></li>
+<li><p>Table on another page</p></li>
+<li><p>Select the variable for x-axis on the sidebar</p></li>
+<li><p>Variable selection should produce table with means by the variable</p></li>
+</ul>
+<p><span style="color:#009E73;">walkthrough</span></p>
+</section>
+<section id="extension" class="level2">
+<h2 class="anchored" data-anchor-id="extension">Extension</h2>
+<ul>
+<li>There’s lots of extensions for shiny, and quite a few (but not as many) for shinydashboard</li>
+<li>Consider theme-ing shiny apps with <a href="https://rstudio.github.io/shinythemes/">{shinythemes}</a>, and</li>
+<li>Customizing dashboards <a href="https://rstudio.github.io/shinydashboard/appearance.html">appearances</a></li>
+<li>Consider theme-ing figures to match your shiny theme with <a href="https://rstudio.github.io/thematic/">{thematic}</a></li>
+</ul>
+</section>
+<section id="conclusions-1" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions-1">Conclusions</h2>
+<ul>
+<li>Shiny is super customizable - almost limitless (see more examples <a href="https://shiny.posit.co/r/gallery/">here</a>)</li>
+<li>shinydashboard provides, basically, an alternative layout</li>
+<li>Really helpful and fun way to build data tools for practitioners</li>
+<li>Takes some practice, but basically allows you to write normal <code>R</code> code, and get interactive websites</li>
+</ul>
+</section>
+</section>
+<section id="next-time" class="level1">
+<h1>Next time</h1>
+<section id="before-next-class" class="level2">
+<h2 class="anchored" data-anchor-id="before-next-class">Before next class</h2>
+<p>No class next week!</p>
+<p>Before Week 10</p>
+<ul>
+<li>Readings
+<ul>
+<li><a href="https://mastering-shiny.org/basic-reactivity.html">Mastering Shiny: Ch3</a></li>
+<li><a href="https://mastering-shiny.org/basic-reactivity.html">Mastering Shiny: Ch5</a></li>
+<li><a href="https://mastering-shiny.org/best-practices.html">Mastering Shiny: Ch17</a></li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
