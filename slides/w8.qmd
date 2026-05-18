@@ -60,16 +60,16 @@ update_geom_defaults("point", list(size = 3))
 * What is Shiny?
     + first shiny app
     + UI & Server components
-    + Inputs, Outputs & Reactivity
-    + Layouts: `sidebar`, `tabs`, `navbar`
-    + Shiny Dashboards (shinydashboard & bslib)????
+    + Inputs & Outputs
+    + Layouts
+* Introduce reactivity
 
 **Learning objectives**
 
 * Be able to create basic interactive plots with Shiny
 * Understand basic layouts
 * Understand UI / Server separation
-* Be able to create basic `shiny` dashboards????
+* Have a basic understanding of reactivity
 
 # Review Lab 3
 
@@ -101,7 +101,7 @@ Do the following:
 
 The two halves of every Shiny app
 
-## Shiny app anatomy
+## Shiny app anatomy {.smaller}
 
 1. UI (user interface)
     + what the user sees and interacts with
@@ -110,24 +110,30 @@ The two halves of every Shiny app
     
 . . .
 
-The two communicate through named **inputs** and **outputs**
+- The two communicate through named `inputs` and `outputs`
+- `shinyApp(ui, server)` wires them together and launches the app
+- The app is always named `app.R`
 
-`shinyApp(ui, server)` wires them together and launches the app
-
-## UI {.smaller}
-
-:::: {.columns}
-::: {.column width="50%"}
+## `ui` 
 
 * The `ui` defines the look and feel of the app
 * Defines `inputs`  - widgets the user controls
     + for the `server`, where functions are actually evaluated
 * Declares **where** `outputs` will be rendered
 * Built from nested `R` functions that generate HTML
+
+
+## `ui` {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+
 * Every input needs a unique `inputId`
 * Here we have defined a `sliderInput`, which we're calling `bins`
-    + It will take on values from `1` to `50`, and will default start at `30`
-* Access the specific value the user selects within the `server` through `input$bins`
+    + The `label` is what will be displayed
+    + It will take on values from `1` to `50`, and will start at `30` by default
+* Access the specific value the user selects within the `server` through `input$inputId`
+    - `input$bins`
 
 :::
 
@@ -135,7 +141,7 @@ The two communicate through named **inputs** and **outputs**
 
 ```{r}
 #| eval: false
-#| code-line-numbers: "|10|11|12-14"
+#| code-line-numbers: "|10|11|12|13|14|15"
 # Define UI for application that draws a histogram
 ui <- fluidPage(
 
@@ -167,30 +173,84 @@ ui <- fluidPage(
 
 ::::
 
-## Server {.smaller}
+## Inputs {.smaller}
 
-:::: {.columns}
-::: {.column width="50%"}
-- A function with three arguments
+`input` is a basically a list object that contains objects from the `ui`
+
+. . .
+
+```{r}
+#| eval: false
+ui <- fluidPage(
+  ...
+  sliderInput(
+                        inputId = "bins",
+                        label = "Number of bins:",
+                        min = 1,
+                        max = 50,
+                        value = 30)
+        )
+  ...
+)
+```
+
+After writing this code, `input$bins` will be a available in the server, and the value it takes will depend on the browser input (starting at 30)
+
+## `server()` {.smaller}
+
+* A **function** with three arguments
     + `input` — read-only list of values from the UI
     + `output` — list you assign rendered objects to
     + `session` — metadata about the user session (advanced) which we won't cover
-* The `server` function takes the input from the UI and puts it in normal `R` code
-* In this case, we're creating one output object, called `distPlot`
-      + The result is then called through the `ui` (line 30 shiny template)
-- Use `render*()` functions to create outputs:
-    + `renderPlot()`      →  plotOutput()
-    + `renderText()`      →  textOutput()
-    + `renderTable()`     →  tableOutput()
-    + `renderDataTable()` → dataTableOutput()
-- The name in render must match the name in the UI
+    
+## `server()` {.smaller}
+
+* A **function** with three arguments
+    + `input` — read-only list of values from the UI
+    + `output` — list you assign rendered objects to
+    + ~~`session` — metadata about the user session (advanced) which we won't cover~~
+
+## `server()` {.smaller}
+
+::: {.incremental}
+* A **function** with three arguments
+    + `input` — read-only **list** of values from the UI
+    + `output` — **list** you assign rendered objects to
+* The `server()` **function** takes the input from the `ui` and puts it in normal `R` code
+* Use `render*()` functions to create outputs:
+    + `renderPlot()` *from*  `plotOutput()`
+    + `renderText()` *from* `textOutput()`
+    + `renderTable()`*from* `tableOutput()`
+* The name of render must match the name in the UI
+* The input object is passed to the `server` function
+
+:::
+
+## `server()` {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+
+* Here, we're creating one output object, called `distPlot`
+    + The result is then called through the `ui` (line 30 shiny template)
+* Use `render*()` functions to create outputs:
+    + Here, `renderPlot()`
+* The name of render must match the name in the UI
+    + Here, `distPlot`
+    + `output$distPlot`
+    + from the `ui` in `plotOutput("distPlot")`
+* The input object is passed to the `server` function
+    + access the web page’s user input fields like you’re grabbing a value from a list or data frame
+    + actually reading a reactive value
+    + `input$inputId`
+    + Here, `input$bins`
 
 :::
 
 ::: {.column width="50%"}
 ```{r}
 #| eval: false
-#| code-line-numbers: "|4"
+#| code-line-numbers: "|4|7"
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
@@ -216,13 +276,13 @@ server <- function(input, output) {
 
 Remove lines 39-46, and replace it with `print(input$bins)`
 
-[demo]{style="color:#009E73;"}
+Run the app
 
-. . .
+[demo]{style="color:#009E73;"}
 
 ```{r}
 #| eval: false
-#| code-line-numbers: "4"
+#| code-line-numbers: "5"
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
@@ -231,6 +291,8 @@ server <- function(input, output) {
     })
 }
 ```
+
+. . .
 
 Feels like it should work, but it doesn't
 
@@ -265,8 +327,8 @@ pairings <- tibble::tribble(
            ~"UI Output Function", ~"server",                        ~"Use Case",
           "`plotOutput(\"id\")`",            "`renderPlot({ … })`",           "`{ggplot}` / base plots",
          "`tableOutput(\"id\")`",           "`renderTable({ … })`",             "Simple HTML tables",
-     "`dataTableOutput(\"id\")`",       "`renderDataTable({ … })`",        "Interactive Tables (`{DT}`)",
-     "`reactableOutput(\"id\")`",       "`renderReactable({ … })`", "Interactive Tables (`{reactable}`)",
+     "`DT::DTOutput(\"id\")`",       "`DT::renderDT({ … })`",        "Interactive Tables (`{DT}`)",
+     "`reactable::reactableOutput(\"id\")`",       "`reactable::renderReactable({ … })`", "Interactive Tables (`{reactable}`)",
           "`textOutput(\"id\")`",            "`renderText({ … })`",           "Plain text / strings",
   "`verbatimTextOutput(\"id\")`",           "`renderPrint({ … })`",           "Console-style output",
             "`uiOutput(\"id\")`",              "`renderUi({ … })`",            "Dynamic UI elements",
@@ -288,13 +350,14 @@ pairings |>
 
 * Try producing essentially the same thing as the default, but use `ggplot` instead of base plotting
 * Reminder, the data are called `faithful`, and you'll be showing the distribution of `waiting`
-* Be sure to evaluate **ALL** of the code within the `server`
+* Be sure to look at **ALL** of the code within the `server`
 
 `r countdown::countdown(minutes = 10)`
 
+[demo]{style="color:#009E73;"}
+
 . . .
 
-[demo]{style="color:#009E73;"}
 
 ```{r}
 #| eval: false
@@ -322,49 +385,22 @@ server <- function(input, output) {
 ## Widgets {.smaller}
 
 
-:::: {.columns}
-::: {.column width="50%"}
-
 All share a common setup: 
 
-`(inputId, label, ...)`
+`widgetInput(inputId, label, ...)`
 
 - `sliderInput` — continuous range
 - `radioButtons` — discrete choices, all visible at once
 - `selectInput` — dropdown for many choices
 - `checkboxGroupInput` — multiple selections
 
-:::
-
-::: {.column width="50%"}
-
-Just swap the widget — `input$bins` still works in the server without any other changes!
-```{r}
-#| eval: false
-# Slider (continuous)
-sliderInput("bins", "Bins:", min=1, max=50, value=30)
-
-# Radio buttons (discrete)
-radioButtons("bins", "Bins:",
-             choices = c(1, 5, 20, 50, 100),
-             selected = 20)
-
-# Dropdown
-selectInput("var", "Variable:",
-            choices = c("year", "trans", "class"),
-            selected = "class")
-```
-
-:::
-
-::::
-
 ## Change the input {.smaller}
 
 :::{.incremental}
 * Let's say instead of a slider, we want 5 options: 
     + 1, 5, 20, 50, or 100
-* We can change the input from a slider (representing continuous intervals) to radio buttons, representing discrete choices
+* We can change the input from a slider (representing continuous intervals) <br> to radio buttons, representing discrete choices
+* Just swap the widget — `input$bins` still works in the server without any other changes!
 * Just change `sliderInput` to `radioButtons`, and put in the appropriate `choices`
     + You can also add a `selected` argument for the default (starting) value
 * Be sure to read the `?radioButtons` help documentation!
@@ -375,9 +411,21 @@ selectInput("var", "Variable:",
 
 Try it out!
 
-(check the previous slide for a head start if you want)
-
 `r countdown::countdown(minutes = 5)`
+
+. . .
+
+
+```{r}
+#| eval: false
+# Slider (continuous)
+sliderInput("bins", "Bins:", min=1, max=50, value=30)
+
+# Radio buttons (discrete)
+radioButtons("bins", "Bins:",
+             choices = c(1, 5, 20, 50, 100),
+             selected = 20)
+```
 
 ## Try it out!
 
@@ -385,7 +433,7 @@ Try it out!
 
 ```{r}
 #| eval: false
-#| code-line-numbers: "|4,6-7|14"
+#| code-line-numbers: "|4-7|14"
 # Sidebar with a slider input for number of bins
     sidebarLayout(
         sidebarPanel(
@@ -395,6 +443,7 @@ Try it out!
                         selected = 20
                         )
         )
+
 ...
 
 # generate bins based on input$bins from ui.R
@@ -478,18 +527,22 @@ shinyApp(ui = ui, server = server)
 ```
 
 
-## More ~~complicated~~ control
+## More ~~complicated~~ control {.smaller}
 
 * Change the width of the sidebar with <br> `sidebarPanel(width = 2)` 
 * Change the height of the main panel plot with <br> `plotOutput("distPlot", height = "800px")` 
 
 [demo]{style="color:#009E73;"}
 
+`?sidebarPanel`
+
+`?plotOutput`
+
 . . .
 
 ```{r}
 #| eval: false
-#| code-line-numbers: "|9|27"
+#| code-line-numbers: "9|27"
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -538,12 +591,80 @@ My recommendation is to use either:
 
 Let's build a table to go below our distribution(s) that shows `mean`, `sd`, `min`, and `max` of the corresponding distribution(s)
 
-You'll need to create a new output object in the `server`, and tell the `ui` where it should be rendered
+We'll need to create a new output object in the `server`, and tell the `ui` where it should be rendered
+
+## But first...NSE 🙄 {.smaller}
+
+Working with `{dplyr}` in Shiny
+
+Can't use a column name from `input$var` directly with `{dplyr}`
+
+. . .
+
+This fails
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|3"
+
+output$table <- renderReactable({
+  mpg |>
+    group_by(input$var) |>
+    summarise(
+      mean = mean(hwy),
+      sd   = sd(hwy),
+      min  = min(hwy),
+      max  = max(hwy)
+    )
+})
+```
+
+
+## Why does it fail?
+
+- In non-Shiny `{dplyr}` code, curly-curly `{{}}` passes column names from function arguments
+- `{{}}` is for function arguments
+- But `input$var` is a `"character"` not an argument so we need a different approach
+- `{dplyr}` (with NSE) expects a column name, not a `"character"`
+
+## The Fix {.smaller}
+
+Use `!!sym()` instead of `{{}}`
+
+- `sym()` turns the `class`:`"character"` into the symbol class
+- `!!` (bang-bang) tells `{dplyr}` to evaluate it
+    + "use the value, not the name"
+
+. . .
+
+This works
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|3"
+
+output$table <- renderReactable({
+  mpg |>
+    group_by(!!sym(input$var)) |>
+    summarise(
+      mean = mean(hwy),
+      sd   = sd(hwy),
+      min  = min(hwy),
+      max  = max(hwy)
+    )
+})
+```
+
+## Back to our task
+
+Let's build a table to go below our distribution(s) that shows `mean`, `sd`, `min`, and `max` of the corresponding distribution(s)
+
+We'll need to create a new output object in the `server`, and tell the `ui` where it should be rendered
 
 ## Tables {.smaller}
 
-* Use `renderDataTable` in the server and `dataTableOutput` in the UI **OR** 
-* Use `renderReactable` in the server and `reactableOutput` in the UI 
+* Use `DT::renderDT` in the server and `DT::DTOutput` in the UI **OR** 
+* Use `reactable::renderReactable` in the server and `reactable::reactableOutput` in the UI 
 * If you want to use `{dplyr}`, as I would, then you have to deal with NSE
     + In this case it's not that big of a deal
     + Rather than curly-curly `{{}}`
@@ -562,6 +683,7 @@ You'll need to create a new output object in the `server`, and tell the `ui` whe
 
 ```{r}
 #| eval: false
+#| code-line-numbers: "|27"
 ui <- fluidPage(
 
     # Application title
@@ -598,6 +720,7 @@ ui <- fluidPage(
 
 ```{r}
 #| eval: false
+#| code-line-numbers: "|16-26"
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
@@ -643,20 +766,64 @@ Organizing the app's interface
 - `navbarPage()` — full navigation bar across the top
     + Each `tabPanel()` is a separate page with its own sidebar
     + Don't share inputId names across pages in `navbarPage()`
-- `fluidRow()` + `column()` — Bootstrap grid (12-column system)
-    + fine-grained control
-    + `column(width = 4, ...)` = 1/4 of the row
-<!-- ???? bslib::page_sidebar() — modern Bootstrap 5 alternative (recommended for new apps) -->
 
 :::
 
-## Change the layout
+## The Bootstrap Grid
 
-* Let's say instead of having the table below, we wanted it within a tabset
+Shiny uses a **12-column grid system** under the hood
+
+Every row has 12 units to divide up how you want
+
+- `fluidRow()` + `column()`
+    + `fluidRow(column())`
+    + fine-grained control
+    + `column(width = 4, ...)` = 1/3 of the row
+
+```{r}
+#| eval: false
+
+fluidRow(
+  column(width = 4, plotOutput("plot1")),   
+  column(width = 4, plotOutput("plot2")),   
+  column(width = 4, plotOutput("plot3"))    
+)
+```
+
+## The Bootstrap Grid {.smaller}
+
+Remember
+
+- the number is a share of 12, not a pixel width or a percentage 
+- As long as the widths in a `fluidRow()` add up to 12, the columns fill the row evenly
+- If they add up to less than 12, the remaining space is just left empty 
+    + which is sometimes useful for centering things
+
+| Layout | Code |
+|---|---|
+| Half / Half | `column(6)` + `column(6)` |
+| Sidebar / Main | `column(3)` + `column(9)` |
+| Thirds | `column(4)` + `column(4)` + `column(4)` |
+| Quarters | `column(3)` + `column(3)` + `column(3)` + `column(3)` |
+
+## Change the layout {.smaller}
+
+Let's say instead of having the plot and table below, we wanted it within a tabset
+
+```{r}
+#| eval: false
+
+mainPanel(
+           plotOutput("distPlot"),
+           reactableOutput("statsTable")
+        )
+```
+
+. . .
+
 * Just create a `tabsetPanel()` within the `mainPanel()`
+    + give it a `title` as the first argument
 * Then put the output for each tab within `tabPanel()`
-
-[demo]{style="color:#009E73;"}
 
 . . .
 
@@ -670,13 +837,19 @@ mainPanel(
         )
 ```
 
-## Alternative
+[demo]{style="color:#009E73;"}
+
+## Alternative {.smaller}
 
 * You might want to have a navbar at the top of the page, which you can create with `navbarPage()`
 * Create each page with `tabPanel()`
-* Each `tabPanel` needs to include everything, including the `sidebarPanel()` (if present), could include `tabsetPanel()`, `mainPanel()`, etc
+* Each `tabPanel` needs to include everything, including (if present) 
+    + `sidebarPanel()` 
+    + `tabsetPanel()`
+    + `mainPanel()`
+    + etc.
 * Move your title so it's `navbarPage("App title",` or the rest of the pages won't look right
-* Make sure not to share `inputId`'s across pages - it won't work
+* Make sure **NOT** to share `inputId`'s across pages - it won't work
 
 ## `mpg` app {.smaller}
 
@@ -763,7 +936,8 @@ shinyApp(ui = ui, server = server)
 
 ## Conclusions
 
-* Shiny is super customizable - just scratching the surface today
+* Shiny is super customizable - and complex!
+    + just scratching the surface today
 * [Mastering Shiny](https://mastering-shiny.org) should be your guide for going deeper
 * Great for building interactive plots, but you can use it for all sorts of other things too (including text and tables)
 * Apps get complicated quickly
@@ -779,6 +953,8 @@ Try this app. Type the letters in one at a time. Notice how it updates.
 
 ```{r}
 #| eval: false
+library(shiny)
+
 ui <- fluidPage(
   textInput("name", "What's your name?"),
   textOutput("greeting")
@@ -804,16 +980,21 @@ server <- function(input, output, session) {
 
 This is known as **declarative programming**
 
-Normal `R` code is **imperative programming** - you decide when it's run
+. . .
 
 **Declarative programming** means you provide instructions, but don't actually run it
+
+. . .
+
+Normal `R` code is **imperative programming** - you decide when it's run
+
 
 ## What is reactivity? {.smaller}
 
 ::: {incremental}
-- Normal `R` is imperative
+- Normal `R` is **imperative**
     + you control when code runs
-- Shiny uses declarative programming
+- Shiny uses **declarative** programming
     + you describe relationships, not sequences
     + you describe a dependency graph and Shiny decides when to re-run
     + when `input$bins` changes → anything that depends on it is automatically re-executed
@@ -821,9 +1002,7 @@ Normal `R` code is **imperative programming** - you decide when it's run
 
 :::
 
-. . .
-
-**Key reactive functions**
+## Key reactive functions
 
 - `render*()`  — creates a reactive output
 - `reactive()` — creates a reusable reactive value/expression
@@ -878,7 +1057,7 @@ shinyApp(ui, server)
 * Create new components of the list for new output, and refer to them in the `ui`
 * These also need to be in reactive contexts (e.g., `render*()`)
 
-## `reactive()` {.smaller}
+## `reactive()` tips {.smaller}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -895,7 +1074,7 @@ shinyApp(ui, server)
 
 ```{r}
 #| eval: false
-#| code-line-numbers: "|4-6|9,19"
+#| code-line-numbers: "|4-6|9,13"
 server <- function(input, output, session) {
 
   # Shared reactive expression — runs once, used by both outputs
@@ -908,7 +1087,7 @@ server <- function(input, output, session) {
   })
 
   output$table <- renderTable({
-    filtered()
+    filtered_data()
   })
 }
 ```
@@ -917,8 +1096,116 @@ server <- function(input, output, session) {
 
 ::::
 
+## Why reactivity?
 
+Imagine we want to have a simple app converting temperatures from Fahrenheit to Celsius
 
+. . .
+
+Do this with variables
+
+```{r }
+temp_f <- 72
+temp_c <- (temp_f - 32) * (5/9)
+temp_c
+```
+
+. . .
+
+But changing `temp_f` has no impact on `temp_c`
+
+```{r }
+temp_f <- 50
+temp_c
+```
+
+## Use a function?
+
+Let's instead make this a function that depends on the object in the global environment.
+
+```{r }
+to_celsius <- function() {
+  (temp_f - 32) * (5/9)
+}
+to_celsius()
+temp_f <- 30
+to_celsius()
+```
+
+. . .
+
+This works, but it's less than ideal computationally. 
+
+Even if `temp_f` hasn't changed, the conversion is re-computed
+
+Not a big deal in this case, but often is.
+
+## Reactive alternative
+
+First create a reactive variable
+
+```{r }
+library(shiny)
+reactiveConsole(TRUE)
+temp_f <- reactiveVal(72)
+temp_f()
+temp_f(50)
+temp_f()
+```
+
+## Reactive function
+
+Next create a reactive function
+
+```{r }
+to_celsius <- reactive({
+  message("Converting...")
+  (temp_f() - 32) * (5/9)
+})
+```
+
+. . .
+
+Now it will convert **only** when the value of `temp_f()` changes
+
+## Reactive function
+
+Unless the value of `temp_f` changes, the code will not be re-run.
+
+```{r}
+#| message: true
+to_celsius()
+```
+
+. . .
+
+```{r}
+#| message: true
+to_celsius()
+```
+
+. . .
+
+```{r}
+#| message: true
+temp_f(100)
+to_celsius()
+```
+
+. . .
+
+```{r}
+#| message: true
+to_celsius()
+```
+
+. . .
+
+```{r}
+#| message: true
+temp_f(75)
+to_celsius()
+```
 
 ## Reactive graph {visibility="hidden"}
 
@@ -967,35 +1254,34 @@ reactlogShow()
 
 Deploy your Shiny App
 
-## Deployment
+## Deployment {.smaller}
 
 Once built, you will need to deploy your Shiny app on the web
 
 Two (potentially free) options:
 
-::: {incremental}
+::: {.incremental}
 1) [shinyapps.io](https://www.shinyapps.io/)
-    👍 been using it for years
-    👎 ending in 2026, migrating to
+    - 👍 been using it for years
+    - 👎 ending in 2026, migrating to
 2) posit [Connect Cloud](https://connect.posit.cloud/)
-    👍 next-gen publishing platform
-    👍 more capabilities and better security
+    - 👍 next-gen publishing platform
+    - 👍 more capabilities and better security
     
 :::
 
-## Deployment
+## Deployment {.smaller}
 
 Once built, you will need to deploy your Shiny app on the web
 
-~~Two~~ One (potentially free) option~~s~~:
+One ~~Two~~ (potentially free) option~~s~~:
 
-~~1) [shinyapps.io](https://www.shinyapps.io/)~~
-    ~~👍 been using it for years~~
-    ~~👎 ending in 2026, migrating to~~
-2) Posit [Connect Cloud](https://connect.posit.cloud/)
-    👍 next-gen publishing platform
-    👍 more capabilities and better security
-    
+1) ~~[shinyapps.io](https://www.shinyapps.io/)~~
+    - ~~👍 been using it for years~~
+    - ~~👎 ending in 2026, migrating to~~
+2) posit [Connect Cloud](https://connect.posit.cloud/)
+    - 👍 next-gen publishing platform
+    - 👍 more capabilities and better security
 
 Posit [Connect Cloud](https://connect.posit.cloud/) it is!
 
@@ -1024,9 +1310,9 @@ Sign up for a free account
 [Tutorial](https://docs.posit.co/connect-cloud/how-to/r/shiny-r.html)
 :::
 
-## Deploy to Connect Cloud
+## Deploy to Connect Cloud {.smaller}
 
-::: {incremental}
+::: {.incremental}
 1) Make sure your RStudio Project is connected to Github
 2) Build your Shiny app
 3) Preview the app
@@ -1037,6 +1323,7 @@ Sign up for a free account
     + Load the `{rsconnect}` package and run `writeManifest()`
 
 :::
+
 . . .
 
 ```{r}
@@ -1050,9 +1337,9 @@ After you `writeManifest()`
 
 5) Push to Github
 
-## Deploy to Connect Cloud
+## Deploy to Connect Cloud {.smaller}
 
-::: {incremental}
+::: {.incremental}
 6) Deploy to Posit Connect Cloud
     1. Sign in to Connect Cloud
     2. Click the "*Publish*" icon button on the top of your Home page
@@ -1064,11 +1351,14 @@ After you `writeManifest()`
         + will display status updates during the deployment process
         + also build logs will stream on the lower part of the screen
     8. 🎉 Share the link!
+
 :::
 
 ## Deploy to Connect Cloud
 
 7) Republish the app (as needed)
+
+. . .
 
 If you update your app code or the data
 
@@ -1077,132 +1367,10 @@ If you update your app code or the data
     i. Go to your Content List
     ii. Clicking the "*republish*" icon
 
-# Shiny dashboards
-
-`{shinydashboard}`
-
-## shiny vs. shinydashboard
-
-Main differences: 
-
-* You now have `dashboardSidebar` and `dashboardBody`
-* You also now have `fluidRow` and `box` arguments to arrange things in the main body
-
-## First dashboard - `ui`
-
-```{r dashboard1-ui}
-#| eval: false
-library(shiny)
-library(shinydashboard)
-
-ui <- dashboardPage(
-  dashboardHeader(title = "Basic dashboard"),
-  dashboardSidebar(),
-  dashboardBody(
-    # Boxes need to be put in a row (or column)
-    fluidRow(
-      box(plotOutput("plot1", height = 250)),
-
-      box(
-        title = "Controls",
-        sliderInput("slider", "Number of observations:", 1, 100, 50)
-      )
-    )
-  )
-)
-```
-
-## First dashboard - `server`
-
-```{r dashboard1-server}
-#| eval: false
-server <- function(input, output) {
-  set.seed(3000)
-  histdata <- rnorm(500)
-
-  output$plot1 <- renderPlot({
-    data <- histdata[seq_len(input$slider)]
-    hist(data)
-  })
-}
-```
-
-## Run it
-
-```{r, run-dashboard}
-#| eval: false
-shinyApp(ui, server)
-```
-
-[demo]{style="color:#009E73;"}
-
-## Sidebar
-
-Probably the defining characteristic of the dashboard
-
-* Define a `sidebarMenu` with `menuItem`s
-
-. . .
-
-**Example**
-
-```{r sidebar}
-#| eval: false
-sidebarMenu(
-  menuItem("Histogram", tabName = "histo", icon = icon("chart-bar")),
-  menuItem("Bin Counts", tabName = "bins", icon = icon("table"))
-)
-```
-
-You can also do things like put the slider in the `sidebarMenu`
-
-[demo]{style="color:#009E73;"}
-
-## Referencing menu items
-
-* If you define `menuItem`s, you'll have to give them a `tabName` (see previous slide)
-* In the `dashboardBody`, create a `tabItems` with specific `tabItem` pieces
-    + This should be how you control/refer to the `menuItem`
-
-
-## Put slider in sidebar
-
-In this case, it's less than ideal to have the slider separated
-
-Instead, we can put it right in the sidebar
-
-Bonus - it can then control things across tabs
-
-[demo]{style="color:#009E73;"}
-
-## More complicated
-
-Use the `forcats::gss_cat` dataset
-
-* Plots on one page
-    + boxplots, with `tvhours` on y-axis
-    + counts of *x* variable
-    + proportion of *x* variable
-
-* Table on another page
-
-* Select the variable for x-axis on the sidebar
-
-* Variable selection should produce table with means by the variable
-
-[walkthrough]{style="color:#009E73;"}
-
-## Extension
-
-* There's lots of extensions for shiny, and quite a few (but not as many) for shinydashboard
-* Consider theme-ing shiny apps with [{shinythemes}](https://rstudio.github.io/shinythemes/), and 
-* Customizing dashboards [appearances](https://rstudio.github.io/shinydashboard/appearance.html)
-* Consider theme-ing figures to match your shiny theme with [{thematic}](https://rstudio.github.io/thematic/)
 
 ## Conclusions
 
 * Shiny is super customizable - almost limitless (see more examples [here](https://shiny.posit.co/r/gallery/))
-* shinydashboard provides, basically, an alternative layout
 * Really helpful and fun way to build data tools for practitioners
 * Takes some practice, but basically allows you to write normal `R` code, and get interactive websites
 
@@ -1210,7 +1378,7 @@ Use the `forcats::gss_cat` dataset
 
 ## Before next class
 
-No class next week!
+**No class next week!**
 
 Before Week 10
 
