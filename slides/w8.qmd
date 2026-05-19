@@ -325,7 +325,7 @@ Does it work now?
 #| echo: false
 pairings <- tibble::tribble(
            ~"UI Output Function", ~"server",                        ~"Use Case",
-          "`plotOutput(\"id\")`",            "`renderPlot({ … })`",           "`{ggplot}` / base plots",
+          "`plotOutput(\"id\")`",            "`renderPlot({ … })`",           "`{ggplot2}` / base plots",
          "`tableOutput(\"id\")`",           "`renderTable({ … })`",             "Simple HTML tables",
      "`DT::DTOutput(\"id\")`",       "`DT::renderDT({ … })`",        "Interactive Tables (`{DT}`)",
      "`reactable::reactableOutput(\"id\")`",       "`reactable::renderReactable({ … })`", "Interactive Tables (`{reactable}`)",
@@ -1079,7 +1079,7 @@ server <- function(input, output, session) {
 
   # Shared reactive expression — runs once, used by both outputs
   filtered_data <- reactive({
-    mpg |> filter(class == input$class)
+    mpg |> filter(class == !!sym(input$class))
   })
 
   output$plot  <- renderPlot({
