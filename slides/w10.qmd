@@ -62,6 +62,8 @@ update_geom_defaults("point", list(size = 3))
 
 Please complete the Student Experience Survey!
 
+Comments are my favorite!
+
 # Shiny Dashboards
 
 ## Two options {.smaller}
