@@ -802,7 +802,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: $L6&HnNN\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\nLab 1\n\n\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: a3ltA@DH\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nAdvR(2e) 9.4-9.6\n\n\nLab 2\nLab 1\n\n\n\n\n\n\n\n\n\n\nClone course repo\n\n\n\n\n\n1 Passcode: Y5HLB*V5\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\nLab 2\n\n\n\n\nR4DS(1e) 25\n\n\n\n\n\n\nClone course repo\n\n\n\n1 Passcode: Sa!AJf61\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: MMd2Fz.K\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\nMidterm Test(midterm.html)\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: h*Q%6.H0\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\nLab 3\n\n\n\n\n\n1 Passcode: S8Udx!SS\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: %m9ZcApc\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: NA\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
+    "text": "Week 1: Intro & Data Types\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMar-30\nAdvR(2e) Intro\n\n\n\n\n\n\n\n\n\n\nAdvR(2e) 3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: $L6&HnNN\n\n\n\n\n\n\n\n\n\n\nWeek 2: Iterations & Lab 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-06\nAdvR(2e) 5\n\n\nLab 1\n\n\n\n\n\n\nAdvR(2e) 9.1-9.3\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: a3ltA@DH\n\n\n\n\n\n\n\n\n\n\nWeek 3: Iterations & Lab 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-13\nAdvR(2e) 9.4-9.6\n\n\nLab 2\nLab 1\n\n\n\n\n\n\n\n\n\n\nClone course repo\n\n\n\n\n\n1 Passcode: Y5HLB*V5\n\n\n\n\n\n\n\n\n\n\nWeek 4: Batch Load Data & List Columns\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-20\n{fs}\n\n\n\n\nLab 2\n\n\n\n\nR4DS(1e) 25\n\n\n\n\n\n\nClone course repo\n\n\n\n1 Passcode: Sa!AJf61\n\n\n\n\n\n\n\n\n\n\nWeek 5: Parallel Iterations & Looping Variants\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nApr-27\n\n\n\n\nMidterm Test\n\n\n\n\n\n1 Passcode: MMd2Fz.K\n\n\n\n\n\n\n\n\n\n\nWeek 6: Writing Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-04\nCreating Functions (SC)\n\n\n\n\nMidterm Test(midterm.html)\n\n\n\n\nAdvR(2e) 6.1-6.4\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: h*Q%6.H0\n\n\n\n\n\n\n\n\n\n\nWeek 7: Writing Functions & Lab 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-11\nAdvR(2e) 6.5-6.8\n\n\nLab 3\n\n\n\n\n\n1 Passcode: S8Udx!SS\n\n\n\n\n\n\n\n\n\n\nWeek 8: Shiny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nMay-18\nShiny Basics\n\n\n\n\nLab 3\n\n\n\n\nHow to Build a Shiny App\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch1\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: %m9ZcApc\n\n\n\n\n\n\n\n\n\n\nWeek 9: No class: Memorial Day\n\n\nWeek 10: Shiny & Review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReading\nSlides\nLecture1\nAssigned\nDue\n\n\n\n\nJun-01\nMastering Shiny: Ch3\n\n\nFinal Exam\n\n\n\n\n\n\nMastering Shiny: Ch5\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Shiny: Ch17\n\n\n\n\n\n\n\n\n\n\n\n1 Passcode: 3?jmSY@f\n\n\n\n\n\n\n\n\n\n\nWeek 11: No class: Final exam due"
   },
   {
     "objectID": "slides/w2.html#agenda",
@@ -5771,15 +5771,15 @@
     "objectID": "slides/w10.html#agenda",
     "href": "slides/w10.html#agenda",
     "title": "Shiny Dashboards & Theming",
-    "section": "Agenda",
-    "text": "Agenda\n\nShiny Dashboards\n\n{shinydashboard} & {bslib}\n\nWhat is {bslib}\nTheming\n\nCSS with bs_theme()\nFigures with {thematic}\n\nSome shiny best practices\n\nLearning objectives\n\nBe able to create basic shiny dashboards\nBe able to theme your shiny apps and figures\nRecognize use cases where your functional programming skills can help make more efficient and/or clear apps"
+    "section": "",
+    "text": "Shiny Dashboards\n\n{shinydashboard} & {bslib}\n\nWhat is {bslib}\nTheming\n\nCSS with bs_theme()\nFigures with {thematic}\n\nSome shiny best practices\n\nLearning objectives\n\nBe able to create basic shiny dashboards\nBe able to theme your shiny apps and figures\nRecognize use cases where your functional programming skills can help make more efficient and/or clear apps"
   },
   {
     "objectID": "slides/w10.html#housekeeping",
     "href": "slides/w10.html#housekeeping",
     "title": "Shiny Dashboards & Theming",
-    "section": "Housekeeping",
-    "text": "Housekeeping\nPlease complete the Student Experience Survey!\nComments are my favorite!"
+    "section": "",
+    "text": "Please complete the Student Experience Survey!\n\nComments are my favorite!\n\nCourse numbers changed"
   },
   {
     "objectID": "slides/w10.html#two-options",
@@ -5793,14 +5793,14 @@
     "href": "slides/w10.html#shinydashboard",
     "title": "Shiny Dashboards & Theming",
     "section": "{shinydashboard}",
-    "text": "{shinydashboard}\n\nuiservershinyApp()\n\n\n\n\n\ndashboardHeader() — title bar\ndashboardSidebar() — navigation menu\n\ndefining characteristic\nDefine a sidebarMenu() with menuItem()s\nEach menuItem() needs a tabName that matches a tabItem() in the body\nThis should be how you control/refer to the menuItem()\n\ndashboardBody() — main content area\n\nfluidRow() and box() to lay out content\ncreate tabItems() with specific tabItem() pieces\n\n\n\n\nlibrary(shiny)\nlibrary(shinydashboard)\n\nui &lt;- dashboardPage(\n  dashboardHeader(title = \"My Dashboard\"),\n\n  dashboardSidebar(\n    sidebarMenu(\n      menuItem(\"Plots\", tabName = \"plots\",\n               icon = icon(\"chart-bar\")),\n      menuItem(\"Table\", tabName = \"table\",\n               icon = icon(\"table\")),\n      sliderInput(\"bins\", \"Bins:\", 1, 50, 30)\n    )\n  ),\n\n  dashboardBody(\n    tabItems(\n      tabItem(tabName = \"plots\",\n        fluidRow(\n          box(plotOutput(\"hist\"), width = 8),\n          box(plotOutput(\"density\"), width = 4)\n        )\n      ),\n      tabItem(tabName = \"table\",\n        fluidRow(box(dataTableOutput(\"tbl\"), width = 12))\n      )\n    )\n  )\n)\n\n\n\n\n\n\n\nThe server is unchanged from a regular Shiny app\nYou can also do things like put the slider in the sidebarMenu()\n\nBonus - it can then control things across tabs!\nThis is the key advantage of putting inputs in dashboardSidebar()\n\n\n\n\nserver &lt;- function(input, output, session) {\n\n  # Data shared across tabs via reactive()\n  filtered &lt;- reactive({\n    faithful$waiting\n  })\n\n  # Tab 1: Plots\n  output$hist &lt;- renderPlot({\n    hist(filtered(), breaks = input$bins,\n         col = \"steelblue\", border = \"white\",\n         main = \"Waiting Times\")\n  })\n\n  output$density &lt;- renderPlot({\n    plot(density(filtered()), main = \"Density\")\n  })\n\n  # Tab 2: Table\n  output$tbl &lt;- renderDataTable({\n    data.frame(waiting = filtered())\n  })\n}\n\n\n\n\nThe same\n\nshinyApp(ui, server)"
+    "text": "{shinydashboard}\n\nuiservershinyApp()\n\n\n\n\n\ndashboardHeader() — title bar\ndashboardSidebar() — navigation menu\n\ndefining characteristic\nDefine a sidebarMenu() with menuItem()s\nEach menuItem() needs a tabName that matches a tabItem() in the body\nThis should be how you control/refer to the menuItem()\n\ndashboardBody() — main content area\n\nfluidRow() and box() to lay out content\ncreate tabItems() with specific tabItem() pieces\n\n\n\n\nlibrary(shiny)\nlibrary(shinydashboard)\n\nui &lt;- dashboardPage(\n  dashboardHeader(title = \"My Dashboard\"),\n\n  dashboardSidebar(\n    sidebarMenu(\n      menuItem(\"Plots\", tabName = \"plots\",\n               icon = icon(\"chart-bar\")),\n      menuItem(\"Table\", tabName = \"table\",\n               icon = icon(\"table\")),\n      sliderInput(\"bins\", \"Bins:\", 1, 50, 30)\n    )\n  ),\n\n  dashboardBody(\n    tabItems(\n      tabItem(tabName = \"plots\",\n        fluidRow(\n          box(plotOutput(\"hist\"), width = 8),\n          box(plotOutput(\"density\"), width = 4)\n        )\n      ),\n      tabItem(tabName = \"table\",\n        fluidRow(box(dataTableOutput(\"tbl\"), width = 12))\n      )\n    )\n  )\n)\n\n\n\n\n\n\n\n\nThe server is unchanged from a regular Shiny app\nYou can also do things like put the slider in the sidebarMenu()\n\nBonus - it can then control things across tabs!\nThis is the key advantage of putting inputs in dashboardSidebar()\n\n\n\n\nserver &lt;- function(input, output, session) {\n\n  # Data shared across tabs via reactive()\n  filtered &lt;- reactive({\n    faithful$waiting\n  })\n\n  # Tab 1: Plots\n  output$hist &lt;- renderPlot({\n    hist(filtered(), breaks = input$bins,\n         col = \"steelblue\", border = \"white\",\n         main = \"Waiting Times\")\n  })\n\n  output$density &lt;- renderPlot({\n    plot(density(filtered()), main = \"Density\")\n  })\n\n  # Tab 2: Table\n  output$tbl &lt;- renderDataTable({\n    data.frame(waiting = filtered())\n  })\n}\n\n\n\n\n\nThe same\n\nshinyApp(ui, server)"
   },
   {
     "objectID": "slides/w10.html#what-is-bootstrap",
     "href": "slides/w10.html#what-is-bootstrap",
     "title": "Shiny Dashboards & Theming",
     "section": "What is Bootstrap?",
-    "text": "What is Bootstrap?\n\nBootstrap is a free, open-source frontend toolkit\n\nWe famously love free and open source!\n\nProvices pre-built CSS styles, components, and plugins for responsive websites\nUses a 12-column responsive layout system\n\nsounds familiar, say more\n\nReady-to-use UI elements\n\nbuttons, navbars, modals, cards, dropdowns, forms, alerts, tooltips, badges, etc\n\nHundreds of helper classes for spacing, typography, colors, flexbox, display, and positioning\nDesigned to look good on small screens and scale up\nSounds great, do I have to learn it?\n\nNope!"
+    "text": "What is Bootstrap?\n\n\nBootstrap is a free, open-source frontend toolkit\n\nWe famously love free and open source!\n\nProvices pre-built CSS styles, components, and plugins for responsive websites\nUses a 12-column responsive layout system\n\nsounds familiar, say more\n\nReady-to-use UI elements\n\nbuttons, navbars, modals, cards, dropdowns, forms, alerts, tooltips, badges, etc\n\nHundreds of helper classes for spacing, typography, colors, flexbox, display, and positioning\nDesigned to look good on small screens and scale up\nSounds great, do I have to learn it?\n\nNope!"
   },
   {
     "objectID": "slides/w10.html#bslib-1",
@@ -5877,7 +5877,7 @@
     "href": "slides/w10.html#multiple-pages",
     "title": "Shiny Dashboards & Theming",
     "section": "Multiple Pages",
-    "text": "Multiple Pages\nChange page_sidebar() to page_navbar()\nAdd nav_panel() for each page\n\nui &lt;- page_navbar(\n  title = \"Penguins Dashboard\",\n  sidebar = varSelectInput( # shared across all pages\n    \"color_by\", \"Color by\",\n    penguins[c(\"species\", \"island\", \"sex\")],\n    selected = \"species\"\n  ),         \n  nav_spacer(),               # pushes nav items to the right\n  nav_panel(\"Bill Length\",  cards[[1]]),\n  nav_panel(\"Bill Depth\",   cards[[2]]),\n  nav_panel(\"Body Mass\",    cards[[3]]),\n)\n\n\nThe sidebar argument within page_navbar() puts the same sidebar on every page\nFor a different sidebar on different pages, use layout_sidebar() within each nav_panel()"
+    "text": "Multiple Pages\nChange page_sidebar() to page_navbar()\nAdd nav_panel() for each page\n\nui &lt;- page_navbar(\n  title = \"Penguins Dashboard\",\n  sidebar = varSelectInput( # shared across all pages\n    \"color_by\", \"Color by\",\n    penguins[c(\"species\", \"island\", \"sex\")],\n    selected = \"species\"\n  ),         \n  nav_spacer(),               # pushes nav items to the right\n  nav_panel(\"Bill Length\",  cards[[1]]),\n  nav_panel(\"Bill Depth\",   cards[[2]]),\n  nav_panel(\"Body Mass\",    cards[[3]]),\n)\n\n. . .\nThe sidebar argument within page_navbar() puts the same sidebar on every page\nFor a different sidebar on different pages, use layout_sidebar() within each nav_panel()"
   },
   {
     "objectID": "slides/w10.html#multiple-panels-one-page",
@@ -5947,7 +5947,7 @@
     "href": "slides/w10.html#bs_theme",
     "title": "Shiny Dashboards & Theming",
     "section": "bs_theme()",
-    "text": "bs_theme()\nPass it to the theme argument of any page_*() function\n\nui &lt;- page_sidebar(\n  title = \"My App\",\n  theme = bs_theme(\n    bootswatch = \"darkly\",     # Bootswatch preset theme\n    bg = \"#101010\",            # background color\n    fg = \"#FFF\",               # foreground/text color\n    primary = \"#E69F00\",       # primary accent color\n    secondary = \"#0072B2\",     # secondary accent color\n    base_font = font_google(\"Inter\"),\n    code_font = font_google(\"JetBrains Mono\")\n  ),\n  ...\n)\n\n\nThis is different than plot themes, which we’ll get to"
+    "text": "bs_theme()\nPass it to the theme argument of any page_*() function\n\nui &lt;- page_sidebar(\n  title = \"My App\",\n  theme = bs_theme(\n    bootswatch = \"darkly\",     # Bootswatch preset theme\n    bg = \"#101010\",            # background color\n    fg = \"#FFF\",               # foreground/text color\n    primary = \"#E69F00\",       # primary accent color\n    secondary = \"#0072B2\",     # secondary accent color\n    base_font = font_google(\"Inter\"),\n    code_font = font_google(\"JetBrains Mono\")\n  ),\n  ...\n)\n\n. . .\nThis is different than plot themes, which we’ll get to"
   },
   {
     "objectID": "slides/w10.html#color-arguments",
@@ -5975,7 +5975,7 @@
     "href": "slides/w10.html#custom-fonts",
     "title": "Shiny Dashboards & Theming",
     "section": "Custom Fonts",
-    "text": "Custom Fonts\nUse any Google Font with font_google()\n\nbs_theme(\n  base_font    = font_google(\"Inter\"),          # body text\n  heading_font = font_google(\"Playfair Display\"), # headings\n  code_font    = font_google(\"JetBrains Mono\")   # code blocks\n)\n\n\nFont suggestions:\n\nbase_font: serif fonts\nheading_font: sans-serif or display fonts\ncode_font: monospace fonts\n\nAtkinson Hyperlegible"
+    "text": "Custom Fonts\nUse any Google Font with font_google()\n\nbs_theme(\n  base_font    = font_google(\"Inter\"),          # body text\n  heading_font = font_google(\"Playfair Display\"), # headings\n  code_font    = font_google(\"JetBrains Mono\")   # code blocks\n)\n\n. . .\nFont suggestions:\n\nbase_font: serif fonts\nheading_font: sans-serif or display fonts\ncode_font: monospace fonts\n\nAtkinson Hyperlegible"
   },
   {
     "objectID": "slides/w10.html#other-font-options",
@@ -5989,28 +5989,28 @@
     "href": "slides/w10.html#advanced-theming",
     "title": "Shiny Dashboards & Theming",
     "section": "Advanced Theming",
-    "text": "Advanced Theming\nAccess hundreds of {bslib} theming variables via ... in bs_theme()\n\nbs_theme(\n  bg = \"#002B36\",\n  fg = \"#EEE8D5\",\n  \"progress-bar-bg\" = \"orange\"   # any Bootstrap Sass variable\n)\n\n\nVariables use Bootstrap Sass names (no $, no !default)\n\nbs_theme(\n  \"border-radius\"      = \"0\",          # square corners everywhere\n  \"font-size-base\"     = \"1.1rem\",     # slightly larger base font\n  \"enable-rounded\"     = FALSE,        # disable all rounded corners\n  \"card-border-color\"  = \"#ddd\",       # card border color\n  \"navbar-padding-y\"   = \"1rem\"        # taller navbar\n)"
+    "text": "Advanced Theming\nAccess hundreds of {bslib} theming variables via ... in bs_theme()\n\nbs_theme(\n  bg = \"#002B36\",\n  fg = \"#EEE8D5\",\n  \"progress-bar-bg\" = \"orange\"   # any Bootstrap Sass variable\n)\n\n. . .\nVariables use Bootstrap Sass names (no $, no !default)\n\nbs_theme(\n  \"border-radius\"      = \"0\",          # square corners everywhere\n  \"font-size-base\"     = \"1.1rem\",     # slightly larger base font\n  \"enable-rounded\"     = FALSE,        # disable all rounded corners\n  \"card-border-color\"  = \"#ddd\",       # card border color\n  \"navbar-padding-y\"   = \"1rem\"        # taller navbar\n)"
   },
   {
     "objectID": "slides/w10.html#theme-anything",
     "href": "slides/w10.html#theme-anything",
     "title": "Shiny Dashboards & Theming",
     "section": "Theme anything",
-    "text": "Theme anything\nbs_theme() works in ANY Shiny app via fluidPage() or page_fluid()\nOld {shinythemes} way (Bootstrap 3 only)\n\nui &lt;- fluidPage(\n  theme = shinythemes::shinytheme(\"darkly\"), \n  ...\n)\n\nModern {bslib} way (Bootstrap 5, fully customizable)\n\nui &lt;- page_fluid(\n  theme = bs_theme(\n    bootswatch = \"darkly\",\n    primary = \"#E69F00\",\n    base_font = font_google(\"Inter\")\n  ),\n  ...\n)\n\n\nOr Quarto\n---\noutput:\n  html_document:\n    theme:\n      version: 5\n      bootswatch: minty\n      primary: \"#6CC3D4\"\n      base_font:\n        google: \"Inter\"\n---"
+    "text": "Theme anything\nbs_theme() works in ANY Shiny app via fluidPage() or page_fluid()\nOld {shinythemes} way (Bootstrap 3 only)\n\nui &lt;- fluidPage(\n  theme = shinythemes::shinytheme(\"darkly\"), \n  ...\n)\n\nModern {bslib} way (Bootstrap 5, fully customizable)\n\nui &lt;- page_fluid(\n  theme = bs_theme(\n    bootswatch = \"darkly\",\n    primary = \"#E69F00\",\n    base_font = font_google(\"Inter\")\n  ),\n  ...\n)\n\n. . .\nOr Quarto\n---\noutput:\n  html_document:\n    theme:\n      version: 5\n      bootswatch: minty\n      primary: \"#6CC3D4\"\n      base_font:\n        google: \"Inter\"\n---"
   },
   {
     "objectID": "slides/w10.html#live-theming",
     "href": "slides/w10.html#live-theming",
     "title": "Shiny Dashboards & Theming",
     "section": "Live theming!",
-    "text": "Live theming!\nbs_themer() let’s you interactively theme your app\n\nPick any Bootswatch theme from a dropdown\nAdjust background, foreground, and accent colors\nChange fonts\nSee changes instantly without restarting the app\nCopy/Paste the resulting bs_theme() R code to your app\n\n\nui &lt;- page_sidebar(title = \"My App\", ...)\n\nserver &lt;- function(input, output) {\n  bs_themer()   # &lt;-- add this line to the server function\n  ...\n}\n\nshinyApp(ui, server)\n\ndemo\n\nOr launch the demo app with active bs_themer()\n\nbs_theme_preview()"
+    "text": "Live theming!\nbs_themer() let’s you interactively theme your app\n\nPick any Bootswatch theme from a dropdown\nAdjust background, foreground, and accent colors\nChange fonts\nSee changes instantly without restarting the app\nCopy/Paste the resulting bs_theme() R code to your app\n\n\nui &lt;- page_sidebar(title = \"My App\", ...)\n\nserver &lt;- function(input, output) {\n  bs_themer()   # &lt;-- add this line to the server function\n  ...\n}\n\nshinyApp(ui, server)\n\ndemo\n. . .\nOr launch the demo app with active bs_themer()\n\nbs_theme_preview()"
   },
   {
     "objectID": "slides/w10.html#the-problem",
     "href": "slides/w10.html#the-problem",
     "title": "Shiny Dashboards & Theming",
     "section": "The problem",
-    "text": "The problem\nWhen you apply your custom CSS theme to a Shiny app, your plots don’t get the message\nFor example, you applied a dark bg but now your plots look like white rectangles floating in space\n\nThe solution\nWith {thematic}, your plots automatically pick up the CSS theme’s colors and fonts\nAnd this works with {ggplot2} and {base} figures"
+    "text": "The problem\nWhen you apply your custom CSS theme to a Shiny app, your plots don’t get the message\nFor example, you applied a dark bg but now your plots look like white rectangles floating in space\n. . .\nThe solution\nWith {thematic}, your plots automatically pick up the CSS theme’s colors and fonts\nAnd this works with {ggplot2} and {base} figures"
   },
   {
     "objectID": "slides/w10.html#how-it-works",
@@ -6038,7 +6038,7 @@
     "href": "slides/w10.html#custom-fonts-1",
     "title": "Shiny Dashboards & Theming",
     "section": "Custom Fonts",
-    "text": "Custom Fonts\nIf you are using themes with custom fonts (like Google Fonts)\nYou will likely need to install either {showtext} or {ragg}\n\nFor auto/custom font rendering in Shiny with {ragg}\n\noptions(shiny.useragg = TRUE)"
+    "text": "Custom Fonts\nIf you are using themes with custom fonts (like Google Fonts)\nYou will likely need to install either {showtext} or {ragg}\n. . .\nFor auto/custom font rendering in Shiny with {ragg}\n\noptions(shiny.useragg = TRUE)"
   },
   {
     "objectID": "slides/w10.html#full-example",
@@ -6052,14 +6052,14 @@
     "href": "slides/w10.html#manually",
     "title": "Shiny Dashboards & Theming",
     "section": "Manually",
-    "text": "Manually\nInstead of auto-detection, specify colors explicitly\n\nlibrary(thematic)\nlibrary(tidyverse)\n\nthematic_on(\n  bg     = \"#222222\",\n  fg     = \"white\",\n  accent = \"#0CE3AC\",\n  font   = \"Oxanium\"    # Google Font\n)\n\nggplot(mtcars, aes(wt, mpg, color = factor(cyl))) +\n  geom_point() +\n  ggrepel::geom_text_repel(aes(label = rownames(mtcars)))\n\n\n\n\n\nFunction\nUse case\n\n\n\n\nthematic_on()\nEnable for the rest of the R session\n\n\nthematic_off()\nDisable\n\n\nthematic_shiny()\nEnable for a Shiny app (per-app)\n\n\nthematic_rmd()\nEnable for an RMarkdown doc\n\n\nthematic_theme()\nOne-off use for a single plot"
+    "text": "Manually\nInstead of auto-detection, specify colors explicitly\n\nlibrary(thematic)\nlibrary(tidyverse)\n\nthematic_on(\n  bg     = \"#222222\",\n  fg     = \"white\",\n  accent = \"#0CE3AC\",\n  font   = \"Oxanium\"    # Google Font\n)\n\nggplot(mtcars, aes(wt, mpg, color = factor(cyl))) +\n  geom_point() +\n  ggrepel::geom_text_repel(aes(label = rownames(mtcars)))\n\n. . .\n\n\n\nFunction\nUse case\n\n\n\n\nthematic_on()\nEnable for the rest of the R session\n\n\nthematic_off()\nDisable\n\n\nthematic_shiny()\nEnable for a Shiny app (per-app)\n\n\nthematic_rmd()\nEnable for an RMarkdown doc\n\n\nthematic_theme()\nOne-off use for a single plot"
   },
   {
     "objectID": "slides/w10.html#overriding-thematic-defaults",
     "href": "slides/w10.html#overriding-thematic-defaults",
     "title": "Shiny Dashboards & Theming",
     "section": "Overriding {thematic} defaults",
-    "text": "Overriding {thematic} defaults\n{thematic} sets global defaults that can always be overridden plot-by-plot\n\nthematic_on(bg = \"#222222\", fg = \"white\", accent = \"#0CE3AC\")\n\n# Global default from thematic\nggplot(mtcars, aes(wt, mpg)) + geom_point()\n\n# Override just for this one plot\nggplot(mtcars, aes(wt, mpg)) +\n  geom_point() +\n  theme(text = element_text(color = \"purple\"))  # override\n\n\n{ggplot2} themes (e.g., theme_bw(), theme_minimal()) should always be set globally with theme_set() when using {thematic}\nThis\n\ntheme_set(theme_minimal())\n\nNOT this\n\nggplot(...) + \n  theme_minimal()"
+    "text": "Overriding {thematic} defaults\n{thematic} sets global defaults that can always be overridden plot-by-plot\n\nthematic_on(bg = \"#222222\", fg = \"white\", accent = \"#0CE3AC\")\n\n# Global default from thematic\nggplot(mtcars, aes(wt, mpg)) + geom_point()\n\n# Override just for this one plot\nggplot(mtcars, aes(wt, mpg)) +\n  geom_point() +\n  theme(text = element_text(color = \"purple\"))  # override\n\n. . .\n{ggplot2} themes (e.g., theme_bw(), theme_minimal()) should always be set globally with theme_set() when using {thematic}\nThis\n\ntheme_set(theme_minimal())\n\nNOT this\n\nggplot(...) + \n  theme_minimal()"
   },
   {
     "objectID": "slides/w10.html#match-your-rstudio-theme",
@@ -6080,7 +6080,7 @@
     "href": "slides/w10.html#production-tip",
     "title": "Shiny Dashboards & Theming",
     "section": "Production Tip",
-    "text": "Production Tip\nHard-code the Bootstrap version in case {bslib} updates Bootstrap in the future\nCheck which version is current\n\nbslib::version_default()  # e.g., \"5\"\n\nSet it in your theme\n\nui &lt;- page_sidebar(\n  theme = bs_theme(version = 5, ...),\n  ...\n)\n\n\nIn Quarto\n---\noutput:\n  html_document:\n    theme:\n      version: 5\n---"
+    "text": "Production Tip\nHard-code the Bootstrap version in case {bslib} updates Bootstrap in the future\nCheck which version is current\n\nbslib::version_default()  # e.g., \"5\"\n\nSet it in your theme\n\nui &lt;- page_sidebar(\n  theme = bs_theme(version = 5, ...),\n  ...\n)\n\n. . .\nIn Quarto\n---\noutput:\n  html_document:\n    theme:\n      version: 5\n---"
   },
   {
     "objectID": "slides/w10.html#quick-reference",
@@ -6136,14 +6136,14 @@
     "href": "slides/w10.html#ui-example",
     "title": "Shiny Dashboards & Theming",
     "section": "ui example",
-    "text": "ui example\nImagine we have a bunch of different sliders we want to create\nWe could do something like this:\n\nui &lt;- fluidRow(\n  sliderInput(\"alpha\", \"alpha\", min = 0, max = 1, value = 0.5, step = 0.1),\n  sliderInput(\"beta\",  \"beta\",  min = 0, max = 1, value = 0.5, step = 0.1),\n  sliderInput(\"gamma\", \"gamma\", min = 0, max = 1, value = 0.5, step = 0.1),\n  sliderInput(\"delta\", \"delta\", min = 0, max = 1, value = 0.5, step = 0.1)\n)\n\n\nIdeas on how you could write a function to reduce the amount of code here?"
+    "text": "ui example\nImagine we have a bunch of different sliders we want to create\nWe could do something like this:\n\nui &lt;- fluidRow(\n  sliderInput(\"alpha\", \"alpha\", min = 0, max = 1, value = 0.5, step = 0.1),\n  sliderInput(\"beta\",  \"beta\",  min = 0, max = 1, value = 0.5, step = 0.1),\n  sliderInput(\"gamma\", \"gamma\", min = 0, max = 1, value = 0.5, step = 0.1),\n  sliderInput(\"delta\", \"delta\", min = 0, max = 1, value = 0.5, step = 0.1)\n)\n\n. . .\nIdeas on how you could write a function to reduce the amount of code here?"
   },
   {
     "objectID": "slides/w10.html#slider-function",
     "href": "slides/w10.html#slider-function",
     "title": "Shiny Dashboards & Theming",
     "section": "Slider function",
-    "text": "Slider function\n\nmy_slider &lt;- function(id) {\n  sliderInput(id, id, min = 0, max = 1, value = 0.5, step = 0.1)\n}\nui &lt;- fluidRow(\n  my_slider(\"alpha\"),\n  my_slider(\"beta\"),\n  my_slider(\"gamma\"),\n  my_slider(\"delta\")\n)\n\n\nAnyway to make this even less repetitive?"
+    "text": "Slider function\n\nmy_slider &lt;- function(id) {\n  sliderInput(id, id, min = 0, max = 1, value = 0.5, step = 0.1)\n}\nui &lt;- fluidRow(\n  my_slider(\"alpha\"),\n  my_slider(\"beta\"),\n  my_slider(\"gamma\"),\n  my_slider(\"delta\")\n)\n\n. . .\nAnyway to make this even less repetitive?"
   },
   {
     "objectID": "slides/w10.html#loop-through-the-ids",
@@ -6178,7 +6178,7 @@
     "href": "slides/w10.html#first-an-extension",
     "title": "Shiny Dashboards & Theming",
     "section": "First, an extension!",
-    "text": "First, an extension!\nWe want to be able to select which variables are predictors in the model\nIdeally, we should be able to select 1, 2, … \\(n\\) predictors\n\nshinyWidgets::multiInput() to the rescue!\nsee the widget gallery"
+    "text": "First, an extension!\nWe want to be able to select which variables are predictors in the model\nIdeally, we should be able to select 1, 2, … \\(n\\) predictors\n. . .\nshinyWidgets::multiInput() to the rescue!\nsee the widget gallery"
   },
   {
     "objectID": "slides/w10.html#super-basic-example",
@@ -6220,7 +6220,7 @@
     "href": "slides/w10.html#table-server-ui",
     "title": "Shiny Dashboards & Theming",
     "section": "Table: server + ui",
-    "text": "Table: server + ui\nIn the server\n\noutput$tbl &lt;- render_gt({\n  gt::as_gt(gtsummary::tbl_regression(model(), intercept = TRUE))\n})\n\n\nIn the main area of the ui wrapped in card() so it sits neatly in the dashboard\n\nui &lt;- page_sidebar(\n  title  = \"Regression Example\",\n  theme  = bs_theme(bootswatch = \"flatly\"),\n  sidebar = sidebar(\n    title = \"Controls\",\n    multiInput(\n      inputId  = \"xvars\",\n      label    = \"Select predictor variables:\",\n      choices  = names(penguins)[-3],\n      selected = \"island\"\n    )\n  ),\n  card(\n    card_header(\"Model coefficients\"),\n    gt::gt_output(\"tbl\")\n  )\n)"
+    "text": "Table: server + ui\nIn the server\n\noutput$tbl &lt;- render_gt({\n  as_gt(gtsummary::tbl_regression(model(), intercept = TRUE))\n})\n\n. . .\nIn the main area of the ui wrapped in card() so it sits neatly in the dashboard\n\nui &lt;- page_sidebar(\n  title  = \"Regression Example\",\n  theme  = bs_theme(bootswatch = \"flatly\"),\n  sidebar = sidebar(\n    title = \"Controls\",\n    multiInput(\n      inputId  = \"xvars\",\n      label    = \"Select predictor variables:\",\n      choices  = names(penguins)[-3],\n      selected = \"island\"\n    )\n  ),\n  card(\n    card_header(\"Model coefficients\"),\n    gt::gt_output(\"tbl\")\n  )\n)"
   },
   {
     "objectID": "slides/w10.html#try-it",
@@ -6290,7 +6290,7 @@
     "href": "slides/w10.html#bslib-bonus",
     "title": "Shiny Dashboards & Theming",
     "section": "{bslib} Bonus!",
-    "text": "{bslib} Bonus!\n{bslib} works in any Shiny app, not just dashboards\n\n# Upgrade any existing Shiny app to Bootstrap 5\nui &lt;- page_fluid(\n  theme = bs_theme(version = 5),\n  titlePanel(\"My App\"),\n  sidebarLayout(\n    sidebarPanel(...),\n    mainPanel(...)\n  )\n)\n\n\nAlso works in Quarto 🤞\n---\noutput:\n  html_document:\n    theme:\n      bslib: true\n---"
+    "text": "{bslib} Bonus!\n{bslib} works in any Shiny app, not just dashboards\n\n# Upgrade any existing Shiny app to Bootstrap 5\nui &lt;- page_fluid(\n  theme = bs_theme(version = 5),\n  titlePanel(\"My App\"),\n  sidebarLayout(\n    sidebarPanel(...),\n    mainPanel(...)\n  )\n)\n\n. . .\nAlso works in Quarto 🤞\n---\noutput:\n  html_document:\n    theme:\n      bslib: true\n---"
   },
   {
     "objectID": "slides/w10.html#bslib-bonus-1",
@@ -6305,5 +6305,82 @@
     "title": "Shiny Dashboards & Theming",
     "section": "Full",
     "text": "Full\n\nlibrary(shiny)\nlibrary(shinyWidgets)\nlibrary(bslib)\nlibrary(palmerpenguins)\nlibrary(gtsummary) \nlibrary(gt) \n\nui &lt;- page_sidebar(\n  title = \"Regression Example\",\n  theme = bs_theme(bootswatch = \"flatly\"),  \n\n  ui &lt;- page_sidebar(\n    title  = \"Regression Example\",\n    theme  = bs_theme(bootswatch = \"flatly\"),\n    sidebar = sidebar(\n      title = \"Controls\",\n      multiInput(\n        inputId  = \"xvars\",\n        label    = \"Select predictor variables:\",\n        choices  = names(penguins)[-3],\n        selected = \"island\"\n      )\n    ),\n  card(\n    card_header(\"Model coefficients\"),\n    gt::gt_output(\"tbl\")\n  )\n)\n)\n\nserver &lt;- function(input, output) {\n\n  model &lt;- reactive({\n    form &lt;- paste(\n      \"bill_length_mm ~ \", \n      paste(input$xvars, collapse = \" + \")\n    )\n    \n    lm(as.formula(form), penguins)\n  })\n  \n  output$tbl &lt;- render_gt({\n    gt::as_gt(gtsummary::tbl_regression(model(), intercept = TRUE))\n  })\n  \n}\n\nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "slides/w10.html",
+    "href": "slides/w10.html",
+    "title": "Shiny Dashboards & Theming",
+    "section": "",
+    "text": "Week 10\n\n\n\nShiny Dashboards\n\n{shinydashboard} & {bslib}\n\nWhat is {bslib}\nTheming\n\nCSS with bs_theme()\nFigures with {thematic}\n\nSome shiny best practices\n\nLearning objectives\n\nBe able to create basic shiny dashboards\nBe able to theme your shiny apps and figures\nRecognize use cases where your functional programming skills can help make more efficient and/or clear apps\n\n\n\n\n\nPlease complete the Student Experience Survey!\n\nComments are my favorite!\n\nCourse numbers changed"
+  },
+  {
+    "objectID": "slides/w10.html#what-is-a-module",
+    "href": "slides/w10.html#what-is-a-module",
+    "title": "Shiny Dashboards & Theming",
+    "section": "What is a module?",
+    "text": "What is a module?\n\nAllows you to modularize parts of your shiny app\nThis can help “de-tangle” these pices from the rest of the app\nPrimarily useful when the thing you want to modularize spans both the UI and the server"
+  },
+  {
+    "objectID": "slides/w10.html#example-1",
+    "href": "slides/w10.html#example-1",
+    "title": "Shiny Dashboards & Theming",
+    "section": "Example",
+    "text": "Example\nNo modules\n ::: aside Mastering Shiny :::"
+  },
+  {
+    "objectID": "slides/w10.html#example-2",
+    "href": "slides/w10.html#example-2",
+    "title": "Shiny Dashboards & Theming",
+    "section": "Example",
+    "text": "Example\nSame app, but with modules\n ::: aside Mastering Shiny :::"
+  },
+  {
+    "objectID": "slides/w10.html#create-modules",
+    "href": "slides/w10.html#create-modules",
+    "title": "Shiny Dashboards & Theming",
+    "section": "Create modules",
+    "text": "Create modules\n\nIt’s fairly complicated. See the chapter from Mastering Shiny on the topic\nProbably not worth it until you’re creating complicated apps, but I wanted to make you aware of them\n\n. . .\nLet’s look at a very basic use case from Mastering Shiny"
+  },
+  {
+    "objectID": "slides/w10.html#the-original-app",
+    "href": "slides/w10.html#the-original-app",
+    "title": "Shiny Dashboards & Theming",
+    "section": "The original app",
+    "text": "The original app\n\nui &lt;- fluidPage(\n  selectInput(\"var\", \"Variable\", names(mtcars)),\n  numericInput(\"bins\", \"bins\", 10, min = 1),\n  plotOutput(\"hist\")\n)\n\nserver &lt;- function(input, output, session) {\n  data &lt;- reactive(mtcars[[input$var]])\n\n  output$hist &lt;- renderPlot({\n    hist(\n      x = data(),\n      breaks = input$bins,\n      main = input$var\n    )\n  })\n}\n\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/w10.html#histogram-ui-module",
+    "href": "slides/w10.html#histogram-ui-module",
+    "title": "Shiny Dashboards & Theming",
+    "section": "Histogram UI module",
+    "text": "Histogram UI module\n\nA function for the UI components of the histogram\nWrap all internals into a single function with an id argument\nWrap all inputs in a tagList(), with inputs separated by commmas\nWrap each ID in NS()\n\nAllows the multiple id’s to be referenced by a single id"
+  },
+  {
+    "objectID": "slides/w10.html#section",
+    "href": "slides/w10.html#section",
+    "title": "Shiny Dashboards & Theming",
+    "section": "",
+    "text": "uiHist &lt;- function(id) {\n  tagList(\n    selectInput(NS(id, \"var\"), \"Variable\", names(mtcars)),\n    numericInput(NS(id, \"bins\"), \"bins\", 10, min = 1),\n    plotOutput(NS(id, \"hist\"))\n  )\n}"
+  },
+  {
+    "objectID": "slides/w10.html#histogram-server-module",
+    "href": "slides/w10.html#histogram-server-module",
+    "title": "Shiny Dashboards & Theming",
+    "section": "Histogram server module",
+    "text": "Histogram server module\n\nWrap the internals in a function with an id argument\nInside this function, wrap the internals again with the moduleServer() function\n\nFirst argument is id\nSecond argument is function(input, output, session) { &lt;internals&gt; }"
+  },
+  {
+    "objectID": "slides/w10.html#section-1",
+    "href": "slides/w10.html#section-1",
+    "title": "Shiny Dashboards & Theming",
+    "section": "",
+    "text": "serverHist &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    data &lt;- reactive(mtcars[[input$var]])\n\n    output$hist &lt;- renderPlot({\n      hist(\n        x = data(),\n        breaks = input$bins,\n        main = input$var\n      )\n    })\n  })\n}"
+  },
+  {
+    "objectID": "slides/w10.html#new-app",
+    "href": "slides/w10.html#new-app",
+    "title": "Shiny Dashboards & Theming",
+    "section": "New app",
+    "text": "New app\n\nui &lt;- fluidPage(\n  uiHist(\"histo\")\n)\n\nserver &lt;- function(input, output, session) {\n  serverHist(\"histo\")\n}\n\n. . .\nThe modules can then live in their own files, and your UI and server functions become much more clean\n\\[\n\\operatorname{bill\\_length\\_mm} = \\alpha + \\beta_{1}(\\operatorname{species}_{\\operatorname{Chinstrap}}) + \\beta_{2}(\\operatorname{species}_{\\operatorname{Gentoo}}) + \\epsilon\n\\]"
   }
 ]

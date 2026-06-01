@@ -60,9 +60,9 @@ update_geom_defaults("point", list(size = 3))
 
 ## Housekeeping
 
-Please complete the Student Experience Survey!
-
-Comments are my favorite!
+- Please complete the Student Experience Survey!
+    + Comments are my favorite!
+- Course numbers changed
 
 # Shiny Dashboards
 
@@ -1504,7 +1504,7 @@ In the `server`
 ```{r}
 #| eval: false
 output$tbl <- render_gt({
-  gt::as_gt(gtsummary::tbl_regression(model(), intercept = TRUE))
+  as_gt(gtsummary::tbl_regression(model(), intercept = TRUE))
 })
 ```
 
@@ -1877,3 +1877,7 @@ server <- function(input, output, session) {
 . . .
 
 The modules can then live in their own files, and your UI and server functions become much more clean
+
+$$
+\operatorname{bill\_length\_mm} = \alpha + \beta_{1}(\operatorname{species}_{\operatorname{Chinstrap}}) + \beta_{2}(\operatorname{species}_{\operatorname{Gentoo}}) + \epsilon
+$$
