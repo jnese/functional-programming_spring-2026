@@ -146,7 +146,7 @@ test_standardize <- cbind(
 identical(test_standardize[, 1], test_standardize[, 2])
 ```
 
-4. Write a function that takes a data frame as its input and returns a data frame with only the numeric columns. Test that it works with the `forcats::gss_cat` dataset. 
+4. Write a function that takes a data frame as its input and returns a data frame with only the numeric columns. Test that it works with the `forcats::gss_cat` dataset. Do not use `dplyr::select()` or its helpers.
 
 ```{r}
 #| label: ans-b4

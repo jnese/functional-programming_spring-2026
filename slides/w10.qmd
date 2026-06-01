@@ -1,0 +1,1877 @@
+---
+title: "Shiny Dashboards & Theming"
+author: "Joe Nese"
+institute: "University of Oregon<br>Spring 2026"
+format:
+  revealjs: 
+    theme: default
+    highlight-style: github
+    incremental: false
+    fig-width: 9
+    fig-height: 3.5
+    scrollable: true
+    slide-number: true
+execute: 
+  echo: true
+  warning: false
+embed-resources: true
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(tictoc)
+library(bsicons)
+library(palmerpenguins)
+library(thematic)
+library(shiny)
+library(bslib)
+library(shinyWidgets)
+library(gt)
+library(gtsummary)
+library(equatiomatic)
+
+
+theme_set(theme_minimal(20))
+
+update_geom_defaults("point", list(size = 3))
+```
+
+# Shiny Dashboards & Theming
+
+**Week 10**
+
+## Agenda {.smaller}
+
+- Shiny Dashboards 
+    + `{shinydashboard}` & `{bslib}`
+- What is `{bslib}`
+- Theming
+    + CSS with `bs_theme()`
+    + Figures with `{thematic}`
+- Some shiny best practices
+
+**Learning objectives**
+
+* Be able to create basic `shiny` dashboards
+* Be able to theme your `shiny` apps and figures
+* Recognize use cases where your functional programming skills can help make more efficient and/or clear apps
+
+## Housekeeping
+
+Please complete the Student Experience Survey!
+
+# Shiny Dashboards
+
+## Two options {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+
+`{shinydashboard}` 
+
+- classic approach (Bootstrap 3)
+- Compared to Shiny
+    + You now have `dashboardPage()`, `dashboardSidebar()`, `dashboardBody()`
+    + You also now have `fluidRow` and `box` arguments to arrange things in the main body
+
+:::
+
+::: {.column width="50%"}
+
+`{bslib}`
+
+- modern approach (Bootstrap 5)
+- Compared to Shiny
+    + The same functions!
+    + Built into `{shiny}`
+- Better theming 
+
+:::
+
+::::
+
+## `{shinydashboard}` {.smaller}
+
+::: {.panel-tabset}
+
+## `ui` {.smaller}
+
+:::: {.columns}
+::: {.column width="50%" .incremental}
+
+- `dashboardHeader()` — title bar
+- `dashboardSidebar()` — navigation menu
+    + defining characteristic
+    + Define a `sidebarMenu()` with `menuItem()`s
+    + Each `menuItem()` needs a `tabName` that matches a `tabItem()` in the body
+    + This should be how you control/refer to the `menuItem()`
+- `dashboardBody()` — main content area
+    +  `fluidRow()` and `box()` to lay out content
+    + create `tabItems()` with specific `tabItem()` pieces
+
+:::
+
+::: {.column width="50%"}
+
+```{r dashboard1-ui}
+#| eval: false
+#| code-line-numbers: "|4|5|7|17|8|9,11|18,19,25|20-22,26"
+library(shiny)
+library(shinydashboard)
+
+ui <- dashboardPage(
+  dashboardHeader(title = "My Dashboard"),
+
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem("Plots", tabName = "plots",
+               icon = icon("chart-bar")),
+      menuItem("Table", tabName = "table",
+               icon = icon("table")),
+      sliderInput("bins", "Bins:", 1, 50, 30)
+    )
+  ),
+
+  dashboardBody(
+    tabItems(
+      tabItem(tabName = "plots",
+        fluidRow(
+          box(plotOutput("hist"), width = 8),
+          box(plotOutput("density"), width = 4)
+        )
+      ),
+      tabItem(tabName = "table",
+        fluidRow(box(dataTableOutput("tbl"), width = 12))
+      )
+    )
+  )
+)
+```
+
+:::
+
+::::
+
+## `server` {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+
+- The `server` is unchanged from a regular `Shiny` app
+- You can also do things like put the slider in the `sidebarMenu()`
+    + Bonus - it can then control things across tabs!
+    + This is the key advantage of putting inputs in `dashboardSidebar()`
+
+:::
+
+::: {.column width="50%"}
+```{r dashboard1-server}
+#| eval: false
+server <- function(input, output, session) {
+
+  # Data shared across tabs via reactive()
+  filtered <- reactive({
+    faithful$waiting
+  })
+
+  # Tab 1: Plots
+  output$hist <- renderPlot({
+    hist(filtered(), breaks = input$bins,
+         col = "steelblue", border = "white",
+         main = "Waiting Times")
+  })
+
+  output$density <- renderPlot({
+    plot(density(filtered()), main = "Density")
+  })
+
+  # Tab 2: Table
+  output$tbl <- renderDataTable({
+    data.frame(waiting = filtered())
+  })
+}
+
+```
+
+:::
+
+::::
+
+## `shinyApp()`
+
+The same
+
+```{r, run-dashboard}
+#| eval: false
+shinyApp(ui, server)
+```
+
+:::
+
+
+# `{bslib}`
+
+build around Bootstrap (`bs`)
+
+## What is Bootstrap? {.smaller}
+
+::: {.incremental}
+- [Bootstrap](https://getbootstrap.com/) is a free, open-source frontend toolkit 
+    + We famously love  free and open source!
+- Provices pre-built CSS styles, components, and plugins for responsive websites
+- Uses a 12-column responsive layout system 
+    + sounds familiar, say  more
+- Ready-to-use UI elements
+    + buttons, navbars, modals, cards, dropdowns, forms, alerts, tooltips, badges, **etc**
+- Hundreds of helper classes for spacing, typography, colors, flexbox, display, and positioning 
+- Designed to look good on small screens and scale up
+- Sounds great, do I have to learn it?
+    + Nope!
+
+:::
+
+## `{bslib}`
+
+A modern UI toolkit for `Shiny` and Quarto, built on top of Bootstrap
+
+- Custom theming of Shiny apps and Quarto documents
+    + Apps can even be themed interactively in real-time!
+- Customizable Shiny **dashboards**!
+
+## What does this mean? {.smaller}
+
+You get:
+
+- 🖥️ Beautiful, responsive **Shiny dashboards** out of the box
+    + `ui` components (cards, value boxes, sidebars) work in other contexts (e.g., Quarto)
+- 🎨 Easy **custom theming**
+- ⚡Modern use of Bootstrap and Bootswatch
+    + `Shiny` defaults to Bootstrap 3, but Bootstrap 5 is available
+    + [Bootswatch](https://bootswatch.com/) provides free, open-source themes for Bootstrap
+
+## `{bslib}` vs `{shiny}` {.smaller}
+
+`{bslib}` is **NOT** a replacement for `Shiny`, it just enhances the `ui` (only)
+
+`Shiny` apps and `{bslib}` share the same foundations
+
+| Feature | `Shiny` | `{bslib}` |
+|---|---|---|
+| `ui` / `server` structure | ✅ | ✅ |
+| `shinyApp()` to run | ✅ | ✅ |
+| All standard inputs | ✅ | ✅ |
+| All standard outputs | ✅ | ✅ |
+| Reactive programming | ✅ | ✅ |
+| Deployment (e.g., Connet Cloud) | ✅ | ✅ |
+
+## `{bslib}` vs `{shiny}` {.smaller}
+
+
+| Feature | `Shiny` | `{bslib}` |
+|---|---|---|
+| Bootstrap version | 3 (old) | 5 (modern) |
+| Page layout functions | `fluidPage()`, `navbarPage()` | `page_sidebar()`, `page_navbar()` |
+| `page` | `shiny::*Page()` | `bslib::page_*()` |
+| Theming | `shinythemes` (limited) | `bs_theme()` (fully custom) |
+| Cards | ❌ | `card()`, `card_header()` |
+| Value boxes | ❌ | `value_box()` |
+| Filling layouts | ❌ | `page_fillable()`, `fillable=TRUE` |
+| Real-time theming widget | ❌ | `bs_themer()` |
+
+## `bslib::page_*()` functions
+
+| `Shiny` | `{bslib}` |
+|---|---|
+| `fluidPage()` | `page_fluid()`
+| `navbarPage()` | `page_navbar()` 
+| `sidebarPanel()` | `page_sidebar()`
+
+## `bslib::page_*()` functions
+
+`page_*()` for different layouts:
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|4-5|7-9|11-13|15-16"
+library(shiny)
+library(bslib)
+
+# Drop-in replacement for fluidPage() — gets modern Bootstrap 5
+ui <- page_fluid(h2("Hello World"))
+
+# Dashboard with a sidebar
+ui <- page_sidebar(title = "My Dashboard", 
+                   sidebar = "Controls", "Main content")
+
+# Multi-page navbar dashboard
+ui <- page_navbar(title = "My App", 
+                  nav_panel("Page 1", "Content"))
+
+# For custom layout (not often used)
+ui <- page_fillable(...)
+```
+
+# Let's build a dashboard!
+
+## Dashboard `ui` basics {.smaller}
+
+:::: {.columns}
+::: {.column width="60%"}
+
+`page_sidebar()` takes three key arguments:
+
+- `title`
+    + shown in the navbar
+- `sidebar`
+    + anything placed in the left panel
+- `...`
+    + main content (`cards`, plots, tables, **etc**)
+
+:::
+
+::: {.column width="40%"}
+```{r}
+#| eval: false
+library(shiny)
+library(bslib)
+
+ui <- page_sidebar(
+  title = "Penguins Dashboard",
+  sidebar = sidebar(),
+  ...
+)
+
+```
+
+::: 
+
+::::
+
+## Penguins Dashboard
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|6|8-16|17-20|23-31"
+library(shiny)
+library(bslib)
+library(tidyverse)
+library(palmerpenguins)
+
+ui <- page_sidebar(
+  title = "Penguins Dashboard",
+  sidebar = sidebar(
+    title = "Histogram controls",
+    varSelectInput(
+      "var", 
+      "Select variable",
+      dplyr::select_if(penguins, is.numeric)
+    ),
+    numericInput("bins", "Number of bins", 30)
+  ),
+  card(
+    card_header("Histogram"),
+    plotOutput("p")
+  )
+)
+
+server <- function(input, output) {
+  output$p <- renderPlot({
+    ggplot(penguins) +
+      geom_histogram(aes(!!input$var), bins = input$bins) +
+      theme_bw(base_size = 20)
+  })
+}
+
+shinyApp(ui, server)
+```
+
+
+## `sidebar()` 
+
+`sidebar` content, styling, and behavior
+
+**`inputs` go here!**
+
+```{r}
+#| eval: false
+sidebar(
+  title = "Controls",    # panel title
+  bg = "white",          # background color
+  position = "left",     # or "right"
+  open = TRUE,           # starts open?
+  width = 250,           # width in px
+  
+  # inputs go here too!!
+  sliderInput(...),
+  selectInput(...)
+)
+```
+
+## `card()`
+
+A styled rectangular container, wraps output content in a bordered, rounded box
+
+__`*Outputs` go here!!__
+
+```{r}
+#| eval: false
+card(
+  card_header("My Plot"),     # optional header
+  plotOutput("p"),            # content
+  card_footer("Source: ..."), # optional footer
+  full_screen = TRUE,         # expand button
+  height = 400,               # fixed height
+  min_height = 200            # minimum height
+)
+```
+
+## Let's Try Something {.smaller}
+
+We have similar outputs for multiple variables, each with a `plotOutput()` within a `card()` 
+
+Let's make reusable outputs in a list 
+
+[demo]{style="color:#009E73;"}
+
+::: {.panel-tabset}
+
+## Rusable `card`s
+
+```{r}
+#| eval: false
+cards <- list(
+  card(
+    full_screen = TRUE,
+    card_header("Bill Length"),
+    plotOutput("bill_length")
+  ),
+  card(
+    full_screen = TRUE,
+    card_header("Bill Depth"),
+    plotOutput("bill_depth")
+  ),
+  card(
+    full_screen = TRUE,
+    card_header("Body Mass"),
+    plotOutput("body_mass")
+  )
+)
+```
+
+## `ui`
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|8"
+
+ui <- page_sidebar(
+  title = "Penguins dashboard",
+  sidebar = varSelectInput(
+    "color_by", "Color by",
+    penguins[c("species", "island", "sex")],
+    selected = "species"
+  ),
+  !!!cards # <-- unpacks all 3 cards into the main area
+)
+```
+
+## `server`
+
+```{r}
+#| eval: false
+
+server <- function(input, output) {
+  gg_plot <- reactive({
+    ggplot(penguins) +
+      geom_density(aes(fill = !!input$color_by), alpha = 0.2) +
+      theme_bw(base_size = 16) +
+      theme(axis.title = element_blank())
+  })
+
+  output$bill_length <- renderPlot(gg_plot() + aes(bill_length_mm))
+  output$bill_depth <- renderPlot(gg_plot() + aes(bill_depth_mm))
+  output$body_mass <- renderPlot(gg_plot() + aes(body_mass_g))
+}
+
+shinyApp(ui, server)
+```
+
+:::
+
+## Multiple Pages {.smaller}
+
+Change `page_sidebar()` to `page_navbar()` 
+
+Add `nav_panel()` for each page
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|1|9-11"
+ui <- page_navbar(
+  title = "Penguins Dashboard",
+  sidebar = varSelectInput( # shared across all pages
+    "color_by", "Color by",
+    penguins[c("species", "island", "sex")],
+    selected = "species"
+  ),         
+  nav_spacer(),               # pushes nav items to the right
+  nav_panel("Bill Length",  cards[[1]]),
+  nav_panel("Bill Depth",   cards[[2]]),
+  nav_panel("Body Mass",    cards[[3]]),
+)
+```
+
+. . .
+
+The `sidebar` argument within `page_navbar()` puts the **same sidebar on every page**
+
+For a different sidebar on different pages, use `layout_sidebar()` within each `nav_panel()`
+
+## Multiple Panels One Page
+
+Use `navset_card_*()` to create tabbed panels inside a single card:
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|8"
+ui <- page_sidebar(
+  title = "Penguins Dashboard",
+  sidebar = varSelectInput(
+    "color_by", "Color by",
+    penguins[c("species", "island", "sex")],
+    selected = "species"
+  ),
+  navset_card_pill(
+    title = "Histograms by species",
+    nav_panel("Bill Length",  plotOutput("bill_length")),
+    nav_panel("Bill Depth",   plotOutput("bill_depth")),
+    nav_panel("Body Mass",    plotOutput("body_mass"))
+  )
+)
+```
+
+## Multiple Panels
+
+- `navset_card_underline()`
+    + underline tabs on a card
+- `navset_card_pill()`
+    + pill-style tabs on a card
+- `navset_tab()`
+    + classic Bootstrap tabs
+- `navset_pill()`
+    + pill navigation
+    
+## `value_box()`
+
+Highlight key metrics with Bootstrap [icons](https://icons.getbootstrap.com/)
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|6|7|8-13|14-19|20-25|27-28"
+library(bsicons)
+
+ui <- page_sidebar(
+  title = "Penguins Dashboard",
+  sidebar = color_by,
+  layout_columns(
+    fill = FALSE,   # <-- prevents value boxes from stretching
+    value_box(
+      title = "Average bill length",
+      value = scales::unit_format(unit = "mm")(mean(penguins$bill_length_mm, na.rm = TRUE)),
+      showcase = bs_icon("align-bottom"),
+      theme = "primary"
+    ),
+    value_box(
+      title = "Average bill depth",
+      value = scales::unit_format(unit = "mm")(mean(penguins$bill_depth_mm, na.rm = TRUE)),
+      showcase = bs_icon("align-center"),
+      theme = "success"
+    ),
+    value_box(
+      title = "Average body mass",
+      value = scales::unit_format(unit = "g", big.mark = ",")(mean(penguins$body_mass_g, na.rm = TRUE)),
+      showcase = bs_icon("handbag"),
+      theme = "info"
+    )
+  ),
+  layout_columns(cards[[1]], cards[[2]]),
+  cards[[3]]
+)
+```
+
+## `{bslib}` Bonus! {.smaller}
+
+`{bslib}` works in **any** Shiny app, not just dashboards
+
+```{r}
+#| eval: false
+# Upgrade any existing Shiny app to Bootstrap 5
+ui <- page_fluid(
+  theme = bs_theme(version = 5),
+  titlePanel("My App"),
+  sidebarLayout(
+    sidebarPanel(...),
+    mainPanel(...)
+  )
+)
+```
+
+. . .
+
+Also works in Quarto 🤞
+
+
+```yaml
+---
+output:
+  html_document:
+    theme:
+      bslib: true
+---
+```
+
+## `{bslib}` Bonus!
+
+`{bslib}` works anywhere Bootstrap is used
+
+- Static HTML
+- `{flexdashboard}`
+- `{pkgdown}` sites
+- `{bookdown}` books
+
+
+# `{bslib}` Functions References
+
+## Page Layout Functions
+
+| Function | Purpose |
+|---|---|
+| `page_sidebar()` | Single-page with left sidebar |
+| `page_navbar()` | Multi-page navbar dashboard |
+| `page_fluid()` | Drop-in for `fluidPage()` (Bootstrap 5) |
+| `page_fillable()` | Filling layout foundation |
+| `page_fixed()` | Drop-in for `fixedPage()` |
+
+## Component Functions
+
+| Function | Purpose |
+|---|---|
+| `card()` | Bordered content container |
+| `card_header()` | Card header with optional title |
+| `card_footer()` | Card footer |
+| `value_box()` | Single metric highlight |
+| `sidebar()` | Sidebar panel with options |
+| `layout_sidebar()` | Sidebar at the component level |
+| `accordion()` | Collapsible sections container |
+| `accordion_panel()` | Single collapsible section |
+
+## Layout Functions
+
+| Function | Purpose |
+|---|---|
+| `layout_columns()` | Multi-column, 12-column grid |
+| `layout_column_wrap()` | Responsive auto-wrapping columns |
+| `breakpoints()` | Responsive breakpoint values |
+
+## Navigation Functions
+
+| Function | Purpose |
+|---|---|
+| `nav_panel()` | A single tab/page |
+| `nav_spacer()` | Flexible space in navbar |
+| `nav_item()` | Custom UI item in navbar |
+| `nav_menu()` | Dropdown menu in navbar |
+| `navset_card_underline()` | Underline tabs on a card |
+| `navset_card_pill()` | Pill tabs on a card |
+| `navset_tab()` | Classic Bootstrap tabs |
+
+# Theming
+
+## `bs_theme()` {.smaller}
+
+Pass it to the `theme` argument of any `page_*()` function
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|3-11"
+ui <- page_sidebar(
+  title = "My App",
+  theme = bs_theme(
+    bootswatch = "darkly",     # Bootswatch preset theme
+    bg = "#101010",            # background color
+    fg = "#FFF",               # foreground/text color
+    primary = "#E69F00",       # primary accent color
+    secondary = "#0072B2",     # secondary accent color
+    base_font = font_google("Inter"),
+    code_font = font_google("JetBrains Mono")
+  ),
+  ...
+)
+```
+
+. . .
+
+This is different than plot themes, which we'll get to
+
+
+## Color Arguments {.smaller}
+
+| Argument | Affects |
+|---|---|
+| `bg` | Cards, panels, modals, inputs |
+| `fg` | Foreground/text — affects ALL text |
+| `primary` | Links, active nav, focus rings, action buttons |
+| `secondary` | `actionButton()` default, secondary elements |
+| `success` | Success messages, `showNotification(type="message")` |
+| `info` | Info callouts |
+| `warning` | Warning messages |
+| `danger` | Error messages |
+
+## Bootswatch Themes {.smaller}
+
+Default [Bootswatch](https://bootswatch.com) themes are great (let's take a look) 
+
+`Shiny`
+
+```{r}
+#| eval: false
+page_sidebar(
+  theme = bs_theme(bootswatch = "minty"), ...)
+```
+
+Quarto
+
+```{r}
+#| eval: false
+---
+output:
+  html_document:
+    theme:
+      bootswatch: minty
+---
+```
+
+## Bootswatch Themes {.smaller}
+
+| Theme | Description |
+|---|---|
+| `flatly` | Clean, modern, flat |
+| `darkly` | Dark mode |
+| `minty` | Soft mint green |
+| `cosmo` | Clean Bootstrap 5 default |
+| `cyborg` | Dark, futuristic |
+| `lumen` | Bright, airy |
+| `solar` | Solarized dark |
+| `zephyr` | Modern, fresh |
+| `morph` | Soft, Material-adjacent |
+
+## Custom Fonts {.smaller}
+
+Use any [Google Font](https://fonts.google.com/) with `font_google()`
+
+```{r}
+#| eval: false
+bs_theme(
+  base_font    = font_google("Inter"),          # body text
+  heading_font = font_google("Playfair Display"), # headings
+  code_font    = font_google("JetBrains Mono")   # code blocks
+)
+```
+
+. . .
+
+Font suggestions:
+
+- `base_font`: serif fonts
+- `heading_font`: sans-serif or display fonts
+- `code_font`: monospace fonts
+    + Atkinson Hyperlegible
+
+## Other font options:
+
+```{r}
+#| eval: false
+# No download needed
+bs_theme(base_font = '"Times New Roman", Times, serif')
+
+# Custom font from a URL
+bs_theme(base_font = font_link("MyFont", href = "https://..."))
+
+# Custom font from local files
+bs_theme(base_font = font_face("MyFont", src = "fonts/myfont.woff2"))
+```
+
+## Advanced Theming {.smaller}
+
+Access hundreds of [{bslib} theming variables](https://rstudio.github.io/bslib/articles/bs5-variables) via `...` in `bs_theme()`
+
+```{r}
+#| eval: false
+bs_theme(
+  bg = "#002B36",
+  fg = "#EEE8D5",
+  "progress-bar-bg" = "orange"   # any Bootstrap Sass variable
+)
+```
+
+. . .
+
+Variables use Bootstrap Sass names (no `$`, no `!default`)
+
+```{r}
+#| eval: false
+bs_theme(
+  "border-radius"      = "0",          # square corners everywhere
+  "font-size-base"     = "1.1rem",     # slightly larger base font
+  "enable-rounded"     = FALSE,        # disable all rounded corners
+  "card-border-color"  = "#ddd",       # card border color
+  "navbar-padding-y"   = "1rem"        # taller navbar
+)
+```
+
+## Theme anything {.smaller}
+
+`bs_theme()` works in **ANY** Shiny app via `fluidPage()` or `page_fluid()`
+
+Old `{shinythemes}` way (Bootstrap 3 only)
+
+```{r}
+#| eval: false
+ui <- fluidPage(
+  theme = shinythemes::shinytheme("darkly"), 
+  ...
+)
+```
+
+Modern `{bslib}` way (Bootstrap 5, fully customizable)
+
+```{r}
+#| eval: false
+ui <- page_fluid(
+  theme = bs_theme(
+    bootswatch = "darkly",
+    primary = "#E69F00",
+    base_font = font_google("Inter")
+  ),
+  ...
+)
+```
+
+. . .
+
+Or Quarto
+
+```yaml
+---
+output:
+  html_document:
+    theme:
+      version: 5
+      bootswatch: minty
+      primary: "#6CC3D4"
+      base_font:
+        google: "Inter"
+---
+```
+
+## Live theming! {.smaller}
+
+`bs_themer()` let's you interactively theme your app
+
+- Pick any Bootswatch theme from a dropdown
+- Adjust background, foreground, and accent colors
+- Change fonts
+- See changes **instantly** without restarting the app
+- Copy/Paste the resulting `bs_theme()` R code to your app
+
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|4"
+ui <- page_sidebar(title = "My App", ...)
+
+server <- function(input, output) {
+  bs_themer()   # <-- add this line to the server function
+  ...
+}
+
+shinyApp(ui, server)
+```
+
+[demo]{style="color:#009E73;"}
+
+. . .
+
+Or launch the demo app with active `bs_themer()`
+
+```{r}
+#| eval: false
+bs_theme_preview()
+```
+
+# `{thematic}`
+
+## The problem
+
+When you apply your custom CSS theme to a `Shiny` app, your plots don’t get the message
+
+For example, you applied a dark `bg` but now your plots look like white rectangles floating in space
+
+. . .
+
+**The solution**
+
+With `{thematic}`, your plots automatically pick up the CSS theme's colors and fonts
+
+And this works with `{ggplot2}` and `{base}` figures 
+
+## How it works
+
+`{thematic}` grabs CSS styles from the plot's HTML container and uses them to set new `R` plotting defaults
+
+1. Reads background color 
+    + → sets plot panel/background color
+2. Reads foreground color 
+    + → sets text, axis, grid line colors
+3. Reads accent color (hyperlink color)
+    + → sets geom colors, smooth lines
+4. Optionally reads font-family 
+    + → sets `R` plot font
+
+## How to apply it {.smaller}
+
+Call it before `shinyApp()` to enable theming for **all** `plotOutput()`s
+
+:::: {.columns}
+::: {.column width="50%"}
+
+Colors only (safest option)<br>
+
+```{r}
+#| eval: false
+#| code-line-numbers: "6"
+library(thematic)
+
+ui <- ...
+server <- function(input, output) {...}
+
+thematic_shiny()
+
+shinyApp(ui, server)
+```
+
+:::
+
+::: {.column width="50%"}
+
+Colors & fonts<br>(requires `{showtext}` or `{ragg}`)
+
+```{r}
+#| eval: false
+#| code-line-numbers: "7"
+library(thematic)
+library(showtext)
+
+ui <- ...
+server <- function(input, output) {...}
+
+thematic_shiny(font = "auto")
+
+shinyApp(ui, server)
+```
+:::
+
+::::
+
+## This will set
+
+- `ggplot2::theme()` background/foreground defaults
+- A color-blind safe default for `scale_color_discrete()`
+- `geom` defaults (point color, line color)
+- Continuous scale defaults (using `bg`/`fg`/`accent` blend)
+- If `font = "auto"`, translate CSS fonts to `R` fonts
+
+## Custom Fonts
+
+If you are using themes with custom fonts (like Google Fonts)
+
+You will likely need to install either `{showtext}` or `{ragg}`
+
+. . .
+
+For auto/custom font rendering in Shiny with `{ragg}`
+
+```{r}
+#| eval: false
+options(shiny.useragg = TRUE)
+```
+
+## Full Example
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|29"
+library(shiny)
+library(tidyverse)
+library(bslib)
+library(thematic)
+library(ragg)
+
+options(shiny.useragg = TRUE)
+
+ui <- fluidPage(
+  theme = bs_theme(
+    bg = "#002B36", fg = "#EEE8D5", primary = "#2AA198",
+    base_font = font_google("Pacifico")
+  ),
+  tabsetPanel(type = "pills",
+    tabPanel("ggplot",  plotOutput("ggplot")),
+    tabPanel("lattice", plotOutput("lattice")),
+    tabPanel("base",    plotOutput("base"))
+  )
+)
+
+server <- function(input, output) {
+  output$ggplot  <- renderPlot({
+    ggplot(mtcars, aes(wt, mpg, color = factor(cyl))) + geom_point(size = 3)
+  })
+  output$lattice <- renderPlot({ lattice::show.settings() })
+  output$base    <- renderPlot({ image(volcano) })
+}
+
+thematic_shiny(font = "auto")
+
+shinyApp(ui, server)
+```
+
+## Manually {.smaller}
+
+Instead of auto-detection, specify colors explicitly
+
+```{r}
+#| eval: false
+library(thematic)
+library(tidyverse)
+
+thematic_on(
+  bg     = "#222222",
+  fg     = "white",
+  accent = "#0CE3AC",
+  font   = "Oxanium"    # Google Font
+)
+
+ggplot(mtcars, aes(wt, mpg, color = factor(cyl))) +
+  geom_point() +
+  ggrepel::geom_text_repel(aes(label = rownames(mtcars)))
+```
+
+. . .
+
+| Function | Use case |
+|---|---|
+| `thematic_on()` | Enable for the rest of the `R` session |
+| `thematic_off()` | Disable |
+| `thematic_shiny()` | Enable for a `Shiny` app (per-app) |
+| `thematic_rmd()` | Enable for an RMarkdown doc |
+| `thematic_theme()` | One-off use for a single plot |
+
+## Overriding `{thematic}` defaults {.smaller}
+
+`{thematic}` sets **global defaults** that can always be overridden plot-by-plot
+
+```{r}
+#| eval: false
+thematic_on(bg = "#222222", fg = "white", accent = "#0CE3AC")
+
+# Global default from thematic
+ggplot(mtcars, aes(wt, mpg)) + geom_point()
+
+# Override just for this one plot
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() +
+  theme(text = element_text(color = "purple"))  # override
+```
+
+. . .
+
+`{ggplot2}` themes (e.g., `theme_bw()`, `theme_minimal()`) should always be set globally with `theme_set()` when using `{thematic}`
+
+This
+
+```{r}
+#| eval: false
+theme_set(theme_minimal())
+```
+
+**NOT** this
+
+```{r}
+#| eval: false
+ggplot(...) + 
+  theme_minimal()
+```
+
+## Match your RStudio theme
+
+`{thematic}` can also match your RStudio IDE theme
+
+```{r}
+#| eval: false
+library(thematic)
+
+thematic_on()
+
+ggplot(mtcars, aes(wt, mpg)) + 
+  geom_point()
+
+# Turn it off when done
+thematic_off()
+```
+
+[Try it!]{style="color:#009E73;"}
+
+
+## Example
+
+```{r}
+#| eval: false
+library(shiny)
+library(bslib)
+library(tidyverse)
+library(thematic)
+library(penguins)
+
+# Set ggplot2 global theme
+theme_set(theme_minimal(base_size = 15))
+
+# Define UI with theme
+ui <- page_sidebar(
+  title  = "Penguins Dashboard",
+  sidebar = sidebar(
+    title = "Controls",
+    varSelectInput("color_by", "Color by",
+                   penguins[c("species","island","sex")],
+                   selected = "species")
+  ),
+  theme = bs_theme(
+    bootswatch = "darkly",
+    base_font  = font_google("Inter"),
+    navbar_bg  = "#25443B" # custom navbar background
+  ),
+  layout_columns(
+    value_box("Avg Bill Length", "45.0 mm",  showcase = bsicons::bs_icon("rulers")),
+    value_box("Avg Bill Depth",  "17.1 mm",  showcase = bsicons::bs_icon("arrows-vertical")),
+    value_box("Avg Body Mass",   "4201.7 g", showcase = bsicons::bs_icon("bar-chart"))
+  ),
+  layout_columns(
+    card(full_screen = TRUE, card_header("Bill Length"), plotOutput("bill_length")),
+    card(full_screen = TRUE, card_header("Bill Depth"),  plotOutput("bill_depth"))
+  ),
+  card(full_screen = TRUE, card_header("Body Mass"), plotOutput("body_mass"))
+)
+
+server <- function(input, output) {
+  gg <- reactive({
+    ggplot(penguins) +
+      geom_density(aes(fill = !!input$color_by), alpha = 0.2)
+  })
+  output$bill_length <- renderPlot(gg() + aes(bill_length_mm))
+  output$bill_depth  <- renderPlot(gg() + aes(bill_depth_mm))
+  output$body_mass   <- renderPlot(gg() + aes(body_mass_g))
+}
+
+# Enable thematic to carry the theme into R plots
+thematic::thematic_shiny(font = "auto")
+
+shinyApp(ui, server)
+
+```
+
+## Production Tip {.smaller}
+
+Hard-code the Bootstrap version in case `{bslib}` updates Bootstrap in the future
+
+Check which version is current
+
+```{r}
+#| eval: false
+bslib::version_default()  # e.g., "5"
+```
+
+Set it in your theme
+
+```{r}
+#| eval: false
+
+ui <- page_sidebar(
+  theme = bs_theme(version = 5, ...),
+  ...
+)
+```
+
+. . .
+
+In Quarto
+
+```yaml
+---
+output:
+  html_document:
+    theme:
+      version: 5
+---
+```
+
+## Quick Reference {.smaller}
+
+When to use what
+
+| Goal | Use |
+|---|---|
+| Build a dashboard | `page_sidebar()` or `page_navbar()` |
+| Add Bootswatch theme | `bs_theme(bootswatch = "...")` |
+| Custom dark/light mode | `bs_theme(bg=, fg=)` |
+| Google Fonts | `font_google("Font Name")` |
+| Fine-grained Sass vars | `bs_theme("variable-name" = value)` |
+| Interactive theming | `bs_themer()` in server |
+| Match `R` plots to CSS | `thematic_shiny()` |
+| Match plots in RStudio | `thematic_on()` |
+| One-off plot theming | `thematic_theme()` |
+
+## Resources {.smaller}
+
+- `{bslib}` documentation: [rstudio.github.io/bslib](https://rstudio.github.io/bslib/)
+  - [Dashboards](https://rstudio.github.io/bslib/articles/dashboards/)
+  - [Theming](https://rstudio.github.io/bslib/articles/theming/)
+  - [Theming variables](https://rstudio.github.io/bslib/articles/bs5-variables/)
+
+- `{thematic}` documentation: [rstudio.github.io/thematic](https://rstudio.github.io/thematic/)
+  - [Auto-theming](https://rstudio.github.io/thematic/articles/auto.html)
+
+- Bootswatch themes: [bootswatch.com](https://bootswatch.com)
+- Google Fonts: [fonts.google.com](https://fonts.google.com)
+- Try the themer live: [bslib.shinyapps.io/themer-demo](https://bslib.shinyapps.io/themer-demo)
+
+
+# Some shiny tips
+
+> Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
+
+\- Martin Fowler
+
+## Things to consider
+
+* Are variable/function names clear and concise?
+* Is code commented, where needed?
+* Is there a way to break up complex functions?
+* Are there many instances of copy/pasting?
+* Can I manage different components of my app independently? Or are they too tangled together?
+
+::: aside
+[Mastering Shiny](https://mastering-shiny.org/best-practices.html)
+:::
+
+## Increase readability
+
+Shiny apps can become unreadable **VERY** quickly
+
+Consider creating objects for each piece, possibly even in separate `R` files
+
+## Example `color_by`
+
+In our Penguins dashboard, we used `varSelectInput()` in our sidebar
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|3-7"
+
+ui <- page_sidebar(
+  title = "Penguins dashboard",
+  sidebar = varSelectInput(
+    "color_by", "Color by",
+    penguins[c("species", "island", "sex")],
+    selected = "species"
+  ),
+  !!!cards # <-- unpacks all 3 cards into the main area
+)
+```
+
+## Example `color_by`
+
+Make it an object
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|9"
+
+color_by <- varSelectInput(
+  "color_by", "Color by",
+  penguins[c("species", "island", "sex")],
+  selected = "species"
+)
+
+ui <- page_sidebar(
+  title = "Penguins dashboard",
+  sidebar = color_by,
+  !!!cards # <-- unpacks all 3 cards into the main area
+)
+```
+
+## Functions
+
+- You can `source()` to access functions
+
+**OR**
+
+- Create a new folder, `R/`
+- Place `.R` files in that folder
+- shiny will source them automatically!!
+
+[demo ISLA app]{style="color:#009E73;"}
+
+## `ui` example
+
+Imagine we have a bunch of different sliders we want to create
+
+We could do something like this:
+
+```{r }
+ui <- fluidRow(
+  sliderInput("alpha", "alpha", min = 0, max = 1, value = 0.5, step = 0.1),
+  sliderInput("beta",  "beta",  min = 0, max = 1, value = 0.5, step = 0.1),
+  sliderInput("gamma", "gamma", min = 0, max = 1, value = 0.5, step = 0.1),
+  sliderInput("delta", "delta", min = 0, max = 1, value = 0.5, step = 0.1)
+)
+```
+
+. . .
+
+Ideas on how you could write a function to reduce the amount of code here?
+
+## Slider function
+
+```{r }
+my_slider <- function(id) {
+  sliderInput(id, id, min = 0, max = 1, value = 0.5, step = 0.1)
+}
+ui <- fluidRow(
+  my_slider("alpha"),
+  my_slider("beta"),
+  my_slider("gamma"),
+  my_slider("delta")
+)
+```
+
+. . .
+
+Anyway to make this even less repetitive?
+
+## Loop through the ids
+
+```{r }
+ids <- c("alpha", "beta", "gamma", "delta")
+sliders <- map(ids, my_slider)
+
+ui <- fluidRow(sliders)
+```
+
+## Other use cases
+
+- Maybe you want to use a shiny function, but assign it with some standard formatting
+    + e.g., icons
+- Maybe there are functions where you only want to change 1-3 things? 
+    + Create a function that allows you to modify those, but keep other things at the values you want
+
+## Server functions
+
+* I often find it helpful to create functions for output, even if I'm not repeating them a lot
+    + Can help keep server code clean and concise
+* Inspect your code and consider refactoring in a similar way you would standard functions
+* Consider keeping these in a separate `.R` file from your `ui` functions
+
+# An app example
+
+## Please follow along
+
+Let's build an app to show the results of different regression models
+
+And we'll use `bslib::page_sidebar()` for a polished dashboard layout
+
+## First, an extension!
+
+
+We want to be able to select which variables are predictors in the model 
+
+Ideally, we should be able to select 1, 2, ... $n$ predictors
+
+. . .
+
+`shinyWidgets::multiInput()` to the rescue!
+
+see the [widget gallery](https://shiny.posit.co/r/gallery/widgets/widget-gallery/)
+
+
+## Super basic example {.smaller}
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|12-17"
+library(shiny)
+library(shinyWidgets)
+library(bslib)
+library(palmerpenguins)
+
+ui <- page_sidebar(
+  title = "Regression Example",
+  theme = bs_theme(bootswatch = "flatly"),  # pick any Bootswatch theme
+
+  sidebar = sidebar(
+    title = "Controls",
+    multiInput(
+      inputId  = "xvars",
+      label    = "Select predictor variables:",
+      choices  = names(penguins)[-3],   # column 3 will be outcome
+      selected = "island"
+    )
+  )
+  # main area content will go here
+)
+```
+
+## Leave the server blank
+
+```{r}
+#| eval: false
+server <- function(input, output) {
+
+}
+
+shinyApp(ui, server)
+```
+
+Try it!
+
+[demo]{style="color:#009E73;"}
+
+## Write the `server`
+
+* We now want it to fit a model with `bill_length_mm` as the outcome, and whatever variables are selected as predictors
+* We can do this by creating a `reactive` model that only is estimated when something changes
+
+## Model {.smaller}
+
+```{r }
+#| eval: false
+  model <- reactive({
+    form <- paste(
+      "bill_length_mm ~ ", 
+      paste(input$xvars, collapse = " + ")
+    )
+    
+    lm(as.formula(form), penguins)
+  })
+```
+
+
+- The above creates a string `form`, which is then converted to a formula with `as.formula()`
+- It will only be estimated when `input$xvars` is changed
+- We can refer to the model object elsewhere in our server with `model()`
+    + note the ending `()`!
+
+## Build a table
+
+* Use the [gt](https://gt.rstudio.com/) and [gtsummary](https://www.danieldsjoberg.com/gtsummary/) packages to  pull the model coefficients
+* Render the result in `gt` table
+* Remember to load additional packages
+
+```{r }
+#| code-line-numbers: "|4-5"
+library(shiny)
+library(shinyWidgets)
+library(palmerpenguins)
+library(gtsummary) 
+library(gt) 
+```
+
+## Table: `server` + `ui` {.smaller}
+
+In the `server`
+
+```{r}
+#| eval: false
+output$tbl <- render_gt({
+  gt::as_gt(gtsummary::tbl_regression(model(), intercept = TRUE))
+})
+```
+
+. . .
+
+In the main area of the `ui` wrapped in `card()` so it sits neatly in the dashboard
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|13-16"
+ui <- page_sidebar(
+  title  = "Regression Example",
+  theme  = bs_theme(bootswatch = "flatly"),
+  sidebar = sidebar(
+    title = "Controls",
+    multiInput(
+      inputId  = "xvars",
+      label    = "Select predictor variables:",
+      choices  = names(penguins)[-3],
+      selected = "island"
+    )
+  ),
+  card(
+    card_header("Model coefficients"),
+    gt::gt_output("tbl")
+  )
+)
+```
+
+## Try it!
+
+- Be sure to include 
+    + the `model` in the `server`
+    + the `output$tbl` in the `server`
+    + the `card()` in the `ui`
+
+[demo]{style="color:#009E73;"}
+
+## Full
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|24-27|33-40|42-44"
+library(shiny)
+library(shinyWidgets)
+library(bslib)
+library(palmerpenguins)
+library(gtsummary) 
+library(gt) 
+
+ui <- page_sidebar(
+  title = "Regression Example",
+  theme = bs_theme(bootswatch = "flatly"),  
+
+  ui <- page_sidebar(
+    title  = "Regression Example",
+    theme  = bs_theme(bootswatch = "flatly"),
+    sidebar = sidebar(
+      title = "Controls",
+      multiInput(
+        inputId  = "xvars",
+        label    = "Select predictor variables:",
+        choices  = names(penguins)[-3],
+        selected = "island"
+      )
+    ),
+  card(
+    card_header("Model coefficients"),
+    gt::gt_output("tbl")
+  )
+)
+)
+
+server <- function(input, output) {
+
+  model <- reactive({
+    form <- paste(
+      "bill_length_mm ~ ", 
+      paste(input$xvars, collapse = " + ")
+    )
+    
+    lm(as.formula(form), penguins)
+  })
+  
+  output$tbl <- render_gt({
+    gt::as_gt(gtsummary::tbl_regression(model(), intercept = TRUE))
+  })
+  
+}
+
+shinyApp(ui, server)
+
+```
+
+
+## Make it fancy {.smaller}
+
+Let's add an equation with [equatiomatic](https://datalorax.github.io/equatiomatic/).
+
+You try first:
+
+* Use `extract_eq()` to extract the equation, and the `renderEq()` and `eqOutput()` functions for shiny
+    + in the `server`
+* Make sure to include `withMathJax()` in your `ui` somewhere 
+    + I put it after the title
+* Check out the help page for `extract_eq()` for additional arguments, including `use_coefs`
+    + play around with these options
+
+`r countdown::countdown(6)`
+
+[demo]{style="color:#009E73;"}
+
+## Additions {.smaller}
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|1|4-6|14|22-25"
+library(equatiomatic)
+
+# In the server:
+output$eq <- renderEq(
+  extract_eq(model(), use_coefs = TRUE)
+)
+
+# In the ui main area — add a second card alongside the table:
+ui <- page_sidebar(
+  title  = "Regression Example",
+  theme  = bs_theme(bootswatch = "flatly"),
+  sidebar = sidebar(
+    title = "Controls",
+    withMathJax(), # allows formula in shiny
+    multiInput(
+      inputId  = "xvars",
+      label    = "Select predictor variables:",
+      choices  = names(penguins)[-3],
+      selected = "island"
+    )
+  ),
+  card( # add a card to display the equation
+    card_header("Model equation"),
+    eqOutput("eq")
+  ),
+  card( 
+    card_header("Model coefficients"),
+    gt_output("tbl")
+  )
+)
+```
+
+## Full app
+
+```{r}
+#| eval: false
+library(shiny)
+library(bslib)
+library(shinyWidgets)
+library(palmerpenguins)
+library(gtsummary)
+library(gt)
+library(equatiomatic)
+
+ui <- page_sidebar(
+  title  = "Regression Explorer",
+  theme  = bs_theme(bootswatch = "flatly", base_font = font_google("Inter")),
+  sidebar = sidebar(
+    title = "Controls",
+    withMathJax(),
+    multiInput(
+      inputId  = "xvars",
+      label    = "Select predictor variables:",
+      choices  = names(penguins)[-3],
+      selected = "island"
+    )
+  ),
+  card(card_header("Model equation"),     eqOutput("eq")),
+  card(card_header("Model coefficients"), gt_output("tbl"))
+)
+
+server <- function(input, output) {
+  model <- reactive({
+    form <- paste("bill_length_mm ~", paste(input$xvars, collapse = " + "))
+    lm(as.formula(form), penguins)
+  })
+  output$eq  <- renderEq(extract_eq(model(), use_coefs = TRUE))
+  output$tbl <- render_gt(as_gt(tbl_regression(model(), intercept = TRUE)))
+}
+
+shinyApp(ui, server)
+```
+
+
+## `layout_columns()`
+
+Want the equation and table side-by-side?
+
+`col_widths` uses Bootstrap’s 12-column grid, so values must sum to 12
+
+```{r}
+#| eval: false
+#| code-line_numbers: "|1,2,11"
+layout_columns(
+  col_widths = c(5, 7),   # out of 12
+  card(
+    card_header("Model equation"),
+    eqOutput("eq")
+  ),
+  card(
+    card_header("Model coefficients"),
+    gt_output("tbl")
+  )
+)
+```
+
+## Going further {.smaller}
+
+- Partial regression plots? 
+    + see [visreg](https://pbreheny.github.io/visreg/)
+    + just add another `card()` with `plotOutput()`
+- Change the outcome too?
+    + Add a `selectInput()` to the sidebar (gets a bit tricky but doable)
+- Multi-page layout?
+    + Switch `page_sidebar()` t0 `page_navbar()` 
+    + Use `nav_panel()` for "*Model*", "*Diagnostics*", "*About*"
+- Value boxes?
+    + Show $R^2$, *RMSE*, $n$ at the top of the dashboard with `value_box()`
+- Theming?
+    + Add `bs_themer()` before `shinyApp()` and explore themes live
+
+## Conclusions
+
+* Shiny is fun!
+* Bigger apps get pretty complicated pretty quickly
+* Consider [modules](https://mastering-shiny.org/scaling-modules.html)
+* Do try to be efficient with your code whenever possible
+* Think carefully about reactivity - it's a fundamentally different approach
+
+## Any time left?
+
+Challenge
+
+* Create a shiny app or shiny dashboard with the `palmerpenguins::penguins` dataset
+* Allow the *x* and *y* axes to be selected by the user
+    + These should be any numeric variables
+* Allow the points to be colored by any categorical variable
+    + For an added challenge, try to add in a "no color" option, which should be the default
+
+# Next time
+
+Final Exam due 6/8 @ 1pm
+
+# shiny modules {visibility="hidden"}
+
+(briefly)
+
+## What is a module? {visibility="hidden"}
+
+* Allows you to modularize parts of your shiny app
+* This can help "de-tangle" these pices from the rest of the app
+* Primarily useful when the thing you want to modularize spans *both* the UI and the server
+
+## Example {visibility="hidden"}
+
+No modules
+
+![](https://d33wubrfki0l68.cloudfront.net/051011ce1a1bc8989ae41b735b05b607b2ebde65/2e519/diagrams/scaling-modules/before.png)
+::: aside
+[Mastering Shiny](https://mastering-shiny.org/scaling-modules.html)
+:::
+
+## Example {visibility="hidden"}
+
+Same app, but with modules
+
+![](https://d33wubrfki0l68.cloudfront.net/3d9a229fec717ef7bfda8e17a9c9d4fdc66b8b08/953f7/diagrams/scaling-modules/after.png)
+::: aside
+[Mastering Shiny](https://mastering-shiny.org/scaling-modules.html)
+:::
+
+## Create modules {visibility="hidden"}
+
+* It's fairly complicated. See the [chapter](https://mastering-shiny.org/scaling-modules.html) from Mastering Shiny on the topic
+* Probably not worth it until you're creating complicated apps, but I wanted to make you aware of them
+
+. . .
+
+Let's look at a very basic use case from [Mastering Shiny](https://mastering-shiny.org/scaling-modules.html#module-basics)
+
+## The original app {visibility="hidden"}
+
+```{r eval = FALSE}
+ui <- fluidPage(
+  selectInput("var", "Variable", names(mtcars)),
+  numericInput("bins", "bins", 10, min = 1),
+  plotOutput("hist")
+)
+
+server <- function(input, output, session) {
+  data <- reactive(mtcars[[input$var]])
+
+  output$hist <- renderPlot({
+    hist(
+      x = data(),
+      breaks = input$bins,
+      main = input$var
+    )
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+## Histogram UI module {visibility="hidden"}
+
+* A function for the UI components of the histogram
+* Wrap all internals into a single function with an `id` argument
+* Wrap all inputs in a `tagList()`, with inputs separated by commmas
+* Wrap each ID in `NS()`
+    + Allows the multiple id's to be referenced by a single id
+
+##  {visibility="hidden"}
+
+```{r }
+uiHist <- function(id) {
+  tagList(
+    selectInput(NS(id, "var"), "Variable", names(mtcars)),
+    numericInput(NS(id, "bins"), "bins", 10, min = 1),
+    plotOutput(NS(id, "hist"))
+  )
+}
+```
+
+## Histogram server module {visibility="hidden"}
+
+* Wrap the internals in a function with an `id` argument
+* Inside this function, wrap the internals again with the `moduleServer()` function
+    + First argument is `id`
+    + Second argument is `function(input, output, session) { <internals> }`
+
+##  {visibility="hidden"}
+
+```{r }
+serverHist <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    data <- reactive(mtcars[[input$var]])
+
+    output$hist <- renderPlot({
+      hist(
+        x = data(),
+        breaks = input$bins,
+        main = input$var
+      )
+    })
+  })
+}
+```
+
+
+## New app {visibility="hidden"}
+
+```{r }
+ui <- fluidPage(
+  uiHist("histo")
+)
+
+server <- function(input, output, session) {
+  serverHist("histo")
+}
+```
+
+. . .
+
+The modules can then live in their own files, and your UI and server functions become much more clean
